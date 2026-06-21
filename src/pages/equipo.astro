@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Equipo · Endonautas"
+  description="Franco Jeria Castro — terapeuta en salud integrativa, autor de Endonautica y creador del sistema Endonautas."
+>
+  <style>
+  .equipo-wrap { max-width: 960px; margin: 0 auto; padding: 10vh 7% 12vh; }
+  .equipo-grid {
+    display: grid; grid-template-columns: 320px 1fr;
+    gap: 6rem; align-items: start; margin-top: 4rem;
+  }
+  .eq-foto {
+    position: sticky; top: 5rem;
+    border-radius: 10px; overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,.72), 0 0 0 1px rgba(255,255,255,.07);
+    aspect-ratio: 3/4;
+  }
+  .eq-foto img {
+    width: 100%; height: 100%; object-fit: cover;
+    object-position: left top; display: block;
+    filter: grayscale(100%) contrast(1.06);
+    transition: filter .6s cubic-bezier(.25,.8,.25,1);
+  }
+  .eq-foto:hover img { filter: grayscale(0%) contrast(1); }
+  .eq-nombre {
+    font-family: var(--fd); font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700; color: #fff; letter-spacing: -.04em;
+    line-height: 1.1; margin-bottom: .5rem; text-shadow: var(--ts);
+  }
+  .eq-rol { font-size: .75rem; color: var(--c); letter-spacing: .1em; text-transform: uppercase; font-weight: 600; margin-bottom: 2.4rem; }
+  .eq-bio { font-size: .96rem; color: var(--mut); line-height: 1.88; }
+  .eq-bio p + p { margin-top: 1.3rem; }
+  .eq-bio strong { color: rgba(255,255,255,.85); font-weight: 600; }
+  .eq-divider { height: 1px; background: var(--bdr); margin: 2.4rem 0; }
+  .eq-creds { display: flex; flex-direction: column; gap: .7rem; }
+  .eq-cred {
+    display: flex; gap: 1rem; align-items: baseline;
+    font-size: .88rem; color: var(--mut); line-height: 1.5;
+  }
+  .eq-cred::before { content: '·'; color: var(--c); flex-shrink: 0; }
+  .eq-libro {
+    display: flex; align-items: center; gap: 1rem; margin-top: 2.4rem;
+    padding: 1.2rem 1.4rem; border: 1px solid rgba(212,160,86,.3);
+    border-radius: 12px; background: rgba(212,160,86,.04);
+  }
+  .eq-libro img { width: 52px; border-radius: 4px; flex-shrink: 0; }
+  .eq-libro-txt { font-size: .85rem; color: var(--mut); line-height: 1.55; }
+  .eq-libro-txt strong { color: var(--am); display: block; margin-bottom: .2rem; }
+  .eq-ctas { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 2.4rem; }
+  @media (max-width: 768px) {
+    .equipo-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+    .eq-foto { position: static; max-width: 240px; aspect-ratio: 3/4; }
+  }
+  </style>
+
+  <div class="equipo-wrap">
+    <div class="from-b">
+      <p class="lbl" style="color:var(--c);margin-bottom:1rem">Equipo</p>
+      <p style="color:var(--dim);font-size:.9rem;max-width:520px;line-height:1.7">
+        Endonautas es un sistema construido desde la práctica, no desde una teoría.
+        Una persona, una década, un sistema.
+      </p>
+    </div>
+
+    <div class="equipo-grid">
+      <div class="eq-foto from-l">
+        <img src="/assets/img/franco-jeria.jpeg" alt="Franco Jeria Castro" loading="lazy">
+      </div>
+
+      <div class="from-r" data-d="1">
+        <h1 class="eq-nombre">Franco Jeria Castro</h1>
+        <p class="eq-rol">Fundador &nbsp;·&nbsp; Terapeuta en Salud Integrativa &nbsp;·&nbsp; Autor</p>
+
+        <div class="eq-bio">
+          <p>Más de una década acompañando procesos de cambio real desde la práctica clínica. Lo que está en Endonautas no viene de un marco teórico elegido desde afuera — viene de observar, sesión a sesión, qué funciona y qué no en el espacio entre la terapia y la vida cotidiana.</p>
+          <p>La pregunta que guió el diseño del sistema fue simple: <strong>¿qué pasa en los seis días que quedan entre sesiones?</strong> No hay terapia que pueda cubrir ese tiempo. Endonautas es el intento de darle estructura a ese espacio.</p>
+          <p>Su enfoque integra psicometría clínica estandarizada con marcos de cartografía personal (astrología, Human Design, I Ching) porque el proceso interior no cabe en una sola lógica. No es una mezcla ecléctica — es una postura deliberada sobre cómo acompañar el proceso de individuación.</p>
+        </div>
+
+        <div class="eq-divider"></div>
+
+        <div class="eq-creds">
+          <div class="eq-cred">Terapeuta en Salud Integrativa — formación en Chile y España</div>
+          <div class="eq-cred">Más de 10 años de práctica clínica individual y grupal</div>
+          <div class="eq-cred">Especialización en regulación emocional, apego y procesos de individuación</div>
+          <div class="eq-cred">Desarrollador autodidacta — construyó Endonautas de principio a fin</div>
+          <div class="eq-cred">Autor de <em style="color:var(--c)">Endonautica</em> (207 páginas, marco conceptual del sistema)</div>
+        </div>
+
+        <div class="eq-libro">
+          <img src="/assets/img/epic-ebook.png" alt="Endonautica" loading="lazy">
+          <div class="eq-libro-txt">
+            <strong>Endonautica</strong>
+            207 páginas · El marco conceptual detrás del sistema · Incluido en plan Navegante
+          </div>
+        </div>
+
+        <div class="eq-ctas">
+          <a href="https://app.endonautas.cl/registro/" class="btn btn-p">Explorar la app gratis</a>
+          <a href="/contacto/" class="btn btn-o">Escribir a Franco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

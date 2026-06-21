@@ -7,6 +7,14 @@ const { badge } = Astro.props;
     <span class="logo-n">Endonautas</span>
     {badge && <span class="nav-badge">{badge}</span>}
   </a>
+  <div class="nav-links">
+    <a href="/blog/">Blog</a>
+    <a href="/profesionales/">Para profesionales</a>
+    <a href="/ebook/">Ebook</a>
+    <a href="/#precios">Precios</a>
+    <a href="/equipo/">Equipo</a>
+    <a href="/contacto/">Contacto</a>
+  </div>
   <div class="nav-r">
     <slot />
     <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm">Ingresar</a>
