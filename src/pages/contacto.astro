@@ -8,7 +8,7 @@ import Layout from '../layouts/Layout.astro';
 >
   <style>
   .contacto-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
+    display: grid; grid-template-columns: 1fr 1.1fr;
     gap: 8rem; align-items: start; padding: 10vh 0 12vh;
   }
   .contacto-h {
@@ -16,22 +16,43 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 300; color: #fff; letter-spacing: -.03em;
     line-height: 1.1; margin-bottom: 1.2rem; text-shadow: var(--ts);
   }
-  .contacto-sub { color: var(--dim); font-size: .95rem; line-height: 1.75; margin-bottom: 3rem; max-width: 420px; }
+  .contacto-sub { color: var(--dim); font-size: .95rem; line-height: 1.75; margin-bottom: 0; max-width: 400px; }
+  .c-sep { height: 1px; background: var(--bdr); margin: 2.4rem 0; }
   .c-nota { font-size: .85rem; color: var(--dim); line-height: 1.75; }
   .c-nota strong { color: rgba(255,255,255,.6); }
-  .contacto-opciones { display: flex; flex-direction: column; gap: 1.2rem; }
-  .c-opcion {
-    display: flex; align-items: center; gap: 1.4rem;
-    padding: 1.5rem 1.8rem; border: 1px solid var(--bdr);
-    border-radius: 14px; background: rgba(10,8,20,.55);
-    backdrop-filter: blur(12px); text-decoration: none;
-    transition: border-color .22s;
+
+  /* form */
+  .c-form { display: flex; flex-direction: column; gap: 1.4rem; }
+  .c-field { display: flex; flex-direction: column; gap: .5rem; }
+  .c-label {
+    font-size: .72rem; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--dim);
   }
-  .c-opcion:hover { border-color: rgba(255,255,255,.18); }
-  .c-ico { font-size: 1.3rem; flex-shrink: 0; width: 2.4rem; text-align: center; }
-  .c-titulo { font-family: var(--fd); font-weight: 600; color: #fff; font-size: .95rem; margin-bottom: .2rem; }
-  .c-desc { font-size: .82rem; color: var(--dim); line-height: 1.5; }
-  .c-sep { height: 1px; background: var(--bdr); margin: 2.4rem 0; }
+  .c-label span { color: var(--mut); font-weight: 400; letter-spacing: 0; text-transform: none; font-size: .8rem; }
+  .c-input, .c-textarea {
+    background: rgba(10,8,20,.55); border: 1px solid var(--bdr);
+    border-radius: 10px; color: #fff; font-family: var(--fi);
+    font-size: .95rem; padding: .9rem 1.1rem;
+    outline: none; transition: border-color .18s;
+    width: 100%;
+  }
+  .c-input::placeholder, .c-textarea::placeholder { color: var(--dim); }
+  .c-input:focus, .c-textarea:focus { border-color: rgba(126,204,205,.5); }
+  .c-textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
+  .c-submit { margin-top: .4rem; }
+  .c-feedback {
+    display: none; padding: 1rem 1.2rem; border-radius: 10px;
+    font-size: .88rem; line-height: 1.6;
+  }
+  .c-feedback.ok {
+    display: block; background: rgba(126,204,205,.08);
+    border: 1px solid rgba(126,204,205,.3); color: var(--c);
+  }
+  .c-feedback.err {
+    display: block; background: rgba(212,80,80,.08);
+    border: 1px solid rgba(212,80,80,.3); color: #e08080;
+  }
+
   @media (max-width: 860px) {
     .contacto-grid { grid-template-columns: 1fr; gap: 3rem; }
   }
@@ -39,6 +60,7 @@ import Layout from '../layouts/Layout.astro';
 
   <div class="container">
     <div class="contacto-grid">
+
       <div class="from-b">
         <p class="lbl" style="color:var(--c);margin-bottom:1rem">Contacto</p>
         <h1 class="contacto-h">Escríbenos</h1>
@@ -47,38 +69,95 @@ import Layout from '../layouts/Layout.astro';
         <div class="c-sep"></div>
 
         <p class="c-nota">
-          <strong>Tiempo de respuesta:</strong> respondemos en 24-48 horas hábiles.<br><br>
+          <strong>Tiempo de respuesta:</strong> respondemos en 24–48 horas hábiles.<br><br>
           Si tienes una pregunta sobre cómo funciona el sistema antes de registrarte,
-          el <a href="/blog/" style="color:var(--c)">blog</a> y la página de <a href="/fractones/" style="color:var(--c)">Fractones</a>
+          el <a href="/blog/" style="color:var(--c)">blog</a> y la página de
+          <a href="/fractones/" style="color:var(--c)">Fractones</a>
           probablemente ya tienen la respuesta.
         </p>
       </div>
 
-      <div class="contacto-opciones">
-        <a href="mailto:hola@endonautas.cl" class="c-opcion from-b" data-d="1">
-          <span class="c-ico" style="color:var(--c)">◎</span>
-          <div>
-            <div class="c-titulo">hola@endonautas.cl</div>
-            <div class="c-desc">Para preguntas generales, feedback o colaboraciones</div>
+      <div class="from-b" data-d="1">
+        <form class="c-form" id="cForm" novalidate>
+          <div class="c-field">
+            <label class="c-label" for="cf-email">Tu email</label>
+            <input id="cf-email" name="email" type="email" class="c-input"
+              placeholder="tu@correo.com" required autocomplete="email">
           </div>
-        </a>
 
-        <a href="mailto:profesionales@endonautas.cl" class="c-opcion from-b" data-d="2">
-          <span class="c-ico" style="color:var(--vi)">✦</span>
-          <div>
-            <div class="c-titulo">profesionales@endonautas.cl</div>
-            <div class="c-desc">Para terapeutas y coaches interesados en el módulo Practicante</div>
+          <div class="c-field">
+            <label class="c-label" for="cf-wa">
+              WhatsApp <span>— opcional</span>
+            </label>
+            <input id="cf-wa" name="whatsapp" type="tel" class="c-input"
+              placeholder="+56 9 1234 5678" autocomplete="tel">
           </div>
-        </a>
 
-        <a href="mailto:hola@endonautas.cl?subject=Soporte técnico" class="c-opcion from-b" data-d="3">
-          <span class="c-ico" style="color:var(--am)">·</span>
-          <div>
-            <div class="c-titulo">Soporte técnico</div>
-            <div class="c-desc">Problemas con la cuenta, pagos o acceso a la app</div>
+          <div class="c-field">
+            <label class="c-label" for="cf-msg">Mensaje</label>
+            <textarea id="cf-msg" name="mensaje" class="c-textarea"
+              placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
           </div>
-        </a>
+
+          <div id="cf-feedback" class="c-feedback" role="alert"></div>
+
+          <div class="c-submit">
+            <button type="submit" class="btn btn-p" id="cf-btn">Enviar mensaje</button>
+          </div>
+        </form>
       </div>
+
     </div>
   </div>
+
+  <script is:inline>
+  (function () {
+    const form = document.getElementById('cForm');
+    const btn  = document.getElementById('cf-btn');
+    const fb   = document.getElementById('cf-feedback');
+
+    function setFeedback(type, msg) {
+      fb.className = 'c-feedback ' + type;
+      fb.textContent = msg;
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      fb.className = 'c-feedback';
+
+      const email   = form.querySelector('#cf-email').value.trim();
+      const whatsapp = form.querySelector('#cf-wa').value.trim();
+      const mensaje = form.querySelector('#cf-msg').value.trim();
+
+      if (!email || !mensaje) {
+        setFeedback('err', 'Por favor completa tu email y el mensaje.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, whatsapp, mensaje }),
+        });
+        const data = await res.json();
+
+        if (data.ok) {
+          setFeedback('ok', 'Mensaje enviado — respondemos en 24-48 horas hábiles.');
+          form.reset();
+        } else {
+          setFeedback('err', data.error || 'Ocurrió un error. Intenta de nuevo o escríbenos a hola@endonautas.cl');
+        }
+      } catch (_) {
+        setFeedback('err', 'No se pudo enviar. Escríbenos directamente a hola@endonautas.cl');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Enviar mensaje';
+      }
+    });
+  })();
+  </script>
 </Layout>
