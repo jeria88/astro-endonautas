@@ -52,7 +52,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
   <slot name="head" />
 </head>
-<body data-cosmos-scroll={cosmosScroll}>
+<body data-cosmos-scroll={cosmosScroll ? 'true' : 'false'}>
 
 <div id="cbg"></div>
 <div id="lp-wrap">
