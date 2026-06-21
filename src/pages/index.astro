@@ -1,0 +1,671 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Endonautas — El mapa del mundo interior"
+  description="Plataforma de autoconocimiento aplicado. Espejo de conflictos, tests psicométricos, mapa de nacimiento y oráculo terapéutico. Trabaja lo que pasa entre sesiones."
+  cosmosScroll={true}
+>
+<style>
+/* ── LANDING: .s override ── */
+.s {
+  display: flex;
+  align-items: center;
+  padding: 17vh 0;
+  overflow: hidden;
+}
+/* ── HERO ── */
+#inicio {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+}
+.hero-wrap {
+  padding: 0 7%;
+  width: 100%;
+  text-align: right;
+  position: relative;
+  z-index: 1;
+}
+.hero-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -12vh -8vw;
+  background: radial-gradient(ellipse at 80% 46%, rgba(3,3,6,.80) 0%, rgba(3,3,6,.45) 45%, transparent 72%);
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-sup {
+  color: var(--c);
+  margin-bottom: 2rem;
+  text-shadow: var(--ts);
+  opacity: 0;
+  animation: fadeUp .7s .1s forwards;
+}
+.hero-h {
+  font-family: var(--fd);
+  font-size: clamp(2.6rem, 5.8vw, 5.2rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  color: #fff;
+  text-shadow: var(--ts);
+  margin-bottom: 2rem;
+}
+.hero-pero { color: rgba(255,255,255,.28); font-weight: 300; }
+.word {
+  display: inline-block;
+  opacity: 0;
+  animation: wordIn .65s cubic-bezier(.16,1,.3,1) forwards;
+  animation-delay: calc(.3s + var(--i) * .09s);
+}
+.hero-sub {
+  font-size: clamp(1.05rem, 1.9vw, 1.28rem);
+  color: var(--mut);
+  max-width: 500px;
+  margin: 0 0 2.2rem auto;
+  line-height: 1.78;
+  text-shadow: var(--ts);
+  opacity: 0;
+  animation: fadeUp .8s 1.1s forwards;
+  font-weight: 400;
+  text-align: right;
+}
+.hero-sub strong { color: rgba(255,255,255,.9); font-weight: 500; }
+.hero-cta {
+  opacity: 0;
+  animation: fadeUp .8s 1.4s forwards;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+.hero-note {
+  font-size: .8rem;
+  color: var(--dim);
+  margin-top: 1.6rem;
+  letter-spacing: .03em;
+  opacity: 0;
+  animation: fadeUp .8s 1.7s forwards;
+  text-align: right;
+}
+/* ── RECONOCIMIENTO ── */
+#reconoc { flex-direction: column; }
+.reconoc-intro {
+  font-family: var(--fd);
+  font-weight: 300;
+  font-size: clamp(.85rem, 1.2vw, 1rem);
+  color: var(--dim);
+  margin-bottom: 6rem;
+  padding: 0 7%;
+  text-shadow: var(--ts);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.reconoc-items { display: flex; flex-direction: column; gap: 8vh; width: 100%; }
+.q-item { max-width: min(640px, 55vw); position: relative; z-index: 1; }
+.q-item::before {
+  content: '';
+  position: absolute;
+  inset: -2.5rem -5vw;
+  background: radial-gradient(ellipse at 30% 50%, rgba(3,3,6,.64) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+.q-item.qr::before {
+  background: radial-gradient(ellipse at 70% 50%, rgba(3,3,6,.64) 0%, transparent 70%);
+}
+.q-item.ql { align-self: flex-start; padding-left: 8vw; }
+.q-item.qr { align-self: flex-end; padding-right: 8vw; }
+.q-text {
+  font-family: var(--fd);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 2.9vw, 2.2rem);
+  color: rgba(255,255,255,.82);
+  line-height: 1.38;
+  text-shadow: var(--ts);
+}
+.q-attr {
+  display: block;
+  margin-top: .8rem;
+  font-size: .8rem;
+  color: var(--dim);
+  letter-spacing: .04em;
+  font-style: italic;
+}
+.q-item.qr .q-text, .q-item.qr .q-attr { text-align: right; }
+.reconoc-res {
+  align-self: center;
+  text-align: center;
+  margin-top: 6vh;
+  padding: 0 7%;
+  font-family: var(--fd);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 400;
+  color: rgba(255,255,255,.80);
+  line-height: 1.68;
+  letter-spacing: -.01em;
+  text-shadow: var(--ts);
+}
+.reconoc-res em { color: var(--c); font-style: normal; }
+/* ── DIFERENCIA ── */
+#dif { flex-direction: column; align-items: flex-start; }
+.dif-h {
+  font-family: var(--fd);
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 300;
+  color: #fff;
+  max-width: 480px;
+  line-height: 1.3;
+  margin-bottom: 4.5rem;
+  text-shadow: var(--ts);
+}
+.versus { display: grid; grid-template-columns: 1fr 1px 1fr; width: 100%; }
+.v-col { display: flex; flex-direction: column; gap: 3.5rem; padding: 0 4rem; }
+.v-col:first-child { padding-left: 0; }
+.v-col:last-child { padding-right: 0; }
+.v-sep {
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,.05) 15%, var(--c) 50%, rgba(255,255,255,.05) 85%, transparent);
+}
+.v-lbl { color: var(--dim); margin-bottom: .5rem; font-size: .75rem; letter-spacing: .1em; font-weight: 600; text-transform: uppercase; }
+.v-lbl-c { color: var(--c); }
+.v-old { font-size: .97rem; color: var(--mut); line-height: 1.75; font-style: italic; }
+.v-new { font-family: var(--fd); font-weight: 300; font-size: 1.05rem; color: rgba(255,255,255,.88); line-height: 1.7; }
+.v-acc { color: var(--c); }
+/* ── INSTRUMENTOS ── */
+#inst { flex-direction: column; align-items: flex-start; }
+.inst-h { font-family: var(--fd); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 300; color: #fff; margin-bottom: .7rem; text-shadow: var(--ts); }
+.inst-sub { color: var(--dim); font-size: .88rem; margin-bottom: 4.5rem; }
+.inst-body {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 6rem;
+  width: 100%;
+  align-items: start;
+}
+.inst-list { display: flex; flex-direction: column; }
+.inst-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 1.8rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--bdr);
+  align-items: start;
+}
+.inst-item:last-child { border-bottom: 1px solid var(--bdr); }
+.inst-n {
+  font-family: var(--fd);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--dim);
+  line-height: 1;
+  text-align: right;
+  padding-top: .15rem;
+}
+.inst-name { font-family: var(--fd); font-weight: 600; color: #fff; margin-bottom: .35rem; font-size: 1rem; }
+.inst-desc { font-size: .92rem; color: var(--mut); line-height: 1.68; }
+.inst-visual { position: sticky; top: 5rem; }
+.img-stack { display: flex; flex-direction: column; gap: 1.6rem; }
+.img-stack-a, .img-stack-b, .img-stack-c {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.72), 0 0 0 1px rgba(255,255,255,.07);
+  width: 120%;
+  margin-left: -10%;
+  aspect-ratio: 3/2;
+}
+.img-stack-a { transform: rotate(-1.8deg); }
+.img-stack-b { transform: rotate(1.4deg) translateX(4%); }
+.img-stack-c { transform: rotate(-0.8deg); }
+.img-stack-a img, .img-stack-b img, .img-stack-c img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+  filter: brightness(.84) saturate(.72);
+}
+.inst-cta { margin-top: 3.2rem; }
+/* ── FRANCO ── */
+#franco { flex-direction: column; }
+.franco-grid {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 7rem;
+  width: 100%;
+  align-items: start;
+}
+.franco-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .6rem;
+  height: 540px;
+}
+.fi-foto, .fi-libro { overflow: hidden; border-radius: 6px; }
+.fi-foto img {
+  width: 100%; height: 100%; display: block;
+  object-fit: cover; object-position: left top;
+  filter: grayscale(100%) contrast(1.08);
+  transition: filter .6s cubic-bezier(.25,.8,.25,1);
+}
+.fi-foto:hover img { filter: grayscale(0%) contrast(1); }
+.fi-libro img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top; }
+.franco-texto {
+  display: flex; flex-direction: column; gap: 2.4rem; padding-top: .5rem;
+  position: relative; z-index: 1;
+}
+.franco-texto::before {
+  content: '';
+  position: absolute;
+  inset: -3rem -4rem;
+  background: radial-gradient(ellipse at 40% 30%, rgba(3,3,6,.55) 0%, transparent 68%);
+  z-index: -1;
+  pointer-events: none;
+}
+.franco-q {
+  font-family: var(--fd); font-weight: 300;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  color: rgba(255,255,255,.84); line-height: 1.48;
+  text-shadow: var(--ts);
+  border-left: 2px solid var(--c); padding-left: 1.6rem;
+}
+.franco-id { display: flex; flex-direction: column; gap: .3rem; }
+.franco-name { font-family: var(--fd); font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: -.02em; }
+.franco-role { font-size: .75rem; color: var(--c); letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
+.franco-bio { font-size: .96rem; color: var(--mut); line-height: 1.82; max-width: 460px; }
+.libro-inc {
+  display: flex; align-items: center; gap: .8rem;
+  font-size: .8rem; color: var(--dim); padding: .9rem 1.1rem;
+  border: 1px solid var(--bdr); border-radius: 8px;
+  width: fit-content; background: rgba(10,8,20,.45);
+}
+.libro-inc span { color: var(--c); font-weight: 600; }
+.franco-ctas { display: flex; gap: .8rem; flex-wrap: wrap; }
+/* ── PRECIOS ── */
+#precios { flex-direction: column; align-items: flex-start; }
+.precios-h { font-family: var(--fd); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 300; color: #fff; margin-bottom: .6rem; text-shadow: var(--ts); }
+.precios-sub { color: var(--dim); font-size: .9rem; margin-bottom: 4rem; }
+.planes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; width: 100%; }
+.plan {
+  border: 1px solid var(--bdr); border-radius: 16px;
+  padding: 2.4rem 2rem; display: flex; flex-direction: column; gap: 1.8rem;
+  background: rgba(10,8,20,.55); backdrop-filter: blur(12px);
+  transition: border-color .22s;
+}
+.plan:hover { border-color: rgba(255,255,255,.15); }
+.plan.featured { border-color: rgba(126,204,205,.35); background: rgba(126,204,205,.05); position: relative; }
+.plan-badge {
+  position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+  background: var(--c); color: #020909;
+  font-family: var(--fd); font-size: .62rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: .3rem .9rem; border-radius: 0 0 8px 8px;
+}
+.plan-name { font-family: var(--fd); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.plan-price { display: flex; align-items: baseline; gap: .3rem; }
+.plan-amount { font-family: var(--fd); font-size: 2.8rem; font-weight: 700; color: #fff; letter-spacing: -.04em; line-height: 1; }
+.plan-period { font-size: .82rem; color: var(--dim); }
+.plan-divider { height: 1px; background: var(--bdr); }
+.plan-feats { display: flex; flex-direction: column; gap: .85rem; list-style: none; flex: 1; }
+.plan-feats li { font-size: .9rem; color: var(--mut); line-height: 1.5; display: flex; gap: .55rem; align-items: baseline; }
+.plan-feats li::before { content: '·'; color: var(--c); flex-shrink: 0; }
+.plan-feats li.hi { color: rgba(255,255,255,.88); }
+.plan-cta { margin-top: auto; }
+.plan-cta .btn { width: 100%; }
+.plan-note { font-size: .74rem; color: var(--dim); text-align: center; margin-top: .6rem; }
+/* ── FAQ ── */
+#faq { flex-direction: column; align-items: flex-start; }
+.faq-h { font-family: var(--fd); font-size: clamp(1.3rem, 2.4vw, 1.75rem); font-weight: 300; color: #fff; text-shadow: var(--ts); margin-bottom: 3.5rem; }
+.faq-list { display: flex; flex-direction: column; width: 100%; max-width: 760px; }
+.faq-item { border-top: 1px solid var(--bdr); padding: 1.8rem 0; cursor: pointer; }
+.faq-item:last-child { border-bottom: 1px solid var(--bdr); }
+.faq-q {
+  display: flex; justify-content: space-between; align-items: center; gap: 1.5rem;
+  font-family: var(--fd); font-size: 1rem; font-weight: 500;
+  color: rgba(255,255,255,.85); line-height: 1.4; user-select: none;
+}
+.faq-icon { flex-shrink: 0; width: 16px; height: 16px; color: var(--c); transition: transform .25s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  font-size: .92rem; color: var(--mut); line-height: 1.8;
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+}
+.faq-item.open .faq-a { max-height: 260px; padding-top: 1rem; }
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .s { padding: 12vh 0; }
+  .inst-body { grid-template-columns: 1fr; }
+  .inst-visual { display: none; }
+  .franco-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .franco-images { height: 300px; }
+  .planes-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+  .versus { grid-template-columns: 1fr; gap: 3rem; }
+  .v-sep { display: none; }
+  .v-col { padding: 0; }
+  .q-item { max-width: 90vw; }
+  .q-item.qr { text-align: left; }
+  .q-item.qr .q-text, .q-item.qr .q-attr { text-align: left; }
+  .hero-cta { flex-direction: column; }
+}
+</style>
+
+<!-- HERO -->
+<section class="s s-full" id="inicio">
+  <div class="hero-wrap">
+    <p class="lbl hero-sup">Para personas que buscan autoconocimiento aplicado</p>
+    <h1 class="hero-h">
+      <span style="display:block">
+        <span class="word" style="--i:0">Llevas</span><span class="word" style="--i:1">&nbsp;años&nbsp;sanando...</span>
+      </span>
+      <span style="display:block">
+        <span class="word hero-pero" style="--i:2">Pero&nbsp;sigues</span>
+      </span>
+      <span style="display:block">
+        <span class="word" style="--i:3">repitiendo&nbsp;lo&nbsp;mismo</span>
+      </span>
+    </h1>
+    <p class="hero-sub">
+      La sanación real no pasa en terapia.<br>
+      <strong>Pasa en lo que haces con lo que viste ahí — cada&nbsp;día, entre una sesión y la siguiente.</strong>
+    </p>
+    <div class="hero-cta">
+      <a href="https://app.endonautas.cl/registro/" class="btn btn-p btn-lg">Explorar gratis</a>
+      <a href="#precios" class="btn btn-o btn-lg">Ver planes</a>
+    </div>
+    <p class="hero-note">Sin tarjeta &nbsp;·&nbsp; Plan gratuito sin límite de tiempo</p>
+  </div>
+</section>
+
+<!-- RECONOCIMIENTO -->
+<section class="s s-dark" id="reconoc">
+  <p class="lbl reconoc-intro from-b">¿Te suena alguno de estos?</p>
+  <div class="reconoc-items">
+    <div class="q-item ql from-l" data-d="1">
+      <p class="q-text">"Llevo tres años en terapia. Me siento mejor. Y el martes hice exactamente lo mismo de siempre."</p>
+      <span class="q-attr">— Claudia, 34</span>
+    </div>
+    <div class="q-item qr from-r" data-d="2">
+      <p class="q-text">"Sé lo que es el apego ansioso. Lo estudio. Lo reconozco en tiempo real. No puedo parar."</p>
+      <span class="q-attr">— Marcos, 41</span>
+    </div>
+    <div class="q-item ql from-l" data-d="3">
+      <p class="q-text">"Hago el test, me reconozco, me parece fascinante. A la semana ya no lo recuerdo para nada."</p>
+      <span class="q-attr">— Valentina, 29</span>
+    </div>
+    <p class="reconoc-res from-b" data-d="4">
+      Para personas que ya están en proceso<br>
+      — pero aun <em>no disfrutan</em> el proceso
+    </p>
+  </div>
+</section>
+
+<!-- DIFERENCIA -->
+<section class="s s-dark" id="dif">
+  <div class="container">
+    <p class="dif-h from-l">No reemplaza tu terapia.<br>Pero sostiene cuando no hay un terapeuta cerca.</p>
+    <div class="versus">
+      <div class="v-col">
+        <div class="from-l" data-d="1">
+          <div class="v-lbl">La terapia</div>
+          <p class="v-old">Termina cuando termina la sesión. Lo que emergió, lo procesas solo.</p>
+        </div>
+        <div class="from-l" data-d="2">
+          <div class="v-lbl">Los tests de personalidad</div>
+          <p class="v-old">Te clasifican bien. No muestran el patrón moviéndose en el tiempo.</p>
+        </div>
+        <div class="from-l" data-d="3">
+          <div class="v-lbl">La autoayuda</div>
+          <p class="v-old">Nombra el problema. Rara vez llega al origen.</p>
+        </div>
+      </div>
+      <div class="v-sep from-b" data-d="1" aria-hidden="true"></div>
+      <div class="v-col">
+        <div class="from-r" data-d="1">
+          <div class="v-lbl v-lbl-c">Endonautas</div>
+          <p class="v-new">Trabaja en <span class="v-acc">los seis días que quedan</span> entre sesiones.</p>
+        </div>
+        <div class="from-r" data-d="2">
+          <div class="v-lbl v-lbl-c">Endonautas</div>
+          <p class="v-new">Muestra el patrón <span class="v-acc">moviéndose en el tiempo.</span></p>
+        </div>
+        <div class="from-r" data-d="3">
+          <div class="v-lbl v-lbl-c">Endonautas</div>
+          <p class="v-new"><span class="v-acc">Incomoda con precisión.</span> No consuela con facilidad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUMENTOS -->
+<section class="s s-darker" id="inst">
+  <div class="container">
+    <p class="inst-h from-b">Seis instrumentos. Un sistema.</p>
+    <p class="inst-sub from-b" data-d="1">Diseñados para trabajar donde nadie más trabaja.</p>
+    <div class="inst-body">
+      <div class="inst-list">
+        <div class="inst-item from-l" data-d="1">
+          <span class="inst-n">01</span>
+          <div>
+            <p class="inst-name">Espejo IA</p>
+            <p class="inst-desc">Una conversación que devuelve, no resuelve. Refleja lo que no te preguntaste todavía — y trabaja con tu contexto acumulado, no desde cero cada vez.</p>
+          </div>
+        </div>
+        <div class="inst-item from-l" data-d="2">
+          <span class="inst-n">02</span>
+          <div>
+            <p class="inst-name">Tests psicométricos</p>
+            <p class="inst-desc">35 instrumentos con respaldo clínico. Apego, regulación emocional, sueño, trauma. Lo que tu terapeuta no tiene tiempo de cubrir entre sesión y sesión.</p>
+          </div>
+        </div>
+        <div class="inst-item from-l" data-d="3">
+          <span class="inst-n">03</span>
+          <div>
+            <p class="inst-name">Oráculo terapéutico</p>
+            <p class="inst-desc">Tarot Jodorowsky, I Ching, Oráculo Fractal. No predicción — otra forma de hacerse la misma pregunta desde un ángulo distinto.</p>
+          </div>
+        </div>
+        <div class="inst-item from-l" data-d="4">
+          <span class="inst-n">04</span>
+          <div>
+            <p class="inst-name">Mapa de nacimiento</p>
+            <p class="inst-desc">Carta natal, Human Design, Saju. Marcos para leer disposiciones estructurales. No astrología de revista — cartografía de lo que traes.</p>
+          </div>
+        </div>
+        <div class="inst-item from-l" data-d="5">
+          <span class="inst-n">05</span>
+          <div>
+            <p class="inst-name">Módulo terapeuta</p>
+            <p class="inst-desc">El puente entre la app y tu próxima sesión. Lo que encontraste aquí, ya armado en contexto, listo para llevar a quien te acompaña.</p>
+          </div>
+        </div>
+        <div class="inst-item from-l" data-d="6">
+          <span class="inst-n">06</span>
+          <div>
+            <p class="inst-name">Bitácora</p>
+            <p class="inst-desc">El único lugar donde puedes ver si algo se movió. Sueños, regulación, historial de patrones. El proceso tiene que poder leerse.</p>
+          </div>
+        </div>
+        <div class="inst-cta from-b">
+          <a href="https://app.endonautas.cl/registro/" class="btn btn-p">Comenzar gratis</a>
+        </div>
+      </div>
+      <div class="inst-visual from-r" data-d="2">
+        <div class="img-stack">
+          <div class="img-stack-a">
+            <img src="/img/oraculo-fractal.jpg" alt="" loading="lazy">
+          </div>
+          <div class="img-stack-b">
+            <img src="/img/birth.png" alt="" loading="lazy">
+          </div>
+          <div class="img-stack-c">
+            <img src="/img/dashboard.png" alt="" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRANCO -->
+<section class="s s-dark" id="franco">
+  <div class="container">
+    <div class="franco-grid">
+      <div class="from-l">
+        <div class="franco-images">
+          <div class="fi-foto">
+            <img src="/assets/img/franco-jeria.jpeg" alt="Franco Jeria Castro — Terapeuta en Salud Integrativa" loading="lazy">
+          </div>
+          <div class="fi-libro">
+            <img src="/assets/img/epic-ebook.png" alt="Libro Endonautica" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="franco-texto from-r" data-d="1">
+        <blockquote class="franco-q">
+          Diseñé este sistema después de años viendo personas que sabían perfectamente cuál era su patrón — y no podían parar. El problema no era falta de insight. Era falta de continuidad.
+        </blockquote>
+        <div class="franco-id">
+          <p class="franco-name">Franco Jeria Castro</p>
+          <p class="franco-role">Terapeuta en Salud Integrativa &nbsp;·&nbsp; Autor</p>
+        </div>
+        <p class="franco-bio">Más de una década acompañando procesos de cambio real. Desarrolló el sistema Endonautas desde la práctica clínica — no desde una teoría. Lo que está en la app es lo que vio funcionar, y lo que vio fallar, entre sesiones reales con personas reales.</p>
+        <div class="libro-inc">
+          <span>Endonautica</span>
+          <span style="color:var(--dim)">—</span>
+          207 páginas · el marco conceptual detrás del sistema · incluido en plan Navegante
+        </div>
+        <div class="franco-ctas">
+          <a href="https://app.endonautas.cl/registro/" class="btn btn-p">Comenzar gratis</a>
+          <a href="#precios" class="btn btn-o">Ver planes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section class="s s-darker" id="precios">
+  <div class="container">
+    <div class="from-b">
+      <p class="precios-h">Sin contrato. Sin permanencia.</p>
+      <p class="precios-sub">Cancelas cuando quieres. El plan gratuito no expira.</p>
+    </div>
+    <div class="planes-grid">
+      <div class="plan from-b" data-d="1">
+        <p class="plan-name">Gratuito</p>
+        <div class="plan-price">
+          <span class="plan-amount">$0</span>
+          <span class="plan-period">/ mes</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-feats">
+          <li class="hi">80 fractones mensuales</li>
+          <li>Espejo IA</li>
+          <li>Tests psicométricos (selección)</li>
+          <li>Oráculo</li>
+          <li>Bitácora</li>
+          <li class="hi"><a href="/fractones/" style="color:var(--c);text-decoration:none">Consigue fractones gratis invitando amigos →</a></li>
+        </ul>
+        <div class="plan-cta">
+          <a href="https://app.endonautas.cl/registro/" class="btn btn-o btn-sm">Empezar gratis</a>
+        </div>
+      </div>
+
+      <div class="plan featured from-b" data-d="2">
+        <div class="plan-badge">Más elegido</div>
+        <p class="plan-name">Navegante</p>
+        <div class="plan-price">
+          <span class="plan-amount">$10</span>
+          <span class="plan-period">USD / mes</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-feats">
+          <li class="hi">800 fractones mensuales</li>
+          <li class="hi">35 tests con insight de IA</li>
+          <li class="hi">Historial acumulado</li>
+          <li class="hi">Mapa de nacimiento completo</li>
+          <li class="hi">Libro <em>Endonautica</em> incluido</li>
+          <li>Módulo terapeuta</li>
+        </ul>
+        <div class="plan-cta">
+          <a href="https://app.endonautas.cl/registro/?plan=navegante" class="btn btn-p btn-sm">Activar Navegante</a>
+          <p class="plan-note">Sin tarjeta hasta confirmar</p>
+        </div>
+      </div>
+
+      <div class="plan from-b" data-d="3">
+        <p class="plan-name">Practicante</p>
+        <div class="plan-price">
+          <span class="plan-amount">$39</span>
+          <span class="plan-period">USD / mes</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-feats">
+          <li class="hi">5.000 fractones mensuales</li>
+          <li class="hi">Todo lo del Navegante</li>
+          <li class="hi">Módulo terapeuta completo</li>
+          <li class="hi">Perfiles de clientes</li>
+          <li>Para terapeutas y coaches</li>
+        </ul>
+        <div class="plan-cta">
+          <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-o btn-sm">Activar Practicante</a>
+          <p class="plan-note" style="margin-top:.75rem"><a href="/profesionales/" style="color:var(--c);text-decoration:none">Usa esta herramienta con tus propios pacientes →</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s s-dark" id="faq">
+  <div class="container">
+    <p class="faq-h from-b">Lo que la mayoría pregunta antes de entrar.</p>
+    <div class="faq-list from-b" data-d="1">
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Esto reemplaza la terapia?
+          <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
+        </div>
+        <p class="faq-a">No. Trabaja en los seis días que quedan entre sesiones. Tu terapeuta trabaja en sesión — Endonautas trabaja en el tiempo que ningún terapeuta puede cubrir. No compiten: se complementan. El Módulo Terapeuta fue diseñado para llevar lo que encuentras en la app a tu próxima sesión con contexto ya armado.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Tiene base clínica o es espiritual?
+          <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
+        </div>
+        <p class="faq-a">Los tests psicométricos son instrumentos validados en español: PHQ-9, GAD-7, Big Five, ECR, DERS, y otros. El Oráculo y el Mapa de Nacimiento operan desde otro registro — no son diagnóstico clínico y no se presentan como tal. El sistema integra ambos porque el proceso interior no cabe en una sola lógica.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Qué son los fractones?
+          <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
+        </div>
+        <p class="faq-a">La moneda interna del sistema. Cada acción tiene un costo: una sesión con el Espejo consume 6 fractones, un insight de test consume 15. El plan gratuito incluye 80 por mes. El plan Navegante incluye 800 — suficiente para uso continuo varias veces por semana. <a href="/fractones/" style="color:var(--c)">Ver economía completa →</a></p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Cuándo empieza a ser útil de verdad?
+          <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
+        </div>
+        <p class="faq-a">A las 2-3 semanas de uso continuo. Cuando el Espejo ya tiene contexto acumulado, cuando los tests muestran relaciones entre dimensiones, cuando la Bitácora tiene algo real que leer. La primera sesión devuelve algo — el valor real es el historial.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Puedo cancelar cuando quiera?
+          <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
+        </div>
+        <p class="faq-a">Sí. Sin contrato, sin permanencia, sin penalización. El plan gratuito tampoco expira — si en algún momento no quieres pagar, sigues con acceso a tus datos y a los 80 fractones mensuales.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+</Layout>

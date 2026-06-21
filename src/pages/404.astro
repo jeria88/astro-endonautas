@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Página no encontrada · Endonautas"
+  description="Esta página no existe — pero el proceso interior sigue."
+>
+  <style>
+  .not-found {
+    min-height: 70vh; display: flex; align-items: center; justify-content: center;
+    flex-direction: column; text-align: center; padding: 10vh 7%;
+  }
+  .nf-n {
+    font-family: var(--fd); font-size: clamp(5rem, 15vw, 10rem);
+    font-weight: 700; color: rgba(255,255,255,.06); letter-spacing: -.06em;
+    line-height: 1; margin-bottom: 1rem;
+  }
+  .nf-h {
+    font-family: var(--fd); font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 300; color: #fff; margin-bottom: .8rem; text-shadow: var(--ts);
+  }
+  .nf-p { font-size: .95rem; color: var(--dim); max-width: 380px; line-height: 1.7; margin-bottom: 2.4rem; }
+  </style>
+
+  <div class="not-found">
+    <div class="nf-n">404</div>
+    <h1 class="nf-h">Esta página no existe</h1>
+    <p class="nf-p">Puede que el link esté roto o que la página haya sido movida. El proceso interior, en cambio, sigue exactamente donde lo dejaste.</p>
+    <div style="display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center">
+      <a href="/" class="btn btn-p">Volver al inicio</a>
+      <a href="https://app.endonautas.cl" class="btn btn-o">Ir a la app</a>
+    </div>
+  </div>
+</Layout>

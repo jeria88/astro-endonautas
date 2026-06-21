@@ -1,0 +1,243 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Fractones — La energía del sistema · Endonautas"
+  description="La moneda interna de Endonautas. Cómo ganar fractones con misiones, actividad e invitaciones. Cuánto cuesta cada instrumento. Planes disponibles."
+>
+  <a slot="nav" href="/" class="nav-back">← Inicio</a>
+
+  <style>
+  /* HERO */
+  #hero { min-height: 56vh; display: flex; align-items: center; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; padding: 0 7%; }
+  .hero-sup { color: var(--c); margin-bottom: 1.4rem; opacity: 0; animation: fadeUp .7s .1s forwards; }
+  .hero-h {
+    font-family: var(--fd); font-size: clamp(2.2rem, 4.8vw, 4rem);
+    font-weight: 700; line-height: 1.1; letter-spacing: -.04em;
+    color: #fff; text-shadow: var(--ts); margin-bottom: 1.4rem;
+    opacity: 0; animation: fadeUp .8s .3s forwards;
+  }
+  .hero-h em { color: var(--c); font-style: normal; }
+  .hero-p {
+    font-size: clamp(1rem, 1.7vw, 1.15rem); color: var(--mut); max-width: 540px;
+    line-height: 1.78; margin-bottom: 2.4rem; text-shadow: var(--ts);
+    opacity: 0; animation: fadeUp .8s .55s forwards;
+  }
+  .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .8s .8s forwards; }
+  .hstat-n { font-family: var(--fd); font-size: 1.8rem; font-weight: 700; line-height: 1; }
+  .hstat-l { font-size: .78rem; color: var(--dim); margin-top: .3rem; }
+  /* GANAR */
+  .ganar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .miss-list { display: flex; flex-direction: column; list-style: none; }
+  .miss-list li {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: .7rem 0; border-bottom: 1px solid var(--bdr);
+    font-size: .9rem; color: var(--mut);
+  }
+  .miss-list li:last-child { border-bottom: none; }
+  .miss-val { font-family: var(--fd); font-weight: 700; color: var(--c); white-space: nowrap; margin-left: 1rem; }
+  /* REFERIDOS */
+  .ref-card { position: relative; overflow: hidden; }
+  .ref-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--c), transparent);
+  }
+  .ref-row {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--bdr);
+  }
+  .ref-row:last-child { border-bottom: none; }
+  .ref-desc { font-size: .9rem; color: var(--mut); line-height: 1.5; }
+  .ref-chips { display: flex; gap: .5rem; flex-wrap: wrap; flex-shrink: 0; }
+  .chip { font-family: var(--fd); font-size: .75rem; font-weight: 700; padding: .25rem .65rem; border-radius: 20px; white-space: nowrap; }
+  .chip-c { background: rgba(126,204,205,.15); color: var(--c); border: 1px solid rgba(126,204,205,.3); }
+  .chip-w { background: rgba(255,255,255,.06); color: rgba(255,255,255,.7); border: 1px solid var(--bdr); }
+  /* TABLA COSTOS */
+  .costs-table { width: 100%; border-collapse: collapse; }
+  .costs-table th {
+    text-align: left; font-size: .65rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--dim);
+    padding: .6rem 1rem; border-bottom: 1px solid var(--bdr);
+  }
+  .costs-table th:last-child { text-align: right; }
+  .costs-table td { padding: .9rem 1rem; border-bottom: 1px solid rgba(255,255,255,.05); font-size: .9rem; color: var(--mut); }
+  .costs-table td:first-child { color: rgba(255,255,255,.85); font-weight: 500; }
+  .costs-table td:last-child { text-align: right; font-family: var(--fd); font-weight: 700; color: var(--c); }
+  .costs-table tr:last-child td { border-bottom: none; }
+  /* PLANES */
+  .planes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
+  .plan {
+    border: 1px solid var(--bdr); border-radius: 16px;
+    padding: 2rem 1.8rem; display: flex; flex-direction: column; gap: 1.6rem;
+    background: rgba(10,8,20,.55); backdrop-filter: blur(12px); position: relative;
+  }
+  .plan.featured { border-color: rgba(126,204,205,.35); background: rgba(126,204,205,.05); }
+  .plan-badge {
+    position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+    background: var(--c); color: #020909; font-family: var(--fd);
+    font-size: .6rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    padding: .28rem .85rem; border-radius: 0 0 8px 8px;
+  }
+  .plan-name { font-family: var(--fd); font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+  .plan-tokens { font-family: var(--fd); font-size: 2.4rem; font-weight: 700; color: #fff; letter-spacing: -.04em; line-height: 1; }
+  .plan-tokens span { font-size: .82rem; color: var(--dim); font-weight: 400; letter-spacing: 0; }
+  .plan-price { font-family: var(--fd); font-size: 1.1rem; font-weight: 600; color: var(--mut); margin-top: .4rem; }
+  .plan-div { height: 1px; background: var(--bdr); }
+  .plan-note { font-size: .74rem; color: var(--dim); line-height: 1.6; margin-top: auto; }
+  .plan-note em { color: var(--am); font-style: normal; }
+  /* PASOS */
+  .ref-steps { display: flex; justify-content: center; margin: 3rem 0; flex-wrap: wrap; }
+  .ref-step {
+    display: flex; flex-direction: column; align-items: center; gap: .6rem;
+    flex: 1; min-width: 130px; max-width: 180px; position: relative;
+  }
+  .ref-step:not(:last-child)::after {
+    content: '→'; position: absolute; right: -10px; top: 22px;
+    color: var(--dim); font-size: .85rem;
+  }
+  .ref-step-n {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid rgba(126,204,205,.35); background: rgba(126,204,205,.06);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--fd); font-size: .85rem; font-weight: 700; color: var(--c);
+  }
+  .ref-step-l { font-size: .78rem; color: var(--mut); text-align: center; line-height: 1.5; }
+  @media (max-width: 768px) {
+    .ganar-grid { grid-template-columns: 1fr; }
+    .planes-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    .ref-steps { flex-direction: column; align-items: center; }
+    .ref-step:not(:last-child)::after { display: none; }
+  }
+  </style>
+
+  <!-- HERO -->
+  <section id="hero" class="s-dark">
+    <div class="hero-inner">
+      <p class="lbl hero-sup">Sistema de economía interna</p>
+      <h1 class="hero-h">Fractones:<br>la <em>energía</em> del sistema</h1>
+      <p class="hero-p">La moneda interna de Endonautas. Se gasta al usar IA, se gana explorando, completando misiones e invitando personas. Cuanto más usas la app, más puedes usarla.</p>
+      <div class="hero-stats">
+        <div><div class="hstat-n" style="color:var(--c)">80</div><div class="hstat-l">fractones gratis al mes</div></div>
+        <div style="width:1px;background:var(--bdr);align-self:stretch"></div>
+        <div><div class="hstat-n" style="color:var(--am)">+170</div><div class="hstat-l">fractones por misiones de inicio</div></div>
+        <div style="width:1px;background:var(--bdr);align-self:stretch"></div>
+        <div><div class="hstat-n" style="color:#9b8ec4">+250</div><div class="hstat-l">cuando un referido pasa a plan pago</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO GANARLOS -->
+  <section class="s s-darker">
+    <div class="container">
+      <p class="s-h from-b">Cómo ganarlos</p>
+      <p class="s-sub from-b" data-d="1">Tres fuentes: misiones de inicio, actividad continua, e invitaciones.</p>
+      <div class="ganar-grid">
+        <div class="card from-b" data-d="1">
+          <p class="lbl" style="color:var(--am);margin-bottom:1.2rem">Misiones de inicio</p>
+          <ul class="miss-list">
+            <li><span>Completar el onboarding</span><span class="miss-val">+50</span></li>
+            <li><span>Primer test psicométrico</span><span class="miss-val">+20</span></li>
+            <li><span>Primera sesión de Espejo</span><span class="miss-val">+30</span></li>
+            <li><span>Primera consulta de Oráculo</span><span class="miss-val">+20</span></li>
+            <li><span>Primer mapa de nacimiento</span><span class="miss-val">+40</span></li>
+            <li><span>Perfil completo</span><span class="miss-val">+20</span></li>
+            <li><span>Primera entrada en bitácora</span><span class="miss-val">+15</span></li>
+          </ul>
+        </div>
+        <div class="card from-b" data-d="2">
+          <p class="lbl" style="color:#9b8ec4;margin-bottom:1.2rem">Actividad continua</p>
+          <ul class="miss-list">
+            <li><span>Completar un test</span><span class="miss-val">+8</span></li>
+            <li><span>Completar una dimensión entera</span><span class="miss-val">+25</span></li>
+            <li><span>Racha semanal (3+ actividades)</span><span class="miss-val">+15</span></li>
+          </ul>
+          <p style="font-size:.8rem;color:var(--dim);line-height:1.65;margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--bdr)">Los fractones de misiones y actividad son <strong style="color:rgba(255,255,255,.7)">permanentes</strong> — no expiran aunque no entres en meses.</p>
+        </div>
+        <div class="card card-c ref-card from-b" style="grid-column:1/-1" data-d="3">
+          <p class="lbl" style="color:var(--c);margin-bottom:1.2rem">Por invitar personas</p>
+          <div class="ref-row">
+            <div class="ref-desc">Alguien se registra con tu link único</div>
+            <div class="ref-chips"><span class="chip chip-c">Tú +60</span><span class="chip chip-w">Ella/él +40</span></div>
+          </div>
+          <div class="ref-row">
+            <div class="ref-desc">Esa persona pasa a un plan pago</div>
+            <div class="ref-chips"><span class="chip chip-c">Tú +250 adicionales</span></div>
+          </div>
+          <p style="font-size:.8rem;color:var(--dim);line-height:1.65;margin-top:1rem">Tu link único está en <strong style="color:rgba(255,255,255,.7)">Perfil → Invita y gana Fractones</strong> desde el momento en que te registras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EN QUÉ SE GASTAN -->
+  <section class="s s-dark">
+    <div class="container">
+      <p class="s-h from-b">En qué se gastan</p>
+      <p class="s-sub from-b" data-d="1">Solo las acciones que involucran IA tienen costo. Tests, bitácora, comunidad y navegación son siempre gratuitos.</p>
+      <div class="card from-b" data-d="2">
+        <table class="costs-table">
+          <thead><tr><th>Instrumento</th><th>Descripción</th><th>Costo</th></tr></thead>
+          <tbody>
+            <tr><td>Espejo de Conflictos</td><td>Mensaje + respuesta IA</td><td>6</td></tr>
+            <tr><td>AI Insight en tests</td><td>Interpretación del resultado</td><td>15</td></tr>
+            <tr><td>Oráculo · Tarot</td><td>Tirada con lectura terapéutica</td><td>8</td></tr>
+            <tr><td>Oráculo · I Ching</td><td>Tirada con interpretación</td><td>6</td></tr>
+            <tr><td>Oráculo · Fractal</td><td>Carta del día con insight</td><td>5</td></tr>
+            <tr><td>Mapa de Nacimiento</td><td>Por reporte (astral, HD o Saju)</td><td>20</td></tr>
+            <tr><td>Sesión Terapeuta IA</td><td>Análisis por framework clínico</td><td>10</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section class="s s-darker">
+    <div class="container">
+      <p class="s-h from-b">Fractones por plan</p>
+      <p class="s-sub from-b" data-d="1">Los del plan se renuevan cada mes. Los de misiones e invitaciones son permanentes y se suman al saldo.</p>
+      <div class="planes-grid">
+        <div class="plan from-b" data-d="1">
+          <p class="plan-name">Gratuito</p>
+          <div><div class="plan-tokens">80 <span>/ mes</span></div><div class="plan-price">$0</div></div>
+          <div class="plan-div"></div>
+          <p class="plan-note">Suficiente para explorar todos los instrumentos. Suma más invitando o con misiones. <em>Los fractones de misiones no expiran.</em></p>
+        </div>
+        <div class="plan featured from-b" data-d="2">
+          <div class="plan-badge">Más elegido</div>
+          <p class="plan-name">Navegante</p>
+          <div><div class="plan-tokens">800 <span>/ mes</span></div><div class="plan-price">$10 USD</div></div>
+          <div class="plan-div"></div>
+          <p class="plan-note">Uso diario sin preocuparte por el saldo. Incluye los 35 tests y el libro <em style="color:var(--c)">Endonautica</em>.</p>
+        </div>
+        <div class="plan from-b" data-d="3">
+          <p class="plan-name">Practicante</p>
+          <div><div class="plan-tokens">5.000 <span>/ mes</span></div><div class="plan-price">$39 USD</div></div>
+          <div class="plan-div"></div>
+          <p class="plan-note">Para uso profesional. Incluye módulo terapeuta y fichas de clientes. <a href="/profesionales/" style="color:var(--c);text-decoration:none">Ver módulo profesionales →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA INVITACIÓN -->
+  <section class="s s-dark" style="text-align:center">
+    <div class="container">
+      <p class="s-h from-b" style="text-align:center">Tu link de invitación te espera</p>
+      <p style="color:var(--dim);font-size:.9rem;text-align:center" class="from-b" data-d="1">Disponible desde el primer día, en tu perfil.</p>
+      <div class="ref-steps from-b" data-d="2">
+        <div class="ref-step"><div class="ref-step-n">1</div><div class="ref-step-l">Créate una cuenta gratis</div></div>
+        <div class="ref-step"><div class="ref-step-n">2</div><div class="ref-step-l">Ve a tu Perfil</div></div>
+        <div class="ref-step"><div class="ref-step-n">3</div><div class="ref-step-l">Copia tu link único</div></div>
+        <div class="ref-step"><div class="ref-step-n">4</div><div class="ref-step-l">Compártelo donde quieras</div></div>
+        <div class="ref-step"><div class="ref-step-n">5</div><div class="ref-step-l">Gana cuando se registran</div></div>
+      </div>
+      <div class="from-b" data-d="3" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://app.endonautas.cl/registro/" class="btn btn-p">Empezar gratis</a>
+        <a href="https://app.endonautas.cl/login/" class="btn btn-o">Ya tengo cuenta</a>
+      </div>
+    </div>
+  </section>
+</Layout>

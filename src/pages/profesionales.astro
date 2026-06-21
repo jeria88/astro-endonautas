@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Para profesionales · Endonautas"
+  description="Módulo profesional de Endonautas. Fichas de clientes, agenda de sesiones, tests asignables y Terapeuta IA para terapeutas y coaches. Plan Practicante."
+  navBadge="Para profesionales"
+>
+  <a slot="nav" href="/" class="nav-back">← Inicio</a>
+
+  <style>
+  /* HERO */
+  #hero { min-height: 60vh; display: flex; align-items: center; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; padding: 0 7%; }
+  .hero-sup { color: var(--vi); margin-bottom: 1.4rem; opacity: 0; animation: fadeUp .7s .1s forwards; }
+  .hero-h {
+    font-family: var(--fd); font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+    font-weight: 700; line-height: 1.1; letter-spacing: -.04em;
+    color: #fff; text-shadow: var(--ts); margin-bottom: 1.4rem;
+    opacity: 0; animation: fadeUp .8s .3s forwards;
+  }
+  .hero-h em { color: var(--c); font-style: normal; }
+  .hero-p {
+    font-size: clamp(1rem, 1.7vw, 1.15rem); color: var(--mut); max-width: 560px;
+    line-height: 1.78; margin-bottom: 2.4rem; text-shadow: var(--ts);
+    opacity: 0; animation: fadeUp .8s .55s forwards;
+  }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .8s .8s forwards; }
+  /* MÓDULO */
+  .modulo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .mod-card {
+    border: 1px solid var(--bdr); border-radius: 16px; padding: 2rem;
+    background: rgba(10,8,20,.55); backdrop-filter: blur(12px); transition: border-color .22s;
+  }
+  .mod-card:hover { border-color: rgba(255,255,255,.15); }
+  .mod-icon { font-size: 1.4rem; margin-bottom: 1rem; display: block; }
+  .mod-title { font-family: var(--fd); font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: .6rem; }
+  .mod-desc { font-size: .9rem; color: var(--mut); line-height: 1.7; }
+  /* FLUJO */
+  .flujo-steps { display: flex; flex-direction: column; gap: 0; max-width: 640px; }
+  .flujo-step {
+    display: grid; grid-template-columns: 48px 1fr; gap: 1.6rem;
+    padding: 2rem 0; border-bottom: 1px solid var(--bdr); align-items: start;
+  }
+  .flujo-step:last-child { border-bottom: none; }
+  .flujo-n {
+    width: 48px; height: 48px; border-radius: 50%;
+    border: 1px solid rgba(126,204,205,.3); background: rgba(126,204,205,.06);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--fd); font-size: .95rem; font-weight: 700; color: var(--c); flex-shrink: 0;
+  }
+  .flujo-title { font-family: var(--fd); font-weight: 600; color: #fff; margin-bottom: .4rem; }
+  .flujo-desc { font-size: .9rem; color: var(--mut); line-height: 1.68; }
+  /* PLAN PRO */
+  .plan-pro {
+    border: 1px solid rgba(126,204,205,.35); background: rgba(126,204,205,.04);
+    border-radius: 16px; padding: 2.4rem; backdrop-filter: blur(12px);
+    position: relative; overflow: hidden;
+  }
+  .plan-pro::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--c), transparent);
+  }
+  .plan-pro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .plan-name { font-family: var(--fd); font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); margin-bottom: 1rem; }
+  .plan-tokens { font-family: var(--fd); font-size: 2.8rem; font-weight: 700; color: #fff; letter-spacing: -.04em; line-height: 1; }
+  .plan-tokens span { font-size: .82rem; color: var(--dim); font-weight: 400; letter-spacing: 0; }
+  .plan-price { font-family: var(--fd); font-size: 1.3rem; font-weight: 600; color: var(--mut); margin-top: .5rem; }
+  .plan-ctas { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.6rem; }
+  .plan-feats { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+  .plan-feats li { font-size: .9rem; color: var(--mut); line-height: 1.5; display: flex; gap: .55rem; align-items: baseline; }
+  .plan-feats li::before { content: '·'; color: var(--c); flex-shrink: 0; }
+  .plan-feats li.hi { color: rgba(255,255,255,.88); }
+  /* CIERRE */
+  .cierre-quote {
+    border: 1px solid rgba(155,142,196,.25); background: rgba(155,142,196,.04);
+    border-radius: 16px; padding: 2.4rem 3rem; position: relative;
+  }
+  .cierre-quote::before {
+    content: '◎'; position: absolute; top: -1rem; left: 50%; transform: translateX(-50%);
+    font-size: 1.2rem; color: var(--vi); background: #030306; padding: 0 .5rem;
+  }
+  .cierre-text {
+    font-family: var(--fd); font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 300; color: rgba(255,255,255,.82); line-height: 1.55;
+    text-align: center; text-shadow: var(--ts);
+  }
+  @media (max-width: 768px) {
+    .modulo-grid { grid-template-columns: 1fr; }
+    .plan-pro-grid { grid-template-columns: 1fr; }
+    .hero-cta { flex-direction: column; }
+  }
+  </style>
+
+  <!-- HERO -->
+  <section id="hero" class="s-dark">
+    <div class="hero-inner">
+      <p class="lbl hero-sup">Módulo profesionales</p>
+      <h1 class="hero-h">Las herramientas que usas tú,<br>ahora disponibles para <em>tus pacientes</em></h1>
+      <p class="hero-p">La app que usas para tu propio autoconocimiento tiene un modo profesional. Acompaña a tus clientes desde adentro — con las mismas herramientas, pero desde tu rol.</p>
+      <div class="hero-cta">
+        <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p">Activar plan Practicante</a>
+        <a href="https://app.endonautas.cl/registro/" class="btn btn-o">Primero prueba gratis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULO -->
+  <section class="s s-darker">
+    <div class="container">
+      <p class="s-h from-b">Qué incluye el módulo</p>
+      <p class="s-sub from-b" data-d="1">Cuatro herramientas pensadas para el trabajo clínico y de acompañamiento.</p>
+      <div class="modulo-grid">
+        <div class="mod-card from-b" data-d="1">
+          <span class="mod-icon" style="color:var(--c)">◎</span>
+          <div class="mod-title">Fichas de clientes</div>
+          <p class="mod-desc">Crea un perfil para cada paciente. Accede a su historial de tests, mapas de nacimiento y sesiones — todo en un lugar. El cliente puede registrarse solo o tú creas el perfil temporal.</p>
+        </div>
+        <div class="mod-card from-b" data-d="2">
+          <span class="mod-icon" style="color:var(--am)">·</span>
+          <div class="mod-title">Agenda de sesiones</div>
+          <p class="mod-desc">Registra fechas, tipo de sesión y notas clínicas privadas. Visualización por semana y mes. Todo asociado al perfil del paciente.</p>
+        </div>
+        <div class="mod-card from-b" data-d="3">
+          <span class="mod-icon" style="color:var(--vi)">✦</span>
+          <div class="mod-title">Tests psicométricos asignables</div>
+          <p class="mod-desc">Elige de un banco de 35 instrumentos validados y asígnalos a un paciente. Ve los resultados en tiempo real con el insight de IA incluido — antes de la próxima sesión.</p>
+        </div>
+        <div class="mod-card from-b" data-d="4">
+          <span class="mod-icon" style="color:var(--c)">—</span>
+          <div class="mod-title">Terapeuta IA</div>
+          <p class="mod-desc">Un asistente que analiza el perfil del paciente usando frameworks clínicos: ACT, apego, regulación emocional, somática. No diagnostica — orienta y sugiere técnicas para preparar la sesión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLUJO -->
+  <section class="s s-dark">
+    <div class="container">
+      <p class="s-h from-b">Cómo funciona</p>
+      <p class="s-sub from-b" data-d="1">Tres pasos para integrar Endonautas a tu práctica.</p>
+      <div class="flujo-steps">
+        <div class="flujo-step from-b" data-d="1">
+          <div class="flujo-n">1</div>
+          <div>
+            <div class="flujo-title">Crea el perfil de tu paciente</div>
+            <p class="flujo-desc">Puedes crear un perfil temporal directamente desde tu cuenta, o invitar al paciente a registrarse. Una vez conectados, tienes acceso a su historial completo.</p>
+          </div>
+        </div>
+        <div class="flujo-step from-b" data-d="2">
+          <div class="flujo-n">2</div>
+          <div>
+            <div class="flujo-title">Asigna tests y lecturas</div>
+            <p class="flujo-desc">Elige los instrumentos según lo que quieres evaluar — apego, regulación emocional, estilos de pensamiento, somatización. El paciente los completa desde su cuenta.</p>
+          </div>
+        </div>
+        <div class="flujo-step from-b" data-d="3">
+          <div class="flujo-n">3</div>
+          <div>
+            <div class="flujo-title">Revisa resultados y prepara la sesión</div>
+            <p class="flujo-desc">Ve los resultados en tiempo real. Usa el módulo Terapeuta IA para obtener orientación por framework clínico — y llega a la sesión con más contexto y menos suposiciones.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN PRO -->
+  <section class="s s-darker">
+    <div class="container">
+      <p class="s-h from-b">Plan Practicante</p>
+      <p class="s-sub from-b" data-d="1">El único plan con acceso al módulo profesional completo.</p>
+      <div class="plan-pro from-b" data-d="2">
+        <div class="plan-pro-grid">
+          <div>
+            <p class="plan-name">Practicante</p>
+            <div class="plan-tokens">5.000 <span>/ mes</span></div>
+            <div class="plan-price">$39 USD / mes</div>
+            <div class="plan-ctas">
+              <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm">Activar Practicante</a>
+              <a href="https://app.endonautas.cl/registro/" class="btn btn-o btn-sm">Probar gratis primero</a>
+            </div>
+          </div>
+          <div>
+            <ul class="plan-feats">
+              <li class="hi">Módulo terapeuta completo</li>
+              <li class="hi">Perfiles de clientes ilimitados</li>
+              <li class="hi">Todos los instrumentos desbloqueados</li>
+              <li class="hi">5.000 fractones mensuales</li>
+              <li class="hi">35 tests con insight de IA</li>
+              <li class="hi">Historial acumulado por paciente</li>
+              <li>Agenda de sesiones integrada</li>
+              <li>Libro <em>Endonautica</em> incluido</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:.8rem;color:var(--dim);margin-top:1rem;line-height:1.65" class="from-b" data-d="3">¿No estás listo para el plan Practicante? Puedes explorar la app completa en el <a href="https://app.endonautas.cl/registro/" style="color:var(--c);text-decoration:none">plan gratuito</a> y actualizar cuando quieras.</p>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="s s-dark">
+    <div class="container">
+      <div class="cierre-quote from-b">
+        <p class="cierre-text">"No es una herramienta de diagnóstico.<br>Es un espejo que el paciente ya puede ver — y tú puedes leer junto a él."</p>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const layerLabel: Record<string, string> = {
+  awareness: 'Autoconocimiento',
+  journey: 'Viaje interior',
+  consciousness: 'Nivel de conciencia',
+};
+---
+
+<Layout
+  title={`${post.data.title} · Endonautas`}
+  description={post.data.description}
+  ogImage={post.data.ogImage}
+  ogType="article"
+>
+  <a slot="nav" href="/blog/" class="nav-back">← Blog</a>
+
+  <style>
+  .post-wrap { max-width: 760px; margin: 0 auto; padding: 8vh 7% 12vh; }
+  .post-meta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2.4rem; }
+  .post-cat { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c); }
+  .post-date { font-size: .72rem; color: var(--dim); }
+  .post-title {
+    font-family: var(--fd); font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700; color: #fff; line-height: 1.15;
+    letter-spacing: -.03em; margin-bottom: 1.4rem;
+    text-shadow: var(--ts);
+  }
+  .post-desc { font-size: 1.05rem; color: var(--mut); line-height: 1.72; margin-bottom: 3rem; max-width: 600px; }
+  .post-divider { height: 1px; background: var(--bdr); margin-bottom: 3rem; }
+  .post-cta {
+    margin-top: 4rem; padding: 2rem; border: 1px solid rgba(126,204,205,.25);
+    border-radius: 14px; background: rgba(126,204,205,.04);
+  }
+  .post-cta p { font-size: .9rem; color: var(--mut); margin-bottom: 1.2rem; line-height: 1.65; }
+  </style>
+
+  <div class="post-wrap">
+    <div class="post-meta">
+      {post.data.layer && <span class="post-cat">{layerLabel[post.data.layer] ?? post.data.layer}</span>}
+      {post.data.category && <span class="post-cat" style="color:var(--dim)">{post.data.category}</span>}
+      <span class="post-date">{post.data.pubDate.toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+    </div>
+    <h1 class="post-title">{post.data.title}</h1>
+    <p class="post-desc">{post.data.description}</p>
+    <div class="post-divider"></div>
+    <div class="prose">
+      <Content />
+    </div>
+    {post.data.cta && (
+      <div class="post-cta">
+        <p>{post.data.cta}</p>
+        <a href="https://app.endonautas.cl/registro/" class="btn btn-p btn-sm">Explorar gratis</a>
+      </div>
+    )}
+  </div>
+</Layout>

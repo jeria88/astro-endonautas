@@ -1,0 +1,237 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: string;
+  /** true solo en la landing — activa los presets scroll-driven */
+  cosmosScroll?: boolean;
+  /** badge en el logo del nav (ej: "Para profesionales") */
+  navBadge?: string;
+}
+
+const {
+  title,
+  description = 'Endonautas — plataforma de autoconocimiento aplicado. Espejo de conflictos, tests psicométricos, mapa de nacimiento y oráculo terapéutico.',
+  ogImage = '/og/default.jpg',
+  ogType = 'website',
+  cosmosScroll = false,
+  navBadge,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- OG / Twitter -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:site_name" content="Endonautas" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/endonautas-logo.png" />
+
+  <!-- Umami analytics (reemplazar data-website-id con el ID real) -->
+  <script defer data-website-id="UMAMI_WEBSITE_ID" src="https://analytics.agency.cl/script.js" is:inline></script>
+
+  <slot name="head" />
+</head>
+<body data-cosmos-scroll={cosmosScroll}>
+
+<div id="cbg"></div>
+<div id="lp-wrap">
+  <Nav badge={navBadge}>
+    <slot name="nav" />
+  </Nav>
+  <slot />
+  <Footer />
+</div>
+
+<!-- Three.js cosmos -->
+<script>
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass }     from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass }from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+const isMobile = /Mobi|Android/i.test(navigator.userAgent) || innerWidth < 768;
+const N = isMobile ? 18000 : 75000;
+const cosmosScroll = document.body.dataset.cosmosScroll === 'true';
+
+const P: Record<string, any> = {
+  landing:    { bhr:4, density: isMobile?.09:.22, sizeMult:2.20, bloom:7.5,  speedInner:1.80, speedOuter:.04, camZ:180, camAng:8  },
+  espejo:     { bhr:4, density: isMobile?.07:.18, sizeMult:2.40, bloom:9.5,  speedInner:4.50, speedOuter:.05, camZ:149, camAng:85 },
+  regulacion: { bhr:4, density: isMobile?.06:.15, sizeMult:2.50, bloom:8.5,  speedInner:1.00, speedOuter:.02, camZ:130, camAng:45 },
+  nacimiento: { bhr:4, density: isMobile?.08:.20, sizeMult:1.60, bloom:7.5,  speedInner:1.20, speedOuter:.03, camZ:220, camAng:4  },
+  oraculo:    { bhr:4, density: isMobile?.06:.16, sizeMult:2.80, bloom:11.0, speedInner:.70,  speedOuter:.02, camZ:195, camAng:6  },
+};
+
+let cur={...P.landing}, tar={...P.landing}, boost=0, mX=0, mY=0, tX=0, tY=0, sY=0;
+
+const cont = document.getElementById('cbg')!;
+const sc   = new THREE.Scene();
+const cam  = new THREE.PerspectiveCamera(52, innerWidth/innerHeight, .1, 3000);
+cam.position.set(0, 20, 170);
+
+const rend = new THREE.WebGLRenderer({ antialias:false, alpha:false });
+rend.setPixelRatio(1); rend.setSize(innerWidth, innerHeight);
+rend.domElement.style.cssText = 'position:absolute;inset:0;width:100%;height:100%';
+cont.appendChild(rend.domElement);
+
+const comp = new EffectComposer(rend);
+comp.addPass(new RenderPass(sc, cam));
+const bloom = new UnrealBloomPass(
+  new THREE.Vector2(Math.round(innerWidth*.5), Math.round(innerHeight*.5)), 6, .7, .04
+);
+if (!isMobile) comp.addPass(bloom);
+
+const RM=8*1.15, RX=130;
+const geo = new THREE.BufferGeometry();
+const pos=new Float32Array(N*3), col=new Float32Array(N*3), ang=new Float32Array(N),
+      rad=new Float32Array(N),   spd=new Float32Array(N),   sz=new Float32Array(N), rnd=new Float32Array(N);
+for (let i=0; i<N; i++) {
+  const r = Math.random()<.72 ? RM+Math.pow(Math.random(),2)*52 : 52+Math.random()*(RX-52);
+  const a = Math.random()*Math.PI*2, nm=(r-RM)/(RX-RM);
+  pos[i*3]=Math.cos(a)*r; pos[i*3+1]=(Math.random()-.5)*r*(.04+nm*.55); pos[i*3+2]=Math.sin(a)*r;
+  const b=Math.max(.18,1-nm*.82); col[i*3]=col[i*3+1]=col[i*3+2]=b;
+  ang[i]=a; rad[i]=r;
+  spd[i]=(1/Math.sqrt(r))*2.4*(.85+Math.random()*.30);
+  sz[i]=.10+nm*nm*2.8+Math.random()*(.20+nm*1.0);
+  rnd[i]=Math.random();
+}
+geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+geo.setAttribute('color',    new THREE.BufferAttribute(col,3));
+geo.setAttribute('aAngle',   new THREE.BufferAttribute(ang,1));
+geo.setAttribute('aRadius',  new THREE.BufferAttribute(rad,1));
+geo.setAttribute('aSpeed',   new THREE.BufferAttribute(spd,1));
+geo.setAttribute('aSize',    new THREE.BufferAttribute(sz,1));
+geo.setAttribute('aRand',    new THREE.BufferAttribute(rnd,1));
+
+const mat = new THREE.ShaderMaterial({
+  uniforms: {
+    uTime:       { value:0 },
+    uBHR:        { value:cur.bhr },
+    uSpeedInner: { value:cur.speedInner },
+    uSpeedOuter: { value:cur.speedOuter },
+    uSizeMult:   { value:cur.sizeMult },
+    uDensity:    { value:cur.density },
+    uGlowColor:  { value:new THREE.Color(.88,.92,1) },
+  },
+  vertexShader: `
+    uniform float uTime,uBHR,uSpeedInner,uSpeedOuter,uSizeMult,uDensity;
+    attribute float aAngle,aRadius,aSpeed,aSize,aRand; varying vec3 vColor;
+    void main(){
+      if(aRand>uDensity||aRadius<uBHR){gl_Position=vec4(2,2,2,1);gl_PointSize=0.;return;}
+      vColor=color;
+      float nm=clamp((aRadius-9.2)/(130.-9.2),0.,1.);
+      float a=aAngle-uTime*aSpeed*mix(uSpeedInner,uSpeedOuter,nm);
+      vec3 p=position; p.x=cos(a)*aRadius; p.z=sin(a)*aRadius;
+      p.y+=sin(a*3.+aRadius*.10)*(aRadius*.006);
+      vec4 mv=modelViewMatrix*vec4(p,1.);
+      gl_PointSize=aSize*uSizeMult*(120./-mv.z); gl_Position=projectionMatrix*mv;
+    }`,
+  fragmentShader: `
+    uniform vec3 uGlowColor; varying vec3 vColor;
+    void main(){
+      vec2 uv=gl_PointCoord-.5; if(length(uv)>.5)discard;
+      gl_FragColor=vec4(vColor.r*uGlowColor,smoothstep(.5,.04,length(uv))*.92);
+    }`,
+  transparent:true, blending:THREE.AdditiveBlending, depthWrite:false, vertexColors:true,
+});
+const pts = new THREE.Points(geo, mat);
+pts.rotation.x=.10; pts.rotation.z=-.03; sc.add(pts);
+const clk = new THREE.Clock();
+
+document.addEventListener('mousemove', e=>{mX=(e.clientX/innerWidth-.5)*2; mY=(e.clientY/innerHeight-.5)*2});
+window.addEventListener('resize', ()=>{
+  cam.aspect=innerWidth/innerHeight; cam.updateProjectionMatrix();
+  rend.setSize(innerWidth,innerHeight); comp.setSize(innerWidth,innerHeight);
+  if(!isMobile) bloom.resolution.set(Math.round(innerWidth*.5),Math.round(innerHeight*.5));
+});
+
+const lp = document.getElementById('lp-wrap');
+if (lp && cosmosScroll) {
+  lp.addEventListener('scroll', ()=>{
+    sY = lp.scrollTop;
+    const mx=Math.max(lp.scrollHeight-lp.clientHeight,1), pct=sY/mx;
+    if      (pct<.10) { tar={...P.landing};    boost=1; }
+    else if (pct<.28) { tar={...P.espejo};     boost=1; }
+    else if (pct<.48) { tar={...P.regulacion}; boost=1; }
+    else if (pct<.65) { tar={...P.nacimiento}; boost=1; }
+    else if (pct<.82) { tar={...P.oraculo};    boost=1; }
+    else              { tar={...P.landing};    boost=1; }
+  }, {passive:true});
+}
+
+const lerp=(a:number,b:number,t:number)=>a+(b-a)*t;
+(function animate(){
+  requestAnimationFrame(animate);
+  const el=clk.getElapsedTime();
+  tX+=(mX-tX)*.038; tY+=(mY-tY)*.038;
+  boost = Math.max(0, boost-.005);
+  const L=.018+(.5-.018)*boost;
+  cur.bhr        = lerp(cur.bhr,        tar.bhr,        L);
+  cur.density    = lerp(cur.density,    tar.density,    L);
+  cur.sizeMult   = lerp(cur.sizeMult,   tar.sizeMult,   L);
+  cur.bloom      = lerp(cur.bloom,      tar.bloom,      L);
+  cur.speedInner = lerp(cur.speedInner, tar.speedInner, L);
+  cur.speedOuter = lerp(cur.speedOuter, tar.speedOuter, L);
+  cur.camZ       = lerp(cur.camZ,       tar.camZ,       L);
+  cur.camAng     = lerp(cur.camAng,     tar.camAng,     L);
+  mat.uniforms.uBHR.value        = cur.bhr;
+  mat.uniforms.uDensity.value    = cur.density;
+  mat.uniforms.uSizeMult.value   = cur.sizeMult;
+  mat.uniforms.uSpeedInner.value = cur.speedInner;
+  mat.uniforms.uSpeedOuter.value = cur.speedOuter;
+  if(!isMobile) bloom.strength   = cur.bloom;
+  const eZ  = (cosmosScroll && lp) ? 180-(Math.max(0,Math.min(sY/Math.max(lp.scrollHeight-lp.clientHeight,1),1))*130) : cur.camZ;
+  const angR= cur.camAng*Math.PI/180;
+  cam.position.x=Math.sin(el*.036)*3+tX*4.5;
+  cam.position.y=eZ*Math.sin(angR)+Math.sin(el*.022)*1.5-tY*2.5;
+  cam.position.z=eZ*Math.cos(angR);
+  cam.lookAt(0,0,0); mat.uniforms.uTime.value=el; comp.render();
+})();
+</script>
+
+<!-- Reveals + FAQ -->
+<script is:inline>
+(function(){
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      e.target.classList.add('on');
+      obs.unobserve(e.target);
+    });
+  }, {threshold:.1, rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.from-l,.from-r,.from-b').forEach(el=>{
+    if(!el.closest('#inicio') && !el.closest('#hero')) obs.observe(el);
+  });
+
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q')?.addEventListener('click',()=>{
+      const open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!open) item.classList.add('open');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

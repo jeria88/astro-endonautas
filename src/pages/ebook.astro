@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Endonautica — Ebook · Endonautas"
+  description="207 páginas. El marco conceptual detrás del sistema Endonautas. Por Franco Jeria Castro, terapeuta en salud integrativa. Incluido en plan Navegante."
+>
+  <a slot="nav" href="/" class="nav-back">← Inicio</a>
+
+  <style>
+  .libro-wrap { max-width: 900px; margin: 0 auto; padding: 10vh 7% 12vh; }
+  .libro-grid { display: grid; grid-template-columns: 280px 1fr; gap: 6rem; align-items: start; }
+  .libro-cover {
+    border-radius: 10px; overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,.72), 0 0 0 1px rgba(255,255,255,.07);
+    aspect-ratio: 3/4;
+  }
+  .libro-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .libro-sup { color: var(--am); margin-bottom: 1.2rem; }
+  .libro-title {
+    font-family: var(--fd); font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700; color: #fff; letter-spacing: -.04em;
+    line-height: 1.1; margin-bottom: .6rem; text-shadow: var(--ts);
+  }
+  .libro-sub { font-family: var(--fd); font-size: 1rem; font-weight: 300; color: var(--dim); margin-bottom: 2rem; }
+  .libro-body { font-size: .96rem; color: var(--mut); line-height: 1.82; margin-bottom: 2rem; }
+  .libro-body p + p { margin-top: 1.2rem; }
+  .libro-body strong { color: rgba(255,255,255,.85); font-weight: 600; }
+  .libro-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.2rem; }
+  .ltag {
+    font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    padding: .28rem .7rem; border-radius: 20px;
+    border: 1px solid var(--bdr); color: var(--dim); background: rgba(255,255,255,.04);
+  }
+  .libro-inc {
+    display: flex; align-items: center; gap: .8rem;
+    font-size: .82rem; color: var(--dim); padding: 1rem 1.2rem;
+    border: 1px solid rgba(212,160,86,.3); border-radius: 10px;
+    background: rgba(212,160,86,.04); margin-bottom: 1.8rem;
+  }
+  .libro-inc strong { color: var(--am); }
+  @media (max-width: 768px) {
+    .libro-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+    .libro-cover { max-width: 220px; }
+  }
+  </style>
+
+  <div class="libro-wrap">
+    <div class="libro-grid from-b">
+      <div>
+        <div class="libro-cover">
+          <img src="/assets/img/epic-ebook.png" alt="Libro Endonautica" loading="lazy">
+        </div>
+      </div>
+      <div>
+        <p class="lbl libro-sup">El libro</p>
+        <h1 class="libro-title">Endonautica</h1>
+        <p class="libro-sub">Franco Jeria Castro &nbsp;·&nbsp; 207 páginas</p>
+        <div class="libro-tags">
+          <span class="ltag">Autoconocimiento</span>
+          <span class="ltag">Psicología integrativa</span>
+          <span class="ltag">Proceso interior</span>
+          <span class="ltag">Sistemas de lectura</span>
+        </div>
+        <div class="libro-inc">
+          <strong>Incluido en plan Navegante</strong>
+          <span>·</span>
+          También disponible por separado
+        </div>
+        <div class="libro-body">
+          <p>El marco conceptual detrás del sistema Endonautas. No es autoayuda ni manual clínico — es el intento de nombrar lo que ocurre en el espacio entre una sesión y la siguiente.</p>
+          <p>Parte de la premisa de que el problema no es falta de insight. La mayoría de las personas que están en proceso saben perfectamente cuál es su patrón. <strong>El problema es la continuidad</strong> — lo que pasa en los seis días que quedan entre sesiones.</p>
+          <p>Propone un sistema de navegación interior: seis instrumentos que no buscan resolver, sino sostener el proceso en marcha. Tests, espejo, oráculo, mapas de nacimiento, bitácora, módulo terapeuta.</p>
+        </div>
+        <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+          <a href="https://app.endonautas.cl/registro/?plan=navegante" class="btn btn-p">Activar Navegante</a>
+          <a href="/" class="btn btn-o">Ver la app</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

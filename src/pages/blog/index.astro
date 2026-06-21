@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const layerLabel: Record<string, string> = {
+  awareness: 'Autoconocimiento',
+  journey: 'Viaje interior',
+  consciousness: 'Nivel de conciencia',
+};
+---
+
+<Layout
+  title="Blog · Endonautas"
+  description="Artículos sobre autoconocimiento aplicado, herramientas psicoterapéuticas y el proceso interior."
+>
+  <a slot="nav" href="/" class="nav-back">← Inicio</a>
+
+  <style>
+  .blog-hero { padding: 10vh 0 4vh; }
+  .blog-hero h1 {
+    font-family: var(--fd); font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300; color: #fff; letter-spacing: -.03em;
+    text-shadow: var(--ts); margin-bottom: .8rem;
+  }
+  .blog-hero p { color: var(--dim); font-size: .9rem; max-width: 480px; line-height: 1.7; }
+  </style>
+
+  <div class="container">
+    <div class="blog-hero from-b">
+      <p class="lbl" style="color:var(--c);margin-bottom:1rem">Blog</p>
+      <h1>Proceso, herramientas<br>y mundo interior</h1>
+      <p>Artículos sobre autoconocimiento aplicado. Lo que funciona, lo que no, y por qué el insight solo no alcanza.</p>
+    </div>
+
+    {posts.length === 0 ? (
+      <p style="color:var(--dim);padding:4rem 0">Próximamente — los primeros artículos están en camino.</p>
+    ) : (
+      <div class="blog-grid" style="padding-bottom:12vh">
+        {posts.map((post, i) => (
+          <a href={`/blog/${post.slug}/`} class={`blog-card from-b`} data-d={String(Math.min(i % 3 + 1, 6))}>
+            {post.data.layer && (
+              <span class="blog-cat">{layerLabel[post.data.layer] ?? post.data.layer}</span>
+            )}
+            <p class="blog-title">{post.data.title}</p>
+            <p class="blog-desc">{post.data.description}</p>
+            <span class="blog-date">{post.data.pubDate.toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</Layout>
