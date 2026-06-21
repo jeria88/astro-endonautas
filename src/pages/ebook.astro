@@ -9,8 +9,8 @@ import Layout from '../layouts/Layout.astro';
   <a slot="nav" href="/" class="nav-back">← Inicio</a>
 
   <style>
-  .libro-wrap { max-width: 900px; margin: 0 auto; padding: 10vh 7% 12vh; }
-  .libro-grid { display: grid; grid-template-columns: 280px 1fr; gap: 6rem; align-items: start; }
+  .libro-wrap { padding: 10vh 0 12vh; }
+  .libro-grid { display: grid; grid-template-columns: 340px 1fr; gap: 8rem; align-items: start; }
   .libro-cover {
     border-radius: 10px; overflow: hidden;
     box-shadow: 0 30px 80px rgba(0,0,0,.72), 0 0 0 1px rgba(255,255,255,.07);
@@ -46,7 +46,7 @@ import Layout from '../layouts/Layout.astro';
   }
   </style>
 
-  <div class="libro-wrap">
+  <div class="container libro-wrap">
     <div class="libro-grid from-b">
       <div>
         <div class="libro-cover">

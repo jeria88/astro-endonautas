@@ -7,17 +7,22 @@ import Layout from '../layouts/Layout.astro';
   description="¿Tienes preguntas sobre Endonautas, el sistema o el módulo para profesionales? Escríbenos."
 >
   <style>
-  .contacto-wrap { max-width: 680px; margin: 0 auto; padding: 10vh 7% 12vh; }
-  .contacto-h {
-    font-family: var(--fd); font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 300; color: #fff; letter-spacing: -.03em;
-    line-height: 1.15; margin-bottom: 1rem; text-shadow: var(--ts);
+  .contacto-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8rem; align-items: start; padding: 10vh 0 12vh;
   }
-  .contacto-sub { color: var(--dim); font-size: .9rem; line-height: 1.7; margin-bottom: 3.5rem; max-width: 480px; }
-  .contacto-opciones { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 3.5rem; }
+  .contacto-h {
+    font-family: var(--fd); font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 300; color: #fff; letter-spacing: -.03em;
+    line-height: 1.1; margin-bottom: 1.2rem; text-shadow: var(--ts);
+  }
+  .contacto-sub { color: var(--dim); font-size: .95rem; line-height: 1.75; margin-bottom: 3rem; max-width: 420px; }
+  .c-nota { font-size: .85rem; color: var(--dim); line-height: 1.75; }
+  .c-nota strong { color: rgba(255,255,255,.6); }
+  .contacto-opciones { display: flex; flex-direction: column; gap: 1.2rem; }
   .c-opcion {
     display: flex; align-items: center; gap: 1.4rem;
-    padding: 1.4rem 1.6rem; border: 1px solid var(--bdr);
+    padding: 1.5rem 1.8rem; border: 1px solid var(--bdr);
     border-radius: 14px; background: rgba(10,8,20,.55);
     backdrop-filter: blur(12px); text-decoration: none;
     transition: border-color .22s;
@@ -27,50 +32,53 @@ import Layout from '../layouts/Layout.astro';
   .c-titulo { font-family: var(--fd); font-weight: 600; color: #fff; font-size: .95rem; margin-bottom: .2rem; }
   .c-desc { font-size: .82rem; color: var(--dim); line-height: 1.5; }
   .c-sep { height: 1px; background: var(--bdr); margin: 2.4rem 0; }
-  .c-nota { font-size: .82rem; color: var(--dim); line-height: 1.7; }
-  .c-nota strong { color: rgba(255,255,255,.6); }
+  @media (max-width: 860px) {
+    .contacto-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
   </style>
 
-  <div class="contacto-wrap">
-    <div class="from-b">
-      <p class="lbl" style="color:var(--c);margin-bottom:1rem">Contacto</p>
-      <h1 class="contacto-h">Escríbenos</h1>
-      <p class="contacto-sub">Para preguntas sobre la app, el módulo para profesionales, el ebook o cualquier otra cosa relacionada con el sistema.</p>
+  <div class="container">
+    <div class="contacto-grid">
+      <div class="from-b">
+        <p class="lbl" style="color:var(--c);margin-bottom:1rem">Contacto</p>
+        <h1 class="contacto-h">Escríbenos</h1>
+        <p class="contacto-sub">Para preguntas sobre la app, el módulo para profesionales, el ebook o cualquier otra cosa relacionada con el sistema.</p>
+
+        <div class="c-sep"></div>
+
+        <p class="c-nota">
+          <strong>Tiempo de respuesta:</strong> respondemos en 24-48 horas hábiles.<br><br>
+          Si tienes una pregunta sobre cómo funciona el sistema antes de registrarte,
+          el <a href="/blog/" style="color:var(--c)">blog</a> y la página de <a href="/fractones/" style="color:var(--c)">Fractones</a>
+          probablemente ya tienen la respuesta.
+        </p>
+      </div>
+
+      <div class="contacto-opciones">
+        <a href="mailto:hola@endonautas.cl" class="c-opcion from-b" data-d="1">
+          <span class="c-ico" style="color:var(--c)">◎</span>
+          <div>
+            <div class="c-titulo">hola@endonautas.cl</div>
+            <div class="c-desc">Para preguntas generales, feedback o colaboraciones</div>
+          </div>
+        </a>
+
+        <a href="mailto:profesionales@endonautas.cl" class="c-opcion from-b" data-d="2">
+          <span class="c-ico" style="color:var(--vi)">✦</span>
+          <div>
+            <div class="c-titulo">profesionales@endonautas.cl</div>
+            <div class="c-desc">Para terapeutas y coaches interesados en el módulo Practicante</div>
+          </div>
+        </a>
+
+        <a href="mailto:hola@endonautas.cl?subject=Soporte técnico" class="c-opcion from-b" data-d="3">
+          <span class="c-ico" style="color:var(--am)">·</span>
+          <div>
+            <div class="c-titulo">Soporte técnico</div>
+            <div class="c-desc">Problemas con la cuenta, pagos o acceso a la app</div>
+          </div>
+        </a>
+      </div>
     </div>
-
-    <div class="contacto-opciones">
-      <a href="mailto:hola@endonautas.cl" class="c-opcion from-b" data-d="1">
-        <span class="c-ico" style="color:var(--c)">◎</span>
-        <div>
-          <div class="c-titulo">hola@endonautas.cl</div>
-          <div class="c-desc">Para preguntas generales, feedback o colaboraciones</div>
-        </div>
-      </a>
-
-      <a href="mailto:profesionales@endonautas.cl" class="c-opcion from-b" data-d="2">
-        <span class="c-ico" style="color:var(--vi)">✦</span>
-        <div>
-          <div class="c-titulo">profesionales@endonautas.cl</div>
-          <div class="c-desc">Para terapeutas y coaches interesados en el módulo Practicante</div>
-        </div>
-      </a>
-
-      <a href="mailto:hola@endonautas.cl?subject=Soporte técnico" class="c-opcion from-b" data-d="3">
-        <span class="c-ico" style="color:var(--am)">·</span>
-        <div>
-          <div class="c-titulo">Soporte técnico</div>
-          <div class="c-desc">Problemas con la cuenta, pagos o acceso a la app</div>
-        </div>
-      </a>
-    </div>
-
-    <div class="c-sep"></div>
-
-    <p class="c-nota from-b">
-      <strong>Tiempo de respuesta:</strong> respondemos en 24-48 horas hábiles.<br><br>
-      Si tienes una pregunta sobre cómo funciona el sistema antes de registrarte,
-      el <a href="/blog/" style="color:var(--c)">blog</a> y la página de <a href="/fractones/" style="color:var(--c)">Fractones</a>
-      probablemente ya tienen la respuesta.
-    </p>
   </div>
 </Layout>
