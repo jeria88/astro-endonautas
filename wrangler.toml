@@ -5,4 +5,4 @@ compatibility_date = "2024-09-23"
 [[d1_databases]]
 binding = "DB"
 database_name = "endonautas-mensajes"
-database_id = "REEMPLAZAR_CON_ID_REAL"
+database_id = "7061d3e5-fa96-4a12-a684-2164246c1803"
