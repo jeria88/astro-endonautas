@@ -87,6 +87,25 @@ import Layout from '../layouts/Layout.astro';
   .plan-div { height: 1px; background: var(--bdr); }
   .plan-note { font-size: .74rem; color: var(--dim); line-height: 1.6; margin-top: auto; }
   .plan-note em { color: var(--am); font-style: normal; }
+  /* PAGO */
+  .plan-pay { display: flex; gap: .5rem; flex-direction: column; margin-top: 1.2rem; }
+  .btn-pay {
+    display: block; text-align: center; padding: .55rem 1rem; border-radius: 8px;
+    font-size: .75rem; font-weight: 600; letter-spacing: .03em; text-decoration: none;
+    transition: opacity .2s;
+  }
+  .btn-pay:hover { opacity: .82; }
+  .btn-pay-mp { background: rgba(0,158,227,.14); border: 1px solid rgba(0,158,227,.4); color: #4abde8; }
+  .btn-pay-pp { background: rgba(255,196,57,.1); border: 1px solid rgba(255,196,57,.35); color: #f0c040; }
+  /* PACKS */
+  .packs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 760px; margin: 0 auto; }
+  .pack-card { display: flex; flex-direction: column; gap: .8rem; }
+  .pack-frac { font-family: var(--fd); font-size: 1.8rem; font-weight: 700; color: var(--am); line-height: 1; }
+  .pack-title { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+  .pack-prices { display: flex; flex-direction: column; gap: .25rem; }
+  .pack-price-clp { font-size: .95rem; font-weight: 600; color: #fff; }
+  .pack-price-usd { font-size: .75rem; color: var(--dim); }
+  @media (max-width: 640px) { .packs-grid { grid-template-columns: 1fr; max-width: 320px; } }
   /* PASOS */
   .ref-steps { display: flex; justify-content: center; margin: 3rem 0; flex-wrap: wrap; }
   .ref-step {
@@ -208,17 +227,85 @@ import Layout from '../layouts/Layout.astro';
         <div class="plan featured from-b" data-d="2">
           <div class="plan-badge">Más elegido</div>
           <p class="plan-name">Navegante</p>
-          <div><div class="plan-tokens">800 <span>/ mes</span></div><div class="plan-price">$10 USD</div></div>
+          <div><div class="plan-tokens">800 <span>/ mes</span></div><div class="plan-price">$9.990 CLP · $9.99 USD</div></div>
           <div class="plan-div"></div>
           <p class="plan-note">Uso diario sin preocuparte por el saldo. Incluye los 35 tests y el libro <em style="color:var(--c)">Endonautica</em>.</p>
+          <div class="plan-pay">
+            <a href="https://app.endonautas.cl/pago/mp/suscribir/navegante/" class="btn-pay btn-pay-mp">MercadoPago · CLP</a>
+            <a href="https://app.endonautas.cl/pago/paypal/suscribir/navegante/" class="btn-pay btn-pay-pp">PayPal · USD</a>
+          </div>
         </div>
         <div class="plan from-b" data-d="3">
           <p class="plan-name">Practicante</p>
-          <div><div class="plan-tokens">5.000 <span>/ mes</span></div><div class="plan-price">$39 USD</div></div>
+          <div><div class="plan-tokens">5.000 <span>/ mes</span></div><div class="plan-price">$39.990 CLP · $39.99 USD</div></div>
           <div class="plan-div"></div>
           <p class="plan-note">Para uso profesional. Incluye módulo terapeuta y fichas de clientes. <a href="/profesionales/" style="color:var(--c);text-decoration:none">Ver módulo profesionales →</a></p>
+          <div class="plan-pay">
+            <a href="https://app.endonautas.cl/pago/mp/suscribir/practicante/" class="btn-pay btn-pay-mp">MercadoPago · CLP</a>
+            <a href="https://app.endonautas.cl/pago/paypal/suscribir/practicante/" class="btn-pay btn-pay-pp">PayPal · USD</a>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- PACKS PREPAGO -->
+  <section class="s s-dark">
+    <div class="container">
+      <p class="s-h from-b">Packs de Fractones</p>
+      <p class="s-sub from-b" data-d="1">Carga permanente de una sola vez. No se renuevan ni expiran.</p>
+      <div class="packs-grid">
+
+        <div class="card pack-card from-b" data-d="1">
+          <div>
+            <div class="pack-frac">200</div>
+            <div class="pack-title">Explorador</div>
+          </div>
+          <div class="pack-div" style="height:1px;background:var(--bdr)"></div>
+          <div class="pack-prices">
+            <div class="pack-price-clp">$3.990 CLP</div>
+            <div class="pack-price-usd">$3.99 USD</div>
+          </div>
+          <div class="plan-pay">
+            <a href="https://app.endonautas.cl/pago/mp/pack/pack_200/" class="btn-pay btn-pay-mp">MercadoPago</a>
+            <a href="https://app.endonautas.cl/pago/paypal/pack/pack_200/" class="btn-pay btn-pay-pp">PayPal</a>
+          </div>
+        </div>
+
+        <div class="card pack-card from-b" data-d="2">
+          <div>
+            <div class="pack-frac">500</div>
+            <div class="pack-title">Navegante+</div>
+          </div>
+          <div class="pack-div" style="height:1px;background:var(--bdr)"></div>
+          <div class="pack-prices">
+            <div class="pack-price-clp">$7.990 CLP</div>
+            <div class="pack-price-usd">$7.99 USD</div>
+          </div>
+          <div class="plan-pay">
+            <a href="https://app.endonautas.cl/pago/mp/pack/pack_500/" class="btn-pay btn-pay-mp">MercadoPago</a>
+            <a href="https://app.endonautas.cl/pago/paypal/pack/pack_500/" class="btn-pay btn-pay-pp">PayPal</a>
+          </div>
+        </div>
+
+        <div class="card pack-card from-b" data-d="3">
+          <div>
+            <div class="pack-frac">1.200</div>
+            <div class="pack-title">Practicante+</div>
+          </div>
+          <div class="pack-div" style="height:1px;background:var(--bdr)"></div>
+          <div class="pack-prices">
+            <div class="pack-price-clp">$14.990 CLP</div>
+            <div class="pack-price-usd">$14.99 USD</div>
+          </div>
+          <div class="plan-pay">
+            <a href="https://app.endonautas.cl/pago/mp/pack/pack_1200/" class="btn-pay btn-pay-mp">MercadoPago</a>
+            <a href="https://app.endonautas.cl/pago/paypal/pack/pack_1200/" class="btn-pay btn-pay-pp">PayPal</a>
+          </div>
+        </div>
+
+      </div>
+      <p style="font-size:.76rem;color:var(--dim);text-align:center;margin-top:1.8rem">Los fractones de packs son <strong style="color:rgba(255,255,255,.6)">permanentes</strong> — no expiran aunque no entres en meses.</p>
     </div>
   </section>
 
