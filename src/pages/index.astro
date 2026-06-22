@@ -351,6 +351,35 @@ import Layout from '../layouts/Layout.astro';
   .gc:nth-child(5) { width: 100%; }
   .gc-label { opacity: 1; }
 }
+/* ── LIGHTBOX ── */
+#lb {
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(0,0,0,0); backdrop-filter: blur(0px);
+  display: flex; align-items: center; justify-content: center;
+  cursor: zoom-out;
+  transition: background .25s, backdrop-filter .25s, opacity .25s;
+  pointer-events: none; opacity: 0;
+}
+#lb.open {
+  background: rgba(0,0,0,.92); backdrop-filter: blur(8px);
+  pointer-events: auto; opacity: 1;
+}
+#lb img {
+  max-width: 92vw; max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 40px 120px rgba(0,0,0,.9);
+  transform: scale(.92);
+  transition: transform .3s cubic-bezier(.22,1,.36,1);
+  pointer-events: none;
+}
+#lb.open img { transform: scale(1); }
+#lb-close {
+  position: absolute; top: 1.2rem; right: 1.4rem;
+  color: rgba(255,255,255,.55); font-size: 1.8rem; line-height: 1;
+  cursor: pointer; user-select: none;
+  transition: color .18s;
+}
+#lb-close:hover { color: #fff; }
 /* ── PRECIOS ── */
 #precios { flex-direction: column; align-items: flex-start; }
 .precios-h { font-family: var(--fd); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 300; color: #fff; margin-bottom: .6rem; text-shadow: var(--ts); }
@@ -769,38 +798,55 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
+<div id="lb">
+  <span id="lb-close">✕</span>
+  <img id="lb-img" src="" alt="">
+</div>
+
 <script>
-// Galería 3D — parallax por mousemove
 (function () {
+  // Galería 3D — parallax por mousemove
   const scene = document.getElementById('galleryScene');
   const row   = document.getElementById('galleryRow');
-  if (!scene || !row) return;
-
-  let raf = 0;
-  let tx = 0, ty = 0;       // target tilt
-  let cx = 0, cy = 0;       // current tilt (interpolado)
-
-  scene.addEventListener('mousemove', (e) => {
-    const r = scene.getBoundingClientRect();
-    tx = ((e.clientX - r.left) / r.width  - 0.5) * 14;   // ±7 deg Y
-    ty = ((e.clientY - r.top)  / r.height - 0.5) * -8;   // ±4 deg X
-    if (!raf) raf = requestAnimationFrame(tick);
-  });
-
-  scene.addEventListener('mouseleave', () => {
-    tx = 0; ty = 0;
-    if (!raf) raf = requestAnimationFrame(tick);
-  });
-
-  function tick() {
-    cx += (tx - cx) * 0.1;
-    cy += (ty - cy) * 0.1;
-    row.style.transform = `rotateX(${cy}deg) rotateY(${cx}deg)`;
-    const delta = Math.abs(tx - cx) + Math.abs(ty - cy);
-    raf = delta > 0.02 ? requestAnimationFrame(tick) : 0;
+  if (scene && row) {
+    let raf = 0, tx = 0, ty = 0, cx = 0, cy = 0;
+    scene.addEventListener('mousemove', (e) => {
+      const r = scene.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / r.width  - 0.5) * 14;
+      ty = ((e.clientY - r.top)  / r.height - 0.5) * -8;
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+    scene.addEventListener('mouseleave', () => {
+      tx = 0; ty = 0;
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+    function tick() {
+      cx += (tx - cx) * 0.1;
+      cy += (ty - cy) * 0.1;
+      row.style.transform = `rotateX(${cy}deg) rotateY(${cx}deg)`;
+      raf = (Math.abs(tx - cx) + Math.abs(ty - cy)) > 0.02 ? requestAnimationFrame(tick) : 0;
+    }
   }
 
+  // Lightbox
+  const lb      = document.getElementById('lb');
+  const lbImg   = document.getElementById('lb-img');
+  const lbClose = document.getElementById('lb-close');
+  if (!lb) return;
 
+  document.querySelectorAll('.gc img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('open');
+    });
+  });
+
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  lbClose.addEventListener('click', (e) => { e.stopPropagation(); lb.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.classList.remove('open'); });
 })();
 </script>
 </Layout>
