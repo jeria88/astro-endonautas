@@ -8,31 +8,42 @@ import Layout from '../layouts/Layout.astro';
 >
   <a slot="nav" href="/" class="nav-back">← Inicio</a>
 
-  <div class="container" style="padding-top:8vh;padding-bottom:12vh">
-    <div class="prose">
-      <h2>Política de Privacidad</h2>
-      <p><em>Última actualización: junio 2026</em></p>
-
-      <h3>Quiénes somos</h3>
-      <p>Endonautas es una plataforma de autoconocimiento aplicado operada por Franco Jeria Castro. El sitio web es <strong>endonautas.cl</strong> y la aplicación se encuentra en <strong>app.endonautas.cl</strong>.</p>
-
-      <h3>Qué datos recopilamos</h3>
-      <p>Al crear una cuenta recopilamos tu nombre, correo electrónico y los datos que ingreses voluntariamente al usar los instrumentos de la app (respuestas a tests, sesiones con el Espejo IA, entradas en la Bitácora). No recopilamos datos de salud en el sentido clínico — la app no es un dispositivo médico.</p>
-
-      <h3>Para qué usamos tus datos</h3>
-      <p>Tus datos se usan exclusivamente para prestarte el servicio: generar tu historial, personalizar las respuestas del Espejo IA, y mostrarte tus resultados en el tiempo. No vendemos ni compartimos tus datos con terceros con fines comerciales.</p>
-
-      <h3>Retención y eliminación</h3>
-      <p>Puedes solicitar la eliminación de tu cuenta y todos tus datos en cualquier momento escribiendo a <a href="mailto:hola@endonautas.cl">hola@endonautas.cl</a>. Procesamos las solicitudes en un plazo máximo de 30 días.</p>
-
-      <h3>Cookies y analítica</h3>
-      <p>Usamos Umami Analytics para estadísticas de uso anónimas. Umami no usa cookies de rastreo ni comparte datos con terceros. No usamos Google Analytics ni Meta Pixel.</p>
-
-      <h3>Seguridad</h3>
-      <p>Todos los datos se transmiten cifrados (HTTPS). Las contraseñas se almacenan hasheadas. El acceso a la base de datos está restringido al equipo técnico.</p>
-
-      <h3>Contacto</h3>
-      <p>Para consultas sobre privacidad: <a href="mailto:hola@endonautas.cl">hola@endonautas.cl</a></p>
+  <section class="s s-dark">
+    <div class="container">
+      <div class="from-b">
+        <p class="lbl" style="color:var(--c);margin-bottom:1rem">Legal</p>
+        <h1 style="font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:300;color:#fff;letter-spacing:-.03em;line-height:1.1;text-shadow:var(--ts);margin-bottom:.6rem">Política de Privacidad</h1>
+        <p style="color:var(--dim);font-size:.9rem">Cómo recopilamos, usamos y protegemos tu información</p>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="s">
+    <div class="container">
+      <div class="prose from-b" data-d="1">
+        <p><em>Última actualización: junio 2026</em></p>
+
+        <h3>Quiénes somos</h3>
+        <p>Endonautas es una plataforma de autoconocimiento aplicado operada por Franco Jeria Castro. El sitio web es <strong>endonautas.cl</strong> y la aplicación se encuentra en <strong>app.endonautas.cl</strong>.</p>
+
+        <h3>Qué datos recopilamos</h3>
+        <p>Al crear una cuenta recopilamos tu nombre, correo electrónico y los datos que ingreses voluntariamente al usar los instrumentos de la app (respuestas a tests, sesiones con el Espejo IA, entradas en la Bitácora). No recopilamos datos de salud en el sentido clínico — la app no es un dispositivo médico.</p>
+
+        <h3>Para qué usamos tus datos</h3>
+        <p>Tus datos se usan exclusivamente para prestarte el servicio: generar tu historial, personalizar las respuestas del Espejo IA, y mostrarte tus resultados en el tiempo. No vendemos ni compartimos tus datos con terceros con fines comerciales.</p>
+
+        <h3>Retención y eliminación</h3>
+        <p>Puedes solicitar la eliminación de tu cuenta y todos tus datos en cualquier momento escribiendo a <a href="mailto:hola@endonautas.cl">hola@endonautas.cl</a>. Procesamos las solicitudes en un plazo máximo de 30 días.</p>
+
+        <h3>Cookies y analítica</h3>
+        <p>Usamos Umami Analytics para estadísticas de uso anónimas. Umami no usa cookies de rastreo ni comparte datos con terceros. No usamos Google Analytics ni Meta Pixel.</p>
+
+        <h3>Seguridad</h3>
+        <p>Todos los datos se transmiten cifrados (HTTPS). Las contraseñas se almacenan hasheadas. El acceso a la base de datos está restringido al equipo técnico.</p>
+
+        <h3>Contacto</h3>
+        <p>Para consultas sobre privacidad: <a href="mailto:hola@endonautas.cl">hola@endonautas.cl</a></p>
+      </div>
+    </div>
+  </section>
 </Layout>

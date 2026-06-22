@@ -9,14 +9,13 @@ import Layout from '../layouts/Layout.astro';
   <a slot="nav" href="/" class="nav-back">← Inicio</a>
 
   <style>
-  .libro-wrap { padding: 10vh 0 12vh; }
-  .libro-grid { display: grid; grid-template-columns: 340px 1fr; gap: 8rem; align-items: start; }
   .libro-cover {
     border-radius: 10px; overflow: hidden;
     box-shadow: 0 30px 80px rgba(0,0,0,.72), 0 0 0 1px rgba(255,255,255,.07);
     aspect-ratio: 3/4;
   }
   .libro-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .libro-grid { display: grid; grid-template-columns: 320px 1fr; gap: 8rem; align-items: start; }
   .libro-sup { color: var(--am); margin-bottom: 1.2rem; }
   .libro-title {
     font-family: var(--fd); font-size: clamp(2rem, 4vw, 3rem);
@@ -40,44 +39,46 @@ import Layout from '../layouts/Layout.astro';
     background: rgba(212,160,86,.04); margin-bottom: 1.8rem;
   }
   .libro-inc strong { color: var(--am); }
-  @media (max-width: 768px) {
-    .libro-grid { grid-template-columns: 1fr; gap: 2.4rem; }
-    .libro-cover { max-width: 220px; }
+  @media (max-width: 860px) {
+    .libro-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .libro-cover { max-width: 200px; }
   }
   </style>
 
-  <div class="container libro-wrap">
-    <div class="libro-grid from-b">
-      <div>
-        <div class="libro-cover">
-          <img src="/assets/img/epic-ebook.png" alt="Libro Endonautica" loading="lazy">
+  <section class="s s-dark">
+    <div class="container">
+      <div class="libro-grid">
+        <div class="from-l">
+          <div class="libro-cover">
+            <img src="/assets/img/epic-ebook.png" alt="Libro Endonautica" loading="lazy">
+          </div>
         </div>
-      </div>
-      <div>
-        <p class="lbl libro-sup">El libro</p>
-        <h1 class="libro-title">Endonautica</h1>
-        <p class="libro-sub">Franco Jeria Castro &nbsp;·&nbsp; 207 páginas</p>
-        <div class="libro-tags">
-          <span class="ltag">Autoconocimiento</span>
-          <span class="ltag">Psicología integrativa</span>
-          <span class="ltag">Proceso interior</span>
-          <span class="ltag">Sistemas de lectura</span>
-        </div>
-        <div class="libro-inc">
-          <strong>Incluido en plan Navegante</strong>
-          <span>·</span>
-          También disponible por separado
-        </div>
-        <div class="libro-body">
-          <p>El marco conceptual detrás del sistema Endonautas. No es autoayuda ni manual clínico — es el intento de nombrar lo que ocurre en el espacio entre una sesión y la siguiente.</p>
-          <p>Parte de la premisa de que el problema no es falta de insight. La mayoría de las personas que están en proceso saben perfectamente cuál es su patrón. <strong>El problema es la continuidad</strong> — lo que pasa en los seis días que quedan entre sesiones.</p>
-          <p>Propone un sistema de navegación interior: seis instrumentos que no buscan resolver, sino sostener el proceso en marcha. Tests, espejo, oráculo, mapas de nacimiento, bitácora, módulo terapeuta.</p>
-        </div>
-        <div style="display:flex;gap:.8rem;flex-wrap:wrap">
-          <a href="https://app.endonautas.cl/registro/?plan=navegante" class="btn btn-p">Activar Navegante</a>
-          <a href="/" class="btn btn-o">Ver la app</a>
+        <div class="from-r" data-d="1">
+          <p class="lbl libro-sup">El libro</p>
+          <h1 class="libro-title">Endonautica</h1>
+          <p class="libro-sub">Franco Jeria Castro &nbsp;·&nbsp; 207 páginas</p>
+          <div class="libro-tags">
+            <span class="ltag">Autoconocimiento</span>
+            <span class="ltag">Psicología integrativa</span>
+            <span class="ltag">Proceso interior</span>
+            <span class="ltag">Sistemas de lectura</span>
+          </div>
+          <div class="libro-inc">
+            <strong>Incluido en plan Navegante</strong>
+            <span>·</span>
+            También disponible por separado
+          </div>
+          <div class="libro-body">
+            <p>El marco conceptual detrás del sistema Endonautas. No es autoayuda ni manual clínico — es el intento de nombrar lo que ocurre en el espacio entre una sesión y la siguiente.</p>
+            <p>Parte de la premisa de que el problema no es falta de insight. La mayoría de las personas que están en proceso saben perfectamente cuál es su patrón. <strong>El problema es la continuidad</strong> — lo que pasa en los seis días que quedan entre sesiones.</p>
+            <p>Propone un sistema de navegación interior: seis instrumentos que no buscan resolver, sino sostener el proceso en marcha. Tests, espejo, oráculo, mapas de nacimiento, bitácora, módulo terapeuta.</p>
+          </div>
+          <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+            <a href="https://app.endonautas.cl/registro/?plan=navegante" class="btn btn-p">Activar Navegante</a>
+            <a href="/" class="btn btn-o">Ver la app</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </Layout>

@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
   <style>
   .contacto-grid {
     display: grid; grid-template-columns: 1fr 1.1fr;
-    gap: 8rem; align-items: start; padding: 10vh 0 12vh;
+    gap: 8rem; align-items: start;
   }
   .contacto-h {
     font-family: var(--fd); font-size: clamp(2.2rem, 4vw, 3.4rem);
@@ -58,63 +58,63 @@ import Layout from '../layouts/Layout.astro';
   }
   </style>
 
-  <div class="container">
-    <div class="contacto-grid">
+  <section class="s s-dark">
+    <div class="container">
+      <div class="contacto-grid">
+        <div class="from-b">
+          <p class="lbl" style="color:var(--c);margin-bottom:1rem">Contacto</p>
+          <h1 class="contacto-h">Escríbenos</h1>
+          <p class="contacto-sub">Para preguntas sobre la app, el módulo para profesionales, el ebook o cualquier otra cosa relacionada con el sistema.</p>
 
-      <div class="from-b">
-        <p class="lbl" style="color:var(--c);margin-bottom:1rem">Contacto</p>
-        <h1 class="contacto-h">Escríbenos</h1>
-        <p class="contacto-sub">Para preguntas sobre la app, el módulo para profesionales, el ebook o cualquier otra cosa relacionada con el sistema.</p>
+          <div class="c-sep"></div>
 
-        <div class="c-sep"></div>
+          <p class="c-nota">
+            <strong>Tiempo de respuesta:</strong> respondemos en 24–48 horas hábiles.<br><br>
+            Si tienes una pregunta sobre cómo funciona el sistema antes de registrarte,
+            el <a href="/blog/" style="color:var(--c)">blog</a> y la página de
+            <a href="/fractones/" style="color:var(--c)">Fractones</a>
+            probablemente ya tienen la respuesta.
+          </p>
+        </div>
 
-        <p class="c-nota">
-          <strong>Tiempo de respuesta:</strong> respondemos en 24–48 horas hábiles.<br><br>
-          Si tienes una pregunta sobre cómo funciona el sistema antes de registrarte,
-          el <a href="/blog/" style="color:var(--c)">blog</a> y la página de
-          <a href="/fractones/" style="color:var(--c)">Fractones</a>
-          probablemente ya tienen la respuesta.
-        </p>
+        <div class="from-b" data-d="2">
+          <form class="c-form" id="cForm" novalidate>
+            <div class="c-field">
+              <label class="c-label" for="cf-email">Tu email</label>
+              <input id="cf-email" name="email" type="email" class="c-input"
+                placeholder="tu@correo.com" required autocomplete="email">
+            </div>
+
+            <div class="c-field">
+              <label class="c-label" for="cf-wa">
+                WhatsApp <span>— opcional</span>
+              </label>
+              <input id="cf-wa" name="whatsapp" type="tel" class="c-input"
+                placeholder="+56 9 1234 5678" autocomplete="tel">
+            </div>
+
+            <div class="c-field">
+              <label class="c-label" for="cf-msg">Mensaje</label>
+              <textarea id="cf-msg" name="mensaje" class="c-textarea"
+                placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
+            </div>
+
+            <div id="cf-feedback" class="c-feedback" role="alert"></div>
+
+            <div class="c-submit">
+              <button type="submit" class="btn btn-p" id="cf-btn">Enviar mensaje</button>
+            </div>
+          </form>
+        </div>
       </div>
-
-      <div class="from-b" data-d="1">
-        <form class="c-form" id="cForm" novalidate>
-          <div class="c-field">
-            <label class="c-label" for="cf-email">Tu email</label>
-            <input id="cf-email" name="email" type="email" class="c-input"
-              placeholder="tu@correo.com" required autocomplete="email">
-          </div>
-
-          <div class="c-field">
-            <label class="c-label" for="cf-wa">
-              WhatsApp <span>— opcional</span>
-            </label>
-            <input id="cf-wa" name="whatsapp" type="tel" class="c-input"
-              placeholder="+56 9 1234 5678" autocomplete="tel">
-          </div>
-
-          <div class="c-field">
-            <label class="c-label" for="cf-msg">Mensaje</label>
-            <textarea id="cf-msg" name="mensaje" class="c-textarea"
-              placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
-          </div>
-
-          <div id="cf-feedback" class="c-feedback" role="alert"></div>
-
-          <div class="c-submit">
-            <button type="submit" class="btn btn-p" id="cf-btn">Enviar mensaje</button>
-          </div>
-        </form>
-      </div>
-
     </div>
-  </div>
+  </section>
 
   <script is:inline>
   (function () {
-    const form = document.getElementById('cForm');
-    const btn  = document.getElementById('cf-btn');
-    const fb   = document.getElementById('cf-feedback');
+    var form = document.getElementById('cForm');
+    var btn  = document.getElementById('cf-btn');
+    var fb   = document.getElementById('cf-feedback');
 
     function setFeedback(type, msg) {
       fb.className = 'c-feedback ' + type;
@@ -125,9 +125,9 @@ import Layout from '../layouts/Layout.astro';
       e.preventDefault();
       fb.className = 'c-feedback';
 
-      const email   = form.querySelector('#cf-email').value.trim();
-      const whatsapp = form.querySelector('#cf-wa').value.trim();
-      const mensaje = form.querySelector('#cf-msg').value.trim();
+      var email   = form.querySelector('#cf-email').value.trim();
+      var whatsapp = form.querySelector('#cf-wa').value.trim();
+      var mensaje = form.querySelector('#cf-msg').value.trim();
 
       if (!email || !mensaje) {
         setFeedback('err', 'Por favor completa tu email y el mensaje.');
@@ -138,12 +138,12 @@ import Layout from '../layouts/Layout.astro';
       btn.textContent = 'Enviando…';
 
       try {
-        const res = await fetch('/api/contact', {
+        var res = await fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, whatsapp, mensaje }),
+          body: JSON.stringify({ email: email, whatsapp: whatsapp, mensaje: mensaje }),
         });
-        const data = await res.json();
+        var data = await res.json();
 
         if (data.ok) {
           setFeedback('ok', 'Mensaje enviado — respondemos en 24-48 horas hábiles.');

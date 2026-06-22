@@ -17,7 +17,48 @@ const { badge } = Astro.props;
   </div>
   <div class="nav-r">
     <slot />
+    <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm nav-cta">Ingresar</a>
+    <a href="https://app.endonautas.cl/registro/" class="btn btn-p btn-sm nav-cta">Explorar gratis</a>
+    <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="/blog/">Blog</a>
+  <a href="/profesionales/">Para profesionales</a>
+  <a href="/ebook/">Ebook</a>
+  <a href="/#precios">Precios</a>
+  <a href="/equipo/">Equipo</a>
+  <a href="/contacto/">Contacto</a>
+  <div class="mobile-menu-ctas">
     <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm">Ingresar</a>
     <a href="https://app.endonautas.cl/registro/" class="btn btn-p btn-sm">Explorar gratis</a>
   </div>
-</nav>
+</div>
+
+<script is:inline>
+(function(){
+  var ham = document.getElementById('hamburger');
+  var menu = document.getElementById('mobile-menu');
+  if (!ham || !menu) return;
+  ham.addEventListener('click', function(){
+    var open = ham.getAttribute('aria-expanded') === 'true';
+    ham.setAttribute('aria-expanded', String(!open));
+    ham.classList.toggle('open');
+    menu.classList.toggle('open');
+    menu.setAttribute('aria-hidden', String(open));
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      ham.setAttribute('aria-expanded', 'false');
+      ham.classList.remove('open');
+      menu.classList.remove('open');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>

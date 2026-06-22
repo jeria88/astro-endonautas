@@ -141,16 +141,57 @@ footer .logo { justify-content: center; margin-bottom: .9rem; }
 .prose ul li::marker { color: var(--c); }
 .prose hr { border: none; border-top: 1px solid var(--bdr); margin: 3rem 0; }
 
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none; flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 38px; height: 38px; background: none; border: none;
+  cursor: pointer; padding: 6px; flex-shrink: 0;
+}
+.hamburger span {
+  display: block; height: 2px; width: 22px;
+  background: rgba(255,255,255,.8); border-radius: 2px; transition: .25s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE MENU ── */
+.mobile-menu {
+  position: fixed; top: 60px; left: 0; right: 0; bottom: 0;
+  background: rgba(3,3,6,.97); backdrop-filter: blur(24px);
+  flex-direction: column; z-index: 29; padding: 1.4rem 7% 3rem;
+  overflow-y: auto; display: none; border-top: 1px solid var(--bdr);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu > a {
+  font-size: 1.05rem; color: var(--mut); text-decoration: none;
+  padding: 1.05rem 0; border-bottom: 1px solid var(--bdr);
+  transition: color .18s; font-family: var(--fd); font-weight: 500;
+}
+.mobile-menu > a:last-of-type { border-bottom: none; }
+.mobile-menu > a:hover { color: #fff; }
+.mobile-menu-ctas { display: flex; flex-direction: column; gap: .8rem; margin-top: 1.8rem; }
+.mobile-menu-ctas .btn { width: 100%; justify-content: center; }
+
 /* ── NAV RESPONSIVE ── */
 @media (max-width: 1060px) {
   .nav-links a { padding: 0 .5rem; font-size: .75rem; }
 }
 @media (max-width: 860px) {
   .nav-links { display: none; }
+  .nav-cta { display: none !important; }
+  .hamburger { display: flex; }
 }
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   .s { padding: 10vh 0; }
   .blog-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .container { padding: 0 5%; }
+  nav { padding: 0 5%; }
+  footer { padding: 2.5rem 5%; }
+  .btn-lg { font-size: .9rem; padding: 15px 30px; }
+  .btn { padding: 13px 28px; }
 }
