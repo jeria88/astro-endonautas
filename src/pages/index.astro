@@ -282,6 +282,56 @@ import Layout from '../layouts/Layout.astro';
 }
 .libro-inc span { color: var(--c); font-weight: 600; }
 .franco-ctas { display: flex; gap: .8rem; flex-wrap: wrap; }
+/* ── VISTA PREVIA ── */
+.preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+.preview-card {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.preview-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c);
+  opacity: .7;
+}
+.preview-frame {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.07);
+  aspect-ratio: 16/10;
+  position: relative;
+}
+.preview-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  display: block;
+}
+.preview-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.07);
+  pointer-events: none;
+}
+.preview-caption {
+  font-size: .8rem;
+  color: var(--dim);
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .preview-grid { grid-template-columns: 1fr; }
+}
 /* ── PRECIOS ── */
 #precios { flex-direction: column; align-items: flex-start; }
 .precios-h { font-family: var(--fd); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 300; color: #fff; margin-bottom: .6rem; text-shadow: var(--ts); }
@@ -504,6 +554,30 @@ import Layout from '../layouts/Layout.astro';
             <img src="/img/dashboard.png" alt="" loading="lazy">
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISTA PREVIA -->
+<section class="s s-dark" id="preview">
+  <div class="container">
+    <p class="s-h from-b">La app, en uso real</p>
+    <p class="s-sub from-b" data-d="1">Sin mockups. Sin datos inventados. Esto es lo que ves al entrar.</p>
+    <div class="preview-grid">
+      <div class="preview-card from-b" data-d="2">
+        <span class="preview-label">Oráculo terapéutico</span>
+        <div class="preview-frame">
+          <img src="/screenshots/oraculo.webp" alt="Oráculo terapéutico — Tarot Jodorowsky, I Ching y Oráculo Fractal en Endonautas" loading="lazy" width="1280" height="800">
+        </div>
+        <p class="preview-caption">Tarot Terapéutico, I Ching y Oráculo Fractal. Tres formas de hacerse la misma pregunta desde otro ángulo.</p>
+      </div>
+      <div class="preview-card from-b" data-d="3">
+        <span class="preview-label">Tests psicométricos</span>
+        <div class="preview-frame">
+          <img src="/screenshots/tests.webp" alt="Tests psicométricos — 35 instrumentos validados en Endonautas" loading="lazy" width="1280" height="800">
+        </div>
+        <p class="preview-caption">35 instrumentos con respaldo clínico. PHQ-9, Big Five, ECR, DERS y más — con análisis IA de cada resultado.</p>
       </div>
     </div>
   </div>
