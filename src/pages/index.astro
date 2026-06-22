@@ -282,55 +282,74 @@ import Layout from '../layouts/Layout.astro';
 }
 .libro-inc span { color: var(--c); font-weight: 600; }
 .franco-ctas { display: flex; gap: .8rem; flex-wrap: wrap; }
-/* ── VISTA PREVIA ── */
-.preview-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.8rem;
+/* ── GALERÍA 3D ── */
+#preview { flex-direction: column; align-items: stretch; gap: 0; padding-bottom: 10vh; }
+.gallery-scene {
+  perspective: 1600px;
+  perspective-origin: 50% 45%;
   width: 100%;
-  margin-top: 3rem;
+  padding: 3rem 0 4rem;
+  overflow: hidden;
 }
-.preview-card {
+.gallery-row {
   display: flex;
-  flex-direction: column;
-  gap: .75rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
+  transform-style: preserve-3d;
+  transition: transform .35s cubic-bezier(.22,1,.36,1);
+  will-change: transform;
 }
-.preview-label {
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--c);
-  opacity: .7;
-}
-.preview-frame {
+.gc {
+  flex-shrink: 0;
+  width: clamp(200px, 22vw, 300px);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.07);
-  aspect-ratio: 16/10;
+  box-shadow: 0 18px 60px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.07);
   position: relative;
+  transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+  cursor: default;
 }
-.preview-frame img {
-  width: 100%; height: 100%;
+.gc img {
+  width: 100%; height: auto;
+  aspect-ratio: 16/10;
   object-fit: cover;
   object-position: top left;
   display: block;
 }
-.preview-frame::after {
-  content: '';
+.gc-label {
   position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.07);
-  pointer-events: none;
+  bottom: 0; left: 0; right: 0;
+  padding: .5rem .75rem;
+  background: linear-gradient(transparent, rgba(0,0,0,.88));
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(126,204,205,.85);
+  opacity: 0;
+  transition: opacity .3s;
 }
-.preview-caption {
-  font-size: .8rem;
-  color: var(--dim);
-  line-height: 1.5;
+.gc:hover .gc-label { opacity: 1; }
+.gc:hover {
+  box-shadow: 0 28px 80px rgba(0,0,0,.9), 0 0 0 1px rgba(126,204,205,.2);
 }
+/* Posiciones 3D en arco */
+.gc:nth-child(1) { transform: rotateY(28deg) translateZ(-110px) translateY(6px); }
+.gc:nth-child(2) { transform: rotateY(14deg) translateZ(-45px) translateY(3px); }
+.gc:nth-child(3) { transform: rotateY(0deg)  translateZ(30px); }
+.gc:nth-child(4) { transform: rotateY(-14deg) translateZ(-45px) translateY(3px); }
+.gc:nth-child(5) { transform: rotateY(-28deg) translateZ(-110px) translateY(6px); }
+/* Hover del hover: traer al frente */
+.gc:hover { z-index: 10; }
+
+/* Mobile: grid 2x3 */
 @media (max-width: 768px) {
-  .preview-grid { grid-template-columns: 1fr; }
+  .gallery-scene { perspective: none; padding: 1.5rem 5%; }
+  .gallery-row { flex-wrap: wrap; gap: .9rem; transform: none !important; }
+  .gc { width: calc(50% - .45rem); transform: none !important; }
+  .gc:nth-child(5) { width: 100%; }
+  .gc-label { opacity: 1; }
 }
 /* ── PRECIOS ── */
 #precios { flex-direction: column; align-items: flex-start; }
@@ -559,25 +578,33 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- VISTA PREVIA -->
+<!-- GALERÍA 3D -->
 <section class="s s-dark" id="preview">
   <div class="container">
     <p class="s-h from-b">La app, en uso real</p>
     <p class="s-sub from-b" data-d="1">Sin mockups. Sin datos inventados. Esto es lo que ves al entrar.</p>
-    <div class="preview-grid">
-      <div class="preview-card from-b" data-d="2">
-        <span class="preview-label">Oráculo terapéutico</span>
-        <div class="preview-frame">
-          <img src="/screenshots/oraculo.webp" alt="Oráculo terapéutico — Tarot Jodorowsky, I Ching y Oráculo Fractal en Endonautas" loading="lazy" width="1280" height="800">
-        </div>
-        <p class="preview-caption">Tarot Terapéutico, I Ching y Oráculo Fractal. Tres formas de hacerse la misma pregunta desde otro ángulo.</p>
+  </div>
+  <div class="gallery-scene" id="galleryScene">
+    <div class="gallery-row" id="galleryRow">
+      <div class="gc from-b" data-d="1">
+        <img src="/screenshots/oraculo.webp" alt="Oráculo terapéutico — Tarot, I Ching, Fractal" loading="lazy" width="1280" height="800">
+        <div class="gc-label">Oráculo terapéutico</div>
       </div>
-      <div class="preview-card from-b" data-d="3">
-        <span class="preview-label">Tests psicométricos</span>
-        <div class="preview-frame">
-          <img src="/screenshots/tests.webp" alt="Tests psicométricos — 35 instrumentos validados en Endonautas" loading="lazy" width="1280" height="800">
-        </div>
-        <p class="preview-caption">35 instrumentos con respaldo clínico. PHQ-9, Big Five, ECR, DERS y más — con análisis IA de cada resultado.</p>
+      <div class="gc from-b" data-d="2">
+        <img src="/screenshots/tests.webp" alt="Tests psicométricos — 35 instrumentos validados" loading="lazy" width="1280" height="800">
+        <div class="gc-label">Tests psicométricos</div>
+      </div>
+      <div class="gc from-b" data-d="3">
+        <img src="/screenshots/espejo_chat.webp" alt="Espejo de Conflictos — conversación con IA" loading="lazy" width="1280" height="800">
+        <div class="gc-label">Espejo de Conflictos</div>
+      </div>
+      <div class="gc from-b" data-d="4">
+        <img src="/screenshots/terapeuta_frameworks.webp" alt="Módulo Terapeuta — marcos y técnicas" loading="lazy" width="1280" height="800">
+        <div class="gc-label">Terapeuta — marcos</div>
+      </div>
+      <div class="gc from-b" data-d="5">
+        <img src="/screenshots/terapeuta_propuesta.webp" alt="Módulo Terapeuta — propuesta terapéutica" loading="lazy" width="1280" height="800">
+        <div class="gc-label">Terapeuta — propuesta</div>
       </div>
     </div>
   </div>
@@ -741,4 +768,39 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 </section>
+
+<script>
+// Galería 3D — parallax por mousemove
+(function () {
+  const scene = document.getElementById('galleryScene');
+  const row   = document.getElementById('galleryRow');
+  if (!scene || !row) return;
+
+  let raf = 0;
+  let tx = 0, ty = 0;       // target tilt
+  let cx = 0, cy = 0;       // current tilt (interpolado)
+
+  scene.addEventListener('mousemove', (e) => {
+    const r = scene.getBoundingClientRect();
+    tx = ((e.clientX - r.left) / r.width  - 0.5) * 14;   // ±7 deg Y
+    ty = ((e.clientY - r.top)  / r.height - 0.5) * -8;   // ±4 deg X
+    if (!raf) raf = requestAnimationFrame(tick);
+  });
+
+  scene.addEventListener('mouseleave', () => {
+    tx = 0; ty = 0;
+    if (!raf) raf = requestAnimationFrame(tick);
+  });
+
+  function tick() {
+    cx += (tx - cx) * 0.1;
+    cy += (ty - cy) * 0.1;
+    row.style.transform = `rotateX(${cy}deg) rotateY(${cx}deg)`;
+    const delta = Math.abs(tx - cx) + Math.abs(ty - cy);
+    raf = delta > 0.02 ? requestAnimationFrame(tick) : 0;
+  }
+
+
+})();
+</script>
 </Layout>
