@@ -475,6 +475,30 @@ import Layout from '../layouts/Layout.astro';
   transition: max-height .35s ease, padding .35s ease;
 }
 .faq-item.open .faq-a { max-height: 260px; padding-top: 1rem; }
+/* ── NEWSLETTER / EMAIL CAPTURE ── */
+#newsletter { flex-direction: column; align-items: center; }
+.nl-wrap { max-width: 560px; width: 100%; text-align: center; }
+.nl-lbl { color: var(--c); margin-bottom: 1rem; }
+.nl-h { font-family: var(--fd); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 300; color: #fff; margin-bottom: 1rem; text-shadow: var(--ts); }
+.nl-sub { font-size: .9rem; color: var(--dim); line-height: 1.75; margin-bottom: 2rem; }
+.nl-form { display: flex; flex-direction: column; align-items: center; gap: .75rem; width: 100%; }
+.nl-input-wrap { display: flex; width: 100%; gap: .5rem; }
+.nl-input {
+  flex: 1; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px; padding: .75rem 1rem; color: #fff; font-size: .92rem;
+  outline: none; transition: border-color .2s;
+}
+.nl-input::placeholder { color: rgba(255,255,255,.3); }
+.nl-input:focus { border-color: var(--c); }
+.nl-btn { white-space: nowrap; flex-shrink: 0; }
+.nl-note { font-size: .72rem; color: rgba(255,255,255,.25); }
+.nl-msg { font-size: .82rem; min-height: 1.2em; }
+.nl-msg.err { color: #e05050; }
+.nl-success { font-size: 1rem; color: var(--c); font-family: var(--fd); padding: 1.5rem 0; }
+@media (max-width: 600px) {
+  .nl-input-wrap { flex-direction: column; }
+  .nl-btn { width: 100%; }
+}
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   .s { padding: 12vh 0; }
@@ -842,6 +866,74 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 </section>
+
+<!-- CAPTURA EMAIL -->
+<section class="s s-darker" id="newsletter">
+  <div class="container">
+    <div class="nl-wrap from-b">
+      <p class="lbl nl-lbl">¿No estás listo para registrarte todavía?</p>
+      <h2 class="nl-h">Tu Mapa de Patrones te espera.</h2>
+      <p class="nl-sub">Déjanos tu email y te explicamos cómo obtenerlo — gratis, en 10 minutos, sin tarjeta. Cuando estés listo.</p>
+      <form class="nl-form" id="nlForm" novalidate>
+        <div class="nl-input-wrap">
+          <input
+            type="email"
+            id="nlEmail"
+            class="nl-input"
+            placeholder="tu@email.com"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" class="btn btn-p nl-btn" id="nlBtn">
+            Quiero saber mis patrones
+          </button>
+        </div>
+        <p class="nl-msg" id="nlMsg" aria-live="polite"></p>
+        <p class="nl-note">Sin spam · Sin compromiso · 1 email con las instrucciones</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function(){
+  var form = document.getElementById('nlForm');
+  var btn  = document.getElementById('nlBtn');
+  var msg  = document.getElementById('nlMsg');
+  if (!form) return;
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var email = document.getElementById('nlEmail').value.trim();
+    if (!email || !email.includes('@')) {
+      msg.textContent = 'Ingresa un email válido.';
+      msg.className = 'nl-msg err';
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+    msg.textContent = '';
+    msg.className = 'nl-msg';
+    try {
+      var res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      });
+      if (res.ok) {
+        form.innerHTML = '<p class="nl-success">✦ Listo. Revisa tu email — te contamos cómo empezar.</p>';
+      } else {
+        throw new Error('error');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Quiero saber mis patrones';
+      msg.textContent = 'Hubo un error. Intenta de nuevo.';
+      msg.className = 'nl-msg err';
+    }
+  });
+})();
+</script>
 
 <div id="lb">
   <span id="lb-close">✕</span>

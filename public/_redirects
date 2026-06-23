@@ -1,3 +1,4 @@
+https://www.endonautas.cl/*  https://endonautas.cl/:splat  301
 /login    https://app.endonautas.cl/login/    301
 /registro https://app.endonautas.cl/registro/ 301
 /app/*    https://app.endonautas.cl/:splat    301
