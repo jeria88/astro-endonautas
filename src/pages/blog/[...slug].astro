@@ -42,10 +42,12 @@ const layerLabel: Record<string, string> = {
   .post-desc { font-size: 1.05rem; color: var(--mut); line-height: 1.72; margin-bottom: 3rem; max-width: 600px; }
   .post-divider { height: 1px; background: var(--bdr); margin-bottom: 3rem; }
   .post-cta {
-    margin-top: 4rem; padding: 2rem; border: 1px solid rgba(126,204,205,.25);
-    border-radius: 14px; background: rgba(126,204,205,.04);
+    margin-top: 4rem; padding: 2.4rem 2rem; border: 1px solid rgba(126,204,205,.35);
+    border-radius: 14px; background: rgba(126,204,205,.07);
   }
-  .post-cta p { font-size: .9rem; color: var(--mut); margin-bottom: 1.2rem; line-height: 1.65; }
+  .post-cta-label { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c); margin-bottom: .8rem; }
+  .post-cta h3 { font-family: var(--fd); font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: .8rem; }
+  .post-cta p { font-size: .9rem; color: var(--mut); margin-bottom: 1.4rem; line-height: 1.65; }
   </style>
 
   <div class="post-wrap">
@@ -62,8 +64,10 @@ const layerLabel: Record<string, string> = {
     </div>
     {post.data.cta && (
       <div class="post-cta">
+        <p class="post-cta-label">Siguiente paso</p>
+        <h3>Tu Mapa de Patrones Personales — gratis</h3>
         <p>{post.data.cta}</p>
-        <a href="https://app.endonautas.cl/registro/" class="btn btn-p btn-sm">Explorar gratis</a>
+        <a href="https://app.endonautas.cl/tests/mapa-patrones/" class="btn btn-p btn-sm">Ver mi Mapa de Patrones →</a>
       </div>
     )}
   </div>

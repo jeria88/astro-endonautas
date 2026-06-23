@@ -6,7 +6,7 @@ category: "Espejo"
 layer: "consciousness"
 tags: ["espejo IA", "inteligencia artificial", "terapia", "autoconocimiento"]
 draft: false
-cta: "El Espejo de Conflictos está disponible en el plan gratuito — 1 sesión diaria de hasta 45 minutos."
+cta: "El Mapa de Patrones es el primer paso — tres tests validados, análisis IA integrado, gratis. Desde ahí, el Espejo de Conflictos tiene contexto para trabajar contigo."
 ---
 
 La primera reacción de mucha gente cuando escucha "espejo de conflictos con IA" es una pregunta razonable: ¿no es eso lo mismo que hablar con ChatGPT?

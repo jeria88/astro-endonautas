@@ -6,7 +6,7 @@ category: "Instrumentos"
 layer: "consciousness"
 tags: ["carta natal", "human design", "saju", "mapa de nacimiento", "autoconocimiento"]
 draft: false
-cta: "En Endonautas puedes generar tu carta natal, tu carta Human Design y tu mapa Saju con análisis IA — parte del plan Navegante."
+cta: "El punto de entrada es el Mapa de Patrones — gratis. Desde ahí, el plan Navegante incluye carta natal, Human Design y Saju con análisis IA."
 ---
 
 La primera resistencia que aparece cuando se menciona la carta natal o el Human Design en un contexto de autoconocimiento serio es predecible: ¿no es esto lo mismo que el horóscopo del diario?
