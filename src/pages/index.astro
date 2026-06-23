@@ -7,6 +7,37 @@ import Layout from '../layouts/Layout.astro';
   description="Plataforma de autoconocimiento aplicado. Espejo de conflictos, tests psicométricos, mapa de nacimiento y oráculo terapéutico. Trabaja lo que pasa entre sesiones."
   cosmosScroll={true}
 >
+<script slot="head" type="application/ld+json" is:inline>{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Esto reemplaza la terapia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Trabaja en los seis días que quedan entre sesiones. Tu terapeuta trabaja en sesión — Endonautas trabaja en el tiempo que ningún terapeuta puede cubrir. No compiten: se complementan." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tiene base clínica o es espiritual?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los tests psicométricos son instrumentos validados en español: PHQ-9, GAD-7, Big Five, ECR, DERS, y otros. El Oráculo y el Mapa de Nacimiento operan desde otro registro — no son diagnóstico clínico. El sistema integra ambos porque el proceso interior no cabe en una sola lógica." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre el plan gratuito y el Navegante?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El plan gratuito da acceso al Espejo IA (1 sesión diaria, 45 min), comunidad, bitácora, carta astral, 3 tests y el I Ching + Tarot de 1 carta. El Navegante desbloquea el Espejo sin restricciones, todos los tests con análisis IA, los tres mapas de nacimiento, el Tarot completo, el Oráculo Fractal y el módulo Terapeuta." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo empieza a ser útil de verdad?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A las 2-3 semanas de uso continuo. Cuando el Espejo ya tiene contexto acumulado, cuando los tests muestran relaciones entre dimensiones, cuando la Bitácora tiene algo real que leer." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo cancelar cuando quiera?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Sin contrato, sin permanencia, sin penalización. El plan gratuito tampoco expira — si en algún momento no quieres pagar, sigues con acceso a tus datos y a todos los instrumentos del plan gratuito." }
+    }
+  ]
+})}</script>
 <style>
 /* ── LANDING: .s override ── */
 .s {
@@ -515,7 +546,7 @@ import Layout from '../layouts/Layout.astro';
 <!-- DIFERENCIA -->
 <section class="s s-dark" id="dif">
   <div class="container">
-    <p class="dif-h from-l">No reemplaza tu terapia.<br>Pero sostiene cuando no hay un terapeuta cerca.</p>
+    <h2 class="dif-h from-l">No reemplaza tu terapia.<br>Pero sostiene cuando no hay un terapeuta cerca.</h2>
     <div class="versus">
       <div class="v-col">
         <div class="from-l" data-d="1">
@@ -553,49 +584,49 @@ import Layout from '../layouts/Layout.astro';
 <!-- INSTRUMENTOS -->
 <section class="s s-darker" id="inst">
   <div class="container">
-    <p class="inst-h from-b">Seis instrumentos. Un sistema.</p>
+    <h2 class="inst-h from-b">Seis instrumentos. Un sistema.</h2>
     <p class="inst-sub from-b" data-d="1">Diseñados para trabajar donde nadie más trabaja.</p>
     <div class="inst-body">
       <div class="inst-list">
         <div class="inst-item from-l" data-d="1">
           <span class="inst-n">01</span>
           <div>
-            <p class="inst-name">Espejo IA</p>
+            <h3 class="inst-name">Espejo IA</h3>
             <p class="inst-desc">Una conversación que devuelve, no resuelve. Refleja lo que no te preguntaste todavía — y trabaja con tu contexto acumulado, no desde cero cada vez.</p>
           </div>
         </div>
         <div class="inst-item from-l" data-d="2">
           <span class="inst-n">02</span>
           <div>
-            <p class="inst-name">Tests psicométricos</p>
+            <h3 class="inst-name">Tests psicométricos</h3>
             <p class="inst-desc">35 instrumentos con respaldo clínico. Apego, regulación emocional, sueño, trauma. Lo que tu terapeuta no tiene tiempo de cubrir entre sesión y sesión.</p>
           </div>
         </div>
         <div class="inst-item from-l" data-d="3">
           <span class="inst-n">03</span>
           <div>
-            <p class="inst-name">Oráculo terapéutico</p>
+            <h3 class="inst-name">Oráculo terapéutico</h3>
             <p class="inst-desc">Tarot Jodorowsky, I Ching, Oráculo Fractal. No predicción — otra forma de hacerse la misma pregunta desde un ángulo distinto.</p>
           </div>
         </div>
         <div class="inst-item from-l" data-d="4">
           <span class="inst-n">04</span>
           <div>
-            <p class="inst-name">Mapa de nacimiento</p>
+            <h3 class="inst-name">Mapa de nacimiento</h3>
             <p class="inst-desc">Carta natal, Human Design, Saju. Marcos para leer disposiciones estructurales. No astrología de revista — cartografía de lo que traes.</p>
           </div>
         </div>
         <div class="inst-item from-l" data-d="5">
           <span class="inst-n">05</span>
           <div>
-            <p class="inst-name">Módulo terapeuta</p>
+            <h3 class="inst-name">Módulo terapeuta</h3>
             <p class="inst-desc">El puente entre la app y tu próxima sesión. Lo que encontraste aquí, ya armado en contexto, listo para llevar a quien te acompaña.</p>
           </div>
         </div>
         <div class="inst-item from-l" data-d="6">
           <span class="inst-n">06</span>
           <div>
-            <p class="inst-name">Bitácora</p>
+            <h3 class="inst-name">Bitácora</h3>
             <p class="inst-desc">El único lugar donde puedes ver si algo se movió. Sueños, regulación, historial de patrones. El proceso tiene que poder leerse.</p>
           </div>
         </div>
@@ -623,7 +654,7 @@ import Layout from '../layouts/Layout.astro';
 <!-- GALERÍA 3D CARRUSEL -->
 <section class="s s-dark" id="preview">
   <div class="container">
-    <p class="s-h from-b">La app, en uso real</p>
+    <h2 class="s-h from-b">La app, en uso real</h2>
     <p class="s-sub from-b" data-d="1">Sin mockups. Sin datos inventados. Esto es lo que ves al entrar.</p>
   </div>
   <div class="gallery-scene" id="galleryScene">
@@ -694,7 +725,7 @@ import Layout from '../layouts/Layout.astro';
 <section class="s s-darker" id="precios">
   <div class="container">
     <div class="from-b">
-      <p class="precios-h">Sin contrato. Sin permanencia.</p>
+      <h2 class="precios-h">Sin contrato. Sin permanencia.</h2>
       <p class="precios-sub">Cancelas cuando quieres. El plan gratuito no expira.</p>
     </div>
     <div class="planes-grid">
@@ -706,7 +737,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="plan-divider"></div>
         <ul class="plan-feats">
-          <li class="hi">Espejo IA — sin límite</li>
+          <li class="hi">Espejo IA — 1 sesión diaria · 45 min</li>
           <li class="hi">Comunidad + Bitácora</li>
           <li class="hi">Carta Astral</li>
           <li>3 tests psicométricos</li>
@@ -765,7 +796,7 @@ import Layout from '../layouts/Layout.astro';
 <!-- FAQ -->
 <section class="s s-dark" id="faq">
   <div class="container">
-    <p class="faq-h from-b">Lo que la mayoría pregunta antes de entrar.</p>
+    <h2 class="faq-h from-b">Lo que la mayoría pregunta antes de entrar.</h2>
     <div class="faq-list from-b" data-d="1">
 
       <div class="faq-item">
@@ -789,7 +820,7 @@ import Layout from '../layouts/Layout.astro';
           ¿Qué diferencia hay entre el plan gratuito y el Navegante?
           <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
         </div>
-        <p class="faq-a">El plan gratuito da acceso a los instrumentos esenciales: el Espejo IA sin límite, la comunidad, la bitácora, la carta astral, los tres tests más solicitados y el I Ching + Tarot de 1 carta. Es suficiente para empezar. El Navegante desbloquea la app completa: todos los tests con análisis IA, los tres mapas de nacimiento, todas las tiradas del Tarot, el Oráculo Fractal y el módulo Terapeuta.</p>
+        <p class="faq-a">El plan gratuito da acceso a los instrumentos esenciales: el Espejo IA (1 sesión diaria, 45 min), la comunidad, la bitácora, la carta astral, los tres tests más solicitados y el I Ching + Tarot de 1 carta. Es suficiente para empezar. El Navegante desbloquea el Espejo sin restricciones de tiempo, todos los tests con análisis IA, los tres mapas de nacimiento, todas las tiradas del Tarot, el Oráculo Fractal y el módulo Terapeuta.</p>
       </div>
 
       <div class="faq-item">

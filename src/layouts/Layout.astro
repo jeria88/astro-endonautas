@@ -42,10 +42,48 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
   <meta property="og:type" content={ogType} />
   <meta property="og:site_name" content="Endonautas" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/endonautas-logo.png" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" is:inline>{JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://endonautas.cl/#org",
+        "name": "Endonautas",
+        "url": "https://endonautas.cl",
+        "logo": "https://endonautas.cl/assets/endonautas-logo.png",
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://endonautas.cl/#website",
+        "url": "https://endonautas.cl",
+        "name": "Endonautas",
+        "publisher": { "@id": "https://endonautas.cl/#org" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Endonautas",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Web",
+        "url": "https://app.endonautas.cl",
+        "description": "Plataforma de autoconocimiento aplicado. Espejo de conflictos IA, tests psicométricos, mapa de nacimiento y oráculo terapéutico.",
+        "publisher": { "@id": "https://endonautas.cl/#org" },
+        "offers": [
+          { "@type": "Offer", "name": "Gratuito", "price": "0", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Navegante", "price": "10", "priceCurrency": "USD", "billingIncrement": "P1M" },
+          { "@type": "Offer", "name": "Practicante", "price": "39", "priceCurrency": "USD", "billingIncrement": "P1M" }
+        ]
+      }
+    ]
+  })}</script>
 
   <!-- Umami analytics -->
   <script defer data-website-id="e03fa69e-9931-411c-9838-7f6ffea90426" src="https://analytics.endonautas.cl/script.js" is:inline></script>
