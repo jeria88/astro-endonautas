@@ -282,33 +282,39 @@ import Layout from '../layouts/Layout.astro';
 }
 .libro-inc span { color: var(--c); font-weight: 600; }
 .franco-ctas { display: flex; gap: .8rem; flex-wrap: wrap; }
-/* ── GALERÍA 3D ── */
+/* ── GALERÍA 3D CARRUSEL ── */
 #preview { flex-direction: column; align-items: stretch; gap: 0; padding-bottom: 10vh; }
 .gallery-scene {
-  perspective: 1600px;
-  perspective-origin: 50% 45%;
   width: 100%;
   padding: 3rem 0 4rem;
   overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
 }
-.gallery-row {
+.gallery-hint {
+  text-align: center;
+  font-size: .7rem;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.25);
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+.gallery-track {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 1.1rem;
-  transform-style: preserve-3d;
-  transition: transform .35s cubic-bezier(.22,1,.36,1);
+  gap: 18px;
   will-change: transform;
+  /* JS posiciona con translateX */
 }
 .gc {
   flex-shrink: 0;
-  width: clamp(200px, 22vw, 300px);
+  width: clamp(260px, 26vw, 360px);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 18px 60px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.07);
   position: relative;
-  transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
-  cursor: default;
+  will-change: transform, opacity;
+  cursor: zoom-in;
 }
 .gc img {
   width: 100%; height: auto;
@@ -316,6 +322,7 @@ import Layout from '../layouts/Layout.astro';
   object-fit: cover;
   object-position: top left;
   display: block;
+  pointer-events: none;
 }
 .gc-label {
   position: absolute;
@@ -327,59 +334,65 @@ import Layout from '../layouts/Layout.astro';
   letter-spacing: .1em;
   text-transform: uppercase;
   color: rgba(126,204,205,.85);
-  opacity: 0;
-  transition: opacity .3s;
+  transition: opacity .25s;
 }
-.gc:hover .gc-label { opacity: 1; }
-.gc:hover {
-  box-shadow: 0 28px 80px rgba(0,0,0,.9), 0 0 0 1px rgba(126,204,205,.2);
-}
-/* Posiciones 3D en arco */
-.gc:nth-child(1) { transform: rotateY(28deg) translateZ(-110px) translateY(6px); }
-.gc:nth-child(2) { transform: rotateY(14deg) translateZ(-45px) translateY(3px); }
-.gc:nth-child(3) { transform: rotateY(0deg)  translateZ(30px); }
-.gc:nth-child(4) { transform: rotateY(-14deg) translateZ(-45px) translateY(3px); }
-.gc:nth-child(5) { transform: rotateY(-28deg) translateZ(-110px) translateY(6px); }
-/* Hover del hover: traer al frente */
-.gc:hover { z-index: 10; }
-
-/* Mobile: grid 2x3 */
+/* Mobile: grid estático */
 @media (max-width: 768px) {
-  .gallery-scene { perspective: none; padding: 1.5rem 5%; }
-  .gallery-row { flex-wrap: wrap; gap: .9rem; transform: none !important; }
-  .gc { width: calc(50% - .45rem); transform: none !important; }
+  .gallery-scene { cursor: default; padding: 1.5rem 5%; overflow: visible; }
+  .gallery-hint { display: none; }
+  .gallery-track { flex-wrap: wrap; gap: .9rem; transform: none !important; }
+  .gc { width: calc(50% - .45rem); transform: none !important; opacity: 1 !important; cursor: zoom-in; }
   .gc:nth-child(5) { width: 100%; }
-  .gc-label { opacity: 1; }
 }
 /* ── LIGHTBOX ── */
 #lb {
   position: fixed; inset: 0; z-index: 9000;
-  background: rgba(0,0,0,0); backdrop-filter: blur(0px);
   display: flex; align-items: center; justify-content: center;
-  cursor: zoom-out;
+  background: rgba(0,0,0,0); backdrop-filter: blur(0px);
   transition: background .25s, backdrop-filter .25s, opacity .25s;
   pointer-events: none; opacity: 0;
 }
 #lb.open {
-  background: rgba(0,0,0,.92); backdrop-filter: blur(8px);
+  background: rgba(0,0,0,.93); backdrop-filter: blur(10px);
   pointer-events: auto; opacity: 1;
 }
-#lb img {
-  max-width: 92vw; max-height: 90vh;
+#lb-img {
+  max-width: 88vw; max-height: 86vh;
   border-radius: 10px;
   box-shadow: 0 40px 120px rgba(0,0,0,.9);
-  transform: scale(.92);
-  transition: transform .3s cubic-bezier(.22,1,.36,1);
+  transform: scale(.93);
+  transition: transform .3s cubic-bezier(.22,1,.36,1), opacity .2s;
+  display: block;
   pointer-events: none;
 }
-#lb.open img { transform: scale(1); }
+#lb.open #lb-img { transform: scale(1); }
 #lb-close {
-  position: absolute; top: 1.2rem; right: 1.4rem;
-  color: rgba(255,255,255,.55); font-size: 1.8rem; line-height: 1;
-  cursor: pointer; user-select: none;
-  transition: color .18s;
+  position: absolute; top: 1.1rem; right: 1.4rem;
+  color: rgba(255,255,255,.5); font-size: 1.8rem; line-height: 1;
+  cursor: pointer; user-select: none; transition: color .18s;
 }
 #lb-close:hover { color: #fff; }
+.lb-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.7); font-size: 1.6rem; line-height: 1;
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .18s, color .18s;
+  user-select: none;
+}
+.lb-nav:hover { background: rgba(255,255,255,.18); color: #fff; }
+#lb-prev { left: 1.2rem; }
+#lb-next { right: 1.2rem; }
+#lb-dots {
+  position: absolute; bottom: 1.1rem; left: 50%; transform: translateX(-50%);
+  display: flex; gap: .45rem;
+}
+.lb-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,.25); transition: background .2s;
+}
+.lb-dot.active { background: #7ecccd; }
 /* ── PRECIOS ── */
 #precios { flex-direction: column; align-items: flex-start; }
 .precios-h { font-family: var(--fd); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 300; color: #fff; margin-bottom: .6rem; text-shadow: var(--ts); }
@@ -607,31 +620,32 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- GALERÍA 3D -->
+<!-- GALERÍA 3D CARRUSEL -->
 <section class="s s-dark" id="preview">
   <div class="container">
     <p class="s-h from-b">La app, en uso real</p>
     <p class="s-sub from-b" data-d="1">Sin mockups. Sin datos inventados. Esto es lo que ves al entrar.</p>
   </div>
   <div class="gallery-scene" id="galleryScene">
-    <div class="gallery-row" id="galleryRow">
-      <div class="gc from-b" data-d="1">
+    <p class="gallery-hint">Mueve el cursor para explorar · Click para ampliar</p>
+    <div class="gallery-track" id="galleryTrack">
+      <div class="gc">
         <img src="/screenshots/oraculo.webp" alt="Oráculo terapéutico — Tarot, I Ching, Fractal" loading="lazy" width="1280" height="800">
         <div class="gc-label">Oráculo terapéutico</div>
       </div>
-      <div class="gc from-b" data-d="2">
+      <div class="gc">
         <img src="/screenshots/tests.webp" alt="Tests psicométricos — 35 instrumentos validados" loading="lazy" width="1280" height="800">
         <div class="gc-label">Tests psicométricos</div>
       </div>
-      <div class="gc from-b" data-d="3">
+      <div class="gc">
         <img src="/screenshots/espejo_chat.webp" alt="Espejo de Conflictos — conversación con IA" loading="lazy" width="1280" height="800">
         <div class="gc-label">Espejo de Conflictos</div>
       </div>
-      <div class="gc from-b" data-d="4">
+      <div class="gc">
         <img src="/screenshots/terapeuta_frameworks.webp" alt="Módulo Terapeuta — marcos y técnicas" loading="lazy" width="1280" height="800">
         <div class="gc-label">Terapeuta — marcos</div>
       </div>
-      <div class="gc from-b" data-d="5">
+      <div class="gc">
         <img src="/screenshots/terapeuta_propuesta.webp" alt="Módulo Terapeuta — propuesta terapéutica" loading="lazy" width="1280" height="800">
         <div class="gc-label">Terapeuta — propuesta</div>
       </div>
@@ -800,53 +814,151 @@ import Layout from '../layouts/Layout.astro';
 
 <div id="lb">
   <span id="lb-close">✕</span>
+  <button class="lb-nav" id="lb-prev">‹</button>
   <img id="lb-img" src="" alt="">
+  <button class="lb-nav" id="lb-next">›</button>
+  <div id="lb-dots"></div>
 </div>
 
 <script>
 (function () {
-  // Galería 3D — parallax por mousemove
-  const scene = document.getElementById('galleryScene');
-  const row   = document.getElementById('galleryRow');
-  if (scene && row) {
-    let raf = 0, tx = 0, ty = 0, cx = 0, cy = 0;
-    scene.addEventListener('mousemove', (e) => {
-      const r = scene.getBoundingClientRect();
-      tx = ((e.clientX - r.left) / r.width  - 0.5) * 14;
-      ty = ((e.clientY - r.top)  / r.height - 0.5) * -8;
-      if (!raf) raf = requestAnimationFrame(tick);
-    });
-    scene.addEventListener('mouseleave', () => {
-      tx = 0; ty = 0;
-      if (!raf) raf = requestAnimationFrame(tick);
-    });
-    function tick() {
-      cx += (tx - cx) * 0.1;
-      cy += (ty - cy) * 0.1;
-      row.style.transform = `rotateX(${cy}deg) rotateY(${cx}deg)`;
-      raf = (Math.abs(tx - cx) + Math.abs(ty - cy)) > 0.02 ? requestAnimationFrame(tick) : 0;
+  // Variables compartidas entre carrusel y lightbox
+  let paused = false;
+  let raf = 0;
+  let targetFrac = 0;
+  let currentFrac = 0;
+  let N = 0;
+
+  const scene  = document.getElementById('galleryScene');
+  const track  = document.getElementById('galleryTrack');
+  const lb     = document.getElementById('lb');
+  const lbImg  = document.getElementById('lb-img');
+  const lbClose = document.getElementById('lb-close');
+  const lbPrev = document.getElementById('lb-prev');
+  const lbNext = document.getElementById('lb-next');
+  const lbDots = document.getElementById('lb-dots');
+
+  const allCards = [...document.querySelectorAll('.gc')];
+  N = allCards.length;
+
+  // ── CARRUSEL DESKTOP ──
+  const isDesktop = scene && track && !window.matchMedia('(max-width: 768px)').matches;
+
+  if (isDesktop) {
+    const GAP = 18;
+    targetFrac  = (N - 1) / 2;
+    currentFrac = targetFrac;
+
+    const cw   = () => allCards[0]?.offsetWidth || 320;
+    const step = () => cw() + GAP;
+    const offsetForFrac = f => scene.offsetWidth / 2 - f * step() - cw() / 2;
+
+    function applyFrame(offset) {
+      track.style.transform = `translateX(${offset}px)`;
+      const sc2 = scene.offsetWidth / 2;
+      allCards.forEach((card, i) => {
+        const center = offset + i * step() + cw() / 2;
+        const d  = (center - sc2) / (scene.offsetWidth * 0.5);
+        const ry = -d * 30;
+        const tz = -Math.abs(d) * 110;
+        const sc = Math.max(0.78, 1 - Math.abs(d) * 0.13);
+        const op = Math.max(0.28, 1 - Math.abs(d) * 0.58);
+        card.style.transform = `perspective(1400px) rotateY(${ry}deg) translateZ(${tz}px) scale(${sc})`;
+        card.style.opacity   = op;
+        card.style.zIndex    = Math.round(20 - Math.abs(d) * 10);
+        const lbl = card.querySelector('.gc-label');
+        if (lbl) lbl.style.opacity = Math.max(0, 1 - Math.abs(d) * 4);
+      });
     }
+
+    function tick() {
+      currentFrac += (targetFrac - currentFrac) * 0.085;
+      applyFrame(offsetForFrac(currentFrac));
+      raf = Math.abs(targetFrac - currentFrac) > 0.0008 ? requestAnimationFrame(tick) : 0;
+    }
+
+    applyFrame(offsetForFrac(currentFrac));
+
+    scene.addEventListener('mousemove', (e) => {
+      if (paused) return;
+      const r = scene.getBoundingClientRect();
+      const x = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+      targetFrac = x * (N - 1);
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+
+    allCards.forEach((card, i) => {
+      card.addEventListener('click', () => {
+        paused = true;
+        targetFrac = i;
+        if (!raf) raf = requestAnimationFrame(tick);
+        lbOpen(i);
+      });
+    });
   }
 
-  // Lightbox
-  const lb      = document.getElementById('lb');
-  const lbImg   = document.getElementById('lb-img');
-  const lbClose = document.getElementById('lb-close');
-  if (!lb) return;
+  // ── LIGHTBOX (desktop + mobile) ──
+  if (!lb || !lbImg) return;
 
-  document.querySelectorAll('.gc img').forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', (e) => {
-      e.stopPropagation();
-      lbImg.src = img.src;
-      lbImg.alt = img.alt;
-      lb.classList.add('open');
-    });
+  const allImgs = allCards.map(c => c.querySelector('img'));
+  let lbIdx = 0;
+
+  // Dots indicadores
+  allImgs.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'lb-dot' + (i === 0 ? ' active' : '');
+    lbDots?.appendChild(d);
   });
 
-  lb.addEventListener('click', () => lb.classList.remove('open'));
-  lbClose.addEventListener('click', (e) => { e.stopPropagation(); lb.classList.remove('open'); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.classList.remove('open'); });
+  function updateDots(i) {
+    lbDots?.querySelectorAll('.lb-dot').forEach((d, j) => d.classList.toggle('active', j === i));
+  }
+
+  function lbOpen(i) {
+    lbIdx = ((i % N) + N) % N;
+    lbImg.style.opacity = '1';
+    lbImg.src = allImgs[lbIdx].src;
+    lbImg.alt = allImgs[lbIdx].alt;
+    lb.classList.add('open');
+    updateDots(lbIdx);
+  }
+
+  function lbNav(dir) {
+    lbIdx = (lbIdx + dir + N) % N;
+    lbImg.style.opacity = '0';
+    setTimeout(() => {
+      lbImg.src = allImgs[lbIdx].src;
+      lbImg.alt = allImgs[lbIdx].alt;
+      lbImg.style.opacity = '1';
+      updateDots(lbIdx);
+    }, 160);
+  }
+
+  function lbClose2() {
+    lb.classList.remove('open');
+    paused = false;
+    if (!raf) raf = requestAnimationFrame(function tick2() {
+      // retomar carrusel solo si hay cambio pendiente
+      raf = 0;
+    });
+  }
+
+  lb.addEventListener('click', (e) => { if (e.target === lb) lbClose2(); });
+  lbClose?.addEventListener('click', lbClose2);
+  lbPrev?.addEventListener('click', (e) => { e.stopPropagation(); lbNav(-1); });
+  lbNext?.addEventListener('click', (e) => { e.stopPropagation(); lbNav(1); });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape')     lbClose2();
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); lbNav(-1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); lbNav(1); }
+  });
+
+  // Mobile: click directo
+  if (!isDesktop) {
+    allCards.forEach((card, i) => card.addEventListener('click', () => lbOpen(i)));
+  }
 })();
 </script>
 </Layout>
