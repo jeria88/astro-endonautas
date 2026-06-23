@@ -7,6 +7,9 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) => !page.includes('/draft/') && !page.includes('/fractones/'),
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
     }),
   ],
 });
