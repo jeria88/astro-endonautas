@@ -72,6 +72,42 @@ import Layout from '../layouts/Layout.astro';
   .plan-feats li { font-size: .9rem; color: var(--mut); line-height: 1.5; display: flex; gap: .55rem; align-items: baseline; }
   .plan-feats li::before { content: '·'; color: var(--c); flex-shrink: 0; }
   .plan-feats li.hi { color: rgba(255,255,255,.88); }
+  /* CAPTURA PRACTICANTE */
+  .pro-nl-wrap {
+    max-width: 580px; margin: 0 auto; text-align: center;
+    border: 1px solid rgba(126,204,205,.2); border-radius: 20px;
+    padding: 3rem 3.5rem; background: rgba(126,204,205,.03); backdrop-filter: blur(12px);
+    position: relative; overflow: hidden;
+  }
+  .pro-nl-wrap::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(126,204,205,.5), transparent);
+  }
+  .pro-nl-lbl { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--c); margin-bottom: 1rem; }
+  .pro-nl-h {
+    font-family: var(--fd); font-size: clamp(1.4rem, 2.8vw, 2rem);
+    font-weight: 700; color: #fff; letter-spacing: -.03em; line-height: 1.15;
+    margin-bottom: .9rem;
+  }
+  .pro-nl-sub { font-size: .95rem; color: var(--mut); line-height: 1.72; margin-bottom: 2rem; }
+  .pro-nl-form { display: flex; flex-direction: column; gap: .75rem; max-width: 420px; margin: 0 auto; }
+  .pro-nl-input-wrap { display: flex; gap: .5rem; }
+  .pro-nl-input {
+    flex: 1; padding: .85rem 1.1rem; border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05);
+    color: #fff; font-size: .95rem; outline: none; transition: border-color .2s;
+  }
+  .pro-nl-input:focus { border-color: rgba(126,204,205,.5); }
+  .pro-nl-btn { white-space: nowrap; font-size: .88rem; padding: .85rem 1.4rem; }
+  .pro-nl-note { font-size: .75rem; color: var(--dim); text-align: center; }
+  .pro-nl-msg { font-size: .85rem; min-height: 1.2rem; transition: color .2s; }
+  .pro-nl-msg.ok { color: var(--c); }
+  .pro-nl-msg.err { color: #e87; }
+  @media (max-width: 600px) {
+    .pro-nl-wrap { padding: 2rem 1.5rem; }
+    .pro-nl-input-wrap { flex-direction: column; }
+    .pro-nl-btn { width: 100%; }
+  }
   /* CIERRE */
   .cierre-quote {
     border: 1px solid rgba(155,142,196,.25); background: rgba(155,142,196,.04);
@@ -200,6 +236,65 @@ import Layout from '../layouts/Layout.astro';
       <p style="font-size:.8rem;color:var(--dim);margin-top:1rem;line-height:1.65" class="from-b" data-d="3">¿No estás listo para el plan Practicante? Puedes explorar la app completa en el <a href="https://app.endonautas.cl/registro/" style="color:var(--c);text-decoration:none">plan gratuito</a> y actualizar cuando quieras.</p>
     </div>
   </section>
+
+  <!-- CAPTURA PRACTICANTE -->
+  <section class="s s-darker">
+    <div class="container">
+      <div class="pro-nl-wrap from-b">
+        <p class="pro-nl-lbl">Antes de activar el plan</p>
+        <h2 class="pro-nl-h">¿Querés conocer el módulo primero?</h2>
+        <p class="pro-nl-sub">Déjanos tu email y te mostramos cómo funciona la ficha de paciente, los tests asignables y el Terapeuta IA — sin tarjeta, sin presión.</p>
+        <form class="pro-nl-form" id="proNlForm" novalidate>
+          <div class="pro-nl-input-wrap">
+            <input type="email" id="proNlEmail" class="pro-nl-input" placeholder="tu@email.com" autocomplete="email" required />
+            <button type="submit" class="btn btn-p pro-nl-btn" id="proNlBtn">Mostrarme el módulo</button>
+          </div>
+          <p class="pro-nl-msg" id="proNlMsg" aria-live="polite"></p>
+          <p class="pro-nl-note">Solo 1 email con la demo · Sin compromiso</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+  (function(){
+    const form = document.getElementById('proNlForm');
+    const emailEl = document.getElementById('proNlEmail');
+    const btn = document.getElementById('proNlBtn');
+    const msg = document.getElementById('proNlMsg');
+    if (!form) return;
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const email = emailEl.value.trim();
+      if (!email) return;
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+      msg.textContent = '';
+      msg.className = 'pro-nl-msg';
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, list: 'practicante' })
+        });
+        const data = await res.json();
+        if (data.ok) {
+          msg.textContent = 'Listo — revisá tu email pronto.';
+          msg.className = 'pro-nl-msg ok';
+          emailEl.value = '';
+          btn.textContent = '¡Enviado!';
+        } else {
+          throw new Error(data.error || 'Error');
+        }
+      } catch(err) {
+        msg.textContent = 'Algo salió mal. Intentá de nuevo.';
+        msg.className = 'pro-nl-msg err';
+        btn.disabled = false;
+        btn.textContent = 'Mostrarme el módulo';
+      }
+    });
+  })();
+  </script>
 
   <!-- CIERRE -->
   <section class="s s-dark">
