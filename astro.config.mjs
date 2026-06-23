@@ -6,7 +6,7 @@ export default defineConfig({
   output: 'static',
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/draft/'),
+      filter: (page) => !page.includes('/draft/') && !page.includes('/fractones/'),
     }),
   ],
 });

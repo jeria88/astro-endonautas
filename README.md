@@ -7,16 +7,17 @@ Sitio estático de marketing para [endonautas.cl](https://endonautas.cl) constru
 | Capa | Tecnología |
 |------|-----------|
 | Framework | Astro 4.x (SSG) |
-| Tipografía | Syne (headings) + Inter (body) vía Google Fonts |
-| Deploy | Coolify v4.1.2 en Oracle Cloud ARM64 |
+| Tipografía | Space Grotesk (headings) + Inter (body) vía Google Fonts |
+| Deploy | Cloudflare Pages (auto-deploy al hacer push a `main`) |
 | Analytics | Umami — `analytics.endonautas.cl` |
+| Functions | Cloudflare Pages Functions (`functions/api/`) |
 
 ## Infraestructura de producción
 
-**Servidor:** Oracle Cloud Free Tier ARM64 · IP `146.181.39.4`  
-**Coolify:** proyecto `Endonautas` · auto-deploy al hacer push a `main`  
-**Dominio:** `https://endonautas.cl` (Traefik + Let's Encrypt automático)  
-**Repo:** `github.com/jeria88/astro-endonautas`
+**Deploy:** Cloudflare Pages · proyecto `astro-endonautas`  
+**Dominio:** `https://endonautas.cl` (DNS en Cloudflare)  
+**Repo:** `github.com/jeria88/astro-endonautas`  
+**Branch:** `main` → auto-deploy en Cloudflare Pages al hacer push
 
 ## Desarrollo local
 
@@ -30,12 +31,14 @@ npm run build   # verificar build antes de push
 
 | URL | Descripción |
 |-----|-------------|
-| `/` | Landing principal con hero, comparativa, instrumentos, precios, FAQ |
+| `/` | Landing principal con hero, comparativa, instrumentos, precios, FAQ, newsletter |
 | `/profesionales` | Landing B2B — Plan Practicante para terapeutas y coaches |
+| `/blog/` | Índice del blog |
 | `/ebook` | Página del libro *Endonautica* |
 | `/privacidad` | Política de privacidad |
 | `/terminos` | Términos de uso |
 | `/contacto` | Formulario de contacto |
+| `/equipo` | Equipo / acerca de |
 
 ## CTAs principales
 
@@ -46,9 +49,31 @@ npm run build   # verificar build antes de push
 | "Activar Navegante" | `https://app.endonautas.cl/registro/?plan=navegante` |
 | "Activar Practicante" | `https://app.endonautas.cl/registro/?plan=practicante` |
 
-## Servicios del servidor relacionados
+## Redes sociales
 
-### Stack de herramientas (Oracle Cloud — mismo servidor)
+| Red | URL |
+|-----|-----|
+| Instagram | `https://www.instagram.com/endonautas/` |
+| TikTok | `https://www.tiktok.com/@endonautas` |
+| YouTube | `https://m.youtube.com/channel/UC9hqN2eNx1X-U-2ev9GUsCg` |
+| LinkedIn | `https://www.linkedin.com/company/endonautas` |
+
+## Cloudflare Pages Functions
+
+### `functions/api/subscribe.js`
+
+Proxy POST hacia Listmonk (evita CORS desde el navegador). Acepta:
+
+```json
+{ "email": "user@example.com", "list": "lanzamiento" }
+```
+
+| Campo `list` | Lista Listmonk | UUID |
+|-------------|---------------|------|
+| `lanzamiento` (default) | Lanzamiento (ID 8) | `431ebe70-b897-416b-9016-daea6acc030c` |
+| `practicante` | Practicantes (ID 5) | `574f7450-0663-4848-95e5-8ebe4765a33a` |
+
+## Servicios relacionados (Oracle Cloud — mismo servidor que la app)
 
 | Servicio | URL | Función |
 |---------|-----|---------|
@@ -58,34 +83,16 @@ npm run build   # verificar build antes de push
 | SerpBear | `https://seo.endonautas.cl` | Tracking keywords SEO |
 | n8n | (interno) | Automatización de marketing |
 
-### Listmonk — estado actual
+### Listmonk — listas activas
 
-Configurado con Brevo SMTP relay:
-- Host: `smtp-relay.brevo.com` · Puerto `587` · STARTTLS
-- Login: `aaccf1001@smtp-brevo.com`
-- From: `hola@endonautas.cl`
+| Lista | ID | UUID | Descripción |
+|-------|----|------|-------------|
+| Usuarios App | 4 | — | Registrados en app.endonautas.cl |
+| Practicantes | 5 | `574f7450-0663-4848-95e5-8ebe4765a33a` | Leads de /profesionales/ |
+| Leads App | 7 | — | Usuarios free → upgrade |
+| Lanzamiento | 8 | `431ebe70-b897-416b-9016-daea6acc030c` | Leads de la landing |
 
-Listas activas:
-- `Endonautas — Usuarios App` (ID 1)
-- `Endonautas — Interesados` (ID 2)
-- `Endonautas — Newsletter` (ID 3)
-
-### SerpBear — estado actual
-
-Dominio `endonautas.cl` configurado. Keywords basadas en estrategia SEO de 3 capas:
-- Capa 1 — autoconocimiento (términos base)
-- Capa 2 — viaje interior (términos de proceso)
-- Capa 3 — nivel de conciencia (términos de profundidad)
-
-### Uptime Kuma — monitores
-
-6 monitores activos:
-1. App — `https://app.endonautas.cl`
-2. Landing — `https://endonautas.cl`
-3. Umami — `https://analytics.endonautas.cl`
-4. Listmonk — `https://mail.endonautas.cl`
-5. SerpBear — `https://seo.endonautas.cl`
-6. Coolify — `http://146.181.39.4:8000`
+SMTP configurado: `smtp-relay.brevo.com:587` · login `aaccf1001@smtp-brevo.com` · from `hola@endonautas.cl`
 
 ## Analytics (Umami)
 
@@ -95,10 +102,10 @@ Script integrado en `src/layouts/Layout.astro`:
         src="https://analytics.endonautas.cl/script.js"></script>
 ```
 
-Website ID landing: `e03fa69e-9931-411c-9838-7f6ffea90426`
-
-## GitHub
+## Deploy
 
 ```bash
-git push origin main    # activa auto-deploy en Coolify
+git add .
+git commit -m "fix: ..."
+git push origin main    # activa auto-deploy en Cloudflare Pages
 ```
