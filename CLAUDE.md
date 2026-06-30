@@ -267,20 +267,30 @@ Credenciales Meta (no mover del nodo Code):
 - `IG_USER_ID`: `17841408150037364` · `FB_PAGE_ID`: `112522961877445`
 - `PAGE_TOKEN`: never-expiring token en el código del workflow
 
-### n8n — OAuth pendiente (LinkedIn, TikTok, YouTube)
+### n8n — YouTube (credencial creada, pendiente connect)
 
-**Callback URI para todas las apps:**
+Credencial N8N ID: `7tyyXesjuDtwHDid` — "YouTube Endonautas"  
+Google project: `oout-endonautas` | Channel: `UC9hqN2eNx1X-U-2ev9GUsCg`
+
+**Para activar YouTube en la publicación diaria:**
+1. Ir a: https://console.cloud.google.com/apis/credentials/oauthclient/763071214392-rlvc5qblai35te7u1n7e6bof2hbs0mf4.apps.googleusercontent.com?project=oout-endonautas
+2. Agregar en "Authorized redirect URIs": `https://n8n.146.181.39.4.sslip.io/rest/oauth2-credential/callback`
+3. En N8N UI → Credentials → "YouTube Endonautas" → Connect → autorizar con cuenta Google
+4. Listo — el workflow `Daily Publish 11:11` ya tiene el nodo YouTube integrado
+
+El nodo de YouTube en el workflow Code es **no bloqueante**: si el token no está disponible, publica igual en IG y loguea `[YT] credencial pendiente`.
+
+### n8n — OAuth pendiente (LinkedIn, TikTok)
+
+**Callback URI:**
 ```
 https://n8n.146.181.39.4.sslip.io/rest/oauth2-credential/callback
 ```
 
-| Red | Crear app en | Scopes |
-|-----|-------------|--------|
-| **LinkedIn** | https://www.linkedin.com/developers/apps/new | `w_member_social`, `openid`, `profile` |
-| **TikTok** | https://developers.tiktok.com/apps/ | `video.upload`, `video.publish` |
-| **YouTube** | https://console.cloud.google.com/apis/credentials → habilitar YouTube Data API v3 | `youtube.upload` |
-
-Proceso: crear app en el portal → obtener Client ID + Secret → en N8N UI: Credentials → New → OAuth2 → pegar credenciales → Connect → agregar nodo al workflow `Daily Publish 11:11`.
+| Red | Crear app en | Scopes | Estado |
+|-----|-------------|--------|--------|
+| **LinkedIn** | https://www.linkedin.com/developers/apps/new | `w_member_social`, `openid`, `profile` | ⏳ pendiente aprobación |
+| **TikTok** | https://developers.tiktok.com/apps/ | `video.upload`, `video.publish` | ⏳ pendiente aprobación |
 
 ## Listmonk — listas y campañas
 
