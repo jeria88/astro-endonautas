@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""GitHub Actions runner — lee queue, genera artículo, escribe .md, registra en SerpBear."""
+"""GitHub Actions runner — lee queue, genera artículo, escribe .md, registra en SerpBear, escribe pending JSON."""
+import json
 import os
 import sys
 import urllib3
@@ -98,6 +99,23 @@ def main():
     save_queue(items)
 
     register_serpbear(keyword)
+
+    # Escribir pending JSON para el pipeline social
+    pending_dir = Path(__file__).parent.parent.parent / "pending"
+    pending_dir.mkdir(exist_ok=True)
+    pending_path = pending_dir / f"{article.slug}.json"
+    pending_path.write_text(json.dumps({
+        "slug": article.slug,
+        "title": article.title,
+        "keyword": keyword,
+        "layer": layer,
+        "category": category,
+        "article_path": f"src/content/blog/{article.slug}.md",
+        "published_date": date.today().isoformat(),
+        "status": "pending",
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"[seo] Pending: {pending_path}")
+
     print(f"[seo] URL: https://endonautas.cl/blog/{article.slug}/")
 
 

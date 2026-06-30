@@ -32,6 +32,6 @@ jobs:
         run: |
           git config user.email "bot@endonautas.cl"
           git config user.name "Endonautas SEO Bot"
-          git add src/content/blog/ scripts/seo/queue.yaml
+          git add src/content/blog/ scripts/seo/queue.yaml pending/
           git diff --staged --quiet || git commit -m "content(blog): SEO article auto-published"
           git push
