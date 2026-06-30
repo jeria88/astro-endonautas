@@ -6,7 +6,7 @@
   "category": "Instrumentos",
   "article_path": "src/content/blog/carta-natal-human-design-saju-mapas-simbolicos-de-autoconocimiento.md",
   "published_date": "2026-06-30",
-  "status": "copy_pending_review",
+  "status": "scored",
   "avatar_variants": {
     "negocio": [
       {
@@ -443,5 +443,195 @@
       }
     ]
   },
-  "last_updated": "2026-06-30T20:57:34+00:00"
+  "last_updated": "2026-06-30T23:06:49+00:00",
+  "viral_scores": {
+    "negocio_v0": {
+      "score": 78,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 80,
+        "emotional_trigger": 75,
+        "avatar_fit": 70,
+        "shareability": 65
+      },
+      "suggested_director": "contrain",
+      "justification": "Gancho fuerte y contraintuitivo que genera sorpresa, pero el insight suena genérico; podría no conectar con la especificidad del dolor del dueño de negocio."
+    },
+    "negocio_v1": {
+      "score": 84,
+      "dimensions": {
+        "hook_strength": 90,
+        "curiosity_gap": 85,
+        "emotional_trigger": 80,
+        "avatar_fit": 85,
+        "shareability": 75
+      },
+      "suggested_director": "pregunta",
+      "justification": "Pregunta directa que interpela autoridad, genera alta curiosidad y encaja bien con el dolor de pérdida de control; el insight sobre Human Design añade especificidad."
+    },
+    "negocio_v2": {
+      "score": 74,
+      "dimensions": {
+        "hook_strength": 80,
+        "curiosity_gap": 75,
+        "emotional_trigger": 70,
+        "avatar_fit": 75,
+        "shareability": 60
+      },
+      "suggested_director": "contrain",
+      "justification": "El gancho sobre perder clientes es potente pero el insight sobre 'patrón de fondo' puede ser demasiado abstracto; falta concreción táctica para compartir fácilmente."
+    },
+    "profesional_v0": {
+      "score": 85,
+      "dimensions": {
+        "hook_strength": 88,
+        "curiosity_gap": 82,
+        "emotional_trigger": 85,
+        "avatar_fit": 88,
+        "shareability": 78
+      },
+      "suggested_director": "hook",
+      "justification": "Narrativa íntima que resuena con la desconexión entre éxito externo y vacío interno; el insight es profundo pero el cierre 'manual que no conoces' suena a cliché."
+    },
+    "profesional_v1": {
+      "score": 90,
+      "dimensions": {
+        "hook_strength": 92,
+        "curiosity_gap": 88,
+        "emotional_trigger": 90,
+        "avatar_fit": 92,
+        "shareability": 85
+      },
+      "suggested_director": "hook",
+      "justification": "Específico sobre autoexigencia y patrón de nacimiento, alta identificación y emoción; debilidad leve en que el cierre es muy breve y puede dejar la curiosidad insatisfecha."
+    },
+    "profesional_v2": {
+      "score": 82,
+      "dimensions": {
+        "hook_strength": 86,
+        "curiosity_gap": 80,
+        "emotional_trigger": 82,
+        "avatar_fit": 85,
+        "shareability": 72
+      },
+      "suggested_director": "documental",
+      "justification": "Contraste entre control exterior y colapso interior, fuerte emoción; pero el insight sobre 'diseño de energía' puede sonar esotérico para audiencias más pragmáticas."
+    },
+    "padres_v0": {
+      "score": 79,
+      "dimensions": {
+        "hook_strength": 80,
+        "curiosity_gap": 78,
+        "emotional_trigger": 82,
+        "avatar_fit": 80,
+        "shareability": 70
+      },
+      "suggested_director": "pregunta",
+      "justification": "Pregunta directa que activa reflexión, pero el insight sobre hijos mirando es genérico; debilidad en que puede sentirse acusatorio sin ofrecer alivio rápido."
+    },
+    "padres_v1": {
+      "score": 85,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 82,
+        "emotional_trigger": 88,
+        "avatar_fit": 88,
+        "shareability": 80
+      },
+      "suggested_director": "loop",
+      "justification": "Mensaje sanador y cíclico sobre sanación intergeneracional, alta empatía; pero el insight puede ser demasiado abstracto para un carrusel concreto."
+    },
+    "padres_v2": {
+      "score": 77,
+      "dimensions": {
+        "hook_strength": 78,
+        "curiosity_gap": 80,
+        "emotional_trigger": 75,
+        "avatar_fit": 78,
+        "shareability": 65
+      },
+      "suggested_director": "contrain",
+      "justification": "Gancho esperanzador, pero el término 'Saju' puede alienar a audiencias no iniciadas; debilidad en que el mapa no siempre se entiende como neutral."
+    },
+    "terapeuta_v0": {
+      "score": 67,
+      "dimensions": {
+        "hook_strength": 70,
+        "curiosity_gap": 75,
+        "emotional_trigger": 60,
+        "avatar_fit": 65,
+        "shareability": 55
+      },
+      "suggested_director": "edu",
+      "justification": "Gancho defensivo (contra superstición) puede ser poco estimulante; el insight clínico es débil y no genera suficiente tensión o autoridad."
+    },
+    "terapeuta_v1": {
+      "score": 84,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 88,
+        "emotional_trigger": 82,
+        "avatar_fit": 85,
+        "shareability": 78
+      },
+      "suggested_director": "contrain",
+      "justification": "Concepto de contratransferencia es preciso y genera curiosidad en terapeutas; el giro sobre mapas vs supervisión es fuerte, pero puede sonar a competencia."
+    },
+    "terapeuta_v2": {
+      "score": 80,
+      "dimensions": {
+        "hook_strength": 82,
+        "curiosity_gap": 80,
+        "emotional_trigger": 78,
+        "avatar_fit": 82,
+        "shareability": 72
+      },
+      "suggested_director": "quote",
+      "justification": "Afirmación de autoridad que desafía la creencia común; el cierre sobre proyección es potente pero puede sentirse moralizante si no se equilibra con datos."
+    }
+  },
+  "finalists": [
+    "profesional_v1",
+    "profesional_v0",
+    "padres_v1",
+    "negocio_v1",
+    "terapeuta_v1"
+  ],
+  "captions": {
+    "profesional_v1": {
+      "instagram": "Sabes hacer bien tu pega, pero la autoexigencia te quema. No es que no tengas carácter; hay un patrón grabado desde el nacimiento que te lleva a buscar validación constante en el trabajo. La carta natal, el Human Design y el Saju no son horóscopos de diario, sino mapas que revelan disposiciones estructurales: por qué cedes tu criterio, por qué callas tu verdadera opinión, por qué sientes que nunca es suficiente. \n\nUsados como hipótesis, estos sistemas te permiten nombrar lo que la psicología a veces no alcanza a articular. No te dicen quién eres como destino, sino qué tendencias habitas. Si algo resuena, lo exploras. Si no, lo descartas. El valor está en abrir preguntas, no en cerrar identidades. \n\nTransforma la exigencia en claridad. Descubre tu Mapa de Patrones gratis en endonautas.cl y desde ahí accede a tu carta natal, Human Design y Saju con análisis IA. Sin dogmas, con curiosidad. \n\n#endonautas #endonautica #saludmental #autoconocimiento #psicologia #cartanatal #humandesign #saju #mapadenacimiento #profesionales #chile #psicologiachile #saludmentalchile #burnout #autoexigencia",
+      "tiktok": "¿La autoexigencia te quema? No es falta de carácter, es un patrón que se grabó desde el día que naciste. La carta natal, el Human Design y el Saju describen disposiciones estructurales: por qué buscas validación en tu pega, dónde callas tu criterio, cómo la tensión interna te drena. Son hipótesis, no dogmas. Si resuena, lo usas. Si no, lo descartas. #fyp #parati #autoconocimiento #saludmental #cartanatal #humandesign #chile \n\nDescubre el tuyo en endonautas.cl, gratis.",
+      "linkedin": "¿Alguna vez has sentido que haces bien tu trabajo, pero la autoexigencia termina quemándote? No es falta de carácter ni de disciplina. Es un patrón que puede tener raíces más profundas de lo que imaginas.\n\nCuando trabajamos con profesionales (consultores, especialistas, ejecutivos), notamos que muchos cargan con una presión interna que no se explica solo por las exigencias del entorno. La carta natal, el Human Design y el Saju ofrecen marcos simbólicos que pueden ayudar a nombrar esas dinámicas: dónde cedes tu criterio a otros, en qué áreas te sobreadaptas, qué conflictos internos se repiten en tu día a día.\n\nEstos sistemas no son verdades absolutas ni predicciones. Son hipótesis para explorar. Si algo resuena, puedes profundizar. Si no, lo dejas pasar. El autoconocimiento no es destino, es posibilidad.\n\n¿Qué patrón reconoces en ti que te gustaría entender mejor?\n\nDescubre tu Mapa de Patrones gratis en endonautas.cl. #autoconocimiento #liderazgo #saludmental #carrera #burnout",
+      "youtube_title": "Autoexigencia y mapas simbólicos: cómo dejar de quemarte",
+      "youtube_description": "Descubre cómo la carta natal, el Human Design y el Saju pueden ayudarte a entender la autoexigencia, la procrastinación y el burnout desde una perspectiva estructural, no predictiva. Son hipótesis sobre tus patrones, no dogmas. Si resuenan, explora. Si no, descarta. \n\nConoce tu Mapa de Patrones gratis en endonautas.cl y accede a análisis IA de tu carta natal, Human Design y Saju. Autoconocimiento sin determinismo. #autoconocimiento #burnout #humandesign"
+    },
+    "profesional_v0": {
+      "instagram": "¿Tu carrera funciona impecable pero tu interior no encaja?\n\nNo eres un error del sistema. Solo que operas con un manual que nunca te mostraron.\n\nLa carta natal, el Human Design y el Saju no predicen tu futuro. Son hipótesis sobre qué repites, dónde te agotas y qué conflictos internos llevas años tratando de resolver.\n\nEn profesionales como tú —perfeccionistas, sobreexigentes, con burnout silencioso— estos mapas revelan patrones que ni los tests psicológicos tocan.\n\nUsalos como herramientas, no como verdades. ¿Qué pasa si exploras? Entra a endonautas.cl y descubre tu hipótesis.\n\n#endonautas #endonautica #cartanatal #humandesign #saju #patronesrelacionales #autoconocimiento #saludmental #psicologia #burnout #energia #perfeccionismo #procrastinacion #chile #psicologiachile",
+      "tiktok": "Si lees la carta natal para saber qué pasará, la estás usando mal.\n\nNo es predicción. Es un mapa de lo que ya repites sin darte cuenta.\n#cartanatal #autoconocimiento #humandesign #saju\n\nTu carrera es impecable, pero algo adentro no encaja. Probaste con planes, terapia, disciplina. Y el patrón sigue ahí. \n\nEstos sistemas —carta natal, Human Design, Saju— te dan un lenguaje para verlo. Sin jerga, sin magia. Solo hipótesis para explorar.\n\n¿Y si resulta que no es que estés mal, sino que operas con un manual que no conoces? Descúbrelo en endonautas.cl.\n#fyp #parati #saludmental #patrones",
+      "linkedin": "Colegas, hablemos de algo que muchos profesionales evitan: esa sensación de que por fuera todo funciona y por dentro algo no encaja.\n\nLlevo años viendo a gente brillante —consultores, especialistas, líderes— que se exigen hasta el agotamiento. Y el burnout no es falta de disciplina, es un patrón que se repite sin que lo veamos.\n\nLos mapas simbólicos como la carta natal, el Human Design y el Saju no son astrología de revista. Son marcos para nombrar esas disposiciones estructurales que otros sistemas no tocan: por qué ciertos roles te agotan, dónde cedes tu criterio, qué conflictos internos están siempre ahí.\n\nNo son verdad absoluta. Son hipótesis para explorar. La pregunta no es \"¿funciona?\", sino \"¿qué abre esta perspectiva que antes no veías?\"\n\n¿Has explorado alguna vez tu configuración energética desde estos mapas? Comparte tu experiencia o escríbeme si te interesa saber más. El link: endonautas.cl\n\n#autoconocimiento #cartanatal #humandesign #saju #saludmental",
+      "youtube_title": "Carta natal y Human Design: ¿mapas o destino?",
+      "youtube_description": "¿La carta natal, Human Design y Saju son herramientas de autoconocimiento o solo moda? En este video te explico cómo usarlos sin caer en el determinismo. No predicen tu futuro, te dan claves sobre tus patrones. Explora más en endonautas.cl"
+    },
+    "padres_v1": {
+      "instagram": "Si estás criando y te ves reflejado en tus hijos, no es coincidencia. Ellos te muestran lo que aún no has mirado en ti.\n\nEl Human Design, la carta natal y el Saju no predicen el futuro. Son mapas simbólicos que describen disposiciones estructurales. No te dicen quién eres. Te ofrecen una hipótesis sobre cómo filtas el mundo, cómo reaccionas bajo presión y cómo eso se transmite a quienes crías.\n\nLo que no sanas en ti, se lo enseñas sin querer. No es culpa, es conciencia. Cuando reconoces que tu reactividad emocional, tu necesidad de control o tu tendencia a retirarte son patrones heredados, puedes empezar a elegir distinto.\n\nEl Human Design, por ejemplo, nombra cómo cedes tu autoridad interna. La carta natal articula esas heridas que apenas sabías nombrar. El Saju mapea la tensión entre tu expresividad y tu estructura. No son verdades absolutas, son herramientas para ver lo que antes no veías.\n\nCriar con conciencia no es ser perfecto. Es saber qué estás proyectando y decidir si quieres seguir transmitiéndolo. Tus hijos no necesitan un padre perfecto, necesitan uno que se conozca. Reconocer tu diseño y el de tu familia es el primer paso para romper ciclos.\n\nEmpieza con el Mapa de Patrones gratis. Desde ahí, el plan Navegante incluye carta natal, Human Design y Saju con análisis IA. No es destino, es material para explorar. \n\nDescúbrelo en endonautas.cl\n\n#endonautas #endonautica #autoconocimiento #saludmental #humanDesign #cartanatal #saju #crianzarespetuosa #psicologia #parentalidad #patronesfamiliares #chile #psicologiachile #saludmentalchile",
+      "tiktok": "Tus hijos no necesitan un padre perfecto, necesitan uno que se conozca.\n\nLo que no sanas en ti, se lo enseñas sin querer. El Human Design, la carta natal y el Saju no son astrología de revista. Son mapas simbólicos que describen cómo filtras el mundo. Cómo reaccionas, cómo amas, y cómo eso se transmite.\n\n#fyp #parati #autoconocimiento #crianza\n\nNo es culpa, es conciencia. Tus arranques de ira, tu silencio cuando te sientes abrumado, tu necesidad de controlar cada detalle. Todo eso tiene un patrón. Y tus hijos lo absorben igual que el oxígeno.\n\n#saludmental #psicologia #humanDesign\n\nUn mapa no te define, te da una pista. Reconoce tu diseño. Explora cómo funciona tu cabeza, tu cuerpo, tus emociones. No para encasillarte, sino para elegir distinto.\n\n#endonautas #patronesfamiliares\n\nEmpieza gratis en endonautas.cl. El plan Navegante incluye análisis de tu Human Design, carta natal y Saju. Cría con conciencia.",
+      "linkedin": "Colegas, hay una conversación que evitamos en la paternidad: lo que no resolvemos en nosotros se lo transmitimos a nuestros hijos.\n\nNo hablo de culpa. Hablo de patrones. El Human Design, la carta natal y el Saju no predicen el futuro ni te dicen quién eres. Son mapas simbólicos que describen disposiciones estructurales. Una hipótesis sobre cómo filtras el mundo y cómo reaccionas bajo presión.\n\nCuando te conoces, crias distinto. No porque seas perfecto, sino porque puedes reconocer cuándo estás proyectando tu propia historia en lugar de responder a lo que realmente está pasando.\n\nLos tres sistemas se complementan: la carta natal articula heridas de base, el Human Design nombra cómo cedes tu autoridad, el Saju mapea tensiones internas. Juntos ofrecen un vocabulario para ver lo que antes no veías.\n\nNo son verdad absoluta, son herramientas. Y cuando se usan con conciencia, te permiten romper ciclos que llevas arrastrando generaciones.\n\n¿Has explorado cómo tu diseño influye en tu forma de criar? ¿Qué patrón te gustaría reconocer primero?\n\nEmpieza con el Mapa de Patrones gratis en endonautas.cl y, si quieres más profundidad, el plan Navegante incluye análisis de Human Design, carta natal y Saju.\n\n#autoconocimiento #crianza #saludmental #desarrollopersonal #humanDesign",
+      "youtube_title": "Autoconocimiento y crianza: mapas simbólicos para padres",
+      "youtube_description": "Criar con conciencia empieza por conocerte. El Human Design, la carta natal y el Saju no son astrología de revista: son mapas para explorar cómo filtras el mundo y cómo eso se transmite a tus hijos. No como verdad, sino como hipótesis para romper patrones.\n\nAprende a usar estos sistemas sin caer en determinismo. Empieza con el Mapa de Patrones gratis en endonautas.cl y accede al plan Navegante con análisis personalizados.\n\n#autoconocimiento #humanDesign #crianzaresponsable #saludmental…"
+    },
+    "negocio_v1": {
+      "instagram": "¿Sabes cómo pierdes autoridad en tu equipo? Hay un patrón que te cuesta clientes, crecimiento o retención de talento, y no es mala suerte. Los centros indefinidos de tu Human Design lo delatan: allí dejas que otros decidan por ti. Tu carta natal muestra tu resistencia al feedback. El Saju expone la dinámica que nunca sale bien. El patrón se repite hasta que lo ves.\n\nNo es astrología de revista. Es cartografía simbólica: hipótesis sobre tus disposiciones, no verdades absolutas. Usados como herramientas —no como destino— estos mapas te dan un lenguaje para nombrar lo que ya sabes pero no habías articulado.\n\nComo líder, el autoconocimiento no es un lujo personal. Es una ventaja operativa. ¿Qué pasaría si entendieras exactamente dónde cedes tu criterio y cómo recuperarlo?\n\nEmpieza gratis con tu Mapa de Patrones en endonautas.cl. Desde ahí, el plan Navegante incluye carta natal, Human Design y Saju con análisis IA.\n\n#endonautas #endonautica #autoconocimiento #liderazgo #human design #carta natal #saju #mapasimbólico #dueñosdenegocio #saludmental #psicologia #chile #psicologíachile #crecimientopersonal #patronesrelacionales",
+      "tiktok": "Tu carta natal no predice tu futuro. Describe patrones. Y si eres líder de negocio, esos patrones te están costando clientes, equipo o plata. #human design #autoconocimiento\n\nLo que el horóscopo de diario promete (predicciones) no es esto. Esto es cartografía simbólica: un marco para nombrar disposiciones estructurales. Pregunta: \"¿Esto resuena?\" —no \"¿Es verdad?\".\n\nLos centros indefinidos de tu Human Design muestran dónde cedes tu criterio. Tu carta natal expone tu resistencia al feedback. El Saju revela dinámicas que se repiten. Cuando ves el patrón, dejas de tropezar con la misma piedra.\n\nNo es autoayuda. Es inteligencia aplicada a tu liderazgo. Empieza gratis en endonautas.cl #fyp #parati #dueñosdenegocio #liderazgo #saludmental #mapanatal",
+      "linkedin": "Como líder de equipo o dueño de negocio, probablemente has tenido esta sensación: algo se te escapa. Pierdes autoridad sin saber por qué. Tomas decisiones que sabes que no son las mejores. Tu equipo te da feedback que te cuesta escuchar.\n\nNo es falta de capacidad. Es un patrón relacional que se repite hasta que logras verlo.\n\nLos mapas simbólicos —carta natal, Human Design, Saju— no son astrología de revista ni predicciones. Son hipótesis sobre disposiciones estructurales. La carta natal describe tendencias temperamentales. El Human Design expone exactamente dónde cedes tu autoridad a influencias externas (los centros indefinidos). El Saju muestra la dinámica entre elementos que genera conflictos internos recurrentes.\n\nUsados correctamente —no como verdad absoluta, sino como superficie de proyección— estos sistemas te dan un lenguaje para nombrar lo que la psicología clínica no siempre articula de forma tan accesible.\n\nEl autoconocimiento aplicado al liderazgo no es un lujo personal. Es una herramienta operativa para retener talento, tomar mejores decisiones y escalar sin perder el norte.\n\n¿Qué pasaría si entendieras exactamente dónde y cómo pierdes tu criterio en tu negocio?\n\nEmpieza gratis con tu Mapa de Patrones en endonautas.cl. El plan Navegante incluye análisis de carta natal, Human Design y Saju con IA.\n\n#autoconocimiento #liderazgo #human design #carta natal #saju #desarrollopersonal #dueñosdenegocio",
+      "youtube_title": "¿Tu carta natal te cuesta clientes?",
+      "youtube_description": "Los mapas simbólicos —carta natal, Human Design y Saju— no son horóscopo de revista ni predicciones. Son hipótesis sobre tus disposiciones estructurales. Como líder de negocio, entender dónde cedes tu autoridad (Human Design), cómo resistes al feedback (carta natal) y qué dinámicas se repiten (Saju) es una ventaja operativa, no un lujo personal. Empieza gratis con tu Mapa de Patrones en endonautas.cl. #autoconocimiento #liderazgo #human design"
+    },
+    "terapeuta_v1": {
+      "instagram": "Tu contratransferencia dice más que cualquier mapa. Pero los mapas nombran lo que la supervisión no toca. Como terapeuta, sabes que el paciente proyecta en sesión. Pero ¿has mirado lo que tú proyectas en el mapa simbólico? Human Design y Saju no son verdades absolutas, sino lenguaje para explorar tus patrones relacionales. Sin autoconocimiento del terapeuta, el trabajo se nubla. El espejo que eres necesita pulirse fuera del consultorio. Explora tus tendencias estructurales con mapas de nacimiento en endonautas.cl. #endonautas #endonautica #saludmental #autoconocimiento #psicologia #terapia #coaching #contratransferencia #human Design #saju #cartanatal #psicologiachile #saludmentalchile #chile",
+      "tiktok": "Tu contratransferencia dice más que cualquier mapa. Pero los mapas nombran lo que la supervisión no toca. Human Design y Saju son lenguaje, no verdad absoluta. El paciente proyecta. Tú también, en sesión. El espejo que eres necesita pulirse fuera del consultorio. Sin autoconocimiento del terapeuta, el trabajo se nubla. Explora tus tendencias estructurales con mapas de nacimiento en endonautas.cl. #fyp #parati #saludmental #psicologia #coaching #autoconocimiento #endonautas",
+      "linkedin": "Como terapeuta o coach, sabes que el paciente proyecta en sesión. Pero ¿has considerado que tú también proyectas, sobre todo cuando usas sistemas simbólicos como la carta natal, Human Design o Saju? La contratransferencia no solo ocurre con personas: también ocurre con los mapas. El problema no es el sistema, sino cómo lo usas. Si lo tratas como verdad absoluta, cierras la posibilidad de explorar. Si lo tratas como hipótesis, se convierte en un espejo para pulir tu propio autoconocimiento. El espejo que eres para tu paciente necesita pulirse fuera del consultorio. En Endonautas, los mapas se generan con análisis IA, pero nunca como destino, sino como material para explorar tus tendencias estructurales. Entra a endonautas.cl y descubre lo que los mapas nombran que la supervisión no toca. ¿Qué estás proyectando en tus herramientas de trabajo? #endonautas #psicologia #coaching #saludmental #autoconocimiento",
+      "youtube_title": ": Mapas simbólicos para el terapeuta",
+      "youtube_description": "La contratransferencia del terapeuta dice más que cualquier mapa. Pero los mapas nombran lo que la supervisión no toca. Human Design, carta natal y Saju como herramientas de autoconocimiento para terapeutas y coaches. No son verdad absoluta, sino lenguaje para explorar patrones. Explora tus tendencias estructurales en endonautas.cl. Más información en nuestro blog. #cartanatal #humandesign #saju #autoconocimiento #psicologia"
+    }
+  }
 }
