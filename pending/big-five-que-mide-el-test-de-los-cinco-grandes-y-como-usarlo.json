@@ -13,115 +13,109 @@
       {
         "carousel": {
           "slides": [
-            "Tu negocio no crece y no sabes por qué.",
-            "Tu personalidad decide cómo lideras.",
-            "El Big Five no es un test de revista.",
-            "Mide lo que influye en tus decisiones.",
-            "Baja responsabilidad te cuesta clientes.",
-            "Alto neuroticismo frena a tu equipo.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
+            "¿Tu equipo te ignora cuando delegas?",
+            "Quizás chocas con su forma de procesar información.",
+            "Alta apertura no es desorden. Baja apertura no es terquedad.",
+            "El Big Five te muestra cómo cada persona trabaja mejor.",
+            "No necesitas cambiar su personalidad, solo ajustar tu liderazgo.",
+            "Conocer los patrones de tu equipo reduce la fricción.",
+            "Lidera según el perfil de tu equipo → endonautas.cl"
           ],
           "keywords": [
-            "liderazgo",
             "big five",
-            "negocio",
-            "resultados",
-            "patrones"
+            "liderazgo",
+            "equipo",
+            "personalidad",
+            "delegación"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Tu equipo no falla,",
-          "hook_b": "proyectas lo que no sanaste.",
-          "cta": "Lee la descripción ↓",
+          "hook_a": "Tu toma de decisiones – ¿te sabotea?",
+          "hook_b": "El patrón que tu empresa no merece.",
+          "cta": "Conócete gratis en endonautas.cl",
           "keywords": [
-            "liderazgo",
-            "autoconocimiento",
-            "proyección",
-            "gestión",
-            "Big Five"
+            "big five",
+            "toma de decisiones",
+            "patrón personal"
           ]
         },
         "social": {
-          "instagram": "Dueño de negocio: tu personalidad define tu liderazgo más que tu CV. El Big Five mide lo que realmente importa en la toma de decisiones. No es una etiqueta, es un mapa para entender cómo operas bajo presión. #BigFive #LiderazgoReal #Psicometria",
-          "tiktok": "¿Sabías que el 80% de los errores en tu equipo vienen de cómo manejas tu neuroticismo? El Big Five te lo muestra sin vueltas. Descúbrelo en 10 minutos.",
-          "linkedin": "Colegas, les comparto esto: el Big Five no es un test de autoayuda. Es el marco más riguroso que tenemos para entender cómo funcionamos en el trabajo.\n\nSi eres dueño de negocio, sabes que la clave está en los equipos. Pero antes de contratar o delegar, pregúntate: ¿estás usando tu perfil de personalidad a favor o en contra?\n\nAlta responsabilidad bajo neuroticismo alto es receta para microgestionar. Baja apertura con alta amabilidad te vuelve un líder que evita conflictos sin innovar.\n\nConocer esto te ahorra meses de fricción. No es moda, es gestión inteligente."
+          "instagram": "Para Dueños de negocio: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Dueños de negocio no es introspección — es una práctica medible. Más en endonautas.cl"
         }
       },
       {
         "carousel": {
           "slides": [
-            "Tu equipo no rinde por tu perfil.",
-            "El Big Five explica tus conflictos.",
-            "Apertura baja frena la innovación.",
-            "Amabilidad alta evita decisiones duras.",
-            "Extraversión baja aleja a clientes.",
-            "Usa datos, no excusas, para mejorar.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
+            "Perdiste un cliente clave por un conflicto evitable.",
+            "Quizás tu estilo chocó con su manera de decidir.",
+            "La amabilidad baja no es mala, solo busca resultados.",
+            "El Big Five explica por qué negociaste tan distinto.",
+            "Usa el perfil de tu cliente para anticipar roces.",
+            "No se trata de gustar, sino de entender cómo funciona.",
+            "Cierra más ventas conociendo patrones → endonautas.cl"
           ],
           "keywords": [
-            "equipo",
-            "resultados",
-            "conflictos",
-            "perfil",
-            "herramienta"
+            "big five",
+            "ventas",
+            "clientes",
+            "conflicto",
+            "negociación"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Tu ansiedad no es caos,",
-          "hook_b": "es neuroticismo sin nombre.",
-          "cta": "Lee la descripción ↓",
+          "hook_a": "El rasgo que te frena",
+          "hook_b": "Lo ves en tus empleados.",
+          "cta": "Descubre tu perfil en endonautas.cl",
           "keywords": [
+            "big five",
+            "liderazgo",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "Para Dueños de negocio: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Dueños de negocio no es introspección — es una práctica medible. Más en endonautas.cl"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Tu negocio no crece y no sabes por qué.",
+            "Quizás tu perfil te frena sin que te des cuenta.",
+            "Alta responsabilidad te da orden, pero baja apertura te cierra puertas.",
+            "El Big Five revela tus puntos ciegos como emprendedor.",
+            "No se trata de cambiar quién eres, sino de compensar.",
+            "Conocerte evita decisiones que te estancan.",
+            "Acelera tu crecimiento con tu mapa de patrones → endonautas.cl"
+          ],
+          "keywords": [
+            "big five",
+            "emprendimiento",
+            "crecimiento",
+            "puntos ciegos",
+            "decisión"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tu neuroticismo dicta tus reuniones",
+          "hook_b": "Y tú lo justificas como liderazgo.",
+          "cta": "Empieza por ti: endonautas.cl",
+          "keywords": [
+            "big five",
             "neuroticismo",
-            "ansiedad",
-            "autoconocimiento",
-            "estrés",
-            "Big Five"
+            "liderazgo reactivo"
           ]
         },
         "social": {
-          "instagram": "Dueño de negocio: tu personalidad define tu liderazgo más que tu CV. El Big Five mide lo que realmente importa en la toma de decisiones. No es una etiqueta, es un mapa para entender cómo operas bajo presión. #BigFive #LiderazgoReal #Psicometria",
-          "tiktok": "¿Sabías que el 80% de los errores en tu equipo vienen de cómo manejas tu neuroticismo? El Big Five te lo muestra sin vueltas. Descúbrelo en 10 minutos.",
-          "linkedin": "Colegas, les comparto esto: el Big Five no es un test de autoayuda. Es el marco más riguroso que tenemos para entender cómo funcionamos en el trabajo.\n\nSi eres dueño de negocio, sabes que la clave está en los equipos. Pero antes de contratar o delegar, pregúntate: ¿estás usando tu perfil de personalidad a favor o en contra?\n\nAlta responsabilidad bajo neuroticismo alto es receta para microgestionar. Baja apertura con alta amabilidad te vuelve un líder que evita conflictos sin innovar.\n\nConocer esto te ahorra meses de fricción. No es moda, es gestión inteligente."
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "Crees que tu liderazgo es neutral.",
-            "No lo es. Tu Big Five lo dicta.",
-            "Responsabilidad alta microgestiona.",
-            "Neuroticismo bajo ignora riesgos.",
-            "Amabilidad baja desgasta relaciones.",
-            "Conócete para delegar mejor.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
-          ],
-          "keywords": [
-            "neutral",
-            "liderazgo",
-            "delegar",
-            "riesgos",
-            "relaciones"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "Liderar no es controlar,",
-          "hook_b": "es saber dónde terminas tú.",
-          "cta": "Lee la descripción ↓",
-          "keywords": [
-            "liderazgo",
-            "limites",
-            "equipo",
-            "autoconocimiento",
-            "competencia"
-          ]
-        },
-        "social": {
-          "instagram": "Dueño de negocio: tu personalidad define tu liderazgo más que tu CV. El Big Five mide lo que realmente importa en la toma de decisiones. No es una etiqueta, es un mapa para entender cómo operas bajo presión. #BigFive #LiderazgoReal #Psicometria",
-          "tiktok": "¿Sabías que el 80% de los errores en tu equipo vienen de cómo manejas tu neuroticismo? El Big Five te lo muestra sin vueltas. Descúbrelo en 10 minutos.",
-          "linkedin": "Colegas, les comparto esto: el Big Five no es un test de autoayuda. Es el marco más riguroso que tenemos para entender cómo funcionamos en el trabajo.\n\nSi eres dueño de negocio, sabes que la clave está en los equipos. Pero antes de contratar o delegar, pregúntate: ¿estás usando tu perfil de personalidad a favor o en contra?\n\nAlta responsabilidad bajo neuroticismo alto es receta para microgestionar. Baja apertura con alta amabilidad te vuelve un líder que evita conflictos sin innovar.\n\nConocer esto te ahorra meses de fricción. No es moda, es gestión inteligente."
+          "instagram": "Para Dueños de negocio: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Dueños de negocio no es introspección — es una práctica medible. Más en endonautas.cl"
         }
       }
     ],
@@ -129,112 +123,106 @@
       {
         "carousel": {
           "slides": [
-            "Trabajas hasta tarde y aún así sientes que no es suficiente.",
-            "Tu jefe dice que está bien, pero tú no te lo crees.",
-            "Crees que si aflojas un poco, todo se va a desmoronar.",
-            "Pero esa exigencia no te protege: te quema.",
-            "No es falta de capacidad, es un patrón que se repite.",
-            "Identificarlo te da una salida que no habías visto.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
+            "Tu perfeccionismo te está quemando, no potenciando.",
+            "No es que seas flojo, tu cerebro evita el error a toda costa.",
+            "Esa sobreexigencia te desconecta de tus colegas.",
+            "Tu rendimiento no mejora, solo empeora tu agotamiento.",
+            "El Big Five revela por qué buscas control y te frustras.",
+            "No necesitas esforzarte más, necesitas entender tu patrón.",
+            "Conoce tu perfil y deja de autoexigirte al vacío → endonautas.cl"
           ],
           "keywords": [
+            "big five",
             "perfeccionismo",
-            "exigencia",
             "burnout",
-            "patrones",
-            "rendimiento"
+            "rendimiento laboral"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Tu perfil encaja. Tus resultados cuadran.",
-          "hook_b": "¿Y por dentro aún no cierras?",
-          "cta": "Lee la descripción ↓",
+          "hook_a": "Tus resultados llegan.",
+          "hook_b": "Y algo en ti no encaja.",
+          "cta": "Descúbrelo en endonautas.cl",
           "keywords": [
-            "big five",
-            "personalidad",
             "autoconocimiento",
-            "fricción"
+            "patrones",
+            "big five"
           ]
         },
         "social": {
-          "instagram": "Trabajas duro, te exiges, pero a veces sientes que algo no encaja. No es casualidad: tu personalidad tiene claves que el Big Five puede revelarte. No se trata de etiquetas, sino de entender cómo funcionas para dejar de luchar contra ti mismo. #BigFive #DesarrolloProfesional #Autoconocimiento",
-          "tiktok": "¿Alguna vez has sentido que trabajas como loco pero el estrés te come? Puede que tengas alta responsabilidad y bajo neuroticismo, y nadie te explicó cómo gestionarlo.",
-          "linkedin": "El Big Five no es un test de moda: es el modelo más validado en psicología para describir cómo somos. Pero muchos lo usan mal.\n\nLo importante no es saber si eres extrovertido o introvertido. Lo importante es entender cómo cada dimensión impacta tu día a día: cómo te relacionas, cómo tomas decisiones, cómo gestionas el estrés.\n\nEl verdadero valor está en aplicar esa información para ajustar tu entorno laboral y tus expectativas. No se trata de cambiar quien eres, sino de usar tu perfil a tu favor.\n\nSi quieres ir más allá, combínalo con otros instrumentos. El autoconocimiento profundo no es un destino, es un proceso continuo."
+          "instagram": "Si trabajas tanto que ya no sabes quién eres sin el agotamiento, este post es para ti.\n\nEl test Big Five mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. No es un test de revista: es psicometría validada que te muestra por qué reaccionas como lo haces bajo presión.\n\nConoce tus patrones de personalidad y usa esa información para trabajar con más claridad, no contra ti mismo.\n\nDescubre tu perfil en endonautas.cl\n\n#DesarrolloProfesional #Autoconocimiento #BigFive",
+          "tiktok": "Sientes que siempre tienes que dar el 110% y aún así no es suficiente. El test Big Five te muestra si tu perfeccionismo viene de la responsabilidad o del miedo a fallar. Entiende tu patrón en endonautas.cl",
+          "linkedin": "El modelo Big Five es el marco más robusto de la psicología para describir diferencias individuales. Mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. No es un test de revista: requiere validez y confiabilidad científicas.\n\nTener un perfil no es una etiqueta. Es información accionable. Por ejemplo, si tienes alta responsabilidad pero baja estabilidad emocional, tu perfeccionismo podría ser una respuesta a la ansiedad, no a una meta clara.\n\nEn el trabajo, saber que eres introvertido no te limita: te permite diseñar tu día para rendir sin desgastarte. Conocer tus patrones es una ventaja profesional real.\n\nEmpieza por tu perfil en endonautas.cl, sin rodeos ni promesas vacías."
         }
       },
       {
         "carousel": {
           "slides": [
-            "Te da miedo pedir ayuda porque crees que te juzgarán.",
-            "Asumes toda la responsabilidad aunque no sea tu culpa.",
-            "Te callas en reuniones para no sonar inseguro.",
-            "Ese silencio te pesa más que cualquier error.",
-            "No eres débil, estás operando en modo supervivencia.",
-            "Entenderlo te permite soltar sin sentir que fallas.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
+            "Llevas meses postergando lo que sabes que puedes hacer.",
+            "Tu procrastinación no es vaga, es una señal de miedo.",
+            "Ese miedo se esconde en tu neuroticismo o baja apertura.",
+            "Mientras más evitas, más se acumula la ansiedad.",
+            "El perfil Big Five explica por qué te paralizas en el trabajo.",
+            "No es falta de disciplina, es una estrategia de tu personalidad.",
+            "Descifra el patrón que te frena y empieza a avanzar → endonautas.cl"
           ],
           "keywords": [
-            "inseguridad",
-            "relaciones laborales",
-            "autoexigencia",
-            "patrones",
-            "ansiedad"
+            "big five",
+            "procrastinación",
+            "ansiedad laboral",
+            "autoconocimiento"
           ],
           "layout": "L1"
         },
         "reel": {
           "hook_a": "Sabes lo que haces.",
-          "hook_b": "¿Sabes lo que te frena?",
-          "cta": "Lee la descripción ↓",
+          "hook_b": "Pero no por qué lo haces.",
+          "cta": "Empieza en endonautas.cl",
           "keywords": [
+            "personalidad",
             "big five",
-            "rendimiento",
-            "patrón",
-            "burnout"
+            "motivación"
           ]
         },
         "social": {
-          "instagram": "Trabajas duro, te exiges, pero a veces sientes que algo no encaja. No es casualidad: tu personalidad tiene claves que el Big Five puede revelarte. No se trata de etiquetas, sino de entender cómo funcionas para dejar de luchar contra ti mismo. #BigFive #DesarrolloProfesional #Autoconocimiento",
-          "tiktok": "¿Alguna vez has sentido que trabajas como loco pero el estrés te come? Puede que tengas alta responsabilidad y bajo neuroticismo, y nadie te explicó cómo gestionarlo.",
-          "linkedin": "El Big Five no es un test de moda: es el modelo más validado en psicología para describir cómo somos. Pero muchos lo usan mal.\n\nLo importante no es saber si eres extrovertido o introvertido. Lo importante es entender cómo cada dimensión impacta tu día a día: cómo te relacionas, cómo tomas decisiones, cómo gestionas el estrés.\n\nEl verdadero valor está en aplicar esa información para ajustar tu entorno laboral y tus expectativas. No se trata de cambiar quien eres, sino de usar tu perfil a tu favor.\n\nSi quieres ir más allá, combínalo con otros instrumentos. El autoconocimiento profundo no es un destino, es un proceso continuo."
+          "instagram": "Si trabajas tanto que ya no sabes quién eres sin el agotamiento, este post es para ti.\n\nEl test Big Five mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. No es un test de revista: es psicometría validada que te muestra por qué reaccionas como lo haces bajo presión.\n\nConoce tus patrones de personalidad y usa esa información para trabajar con más claridad, no contra ti mismo.\n\nDescubre tu perfil en endonautas.cl\n\n#DesarrolloProfesional #Autoconocimiento #BigFive",
+          "tiktok": "Sientes que siempre tienes que dar el 110% y aún así no es suficiente. El test Big Five te muestra si tu perfeccionismo viene de la responsabilidad o del miedo a fallar. Entiende tu patrón en endonautas.cl",
+          "linkedin": "El modelo Big Five es el marco más robusto de la psicología para describir diferencias individuales. Mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. No es un test de revista: requiere validez y confiabilidad científicas.\n\nTener un perfil no es una etiqueta. Es información accionable. Por ejemplo, si tienes alta responsabilidad pero baja estabilidad emocional, tu perfeccionismo podría ser una respuesta a la ansiedad, no a una meta clara.\n\nEn el trabajo, saber que eres introvertido no te limita: te permite diseñar tu día para rendir sin desgastarte. Conocer tus patrones es una ventaja profesional real.\n\nEmpieza por tu perfil en endonautas.cl, sin rodeos ni promesas vacías."
         }
       },
       {
         "carousel": {
           "slides": [
-            "Revisas cada correo tres veces antes de enviarlo.",
-            "Pero la ansiedad no desaparece después del envío.",
-            "Tu cabeza sigue dándole vueltas a lo que podría salir mal.",
-            "Te agotas antes de que el día termine.",
-            "No es falta de organización, es un patrón que te secuestra.",
-            "Nombrarlo es el primer paso para desarmarlo.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
+            "Tu equipo no entiende por qué trabajas así.",
+            "Ellos creen que eres intenso; tú solo buscas hacerlo bien.",
+            "Tu alta responsabilidad choca con su baja estructura.",
+            "Discuten por forma, no por fondo, y el desgaste crece.",
+            "El Big Five revela el conflicto de estilos que nadie ve.",
+            "Entender tu perfil mejora tus relaciones y tu energía.",
+            "Transforma la fricción laboral en colaboración real → endonautas.cl"
           ],
           "keywords": [
-            "procrastinación",
-            "agotamiento",
-            "control",
-            "patrones",
-            "energía"
+            "big five",
+            "relaciones laborales",
+            "conflicto",
+            "equipo"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Eres responsable, abierto, sociable.",
-          "hook_b": "¿Y si el problema es otro?",
-          "cta": "Lee la descripción ↓",
+          "hook_a": "El éxito lo tienes.",
+          "hook_b": "La paz interior no.",
+          "cta": "Mira tu mapa en endonautas.cl",
           "keywords": [
-            "cinco grandes",
-            "test",
-            "perfil",
-            "gap"
+            "estrés",
+            "neuroticismo",
+            "big five"
           ]
         },
         "social": {
-          "instagram": "Trabajas duro, te exiges, pero a veces sientes que algo no encaja. No es casualidad: tu personalidad tiene claves que el Big Five puede revelarte. No se trata de etiquetas, sino de entender cómo funcionas para dejar de luchar contra ti mismo. #BigFive #DesarrolloProfesional #Autoconocimiento",
-          "tiktok": "¿Alguna vez has sentido que trabajas como loco pero el estrés te come? Puede que tengas alta responsabilidad y bajo neuroticismo, y nadie te explicó cómo gestionarlo.",
-          "linkedin": "El Big Five no es un test de moda: es el modelo más validado en psicología para describir cómo somos. Pero muchos lo usan mal.\n\nLo importante no es saber si eres extrovertido o introvertido. Lo importante es entender cómo cada dimensión impacta tu día a día: cómo te relacionas, cómo tomas decisiones, cómo gestionas el estrés.\n\nEl verdadero valor está en aplicar esa información para ajustar tu entorno laboral y tus expectativas. No se trata de cambiar quien eres, sino de usar tu perfil a tu favor.\n\nSi quieres ir más allá, combínalo con otros instrumentos. El autoconocimiento profundo no es un destino, es un proceso continuo."
+          "instagram": "Si trabajas tanto que ya no sabes quién eres sin el agotamiento, este post es para ti.\n\nEl test Big Five mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. No es un test de revista: es psicometría validada que te muestra por qué reaccionas como lo haces bajo presión.\n\nConoce tus patrones de personalidad y usa esa información para trabajar con más claridad, no contra ti mismo.\n\nDescubre tu perfil en endonautas.cl\n\n#DesarrolloProfesional #Autoconocimiento #BigFive",
+          "tiktok": "Sientes que siempre tienes que dar el 110% y aún así no es suficiente. El test Big Five te muestra si tu perfeccionismo viene de la responsabilidad o del miedo a fallar. Entiende tu patrón en endonautas.cl",
+          "linkedin": "El modelo Big Five es el marco más robusto de la psicología para describir diferencias individuales. Mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. No es un test de revista: requiere validez y confiabilidad científicas.\n\nTener un perfil no es una etiqueta. Es información accionable. Por ejemplo, si tienes alta responsabilidad pero baja estabilidad emocional, tu perfeccionismo podría ser una respuesta a la ansiedad, no a una meta clara.\n\nEn el trabajo, saber que eres introvertido no te limita: te permite diseñar tu día para rendir sin desgastarte. Conocer tus patrones es una ventaja profesional real.\n\nEmpieza por tu perfil en endonautas.cl, sin rodeos ni promesas vacías."
         }
       }
     ],
@@ -242,115 +230,109 @@
       {
         "carousel": {
           "slides": [
-            "Esa rabieta que te saca de quicio… es tuya también.",
-            "Tu hijo solo repite lo que no supiste mirar en ti.",
-            "Si te estalla la paciencia, algo tuyo se está activando.",
-            "El Big Five te muestra por qué reaccionas así.",
-            "No es culpa: es un patrón que puedes empezar a ver.",
-            "Criar consciente empieza por conocerte a ti.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
+            "Tu hijo no necesita que corrijas sus errores. Necesita que no repitas los tuyos.",
+            "Antes de reaccionar a su berrinche, pregúntate: ¿de quién es la emoción?",
+            "Tu ansiedad no nació con él. Se instaló cuando viste en su mirada tu propio miedo al fracaso.",
+            "El Big Five no te etiqueta. Te muestra el cableado que heredaste y que hoy pones en tu hijo.",
+            "Alta responsabilidad puede significar que le exiges más de lo que puede dar.",
+            "Baja estabilidad emocional no es drama de él. Es el eco del estrés que le transmites cuando callas.",
+            "Conoce tu perfil. Cría con conciencia. → endonautas.cl"
           ],
           "keywords": [
-            "rabieta",
-            "paciencia",
-            "patrón",
             "Big Five",
-            "crianza consciente"
+            "crianza consciente",
+            "patrones heredados",
+            "autoconocimiento",
+            "test de personalidad"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Lo que más te molesta",
-          "hook_b": "de tu hijo, está en ti",
-          "cta": "Lee la descripción ↓",
+          "hook_a": "Tu hijo te desafía justo ahí.",
+          "hook_b": "Eso que no sanaste en ti.",
+          "cta": "Descubre tu patrón en endonautas.cl",
           "keywords": [
             "crianza",
+            "herencia emocional",
+            "proyección"
+          ]
+        },
+        "social": {
+          "instagram": "Tu hijo no es desordenado ni tímido: solo tiene un perfil diferente de personalidad. El modelo Big Five mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. Entenderlo te ayuda a criar sin etiquetas, ajustando tus expectativas y comunicación. Descubre el perfil de tu familia en endonautas.cl #crianzaconsciente #psicologiaparapadres #bigfive",
+          "tiktok": "¿Sabías que cuando tu hijo se niega a probar cosas nuevas no es terquedad, sino baja apertura a la experiencia? El test Big Five lo explica mejor que cualquier etiqueta. Conoce su perfil en endonautas.cl",
+          "linkedin": "Para quienes somos profesionales y padres, conocer nuestro perfil Big Five puede transformar la forma en que nos relacionamos con nuestros hijos.\n\nLas cinco dimensiones (apertura, responsabilidad, extraversión, amabilidad y neuroticismo) no son etiquetas, sino patrones que nos ayudan a entender por qué reaccionamos de cierta manera bajo estrés o por qué nos cuesta conectar con ciertos temperamentos.\n\nAplicarlo en la crianza significa, por ejemplo, dejar de esperar que un niño con baja extraversión disfrute de fiestas multitudinarias, o entender que tu pareja con alta responsabilidad organiza todo por ansiedad, no por control.\n\nCon tu perfil puedes empezar a criar desde la comprensión, no desde el juicio. Descubre el tuyo gratis en endonautas.cl"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Si repites frases de tus padres que juraste no decir, el problema no es el berrinche.",
+            "Tu hijo no te desafía. Te devuelve lo que no resolviste.",
+            "Cada vez que te enojas con su lentitud, es tu baja paciencia hablando. Y eso se hereda.",
+            "El Big Five distingue entre lo que eres y lo que le exiges que sea.",
+            "Si él es abierto y tú eres rutinario, no lo fuerces a tu mundo. Acompáñalo al suyo.",
+            "Si tú eres responsable y él es disperso, tu juicio no lo ordena. Lo desconecta.",
+            "Lee su conducta como información. La tuya transforma la relación. → endonautas.cl"
+          ],
+          "keywords": [
+            "Big Five",
+            "crianza respetuosa",
+            "patrones familiares",
             "autoconocimiento",
-            "padres",
-            "patrones",
-            "big five"
-          ]
-        },
-        "social": {
-          "instagram": "Para Padres: el autoconocimiento no es un lujo, es una herramienta. #autoconocimiento #endonautas",
-          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? Endonautas.",
-          "linkedin": "El autoconocimiento para Padres no es introspección — es una práctica medible."
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "Criar sin espejo es criar a ciegas.",
-            "Tu forma de reaccionar les enseña cómo sentir.",
-            "Si eres explosivo, les muestras que el miedo manda.",
-            "Si eres muy rígido, aprenden que el error no se permite.",
-            "El Big Five explica por qué eres así como padre.",
-            "Entenderte es el primer regalo que les puedes dar.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
-          ],
-          "keywords": [
-            "espejo",
-            "reacción",
-            "explosivo",
-            "rígido",
-            "Big Five"
+            "psicometría"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Tu hijo no es desordenado",
-          "hook_b": "eres tú quien no lo entiende",
-          "cta": "Lee la descripción ↓",
-          "keywords": [
-            "educación",
-            "empatía",
-            "personalidad",
-            "big five",
-            "crianza"
-          ]
-        },
-        "social": {
-          "instagram": "Para Padres: el autoconocimiento no es un lujo, es una herramienta. #autoconocimiento #endonautas",
-          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? Endonautas.",
-          "linkedin": "El autoconocimiento para Padres no es introspección — es una práctica medible."
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "Lo que no sanas en ti, lo heredan ellos sin pedirlo.",
-            "Gritas porque aprendiste a gritar. Pero puedes cambiar.",
-            "La ansiedad que sientes cuando no te obedecen es tuya.",
-            "El Big Five no etiqueta, te da una hoja de ruta.",
-            "Baja neuroticismo no es frialdad, es estabilidad para ellos.",
-            "Conocerte es dejar de repetir la historia.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
-          ],
-          "keywords": [
-            "sanar",
-            "heredar",
-            "ansiedad",
-            "neuroticismo",
-            "cambio"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "El rasgo que criticas",
-          "hook_b": "es tu sombra sin sanar",
-          "cta": "Lee la descripción ↓",
+          "hook_a": "El rasgo que te choca de él.",
+          "hook_b": "Es tu sombra no mirada.",
+          "cta": "Empieza gratis en endonautas.cl",
           "keywords": [
             "sombra",
-            "psicología",
-            "padres",
-            "autoconocimiento",
-            "big five"
+            "identificación",
+            "padres"
           ]
         },
         "social": {
-          "instagram": "Para Padres: el autoconocimiento no es un lujo, es una herramienta. #autoconocimiento #endonautas",
-          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? Endonautas.",
-          "linkedin": "El autoconocimiento para Padres no es introspección — es una práctica medible."
+          "instagram": "Tu hijo no es desordenado ni tímido: solo tiene un perfil diferente de personalidad. El modelo Big Five mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. Entenderlo te ayuda a criar sin etiquetas, ajustando tus expectativas y comunicación. Descubre el perfil de tu familia en endonautas.cl #crianzaconsciente #psicologiaparapadres #bigfive",
+          "tiktok": "¿Sabías que cuando tu hijo se niega a probar cosas nuevas no es terquedad, sino baja apertura a la experiencia? El test Big Five lo explica mejor que cualquier etiqueta. Conoce su perfil en endonautas.cl",
+          "linkedin": "Para quienes somos profesionales y padres, conocer nuestro perfil Big Five puede transformar la forma en que nos relacionamos con nuestros hijos.\n\nLas cinco dimensiones (apertura, responsabilidad, extraversión, amabilidad y neuroticismo) no son etiquetas, sino patrones que nos ayudan a entender por qué reaccionamos de cierta manera bajo estrés o por qué nos cuesta conectar con ciertos temperamentos.\n\nAplicarlo en la crianza significa, por ejemplo, dejar de esperar que un niño con baja extraversión disfrute de fiestas multitudinarias, o entender que tu pareja con alta responsabilidad organiza todo por ansiedad, no por control.\n\nCon tu perfil puedes empezar a criar desde la comprensión, no desde el juicio. Descubre el tuyo gratis en endonautas.cl"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Tu hijo no viene a darte paz. Viene a mostrarte dónde no la tienes.",
+            "Su desorden activa tu ansiedad. No es él. Es tu neuroticismo buscando control.",
+            "Cuando él se aísla, quizás no es introversión. Es tu forma de pedir silencio.",
+            "El Big Five mide lo que haces cuando nadie mira. Tu hijo mira siempre.",
+            "Si tú eres amable y él es crítico, no es rebeldía. Es que tu sumisión le enseñó a pelear.",
+            "Conocer tu perfil no justifica tu reacción. Te da una pausa para elegir otra.",
+            "Deja de reaccionar. Empieza a responder desde tu perfil real. → endonautas.cl"
+          ],
+          "keywords": [
+            "Big Five",
+            "crianza consciente",
+            "herencia emocional",
+            "autoconocimiento",
+            "test psicométrico"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tu historia dicta cómo crías.",
+          "hook_b": "Sin darte cuenta, repites.",
+          "cta": "Revisa tu mapa en endonautas.cl",
+          "keywords": [
+            "patrón",
+            "infancia",
+            "repetición"
+          ]
+        },
+        "social": {
+          "instagram": "Tu hijo no es desordenado ni tímido: solo tiene un perfil diferente de personalidad. El modelo Big Five mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. Entenderlo te ayuda a criar sin etiquetas, ajustando tus expectativas y comunicación. Descubre el perfil de tu familia en endonautas.cl #crianzaconsciente #psicologiaparapadres #bigfive",
+          "tiktok": "¿Sabías que cuando tu hijo se niega a probar cosas nuevas no es terquedad, sino baja apertura a la experiencia? El test Big Five lo explica mejor que cualquier etiqueta. Conoce su perfil en endonautas.cl",
+          "linkedin": "Para quienes somos profesionales y padres, conocer nuestro perfil Big Five puede transformar la forma en que nos relacionamos con nuestros hijos.\n\nLas cinco dimensiones (apertura, responsabilidad, extraversión, amabilidad y neuroticismo) no son etiquetas, sino patrones que nos ayudan a entender por qué reaccionamos de cierta manera bajo estrés o por qué nos cuesta conectar con ciertos temperamentos.\n\nAplicarlo en la crianza significa, por ejemplo, dejar de esperar que un niño con baja extraversión disfrute de fiestas multitudinarias, o entender que tu pareja con alta responsabilidad organiza todo por ansiedad, no por control.\n\nCon tu perfil puedes empezar a criar desde la comprensión, no desde el juicio. Descubre el tuyo gratis en endonautas.cl"
         }
       }
     ],
@@ -358,118 +340,112 @@
       {
         "carousel": {
           "slides": [
-            "Tu contratransferencia no es un error: es un dato.",
-            "El Big Five no es para tus pacientes: es para ti.",
-            "Apertura alta no te hace mejor terapeuta.",
-            "Responsabilidad sin estabilidad te quema.",
-            "Extraversión baja no es déficit relacional.",
-            "Tu perfil no te define: te muestra dónde mirar.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
+            "Tu contratransferencia también tiene un patrón.",
+            "Tu reactividad emocional no es intuición, es neuroticismo alto.",
+            "No ves al paciente, ves tu propio mapa reflejado.",
+            "La responsabilidad extrema puede camuflar ansiedad.",
+            "Tu perfil Big Five no te define, pero condiciona tu escucha.",
+            "Los tests validados no son para clasificar, son para mirarte.",
+            "Conoce tu perfil antes de mirar el de otros → endonautas.cl"
           ],
           "keywords": [
-            "big five terapeutas",
+            "big five",
             "contratransferencia",
-            "autoconocimiento psicólogo",
-            "tests psicométricos",
+            "terapeuta",
+            "autoconocimiento",
             "mapa de patrones"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Lo que tu paciente no resuelve",
-          "hook_b": "quizás tú tampoco has sanado.",
-          "cta": "Lee la descripción ↓",
+          "hook_a": "El test Big Five mide rasgos.",
+          "hook_b": "Tú también tienes ciegos.",
+          "cta": "Descubre tu mapa en endonautas.cl",
           "keywords": [
+            "big five",
             "terapeuta",
-            "autoexploración",
-            "Big Five",
-            "sanación",
+            "ceguera"
+          ]
+        },
+        "social": {
+          "instagram": "Para Terapeutas y coaches: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Terapeutas y coaches no es introspección — es una práctica medible. Más en endonautas.cl"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "¿Qué sesgo te impide ver al paciente completo?",
+            "Tu baja apertura cierra caminos que el otro necesita.",
+            "Paciente desorganizado: ¿te activa tu baja responsabilidad?",
+            "La amabilidad excesiva evita conflictos que sanan.",
+            "Neuroticismo compartido: cuando te contagias sin saber.",
+            "Tu perfil no es tu destino, pero influye en cada sesión.",
+            "Usa psicometría para limpiar tu espejo → endonautas.cl"
+          ],
+          "keywords": [
+            "big five",
+            "sesgo del terapeuta",
+            "contratransferencia",
+            "psicometría",
+            "herramientas clínicas"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tus pacientes no son estables.",
+          "hook_b": "Tú tampoco lo eres.",
+          "cta": "Empieza gratis en endonautas.cl",
+          "keywords": [
+            "neuroticismo",
+            "terapeuta",
+            "estabilidad emocional"
+          ]
+        },
+        "social": {
+          "instagram": "Para Terapeutas y coaches: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Terapeutas y coaches no es introspección — es una práctica medible. Más en endonautas.cl"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Tu personalidad no es neutral en la terapia.",
+            "Cada rasgo tuyo crea un campo emocional distinto.",
+            "Extraversión alta: ¿ocupas espacio que el paciente necesita?",
+            "Baja amabilidad: ¿juzgas cuando deberías sostener?",
+            "Apertura baja: ¿cierras hipótesis antes de explorar?",
+            "Tu neuroticismo filtra lo que escuchas como amenaza.",
+            "Mide tu mapa para no proyectarlo en el paciente → endonautas.cl"
+          ],
+          "keywords": [
+            "big five",
+            "terapeuta",
+            "proyección",
+            "autoconocimiento",
+            "campo terapéutico"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "La personalidad tiene cinco caras.",
+          "hook_b": "La tuya no es neutral.",
+          "cta": "Haz el test en endonautas.cl",
+          "keywords": [
+            "personalidad",
+            "perfil",
             "autoconocimiento"
           ]
         },
         "social": {
-          "instagram": "Tus pacientes te dicen 'soy extrovertido' y eso no te dice nada. El Big Five mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. Pero lo importante no es la etiqueta, sino cómo se combinan. Un terapeuta que solo usa etiquetas está perdiendo matices clínicos. #BigFive #Psicometría #PsicologíaClínica",
-          "tiktok": "¿Les estás dando a tus pacientes etiquetas de personalidad sin contexto clínico? El Big Five mide cinco dimensiones, pero el verdadero trabajo está en entender cómo se relacionan entre sí. No es un quiz de revista. Es una herramienta que necesita interpretación profesional.",
-          "linkedin": "El Big Five es el modelo más robusto en psicología diferencial, pero su aplicación clínica requiere ir más allá del percentil. Cada dimensión (apertura, responsabilidad, extraversión, amabilidad, neuroticismo) describe un continuo, no un tipo fijo. \n\nEn la práctica, el valor está en la interacción entre rasgos. Por ejemplo, un paciente con alta responsabilidad y alto neuroticismo puede estar sobreplanificando por ansiedad, no por organización funcional. \n\nCombinar Big Five con instrumentos como el Mapa de Patrones de Endonautas (que incluye tests validados + análisis con IA) permite integrar psicometría con patrones motivacionales para un diagnóstico más preciso. \n\n¿Estás usando Big Five como dato aislado o como parte de una evaluación integrada?"
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "No puedes sostener espejos si no sabes cómo eres tú.",
-            "Tu neuroticismo modula cada intervención.",
-            "Amabilidad alta te hace evitar conflictos necesarios.",
-            "Apertura baja puede cerrar hipótesis clínicas.",
-            "Extraversión alta te expone a sobreadaptarte.",
-            "Responsabilidad extrema invisibiliza el desgaste.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
-          ],
-          "keywords": [
-            "autoconocimiento terapeuta",
-            "perfil big five",
-            "herramientas psicométricas",
-            "práctica clínica",
-            "mapa de patrones"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "Tu rol no es salvar",
-          "hook_b": "es mirar tu propia sombra.",
-          "cta": "Lee la descripción ↓",
-          "keywords": [
-            "coach",
-            "sombra",
-            "Big Five",
-            "herramientas",
-            "crecimiento"
-          ]
-        },
-        "social": {
-          "instagram": "Tus pacientes te dicen 'soy extrovertido' y eso no te dice nada. El Big Five mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. Pero lo importante no es la etiqueta, sino cómo se combinan. Un terapeuta que solo usa etiquetas está perdiendo matices clínicos. #BigFive #Psicometría #PsicologíaClínica",
-          "tiktok": "¿Les estás dando a tus pacientes etiquetas de personalidad sin contexto clínico? El Big Five mide cinco dimensiones, pero el verdadero trabajo está en entender cómo se relacionan entre sí. No es un quiz de revista. Es una herramienta que necesita interpretación profesional.",
-          "linkedin": "El Big Five es el modelo más robusto en psicología diferencial, pero su aplicación clínica requiere ir más allá del percentil. Cada dimensión (apertura, responsabilidad, extraversión, amabilidad, neuroticismo) describe un continuo, no un tipo fijo. \n\nEn la práctica, el valor está en la interacción entre rasgos. Por ejemplo, un paciente con alta responsabilidad y alto neuroticismo puede estar sobreplanificando por ansiedad, no por organización funcional. \n\nCombinar Big Five con instrumentos como el Mapa de Patrones de Endonautas (que incluye tests validados + análisis con IA) permite integrar psicometría con patrones motivacionales para un diagnóstico más preciso. \n\n¿Estás usando Big Five como dato aislado o como parte de una evaluación integrada?"
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "El mayor instrumento eres tú: ¿sabes cómo estás calibrado?",
-            "Tu sesgo es ciego si no tienes datos de ti.",
-            "El Big Five mide patrones, no esencias.",
-            "Tu perfil cambia: re-mídelo cada dos años mínimo.",
-            "No lo uses para etiquetarte: úsalo para elegir.",
-            "Lo que no ves en ti, lo repites con ellos.",
-            "Empieza tu proceso gratis → app.endonautas.cl/tests/mapa-patrones/"
-          ],
-          "keywords": [
-            "big five psicólogos",
-            "sesgo clínico",
-            "medición psicométrica",
-            "desarrollo profesional",
-            "endonautas"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "Si solo ayudas desde afuera",
-          "hook_b": "te falta trabajar hacia adentro.",
-          "cta": "Lee la descripción ↓",
-          "keywords": [
-            "ayuda",
-            "introspección",
-            "terapia",
-            "Big Five",
-            "mapa"
-          ]
-        },
-        "social": {
-          "instagram": "Tus pacientes te dicen 'soy extrovertido' y eso no te dice nada. El Big Five mide apertura, responsabilidad, extraversión, amabilidad y neuroticismo. Pero lo importante no es la etiqueta, sino cómo se combinan. Un terapeuta que solo usa etiquetas está perdiendo matices clínicos. #BigFive #Psicometría #PsicologíaClínica",
-          "tiktok": "¿Les estás dando a tus pacientes etiquetas de personalidad sin contexto clínico? El Big Five mide cinco dimensiones, pero el verdadero trabajo está en entender cómo se relacionan entre sí. No es un quiz de revista. Es una herramienta que necesita interpretación profesional.",
-          "linkedin": "El Big Five es el modelo más robusto en psicología diferencial, pero su aplicación clínica requiere ir más allá del percentil. Cada dimensión (apertura, responsabilidad, extraversión, amabilidad, neuroticismo) describe un continuo, no un tipo fijo. \n\nEn la práctica, el valor está en la interacción entre rasgos. Por ejemplo, un paciente con alta responsabilidad y alto neuroticismo puede estar sobreplanificando por ansiedad, no por organización funcional. \n\nCombinar Big Five con instrumentos como el Mapa de Patrones de Endonautas (que incluye tests validados + análisis con IA) permite integrar psicometría con patrones motivacionales para un diagnóstico más preciso. \n\n¿Estás usando Big Five como dato aislado o como parte de una evaluación integrada?"
+          "instagram": "Para Terapeutas y coaches: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Terapeutas y coaches no es introspección — es una práctica medible. Más en endonautas.cl"
         }
       }
     ]
   },
-  "last_updated": "2026-06-30T20:06:57+00:00"
+  "last_updated": "2026-06-30T20:56:38+00:00"
 }
