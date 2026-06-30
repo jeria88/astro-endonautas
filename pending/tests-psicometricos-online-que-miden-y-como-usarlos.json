@@ -12,112 +12,108 @@
       {
         "carousel": {
           "slides": [
-            "Tomas decisiones con data, pero no te conoces a ti mismo.",
-            "Contrataste perfiles brillantes… que no funcionaron en tu equipo.",
-            "Tu intuición te falla cuando más necesitas acertar.",
-            "Los tests de internet solo confirman lo que quieres escuchar.",
-            "Los instrumentos validados miden lo que realmente importa.",
-            "Conocerte no es un lujo personal, es una ventaja competitiva.",
-            "Construye decisiones de negocio con datos reales de ti y tu equipo → endonautas.cl"
+            "Cuesta delegar. El equipo te pide instrucciones todo el tiempo.",
+            "No es falta de talento de tu equipo.",
+            "Es un patrón de control que no ves funcionando.",
+            "El Big Five puede detectar esa tendencia.",
+            "No es autoayuda, es psicometría con validación científica.",
+            "Saberlo cambia cómo lideras, no cómo te sientes.",
+            "Deja de liderar por instinto. Mide tus patrones → endonautas.cl"
           ],
           "keywords": [
-            "tests psicométricos",
-            "decisiones de negocio",
-            "autoconocimiento",
+            "test psicométricos",
+            "Big Five",
+            "liderazgo",
+            "control de equipo"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tu liderazgo tiene un patrón ciego.",
+          "hook_b": "Tu equipo lo paga caro.",
+          "cta": "Descubre tu patrón en endonautas.cl",
+          "keywords": [
+            "patrón ciego",
             "liderazgo",
             "equipo"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "Tu negocio paga tus cuentas.",
-          "hook_b": "Y también tus cicatrices no sanadas.",
-          "cta": "Reconoce tu patrón en endonautas.cl",
-          "keywords": [
-            "tests psicométricos",
-            "liderazgo",
-            "proyección",
-            "dueño de negocio"
           ]
         },
         "social": {
-          "instagram": "Llevas meses usando tests de personalidad de redes sociales que te dicen que eres INFJ y tu amor primario es el tiempo de calidad. Pero esos tests no miden nada real. La psicometría tiene criterios claros: validez, confiabilidad, estandarización. Si el test no cumple con eso, el resultado es solo un número vacío. Para tu negocio, entender tus patrones reales marca la diferencia entre decisiones conscientes y reacciones automáticas. Empieza con el Mapa de Patrones en endonautas.cl #liderazgo #crecimientopersonal #negocios",
-          "tiktok": "¿Sabías que el 90% de los tests de personalidad que ves en redes no tienen validez científica? El PHQ-9, el Big Five o el ECR sí la tienen. En endonautas.cl encuentras 35 tests validados con análisis IA. Empieza con el Mapa de Patrones.",
-          "linkedin": "Colega, si estás usando tests de revista o de Instagram para entender a tu equipo o a ti mismo, estás perdiendo tiempo. La psicometría no es un meme.\n\nLos tests validados tienen tres pilares: miden lo que dicen medir (validez), dan resultados consistentes (confiabilidad) y se comparan con una población de referencia (estandarización). Sin eso, tu 'resultado' no vale nada.\n\nEn Endonautas usamos 35 instrumentos como el Big Five, el DERS-16 y el ECR, todos validados en español. El análisis con IA cruza las dimensiones para darte contexto real, no etiquetas vacías.\n\nSi quieres tomar decisiones de liderazgo basadas en datos, empieza por conocerte de verdad. Revisa el Mapa de Patrones en endonautas.cl."
+          "instagram": "Liderar sin conocerte es como navegar sin brújula. Los tests psicométricos válidos no son juegos de revista: miden, comparan y te dan datos reales sobre ti. ¿Ya usaste el Mapa de Patrones de Endonautas? Combina 3 tests validados con análisis IA. Empieza por descubrir cómo funcionas en endonautas.cl 🧭 #LiderazgoConsciente #DueñosDeNegocio #Psicometría",
+          "tiktok": "¿Tu test de personalidad favorito te dijo que eras INFJ y ahora qué? La mayoría son inventados. Los tests psicométricos validados miden rasgos reales: cómo regulas emociones, cómo te relacionas, cómo lideras. Sin etiquetas vacías. Descubre los tuyos en endonautas.cl.",
+          "linkedin": "No todos los tests psicológicos son iguales. Un test de revista te devuelve una etiqueta bonita que no puedes usar. Un test psicométrico validado te devuelve datos: cómo te comparas con una población de referencia, cómo varías en el tiempo, qué dimensiones están en tensión.\n\nPara un dueño de negocio, distinguir entre ambos no es teoría. Es decidir si inviertes tiempo en un insight real o te quedas con un eslogan motivacional.\n\nUsar instrumentos como Big Five o DERS-16 no es autoayuda. Es recopilar información sobre cómo funcionas bajo presión, cómo regulas lo que sientes, cómo impactas a tu equipo. Eso se traduce en decisiones más limpias.\n\nEndonautas reúne 35 tests validados en español, con análisis IA que cruza dimensiones. Si quieres salir de las etiquetas y entrar en los datos, ahí hay un punto de partida: endonautas.cl."
         }
       },
       {
         "carousel": {
           "slides": [
-            "Crees que conoces a tu equipo. Spoiler: no es así.",
-            "El Big Five predice desempeño mejor que una entrevista.",
-            "Ignoras el patrón de apego de tu socio y pagas el precio.",
-            "Tu regulación emocional define cómo lideras bajo presión.",
-            "Los tests de revista no predicen nada salvo tu sesgo.",
-            "Los validados te dan información accionable, no etiquetas.",
-            "Descubre los patrones que frenan tu crecimiento empresarial → endonautas.cl"
+            "No sabes por qué se van los clientes y nadie te lo dice.",
+            "Hay un síntoma de ceguera del liderazgo.",
+            "No lo vas a ver en reuniones ni en KPI.",
+            "Aparece en cómo regulas la presión.",
+            "El DERS-16 mide eso justo.",
+            "Tu equipo no se queja, solo se va.",
+            "Conecta tus patrones con tu negocio → endonautas.cl"
           ],
           "keywords": [
             "tests psicométricos",
-            "equipo",
-            "liderazgo",
+            "DERS-16",
+            "regulación emocional",
+            "retención clientes",
+            "ceguera liderazgo"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "¿Sigues midiendo con tests de revista?",
+          "hook_b": "Tu negocio merece datos reales.",
+          "cta": "Empieza con datos reales en endonautas.cl",
+          "keywords": [
+            "tests de revista",
+            "datos reales",
+            "negocio"
+          ]
+        },
+        "social": {
+          "instagram": "Liderar sin conocerte es como navegar sin brújula. Los tests psicométricos válidos no son juegos de revista: miden, comparan y te dan datos reales sobre ti. ¿Ya usaste el Mapa de Patrones de Endonautas? Combina 3 tests validados con análisis IA. Empieza por descubrir cómo funcionas en endonautas.cl 🧭 #LiderazgoConsciente #DueñosDeNegocio #Psicometría",
+          "tiktok": "¿Tu test de personalidad favorito te dijo que eras INFJ y ahora qué? La mayoría son inventados. Los tests psicométricos validados miden rasgos reales: cómo regulas emociones, cómo te relacionas, cómo lideras. Sin etiquetas vacías. Descubre los tuyos en endonautas.cl.",
+          "linkedin": "No todos los tests psicológicos son iguales. Un test de revista te devuelve una etiqueta bonita que no puedes usar. Un test psicométrico validado te devuelve datos: cómo te comparas con una población de referencia, cómo varías en el tiempo, qué dimensiones están en tensión.\n\nPara un dueño de negocio, distinguir entre ambos no es teoría. Es decidir si inviertes tiempo en un insight real o te quedas con un eslogan motivacional.\n\nUsar instrumentos como Big Five o DERS-16 no es autoayuda. Es recopilar información sobre cómo funcionas bajo presión, cómo regulas lo que sientes, cómo impactas a tu equipo. Eso se traduce en decisiones más limpias.\n\nEndonautas reúne 35 tests validados en español, con análisis IA que cruza dimensiones. Si quieres salir de las etiquetas y entrar en los datos, ahí hay un punto de partida: endonautas.cl."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Menos técnicas de productividad. Más entender cómo funcionas.",
+            "Leíste, probaste, al final sigues atascado.",
+            "No es que no sirva la herramienta.",
+            "Es que choca con tu estructura de personalidad.",
+            "El Big Five explica la fricción que sientes.",
+            "Ajusta tu método a cómo eres, no al revés.",
+            "Descubre tu patrón de liderazgo y crece → endonautas.cl"
+          ],
+          "keywords": [
+            "test psicométricos",
             "Big Five",
-            "rendimiento"
+            "productividad",
+            "liderazgo",
+            "ajuste personal"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "¿Sabes lo que realmente mides?",
-          "hook_b": "No es capacidad, es tu silencio.",
-          "cta": "Descúbrelo gratis en endonautas.cl",
+          "hook_a": "Un test mal hecho te hace tomar malas decisiones.",
+          "hook_b": "Ya te costó caro.",
+          "cta": "Usa tests validados en endonautas.cl",
           "keywords": [
-            "tests psicométricos",
-            "autoconocimiento",
-            "líder",
-            "dolor oculto"
+            "tests mal hechos",
+            "decisiones",
+            "costó caro"
           ]
         },
         "social": {
-          "instagram": "Llevas meses usando tests de personalidad de redes sociales que te dicen que eres INFJ y tu amor primario es el tiempo de calidad. Pero esos tests no miden nada real. La psicometría tiene criterios claros: validez, confiabilidad, estandarización. Si el test no cumple con eso, el resultado es solo un número vacío. Para tu negocio, entender tus patrones reales marca la diferencia entre decisiones conscientes y reacciones automáticas. Empieza con el Mapa de Patrones en endonautas.cl #liderazgo #crecimientopersonal #negocios",
-          "tiktok": "¿Sabías que el 90% de los tests de personalidad que ves en redes no tienen validez científica? El PHQ-9, el Big Five o el ECR sí la tienen. En endonautas.cl encuentras 35 tests validados con análisis IA. Empieza con el Mapa de Patrones.",
-          "linkedin": "Colega, si estás usando tests de revista o de Instagram para entender a tu equipo o a ti mismo, estás perdiendo tiempo. La psicometría no es un meme.\n\nLos tests validados tienen tres pilares: miden lo que dicen medir (validez), dan resultados consistentes (confiabilidad) y se comparan con una población de referencia (estandarización). Sin eso, tu 'resultado' no vale nada.\n\nEn Endonautas usamos 35 instrumentos como el Big Five, el DERS-16 y el ECR, todos validados en español. El análisis con IA cruza las dimensiones para darte contexto real, no etiquetas vacías.\n\nSi quieres tomar decisiones de liderazgo basadas en datos, empieza por conocerte de verdad. Revisa el Mapa de Patrones en endonautas.cl."
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "Tu negocio crece, pero tú sigues siendo el cuello de botella.",
-            "Los números no explican por qué retienes a las personas equivocadas.",
-            "Tu personalidad moldea tu gestión más que cualquier estrategia.",
-            "La regulación emocional es la habilidad blanda que nadie mide.",
-            "Sin datos de apego, eliges socios como eliges pareja.",
-            "Un test validado te muestra lo que tu intuición esconde.",
-            "Rompe tu techo de crecimiento con un mapa de tus patrones reales → endonautas.cl"
-          ],
-          "keywords": [
-            "tests psicométricos",
-            "crecimiento",
-            "cuello de botella",
-            "patrones",
-            "gestión"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "Lo que no resuelves en ti",
-          "hook_b": "lo pagas en tu equipo.",
-          "cta": "Haz el mapa en endonautas.cl",
-          "keywords": [
-            "tests psicométricos",
-            "patrón personal",
-            "costo profesional",
-            "dueño"
-          ]
-        },
-        "social": {
-          "instagram": "Llevas meses usando tests de personalidad de redes sociales que te dicen que eres INFJ y tu amor primario es el tiempo de calidad. Pero esos tests no miden nada real. La psicometría tiene criterios claros: validez, confiabilidad, estandarización. Si el test no cumple con eso, el resultado es solo un número vacío. Para tu negocio, entender tus patrones reales marca la diferencia entre decisiones conscientes y reacciones automáticas. Empieza con el Mapa de Patrones en endonautas.cl #liderazgo #crecimientopersonal #negocios",
-          "tiktok": "¿Sabías que el 90% de los tests de personalidad que ves en redes no tienen validez científica? El PHQ-9, el Big Five o el ECR sí la tienen. En endonautas.cl encuentras 35 tests validados con análisis IA. Empieza con el Mapa de Patrones.",
-          "linkedin": "Colega, si estás usando tests de revista o de Instagram para entender a tu equipo o a ti mismo, estás perdiendo tiempo. La psicometría no es un meme.\n\nLos tests validados tienen tres pilares: miden lo que dicen medir (validez), dan resultados consistentes (confiabilidad) y se comparan con una población de referencia (estandarización). Sin eso, tu 'resultado' no vale nada.\n\nEn Endonautas usamos 35 instrumentos como el Big Five, el DERS-16 y el ECR, todos validados en español. El análisis con IA cruza las dimensiones para darte contexto real, no etiquetas vacías.\n\nSi quieres tomar decisiones de liderazgo basadas en datos, empieza por conocerte de verdad. Revisa el Mapa de Patrones en endonautas.cl."
+          "instagram": "Liderar sin conocerte es como navegar sin brújula. Los tests psicométricos válidos no son juegos de revista: miden, comparan y te dan datos reales sobre ti. ¿Ya usaste el Mapa de Patrones de Endonautas? Combina 3 tests validados con análisis IA. Empieza por descubrir cómo funcionas en endonautas.cl 🧭 #LiderazgoConsciente #DueñosDeNegocio #Psicometría",
+          "tiktok": "¿Tu test de personalidad favorito te dijo que eras INFJ y ahora qué? La mayoría son inventados. Los tests psicométricos validados miden rasgos reales: cómo regulas emociones, cómo te relacionas, cómo lideras. Sin etiquetas vacías. Descubre los tuyos en endonautas.cl.",
+          "linkedin": "No todos los tests psicológicos son iguales. Un test de revista te devuelve una etiqueta bonita que no puedes usar. Un test psicométrico validado te devuelve datos: cómo te comparas con una población de referencia, cómo varías en el tiempo, qué dimensiones están en tensión.\n\nPara un dueño de negocio, distinguir entre ambos no es teoría. Es decidir si inviertes tiempo en un insight real o te quedas con un eslogan motivacional.\n\nUsar instrumentos como Big Five o DERS-16 no es autoayuda. Es recopilar información sobre cómo funcionas bajo presión, cómo regulas lo que sientes, cómo impactas a tu equipo. Eso se traduce en decisiones más limpias.\n\nEndonautas reúne 35 tests validados en español, con análisis IA que cruza dimensiones. Si quieres salir de las etiquetas y entrar en los datos, ahí hay un punto de partida: endonautas.cl."
         }
       }
     ],
@@ -125,109 +121,109 @@
       {
         "carousel": {
           "slides": [
-            "Tu jefe no te carga: es el patrón.",
-            "La próxima vez que te sientas juzgado en una reunión, pregúntate: ¿esto es real o es tu sistema de amenazas encendido?",
-            "El perfeccionismo no te hace mejor: te hace más lento.",
-            "La procrastinación no es flojera: es un intento de evitar el dolor de no ser suficiente.",
-            "La sobreexigencia no es disciplina: es miedo disfrazado de logro.",
-            "Lo que miden los tests psicométricos no es para etiquetarte, es para darte un mapa de dónde estás pisando.",
-            "Empieza por entender qué patrones te frenan → endonautas.cl"
+            "Eres exitoso, pero te sientes al límite todos los días.",
+            "No es falta de capacidad. Es patrón, no personalidad.",
+            "Te exiges más de lo que le exiges a cualquiera.",
+            "Y crees que si bajas un poco, todo se derrumba.",
+            "Pero el burnout no es señal de entrega, es señal de desajuste.",
+            "Hay tests que miden cómo funcionas, no cómo deberías ser.",
+            "Entiende tu patrón antes de que él te entienda a ti → endonautas.cl"
           ],
           "keywords": [
-            "tests psicométricos",
-            "perfeccionismo",
-            "procrastinación",
-            "sobreexigencia",
-            "autoconocimiento"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "Tus resultados no mienten.",
-          "hook_b": "Pero algo sigue sin cerrar.",
-          "cta": "Descubre por qué en endonautas.cl",
-          "keywords": [
-            "tests psicométricos",
-            "autoconocimiento",
-            "Mapa de Patrones"
-          ]
-        },
-        "social": {
-          "instagram": "Si has llegado hasta aquí probablemente eres del tipo de persona que quiere entender cómo funciona su mente, no solo etiquetarla. Los tests psicométricos validados te dan datos útiles, no categorías vacías. Elige bien lo que mides. Empieza con el Mapa de Patrones en endonautas.cl #autoconocimiento #desarrolloprofesional #psicometría",
-          "tiktok": "¿Has hecho un test de personalidad en una revista y te has sentido descrito… pero luego no sabías qué hacer con eso? La mayoría de tests online no miden nada real. Los validados sí. Mira cómo distinguirlos y úsalos de verdad. Entra a endonautas.cl",
-          "linkedin": "Los tests psicométricos online abundan, pero no todos merecen tu tiempo. Un test bien construido se diferencia por tres criterios: validez, confiabilidad y estandarización. Sin eso, un resultado es solo un número bonito.\n\nEl error común es tratar los resultados como identidades fijas. Un puntaje no te define, te da una fotografía de cómo funcionas hoy. El valor real está en el contexto: cómo se relaciona ese resultado con otros y con tu experiencia concreta.\n\nEn Endonautas usamos 35 tests validados, y el Mapa de Patrones combina tres dimensiones clave: personalidad, regulación emocional y apego. No es una etiqueta, es un punto de partida para entenderte mejor.\n\nSi te interesa profundizar, puedes empezar gratis en endonautas.cl"
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "Crees que el agotamiento es normal y no lo es.",
-            "Tu energía no es infinita, pero actúas como si lo fuera.",
-            "Si cada día terminas vacío, no es que trabajes mucho: es que tu sistema de regulación emocional está en déficit.",
-            "Los tests de ansiedad no son para diagnosticarte: son para que veas el tamaño real de lo que cargas.",
-            "La culpa no te mueve hacia adelante, te mantiene en el mismo lugar.",
-            "Un test bien hecho te muestra por dónde empezar a soltar.",
-            "Mide lo que llevas dentro sin juzgarlo → endonautas.cl"
-          ],
-          "keywords": [
-            "agotamiento",
-            "regulación emocional",
-            "tests de ansiedad",
             "burnout",
-            "autoconocimiento"
+            "sobreexigencia",
+            "rendimiento",
+            "patrón",
+            "psicometría"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Te sabes los números.",
-          "hook_b": "Pero el vacío persiste.",
-          "cta": "Mapa de Patrones en endonautas.cl",
+          "hook_a": "Resultados visibles. Silencio interno.",
+          "hook_b": "Tu brújula no miente.",
+          "cta": "Revisa tu mapa en endonautas.cl",
           "keywords": [
-            "Big Five",
-            "regulación emocional",
-            "patrones"
+            "tests psicométricos",
+            "validez",
+            "autoconocimiento"
           ]
         },
         "social": {
-          "instagram": "Si has llegado hasta aquí probablemente eres del tipo de persona que quiere entender cómo funciona su mente, no solo etiquetarla. Los tests psicométricos validados te dan datos útiles, no categorías vacías. Elige bien lo que mides. Empieza con el Mapa de Patrones en endonautas.cl #autoconocimiento #desarrolloprofesional #psicometría",
-          "tiktok": "¿Has hecho un test de personalidad en una revista y te has sentido descrito… pero luego no sabías qué hacer con eso? La mayoría de tests online no miden nada real. Los validados sí. Mira cómo distinguirlos y úsalos de verdad. Entra a endonautas.cl",
-          "linkedin": "Los tests psicométricos online abundan, pero no todos merecen tu tiempo. Un test bien construido se diferencia por tres criterios: validez, confiabilidad y estandarización. Sin eso, un resultado es solo un número bonito.\n\nEl error común es tratar los resultados como identidades fijas. Un puntaje no te define, te da una fotografía de cómo funcionas hoy. El valor real está en el contexto: cómo se relaciona ese resultado con otros y con tu experiencia concreta.\n\nEn Endonautas usamos 35 tests validados, y el Mapa de Patrones combina tres dimensiones clave: personalidad, regulación emocional y apego. No es una etiqueta, es un punto de partida para entenderte mejor.\n\nSi te interesa profundizar, puedes empezar gratis en endonautas.cl"
+          "instagram": "Sabes que trabajas duro, pero a veces tienes la sensación de que no avanzas. Te revisas en cada tarea y el perfeccionismo te consume. Ponerle nombre a lo que sientes es el primer paso para salir de ese ciclo. No eres tus resultados, eres más que eso. Empieza a conocerte de verdad con tests validados: endonautas.cl #desarrolloprofesional #saludmental #autoconocimiento",
+          "tiktok": "¿Sientes que por más que trabajas, nunca es suficiente? El burnout y el perfeccionismo tienen nombre. No son solo estrés ni vagancia. Descubre qué miden los tests psicométricos y cómo usarlos en la vida real en endonautas.cl",
+          "linkedin": "Recibir un resultado de test de personalidad puede ser revelador, pero también puede convertirse en una etiqueta si no sabes interpretarlo.\n\nLo que mide un test validado no es lo que 'eres', sino cómo estás funcionando en una dimensión concreta en este momento. No es una identidad fija.\n\nEn mi experiencia con profesionales, el mayor error es buscar una sola respuesta. El autoconocimiento real aparece cuando cruzas varias dimensiones: cómo eres estructuralmente, cómo regulas emociones y cómo te relacionas.\n\nEndonautas incluye 35 tests psicométricos validados con análisis IA para darte contexto y dirección. Empieza con el Mapa de Patrones en endonautas.cl."
         }
       },
       {
         "carousel": {
           "slides": [
-            "No eres complicado: tienes patrones que chocan.",
-            "En el trabajo te exigen resultados; en casa, conexión. Y tú intentas ser el mismo en ambos lados.",
-            "El conflicto no es entre tú y ellos: es entre cómo te vinculas y cómo te regulas.",
-            "Tu estilo de apego no es tu identidad: es un mapa que puedes cambiar.",
-            "Los tests de personalidad no te encasillan: te muestran dónde tu estructura choca con tu entorno.",
-            "Cuando ves las piezas, dejas de culparte a ti mismo.",
-            "Encuentra qué patrones se cruzan en tu vida → endonautas.cl"
+            "Sabes que procrastinas, pero no sabes bien por qué.",
+            "No es flojo. Es tu sistema evitando algo que no puede procesar.",
+            "Te paralizas más entre más importante es la tarea.",
+            "Y eso no se arregla con listas de pendientes.",
+            "Hay un patrón detrás de cada bloqueo que no ves.",
+            "Un test validado te muestra lo que tu voluntad no alcanza.",
+            "Descifra lo que te detiene, no lo forces → endonautas.cl"
           ],
           "keywords": [
-            "estilo de apego",
-            "personalidad",
-            "Big Five",
-            "relaciones laborales",
-            "autoconocimiento"
+            "procrastinación",
+            "bloqueo",
+            "voluntad",
+            "patrón",
+            "tests"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "La etiqueta no te define.",
-          "hook_b": "Lo que haces con ella sí.",
-          "cta": "Empieza gratis en endonautas.cl",
+          "hook_a": "Un número no te define.",
+          "hook_b": "Pero puede indicarte el camino.",
+          "cta": "Empieza por tu mapa en endonautas.cl",
           "keywords": [
-            "test psicométrico",
+            "tests psicométricos",
             "interpretación",
-            "crecimiento"
+            "perfil"
           ]
         },
         "social": {
-          "instagram": "Si has llegado hasta aquí probablemente eres del tipo de persona que quiere entender cómo funciona su mente, no solo etiquetarla. Los tests psicométricos validados te dan datos útiles, no categorías vacías. Elige bien lo que mides. Empieza con el Mapa de Patrones en endonautas.cl #autoconocimiento #desarrolloprofesional #psicometría",
-          "tiktok": "¿Has hecho un test de personalidad en una revista y te has sentido descrito… pero luego no sabías qué hacer con eso? La mayoría de tests online no miden nada real. Los validados sí. Mira cómo distinguirlos y úsalos de verdad. Entra a endonautas.cl",
-          "linkedin": "Los tests psicométricos online abundan, pero no todos merecen tu tiempo. Un test bien construido se diferencia por tres criterios: validez, confiabilidad y estandarización. Sin eso, un resultado es solo un número bonito.\n\nEl error común es tratar los resultados como identidades fijas. Un puntaje no te define, te da una fotografía de cómo funcionas hoy. El valor real está en el contexto: cómo se relaciona ese resultado con otros y con tu experiencia concreta.\n\nEn Endonautas usamos 35 tests validados, y el Mapa de Patrones combina tres dimensiones clave: personalidad, regulación emocional y apego. No es una etiqueta, es un punto de partida para entenderte mejor.\n\nSi te interesa profundizar, puedes empezar gratis en endonautas.cl"
+          "instagram": "Sabes que trabajas duro, pero a veces tienes la sensación de que no avanzas. Te revisas en cada tarea y el perfeccionismo te consume. Ponerle nombre a lo que sientes es el primer paso para salir de ese ciclo. No eres tus resultados, eres más que eso. Empieza a conocerte de verdad con tests validados: endonautas.cl #desarrolloprofesional #saludmental #autoconocimiento",
+          "tiktok": "¿Sientes que por más que trabajas, nunca es suficiente? El burnout y el perfeccionismo tienen nombre. No son solo estrés ni vagancia. Descubre qué miden los tests psicométricos y cómo usarlos en la vida real en endonautas.cl",
+          "linkedin": "Recibir un resultado de test de personalidad puede ser revelador, pero también puede convertirse en una etiqueta si no sabes interpretarlo.\n\nLo que mide un test validado no es lo que 'eres', sino cómo estás funcionando en una dimensión concreta en este momento. No es una identidad fija.\n\nEn mi experiencia con profesionales, el mayor error es buscar una sola respuesta. El autoconocimiento real aparece cuando cruzas varias dimensiones: cómo eres estructuralmente, cómo regulas emociones y cómo te relacionas.\n\nEndonautas incluye 35 tests psicométricos validados con análisis IA para darte contexto y dirección. Empieza con el Mapa de Patrones en endonautas.cl."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Crees que ser perfecto en el trabajo es tu fortaleza.",
+            "Pero el perfeccionismo no te protege: te frena.",
+            "Revisas diez veces lo que otros entregan a la primera.",
+            "Y al final, el cansancio es más grande que el logro.",
+            "No es un defecto tuyo. Es un patrón que puedes leer.",
+            "Los tests no juzgan, describen lo que pasa bajo tu radar.",
+            "Deja de pagar el precio de no conocerte → endonautas.cl"
+          ],
+          "keywords": [
+            "perfeccionismo",
+            "autosabotaje",
+            "relaciones laborales",
+            "exigencia",
+            "tests"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Sabes qué sientes.",
+          "hook_b": "¿Sabes cómo medirlo bien?",
+          "cta": "Mide con precisión en endonautas.cl",
+          "keywords": [
+            "tests psicométricos",
+            "confiabilidad",
+            "psicometría"
+          ]
+        },
+        "social": {
+          "instagram": "Sabes que trabajas duro, pero a veces tienes la sensación de que no avanzas. Te revisas en cada tarea y el perfeccionismo te consume. Ponerle nombre a lo que sientes es el primer paso para salir de ese ciclo. No eres tus resultados, eres más que eso. Empieza a conocerte de verdad con tests validados: endonautas.cl #desarrolloprofesional #saludmental #autoconocimiento",
+          "tiktok": "¿Sientes que por más que trabajas, nunca es suficiente? El burnout y el perfeccionismo tienen nombre. No son solo estrés ni vagancia. Descubre qué miden los tests psicométricos y cómo usarlos en la vida real en endonautas.cl",
+          "linkedin": "Recibir un resultado de test de personalidad puede ser revelador, pero también puede convertirse en una etiqueta si no sabes interpretarlo.\n\nLo que mide un test validado no es lo que 'eres', sino cómo estás funcionando en una dimensión concreta en este momento. No es una identidad fija.\n\nEn mi experiencia con profesionales, el mayor error es buscar una sola respuesta. El autoconocimiento real aparece cuando cruzas varias dimensiones: cómo eres estructuralmente, cómo regulas emociones y cómo te relacionas.\n\nEndonautas incluye 35 tests psicométricos validados con análisis IA para darte contexto y dirección. Empieza con el Mapa de Patrones en endonautas.cl."
         }
       }
     ],
@@ -235,109 +231,103 @@
       {
         "carousel": {
           "slides": [
-            "¿Qué estás transmitiendo a tus hijos sin darte cuenta?",
-            "Los patrones que no resuelves en ti, los repites.",
-            "Tu forma de reaccionar al estrés es su primer modelo.",
-            "El test de personalidad no etiqueta, muestra lo que heredas.",
-            "La regulación emocional se enseña sin palabras.",
-            "Reconocerlo duele, pero es el primer paso para soltarlo.",
-            "Rompe el ciclo. Empieza con tu mapa de patrones → endonautas.cl"
+            "Tu hijo te está mostrando lo que no resolviste en ti.",
+            "Cuando te molesta su rabieta, no es su rabia la que duele.",
+            "Es tu propia rabia infantil que nunca aprendiste a regular.",
+            "Los patrones que repites con él ya los traes de tu casa.",
+            "Quieres criar distinto, pero el piloto automático es más rápido.",
+            "El autoconocimiento no es lujo: es el primer acto de crianza consciente.",
+            "Rompe el ciclo, empieza con los tests → endonautas.cl"
           ],
           "keywords": [
             "tests psicométricos",
-            "padres",
-            "patrones familiares",
-            "autoconocimiento",
-            "crianza consciente"
+            "crianza consciente",
+            "patrones familiares"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Lo que criticas de tu hijo",
-          "hook_b": "no lo ves en el espejo.",
-          "cta": "Descúbrelo en endonautas.cl",
+          "hook_a": "Tu hijo no es tu espejo.",
+          "hook_b": "Lo sabes, pero duele igual.",
+          "cta": "Entiende por qué en endonautas.cl",
           "keywords": [
             "tests psicométricos",
             "crianza",
-            "patrones"
-          ]
-        },
-        "social": {
-          "instagram": "No todos los tests psicológicos son iguales. Saber qué mide realmente un test te permite usarlo para tomar decisiones, no solo para etiquetarte.\n\nConoce el Mapa de Patrones en endonautas.cl y empieza a mirarte con claridad.\n.\n.\n.\n#crianzaconsciente #paternidad #autoconocimiento",
-          "tiktok": "¿Sabes si el test de personalidad que hiciste en internet realmente mide algo? La mayoría no sirve. Entra a endonautas.cl y descubre herramientas validadas para ti y tu familia.",
-          "linkedin": "Como padres, a menudo buscamos herramientas para entendernos mejor y mejorar nuestra relación con nuestros hijos.\n\nPero no todos los tests psicológicos son iguales. Un test válido mide lo que dice medir, produce resultados consistentes y se interpreta en relación con una población de referencia.\n\nLos tests de revista o de redes sociales suelen carecer de esto. Si quieres usarlos para tomar decisiones informadas sobre tu bienestar o el de tu familia, elige instrumentos validados.\n\nEn endonautas.cl encontrarás 35 tests psicométricos validados con análisis IA. Puedes empezar con el Mapa de Patrones, que combina tres dimensiones clave para entender cómo eres, cómo regulas emociones y cómo te relacionas.\n\nNo se trata de etiquetas, sino de información accionable para tu vida."
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "Tu hijo no es tu espejo, pero repite lo que no miras.",
-            "Cada test que haces es un regalo para tu historia.",
-            "El apego que no sanas se vuelve su forma de amar.",
-            "No es culpa, es una oportunidad de cortar el patrón.",
-            "Verlo claro es el primer acto de amor concreto.",
-            "El resultado de un test no te define, te muestra el camino.",
-            "Criar consciente empieza con conocerte. Haz tu test → endonautas.cl"
-          ],
-          "keywords": [
-            "tests psicométricos",
-            "apego",
-            "crianza",
-            "patrones heredados",
-            "amor consciente"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "Tu hijo no es ansioso.",
-          "hook_b": "Es tu ansiedad reflejada.",
-          "cta": "Sepáralo en endonautas.cl",
-          "keywords": [
-            "ansiedad",
-            "proyección",
             "autoconocimiento"
           ]
         },
         "social": {
-          "instagram": "No todos los tests psicológicos son iguales. Saber qué mide realmente un test te permite usarlo para tomar decisiones, no solo para etiquetarte.\n\nConoce el Mapa de Patrones en endonautas.cl y empieza a mirarte con claridad.\n.\n.\n.\n#crianzaconsciente #paternidad #autoconocimiento",
-          "tiktok": "¿Sabes si el test de personalidad que hiciste en internet realmente mide algo? La mayoría no sirve. Entra a endonautas.cl y descubre herramientas validadas para ti y tu familia.",
-          "linkedin": "Como padres, a menudo buscamos herramientas para entendernos mejor y mejorar nuestra relación con nuestros hijos.\n\nPero no todos los tests psicológicos son iguales. Un test válido mide lo que dice medir, produce resultados consistentes y se interpreta en relación con una población de referencia.\n\nLos tests de revista o de redes sociales suelen carecer de esto. Si quieres usarlos para tomar decisiones informadas sobre tu bienestar o el de tu familia, elige instrumentos validados.\n\nEn endonautas.cl encontrarás 35 tests psicométricos validados con análisis IA. Puedes empezar con el Mapa de Patrones, que combina tres dimensiones clave para entender cómo eres, cómo regulas emociones y cómo te relacionas.\n\nNo se trata de etiquetas, sino de información accionable para tu vida."
+          "instagram": "Para Padres: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Padres no es introspección — es una práctica medible. Más en endonautas.cl"
         }
       },
       {
         "carousel": {
           "slides": [
-            "Ese grito que te sale sin avisar... viene de lejos.",
-            "No es maldad, es un patrón que no supiste ver.",
-            "Los tests psicométricos no juzgan, revelan.",
-            "Tu neuroticismo no es tu destino, es un dato.",
-            "La regulación emocional se aprende, aunque tarde.",
-            "Lo que no enfrentas, lo heredan. Y se repite.",
-            "Conócete para no repetir. Empieza tu mapa → endonautas.cl"
+            "Lo que no sanas, se lo heredas a tus hijos.",
+            "No es que tu hijo sea 'difícil'. Es que activa lo que ignoras.",
+            "Tu reactividad no es sobre él: es sobre tu historia sin resolver.",
+            "Criar sin autoconocimiento es repetir lo que recibiste.",
+            "La herencia más pesada no es material: es emocional.",
+            "Verlo en ti es el primer paso para no transmitirlo.",
+            "Crianza consciente empieza con mirarte a ti → endonautas.cl"
           ],
           "keywords": [
-            "tests psicométricos",
-            "regulación emocional",
-            "padres",
-            "patrones de reacción",
-            "cambio generacional"
+            "autoconocimiento",
+            "paternidad consciente",
+            "tests de personalidad"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "El test de personalidad que le haces",
-          "hook_b": "te mide a ti primero.",
-          "cta": "Mídete en endonautas.cl",
+          "hook_a": "Lo que te molesta de él",
+          "hook_b": "lo heredaste sin elegirlo.",
+          "cta": "Descubre tu patrón en endonautas.cl",
           "keywords": [
-            "personalidad",
-            "Big Five",
+            "test de personalidad",
+            "patrones",
             "crianza"
           ]
         },
         "social": {
-          "instagram": "No todos los tests psicológicos son iguales. Saber qué mide realmente un test te permite usarlo para tomar decisiones, no solo para etiquetarte.\n\nConoce el Mapa de Patrones en endonautas.cl y empieza a mirarte con claridad.\n.\n.\n.\n#crianzaconsciente #paternidad #autoconocimiento",
-          "tiktok": "¿Sabes si el test de personalidad que hiciste en internet realmente mide algo? La mayoría no sirve. Entra a endonautas.cl y descubre herramientas validadas para ti y tu familia.",
-          "linkedin": "Como padres, a menudo buscamos herramientas para entendernos mejor y mejorar nuestra relación con nuestros hijos.\n\nPero no todos los tests psicológicos son iguales. Un test válido mide lo que dice medir, produce resultados consistentes y se interpreta en relación con una población de referencia.\n\nLos tests de revista o de redes sociales suelen carecer de esto. Si quieres usarlos para tomar decisiones informadas sobre tu bienestar o el de tu familia, elige instrumentos validados.\n\nEn endonautas.cl encontrarás 35 tests psicométricos validados con análisis IA. Puedes empezar con el Mapa de Patrones, que combina tres dimensiones clave para entender cómo eres, cómo regulas emociones y cómo te relacionas.\n\nNo se trata de etiquetas, sino de información accionable para tu vida."
+          "instagram": "Para Padres: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Padres no es introspección — es una práctica medible. Más en endonautas.cl"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Tu hijo no necesita un padre perfecto: necesita uno que se mire.",
+            "El cansancio de criar no es por falta de tiempo.",
+            "Es por las mochilas emocionales que arrastras sin saber.",
+            "Cuando corriges desde el impulso, repites lo que juraste no hacer.",
+            "El cambio real no está en manuales de crianza, está en ti.",
+            "Mirar tus patrones te da libertad para criar distinto.",
+            "Empieza por ti, para él. Tests validados → endonautas.cl"
+          ],
+          "keywords": [
+            "psicometría",
+            "crianza",
+            "romper ciclos"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "No es rebeldía, es tu historia.",
+          "hook_b": "Mírala sin etiquetas.",
+          "cta": "Mapa de Patrones en endonautas.cl",
+          "keywords": [
+            "psicometría",
+            "apego",
+            "crianza"
+          ]
+        },
+        "social": {
+          "instagram": "Para Padres: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Padres no es introspección — es una práctica medible. Más en endonautas.cl"
         }
       }
     ],
@@ -345,112 +335,112 @@
       {
         "carousel": {
           "slides": [
-            "Evalúas con tests que no miden lo que crees.",
-            "Un test de internet no es lo mismo que uno validado.",
-            "La validez no es un lujo, es la base de tu análisis.",
-            "Sin confiabilidad, tu diagnóstico se apoya en arena.",
-            "La estandarización te permite comparar con precisión.",
-            "Tu paciente merece un mapa, no una adivinanza.",
-            "Prueba 35 tests validados con IA en → endonautas.cl"
+            "Tu paciente te pregunta: \"¿Qué test debería usar?\" y dudas.",
+            "La mayoría de los tests online no miden lo que prometen.",
+            "Un test sin validación es una opinión con gráfico.",
+            "El Big Five, PHQ-9 o ECR no son moda: son herramientas.",
+            "Elegir mal un instrumento es perder tiempo y confianza.",
+            "La validez no es un lujo: es la base de tu intervención.",
+            "Usa tests que puedes interpretar con rigor → endonautas.cl"
           ],
           "keywords": [
             "tests psicométricos",
             "validez psicométrica",
-            "herramientas de evaluación",
-            "autoconocimiento terapéutico",
-            "PHQ-9"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "¿Tu paciente mejora o solo entiende?",
-          "hook_b": "El test no es el diagnóstico.",
-          "cta": "Haz el mapa en endonautas.cl",
-          "keywords": [
-            "tests psicométricos",
-            "paciente",
-            "mejora"
-          ]
-        },
-        "social": {
-          "instagram": "Cuando alguien te dice 'soy INFJ' o 'mi amor primario es X', ¿qué haces con eso como terapeuta? La diferencia entre un test validado y uno de revista no es solo metodológica: tiene consecuencias directas en lo que puedes trabajar con tu paciente. Los tests como PHQ-9, Big Five o DERS-16 miden dimensiones específicas, no etiquetas fijas. Aprende a interpretarlos sin caer en reduccionismos. \n\n¿Los usas en tu práctica? Cuéntame en comentarios cómo los integras. \n\nDescubre más en endonautas.cl #psicología #testspsicométricos #saludmental",
-          "tiktok": "¿Sigues usando tests de revista con tus pacientes? La validez importa. PHQ-9, Big Five y DERS-16 son herramientas reales. No los conviertas en etiquetas. Mira los patrones, no los números. endonautas.cl",
-          "linkedin": "La diferencia entre un test psicométrico validado y un cuestionario informal no es solo académica: afecta la calidad de la información que obtienes de tus pacientes y, por tanto, las decisiones clínicas que tomas.\n\nHerramientas como el PHQ-9, el Big Five o el DERS-16 cumplen con criterios de validez, confiabilidad y estandarización que los cuestionarios de internet no ofrecen. Su valor no está en el puntaje aislado, sino en cómo esos resultados se cruzan para revelar patrones que la introspección por sí sola no detecta.\n\nComo terapeuta o coach, integrar estos instrumentos te permite pasar de una evaluación subjetiva a una basada en datos que complementa tu juicio clínico.\n\nEn Endonautas hemos seleccionado 35 tests validados en español, incluyendo el Mapa de Patrones que combina Big Five, DERS-16 y ECR con análisis IA. No reemplaza tu interpretación, la potencia.\n\nRevisa cómo aplicarlos en tu práctica en endonautas.cl"
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "Tu contratransferencia también necesita medirse.",
-            "El espejo que eres para tu paciente se empaña sin datos.",
-            "El autoconocimiento del terapeuta no es opcional.",
-            "Sin tests, trabajas con intuición, no con evidencia.",
-            "Las dimensiones psicológicas se iluminan juntas.",
-            "Un resultado aislado es solo un número.",
-            "Conoce tu perfil con 3 tests en uno en → endonautas.cl"
-          ],
-          "keywords": [
-            "tests psicométricos",
-            "contratransferencia",
-            "autoconocimiento del terapeuta",
+            "PHQ-9",
             "Big Five",
             "evaluación psicológica"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "No uses tests sin validación.",
-          "hook_b": "Tu criterio no es suficiente.",
-          "cta": "Instrumentos reales en endonautas.cl",
+          "hook_a": "Tu paciente no avanza.",
+          "hook_b": "Quizás tú tampoco lo haces.",
+          "cta": "Empieza en endonautas.cl",
           "keywords": [
-            "tests psicométricos",
-            "validación",
-            "criterio"
+            "test psicométricos",
+            "terapeutas",
+            "trabajo interior"
           ]
         },
         "social": {
-          "instagram": "Cuando alguien te dice 'soy INFJ' o 'mi amor primario es X', ¿qué haces con eso como terapeuta? La diferencia entre un test validado y uno de revista no es solo metodológica: tiene consecuencias directas en lo que puedes trabajar con tu paciente. Los tests como PHQ-9, Big Five o DERS-16 miden dimensiones específicas, no etiquetas fijas. Aprende a interpretarlos sin caer en reduccionismos. \n\n¿Los usas en tu práctica? Cuéntame en comentarios cómo los integras. \n\nDescubre más en endonautas.cl #psicología #testspsicométricos #saludmental",
-          "tiktok": "¿Sigues usando tests de revista con tus pacientes? La validez importa. PHQ-9, Big Five y DERS-16 son herramientas reales. No los conviertas en etiquetas. Mira los patrones, no los números. endonautas.cl",
-          "linkedin": "La diferencia entre un test psicométrico validado y un cuestionario informal no es solo académica: afecta la calidad de la información que obtienes de tus pacientes y, por tanto, las decisiones clínicas que tomas.\n\nHerramientas como el PHQ-9, el Big Five o el DERS-16 cumplen con criterios de validez, confiabilidad y estandarización que los cuestionarios de internet no ofrecen. Su valor no está en el puntaje aislado, sino en cómo esos resultados se cruzan para revelar patrones que la introspección por sí sola no detecta.\n\nComo terapeuta o coach, integrar estos instrumentos te permite pasar de una evaluación subjetiva a una basada en datos que complementa tu juicio clínico.\n\nEn Endonautas hemos seleccionado 35 tests validados en español, incluyendo el Mapa de Patrones que combina Big Five, DERS-16 y ECR con análisis IA. No reemplaza tu interpretación, la potencia.\n\nRevisa cómo aplicarlos en tu práctica en endonautas.cl"
+          "instagram": "¿Usas tests con tus pacientes sin saber si realmente miden lo que prometen? El problema no es el resultado, es cómo lo lees. Un test psicométrico validado es una foto de un momento, no una etiqueta permanente. Antes de etiquetar a alguien como 'apego ansioso', pregúntate: ¿qué me dice esto sobre su regulación emocional y su personalidad? La verdadera utilidad está en cruzar dimensiones, no en aislar números. ¿Listo para trabajar con herramientas reales? Conoce el Mapa de Patrones en endonautas.cl. #psicometría #saludmental #psicología",
+          "tiktok": "¿Sigues usando tests de revista con tus pacientes? La diferencia entre un test validado y uno de internet no es solo técnica: decide si puedes actuar sobre el resultado. En endonautas.cl encuentras 35 tests validados que sí sirven.",
+          "linkedin": "En la práctica clínica, la diferencia entre un test psicométrico validado y un cuestionario informal no es menor: validez, confiabilidad y estandarización determinan si un resultado es accionable o una etiqueta vacía. Tests como el PHQ-9, el Big Five o el ECR no miden identidades fijas: ofrecen una fotografía contextualizada de dimensiones que interactúan (rasgos, regulación emocional, apego). El error más común es interpretarlos de forma aislada; la clave está en cruzar resultados. Por eso en Endonautas integramos 35 tests validados en español, con análisis IA que detecta tensiones entre dimensiones. Para terapeutas y coaches que buscan rigor sin perder profundidad humana. Revisa el Mapa de Patrones en endonautas.cl."
         }
       },
       {
         "carousel": {
           "slides": [
-            "Lo que mides entre sesiones define tu trabajo.",
-            "El PHQ-9 no diagnostica, pero te da dirección.",
-            "El Big Five predice comportamiento, no encasilla.",
-            "La regulación emocional se mide, no se intuye.",
-            "El apego se revela en dimensiones, no en etiquetas.",
-            "El error común es leer el test como identidad.",
-            "Empieza con tests validados en español en → endonautas.cl"
+            "Sesión tras sesión hablas de autoconocimiento, pero ¿tú te mides?",
+            "No puedes guiar a otro si tu propio mapa tiene zonas ciegas.",
+            "La contratransferencia empieza donde termina tu autoconocimiento.",
+            "Un test como el DERS-16 te muestra cómo regulas lo que sientes.",
+            "El ECR revela patrones de apego que se activan en sesión.",
+            "Ser terapeuta no te exime de tener sesgos que influyen.",
+            "Herramientas psicométricas para ti, antes de aplicarlas → endonautas.cl"
           ],
           "keywords": [
-            "tests psicométricos",
-            "PHQ-9",
-            "Big Five",
-            "regulación emocional",
-            "apego"
+            "autoconocimiento terapeuta",
+            "contratransferencia",
+            "DERS-16",
+            "ECR",
+            "herramientas psicométricas"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Lo que mides define lo que ves.",
-          "hook_b": "Elige bien tu herramienta.",
-          "cta": "Comienza en endonautas.cl",
+          "hook_a": "No todo test es válido.",
+          "hook_b": "El tuyo puede engañarte.",
+          "cta": "Mide bien en endonautas.cl",
           "keywords": [
             "tests psicométricos",
-            "herramienta",
-            "medir"
+            "validez",
+            "coaches"
           ]
         },
         "social": {
-          "instagram": "Cuando alguien te dice 'soy INFJ' o 'mi amor primario es X', ¿qué haces con eso como terapeuta? La diferencia entre un test validado y uno de revista no es solo metodológica: tiene consecuencias directas en lo que puedes trabajar con tu paciente. Los tests como PHQ-9, Big Five o DERS-16 miden dimensiones específicas, no etiquetas fijas. Aprende a interpretarlos sin caer en reduccionismos. \n\n¿Los usas en tu práctica? Cuéntame en comentarios cómo los integras. \n\nDescubre más en endonautas.cl #psicología #testspsicométricos #saludmental",
-          "tiktok": "¿Sigues usando tests de revista con tus pacientes? La validez importa. PHQ-9, Big Five y DERS-16 son herramientas reales. No los conviertas en etiquetas. Mira los patrones, no los números. endonautas.cl",
-          "linkedin": "La diferencia entre un test psicométrico validado y un cuestionario informal no es solo académica: afecta la calidad de la información que obtienes de tus pacientes y, por tanto, las decisiones clínicas que tomas.\n\nHerramientas como el PHQ-9, el Big Five o el DERS-16 cumplen con criterios de validez, confiabilidad y estandarización que los cuestionarios de internet no ofrecen. Su valor no está en el puntaje aislado, sino en cómo esos resultados se cruzan para revelar patrones que la introspección por sí sola no detecta.\n\nComo terapeuta o coach, integrar estos instrumentos te permite pasar de una evaluación subjetiva a una basada en datos que complementa tu juicio clínico.\n\nEn Endonautas hemos seleccionado 35 tests validados en español, incluyendo el Mapa de Patrones que combina Big Five, DERS-16 y ECR con análisis IA. No reemplaza tu interpretación, la potencia.\n\nRevisa cómo aplicarlos en tu práctica en endonautas.cl"
+          "instagram": "¿Usas tests con tus pacientes sin saber si realmente miden lo que prometen? El problema no es el resultado, es cómo lo lees. Un test psicométrico validado es una foto de un momento, no una etiqueta permanente. Antes de etiquetar a alguien como 'apego ansioso', pregúntate: ¿qué me dice esto sobre su regulación emocional y su personalidad? La verdadera utilidad está en cruzar dimensiones, no en aislar números. ¿Listo para trabajar con herramientas reales? Conoce el Mapa de Patrones en endonautas.cl. #psicometría #saludmental #psicología",
+          "tiktok": "¿Sigues usando tests de revista con tus pacientes? La diferencia entre un test validado y uno de internet no es solo técnica: decide si puedes actuar sobre el resultado. En endonautas.cl encuentras 35 tests validados que sí sirven.",
+          "linkedin": "En la práctica clínica, la diferencia entre un test psicométrico validado y un cuestionario informal no es menor: validez, confiabilidad y estandarización determinan si un resultado es accionable o una etiqueta vacía. Tests como el PHQ-9, el Big Five o el ECR no miden identidades fijas: ofrecen una fotografía contextualizada de dimensiones que interactúan (rasgos, regulación emocional, apego). El error más común es interpretarlos de forma aislada; la clave está en cruzar resultados. Por eso en Endonautas integramos 35 tests validados en español, con análisis IA que detecta tensiones entre dimensiones. Para terapeutas y coaches que buscan rigor sin perder profundidad humana. Revisa el Mapa de Patrones en endonautas.cl."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "A veces recibes un test de internet y sientes que no dice nada.",
+            "Un resultado sin contexto es un número vacío.",
+            "Lo que importa no es el puntaje, sino cómo se cruza con otras variables.",
+            "El Mapa de Patrones combina tres tests: Big Five, DERS-16 y ECR.",
+            "La inteligencia artificial lo analiza y te da una visión integrada.",
+            "Así dejas de etiquetar y empiezas a comprender patrones.",
+            "Interpreta resultados más allá de la superficie → endonautas.cl"
+          ],
+          "keywords": [
+            "Mapa de Patrones",
+            "análisis psicométrico",
+            "Big Five",
+            "regulación emocional",
+            "estilo de apego"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Una etiqueta no sana.",
+          "hook_b": "El contexto sí lo hace.",
+          "cta": "Descubre cómo en endonautas.cl",
+          "keywords": [
+            "psicometría",
+            "interpretación",
+            "reduccionismo"
+          ]
+        },
+        "social": {
+          "instagram": "¿Usas tests con tus pacientes sin saber si realmente miden lo que prometen? El problema no es el resultado, es cómo lo lees. Un test psicométrico validado es una foto de un momento, no una etiqueta permanente. Antes de etiquetar a alguien como 'apego ansioso', pregúntate: ¿qué me dice esto sobre su regulación emocional y su personalidad? La verdadera utilidad está en cruzar dimensiones, no en aislar números. ¿Listo para trabajar con herramientas reales? Conoce el Mapa de Patrones en endonautas.cl. #psicometría #saludmental #psicología",
+          "tiktok": "¿Sigues usando tests de revista con tus pacientes? La diferencia entre un test validado y uno de internet no es solo técnica: decide si puedes actuar sobre el resultado. En endonautas.cl encuentras 35 tests validados que sí sirven.",
+          "linkedin": "En la práctica clínica, la diferencia entre un test psicométrico validado y un cuestionario informal no es menor: validez, confiabilidad y estandarización determinan si un resultado es accionable o una etiqueta vacía. Tests como el PHQ-9, el Big Five o el ECR no miden identidades fijas: ofrecen una fotografía contextualizada de dimensiones que interactúan (rasgos, regulación emocional, apego). El error más común es interpretarlos de forma aislada; la clave está en cruzar resultados. Por eso en Endonautas integramos 35 tests validados en español, con análisis IA que detecta tensiones entre dimensiones. Para terapeutas y coaches que buscan rigor sin perder profundidad humana. Revisa el Mapa de Patrones en endonautas.cl."
         }
       }
     ]
   },
-  "last_updated": "2026-06-30T21:06:44+00:00"
+  "last_updated": "2026-06-30T21:07:45+00:00"
 }
