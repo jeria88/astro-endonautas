@@ -1,5 +1,5 @@
 ---
-// Página interna — revisión de copy variants por director.
+// Página interna — revisión de output social por Franco.
 // Excluida del sitemap. Solo Franco.
 ---
 <!DOCTYPE html>
@@ -7,202 +7,425 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Revisión de copy — Endonautas</title>
+<title>Review social — Endonautas</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     background: #030306; color: #f0e8dc;
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 15px; line-height: 1.6;
-    padding: 2rem 1rem 7rem; max-width: 960px; margin: 0 auto;
+    padding: 2rem 1.5rem 8rem; max-width: 1100px; margin: 0 auto;
   }
-  h1 { font-size: 1.1rem; color: #7ecccd; letter-spacing: 0.05em; text-transform: uppercase; }
-  .subtitle { color: rgba(240,232,220,0.35); font-size: 0.8rem; margin: 0.25rem 0 2.5rem; }
 
+  /* ── HEADER ── */
+  .page-title { font-size: 1rem; color: #7ecccd; letter-spacing: 0.06em; text-transform: uppercase; }
+  .page-sub   { color: rgba(240,232,220,0.35); font-size: 0.78rem; margin: 0.2rem 0 2.5rem; }
+
+  /* ── SECTION HEADERS ── */
+  .section-h {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(240,232,220,0.28); padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 1.5rem;
+  }
+
+  /* ── ARTICLE BLOCK ── */
+  .article-block { margin-bottom: 3.5rem; }
+  .article-title {
+    font-size: 0.9rem; font-weight: 600; color: #f0e8dc;
+    margin-bottom: 0.25rem;
+  }
   .article-slug {
-    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
-    color: rgba(240,232,220,0.25); padding-bottom: 0.75rem; margin-bottom: 1.75rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.62rem; color: rgba(240,232,220,0.25); margin-bottom: 1.5rem;
   }
-  .director { margin-bottom: 2.5rem; }
-  .director-name {
-    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: rgba(126,204,205,0.65); margin-bottom: 0.75rem;
-  }
-  .variants { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.75rem; }
 
-  /* Variant card */
-  .variant {
-    border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
-    padding: 1rem 1.1rem 0.9rem; background: rgba(255,255,255,0.025);
-    display: flex; flex-direction: column; gap: 0;
+  /* ── READY FOR REVIEW — carousel preview ── */
+  .output-block { margin-bottom: 2rem; }
+  .carousel-preview {
+    display: flex; gap: 0.5rem; overflow-x: auto;
+    padding-bottom: 0.75rem; margin-bottom: 1rem;
   }
-  .variant-num {
-    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: rgba(240,232,220,0.25); margin-bottom: 0.65rem;
+  .carousel-preview::-webkit-scrollbar { height: 4px; }
+  .carousel-preview::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 2px; }
+  .carousel-preview::-webkit-scrollbar-thumb { background: rgba(126,204,205,0.35); border-radius: 2px; }
+  .slide-thumb {
+    flex-shrink: 0; width: 140px; height: 140px; border-radius: 8px;
+    overflow: hidden; border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04);
+    cursor: pointer; transition: border-color 0.15s;
+    position: relative;
   }
-  .field { margin-bottom: 0.45rem; }
-  .field-key {
-    font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: rgba(240,232,220,0.28); display: block; margin-bottom: 0.1rem;
+  .slide-thumb:hover { border-color: rgba(126,204,205,0.4); }
+  .slide-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .slide-num {
+    position: absolute; top: 5px; left: 7px;
+    font-size: 0.55rem; color: rgba(240,232,220,0.6); letter-spacing: 0.12em;
   }
-  .field-val { color: rgba(240,232,220,0.82); font-size: 0.83rem; line-height: 1.42; }
-  .kw { margin-top: 0.4rem; font-size: 0.68rem; color: rgba(240,232,220,0.2); }
+  .slide-full-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(3,3,6,0.94);
+    z-index: 200; align-items: center; justify-content: center; flex-direction: column; gap: 1rem;
+  }
+  .slide-full-overlay.open { display: flex; }
+  .slide-full-overlay img { max-height: 85vh; max-width: 92vw; border-radius: 10px; }
+  .slide-full-overlay .close-btn {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: none; border: none; color: rgba(240,232,220,0.5);
+    font-size: 1.4rem; cursor: pointer;
+  }
+  .slide-nav { display: flex; gap: 1.5rem; }
+  .slide-nav button {
+    background: none; border: 1px solid rgba(255,255,255,0.15); color: rgba(240,232,220,0.7);
+    padding: 6px 16px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; transition: 0.13s;
+  }
+  .slide-nav button:hover { border-color: #7ecccd; color: #7ecccd; }
+  .slide-counter { font-size: 0.72rem; color: rgba(240,232,220,0.3); }
 
-  /* Slides preview for carousel section */
-  .slides-section { margin-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.65rem; }
-  .slides-label { font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(240,232,220,0.28); margin-bottom: 0.4rem; }
-  .slide-row { display: flex; gap: 0.5rem; margin-bottom: 0.3rem; align-items: baseline; }
-  .slide-n { font-size: 0.6rem; color: rgba(240,232,220,0.2); min-width: 1.2rem; }
-  .slide-txt { font-size: 0.78rem; color: rgba(240,232,220,0.75); line-height: 1.38; }
-  .slide-txt.hook { color: #f0e8dc; font-weight: 600; }
-  .slide-txt.cta  { color: rgba(126,204,205,0.8); }
-
-  /* Format toggles */
-  .toggles {
-    margin-top: 0.85rem; padding-top: 0.7rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    display: flex; gap: 0.4rem;
+  /* ── REEL PREVIEW ── */
+  .reel-thumb {
+    width: 80px; height: 140px; border-radius: 8px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: border-color 0.15s; flex-shrink: 0;
   }
-  .toggle {
-    flex: 1; padding: 6px 0; border-radius: 6px; cursor: pointer;
-    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em;
-    text-align: center; border: 1px solid rgba(255,255,255,0.12);
-    background: transparent; color: rgba(240,232,220,0.35);
-    transition: all 0.13s;
-  }
-  .toggle.on-carousel { border-color: #7ecccd; color: #7ecccd; background: rgba(126,204,205,0.08); }
-  .toggle.on-reel     { border-color: #c0a0f0; color: #c0a0f0; background: rgba(192,160,240,0.08); }
+  .reel-thumb:hover { border-color: rgba(192,160,240,0.4); }
+  .reel-thumb video { width: 100%; height: 100%; object-fit: cover; }
+  .reel-label { font-size: 0.6rem; color: rgba(240,232,220,0.3); text-align: center; padding: 0.5rem 0.3rem; }
 
-  /* Sticky footer */
+  /* ── COPY PENDING REVIEW — avatar cards ── */
+  .avatar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  @media (max-width: 700px) { .avatar-grid { grid-template-columns: 1fr; } }
+
+  .avatar-card {
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+    padding: 1.2rem; background: rgba(255,255,255,0.025);
+  }
+  .avatar-name {
+    font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #7ecccd; margin-bottom: 1rem;
+  }
+
+  /* variant tabs */
+  .variant-tabs { display: flex; gap: 0.35rem; margin-bottom: 0.85rem; }
+  .vtab {
+    padding: 4px 10px; border-radius: 20px; cursor: pointer;
+    font-size: 0.62rem; letter-spacing: 0.08em;
+    border: 1px solid rgba(255,255,255,0.1); color: rgba(240,232,220,0.4);
+    background: transparent; transition: 0.13s;
+  }
+  .vtab.active { border-color: rgba(126,204,205,0.5); color: #7ecccd; background: rgba(126,204,205,0.07); }
+
+  .variant-panel { display: none; }
+  .variant-panel.active { display: block; }
+
+  /* slides copy */
+  .slides-copy { margin-bottom: 0.9rem; }
+  .slide-copy-row {
+    display: flex; gap: 0.5rem; padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04); align-items: baseline;
+  }
+  .slide-copy-n { font-size: 0.58rem; color: rgba(240,232,220,0.2); min-width: 1.5rem; }
+  .slide-copy-txt { font-size: 0.82rem; color: rgba(240,232,220,0.8); line-height: 1.4; }
+  .slide-copy-txt.hook { color: #f0e8dc; font-weight: 600; }
+  .slide-copy-txt.cta  { color: rgba(126,204,205,0.75); font-size: 0.75rem; }
+
+  /* reel copy */
+  .reel-copy { margin-bottom: 0.9rem; }
+  .reel-hook { font-size: 0.88rem; color: #f0e8dc; font-weight: 600; line-height: 1.35; margin-bottom: 0.3rem; }
+  .reel-kw   { font-size: 0.65rem; color: rgba(240,232,220,0.2); }
+
+  /* social copy */
+  .social-copy { margin-bottom: 0.9rem; }
+  .social-net {
+    margin-bottom: 0.65rem; padding: 0.6rem 0.75rem;
+    background: rgba(255,255,255,0.03); border-radius: 6px;
+    border-left: 2px solid rgba(255,255,255,0.1);
+  }
+  .social-net-label { font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(240,232,220,0.28); margin-bottom: 0.25rem; }
+  .social-net-txt { font-size: 0.78rem; color: rgba(240,232,220,0.72); line-height: 1.45; white-space: pre-wrap; }
+
+  /* director selector */
+  .director-row { margin-top: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.7rem; }
+  .director-label { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,232,220,0.25); margin-bottom: 0.4rem; }
+  .director-opts { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .dir-btn {
+    padding: 4px 10px; border-radius: 20px; font-size: 0.62rem; cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.1); color: rgba(240,232,220,0.38);
+    background: transparent; transition: 0.12s;
+  }
+  .dir-btn.sel-carousel { border-color: #7ecccd; color: #7ecccd; background: rgba(126,204,205,0.08); }
+  .dir-btn.sel-reel     { border-color: #c0a0f0; color: #c0a0f0; background: rgba(192,160,240,0.08); }
+
+  /* format toggles */
+  .format-row { display: flex; gap: 0.4rem; margin-top: 0.7rem; }
+  .fmt-btn {
+    flex: 1; padding: 7px 0; border-radius: 6px; cursor: pointer;
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-align: center;
+    border: 1px solid rgba(255,255,255,0.12); background: transparent;
+    color: rgba(240,232,220,0.35); transition: 0.13s;
+  }
+  .fmt-btn.on-carousel { border-color: #7ecccd; color: #7ecccd; background: rgba(126,204,205,0.08); }
+  .fmt-btn.on-reel     { border-color: #c0a0f0; color: #c0a0f0; background: rgba(192,160,240,0.08); }
+
+  /* ── FOOTER STICKY ── */
   .actions {
     position: fixed; bottom: 0; left: 0; right: 0;
     background: rgba(3,3,6,0.96); backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    padding: 0.85rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
     z-index: 100;
   }
   .btn {
-    padding: 10px 28px; border-radius: 40px; border: none; cursor: pointer;
-    font-weight: 700; font-size: 0.75rem; letter-spacing: 0.09em; text-transform: uppercase;
+    padding: 9px 26px; border-radius: 40px; border: none; cursor: pointer;
+    font-weight: 700; font-size: 0.74rem; letter-spacing: 0.09em; text-transform: uppercase;
     background: #7ecccd; color: #030c07; transition: opacity 0.14s;
   }
   .btn:disabled { opacity: 0.3; cursor: not-allowed; }
   .btn:hover:not(:disabled) { opacity: 0.85; }
-  .count { color: rgba(240,232,220,0.4); font-size: 0.8rem; }
-  #msg   { font-size: 0.78rem; color: #7ecccd; }
+  .count { color: rgba(240,232,220,0.38); font-size: 0.78rem; }
+  #msg   { font-size: 0.76rem; color: #7ecccd; }
 
-  #loading, #empty { color: rgba(240,232,220,0.3); font-size: 0.85rem; padding: 2rem 0; }
+  #loading, #empty { color: rgba(240,232,220,0.28); font-size: 0.85rem; padding: 2.5rem 0; }
 </style>
 </head>
 <body>
-<h1>Revisión de copy</h1>
-<p class="subtitle">Activá el formato que querés generar. Verde = carrusel · Violeta = reel.</p>
 
-<div id="loading">Cargando variantes…</div>
-<div id="empty" style="display:none">No hay artículos pendientes de revisión.</div>
+<h1 class="page-title">Review social</h1>
+<p class="page-sub">Verde = carrusel · Violeta = reel · El director define el estilo visual de la pieza.</p>
+
+<div id="loading">Cargando…</div>
+<div id="empty" style="display:none">No hay artículos pendientes.</div>
 <div id="content"></div>
+
 <div class="actions">
   <button class="btn" id="btn-approve" disabled onclick="approve()">Generar seleccionados</button>
   <span class="count" id="count">Sin selección</span>
   <span id="msg"></span>
 </div>
 
+<!-- Lightbox de slides -->
+<div class="slide-full-overlay" id="lightbox">
+  <button class="close-btn" onclick="closeLightbox()">✕</button>
+  <img id="lb-img" src="" alt="" />
+  <div class="slide-nav">
+    <button onclick="lbPrev()">← Anterior</button>
+    <span class="slide-counter" id="lb-counter"></span>
+    <button onclick="lbNext()">Siguiente →</button>
+  </div>
+</div>
+
 <script>
+const AVATAR_LABELS = {
+  negocio:    "Dueños de negocio",
+  profesional:"Profesionales",
+  padres:     "Padres",
+  terapeuta:  "Terapeutas y coaches",
+};
 const DIRECTOR_LABELS = {
   loop:"Loop — Malick", contrain:"Contraintuición — Fincher",
-  quote:"Cita — Wes Anderson", hook:"Hook narrativo — WKW",
+  quote:"Cita — Anderson", hook:"Hook — WKW",
   pregunta:"Pregunta — PTA", edu:"Educativo — McKay", documental:"Documental — Herzog",
 };
 
 let currentSlug = null;
-// key: "director:idx" → {carousel: bool, reel: bool}
+// key: "avatar:variantIdx" → {carousel: bool, reel: bool, director: str}
 const selections = {};
+// lightbox state
+let lbUrls = [], lbIdx = 0;
+
+// ─── LOAD ────────────────────────────────────────────────────────────────────
 
 async function load() {
   const res  = await fetch("/api/list-pending");
   const data = await res.json();
   document.getElementById("loading").style.display = "none";
 
-  if (!data.pending?.length) { document.getElementById("empty").style.display = ""; return; }
-
-  const item = data.pending[0];
-  currentSlug = item.slug;
-
   const c = document.getElementById("content");
-  const slug_el = document.createElement("div");
-  slug_el.className = "article-slug";
-  slug_el.textContent = item.slug;
-  c.appendChild(slug_el);
 
-  for (const [dirName, variants] of Object.entries(item.director_variants || {})) {
-    c.appendChild(buildDirector(dirName, variants));
+  // Section 1: ready_for_review — show carousel/reel output
+  if (data.ready_review?.length) {
+    const sec = document.createElement("div");
+    sec.innerHTML = `<div class="section-h">Output generado — revisar y aprobar publicación</div>`;
+    for (const item of data.ready_review) {
+      sec.appendChild(buildOutputBlock(item));
+    }
+    c.appendChild(sec);
+  }
+
+  // Section 2: copy_pending_review — choose avatar copy
+  if (data.copy_pending?.length) {
+    const sec2 = document.createElement("div");
+    sec2.style.marginTop = "3rem";
+    sec2.innerHTML = `<div class="section-h">Copy pendiente — elige variante y formato</div>`;
+    const item = data.copy_pending[0]; // one at a time
+    currentSlug = item.slug;
+    sec2.appendChild(buildCopyBlock(item));
+    c.appendChild(sec2);
+  }
+
+  if (!data.ready_review?.length && !data.copy_pending?.length) {
+    document.getElementById("empty").style.display = "";
   }
 }
 
-function buildDirector(dirName, variants) {
+// ─── OUTPUT BLOCK (ready_for_review) ─────────────────────────────────────────
+
+function buildOutputBlock(item) {
   const block = document.createElement("div");
-  block.className = "director";
-  block.innerHTML = `<div class="director-name">${DIRECTOR_LABELS[dirName] || dirName}</div>
-    <div class="variants" id="vars-${dirName}"></div>`;
-  const grid = block.querySelector(".variants");
-  variants.forEach((v, i) => grid.appendChild(buildCard(dirName, i, v)));
+  block.className = "article-block output-block";
+
+  const carouselUrls = item.r2_urls.filter(u => u.includes("/carrusel/"));
+  const reelUrls     = item.r2_urls.filter(u => u.includes("/reels/"));
+
+  let html = `
+    <div class="article-title">${item.title || item.slug}</div>
+    <div class="article-slug">${item.slug}</div>`;
+
+  if (carouselUrls.length) {
+    html += `<div style="margin-bottom:0.5rem;font-size:0.65rem;color:rgba(240,232,220,0.28);letter-spacing:0.1em;text-transform:uppercase;">Carrusel (${carouselUrls.length} slides)</div>
+    <div class="carousel-preview" id="cp-${item.slug}">`;
+    carouselUrls.forEach((url, i) => {
+      html += `<div class="slide-thumb" onclick="openLightbox(${JSON.stringify(carouselUrls)},${i})">
+        <span class="slide-num">${String(i+1).padStart(2,"0")}</span>
+        <img src="${url}" loading="lazy" alt="slide ${i+1}" />
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  if (reelUrls.length) {
+    html += `<div style="margin-bottom:0.5rem;font-size:0.65rem;color:rgba(240,232,220,0.28);letter-spacing:0.1em;text-transform:uppercase;">Reels (${reelUrls.length})</div>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">`;
+    reelUrls.forEach((url, i) => {
+      html += `<div><div class="reel-thumb">
+        <video src="${url}" loop muted playsinline onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
+      </div><div class="reel-label">Reel ${i+1}</div></div>`;
+    });
+    html += `</div>`;
+  }
+
+  block.innerHTML = html;
   return block;
 }
 
-function buildCard(dirName, idx, variant) {
+// ─── COPY BLOCK (copy_pending_review) ────────────────────────────────────────
+
+function buildCopyBlock(item) {
+  const block = document.createElement("div");
+  block.className = "article-block";
+  block.innerHTML = `<div class="article-title">${item.title || item.slug}</div>
+    <div class="article-slug">${item.slug}</div>`;
+
+  const grid = document.createElement("div");
+  grid.className = "avatar-grid";
+
+  for (const [avatarName, variants] of Object.entries(item.avatar_variants || {})) {
+    grid.appendChild(buildAvatarCard(avatarName, variants));
+  }
+  block.appendChild(grid);
+  return block;
+}
+
+function buildAvatarCard(avatarName, variants) {
   const card = document.createElement("div");
-  card.className = "variant";
+  card.className = "avatar-card";
 
-  // Reel fields
-  const reelFields = Object.entries(variant.reel || {})
-    .filter(([k]) => k !== "keywords")
-    .map(([k, v]) => v ? `<div class="field"><span class="field-key">${k}</span><span class="field-val">${v}</span></div>` : "")
-    .join("");
+  // Tabs
+  const tabs = variants.map((_, i) => `<button class="vtab${i===0?' active':''}" onclick="switchTab(this,'${avatarName}',${i})">V${i+1}</button>`).join("");
 
-  // Carousel slides
-  const slides = (variant.carousel?.slides || [])
-    .map((s, i) => {
-      const cls = i === 0 ? "hook" : i === (variant.carousel.slides.length-1) ? "cta" : "";
-      return `<div class="slide-row"><span class="slide-n">${String(i+1).padStart(2,"0")}</span><span class="slide-txt ${cls}">${s}</span></div>`;
+  // Panels
+  const panels = variants.map((v, i) => {
+    const slides = (v.carousel?.slides || []).map((s, si) => {
+      const total = v.carousel.slides.length;
+      const cls   = si === 0 ? "hook" : si === total - 1 ? "cta" : "";
+      return `<div class="slide-copy-row">
+        <span class="slide-copy-n">${String(si+1).padStart(2,"0")}</span>
+        <span class="slide-copy-txt ${cls}">${s}</span>
+      </div>`;
     }).join("");
 
-  const kw = (variant.reel?.keywords || []).join(" · ");
+    const hookText = v.reel ? `${v.reel.hook_a} / ${v.reel.hook_b}` : "";
+    const kwText   = (v.reel?.keywords || []).join(" · ");
+
+    const social = v.social || {};
+    const socialHtml = ["instagram","tiktok","linkedin"].map(net =>
+      `<div class="social-net">
+        <div class="social-net-label">${net}</div>
+        <div class="social-net-txt">${social[net] || "—"}</div>
+      </div>`
+    ).join("");
+
+    const dirOpts = Object.entries(DIRECTOR_LABELS).map(([k, label]) =>
+      `<button class="dir-btn" data-avatar="${avatarName}" data-vi="${i}" data-dir="${k}" onclick="selectDir(this)">${label}</button>`
+    ).join("");
+
+    return `<div class="variant-panel${i===0?' active':''}" id="vp-${avatarName}-${i}">
+      <div class="slides-copy">${slides}</div>
+      ${hookText ? `<div class="reel-copy">
+        <div class="reel-hook">${hookText}</div>
+        ${kwText ? `<div class="reel-kw">${kwText}</div>` : ""}
+      </div>` : ""}
+      <div class="social-copy">${socialHtml}</div>
+      <div class="director-row">
+        <div class="director-label">Director de edición</div>
+        <div class="director-opts">${dirOpts}</div>
+      </div>
+      <div class="format-row">
+        <button class="fmt-btn" data-avatar="${avatarName}" data-vi="${i}" data-type="carousel" onclick="onFmt(this)">Carrusel</button>
+        <button class="fmt-btn" data-avatar="${avatarName}" data-vi="${i}" data-type="reel" onclick="onFmt(this)">Reel</button>
+      </div>
+    </div>`;
+  }).join("");
 
   card.innerHTML = `
-    <div class="variant-num">Versión ${idx+1}</div>
-    ${reelFields}
-    ${kw ? `<div class="kw">${kw}</div>` : ""}
-    ${slides ? `<div class="slides-section"><div class="slides-label">Slides carrusel</div>${slides}</div>` : ""}
-    <div class="toggles">
-      <button class="toggle" data-dir="${dirName}" data-idx="${idx}" data-type="carousel">Carrusel</button>
-      <button class="toggle" data-dir="${dirName}" data-idx="${idx}" data-type="reel">Reel</button>
-    </div>`;
-
-  card.querySelectorAll(".toggle").forEach(btn => btn.addEventListener("click", () => onToggle(btn)));
+    <div class="avatar-name">${AVATAR_LABELS[avatarName] || avatarName}</div>
+    <div class="variant-tabs">${tabs}</div>
+    ${panels}`;
   return card;
 }
 
-function onToggle(btn) {
-  const {dir, idx, type} = btn.dataset;
-  const key = `${dir}:${idx}`;
-  if (!selections[key]) selections[key] = {carousel: false, reel: false};
+// ─── INTERACTIONS ─────────────────────────────────────────────────────────────
+
+function switchTab(btn, avatarName, idx) {
+  const card = btn.closest(".avatar-card");
+  card.querySelectorAll(".vtab").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  card.querySelectorAll(".variant-panel").forEach(p => p.classList.remove("active"));
+  card.querySelector(`#vp-${avatarName}-${idx}`).classList.add("active");
+}
+
+function selectDir(btn) {
+  const {avatar, vi, dir} = btn.dataset;
+  const key = `${avatar}:${vi}`;
+  if (!selections[key]) selections[key] = {carousel: false, reel: false, director: ""};
+  selections[key].director = dir;
+
+  // Update visual: clear siblings in same panel
+  btn.closest(".director-opts").querySelectorAll(".dir-btn").forEach(b => {
+    b.classList.remove("sel-carousel","sel-reel");
+  });
+  // Mark with carousel or reel color depending on what's selected
+  const hasCar = selections[key].carousel;
+  const hasReel = selections[key].reel;
+  if (hasCar) btn.classList.add("sel-carousel");
+  else if (hasReel) btn.classList.add("sel-reel");
+  else btn.classList.add("sel-carousel"); // default highlight
+  updateFooter();
+}
+
+function onFmt(btn) {
+  const {avatar, vi, type} = btn.dataset;
+  const key = `${avatar}:${vi}`;
+  if (!selections[key]) selections[key] = {carousel: false, reel: false, director: ""};
   selections[key][type] = !selections[key][type];
-
-  // Clean up empty selection
   if (!selections[key].carousel && !selections[key].reel) delete selections[key];
-
-  // Update button class
-  btn.className = "toggle" + (selections[key]?.[type] ? ` on-${type}` : "");
+  btn.className = "fmt-btn" + (selections[key]?.[type] ? ` on-${type}` : "");
   updateFooter();
 }
 
 function updateFooter() {
   const entries = Object.entries(selections);
-  const n = entries.length;
+  const n  = entries.length;
   const nC = entries.filter(([,v]) => v.carousel).length;
   const nR = entries.filter(([,v]) => v.reel).length;
-
   let txt = "Sin selección";
   if (n) {
     const parts = [];
@@ -214,14 +437,30 @@ function updateFooter() {
   document.getElementById("btn-approve").disabled = !n;
 }
 
-async function approve() {
-  const btn = document.getElementById("btn-approve");
-  btn.disabled = true;
-  btn.textContent = "Enviando…";
+// ─── LIGHTBOX ─────────────────────────────────────────────────────────────────
 
-  const approved_selections = Object.entries(selections).map(([key, {carousel, reel}]) => {
-    const [director, vi] = key.split(":");
-    return { director, variant_index: Number(vi), carousel, reel };
+function openLightbox(urls, idx) {
+  lbUrls = urls; lbIdx = idx;
+  document.getElementById("lb-img").src = urls[idx];
+  document.getElementById("lb-counter").textContent = `${idx+1} / ${urls.length}`;
+  document.getElementById("lightbox").classList.add("open");
+}
+function closeLightbox() { document.getElementById("lightbox").classList.remove("open"); }
+function lbPrev() { lbIdx = (lbIdx - 1 + lbUrls.length) % lbUrls.length; document.getElementById("lb-img").src = lbUrls[lbIdx]; document.getElementById("lb-counter").textContent = `${lbIdx+1} / ${lbUrls.length}`; }
+function lbNext() { lbIdx = (lbIdx + 1) % lbUrls.length; document.getElementById("lb-img").src = lbUrls[lbIdx]; document.getElementById("lb-counter").textContent = `${lbIdx+1} / ${lbUrls.length}`; }
+document.getElementById("lightbox").addEventListener("click", e => { if (e.target === e.currentTarget) closeLightbox(); });
+document.addEventListener("keydown", e => { if (!document.getElementById("lightbox").classList.contains("open")) return; if (e.key==="Escape") closeLightbox(); if (e.key==="ArrowLeft") lbPrev(); if (e.key==="ArrowRight") lbNext(); });
+
+// ─── APPROVE ─────────────────────────────────────────────────────────────────
+
+async function approve() {
+  if (!currentSlug) return;
+  const btn = document.getElementById("btn-approve");
+  btn.disabled = true; btn.textContent = "Enviando…";
+
+  const approved_selections = Object.entries(selections).map(([key, {carousel, reel, director}]) => {
+    const [avatar, vi] = key.split(":");
+    return { avatar, variant_index: Number(vi), carousel, reel, director };
   });
 
   const res  = await fetch("/api/approve-copy", {
@@ -232,12 +471,11 @@ async function approve() {
   const data = await res.json();
 
   if (data.ok) {
-    btn.textContent = `✓ ${data.approved} variante(s) en cola`;
+    btn.textContent = `✓ ${data.approved} en cola`;
     document.getElementById("msg").textContent = "Se generarán en el próximo ciclo (~30 min).";
-    document.querySelectorAll(".toggle").forEach(b => b.disabled = true);
+    document.querySelectorAll(".fmt-btn, .dir-btn, .vtab").forEach(b => b.disabled = true);
   } else {
-    btn.disabled = false;
-    btn.textContent = "Generar seleccionados";
+    btn.disabled = false; btn.textContent = "Generar seleccionados";
     document.getElementById("msg").textContent = `Error: ${data.error}`;
   }
 }

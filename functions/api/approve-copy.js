@@ -9,7 +9,7 @@ export async function onRequestPost({ request, env }) {
   try {
     const body = await request.json();
     slug = body.slug;
-    // approved_selections: [{director, variant_index, carousel: bool, reel: bool}, ...]
+    // approved_selections: [{avatar, variant_index, carousel: bool, reel: bool, director: string}, ...]
     approved_selections = body.approved_selections;
     if (!slug || !Array.isArray(approved_selections) || !approved_selections.length) {
       throw new Error("faltan campos");
@@ -30,19 +30,21 @@ export async function onRequestPost({ request, env }) {
   const fileData = await getRes.json();
 
   const current = JSON.parse(atob(fileData.content.replace(/\n/g, "")));
-  const dirVariants = current.director_variants || {};
+  const avatarVariants = current.avatar_variants || {};
 
   const approved = [];
-  for (const { director, variant_index, carousel, reel } of approved_selections) {
-    const variant = dirVariants[director]?.[variant_index];
-    if (!variant) return Response.json({ error: `${director}[${variant_index}] no existe` }, { status: 400 });
+  for (const { avatar, variant_index, carousel, reel, director } of approved_selections) {
+    const variant = avatarVariants[avatar]?.[variant_index];
+    if (!variant) return Response.json({ error: `${avatar}[${variant_index}] no existe` }, { status: 400 });
     approved.push({
-      director,
+      avatar,
       variant_index,
+      director: director || null,
       carousel: carousel !== false,   // default true
       reel:     reel    === true,      // default false — must be explicit
       carousel_copy: variant.carousel,
       reel_copy:     variant.reel,
+      social_copy:   variant.social || null,
     });
   }
 
