@@ -6,7 +6,7 @@
   "category": "Instrumentos",
   "article_path": "src/content/blog/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan.md",
   "published_date": "2026-06-30",
-  "status": "copy_pending_review",
+  "status": "scored",
   "avatar_variants": {
     "negocio": [
       {
@@ -442,5 +442,195 @@
       }
     ]
   },
-  "last_updated": "2026-06-30T21:01:56+00:00"
+  "last_updated": "2026-06-30T23:11:36+00:00",
+  "viral_scores": {
+    "negocio_v0": {
+      "score": 86,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 80,
+        "emotional_trigger": 90,
+        "avatar_fit": 95,
+        "shareability": 85
+      },
+      "suggested_director": "contrain",
+      "justification": "El gancho impacta directamente en el dolor del dueño de negocio: perder clientes clave a pesar de ser racional. El insight es fuerte pero necesita un director que genere el giro inesperado de 'tu patrón está costando caro'."
+    },
+    "negocio_v1": {
+      "score": 71,
+      "dimensions": {
+        "hook_strength": 70,
+        "curiosity_gap": 75,
+        "emotional_trigger": 65,
+        "avatar_fit": 80,
+        "shareability": 60
+      },
+      "suggested_director": "edu",
+      "justification": "El gancho es más débil porque cuestiona un número sin contexto claro. El insight sobre neuroticismo es educativo pero no emocionalmente urgente para este avatar."
+    },
+    "negocio_v2": {
+      "score": 87,
+      "dimensions": {
+        "hook_strength": 90,
+        "curiosity_gap": 85,
+        "emotional_trigger": 85,
+        "avatar_fit": 90,
+        "shareability": 80
+      },
+      "suggested_director": "contrain",
+      "justification": "La contradicción entre control del negocio y perfil emocional es un gancho poderoso. El insight sobre ansiedad de apego en reuniones es muy específico y doloroso para este avatar."
+    },
+    "profesional_v0": {
+      "score": 72,
+      "dimensions": {
+        "hook_strength": 75,
+        "curiosity_gap": 70,
+        "emotional_trigger": 70,
+        "avatar_fit": 80,
+        "shareability": 65
+      },
+      "suggested_director": "documental",
+      "justification": "El gancho niega el problema pero no crea suficiente tensión. El insight es genérico y el hook del reel es demasiado abstracto para resonar."
+    },
+    "profesional_v1": {
+      "score": 78,
+      "dimensions": {
+        "hook_strength": 80,
+        "curiosity_gap": 75,
+        "emotional_trigger": 75,
+        "avatar_fit": 85,
+        "shareability": 70
+      },
+      "suggested_director": "contrain",
+      "justification": "La afirmación de que la alta responsabilidad no es suficiente es un buen giro. El insight sobre caos interno es relevante, pero el hook del reel podría ser más específico."
+    },
+    "profesional_v2": {
+      "score": 84,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 80,
+        "emotional_trigger": 85,
+        "avatar_fit": 90,
+        "shareability": 75
+      },
+      "suggested_director": "pregunta",
+      "justification": "El gancho apela directamente al dolor de la sobreexigencia y la evasión. El insight resuena con el público profesional que se siente 'flojo' sin serlo."
+    },
+    "padres_v0": {
+      "score": 94,
+      "dimensions": {
+        "hook_strength": 95,
+        "curiosity_gap": 90,
+        "emotional_trigger": 95,
+        "avatar_fit": 100,
+        "shareability": 90
+      },
+      "suggested_director": "hook",
+      "justification": "El gancho es devastador para padres con culpa. El insight es claro y genera reconocimiento inmediato. Altísimo potencial de share porque muchos se ven reflejados."
+    },
+    "padres_v1": {
+      "score": 89,
+      "dimensions": {
+        "hook_strength": 90,
+        "curiosity_gap": 85,
+        "emotional_trigger": 90,
+        "avatar_fit": 95,
+        "shareability": 85
+      },
+      "suggested_director": "quote",
+      "justification": "Mensaje de alivio ('no necesitas ser perfecto') combinado con responsabilidad implícita. El insight toca la proyección parental, lo que lo hace muy compartible."
+    },
+    "padres_v2": {
+      "score": 84,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 80,
+        "emotional_trigger": 85,
+        "avatar_fit": 90,
+        "shareability": 80
+      },
+      "suggested_director": "edu",
+      "justification": "El gancho redirige el foco hacia las emociones, no la personalidad. El insight introduce Big Five como herramienta útil, pero puede sentirse menos visceral que las otras variantes."
+    },
+    "terapeuta_v0": {
+      "score": 88,
+      "dimensions": {
+        "hook_strength": 90,
+        "curiosity_gap": 85,
+        "emotional_trigger": 85,
+        "avatar_fit": 95,
+        "shareability": 85
+      },
+      "suggested_director": "pregunta",
+      "justification": "Pregunta directa y profesional que toca un tema sensible: la contratransferencia. El insight es pertinente y el hook del reel invita a la reflexión."
+    },
+    "terapeuta_v1": {
+      "score": 80,
+      "dimensions": {
+        "hook_strength": 80,
+        "curiosity_gap": 85,
+        "emotional_trigger": 70,
+        "avatar_fit": 85,
+        "shareability": 75
+      },
+      "suggested_director": "edu",
+      "justification": "El gancho es interesante para terapeutas que usan tests, pero el insight es técnico y menos emocional. La propuesta de tres tests juntos es educativa más que visceral."
+    },
+    "terapeuta_v2": {
+      "score": 84,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 80,
+        "emotional_trigger": 85,
+        "avatar_fit": 90,
+        "shareability": 80
+      },
+      "suggested_director": "documental",
+      "justification": "El gancho resuena con la experiencia clínica de repetición de patrones. El insight sobre contratransferencia es relevante y el hook del reel ofrece una perspectiva de descubrimiento."
+    }
+  },
+  "finalists": [
+    "padres_v0",
+    "padres_v1",
+    "terapeuta_v0",
+    "negocio_v2",
+    "negocio_v0"
+  ],
+  "captions": {
+    "padres_v0": {
+      "instagram": "Repites con tus hijos lo que juraste no repetir.\n\nY no es porque seas mala persona, ni porque no quieras cambiar. Es un patrón que opera debajo de tu radar.\n\nUn resultado de test de personalidad te dice cómo eres. Pero no cómo te relacionas con lo que sientes. No cómo se activan tus vínculos cuando algo te toca.\n\nTres tests, juntos, te muestran lo que ninguno puede ver solo: dónde está el nudo real.\n\nAlto neuroticismo + baja aceptación emocional + apego ansioso: la intensidad te desborda y buscas seguridad en quien te la da… hasta que no te la da.\n\nAlto neuroticismo + baja aceptación + apego evitativo: la emoción se suprime. Te desconectas para no sufrir, pero te desconectas también de tu hijo.\n\nNo es destino. Es información que puedes usar.\n\nDescubre tu patrón gratis en endonautas.cl\n\n#endonautas #endonautica #autoconocimiento #saludmental #psicologia #patronesfamiliares #crianza #paternidadconsciente #bigfive #ders #ecr #mapadepatrones #chile #psicologiachile #saludmentalchile",
+      "tiktok": "Tu hijo no te molesta.\nTe molesta lo que ves en él que no resolviste en ti.\n\nEso no te hace mala madre ni mal padre. Te hace humano.\n\nLo que pasa es que un patrón inconsciente se activa cuando la emoción te desborda: el tono se sube, el silencio se vuelve frío, te retiras o te aferras. Todo en segundos, sin pensar.\n\nEl Mapa de Patrones cruza tres tests validados: Big Five, DERS y ECR. No es un horóscopo. Es tu patrón real, con nombres y direcciones.\n\nDescubre el tuyo gratis en #endonautas #endonautica #autoconocimiento #saludmental #crianza #patronesfamiliares #fyp #parati #chile y empieza a romper lo que no quieres heredar.",
+      "linkedin": "Cuando eres padre o madre, lo que no resolviste en ti no desaparece. Se transmite.\n\nNo por mala voluntad, sino por patrón. El Big Five te dice cómo eres. El DERS mide cómo te relacionas con lo que sientes. El ECR revela cómo ese patrón se activa en los vínculos.\n\nJuntos, no describen tu pasado ni predicen tu futuro. Describen tendencias actuales. Y preguntan: ¿dónde se está expresando esto en tu vida concreta ahora?\n\nSi en tu relación con tu hijo aparece tensión que no comprendes, quizá no es sobre él. Es sobre el patrón que no ves.\n\nEl Mapa de Patrones de Endonautas cruza estos tres tests y entrega un análisis integrado. Gratis, en endonautas.cl.\n\n¿Qué patrón te gustaría entender mejor en tu crianza?\n\n#autoconocimiento #saludmental #paternidadconsciente #patronesfamiliares #endonautas",
+      "youtube_title": "Mapa de Patrones: 3 tests para romper ciclos",
+      "youtube_description": "Rompe el ciclo familiar con el Mapa de Patrones de Endonautas. Tres tests validados (Big Five, DERS, ECR) leídos juntos revelan dónde está el nudo real en tu forma de sentir, relacionarte y criar. Descubre tu patrón gratis en endonautas.cl. Autoconocimiento, salud mental, crianza consciente."
+    },
+    "padres_v1": {
+      "instagram": "Tu hijo no necesita que seas perfecto. Necesita que te conozcas.\n\nCada patrón que no ves en ti, lo vives con él. Cuando no regulas tu ansiedad, él habita ese clima emocional. Cuando no has trabajado tu apego, se repite en cómo lo abrazas. No es culpa — es herencia inconsciente.\n\nEl Mapa de Patrones Personales une los puntos que tu instinto ya sospecha. Big Five + Regulación Emocional + Apego no son números fríos: son el plano de lo que traes y lo que puedes transformar.\n\nAlto neuroticismo no es un problema si sabes regularlo. Pero si no lo regulas, tu ansiedad se vuelve su clima emocional. No se trata de ser perfecto — se trata de mirar adentro para criar desde la conciencia, no desde la herencia.\n\nEmpieza por ti, para que él pueda ser él. Descubre tu mapa en endonautas.cl\n\n#endonautas #endonautica #saludmental #autoconocimiento #psicologia #crianza #padres #apego #regulacionemocional #bigfive #testpsicometrico #chile #psicologiachile #saludmentalchile",
+      "tiktok": "Tu hijo no necesita que seas perfecto, necesita que te conozcas. Cada patrón que no ves en ti, lo vives con él.\n\nNo se trata de culpa, se trata de herencia inconsciente. ¿Qué estás transmitiendo sin saberlo? La ansiedad que no regulas se vuelve su clima emocional. El apego que no trabajaste se repite en cómo lo abrazas.\n\nEl Mapa de Patrones Personales une los puntos: tu instinto ya sospecha, el mapa te da claridad #crianzaconsciente #autoconocimiento #saludmental #padresehijos #apegoseguro #bigfive #endonautas\n\nEmpieza por ti, revisa tu mapa en endonautas.cl",
+      "linkedin": "Hay una conversación que muchos padres y madres evitan: la que ocurre entre lo que eres y lo que transmites.\n\nTodos conocemos el dato: los patrones se heredan. Pero lo que no se dice es cómo se heredan. No es genética — es repetición. El alto neuroticismo que no regulas, el apego que no trabajaste, la evitación emocional que normalizaste: todo eso se vuelve el clima donde tu hijo crece.\n\nNo es culpabilidad. Es responsabilidad.\n\nEl Mapa de Patrones Personales —que cruza Big Five, regulación emocional y apego— no es un test más. Es una herramienta para detectar esas contradicciones internas que, cuando no se enfrentan, se viven con los hijos: alta apertura intelectual combinada con baja aceptación emocional, extroversión social con ansiedad de apego.\n\nLa crianza consciente no es idealización: es trabajo interno. ¿Cuánto de lo que corriges en tu hijo no es más que el espejo de lo que no has querido mirar en ti?\n\nDescubre tu mapa en endonautas.cl y transforma la herencia en conciencia.\n\n#CrianzaConsciente #Autoconocimiento #SaludMental #LiderazgoPersonal #Endonautas",
+      "youtube_title": "Enojarte con tu hijo: qué revela de ti",
+      "youtube_description": "El enojo que sientes con tu hijo suele decir más de ti que de él. En este video exploramos cómo los patrones no resueltos —como el neuroticismo alto, la baja regulación emocional o el apego ansioso— se expresan en la crianza.\n\nEl Mapa de Patrones Personales cruza Big Five, regulación emocional y apego para darte claridad. No se trata de ser perfecto, sino de conocer lo que traes para criar desde la conciencia, no desde la herencia. Revisa tu mapa gratis en endonautas.cl\n\n#crianzaconsciente…"
+    },
+    "terapeuta_v0": {
+      "instagram": "¿Tus pacientes te devuelven lo que no ves en ti mismo? 🪞\n\nCuando interpretas un test, no solo lees números: lees desde tu propio mapa. Cada rasgo, cada emoción, cada patrón de apego que no has revisado en ti se cuela en tus juicios clínicos.\n\nNo es error: es contratransferencia. Y si no la nombras, trabajas a ciegas.\n\nEl Mapa de Patrones Personales cruza Big Five, DERS-16 y ECR. No te da un destino: te muestra dónde empieza tu trabajo como terapeuta. No como lujo, como condición.\n\nTres tests, leídos en conjunto, revelan lo que uno solo no puede: tus propias tensiones, tus cegueras, tus hipótesis más productivas.\n\nEmpieza gratis en endonautas.cl y lleva ese espejo también a tu propia práctica.\n\n#endonautas #endonautica #psicologia #terapeutas #coaching #saludmental #autoconocimiento #bigfive #apego #regulacionemocional #contratransferencia #psicologiachile #chile #testspsicometricos #mapadepatrones",
+      "tiktok": "¿Sabes cuándo tus pacientes te están devolviendo lo que no ves en ti? 🧠\n\nEl test que interpretas para otro, también te refleja a ti. Por eso el #MapadePatrones cruza #BigFive, #DERS y #ECR: para que veas las contradicciones que tú mismo llevas a sesión.\n\nNo es diagnóstico, es punto de partida. La contratransferencia se vuelve dato cuando la puedes leer. Y tres tests juntos muestran lo que uno jamás podría.\n\nHazlo gratis en endonautas.cl y llévate ese espejo a tu práctica. #fyp #parati #psicologia #terapeutas #coaching",
+      "linkedin": "¿Es posible que el autoconocimiento del terapeuta no sea un lujo, sino una condición del trabajo clínico?\n\nLlevamos años formándonos en técnicas, enfoques, diagnósticos. Pero hay un espejo que rara vez miramos: cómo nuestros propios patrones se filtran en la interpretación de cada test, en cada hipótesis sobre el paciente.\n\nEl Mapa de Patrones Personales cruza tres instrumentos validados (Big Five, DERS-16, ECR) y entrega un análisis integrado de tus propias tensiones. No para etiquetarte: para darte un punto de partida informado.\n\nHe visto cómo, al revisar los propios resultados, terapeutas y coaches descubren esa contradicción entre lo que ven en otros y lo que no han nombrado en sí mismos. No como error, como dato.\n\n¿Cómo incorporas tu propio autoconocimiento como herramienta de trabajo?\n\nDescubre el Mapa gratis en endonautas.cl.\n\n#autoconocimiento #terapeutas #coaching #psicologia #testpsicometricos",
+      "youtube_title": "Mapa de Patrones: lee lo que tus tests revelan",
+      "youtube_description": "Un test aislado solo da un número. El Mapa de Patrones cruza Big Five, DERS-16 y ECR para mostrarte las contradicciones que importan. Aprende a leer tus propios patrones y lleva esa mirada a tu práctica clínica o de coaching. Empieza gratis en endonautas.cl."
+    },
+    "negocio_v2": {
+      "instagram": "Crees que controlas tu negocio. Tu perfil emocional dice otra cosa. \n\nTu liderazgo no empieza en la pizarra. Empieza en cómo reaccionas cuando las cosas no salen como esperabas. Y ahí, el autoconocimiento no es un lujo, es una herramienta de gestión. \n\nLa ansiedad de apego no se queda en casa. Llega a las reuniones. Se disfraza de microgestión cuando en realidad es miedo al abandono del equipo. O de indecisión cuando no quieres perder el favor de un socio. \n\nLos líderes que evitan conflictos pierden oportunidades callados. No porque no tengan visión, sino porque su regulación emocional prioriza la armonía sobre el resultado. Y eso, a la larga, te cuesta clientes, equipo, crecimiento. \n\nTu apertura a la experiencia no suma si no la aplicas con otros. Puedes tener muchas ideas. Pero si tu perfil de apego evitativo te impide construir alianzas verdaderas, te quedas con el potencial sin convertir. \n\nEl patrón que se repite en tus clientes, en tu equipo, en tu crecimiento, es tuyo. No es mala suerte. Es tu perfil emocional expresándose en el negocio. \n\nLéelo. Endonautas.cl te da tres tests validados y un análisis integrado para que sepas exactamente dónde buscar. No para que te conozcas más. Para que lideres mejor. \n\n#endonautas #endonautica #autoconocimiento #psicologia #liderazgo #gestionemocional #inteligenciaemocional #emprendedores #ceo #negocios #saludmental #chile #psicologiachile #crecimientopersonal",
+      "tiktok": "Tu negocio no va mal. Va según tu patrón. \n\nPero no te das cuenta hasta que ves los números. Clientes que se van. Equipo que no confía. Crecimiento estancado. Todo tiene un patrón detrás. Y ese patrón eres tú. El autoconocimiento no es para sentirte bien. Es para que tu liderazgo deje de sabotear tus resultados. \n#fyp #parati #psicologia #liderazgo #emprendimiento #autoconocimiento \nDescubre el mapa en endonautas.cl",
+      "linkedin": "He visto dueños de negocio que se preguntan por qué repiten los mismos errores con clientes, equipo o crecimiento. La respuesta no está en el mercado. Está en su perfil emocional. \n\nCuando lideras, tu ansiedad de apego se convierte en microgestión. Tu evitación de conflicto, en oportunidades perdidas. Tu apertura a la experiencia, en ideas que nunca se ejecutan porque no construyes las relaciones correctas. No es mala suerte. Es un patrón. \n\nEl autoconocimiento no es una moda ni un ejercicio personal. Es una herramienta de gestión que impacta directamente en resultados. Saber cómo regulas tus emociones, cómo te vinculas y cómo te relacionas con la novedad te permite tomar decisiones más claras, construir equipos que confíen y retener clientes. \n\n¿Te has preguntado qué patrón se repite en tu negocio y de dónde viene? Te invito a leerlo con tres tests validados en endonautas.cl. \n\n#liderazgo #autoconocimiento #gestionemocional #emprendimiento #ceo #negocios",
+      "youtube_title": "Patrón emocional de líder: el mapa que no ves",
+      "youtube_description": "¿Por qué repites los mismos errores en tu negocio? No es mala suerte. Es tu patrón emocional actuando en el liderazgo. Descubre cómo tres tests validados (Big Five, regulación emocional y apego) te muestran el mapa de lo que te frena. En endonautas.cl tienes el análisis integrado gratis. Patrones emocionales, liderazgo, autoconocimiento.\n\nConoce más: endonautas.cl"
+    },
+    "negocio_v0": {
+      "instagram": "Tu equipo no da el rendimiento que esperas. Revisaste procesos, métricas, hasta cambios de horario. Pero el patrón se repite. \n\nHas tomado decisiones con datos toda tu carrera. Y aún así, hay clientes clave que se van, colaboradores que no terminan de alinear, crecimiento que se frena justo donde no quieres mirar. \n\nNo es mala suerte. Es tu perfil de riesgo emocional operando en silencio. El Big Five te dice cómo eres, pero no cómo manejas lo que sientes ni cómo te vinculas bajo presión. Ahí está la información que te falta. \n\nEl apego y la regulación emocional son las variables que los tests tradicionales no miden. Y son las que más influyen en cómo lideras cuando las cosas se complican. \n\nNo se trata de ser más empático o de hacer meditación. Se trata de leer el mapa completo de tus patrones para dejar de tropezar con la misma piedra. \n\nDescubre qué patrón te está costando clientes y equipo. Empieza por tu liderazgo real en endonautas.cl \n\n#endonautas #liderazgoconsciente #saludmental #autoconocimiento #patronesrelacionales #psicologia #gestiondeequipos #crecimientopersonal #decisiones #chile #psicologiachile #dueñosdenegocio",
+      "tiktok": "Tu equipo no rinde. Tus decisiones no fallan, pero algo se repite. Crees que es estrategia, pero es tu patrón emocional operando sin que lo veas. \n\nEl Big Five te dice cómo eres, no cómo reaccionas bajo presión. El apego y la regulación emocional están en juego. Y eso te cuesta clientes. \n\nDeja de mirar solo los datos. Revisa el mapa completo en endonautas.cl #fyp #parati #liderazgo #saludmental #autoconocimiento #emprendedores",
+      "linkedin": "Llevas años tomando decisiones con datos. Revisaste KPIs, ajustaste procesos, cambiaste personas. Pero hay un patrón que se repite: clientes clave que se van sin explicación, equipos que no terminan de rendir, un crecimiento que se frena justo en el punto donde tenías que dar el salto. \n\nLo que no has medido es lo que más impacta: cómo tu perfil emocional y tu estilo de apego operan en las decisiones de liderazgo. El Big Five es útil, pero no cuenta toda la historia. Sin regulación emocional y sin entender cómo te vinculas bajo presión, cualquier estrategia se queda corta. \n\nHe visto dueños de negocio que cambian de equipo, de metodología, de socio, y el mismo cuello de botella aparece en otro lugar. No es mala suerte. Es un patrón que se repite porque no lo has nombrado. \n\nEl Mapa de Patrones Personales de Endonautas cruza tres tests validados (Big Five, regulación emocional, apego) y entrega un análisis integrado para que sepas exactamente dónde está el nudo que te frena. \n\n¿Qué patrón crees que te está costando más caro en tu negocio hoy? \n\nDescúbrelo gratis en endonautas.cl \n\n#liderazgo #autoconocimiento #saludmental #emprendimiento #gestiondeequipos",
+      "youtube_title": "El patrón que te cuesta clientes y equipo",
+      "youtube_description": "Tu equipo no rinde, los clientes se van y el crecimiento se frena. No es estrategia: es tu perfil emocional en acción. El Big Five no basta, el apego y la regulación importan más. Descubre el mapa completo de patrones en endonautas.cl #liderazgo #saludmental #autoconocimiento"
+    }
+  }
 }
