@@ -160,7 +160,20 @@ Campos de resiliencia en cada pending JSON: `last_updated` (ISO), `last_error` (
 
 ### n8n — publicación automática
 
-Workflow `social_publish` en Oracle Cloud. Trigger: webhook POST desde `generate_social.py` cuando status → `ready_to_publish`. Publica en Instagram + LinkedIn. TikTok + YouTube en siguiente iteración (requieren OAuth adicional).
+URL: `https://n8n.146.181.39.4.sslip.io` · Login: `fjeriacastro@gmail.com`
+
+| ID | Nombre | Horario | Acción |
+|----|--------|---------|--------|
+| `LCSET9g5cyLG5qHZ` | Daily Publish 11:11 | 11:11 Chile (14:11 UTC) | Carousel + reel → IG |
+| `noYRxzrL7NpLCORv` | Daily Stories | 13:00 / 16:00 / 19:00 Chile | Historia aleatoria → IG |
+
+**Test manual:** En N8N UI → abrir workflow → "Execute Workflow". Requiere al menos un JSON en `ready_to_publish` (stories requiere al menos uno en `published`).
+
+**OAuth pendiente** (LinkedIn / TikTok / YouTube):  
+Callback URI: `https://n8n.146.181.39.4.sslip.io/rest/oauth2-credential/callback`
+- LinkedIn: https://www.linkedin.com/developers/apps/new — scopes: `w_member_social`
+- TikTok: https://developers.tiktok.com/apps/ — scopes: `video.upload`, `video.publish`
+- YouTube: https://console.cloud.google.com/apis/credentials (habilitar YouTube Data API v3)
 
 ## Servicios relacionados (Oracle Cloud — mismo servidor que la app)
 

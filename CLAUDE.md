@@ -226,33 +226,61 @@ Determinan el estilo visual de la pieza, no el copy.
 
 ### Scripts de soporte (local)
 
-- `scripts/social/batch_phase1.py` — genera `avatar_variants` para artículos en `pending`/`copy_pending_review` sin copy. Llama DeepSeek directamente. Flags: `--slug X`, `--retry-empty`. Retry × 3 por avatar, guard: si algún avatar queda vacío mantiene `status: pending`.
-- `scripts/social/health_check.py` — reporta estado de todos los pending JSONs con edad y stuck detection. Flags: `--json`, `--auto-retry`. Exit code 1 si hay stuck/errores.
+- `scripts/social/batch_phase1.py` — genera `avatar_variants` para artículos `copy_pending_review`. Flags: `--slug X`, `--retry-empty`.
+- `scripts/social/health_check.py` — estado de pending JSONs + stuck detection. Flags: `--json`, `--auto-retry`. Exit 1 si hay errores.
 
 ### Oracle — scripts de producción
 
 Path: `/home/ubuntu/content-studio/generate_social.py`
 
-- **Phase 1** (`status: pending → copy_pending_review`): cron detecta artículos `pending`, llama DeepSeek para generar `avatar_variants`, escribe pending JSON.
-- **Phase 2** (`status: copy_approved → ready_for_review`): cron detecta `copy_approved`, genera imágenes/video, sube a R2, escribe `r2_urls` y avanza status.
-- En fallo escribe `status: generation_error` + `last_error`.
+```bash
+# Procesar siguiente artículo pendiente (detecta fase por status)
+ssh -i ~/.ssh/oracle.key ubuntu@146.181.39.4 "cd /home/ubuntu/content-studio && python generate_social.py --auto"
 
-### n8n — publicación automática
+# Slug específico
+ssh -i ~/.ssh/oracle.key ubuntu@146.181.39.4 "cd /home/ubuntu/content-studio && python generate_social.py el-problema-no-es-el-insight"
+```
 
-Workflow `social_publish` en Oracle Cloud (`http://146.181.39.4:5678`).
+Fases detectadas por status:
+- **Phase 1** (`pending → copy_pending_review`): 12 variantes de copy vía DeepSeek.
+- **Phase 1b** (`copy_pending_review/scoring_error → scored`): scoring IA + captions para finalistas.
+- **Phase 2** (`copy_approved → ready_to_publish`): genera JPG/MP4, sube a R2.
 
-Trigger: webhook POST desde `generate_social.py` cuando `status → ready_to_publish`.  
-Payload: `{ slug, r2_urls, captions, networks: ["instagram","tiktok","linkedin","youtube"] }`.
+### n8n — publicación automática en Instagram
 
-Lógica: publica por red según captions del JSON → actualiza a `status: published`.  
-Redes priorizadas: Instagram + LinkedIn primero. TikTok + YouTube requieren OAuth adicional.
+URL: `https://n8n.146.181.39.4.sslip.io`  
+Login: `fjeriacastro@gmail.com` (contraseña propia de N8N)
 
-Workflow legacy: `e6381324-1127-4713-b755-17f30b30cb9d` (solo IG+FB, pre-flywheel) — desactivar cuando `social_publish` esté operativo.
+| Workflow ID | Nombre | Horario (UTC) | Acción |
+|-------------|--------|---------------|--------|
+| `LCSET9g5cyLG5qHZ` | Daily Publish 11:11 | 14:11 (= 11:11 Chile) | Toma primer `ready_to_publish` → carousel + reel en IG |
+| `noYRxzrL7NpLCORv` | Daily Stories | 16:00 / 19:00 / 22:00 | Reel random de `published` → historia IG |
+| `e6381324-...` | Instagram Publisher (legacy) | — | **DESACTIVADO** |
 
-Credenciales Meta:
-- `IG_USER_ID`: `17841408150037364`
-- `FB_PAGE_ID`: `112522961877445`
-- `PAGE_TOKEN`: never-expiring Page token (en el código del workflow — no mover)
+**Flujo completo de test:**
+1. Oracle: `python generate_social.py --auto` → procesa artículo `copy_pending_review` → `scored`
+2. `https://endonautas.cl/review-social/` → aprobar finalista
+3. Oracle: `python generate_social.py --auto` → genera assets → `ready_to_publish`
+4. N8N UI → `Daily Publish 11:11` → "Execute Workflow" (manual trigger)
+
+Credenciales Meta (no mover del nodo Code):
+- `IG_USER_ID`: `17841408150037364` · `FB_PAGE_ID`: `112522961877445`
+- `PAGE_TOKEN`: never-expiring token en el código del workflow
+
+### n8n — OAuth pendiente (LinkedIn, TikTok, YouTube)
+
+**Callback URI para todas las apps:**
+```
+https://n8n.146.181.39.4.sslip.io/rest/oauth2-credential/callback
+```
+
+| Red | Crear app en | Scopes |
+|-----|-------------|--------|
+| **LinkedIn** | https://www.linkedin.com/developers/apps/new | `w_member_social`, `openid`, `profile` |
+| **TikTok** | https://developers.tiktok.com/apps/ | `video.upload`, `video.publish` |
+| **YouTube** | https://console.cloud.google.com/apis/credentials → habilitar YouTube Data API v3 | `youtube.upload` |
+
+Proceso: crear app en el portal → obtener Client ID + Secret → en N8N UI: Credentials → New → OAuth2 → pegar credenciales → Connect → agregar nodo al workflow `Daily Publish 11:11`.
 
 ## Listmonk — listas y campañas
 
