@@ -6,7 +6,7 @@
   "category": "Instrumentos",
   "article_path": "src/content/blog/tests-psicometricos-online-que-miden-y-como-usarlos.md",
   "published_date": "2026-06-30",
-  "status": "copy_pending_review",
+  "status": "scored",
   "avatar_variants": {
     "negocio": [
       {
@@ -442,5 +442,195 @@
       }
     ]
   },
-  "last_updated": "2026-06-30T21:07:45+00:00"
+  "last_updated": "2026-06-30T23:16:34+00:00",
+  "viral_scores": {
+    "negocio_v0": {
+      "score": 76,
+      "dimensions": {
+        "hook_strength": 72,
+        "curiosity_gap": 80,
+        "emotional_trigger": 75,
+        "avatar_fit": 85,
+        "shareability": 70
+      },
+      "suggested_director": "pregunta",
+      "justification": "Punto fuerte: Aborda directamente el dolor cotidiano de delegar. Debilidad: El lenguaje directo puede sonar genérico; necesita una imagen que lo haga visceral."
+    },
+    "negocio_v1": {
+      "score": 74,
+      "dimensions": {
+        "hook_strength": 65,
+        "curiosity_gap": 82,
+        "emotional_trigger": 78,
+        "avatar_fit": 80,
+        "shareability": 68
+      },
+      "suggested_director": "contrain",
+      "justification": "Punto fuerte: La promesa de un dato oculto es potente. Debilidad: El gancho inicial es débil; 'nadie te lo dice' es común. Necesita un giro más inesperado."
+    },
+    "negocio_v2": {
+      "score": 76,
+      "dimensions": {
+        "hook_strength": 70,
+        "curiosity_gap": 88,
+        "emotional_trigger": 72,
+        "avatar_fit": 82,
+        "shareability": 65
+      },
+      "suggested_director": "edu",
+      "justification": "Punto fuerte: Crea curiosidad al desestimar la solución obvia. Debilidad: El lenguaje 'atascado' y 'costó caro' puede sonar a crítica en lugar de oportunidad. Necesita más autoridad."
+    },
+    "profesional_v0": {
+      "score": 89,
+      "dimensions": {
+        "hook_strength": 95,
+        "curiosity_gap": 78,
+        "emotional_trigger": 92,
+        "avatar_fit": 90,
+        "shareability": 88
+      },
+      "suggested_director": "hook",
+      "justification": "Punto fuerte: Gancho emocional extremadamente preciso para el alto rendimiento con agotamiento. Debilidad: El resonador 'resultados visibles' puede sonar genérico. Necesita una historia muy íntima."
+    },
+    "profesional_v1": {
+      "score": 84,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 85,
+        "emotional_trigger": 82,
+        "avatar_fit": 88,
+        "shareability": 80
+      },
+      "suggested_director": "edu",
+      "justification": "Punto fuerte: Desactiva la auto-culpa ('no es flojera') y promete un camino. Debilidad: La metáfora del 'número no te define' es bonita pero no genera urgencia."
+    },
+    "profesional_v2": {
+      "score": 83,
+      "dimensions": {
+        "hook_strength": 92,
+        "curiosity_gap": 60,
+        "emotional_trigger": 90,
+        "avatar_fit": 90,
+        "shareability": 85
+      },
+      "suggested_director": "contrain",
+      "justification": "Punto fuerte: Giro contraintuitivo sobre el perfeccionismo. Debilidad: El enganche de la segunda pregunta ('sabes cómo medirlo') es lógico, no emocional. Podría perder al que ya piensa que sabe medir."
+    },
+    "padres_v0": {
+      "score": 86,
+      "dimensions": {
+        "hook_strength": 88,
+        "curiosity_gap": 75,
+        "emotional_trigger": 95,
+        "avatar_fit": 85,
+        "shareability": 92
+      },
+      "suggested_director": "documental",
+      "justification": "Punto fuerte: Carga emocional altísima y muy compartible por su verdad incómoda. Debilidad: Puede sonar acusatorio si no se presenta con tono de observación, no de juicio."
+    },
+    "padres_v1": {
+      "score": 75,
+      "dimensions": {
+        "hook_strength": 70,
+        "curiosity_gap": 85,
+        "emotional_trigger": 68,
+        "avatar_fit": 78,
+        "shareability": 72
+      },
+      "suggested_director": "loop",
+      "justification": "Punto fuerte: Plantea una herencia emocional fuerte. Debilidad: 'Lo que no sanas' es un cliché del desarrollo personal. Necesita más precisión para no sonar a frase de cajón."
+    },
+    "padres_v2": {
+      "score": 82,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 70,
+        "emotional_trigger": 90,
+        "avatar_fit": 80,
+        "shareability": 88
+      },
+      "suggested_director": "hook",
+      "justification": "Punto fuerte: Releva la presión de la perfección, conecta con el cansancio real de criar. Debilidad: El 'cansancio de criar' es un tema conocido; el hook necesita una imagen muy específica para resetear la conversación."
+    },
+    "terapeuta_v0": {
+      "score": 81,
+      "dimensions": {
+        "hook_strength": 88,
+        "curiosity_gap": 72,
+        "emotional_trigger": 82,
+        "avatar_fit": 85,
+        "shareability": 70
+      },
+      "suggested_director": "edu",
+      "justification": "Punto fuerte: Habla directamente a la duda profesional y la validación. Debilidad: El tono de 'tu paciente no avanza' puede generar defensas. Necesita ser más colaborativo que crítico."
+    },
+    "terapeuta_v1": {
+      "score": 79,
+      "dimensions": {
+        "hook_strength": 92,
+        "curiosity_gap": 60,
+        "emotional_trigger": 85,
+        "avatar_fit": 80,
+        "shareability": 75
+      },
+      "suggested_director": "pregunta",
+      "justification": "Punto fuerte: Interpela directamente la propia ceguera del terapeuta. Debilidad: Requiere mucha vulnerabilidad; puede generar rechazo si no se enmarca como una invitación, no como una acusación."
+    },
+    "terapeuta_v2": {
+      "score": 73,
+      "dimensions": {
+        "hook_strength": 75,
+        "curiosity_gap": 78,
+        "emotional_trigger": 65,
+        "avatar_fit": 75,
+        "shareability": 68
+      },
+      "suggested_director": "documental",
+      "justification": "Punto fuerte: Identifica el problema de los tests sin contexto. Debilidad: El tono es informativo pero plano; el gancho 'a veces recibes un test' es débil. Necesita un dato o anécdota que ilustre el vacío del contexto."
+    }
+  },
+  "finalists": [
+    "profesional_v0",
+    "padres_v0",
+    "profesional_v1",
+    "profesional_v2",
+    "padres_v2"
+  ],
+  "captions": {
+    "profesional_v0": {
+      "instagram": "¿Te has hecho algún test de personalidad online y sentiste que te describía perfecto, pero luego no supiste qué hacer con esa info? \n\nEl problema no es que los tests no funcionen. El problema es que la mayoría de los que circulan no están validados. Son cuestionarios bonitos, no herramientas de autoconocimiento real.\n\nUn test psicométrico válido mide algo específico: síntomas, rasgos, regulación emocional, apego o bienestar. Y lo hace con estándares: validez, confiabilidad y estandarización. Sin eso, tu resultado es entretenido, pero no accionable.\n\nY ahí está el clavo: cuando tu test dice algo real, necesitas saber cómo leerlo sin convertir esa información en una etiqueta fija. Un puntaje alto en ansiedad no es \"tú eres ansioso\". Es \"en este momento, tu nivel de activación está por sobre el promedio\". La diferencia es enorme.\n\nEn Endonautas usamos 35 tests validados en español, con análisis cruzado por IA. No te asignamos un tipo. Te mostramos cómo funcionan tres dimensiones clave al mismo tiempo. El contexto es lo que transforma el número en decisión.\n\nEntiende tu patrón antes de que él te entienda a ti. → endonautas.cl\n\n#testspsicométricos #autoconocimiento #saludmental #psicologia #bigfive #apego #regulaciónemocional #inteligenciaemocional #bienestar #chile #psicologiachile #saludmentalchile",
+      "tiktok": "¿Sabes lo que realmente miden los tests de personalidad que ves en redes? La mayoría no mide nada. Son solo entretenimiento. \n\nUn test psicométrico válido tiene validez, confiabilidad y estandarización. Sin eso, tu resultado es como una receta de cocina sin ingredientes. No puedes hacer nada con él.\n\nPero cuando tienes un test real — como el PHQ-9, el Big Five o el DERS-16 — la información es un mapa. No una etiqueta. Te muestra cómo estás funcionando ahora, en qué dimensiones. Y eso es accionable. \n\nEn Endonautas combinamos tres tests clave: Big Five, regulación emocional y apego. Un análisis cruzado por IA que te muestra dónde están las tensiones entre lo que eres y cómo te relacionas. No es magia. Es psicometría aplicada. \n\nDeja de buscar tu tipo. Empieza a entender tu funcionamiento. endonautas.cl #fyp #parati #saludmental #autoconocimiento #psicologia #tests",
+      "linkedin": "Llevas años siendo \"el que rinde bajo presión\" o \"el que siempre da el 110%\". Y lo has hecho funcionar. Pero empiezas a notar que el motor no responde igual. Que los fines de semana no alcanzan. Que el síndrome del impostor se ha mudado a tiempo completo.\n\nNo es falta de capacidad. Es que has estado operando con un mapa incompleto. Te conoces en la superficie, pero no sabes cómo funcionan tus patrones profundos. Y esos patrones — el nivel de exigencia que te pones, cómo regulas la frustración, cómo te vinculas con colegas y jefes — son los que determinan tu energía a largo plazo.\n\nLa diferencia entre saber que eres \"perfeccionista\" y entender tu perfil en regulación emocional, responsabilidad y estilo de apego es la diferencia entre un síntoma y una causa. Un test psicométrico validado no te da una etiqueta más. Te da un punto de partida concreto. Y cuando cruzas tres dimensiones — personalidad, regulación y apego — empiezas a ver los puntos exactos donde el desgaste se acumula.\n\nEn Endonautas combinamos 35 tests validados con análisis IA para que no tengas que adivinar. El Mapa de Patrones cruza Big Five, DERS-16 y ECR. Te muestra no solo cómo eres, sino cómo interactúan tus tendencias. Eso te permite hacer algo con la información.\n\n¿Cuándo fue la última vez que usaste un resultado de test para tomar una decisión real sobre cómo trabajas o cómo te relacionas?\n\n→ endonautas.cl\n\n#saludmental #autoconocimiento #psychology #liderazgo #bienestarlaboral #desarrolloprofesional",
+      "youtube_title": "Tests psicométricos online: qué miden y cómo usarlos",
+      "youtube_description": "No todos los tests de personalidad online son iguales. Te explicamos qué diferencia a un test validado de uno informal, cómo interpretar resultados sin caer en etiquetas, y por qué el contexto es clave para que un número se convierta en acción. Descubre los 5 tipos de dimensiones que miden los tests más útiles —síntomas, personalidad, regulación emocional, apego y bienestar— y cómo usarlos en tu vida real. Empieza por el Mapa de Patrones de Endonautas, que combina tres tests validados con…"
+    },
+    "padres_v0": {
+      "instagram": "Lo que más te cuesta no siempre es lo más difícil — a veces es lo más conocido.\n\nEl autoconocimiento no es mirarse más. Es ver lo que siempre has visto, pero con otra pregunta.\n\n¿Qué patrón estás repitiendo sin darte cuenta?\n\nEmpieza en endonautas.cl\n\n#endonautas #autoconocimiento #saludmental #psicologia #chile",
+      "tiktok": "Sabes lo que te pasa. #autoconocimiento\nY lo sigues haciendo igual. #patrones\nEso no es falta de voluntad — es falta de herramientas.\nendonautas.cl #fyp #saludmental #psicologiachile",
+      "linkedin": "El autoconocimiento no es un lujo para tiempos de crisis — es la condición base para tomar mejores decisiones.\n\nCuando reconocemos nuestros patrones, no solo nos entendemos mejor: tomamos decisiones con más claridad, construimos relaciones más honestas y lideramos desde un lugar más real.\n\nNo hay herramienta de gestión más subestimada que el conocimiento propio.\n\n¿En qué área de tu vida notas que repites algo que ya conoces?\n\nMás en endonautas.cl\n\n#autoconocimiento #liderazgo #saludmental",
+      "youtube_title": "Autoconocimiento: por qué saber no alcanza",
+      "youtube_description": "El autoconocimiento no es solo introspección — es una práctica medible que afecta tus decisiones, relaciones y rendimiento. En este video exploramos el patrón que más repites sin notarlo.\n\nLee el artículo completo en endonautas.cl"
+    },
+    "profesional_v1": {
+      "instagram": "¿Te ha pasado que un test de internet te dice exactamente lo que quieres escuchar, pero sientes que no te sirve de nada?\n\nLa diferencia entre un test serio y uno de revista no es solo que el primero tenga más preguntas. Un test validado tiene años de investigación, criterios estadísticos y una interpretación que no te encasilla. En cambio, los tests de redes sociales suelen ser entretenidos, pero no te dan información útil para tu vida real.\n\nCuando respondes un test como el PHQ-9 (depresión) o el Big Five, los puntajes se comparan con poblaciones reales y miden aspectos específicos: regulación emocional, patrones de apego, rasgos de personalidad. Eso es distinto a \"eres una persona emocional\" o \"tu amor primario es el tiempo de calidad\".\n\nNo necesitas más etiquetas. Necesitas datos que puedas usar.\n\nY ahí está el truco: un resultado aislado no sirve de mucho. Pero cuando combinas varios tests —como hace el Mapa de Patrones de Endonautas— empiezas a ver conexiones que antes no veías. Por ejemplo, cómo tu estilo de apego afecta tu regulación emocional o cómo tu personalidad influye en tu bienestar.\n\nNo se trata de saber más de ti, sino de entenderte con precisión. Eso es lo que ofrece un test psicométrico bien hecho: no una identidad, sino un mapa.\n\nEmpieza con el Mapa de Patrones en endonautas.cl — son tres tests combinados con análisis IA que te muestran lo que tu intuición no alcanza.\n\n#endonautas #testpsicometricos #autoconocimiento #psicologia #bienestaremocional #saludmental #bigfive #apego #regulacionemocional #phq9 #gad7 #chile #psicologiachile #saludmentalchile #crecimientopersonal",
+      "tiktok": "¿Sabes cuál es la diferencia entre un test de revista y uno que realmente sirve? No es solo que el segundo tenga más preguntas. Es que uno está validado científicamente y el otro no.\n\nLos tests que ves en redes sociales no miden nada real. No tienen validez, confiabilidad ni estandarización. Son entretenidos, pero no te dan información útil para tu vida.\n\nEn cambio, un test psicométrico bien hecho —como el PHQ-9 para depresión o el Big Five para personalidad— tiene años de investigación detrás. Mide síntomas, rasgos o patrones de forma precisa.\n\nPero ojo: un resultado aislado no sirve de mucho. La magia está en combinar varios tests. Por ejemplo, cómo se relaciona tu estilo de apego con tu regulación emocional.\n\nEso es exactamente lo que hace el Mapa de Patrones en Endonautas. Tres tests en uno, con análisis IA que cruza toda la información.\n\nNo necesitas más etiquetas. Necesitas datos que puedas usar. Empieza en endonautas.cl.\n\n#fyp #parati #testpsicometricos #autoconocimiento #psicologia #saludmental #bigfive #apego #bienestar",
+      "linkedin": "Hace unos meses, un colega me contó que se había hecho un test de personalidad en Instagram. \"Soy INFJ\", dijo con seguridad. \"Eso explica por qué soy tan perfeccionista\".\n\nLe pregunté si sabía cuál era la validez predictiva de ese test. No sabía de qué le hablaba. Y no lo culpo: la mayoría de los tests que circulan en redes no tienen ninguna base científica. Son entretenidos, pero no miden lo que dicen medir.\n\nLa psicometría es la disciplina que estudia cómo medir características psicológicas. Un test psicométrico válido cumple criterios específicos: validez (mide lo que dice medir), confiabilidad (da resultados consistentes) y estandarización (se interpreta en relación con una población de referencia). Los tests de revista no cumplen ninguno.\n\n¿Y esto qué tiene que ver con tu trabajo? Mucho. Porque cuando entiendes tus patrones —de personalidad, de regulación emocional, de apego— empiezas a ver por qué procrastinas ciertas tareas, por qué chocas con ciertos colegas o por qué te quemas en proyectos que otros manejan con calma.\n\nNo se trata de etiquetarte. Se trata de tener información que puedas usar.\n\nEn Endonautas combinamos tres tests validados —Big Five, DERS-16 y ECR— en un solo análisis que cruza tus dimensiones estructurales, emocionales y relacionales. Es un mapa, no una identidad.\n\n¿Qué test te ha dado más claridad sobre ti mismo en el trabajo?\n\nSi quieres empezar, puedes hacer el Mapa de Patrones en endonautas.cl. Son 35 tests validados con análisis IA.\n\n#psicometria #autoconocimiento #desarrollopersonal #saludmental #bigfive #trabajoenequipo #liderazgo",
+      "youtube_title": "Tests psicométricos: qué miden y cómo usarlos",
+      "youtube_description": "No todos los tests psicológicos son iguales. Descubre qué diferencia hay entre un test de revista y uno validado científicamente. Conoce los 5 tipos de tests más útiles (Big Five, PHQ-9, apego, regulación emocional) y cómo interpretar los resultados sin caer en reduccionismos. En Endonautas combinamos 35 tests validados con análisis IA. Empieza por el Mapa de Patrones en endonautas.cl. test psicométricos, psicología, big five, apego."
+    },
+    "profesional_v2": {
+      "instagram": "Crees que ser perfecto en el trabajo es tu fortaleza.\n\nPero el perfeccionismo no te protege: te frena. Revisas diez veces lo que otros entregan a la primera, y al final el cansancio es más grande que el logro. No es un defecto tuyo. Es un patrón que puedes leer.\n\nLos tests no juzgan, describen lo que pasa bajo tu radar. Cuando mides tu personalidad, tu regulación emocional y tu estilo de apego, dejas de adivinar por qué haces lo que haces. Deja de pagar el precio de no conocerte. Empieza con el Mapa de Patrones en endonautas.cl\n.\n#endonautas #endonautica #saludmental #autoconocimiento #psicologia #perfeccionismo #burnoutlaboral #bigfive #apego #regulacionemocional #chile #psicologiachile #saludmentalchile #crecimientopersonal",
+      "tiktok": "¿Sabes cuánto te está costando no conocerte? No es autocrítica, es un patrón que puedes medir. \n\nLos tests psicométricos validados no etiquetan, describen lo que pasa bajo tu radar. Deja de pagar el precio de la sobreexigencia y mide con precisión en endonautas.cl #perfeccionismo #autoconocimiento #saludmental #psicologia #bigfive #fyp #parati #endonautas",
+      "linkedin": "Colega, ¿alguna vez has sentido que tu perfeccionismo en el trabajo no te protege, sino que te frena?\n\nRevisar diez veces lo que otros entregan a la primera, posponer tareas por miedo a no hacerlas bien, terminar el día más agotado que satisfecho. No es falta de disciplina ni un defecto personal: es un patrón que tiene nombre y que se puede medir.\n\nLos tests psicométricos como el Big Five, el DERS-16 (regulación emocional) o el ECR (apego) no juzgan tu carácter; describen cómo funcionas en dimensiones concretas. Y cuando los lees en conjunto, dejan de ser etiquetas y se convierten en datos accionables.\n\nPor eso en Endonautas combinamos tres tests validados en un Mapa de Patrones, con análisis IA que cruza personalidad, regulación y apego. No reemplaza una evaluación clínica, pero te da un punto de partida claro.\n\n¿Qué patrón has identificado en tu vida profesional que te gustaría entender mejor?\n\nEmpieza por medir en endonautas.cl\n\n#autoconocimiento #saludmental #perfeccionismo #liderazgo #bienestarlaboral #endonautas",
+      "youtube_title": "Tests psicométricos: qué miden y por qué importan",
+      "youtube_description": "No todos los tests de internet son iguales. En este video descubres qué hace que un test psicométrico sea válido, cómo interpretar resultados sin etiquetarte, y por qué el Mapa de Patrones de Endonautas combina personalidad, regulación emocional y apego. Empieza a medir con precisión en endonautas.cl"
+    },
+    "padres_v2": {
+      "instagram": "¿Sabías que el cansancio que sientes al criar no es solo por falta de tiempo? Es por las mochilas emocionales que cargas sin saber.\n\nCuando corriges a tu hijo desde el impulso, muchas veces repites exactamente lo que juraste no hacer. No es falta de amor, es falta de conciencia sobre tus propios patrones.\n\nLos tests psicométricos no son solo números. Son mapas que te muestran cómo tu historia influye en tu crianza. El PHQ-9 mide síntomas de depresión, el Big Five revela tu estructura de personalidad, y el ECR te dice cómo te relacionas. En conjunto, te dan una foto real de lo que necesitas trabajar.\n\nNo se trata de ser un padre perfecto. Se trata de mirarte para no repetir. Empieza por ti, para él. Encuentra tus respuestas en endonautas.cl.\n\n#endonautas #autoconocimiento #crianza #patronesfamiliares #saludmental #psicologia #padresconscientes #bigfive #apego #regulacionemocional #chile #psicologiachile #saludmentalchile #endonautica",
+      "tiktok": "Tu hijo no necesita un padre perfecto: necesita uno que se mire. \n\nEl cansancio de criar no es por falta de tiempo. Es por las mochilas emocionales que arrastras sin saber. Cuando corriges desde el impulso, repites lo que juraste no hacer. \n\nEl cambio real no está en manuales de crianza, está en ti. Mirar tus patrones te da libertad para criar distinto. Empieza por ti, para él. Tests validados en endonautas.cl #fyp #parati #autoconocimiento #crianza #saludmental #psicologia #endonautas",
+      "linkedin": "¿Alguna vez has sentido que crias desde el piloto automático, repitiendo lo que tus padres hicieron aunque prometiste no hacerlo? \n\nNo es falta de voluntad; es el peso de patrones que no has reconocido. La crianza consciente no es un manual de 10 pasos, sino un trabajo interno de mirar tus propias mochilas emocionales. \n\nLos tests psicométricos validados, como el Big Five o el ECR, no son etiquetas. Son mapas que te muestran cómo tu historia se refleja en tu relación con tus hijos. Por ejemplo, un alto neuroticismo combinado con baja regulación emocional puede explicar por qué ciertos momentos te desbordan. Al entender eso, puedes actuar, no reaccionar. \n\nEl autoconocimiento como acto de amor hacia tus hijos: romper ciclos, criar con conciencia. La pregunta no es si debes empezar, sino cuándo. \n\n¿Qué patrones reconoces en tu crianza que te gustaría transformar? \n\nEncuentra herramientas para empezar en endonautas.cl \n\n#crianzaconsciente #autoconocimiento #saludmental #patronesfamiliares #liderazgo",
+      "youtube_title": "Patrones de crianza: cómo romper ciclos con tests…",
+      "youtube_description": "¿Sabías que el cansancio de criar no es solo por falta de tiempo, sino por las mochilas emocionales que arrastras? En este video, exploramos cómo los tests psicométricos validados, como el Big Five y el ECR, te ayudan a reconocer tus patrones y criarde manera más consciente. Romper ciclos familiares empieza por mirarte a ti mismo. Descubre más en endonautas.cl.\n\nKeywords: patrones de crianza, autoconocimiento, tests psicométricos"
+    }
+  }
 }
