@@ -6,7 +6,7 @@
   "category": "Proceso",
   "article_path": "src/content/blog/el-problema-no-es-el-insight.md",
   "published_date": "2026-06-30",
-  "status": "copy_pending_review",
+  "status": "scored",
   "avatar_variants": {
     "negocio": [
       {
@@ -446,5 +446,195 @@
       }
     ]
   },
-  "last_updated": "2026-06-30T20:59:37+00:00"
+  "last_updated": "2026-06-30T23:09:22+00:00",
+  "viral_scores": {
+    "negocio_v0": {
+      "score": 84,
+      "dimensions": {
+        "hook_strength": 90,
+        "curiosity_gap": 80,
+        "emotional_trigger": 85,
+        "avatar_fit": 85,
+        "shareability": 75
+      },
+      "suggested_director": "contrain",
+      "justification": "Punto fuerte: el gancho presiona con reconocimiento inmediato y paraliza el scroll. Debilidad: el insight 2 es demasiado genérico, sin tensión abierta."
+    },
+    "negocio_v1": {
+      "score": 91,
+      "dimensions": {
+        "hook_strength": 95,
+        "curiosity_gap": 90,
+        "emotional_trigger": 90,
+        "avatar_fit": 90,
+        "shareability": 85
+      },
+      "suggested_director": "hook",
+      "justification": "Punto fuerte: 'Tu equipo necesita que dejes de repetir lo mismo' introduce una urgencia externa que descoloca al dueño de negocio. Debilidad: el hook b 'Seis días perdidos' necesita contexto inmediato para no ser confuso."
+    },
+    "negocio_v2": {
+      "score": 80,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 75,
+        "emotional_trigger": 80,
+        "avatar_fit": 85,
+        "shareability": 70
+      },
+      "suggested_director": "contrain",
+      "justification": "Punto fuerte: apunta directo al miedo conocido del avatar. Debilidad: 'Sabes qué haces mal — lo repites igual' es demasiado predecible, sin giro sorpresivo."
+    },
+    "profesional_v0": {
+      "score": 75,
+      "dimensions": {
+        "hook_strength": 80,
+        "curiosity_gap": 70,
+        "emotional_trigger": 75,
+        "avatar_fit": 80,
+        "shareability": 65
+      },
+      "suggested_director": "loop",
+      "justification": "Punto fuerte: refleja un ciclo que el profesional reconoce. Debilidad: la reiteración 'sabes... y no puedes parar' se siente redundante, sin evolución en el texto."
+    },
+    "profesional_v1": {
+      "score": 88,
+      "dimensions": {
+        "hook_strength": 90,
+        "curiosity_gap": 85,
+        "emotional_trigger": 90,
+        "avatar_fit": 90,
+        "shareability": 85
+      },
+      "suggested_director": "contrain",
+      "justification": "Punto fuerte: 'Te autosaboteas y lo sabes en tiempo real' provoca una incomodidad inmediata y potente. Debilidad: el insight 2 'momento más solitario' podría ser más específico."
+    },
+    "profesional_v2": {
+      "score": 93,
+      "dimensions": {
+        "hook_strength": 95,
+        "curiosity_gap": 90,
+        "emotional_trigger": 95,
+        "avatar_fit": 95,
+        "shareability": 90
+      },
+      "suggested_director": "contrain",
+      "justification": "Punto fuerte: la disociación mente/cuerpo es un gancho muy efectivo para profesionales que intelectualizan. Debilidad: casi no tiene puntos débiles, quizá necesita un cierre más concreto."
+    },
+    "padres_v0": {
+      "score": 75,
+      "dimensions": {
+        "hook_strength": 80,
+        "curiosity_gap": 70,
+        "emotional_trigger": 75,
+        "avatar_fit": 80,
+        "shareability": 65
+      },
+      "suggested_director": "loop",
+      "justification": "Punto fuerte: habla de reconocimiento del patrón. Debilidad: es muy parecido a otras variantes, sin gancho específico para padres."
+    },
+    "padres_v1": {
+      "score": 93,
+      "dimensions": {
+        "hook_strength": 95,
+        "curiosity_gap": 90,
+        "emotional_trigger": 95,
+        "avatar_fit": 95,
+        "shareability": 90
+      },
+      "suggested_director": "documental",
+      "justification": "Punto fuerte: 'Lo que no resolviste en ti, lo educas en tus hijos' es un directo y doloroso espejo que genera reconocimiento inmediato. Debilidad: la frase 'les pides que sean lo que tú no pudiste ser' puede sonar a crítica; un tono más compasivo mejoraría."
+    },
+    "padres_v2": {
+      "score": 88,
+      "dimensions": {
+        "hook_strength": 90,
+        "curiosity_gap": 85,
+        "emotional_trigger": 90,
+        "avatar_fit": 90,
+        "shareability": 85
+      },
+      "suggested_director": "contrain",
+      "justification": "Punto fuerte: la imagen vívida 'le gritas a tu hijo y te ves gritando a ti mismo' es impactante y visual. Debilidad: el insight 2 'espejo que no puedes esquivar' es un poco abstracto."
+    },
+    "terapeuta_v0": {
+      "score": 82,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 80,
+        "emotional_trigger": 80,
+        "avatar_fit": 85,
+        "shareability": 75
+      },
+      "suggested_director": "edu",
+      "justification": "Punto fuerte: apunta a la frustración del terapeuta con pacientes que no cambian. Debilidad: 'entierran los mismos 3 insights' es demasiado genérico, falta especificidad."
+    },
+    "terapeuta_v1": {
+      "score": 87,
+      "dimensions": {
+        "hook_strength": 90,
+        "curiosity_gap": 85,
+        "emotional_trigger": 85,
+        "avatar_fit": 90,
+        "shareability": 85
+      },
+      "suggested_director": "contrain",
+      "justification": "Punto fuerte: 'Tu mejor insight no se sostiene seis días solo' introduce un dato contraintuivo potente. Debilidad: 'No hay fallo en tu paciente' puede sonar a disculpa; el terapeuta busca herramientas, no excusas."
+    },
+    "terapeuta_v2": {
+      "score": 92,
+      "dimensions": {
+        "hook_strength": 95,
+        "curiosity_gap": 90,
+        "emotional_trigger": 90,
+        "avatar_fit": 95,
+        "shareability": 90
+      },
+      "suggested_director": "contrain",
+      "justification": "Punto fuerte: 'Usas tests. Das tareas. Y el lunes vuelven iguales' es una descripción precisa de la frustración diaria del terapeuta. Debilidad: la solución 'no tiene cómo' es vaga; debería sugerir más claramente el valor de Endonautas."
+    }
+  },
+  "finalists": [
+    "profesional_v2",
+    "padres_v1",
+    "terapeuta_v2",
+    "negocio_v1",
+    "profesional_v1"
+  ],
+  "captions": {
+    "profesional_v2": {
+      "instagram": "Sabes cuál es tu patrón. Lo nombras, lo describes, incluso te ríes de él. Y en el mismo momento en que lo dices, vuelves a hacerlo. No es que no entiendas. Es que entender no es suficiente.\n\nLlevas años con el insight. Has leído, has hablado, has reflexionado. Pero el lunes siguiente, cuando el disparador aparece, tu cuerpo actúa antes de que tu mente pueda intervenir. El patrón no se rompe porque lo sepas. Se rompe cuando repites una respuesta nueva suficientes veces.\n\nEl problema no es la falta de comprensión. Es que entre sesión y sesión, en los seis días que nadie ve, no hay nada que sostenga el proceso. Ahí reaparece el perfeccionismo que te paraliza, la procrastinación que te sabotea, la sobreexigencia que te quema. No porque no lo veas venir. Sino porque no tienes continuidad.\n\nEl cambio ocurre fuera del consultorio. En el momento en que eliges no enviar ese mensaje ansioso, en la pausa antes de criticarte por un error, en la repetición de un gesto nuevo hasta que se vuelve natural. Eso no se logra con más insight. Se logra con un proceso que te acompañe en tiempo real.\n\nendonautas.cl fue construido exactamente para esto: para sostener tu evolución en los días que nadie ve. No reemplaza tu terapia. No te da otra epifanía. Te da la herramienta para que el insight se convierta en cambio.\n\nSi esto te resuena, entra a endonautas.cl. Tu continuidad empieza hoy.\n\n#endonautas #autoconocimiento #saludmental #procesos #insight #perfeccionismo #procrastinación #burnout #psicologia #bienestar #saludintegrativa #autocuidado #chile #saludmentalchile #psicologiachile",
+      "tiktok": "No es falta de insight. Es falta de proceso.\n\nSabes exactamente cuál es tu patrón. Lo reconoces cada vez que aparece. Y no puedes parar. No porque seas débil o no tengas voluntad. Sino porque el cambio no ocurre en el momento en que entiendes. Ocurre después, en cada repetición, en cada situación donde eliges responder diferente. Y eso solo se logra con continuidad.\n\nLa terapia te da el mapa. Pero el mapa no camina por ti. El cambio ocurre entre sesiones, en los seis días que nadie ve. Ahí es donde necesitas algo que te sostenga.\n\n#fyp #parati #autoconocimiento #procesos #insight #saludmental #clinicapsicologica #endonautas #crecimientopersonal\n\nTu continuidad empieza en endonautas.cl",
+      "linkedin": "Sabes perfectamente cuál es tu patrón. Lo has nombrado en terapia, lo reconoces cuando aparece, incluso has hecho las paces con él. Pero eso no ha cambiado tu comportamiento.\n\nComo profesional, probablemente conoces la sensación de tener el insight claro y, aún así, repetir la misma dinámica que te desgasta. El perfeccionismo que te paraliza antes de entregar un proyecto. La procrastinación que sabotea tu productividad. La sobreexigencia que te lleva al burnout. No porque desconozcas el origen. Sino porque entender no es suficiente.\n\nEl cambio ocurre en la repetición. En responder de manera diferente ante el mismo disparador, una y otra vez, hasta que el nuevo circuito se vuelve natural. Esto no sucede en sesión. Sucede en los seis días entre una y otra, cuando estás solo frente a la decisión.\n\nConstruí Endonautas para ese espacio. Una herramienta que sostiene tu proceso en tiempo real, sin reemplazar la terapia, pero llenando el vacío que queda entre sesión y sesión.\n\n¿Qué necesitas para que el insight se convierta en cambio? ¿Qué te falta para sostener la continuidad?\n\nEntra a endonautas.cl y empieza tu proceso.\n\n#autoconocimiento #saludintegrativa #procesos #teresiliencia #desarrolloprofesional",
+      "youtube_title": "El problema no es el insight: 6 días clave",
+      "youtube_description": "Tienes el insight. Sabes cuál es tu patrón, lo reconoces y aún así lo repites. El cambio no ocurre cuando entiendes, sino cuando repites una respuesta nueva suficientes veces. Eso sucede entre sesiones, en los seis días que nadie ve. Aquí te cuento por qué el proceso es más importante que la comprensión y cómo Endonautas puede sostener tu evolución en tiempo real. link al blog: endonautas.cl"
+    },
+    "padres_v1": {
+      "instagram": "Sabes exactamente cuál es tu patrón. Lo reconoces cuando te enojas con tu hijo por algo que no es su culpa. Y aún así, no puedes parar. El problema no es que no entiendas. Es que entender no es suficiente.\n\nLlamamos autoconocimiento a descubrir que repites la historia de tu propia infancia. Y es verdad, duele reconocerlo. Pero el verdadero trabajo no está en saberlo. Está en lo que haces con ese saber cuando tu hijo te mira, cuando te pide atención, cuando se porta mal.\n\nAhí, en ese momento incómodo, es donde se juega todo. No en la sesión de terapia del miércoles. Sino en los seis días entre sesiones, cuando nadie te ve, y tu reacción automática te gana la partida.\n\nTu hijo no es un proyecto. No tiene que ser lo que tú no fuiste. Tiene que ser él mismo. Y para eso, necesitas dejar de proyectar en él lo que no has resuelto en ti.\n\nEl autoconocimiento no es para ti. Es para él. Cada vez que eliges mirarte, estás dejando de cargar a tu hijo con tu sombra. Crianza consciente no es perfección. Es presencia.\n\nEntra a endonautas.cl y empieza a trabajar entre sesiones lo que cambia la forma en que crías.\n\n#endonautas #crianzaconsciente #saludmental #padresehijos #autoconocimiento #patronesfamiliares #psicologia #crianzarespetuosa #terapia #saludmentalchile #chile #endonautica #amorpropio #romperciclos #conexionfamiliar",
+      "tiktok": "Tu hijo te muestra tu sombra. Y duele. No es su culpa, es tu oportunidad.\n\nPero el problema es que ya sabes lo que pasa. Reconoces el patrón: la ansiedad cuando se demora, el grito que no querías dar, la frase que te repitió tu mamá. Sabes y no puedes parar. No es falta de comprensión, es falta de continuidad.\n\nLa terapia te da el insight. Pero el cambio ocurre en los días entre sesiones, cuando tu hijo te desafía y tú necesitas responder diferente, no desde el piloto automático.\n\nAhí es donde entra Endonautas. Una plataforma para trabajar lo que pasa entre sesiones, para que el autoconocimiento se vuelva acción. No más saber sin hacer. #fyp #parati #crianzaconsciente #saludmental #autoconocimiento #padres #endonautas\n\nEmpieza hoy en endonautas.cl",
+      "linkedin": "He visto a muchos padres en terapia decir: 'Sé exactamente qué estoy haciendo. Y no puedo parar.'\n\nLo reconocen todo: el grito que heredaron, la necesidad de control que les enseñaron, el miedo a que su hijo repita su historia. Y aún así, en el momento, reaccionan igual. Esto no es un fracaso de la terapia. Es una limitación del insight.\n\nComprender un patrón no lo cambia. Lo hace visible. Pero visibilidad no es libertad. El cambio requiere repetición en condiciones nuevas: responder distinto ante los mismos disparadores, suficientes veces, hasta que el circuito se recalibre.\n\nEso no ocurre en sesión. Ocurre en los seis días entre una sesión y la siguiente, cuando estás solo con tu hijo y el patrón vuelve a activarse. La terapia está diseñada para el espacio clínico, no para la vida cotidiana. Y nadie ha diseñado bien lo que pasa entre sesiones.\n\nPor eso construí Endonautas. No para reemplazar la terapia, sino para llenar ese espacio. Una plataforma que te da herramientas para trabajar tu proceso en tiempo real, en los momentos que importan.\n\nEl autoconocimiento no es para ti. Es un acto de amor hacia tu hijo. ¿Cómo estás trabajando tu proceso entre sesiones?\n\n#autoconocimiento #crianza #saludmental #terapia #endonautas",
+      "youtube_title": "La crianza que no resolviste: espejo de tu sombra",
+      "youtube_description": "Tu hijo te muestra lo que no has resuelto en ti. No es culpa de él, es oportunidad. El insight solo no cambia patrones. El cambio ocurre entre sesiones, cuando aprendes a responder distinto. Trabaja tu continuidad en endonautas.cl. Criar desde la conciencia transforma tu vínculo familiar."
+    },
+    "terapeuta_v2": {
+      "instagram": "Sabes perfectamente cuál es tu patrón. Lo reconoces en tiempo real. Y no puedes parar. \n\nNo es que falte insight. Falta continuidad.\n\nComo terapeuta, sabes que el momento más fértil del proceso no ocurre en la consulta. Ocurre el martes a las 7 de la tarde, cuando tu paciente está a punto de enviar ese mensaje, llamar a esa persona, huir o congelarse. Y ahí no estás.\n\nEl insight es necesario, pero no suficiente. El cerebro no cambia porque entiende. Cambia porque repite una respuesta nueva frente al mismo disparador, suficientes veces, hasta que el circuito se recalibra. Eso no pasa en una hora a la semana. Pasa en los otros seis días.\n\nTu trabajo no termina al cerrar la puerta. La pregunta real es: ¿cómo sostienes el proceso cuando no estás presente? No es más tiempo. Es mejor continuidad.\n\nEn Endonautas construimos exactamente eso: un espacio donde el proceso puede seguir cuando nadie más está mirando. Datos reales, repetición en contexto, trabajo entre sesiones.\n\nDescubre cómo en endonautas.cl\n\n#endonautas #endonautica #saludmental #autoconocimiento #psicologia #terapia #coaching #saludmentalchile #psicologiachile #coachingchile #continuidad #insight #patronesrelacionales #procesoterapeutico #trabajoentresesiones",
+      "tiktok": "¿Tus pacientes llegan el lunes con el mismo patrón que la sesión pasada? No es que no quieran cambiar — es que no tienen cómo sostenerlo cuando no estás. \nEl insight es necesario, pero insuficiente. El cambio requiere repetición en condiciones nuevas, y eso ocurre los otros seis días de la semana. \nTu trabajo no termina al cerrar la puerta. Cierra el espacio entre sesiones con datos reales en endonautas.cl #endonautas #saludmental #psicologia #terapia #coaching #fyp #parati #chile",
+      "linkedin": "Colegas: una conversación que tengo con frecuencia.\n\nPaciente: 'Sé exactamente qué estoy haciendo. Y no puedo parar.' Describe el patrón con precisión, lo reconoce en tiempo real, a veces con humor. Y en el mismo momento, lo repite.\n\nEsto no es un fracaso de la terapia. Es una limitación del insight como herramienta única de cambio. El insight hace visible el patrón, pero visibilidad no es lo mismo que libertad. El cerebro necesita repetición en condiciones nuevas: responder distinto al mismo disparador, suficientes veces, para recalibrar el circuito.\n\nEl problema es que eso no ocurre en sesión. Ocurre en los otros seis días de la semana. Y ahí no hay terapeuta presente.\n\nHe visto qué sí funciona: pacientes que registran su proceso en tiempo real antes de actuar. Que aplican el mismo test tras tres meses y ven la curva. Que tienen un recurso que los devuelve a sí mismos en el momento del disparador.\n\nLa pregunta que me hago y les comparto: ¿cómo diseñamos la continuidad del trabajo clínico fuera del consultorio?\n\nEn Endonautas estamos construyendo herramientas para eso. Si te resuena, revisa endonautas.cl \n\n#autoconocimiento #saludmental #formacionterapeutica #trabajoclínico #endonautas",
+      "youtube_title": "El problema no es el insight: continuidad en terapia",
+      "youtube_description": "El insight es necesario, pero no suficiente para el cambio. Los pacientes entienden su patrón y no pueden parar. El problema no es falta de comprensión, sino falta de continuidad entre sesiones. Descubre cómo cerrar ese espacio con datos reales en endonautas.cl. \n\nAutoconocimiento, psicometría, patrones relacionales, trabajo clínico."
+    },
+    "negocio_v1": {
+      "instagram": "Sabes exactamente cuál es tu patrón. Lo reconoces en tiempo real. Y no puedes parar. Eso no es falta de claridad, es falta de continuidad. \n\nEl insight ilumina, pero no cambia nada por sí solo. Tu equipo lo sabe. Tu cliente lo notó antes que tú. Y tu negocio se resiente cada vez que repites la misma respuesta automática.\n\nEl liderazgo no se construye con más conciencia. Se construye con nuevas respuestas ante los mismos disparadores viejos. En el día a día, no en una sesión.\n\nEndonautas fue hecha exactamente para ese espacio: los seis días entre una sesión y la siguiente. No es otra fuente de insights. Es donde tu proceso sigue funcionando cuando no hay terapeuta presente.\n\nTu negocio crece cuando el proceso continúa sin terapeuta. Lidera con menos repetición y más transformación real. \n\nDescubre cómo en endonautas.cl\n\n#endonautas #endonautica #liderazgoreal #autoconocimiento #patronesrepetitivos #saludmental #psicologia #negocios #emprendedores #crecimientopersonal #psicologiachile #saludmentalchile #chile #liderazgoconsciente #procesodecrecimiento",
+      "tiktok": "Visibilidad no es libertad.  \n\nPuedes tener el insight más preciso del mundo y seguir repitiendo el mismo error con tu equipo. Porque comprender tu patrón no lo cambia. \n\nEl cerebro necesita otra cosa: nuevas respuestas ante los mismos disparadores. Dentro del negocio, no en una sesión. \n\nEndonautas fue diseñada para eso #autoconocimiento #liderazgo #patrones #negocios  \nEl proceso sigue donde la sesión termina.  \nCierra el vacío: endonautas.cl",
+      "linkedin": "Sabes exactamente cuál es tu patrón. Lo reconoces en tiempo real. Y en el momento en que lo identificas, vuelves a actuar igual. \n\nEsto no es fracaso personal. Es una limitación del insight solo. Entender algo no lo cambia. El cerebro necesita repetición en condiciones nuevas para recalibrarse. Y eso no ocurre en sesión. Ocurre cuando el disparador aparece en el día a día del negocio. \n\nTu equipo no necesita que entiendas más tu patrón. Necesita que dejes de repetirlo delante de ellos.  \n\n¿Cómo construyes nuevas respuestas cuando estás solo entre reuniones? Ese espacio no está diseñado en terapia. Está diseñado en Endonautas.  \n\nLa app fue creada para que el proceso continúe donde la sesión termina. No es otra fuente de insights. Es continuidad. \n\n¿Qué haces tú en los seis días entre una sesión y la siguiente?  \n\nDescúbrelo en endonautas.cl  \n\n#liderazgo #autoconocimiento #patronesrepetitivos #crecimientopersonal #endonautas",
+      "youtube_title": "Patrón repetitivo: por qué el insight no cambia nada",
+      "youtube_description": "Sabes cuál es tu patrón. Lo reconoces. Pero no puedes parar. El problema no es falta de comprensión, es falta de continuidad. En este video exploramos por qué el insight solo no genera cambio y cómo construir nuevas respuestas en el día a día de tu negocio. Liderazgo real empieza donde termina la sesión. \n\nhttps://endonautas.cl"
+    },
+    "profesional_v1": {
+      "instagram": "Sabes que estás repitiendo el mismo patrón. Lo ves venir. Y te quedas mirando cómo lo haces otra vez.\n\nEse momento, donde reconoces en tiempo real que te estás autosaboteando, es el más solitario del proceso. La terapia ocurrió hace días. Tu terapeuta no está aquí. Solo tú, tu patrón y la conciencia de que no puedes detenerlo.\n\nEl insight llegó hace tiempo. Entiendes por qué haces lo que haces, de dónde viene, a qué le temes. Pero entender no detiene el impulso. El cambio no ocurre en la sesión, ocurre en los segundos previos a actuar desde el lugar que ya conoces.\n\nNo necesitas más comprensión. Necesitas algo que esté presente cuando el patrón se activa. La terapia no puede estar ahí. Nadie diseñó un espacio entre sesiones donde trabajar en tiempo real.\n\nAhí se juega todo. Y por eso Endonautas existe: para que tengas continuidad cuando el insight no alcanza.\n\nHaz que el proceso no se detenga entre sesiones. Entra a endonautas.cl\n.\n.\n.\n#endonautas #autoconocimiento #patrones #saludmental #psicologia #terapiaonline #terapia #insight #cambioreal #procesopsicologico #saludmentalchile #psicologiachile #endonautica #continuidad #crecimientopersonal",
+      "tiktok": "Entiendes perfectamente por qué haces lo que haces. Y aún así, lo repites.\n\nEse es el momento donde el insight no alcanza. No es culpa tuya. La terapia no está diseñada para estar ahí, en el instante exacto donde el patrón se activa. #autoconocimiento #patrones #saludmental\n\nPero hay una diferencia entre entender y cambiar. Entender te libera del juicio. Cambiar requiere otra cosa: repetición en condiciones nuevas. Y eso solo ocurre entre sesiones. #insight #terapia #psicologia\n\nCuando el disparador aparece y tu mano ya se mueve —ahí necesitas algo más que comprensión. Necesitas continuidad. Necesitas un espacio donde el proceso no se detenga. #fyp #parati\n\nEndonautas es ese espacio. endonautas.cl #endonautas #cambioreal",
+      "linkedin": "¿Te ha pasado que identificas exactamente tu patrón en el momento justo en que lo estás repitiendo?\n\nReconoces el impulso de responder desde la ansiedad. Sabes que deberías pausar, respirar, elegir otra cosa. Pero tu dedo ya está enviando el mensaje, o tu mente ya está rumiando el escenario catastrófico. Y en ese instante, eres consciente de todo, y no puedes detenerte.\n\nEn mi experiencia trabajando con profesionales, he visto un patrón recurrente: confundimos comprensión con cambio. El insight es necesario, sí. Pero no es suficiente. El cerebro requiere repetición en contexto —respuestas nuevas frente a los mismos disparadores, suficientes veces para que el circuito se recalibre. Eso no ocurre en sesión. Ocurre entre sesiones.\n\nEl problema no eres tú ni tu terapeuta. Es que nadie diseñó un espacio para trabajar en tiempo real, cuando el patrón se activa. Por eso construimos Endonautas: para que tengas continuidad entre una sesión y la siguiente, en el momento exacto donde se juega todo.\n\n¿Cómo gestionas tú los momentos entre sesiones? ¿Tienes alguna práctica que te ayude a no actuar desde el patrón? Me interesa leer tu experiencia.\n\nSi quieres explorar herramientas de continuidad, visita endonautas.cl\n\n#autoconocimiento #terapia #saludmental #liderazgo #desarrolloprofesional",
+      "youtube_title": "El problema no es el insight: por qué no cambias",
+      "youtube_description": "Sabes exactamente cuál es tu patrón. Lo identificas en tiempo real. Y aún así, no puedes parar. El problema no es falta de comprensión, es falta de continuidad entre sesiones.\n\nEn este video exploramos por qué el insight solo no basta, y qué necesitas realmente para cambiar — no más autoconocimiento, sino herramientas que estén presentes cuando el patrón se activa.\n\nSi buscas continuidad en tu proceso, visita endonautas.cl\n\n#autoconocimiento #insight #terapiaonline #patrones #cambioreal"
+    }
+  }
 }
