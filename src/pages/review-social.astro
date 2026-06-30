@@ -89,6 +89,9 @@
   .reel-thumb:hover { border-color: rgba(192,160,240,0.4); }
   .reel-thumb video { width: 100%; height: 100%; object-fit: cover; }
   .reel-label { font-size: 0.6rem; color: rgba(240,232,220,0.3); text-align: center; padding: 0.5rem 0.3rem; }
+  .reel-fmt-opts { display: flex; gap: 0.5rem; justify-content: center; }
+  .rfmt-label { font-size: 0.62rem; color: rgba(240,232,220,0.45); cursor: pointer; display: flex; align-items: center; gap: 0.25rem; }
+  .rfmt-label input[type="radio"] { accent-color: #c0a0f0; cursor: pointer; }
 
   /* ── COPY PENDING REVIEW — avatar cards ── */
   .avatar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
@@ -166,7 +169,7 @@
   .fmt-btn.on-reel     { border-color: #c0a0f0; color: #c0a0f0; background: rgba(192,160,240,0.08); }
 
   /* ── PUBLISH BUTTON ── */
-  .publish-row { margin-top: 1.25rem; display: flex; align-items: center; gap: 1rem; }
+  .publish-row { margin-top: 1.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
   .btn-publish {
     padding: 9px 22px; border-radius: 40px; border: none; cursor: pointer;
     font-weight: 700; font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase;
@@ -174,7 +177,16 @@
   }
   .btn-publish:disabled { opacity: 0.3; cursor: not-allowed; }
   .btn-publish:hover:not(:disabled) { opacity: 0.82; }
-  .publish-note { font-size: 0.68rem; color: rgba(240,232,220,0.28); }
+  .schedule-wrap { display: flex; align-items: center; gap: 0.4rem; }
+  .schedule-label { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(240,232,220,0.22); }
+  .schedule-input {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px; color: rgba(240,232,220,0.7); font-size: 0.72rem;
+    padding: 5px 8px; cursor: pointer; outline: none;
+    color-scheme: dark;
+  }
+  .schedule-input:focus { border-color: rgba(232,99,106,0.5); }
+  .publish-note { font-size: 0.68rem; color: rgba(240,232,220,0.28); width: 100%; }
 
   /* ── FOOTER STICKY ── */
   .actions {
@@ -306,18 +318,30 @@ function buildOutputBlock(item) {
     html += `<div style="margin-bottom:0.5rem;font-size:0.65rem;color:rgba(240,232,220,0.28);letter-spacing:0.1em;text-transform:uppercase;">Reels (${reelUrls.length})</div>
     <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">`;
     reelUrls.forEach((url, i) => {
-      html += `<div><div class="reel-thumb">
-        <video src="${url}" loop muted playsinline onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
-      </div><div class="reel-label">Reel ${i+1}</div></div>`;
+      html += `<div style="display:flex;flex-direction:column;align-items:center;gap:0.35rem;">
+        <div class="reel-thumb">
+          <video src="${url}" loop muted playsinline onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
+        </div>
+        <div class="reel-label">Reel ${i+1}</div>
+        <div class="reel-fmt-opts">
+          <label class="rfmt-label"><input type="radio" name="rfmt-${item.slug}-${i}" value="reel" checked> Reel</label>
+          <label class="rfmt-label"><input type="radio" name="rfmt-${item.slug}-${i}" value="story"> Story</label>
+        </div>
+      </div>`;
     });
     html += `</div>`;
   }
 
   html += `<div class="publish-row">
     <button class="btn-publish" id="pub-${item.slug}" onclick="approveVisual('${item.slug}', this)">
-      Publicar en Instagram
+      Publicar en Instagram + FB
     </button>
-    <span class="publish-note" id="pub-note-${item.slug}">n8n lo publica en los próximos 2h</span>
+    <div class="schedule-wrap">
+      <span class="schedule-label">Programar</span>
+      <input type="datetime-local" class="schedule-input" id="sched-${item.slug}"
+        title="Dejar vacío para publicar en el próximo ciclo de n8n (~2h)" />
+    </div>
+    <span class="publish-note" id="pub-note-${item.slug}">Dejar vacío = próximo ciclo (~2h) · o elegí fecha y hora exacta</span>
   </div>`;
 
   block.innerHTML = html;
@@ -501,22 +525,42 @@ async function approve() {
 // ─── APPROVE VISUAL → Instagram ──────────────────────────────────────────────
 
 async function approveVisual(slug, btn) {
-  if (!confirm(`¿Publicar "${slug}" en Instagram?\nn8n lo sube en los próximos 2 horas.`)) return;
+  const schedInput = document.getElementById(`sched-${slug}`);
+  const schedVal   = schedInput?.value;  // "2026-06-30T15:00" o vacío
+  const schedAt    = schedVal ? new Date(schedVal).toISOString() : null;
+  const note       = document.getElementById(`pub-note-${slug}`);
+
+  const when = schedAt
+    ? `programado para ${new Date(schedAt).toLocaleString("es-CL")}`
+    : "en el próximo ciclo de n8n (~2h)";
+  if (!confirm(`¿Aprobar "${slug}" para publicar en Instagram + FB?\n${when}`)) return;
+
+  // Recoger formato por reel (reel vs story)
+  const reelFmts = {};
+  document.querySelectorAll(`input[name^="rfmt-${slug}-"]:checked`).forEach(el => {
+    const idx = el.name.replace(`rfmt-${slug}-`, "");
+    reelFmts[idx] = el.value;
+  });
+  const reel_formats = Object.keys(reelFmts).length ? reelFmts : null;
+
   btn.disabled = true; btn.textContent = "Enviando…";
-  const note = document.getElementById(`pub-note-${slug}`);
+  if (schedInput) schedInput.disabled = true;
 
   const res  = await fetch("/api/approve-visual", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({slug}),
+    body: JSON.stringify({slug, scheduled_at: schedAt, reel_formats}),
   });
   const data = await res.json();
 
   if (data.ok) {
-    btn.textContent = "✓ En cola de publicación";
-    if (note) note.textContent = "n8n lo publica en los próximos 2h · status: approved";
+    btn.textContent = schedAt ? "✓ Programado" : "✓ En cola";
+    if (note) note.textContent = schedAt
+      ? `Publicación programada: ${new Date(schedAt).toLocaleString("es-CL")}`
+      : "n8n lo publica en los próximos 2h";
   } else {
-    btn.disabled = false; btn.textContent = "Publicar en Instagram";
+    btn.disabled = false; btn.textContent = "Publicar en Instagram + FB";
+    if (schedInput) schedInput.disabled = false;
     if (note) note.textContent = `Error: ${data.error}`;
   }
 }

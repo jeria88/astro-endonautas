@@ -5,9 +5,12 @@ export async function onRequestPost({ request, env }) {
   const token = env.GITHUB_TOKEN;
   if (!token) return Response.json({ error: "GITHUB_TOKEN no configurado" }, { status: 500 });
 
-  let slug;
+  let slug, scheduled_at, reel_formats;
   try {
-    ({ slug } = await request.json());
+    const body = await request.json();
+    slug = body.slug;
+    scheduled_at = body.scheduled_at || null;
+    reel_formats = body.reel_formats || null; // {"0":"reel","1":"story"}
     if (!slug) throw new Error("falta slug");
   } catch {
     return Response.json({ error: "Body inválido — se espera { slug }" }, { status: 400 });
@@ -31,6 +34,8 @@ export async function onRequestPost({ request, env }) {
 
   current.status       = "approved";
   current.last_updated = new Date().toISOString();
+  if (scheduled_at) current.scheduled_at = scheduled_at;
+  if (reel_formats) current.reel_formats = reel_formats;
   delete current.last_error;
 
   const updated = btoa(unescape(encodeURIComponent(JSON.stringify(current, null, 2))));
@@ -49,5 +54,5 @@ export async function onRequestPost({ request, env }) {
     return Response.json({ error: `GitHub PUT falló: ${err}` }, { status: 502 });
   }
 
-  return Response.json({ ok: true, slug, status: "approved" });
+  return Response.json({ ok: true, slug, status: "approved", scheduled_at, reel_formats });
 }
