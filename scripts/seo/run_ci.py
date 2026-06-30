@@ -17,7 +17,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 QUEUE_PATH = Path(__file__).parent / "queue.yaml"
 BLOG_DIR = Path(__file__).parent.parent.parent / "src/content/blog"
 
-SERPBEAR_URL = os.environ.get("SERPBEAR_URL", "https://serpbear.146.181.39.4.sslip.io")
+SERPBEAR_URL = os.environ.get("SERPBEAR_URL", "https://seo.146.181.39.4.sslip.io")
 SERPBEAR_KEY = os.environ.get("SERPBEAR_API_KEY", "")
 
 
