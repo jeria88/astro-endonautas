@@ -9,7 +9,9 @@ export async function onRequestPost({ request, env }) {
   try {
     const body = await request.json();
     slug = body.slug;
-    // approved_selections: [{avatar, variant_index, carousel: bool, reel: bool, director: string}, ...]
+    // approved_selections supports two schemas:
+    //   legacy: [{avatar, variant_index, carousel, reel, director}]
+    //   scored: [{finalist_id, carousel, reel, director, edited_captions}]
     approved_selections = body.approved_selections;
     if (!slug || !Array.isArray(approved_selections) || !approved_selections.length) {
       throw new Error("faltan campos");
@@ -31,20 +33,33 @@ export async function onRequestPost({ request, env }) {
 
   const current = JSON.parse(atob(fileData.content.replace(/\n/g, "")));
   const avatarVariants = current.avatar_variants || {};
+  const storedCaptions = current.captions || {};
 
   const approved = [];
-  for (const { avatar, variant_index, carousel, reel, director } of approved_selections) {
+  for (const sel of approved_selections) {
+    // Resolve avatar + variant_index from finalist_id ("negocio_v0") or explicit fields
+    let { avatar, variant_index, finalist_id, carousel, reel, director, edited_captions } = sel;
+    if (!avatar && finalist_id) {
+      const m = finalist_id.match(/^(.+)_v(\d+)$/);
+      if (m) { avatar = m[1]; variant_index = parseInt(m[2], 10); }
+    }
     const variant = avatarVariants[avatar]?.[variant_index];
     if (!variant) return Response.json({ error: `${avatar}[${variant_index}] no existe` }, { status: 400 });
+
+    // Captions: prefer edited_captions from UI, fall back to stored captions for this finalist
+    const resolvedFinalistId = finalist_id || `${avatar}_v${variant_index}`;
+    const finalCaptions = edited_captions || storedCaptions[resolvedFinalistId] || null;
+
     approved.push({
+      finalist_id:   resolvedFinalistId,
       avatar,
       variant_index,
-      director: director || null,
-      carousel: carousel !== false,   // default true
-      reel:     reel    === true,      // default false — must be explicit
+      director:      director || null,
+      carousel:      carousel !== false,
+      reel:          reel === true,
       carousel_copy: variant.carousel,
       reel_copy:     variant.reel,
-      social_copy:   variant.social || null,
+      captions:      finalCaptions,
     });
   }
 

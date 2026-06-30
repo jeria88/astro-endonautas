@@ -14,7 +14,8 @@ export async function onRequestGet({ env }) {
   const files = await listRes.json();
   const jsonFiles = files.filter(f => f.name.endsWith(".json"));
 
-  const copy_pending = [];   // avatar_variants → Franco elige qué generar
+  const scored       = [];   // IA-filtered finalists → Franco reviews top picks
+  const copy_pending = [];   // avatar_variants → Franco elige qué generar (legacy)
   const ready_review = [];   // r2_urls → Franco aprueba el output visual
 
   for (const file of jsonFiles) {
@@ -22,14 +23,24 @@ export async function onRequestGet({ env }) {
     if (!res.ok) continue;
     const data = await res.json();
 
-    if (data.status === "copy_pending_review" && data.avatar_variants) {
+    if (data.status === "scored" && data.finalists?.length) {
+      scored.push({
+        slug:           data.slug,
+        title:          data.title,
+        article_path:   data.article_path,
+        finalists:      data.finalists,
+        viral_scores:   data.viral_scores   || {},
+        avatar_variants: data.avatar_variants || {},
+        captions:       data.captions       || {},
+      });
+    } else if (data.status === "copy_pending_review" && data.avatar_variants) {
       copy_pending.push({
         slug: data.slug,
         title: data.title,
         article_path: data.article_path,
         avatar_variants: data.avatar_variants,
       });
-    } else if (data.status === "ready_for_review" && data.r2_urls?.length) {
+    } else if (data.status === "ready_to_publish" && data.r2_urls?.length) {
       ready_review.push({
         slug: data.slug,
         title: data.title,
@@ -39,7 +50,7 @@ export async function onRequestGet({ env }) {
     }
   }
 
-  return Response.json({ copy_pending, ready_review }, {
+  return Response.json({ scored, copy_pending, ready_review }, {
     headers: { "Cache-Control": "no-store" }
   });
 }

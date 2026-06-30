@@ -60,24 +60,45 @@ Para agregar una lista nueva: agregar al objeto `LIST_UUIDS` en el archivo.
 
 ### `functions/api/list-pending.js`
 
-GET endpoint del flywheel social. Lee `pending/` vía GitHub Contents API. Devuelve dos arrays separados por etapa del pipeline. Usa `GITHUB_TOKEN` (env var en Cloudflare Pages — nunca expuesto al cliente).
+GET endpoint del flywheel social. Lee `pending/` vía GitHub Contents API. Devuelve tres arrays separados por etapa del pipeline. Usa `GITHUB_TOKEN` (env var en Cloudflare Pages — nunca expuesto al cliente).
 
 Respuesta:
 ```json
 {
+  "scored":       [{ "slug": "...", "title": "...", "article_path": "...", "finalists": [...], "viral_scores": {...}, "avatar_variants": {...}, "captions": {...} }],
   "copy_pending": [{ "slug": "...", "title": "...", "article_path": "...", "avatar_variants": { ... } }],
-  "ready_review":  [{ "slug": "...", "title": "...", "r2_urls": [...], "approved": [...] }]
+  "ready_review": [{ "slug": "...", "title": "...", "r2_urls": [...], "approved": [...] }]
 }
 ```
 
-- `copy_pending` → status `copy_pending_review` + campo `avatar_variants` presente
-- `ready_review` → status `ready_for_review` + campo `r2_urls` presente
+- `scored` → status `scored` + `finalists[]` presente (IA ya filtró — Franco revisa solo finalistas)
+- `copy_pending` → status `copy_pending_review` + `avatar_variants` (legacy / fallback sin scoring)
+- `ready_review` → status `ready_to_publish` + `r2_urls` presente
 
 ### `functions/api/approve-copy.js`
 
-POST endpoint del flywheel social. Recibe selecciones de Franco y actualiza el pending JSON en GitHub.
+POST endpoint del flywheel social. Recibe selecciones de Franco y actualiza el pending JSON en GitHub. Soporta dos esquemas:
 
-Acepta:
+**Esquema nuevo (finalistas IA):**
+```json
+{
+  "slug": "mi-articulo",
+  "approved_selections": [
+    {
+      "finalist_id": "negocio_v0",
+      "director": "contrain",
+      "carousel": true,
+      "reel": true,
+      "edited_captions": {
+        "instagram": "...", "tiktok": "...", "linkedin": "...",
+        "youtube_title": "...", "youtube_description": "..."
+      }
+    }
+  ]
+}
+```
+
+**Esquema legacy:**
 ```json
 {
   "slug": "mi-articulo",
@@ -87,15 +108,17 @@ Acepta:
 }
 ```
 
-- `avatar`: uno de `negocio | profesional | padres | terapeuta`
-- `director`: uno de los 7 directores cinematográficos (para edición visual, no para copy)
-- `variant_index`: 0, 1 o 2 (tres variantes por avatar)
+- `finalist_id`: formato `"{avatar}_v{variant_index}"` — ej. `"negocio_v0"`, `"profesional_v2"`
+- `edited_captions`: captions editados por Franco en la UI (opcional — si omite, usa los generados por caption_gen)
+- `director`: uno de los 7 directores cinematográficos (estilo visual, no copy)
 
 Flujo interno:
-1. Lee `pending/<slug>.json` via GitHub Contents API (para obtener el SHA actual)
-2. Extrae copy de `avatar_variants[avatar][variant_index]`
-3. Escribe `approved[]` (incluye `avatar`, `director`, `carousel_copy`, `reel_copy`, `social_copy`) y `status: copy_approved`
-4. PUT a GitHub Contents API con el SHA → commit automático en el repo
+1. Lee `pending/<slug>.json` via GitHub Contents API (para obtener SHA)
+2. Parsea `finalist_id` con regex `/^(.+)_v(\d+)$/` → extrae avatar + variant_index
+3. Extrae copy de `avatar_variants[avatar][variant_index]`
+4. Captions: usa `edited_captions` si vienen del UI, sino fallback a `captions[finalist_id]` del JSON
+5. Escribe `approved[]` con `finalist_id`, `captions`, `carousel_copy`, `reel_copy` y `status: copy_approved`
+6. PUT a GitHub Contents API con SHA → commit automático en el repo
 
 La próxima ejecución del cron en Oracle detecta `status: copy_approved` y genera las piezas de media.
 
@@ -156,18 +179,21 @@ El schema de `src/content/config.ts` incluye `image: z.string().optional()` (URL
 ## Flywheel social — pipeline de status
 
 ```
-pending → copy_pending_review → copy_approved → ready_for_review → approved → published
+pending → copy_pending_review → scored → copy_approved → ready_to_publish → published
 ```
+
+Estados de error (reintentables por cron): `scoring_error`, `generation_error`.
 
 | Status | Quién lo escribe | Significado |
 |--------|-----------------|-------------|
 | `pending` | `run_ci.py` | Artículo publicado, sin copy generado |
-| `copy_pending_review` | `generate_social.py` Phase 1 / `batch_phase1.py` | DeepSeek generó `avatar_variants` |
-| `copy_approved` | `approve-copy.js` | Franco aprobó variantes + eligió director |
-| `ready_for_review` | `generate_social.py` Phase 2 | Imágenes/video subidos a R2 |
-| `approved` | `approve-visual.js` | Franco aprueba output visual + scheduling + formato reel/story |
-| `published` | n8n workflow `e6381324` | Publicado en Instagram + Facebook |
+| `copy_pending_review` | `generate_social.py` Phase 1 | DeepSeek generó 12 variantes (`avatar_variants`) |
+| `scoring_error` | `generate_social.py` Phase 1 | Falló el scoring — reintentable |
+| `scored` | `generate_social.py` Phase 1 | `viral_scores` + `finalists` + `captions` escritos |
+| `copy_approved` | `approve-copy.js` | Franco aprobó finalistas + editó captions |
+| `ready_to_publish` | `generate_social.py` Phase 2 | Imágenes/video en R2, webhook a N8N disparado |
 | `generation_error` | `generate_social.py` | Falló Phase 2 — reintentable |
+| `published` | n8n workflow | Publicado en Instagram + TikTok + LinkedIn + YouTube |
 
 Campos de resiliencia en cada JSON: `last_updated` (ISO), `last_error` (string, si falló).
 
@@ -182,7 +208,7 @@ Campos opcionales post-aprobación visual: `scheduled_at` (ISO, si se programó)
 | `padres` | Padres |
 | `terapeuta` | Terapeutas |
 
-Cada avatar genera: `carousel` (slides), `reel` (hook_a/hook_b/cta), `social` (instagram/tiktok/linkedin).
+Cada avatar genera: `carousel` (slides), `reel` (hook_a/hook_b/cta). Captions largos los genera `caption_gen.py` solo para finalistas post-scoring.
 
 ### Directores cinematográficos (7, solo para edición visual)
 
@@ -213,9 +239,15 @@ Path: `/home/ubuntu/content-studio/generate_social.py`
 
 ### n8n — publicación automática
 
-Workflow ID: `e6381324-1127-4713-b755-17f30b30cb9d` · Activo · corre cada 2h.
+Workflow `social_publish` en Oracle Cloud (`http://146.181.39.4:5678`).
 
-Lógica: busca primer JSON con `status: approved`, chequea `scheduled_at` (si futuro, lo salta), publica carousel en IG + primera imagen en FB, publica reels/stories según `reel_formats`, actualiza a `status: published`.
+Trigger: webhook POST desde `generate_social.py` cuando `status → ready_to_publish`.  
+Payload: `{ slug, r2_urls, captions, networks: ["instagram","tiktok","linkedin","youtube"] }`.
+
+Lógica: publica por red según captions del JSON → actualiza a `status: published`.  
+Redes priorizadas: Instagram + LinkedIn primero. TikTok + YouTube requieren OAuth adicional.
+
+Workflow legacy: `e6381324-1127-4713-b755-17f30b30cb9d` (solo IG+FB, pre-flywheel) — desactivar cuando `social_publish` esté operativo.
 
 Credenciales Meta:
 - `IG_USER_ID`: `17841408150037364`

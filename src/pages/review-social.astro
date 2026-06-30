@@ -138,6 +138,117 @@
   .rfmt-label { font-size: 0.62rem; color: rgba(240,232,220,0.42); cursor: pointer; display: flex; align-items: center; gap: 0.2rem; }
   .rfmt-label input[type="radio"] { accent-color: #c0a0f0; cursor: pointer; }
 
+  /* ── SCORED — finalist cards ── */
+  .finalist-grid {
+    display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem;
+  }
+  .finalist-card {
+    border: 1px solid rgba(255,255,255,0.09); border-radius: 14px;
+    background: rgba(255,255,255,0.02); overflow: hidden;
+  }
+  .finalist-card.selected {
+    border-color: rgba(126,204,205,0.35);
+    background: rgba(126,204,205,0.03);
+  }
+
+  .finalist-header {
+    display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer;
+  }
+  .finalist-score {
+    display: flex; flex-direction: column; align-items: center;
+    min-width: 3rem; flex-shrink: 0;
+  }
+  .score-num {
+    font-size: 1.55rem; font-weight: 700; line-height: 1; letter-spacing: -0.04em;
+  }
+  .score-denom { font-size: 0.48rem; color: rgba(240,232,220,0.28); letter-spacing: 0.08em; margin-top: 1px; }
+  .score-high { color: #7ecccd; }
+  .score-mid  { color: #d4a056; }
+  .score-low  { color: #e8636a; }
+
+  .finalist-meta { flex: 1; min-width: 0; }
+  .finalist-label {
+    font-size: 0.78rem; font-weight: 600; color: #f0e8dc;
+    margin-bottom: 0.2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .finalist-hook {
+    font-size: 0.73rem; color: rgba(240,232,220,0.45); line-height: 1.4;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .finalist-dir-badge {
+    font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #7ecccd; background: rgba(126,204,205,0.1);
+    border: 1px solid rgba(126,204,205,0.2); border-radius: 20px; padding: 3px 10px;
+    flex-shrink: 0; white-space: nowrap;
+  }
+  .finalist-expand-icon {
+    font-size: 0.7rem; color: rgba(240,232,220,0.2); flex-shrink: 0; transition: transform 0.18s;
+  }
+  .finalist-card.open .finalist-expand-icon { transform: rotate(180deg); }
+
+  .finalist-body { display: none; padding: 1.25rem 1.4rem; }
+  .finalist-card.open .finalist-body { display: block; }
+
+  /* score dims */
+  .score-dims {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;
+    padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .dim-pill {
+    display: flex; flex-direction: column; gap: 3px; min-width: 4.5rem; flex: 1;
+  }
+  .dim-label { font-size: 0.48rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(240,232,220,0.22); }
+  .dim-bar-track { height: 3px; background: rgba(255,255,255,0.07); border-radius: 2px; overflow: hidden; }
+  .dim-bar-fill { height: 100%; border-radius: 2px; background: rgba(126,204,205,0.6); transition: width 0.4s cubic-bezier(.16,1,.3,1); }
+  .dim-val { font-size: 0.58rem; color: rgba(240,232,220,0.4); font-variant-numeric: tabular-nums; }
+
+  .finalist-justif {
+    font-size: 0.73rem; color: rgba(240,232,220,0.38); line-height: 1.55;
+    margin-bottom: 1.1rem; font-style: italic;
+  }
+
+  /* hook copy block */
+  .finalist-copy-ref {
+    padding: 0.75rem; background: rgba(255,255,255,0.025);
+    border-radius: 8px; margin-bottom: 1.1rem;
+  }
+  .finalist-copy-hook {
+    font-size: 0.88rem; font-weight: 600; color: #f0e8dc; line-height: 1.35; margin-bottom: 0.25rem;
+  }
+  .finalist-copy-cta { font-size: 0.72rem; color: rgba(126,204,205,0.7); }
+
+  /* caption tabs */
+  .caption-tabs {
+    display: flex; gap: 0; margin-bottom: 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .cap-tab {
+    padding: 6px 14px; font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer; background: transparent; border: none; color: rgba(240,232,220,0.3);
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+  }
+  .cap-tab.active { color: #7ecccd; border-bottom-color: #7ecccd; }
+
+  .caption-panels { margin-top: 0; }
+  .cap-panel { display: none; padding-top: 0.75rem; }
+  .cap-panel.active { display: block; }
+
+  .cap-textarea {
+    width: 100%; min-height: 120px; resize: vertical;
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px; padding: 0.75rem; color: rgba(240,232,220,0.8);
+    font-family: 'Inter', system-ui, sans-serif; font-size: 0.78rem; line-height: 1.55;
+    outline: none; transition: border-color 0.18s;
+  }
+  .cap-textarea:focus { border-color: rgba(126,204,205,0.35); }
+  .cap-char-count {
+    text-align: right; font-size: 0.56rem; color: rgba(240,232,220,0.22);
+    margin-top: 0.3rem; font-variant-numeric: tabular-nums;
+  }
+  .cap-char-count.over { color: #e8636a; }
+  .cap-yt-fields { display: flex; flex-direction: column; gap: 0.6rem; }
+  .cap-yt-label { font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(240,232,220,0.22); margin-bottom: 0.2rem; }
+
   /* ── COPY PENDING REVIEW — avatar cards ── */
   .avatar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   @media (max-width: 720px) { .avatar-grid { grid-template-columns: 1fr; } }
@@ -439,6 +550,233 @@ const DIRECTOR_LABELS = {
   quote:"Cita — Anderson", hook:"Hook — WKW",
   pregunta:"Pregunta — PTA", edu:"Educativo — McKay", documental:"Documental — Herzog",
 };
+const CAP_LIMITS = { instagram: 2200, tiktok: 2200, linkedin: 3000, youtube_title: 60, youtube_description: 500 };
+const DIM_LABELS = { hook_strength:"Hook", curiosity_gap:"Gap", emotional_trigger:"Emoción", avatar_fit:"Fit", shareability:"Share" };
+
+// ─── SCORED / FINALIST BLOCKS ─────────────────────────────────────────────────
+
+function scoreClass(n) { return n >= 75 ? "score-high" : n >= 55 ? "score-mid" : "score-low"; }
+
+function buildScoredBlock(item) {
+  const block = document.createElement("div");
+  block.className = "article-block";
+  block.id = `article-${item.slug}`;
+
+  block.innerHTML = `
+    <div class="article-title">${item.title || item.slug}</div>
+    <div class="article-slug">${item.slug}</div>
+  `;
+
+  const grid = document.createElement("div");
+  grid.className = "finalist-grid";
+
+  for (const finalistId of item.finalists) {
+    const scoreData = item.viral_scores?.[finalistId] || {};
+    // finalistId format: "negocio_v0" — split on last _v + digits
+    const m = finalistId.match(/^(.+)_v(\d+)$/);
+    if (!m) continue;
+    const [, avatarName, vStr] = m;
+    const vIdx = parseInt(vStr, 10);
+    const variant = item.avatar_variants?.[avatarName]?.[vIdx] || {};
+    const captions = item.captions?.[finalistId] || {};
+    grid.appendChild(buildFinalistCard(item.slug, finalistId, avatarName, vIdx, scoreData, variant, captions));
+  }
+
+  block.appendChild(grid);
+
+  const approveRow = document.createElement("div");
+  approveRow.className = "article-approve";
+  approveRow.innerHTML = `
+    <button class="btn-article-approve" id="approve-btn-${item.slug}" disabled
+      onclick="approveScored('${item.slug}')">
+      Aprobar seleccionados
+    </button>
+    <span class="article-approve-msg" id="approve-msg-${item.slug}"></span>
+  `;
+  block.appendChild(approveRow);
+  return block;
+}
+
+function buildFinalistCard(slug, finalistId, avatarName, vIdx, scoreData, variant, captions) {
+  const card = document.createElement("div");
+  card.className = "finalist-card";
+  card.dataset.finalistId = finalistId;
+  card.dataset.slug = slug;
+
+  const score = scoreData.score || 0;
+  const dims  = scoreData.dimensions || {};
+  const sugDir = scoreData.suggested_director || "loop";
+  const justif = scoreData.justification || "";
+
+  const carousel = variant.carousel || {};
+  const reel     = variant.reel     || {};
+  const slides   = carousel.slides  || [];
+  const hookText = reel.hook_a && reel.hook_b ? `${reel.hook_a} / ${reel.hook_b}` : slides[0] || "";
+  const ctaText  = reel.cta || slides[slides.length - 1] || "";
+
+  const dimBars = Object.entries(DIM_LABELS).map(([key, label]) => {
+    const val = dims[key] || 0;
+    return `<div class="dim-pill">
+      <span class="dim-label">${label}</span>
+      <div class="dim-bar-track"><div class="dim-bar-fill" style="width:${val}%"></div></div>
+      <span class="dim-val">${val}</span>
+    </div>`;
+  }).join("");
+
+  const capTabsHtml = ["instagram","tiktok","linkedin","youtube"].map((net, i) =>
+    `<button class="cap-tab${i===0?" active":""}" onclick="switchCapTab(this,'${finalistId}','${net}')">${net === "youtube" ? "YT" : net.charAt(0).toUpperCase() + net.slice(1)}</button>`
+  ).join("");
+
+  const capPanelsHtml = ["instagram","tiktok","linkedin"].map((net, i) => {
+    const limit = CAP_LIMITS[net];
+    const val = captions[net] || "";
+    return `<div class="cap-panel${i===0?" active":""}" id="cap-${finalistId}-${net}">
+      <textarea class="cap-textarea" id="ta-${finalistId}-${net}" maxlength="${limit}"
+        onInput="updateCharCount('${finalistId}','${net}',${limit})"
+        rows="6">${val}</textarea>
+      <div class="cap-char-count" id="cc-${finalistId}-${net}">${val.length}/${limit}</div>
+    </div>`;
+  }).join("") + `<div class="cap-panel" id="cap-${finalistId}-youtube">
+    <div class="cap-yt-fields">
+      <div>
+        <div class="cap-yt-label">Título (${CAP_LIMITS.youtube_title} chars)</div>
+        <textarea class="cap-textarea" id="ta-${finalistId}-youtube_title"
+          onInput="updateCharCount('${finalistId}','youtube_title',${CAP_LIMITS.youtube_title})"
+          rows="2" maxlength="${CAP_LIMITS.youtube_title}">${captions.youtube_title || ""}</textarea>
+        <div class="cap-char-count" id="cc-${finalistId}-youtube_title">${(captions.youtube_title||"").length}/${CAP_LIMITS.youtube_title}</div>
+      </div>
+      <div>
+        <div class="cap-yt-label">Descripción (${CAP_LIMITS.youtube_description} chars)</div>
+        <textarea class="cap-textarea" id="ta-${finalistId}-youtube_description"
+          onInput="updateCharCount('${finalistId}','youtube_description',${CAP_LIMITS.youtube_description})"
+          rows="4" maxlength="${CAP_LIMITS.youtube_description}">${captions.youtube_description || ""}</textarea>
+        <div class="cap-char-count" id="cc-${finalistId}-youtube_description">${(captions.youtube_description||"").length}/${CAP_LIMITS.youtube_description}</div>
+      </div>
+    </div>
+  </div>`;
+
+  const dirOpts = Object.entries(DIRECTOR_LABELS).map(([k, label]) =>
+    `<button class="dir-btn${k===sugDir?" sel-carousel":""}" data-avatar="${avatarName}" data-vi="${vIdx}" data-dir="${k}"
+      onclick="selectDir(this,'${slug}')">${label}</button>`
+  ).join("");
+
+  card.innerHTML = `
+    <div class="finalist-header" onclick="toggleFinalist(this.closest('.finalist-card'))">
+      <div class="finalist-score">
+        <span class="score-num ${scoreClass(score)}">${score}</span>
+        <span class="score-denom">/ 100</span>
+      </div>
+      <div class="finalist-meta">
+        <div class="finalist-label">${AVATAR_LABELS[avatarName] || avatarName} — v${vIdx+1}</div>
+        <div class="finalist-hook">${hookText}</div>
+      </div>
+      <span class="finalist-dir-badge">${DIRECTOR_LABELS[sugDir] || sugDir}</span>
+      <span class="finalist-expand-icon">▾</span>
+    </div>
+    <div class="finalist-body">
+      <div class="score-dims">${dimBars}</div>
+      ${justif ? `<div class="finalist-justif">"${justif}"</div>` : ""}
+      <div class="finalist-copy-ref">
+        <div class="finalist-copy-hook">${hookText}</div>
+        ${ctaText ? `<div class="finalist-copy-cta">${ctaText}</div>` : ""}
+      </div>
+      <div class="caption-tabs">${capTabsHtml}</div>
+      <div class="caption-panels">${capPanelsHtml}</div>
+      <div class="director-row">
+        <div class="director-label">Director de edición</div>
+        <div class="director-opts">${dirOpts}</div>
+      </div>
+      <div class="format-row">
+        <button class="fmt-btn" data-avatar="${avatarName}" data-vi="${vIdx}" data-type="carousel"
+          onclick="onFmt(this,'${slug}')">Carrusel</button>
+        <button class="fmt-btn" data-avatar="${avatarName}" data-vi="${vIdx}" data-type="reel"
+          onclick="onFmt(this,'${slug}')">Reel</button>
+      </div>
+    </div>`;
+
+  return card;
+}
+
+function toggleFinalist(card) {
+  card.classList.toggle("open");
+}
+
+function switchCapTab(btn, finalistId, net) {
+  const body = btn.closest(".finalist-body");
+  body.querySelectorAll(".cap-tab").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  body.querySelectorAll(".cap-panel").forEach(p => p.classList.remove("active"));
+  const target = document.getElementById(`cap-${finalistId}-${net}`);
+  if (target) target.classList.add("active");
+}
+
+function updateCharCount(finalistId, field, limit) {
+  const ta = document.getElementById(`ta-${finalistId}-${field}`);
+  const cc = document.getElementById(`cc-${finalistId}-${field}`);
+  if (!ta || !cc) return;
+  const len = ta.value.length;
+  cc.textContent = `${len}/${limit}`;
+  cc.classList.toggle("over", len > limit);
+}
+
+function getFinalistCaptions(finalistId) {
+  const nets = ["instagram","tiktok","linkedin","youtube_title","youtube_description"];
+  const result = {};
+  for (const net of nets) {
+    const ta = document.getElementById(`ta-${finalistId}-${net}`);
+    if (ta && ta.value.trim()) result[net] = ta.value;
+  }
+  return Object.keys(result).length ? result : null;
+}
+
+async function approveScored(slug) {
+  const btn = document.getElementById(`approve-btn-${slug}`);
+  const msg = document.getElementById(`approve-msg-${slug}`);
+  if (!btn) return;
+
+  const sels = getArticleSelections(slug);
+  if (!sels.length) return;
+
+  // Build approved_selections with finalist_id schema
+  const approved_selections = sels.map(sel => {
+    const finalistId = `${sel.avatar}_v${sel.variant_index}`;
+    return {
+      finalist_id:     finalistId,
+      avatar:          sel.avatar,
+      variant_index:   sel.variant_index,
+      director:        sel.director || null,
+      carousel:        sel.carousel,
+      reel:            sel.reel,
+      edited_captions: getFinalistCaptions(finalistId),
+    };
+  });
+
+  btn.disabled = true;
+  btn.textContent = "Enviando…";
+
+  try {
+    const res = await fetch("/api/approve-copy", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slug, approved_selections }),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      btn.textContent = `✓ ${data.approved} en cola`;
+      if (msg) msg.textContent = "Se generarán en el próximo ciclo de Oracle (~30 min).";
+      block.querySelectorAll(".fmt-btn, .dir-btn, .cap-tab, .cap-textarea").forEach(el => { el.disabled = true; });
+    } else {
+      btn.disabled = false;
+      btn.textContent = "Aprobar seleccionados";
+      if (msg) msg.textContent = `Error: ${data.error}`;
+    }
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = "Aprobar seleccionados";
+    if (msg) msg.textContent = `Error: ${e.message}`;
+  }
+}
 
 // state
 const selections  = {};   // "${slug}|${avatar}:${vi}" → {carousel, reel, director}
@@ -480,15 +818,25 @@ async function load() {
   const data = await res.json();
   document.getElementById("loading").style.display = "none";
 
+  const ns = data.scored?.length       || 0;
   const nr = data.ready_review?.length || 0;
   const nc = data.copy_pending?.length || 0;
   const parts = [];
+  if (ns) parts.push(`${ns} ${ns === 1 ? "finalista" : "finalistas"}`);
   if (nr) parts.push(`${nr} ${nr === 1 ? "listo" : "listos"}`);
   if (nc) parts.push(`${nc} pendiente${nc > 1 ? "s" : ""}`);
   const badge = document.getElementById("status-badge");
   if (badge) badge.textContent = parts.join(" · ") || "sin pendientes";
 
   const c = document.getElementById("content");
+
+  // Section 0: scored — IA-filtered finalists
+  if (data.scored?.length) {
+    const sec0 = document.createElement("div");
+    sec0.innerHTML = `<div class="section-h">Finalistas IA — elige, edita y aprueba</div>`;
+    for (const item of data.scored) sec0.appendChild(buildScoredBlock(item));
+    c.appendChild(sec0);
+  }
 
   // Section 1: ready_for_review
   if (data.ready_review?.length) {
@@ -521,7 +869,7 @@ async function load() {
     c.appendChild(sec2);
   }
 
-  if (!nr && !nc) document.getElementById("empty").style.display = "";
+  if (!ns && !nr && !nc) document.getElementById("empty").style.display = "";
 }
 
 // ─── OUTPUT BLOCK (ready_for_review) ─────────────────────────────────────────

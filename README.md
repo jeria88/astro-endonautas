@@ -76,16 +76,34 @@ Proxy POST hacia Listmonk (evita CORS desde el navegador). Acepta:
 
 ### `functions/api/list-pending.js`
 
-Flywheel social — GET. Lee `pending/` del repo vía GitHub API. Devuelve dos arrays:
-- `copy_pending`: artículos con `status: copy_pending_review` y `avatar_variants` (Franco elige qué generar)
-- `ready_review`: artículos con `status: ready_for_review` y `r2_urls` (Franco aprueba el output visual)
+Flywheel social — GET. Lee `pending/` del repo vía GitHub API. Devuelve tres arrays:
+- `scored`: artículos con `status: scored` — IA ya filtró finalistas con score + captions por red
+- `copy_pending`: artículos con `status: copy_pending_review` y `avatar_variants` (legacy / sin scoring aún)
+- `ready_review`: artículos con `status: ready_to_publish` y `r2_urls` (Franco aprueba el output visual)
 
 Requiere env var `GITHUB_TOKEN` en Cloudflare Pages.
 
 ### `functions/api/approve-copy.js`
 
-Flywheel social — POST. Recibe selecciones de Franco (`slug`, `approved_selections[]`), actualiza el pending JSON en GitHub con `approved[]` y `status: copy_approved`. El cron en Oracle detecta el cambio y genera las piezas de media.
+Flywheel social — POST. Recibe selecciones de Franco, actualiza el pending JSON en GitHub con `approved[]` y `status: copy_approved`. Soporta dos esquemas:
 
+**Nuevo (finalistas IA):**
+```json
+{
+  "slug": "mi-articulo",
+  "approved_selections": [
+    {
+      "finalist_id": "negocio_v0",
+      "director": "contrain",
+      "carousel": true,
+      "reel": true,
+      "edited_captions": { "instagram": "...", "tiktok": "...", "linkedin": "...", "youtube_title": "...", "youtube_description": "..." }
+    }
+  ]
+}
+```
+
+**Legacy:**
 ```json
 {
   "slug": "mi-articulo",
@@ -95,24 +113,10 @@ Flywheel social — POST. Recibe selecciones de Franco (`slug`, `approved_select
 }
 ```
 
-- **`avatar`**: público objetivo del copy (`negocio | profesional | padres | terapeuta`)
-- **`director`**: estilo visual de la pieza (`loop | contrain | quote | hook | pregunta | edu | documental`)
-- Los avatares generan el copy (Instagram/TikTok/LinkedIn + slides + hook). Los directores controlan la edición visual.
-
-### `functions/api/approve-visual.js`
-
-Flywheel social — POST. Franco aprueba el output visual generado (status `ready_for_review → approved`).
-
-```json
-{
-  "slug": "mi-articulo",
-  "scheduled_at": "2026-07-01T15:00:00.000Z",
-  "reel_formats": { "0": "reel", "1": "story" }
-}
-```
-
-- `scheduled_at` (opcional): ISO datetime para programar la publicación. Omitir = próximo ciclo n8n (~2h).
-- `reel_formats` (opcional): formato por índice de reel. Valores: `"reel"` (Reel IG) o `"story"` (Story IG). Default: `"reel"`.
+- `finalist_id`: `"{avatar}_v{variant_index}"` — ej. `"negocio_v0"`
+- `edited_captions`: captions que Franco editó en la UI (opcional — fallback a los generados por caption_gen)
+- `director`: estilo visual (`loop | contrain | quote | hook | pregunta | edu | documental`)
+- Los avatares generan el copy (slides + hooks). Los directores controlan la edición visual.
 
 ### `functions/api/health.js`
 
@@ -130,36 +134,33 @@ Flywheel social — GET. Monitoreo del estado del pipeline. Lee todos los `pendi
 ### Flywheel social — pipeline de status
 
 ```
-pending → copy_pending_review → copy_approved → ready_for_review → approved → published
+pending → copy_pending_review → scored → copy_approved → ready_to_publish → published
 ```
+
+Estados de error (reintentables): `scoring_error`, `generation_error`.
 
 | Status | Responsable |
 |--------|------------|
 | `pending` | `run_ci.py` al publicar artículo |
-| `copy_pending_review` | `generate_social.py` Phase 1 (Oracle cron) o `batch_phase1.py` (local) |
-| `copy_approved` | `approve-copy.js` — Franco elige avatar + director en `/review-social` |
-| `ready_for_review` | `generate_social.py` Phase 2 (Oracle) — imágenes/video en R2 |
-| `approved` | `approve-visual.js` — Franco aprueba output + scheduling + reel/story |
-| `published` | n8n workflow — publica en Instagram + Facebook |
-| `generation_error` | `generate_social.py` en fallo — reintentable automáticamente |
+| `copy_pending_review` | `generate_social.py` — DeepSeek generó 12 variantes de copy |
+| `scoring_error` | `generate_social.py` — falló scoring, cron reintenta |
+| `scored` | `generate_social.py` — `viral_scores` + `finalists` + `captions` listos |
+| `copy_approved` | `approve-copy.js` — Franco aprobó finalistas (+ captions editados) |
+| `ready_to_publish` | `generate_social.py` — assets en R2, webhook N8N disparado |
+| `generation_error` | `generate_social.py` — falló Phase 2, reintentable |
+| `published` | n8n `social_publish` — publicado en Instagram + TikTok + LinkedIn + YouTube |
 
-Copy generado por DeepSeek en 4 avatares (negocio / profesional / padres / terapeuta).  
-Producción visual con directores cinematográficos (`loop`, `contrain`, `quote`, `hook`, `pregunta`, `edu`, `documental`).  
-Scripts en Oracle: `/home/ubuntu/content-studio/generate_social.py`
-
-Scripts locales: `scripts/social/batch_phase1.py` (generar copy en lote), `scripts/social/health_check.py` (monitoreo).
+Copy: DeepSeek, 4 avatares (negocio / profesional / padres / terapeuta).  
+Scoring: rubric IA 5 dimensiones → filtra top N finalistas. Pesos calibrables en `scorer_config.json`.  
+Captions: generados solo para finalistas, long-form × 4 redes.  
+Producción visual: directores cinematográficos (`loop`, `contrain`, `quote`, `hook`, `pregunta`, `edu`, `documental`).  
+Scripts Oracle: `/home/ubuntu/content-studio/generate_social.py`
 
 Campos de resiliencia en cada pending JSON: `last_updated` (ISO), `last_error` (string).
 
-### n8n — publicación automática (Instagram + Facebook)
+### n8n — publicación automática
 
-Workflow `e6381324-1127-4713-b755-17f30b30cb9d` · activo · cada 2h.
-
-- Busca JSON con `status: approved`
-- Si `scheduled_at` está en el futuro → salta (no publica todavía)
-- Publica carousel en IG + foto de portada en FB Page
-- Publica reels o stories según `reel_formats` (`REELS` vs `STORIES` en Graph API v21.0)
-- Actualiza JSON a `status: published`
+Workflow `social_publish` en Oracle Cloud. Trigger: webhook POST desde `generate_social.py` cuando status → `ready_to_publish`. Publica en Instagram + LinkedIn. TikTok + YouTube en siguiente iteración (requieren OAuth adicional).
 
 ## Servicios relacionados (Oracle Cloud — mismo servidor que la app)
 
