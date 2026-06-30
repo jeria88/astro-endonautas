@@ -12,7 +12,8 @@
   keyword: test big five
   category: Instrumentos
   layer: journey
-  published: false
+  published: true
+  published_date: '2026-06-30'
 - topic: 'Evitación experiencial: por qué huir del malestar lo perpetúa'
   keyword: evitación experiencial
   category: Proceso
