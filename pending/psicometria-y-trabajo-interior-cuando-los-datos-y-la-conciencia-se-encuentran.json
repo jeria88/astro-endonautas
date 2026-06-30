@@ -6,5 +6,423 @@
   "category": "Proceso",
   "article_path": "src/content/blog/psicometria-y-trabajo-interior-cuando-los-datos-y-la-conciencia-se-encuentran.md",
   "published_date": "2026-06-30",
-  "status": "pending"
+  "status": "copy_pending_review",
+  "avatar_variants": {
+    "negocio": [
+      {
+        "carousel": {
+          "slides": [
+            "Tus decisiones de negocio pueden estar ciegas a patrones que solo la psicometría revela.",
+            "Muchos líderes confían solo en su instinto, pero los datos internos cuentan otra historia.",
+            "La falsa dicotomía: ¿datos o conciencia? En realidad, son aliados estratégicos.",
+            "Un test validado como el DERS-16 mide tu relación con emociones que afectan tu liderazgo.",
+            "Medir es poder ver: descubre cómo tus patrones inconscientes impactan en tu equipo.",
+            "La psicometría + trabajo interior = decisiones más claras y equipos más sanos.",
+            "El autoconocimiento cuantificado transforma tu gestión y tu cultura organizacional."
+          ],
+          "keywords": [
+            "psicometría",
+            "liderazgo",
+            "autoconocimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que sabotea tu negocio sin que lo veas",
+          "hook_b": "Tu inconsciente dirige tu empresa, no tú",
+          "cta": "Descubre cómo medirlo",
+          "keywords": [
+            "patrón inconsciente",
+            "liderazgo",
+            "negocio"
+          ]
+        },
+        "social": {
+          "instagram": "Un líder que no se conoce a sí mismo toma decisiones ciegas. La psicometría revela patrones que tu intuición no ve. Datos + conciencia = liderazgo real. #Psicometría #LiderazgoConsciente #DecisionesEstratégicas",
+          "tiktok": "Tu negocio no crece porque repites un patrón sin saberlo. La psicometría te lo muestra. Datos + trabajo interior = equipos que funcionan.",
+          "linkedin": "La tensión entre datos y experiencia es falsa. Como líder, integrar psicometría con trabajo interior te da una ventaja real: decisiones más lúcidas, equipos más cohesionados y una cultura que no repite tus cegueras. El autoconocimiento medible es la herramienta que falta."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "¿Sabías que tus emociones no medidas afectan tus resultados de negocio?",
+            "La psicometría no es solo para psicólogos; es para líderes que quieren datos reales.",
+            "El trabajo interior sin medición es como navegar sin brújula.",
+            "Un test como el DERS-16 te muestra tu relación con la incertidumbre y el conflicto.",
+            "Con esos datos, puedes liderar con claridad y no solo con intuición.",
+            "Equipos sanos empiezan por líderes que se miden a sí mismos.",
+            "Deja de adivinar: mide tu impacto interno y transforma tu gestión."
+          ],
+          "keywords": [
+            "datos emocionales",
+            "gestión de equipos",
+            "liderazgo"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El error que todo líder comete al gestionar equipos",
+          "hook_b": "Tu equipo no falla por ellos, falla por tu patrón",
+          "cta": "Conócete con datos",
+          "keywords": [
+            "error líder",
+            "gestión equipos",
+            "patrón"
+          ]
+        },
+        "social": {
+          "instagram": "Los líderes que solo confían en su instinto toman decisiones a medias. La psicometría suma datos a tu conciencia. Resultado: equipos que rinden y cultura que sana. #LiderazgoConDatos #Psicometría #EquiposExitosos",
+          "tiktok": "Tu equipo no rinde porque repites un patrón sin darte cuenta. La psicometría te lo muestra en números. Datos + conciencia = líder imparable.",
+          "linkedin": "Integrar psicometría al trabajo interior no es moda, es estrategia. Los líderes que se miden a sí mismos entienden mejor sus sesgos, mejoran su toma de decisiones y construyen culturas organizacionales más sólidas. El autoconocimiento cuantificado es el próximo paso en liderazgo profesional."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "El dato no reemplaza tu experiencia; la afina para liderar mejor.",
+            "La psicometría te da un espejo: ves patrones que antes ignorabas.",
+            "Esos patrones inconscientes afectan cómo delegas, decides y comunicas.",
+            "Al medir tu relación con las emociones, ganas control sobre tu liderazgo.",
+            "Tus colaboradores lo notan: un líder consciente genera confianza y rendimiento.",
+            "No se trata de elegir entre datos o intuición, sino de integrarlos.",
+            "Con psicometría y trabajo interior, liderás con datos y alma."
+          ],
+          "keywords": [
+            "integración",
+            "liderazgo consciente",
+            "cultura organizacional"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que repites sin saber por qué (y cómo afecta a todos)",
+          "hook_b": "Tu liderazgo tiene un punto ciego que la psicometría revela",
+          "cta": "Medí tu patrón ahora",
+          "keywords": [
+            "punto ciego",
+            "liderazgo",
+            "psicometría"
+          ]
+        },
+        "social": {
+          "instagram": "El liderazgo más potente nace de la integración: datos que te muestran tus patrones + conciencia para transformarlos. No es magia, es psicometría aplicada. #LiderazgoIntegral #Psicometría #CulturaOrganizacional",
+          "tiktok": "Hay un patrón que todos los líderes repiten sin saber: evitar lo incómodo. La psicometría lo mide y el trabajo interior lo sana. Datos + conciencia = equipo que fluye.",
+          "linkedin": "La dicotomía entre datos y trabajo interior es un espejismo. Como líder, necesitás ambas herramientas para tomar decisiones lúcidas y construir equipos resilientes. La psicometría no te quita humanidad, te da claridad. El futuro del liderazgo es medido y consciente."
+        }
+      }
+    ],
+    "profesional": [
+      {
+        "carousel": {
+          "slides": [
+            "Tus datos internos hablan: el patrón que te frena sin saberlo.",
+            "Psicometría + trabajo interior: el fin de la falsa dicotomía.",
+            "Un puntaje en el DERS-16 y una meditación describen lo mismo.",
+            "Los tests miden tu relación con emociones; la conciencia la transforma.",
+            "Sin datos, te guías por suposiciones. Sin conciencia, los datos no cambian nada.",
+            "Rendimiento laboral: cuando tus números emocionales explican tus techos.",
+            "Dos lenguajes para un mismo territorio: tu crecimiento sostenible."
+          ],
+          "keywords": [
+            "psicometría",
+            "trabajo interior",
+            "rendimiento profesional"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón oculto de los profesionales más capaces.",
+          "hook_b": "¿Por qué te saboteas sin darte cuenta?",
+          "cta": "Descubrí tu bloqueo ahora.",
+          "keywords": [
+            "autosabotaje",
+            "profesionales",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "Los datos y la conciencia se encuentran en tu carrera. La psicometría revela lo que ignorás de vos mismo. Herramienta concreta para crecer sin excusas. #autoconocimiento #desarrolloprofesional #psicometria",
+          "tiktok": "¿Éxito afuera, caos adentro? Tu autosabotaje tiene nombre y apellido. Descubrilo en psicometría + trabajo interior.",
+          "linkedin": "La falsa dicotomía entre datos y trabajo interior limita carreras sostenibles. Integrar ambos lenguajes no es moda: es la base del crecimiento profesional real."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Tu relación con las emociones: el dato que impacta tu performance.",
+            "Psicometría no es fría: es un mapa de tu mundo interno.",
+            "El DERS-16 y una práctica contemplativa ven lo mismo.",
+            "Datos sin conciencia son ruido. Conciencia sin datos es intuición ciega.",
+            "¿Sabés qué mide realmente un test psicométrico? Tu vínculo emocional.",
+            "Relaciones laborales sanas empiezan con conocerte numérica y experiencialmente.",
+            "Dos lentes, un objetivo: que tu potencial no tenga techo."
+          ],
+          "keywords": [
+            "mapa interno",
+            "psicometría",
+            "performance laboral"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que no ves y que te cuesta el ascenso.",
+          "hook_b": "Tu éxito tiene un freno de mano interno.",
+          "cta": "Analizá tu patrón hoy.",
+          "keywords": [
+            "freno",
+            "ascenso",
+            "patrón emocional"
+          ]
+        },
+        "social": {
+          "instagram": "¿Datos o experiencia? Ambas. La psicometría te da el mapa; el trabajo interior, la brújula. Una herramienta concreta para tu desarrollo profesional. #autoconocimiento #carrera #psicometria",
+          "tiktok": "Los profesionales exitosos se autosabotean sin saberlo. La solución no es trabajar más, es conocerte mejor. #autosabotaje #trabajointerior",
+          "linkedin": "Integrar psicometría y trabajo interior no es espiritualidad ni tecnocracia: es pragmatismo. El autoconocimiento medible y vivencial es la base de una carrera sostenible."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "El dato que te confronta: ¿estás listo para escucharlo?",
+            "Psicometría y trabajo interior: aliados, no opuestos.",
+            "Un puntaje y una experiencia: dos lenguajes del mismo territorio.",
+            "La falsa dicotomía te limita: abrazá ambos mundos.",
+            "Rendimiento profesional: el costo de ignorar tus variables internas.",
+            "Conocerte con datos te da poder; con conciencia, libertad.",
+            "El territorio de tu crecimiento no se mide ni se intuye: se integra."
+          ],
+          "keywords": [
+            "integración",
+            "crecimiento profesional",
+            "autoconocimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que sabotea a los mejores profesionales.",
+          "hook_b": "¿Sabés qué te frena? No es lo que creés.",
+          "cta": "Descubrilo en 1 minuto.",
+          "keywords": [
+            "sabotaje",
+            "profesional",
+            "dato interno"
+          ]
+        },
+        "social": {
+          "instagram": "Herramienta concreta: usá tests validados + prácticas contemplativas para ver tu sombra profesional. La clave no está en un polo, sino en integrar. #autoconocimiento #crecimientoprofesional",
+          "tiktok": "Éxito profesional no es igual a paz interna. El autosabotaje se esconde en patrones. Conocelos con psicometría y trabajo interior.",
+          "linkedin": "La carrera sostenible no se construye solo con habilidades técnicas. Se sostiene con autoconocimiento que integra datos medibles y experiencia vivida. ¿Estás listo para el siguiente nivel?"
+        }
+      }
+    ],
+    "padres": [
+      {
+        "carousel": {
+          "slides": [
+            "Lo que no trabajas en ti, lo heredan tus hijos.",
+            "La psicometría te muestra el patrón familiar oculto en datos.",
+            "El trabajo interior te da la conciencia para romper el ciclo.",
+            "Juntos, datos y conciencia, transforman tu crianza.",
+            "No es elegir entre test o meditación.",
+            "Es usar ambos para ver cómo repites lo que viviste.",
+            "Hoy puedes cambiar lo que tus hijos llevarán mañana."
+          ],
+          "keywords": [
+            "crianza consciente",
+            "patrones familiares",
+            "psicometría"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "¿Sabes qué patrón heredarán tus hijos?",
+          "hook_b": "El test que revela tu patrón familiar",
+          "cta": "Descubre tu patrón hoy",
+          "keywords": [
+            "patrón familiar",
+            "crianza",
+            "herencia emocional"
+          ]
+        },
+        "social": {
+          "instagram": "Muchos padres repiten lo que vivieron sin darse cuenta. La psicometría y el trabajo interior se unen para que puedas verlo y transformarlo. #CrianzaConsciente #PatronesFamiliares #Autoconocimiento",
+          "tiktok": "Tus hijos aprenden de ti cómo gestionar emociones. Trabaja en ti para que hereden lo mejor.",
+          "linkedin": "Ser padre o madre implica un trabajo interior profundo: revisar los patrones heredados para no transmitirlos. La psicometría nos ofrece datos para ver lo que la experiencia no siempre revela. La conciencia, el cambio."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "La crianza es espejo: lo que no ves en ti, lo ves en ellos.",
+            "Tus test de emociones revelan lo que callas.",
+            "Tu meditación descubre lo que evitas.",
+            "El vínculo con tus hijos se nutre de esa verdad.",
+            "No se trata de ser perfecto, sino de ser consciente.",
+            "Psicometría: mapa. Trabajo interior: brújula. Crianza: camino.",
+            "Rompe el patrón hoy para que ellos no lo carguen."
+          ],
+          "keywords": [
+            "vínculos",
+            "patrones heredados",
+            "crianza consciente"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que repites sin querer",
+          "hook_b": "Lo que tus hijos heredan de ti",
+          "cta": "Transforma tu patrón ahora",
+          "keywords": [
+            "patrón",
+            "crianza",
+            "herencia"
+          ]
+        },
+        "social": {
+          "instagram": "Si repites conductas de tu infancia sin darte cuenta, este contenido es para vos. Datos y conciencia te ayudan a criar diferente. #CrianzaConsciente #PatronesFamiliares #TrabajoInterior",
+          "tiktok": "Tus hijos aprenden cómo gestionar emociones viéndote a vos. ¿Qué les estás enseñando?",
+          "linkedin": "El trabajo interior de los padres es la base de una crianza transformadora. La psicometría nos da datos sobre patrones; la conciencia, la oportunidad de cambiarlos. No criamos desde la perfección, sino desde la verdad."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Tus patrones no son tu destino. Tus hijos lo esperan.",
+            "El test DERS-16 no mide defectos, mide heridas.",
+            "La meditación no evade, encuentra.",
+            "Unirlos te da el poder de criar distinto.",
+            "La falsa dicotomía entre datos y alma se disuelve.",
+            "Hoy eliges: repetir o transformar.",
+            "La crianza consciente empieza por mirarte a vos."
+          ],
+          "keywords": [
+            "transformación",
+            "herederos",
+            "crianza consciente"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "¿Qué patrón le estás heredando?",
+          "hook_b": "El test que cambia tu crianza",
+          "cta": "Haz el test ahora",
+          "keywords": [
+            "herederos",
+            "crianza",
+            "patrón"
+          ]
+        },
+        "social": {
+          "instagram": "La psicometría no es fría; es una lente para ver lo que necesitamos sanar. Combinada con trabajo interior, transforma tu crianza. #CrianzaConsciente #Psicometría #Autoconocimiento",
+          "tiktok": "Tus hijos aprenden de ti aun cuando no les dices nada. ¿Qué estás transmitiendo sin palabras?",
+          "linkedin": "Criar conscientemente implica integrar datos y experiencia. La psicometría nos muestra los patrones que heredamos; el trabajo interior, la fuerza para transformarlos. Así construimos vínculos más libres con nuestros hijos."
+        }
+      }
+    ],
+    "terapeuta": [
+      {
+        "carousel": {
+          "slides": [
+            "¿Qué pasa cuando la psicometría se encuentra con el trabajo interior?",
+            "Tus pacientes tienen capas que ni ellos mismos ven.",
+            "Los tests validados revelan patrones que la conciencia no alcanza.",
+            "El DERS-16 mide desregulación emocional que la meditación no nombra.",
+            "Pero la meditación capta matices que ningún puntaje refleja.",
+            "Integrar ambos lenguajes enriquece tu práctica clínica.",
+            "La verdadera sanación une datos con experiencia subjetiva."
+          ],
+          "keywords": [
+            "psicometría clínica",
+            "trabajo interior",
+            "terapeutas"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Lo que tu paciente no te dice",
+          "hook_b": "Los tests ven lo invisible en terapia",
+          "cta": "Seguí para más herramientas",
+          "keywords": [
+            "psicometría",
+            "terapia",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "¿Datos o experiencia? La falsa dicotomía que limita tu práctica. Integrá psicometría y trabajo interior para ver completo a tu paciente. #PsicometríaClínica #TerapiaIntegrativa #Autoconocimiento",
+          "tiktok": "Tu paciente dice que está bien, pero los tests muestran otra cosa. La psicometría revela lo que la clínica sola no ve. #psicometría #terapia",
+          "linkedin": "La psicometría y el trabajo interior no son opuestos, son lenguajes complementarios. Como terapeuta, integrar ambos te permite acceder a una mirada más completa del paciente. ¿Ya incorporás tests validados en tu práctica?"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "¿Medir lo interno o vivirlo? Ambas perspectivas son necesarias.",
+            "Un puntaje en el DERS-16 revela patrones que la conciencia ignora.",
+            "La meditación capta micro-movimientos que ningún test registra.",
+            "Cada lenguaje ve un ángulo distinto del mismo territorio emocional.",
+            "Integrar datos y experiencia transforma tu abordaje clínico.",
+            "Tus pacientes se benefician de esta mirada más completa.",
+            "Datos y conciencia: dos aliados para una terapia más profunda."
+          ],
+          "keywords": [
+            "integración clínica",
+            "test psicológicos",
+            "terapeuta"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Datos vs. experiencia: falsa dicotomía",
+          "hook_b": "La psicometría ve lo que la clínica no alcanza",
+          "cta": "Descubrí más en mi perfil",
+          "keywords": [
+            "psicometría",
+            "trabajo interior",
+            "terapia"
+          ]
+        },
+        "social": {
+          "instagram": "La falsa dicotomía entre datos y espiritualidad limita tu práctica. Descubrí cómo integrar psicometría y trabajo interior. #Psicometría #TerapiaIntegral #Autoconocimiento",
+          "tiktok": "Un test puede ver lo que tu paciente no te cuenta. La psicometría complementa tu mirada clínica. #psicometria #terapia",
+          "linkedin": "La tensión entre datos y experiencia es un falso dilema. Integrar psicometría validada con trabajo interior enriquece la práctica clínica y ofrece una visión más completa del paciente. ¿Cómo lo estás abordando?"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "¿Tu práctica clínica ignora lo que los datos revelan?",
+            "La psicometría no reemplaza, complementa tu intuición.",
+            "Un test bien usado muestra patrones ocultos para el paciente.",
+            "Pero la experiencia subjetiva agrega matices irremplazables.",
+            "Ambos lenguajes describen el mismo territorio emocional.",
+            "Ninguno tiene acceso completo; juntos se potencian.",
+            "Integrar datos y conciencia profundiza tu impacto terapéutico."
+          ],
+          "keywords": [
+            "herramientas clínicas",
+            "psicometría",
+            "terapeutas"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Lo que los tests ven y el paciente calla",
+          "hook_b": "Psicometría: el radar oculto del terapeuta",
+          "cta": "Compartí si te sirve",
+          "keywords": [
+            "tests clínicos",
+            "trabajo interior",
+            "terapeuta"
+          ]
+        },
+        "social": {
+          "instagram": "Datos y conciencia: dos caras de una misma moneda. Integrar psicometría en tu práctica te da una visión más rica de tu paciente. #PsicometríaClínica #TerapiaConsciente #Autoconocimiento",
+          "tiktok": "Tu paciente puede no saber lo que un test revela. Sumá psicometría a tu caja de herramientas. #psicometria #terapeuta",
+          "linkedin": "La psicometría y el trabajo interior no están reñidos. Como profesional, integrarlos te permite ver más allá de lo que el paciente expresa verbalmente. Un enfoque completo para una terapia más efectiva."
+        }
+      }
+    ]
+  }
 }
