@@ -6,7 +6,7 @@
   "category": "Proceso",
   "article_path": "src/content/blog/por-que-repito-los-mismos-patrones-aunque-ya-los-reconozco.md",
   "published_date": "2026-06-30",
-  "status": "copy_pending_review",
+  "status": "scored",
   "avatar_variants": {
     "negocio": [
       {
@@ -449,5 +449,195 @@
       }
     ]
   },
-  "last_updated": "2026-06-30T21:03:07+00:00"
+  "last_updated": "2026-06-30T23:12:46+00:00",
+  "viral_scores": {
+    "negocio_v0": {
+      "score": 76,
+      "dimensions": {
+        "hook_strength": 80,
+        "curiosity_gap": 70,
+        "emotional_trigger": 75,
+        "avatar_fit": 85,
+        "shareability": 65
+      },
+      "suggested_director": "contrain",
+      "justification": "El gancho impacta directo al dolor de saboteo empresarial, pero el 'insight' es genérico; podría ser más específico para alta viralidad."
+    },
+    "negocio_v1": {
+      "score": 78,
+      "dimensions": {
+        "hook_strength": 75,
+        "curiosity_gap": 75,
+        "emotional_trigger": 80,
+        "avatar_fit": 90,
+        "shareability": 70
+      },
+      "suggested_director": "hook",
+      "justification": "Conecta fuerte con la culpa del líder, pero el segundo gancho ('cambio no llega') es predecible; el director hook narrativo puede compensarlo."
+    },
+    "negocio_v2": {
+      "score": 84,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 80,
+        "emotional_trigger": 85,
+        "avatar_fit": 95,
+        "shareability": 75
+      },
+      "suggested_director": "contrain",
+      "justification": "Excelente giro contraintuitivo: culpa del mercado vs. patrón interno. Alto potencial de compartir en redes de negocios."
+    },
+    "profesional_v0": {
+      "score": 68,
+      "dimensions": {
+        "hook_strength": 70,
+        "curiosity_gap": 65,
+        "emotional_trigger": 70,
+        "avatar_fit": 75,
+        "shareability": 60
+      },
+      "suggested_director": "pregunta",
+      "justification": "Reconocible pero demasiado abstracto. El insight ('insight llegó después') es filosófico; necesita más urgencia para retener."
+    },
+    "profesional_v1": {
+      "score": 83,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 80,
+        "emotional_trigger": 85,
+        "avatar_fit": 85,
+        "shareability": 75
+      },
+      "suggested_director": "contrain",
+      "justification": "Muy fuerte: 'sabes y repites' es espejo directo. El automatismo como respuesta biológica genera curiosidad y reconocimiento."
+    },
+    "profesional_v2": {
+      "score": 86,
+      "dimensions": {
+        "hook_strength": 90,
+        "curiosity_gap": 85,
+        "emotional_trigger": 90,
+        "avatar_fit": 80,
+        "shareability": 80
+      },
+      "suggested_director": "hook",
+      "justification": "Visual potente ('rayo después que cayó'), máxima tensión emocional. El director hook narrativo en 30s puede volverlo viral."
+    },
+    "padres_v0": {
+      "score": 90,
+      "dimensions": {
+        "hook_strength": 90,
+        "curiosity_gap": 85,
+        "emotional_trigger": 95,
+        "avatar_fit": 95,
+        "shareability": 90
+      },
+      "suggested_director": "pregunta",
+      "justification": "Golpea directo en la culpa y deseo de cambio de padres. Muy compartible entre círculos de crianza."
+    },
+    "padres_v1": {
+      "score": 94,
+      "dimensions": {
+        "hook_strength": 95,
+        "curiosity_gap": 90,
+        "emotional_trigger": 95,
+        "avatar_fit": 100,
+        "shareability": 95
+      },
+      "suggested_director": "contrain",
+      "justification": "Pregunta inicial que remueve: '¿por qué igual?' con giro educativo. Máximo ajuste al avatar y alta probabilidad de compartir."
+    },
+    "padres_v2": {
+      "score": 86,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 80,
+        "emotional_trigger": 90,
+        "avatar_fit": 90,
+        "shareability": 85
+      },
+      "suggested_director": "quote",
+      "justification": "Poético y profundo, pero el gancho puede ser menos directo que la opción v1. Funciona en formato cita para reflexión."
+    },
+    "terapeuta_v0": {
+      "score": 66,
+      "dimensions": {
+        "hook_strength": 70,
+        "curiosity_gap": 60,
+        "emotional_trigger": 65,
+        "avatar_fit": 80,
+        "shareability": 55
+      },
+      "suggested_director": "edu",
+      "justification": "Demasiado genérico para terapeutas que ya conocen el concepto. El insight no aporta nuevo conocimiento."
+    },
+    "terapeuta_v1": {
+      "score": 85,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 80,
+        "emotional_trigger": 85,
+        "avatar_fit": 95,
+        "shareability": 80
+      },
+      "suggested_director": "documental",
+      "justification": "Muy fuerte: 'paciente devuelve' resuena profesionalmente. El concepto de dato vs. fallo genera intriga y reflexión."
+    },
+    "terapeuta_v2": {
+      "score": 79,
+      "dimensions": {
+        "hook_strength": 80,
+        "curiosity_gap": 75,
+        "emotional_trigger": 80,
+        "avatar_fit": 90,
+        "shareability": 70
+      },
+      "suggested_director": "edu",
+      "justification": "Buen insight ('reconocimiento no desactiva'), pero el gancho es más conceptual que emocional. Puede perder audiencias no técnicas."
+    }
+  },
+  "finalists": [
+    "padres_v1",
+    "padres_v0",
+    "profesional_v2",
+    "padres_v2",
+    "terapeuta_v1"
+  ],
+  "captions": {
+    "padres_v1": {
+      "instagram": "¿Cuántas veces has visto la misma reacción pasando en tiempo real y no pudiste detenerla? Eso no es falta de voluntad; es un patrón que corre más rápido que tu conciencia. Cuando reconoces que estás repitiendo lo que criticaste en tus padres, no hay fracaso, hay información valiosa. El patrón no se desactiva por entenderlo; necesita interrupciones en el momento exacto. Así que en lugar de culpabilizarte, pregúntate: ¿qué hago cuando el caos del lunes me activa? Convertir esa tensión en oportunidad requiere práctica, no reflexión dominical. Endonautas te da herramientas para que el seguimiento continuo marque la diferencia. Empieza hoy en endonautas.cl y transforma el ciclo en conciencia. \n\n#endonautas #endonautica #saludmental #autoconocimiento #psicologia #patrones #crianza #conciencia #amorpropio #rompeciclos #chile #psicologiachile #saludmentalchile #crianzarespetuosa",
+      "tiktok": "tus hijos merecen que rompas el ciclo, no que lo heredes.\nno es culpa, es oportunidad. el patrón se repite hasta que lo ves y actúas distinto. empieza hoy en endonautas.cl #fyp #parati #saludmental #autoconocimiento #patronesfamiliares #crianza #conciencia",
+      "linkedin": "¿Cuántas veces has visto un patrón y no has podido detenerlo? Esa sensación de saber que estás repitiendo lo mismo, pero no tienes el control, es más común de lo que crees. Te pasa a ti, me pasa a mí, y a muchos que trabajamos en entornos de alta demanda. El problema no es la falta de voluntad; es la velocidad con que operan estas respuestas automáticas.\n\nEl reconocimiento conceptual no es suficiente. Necesitamos interrupciones en el momento exacto, no en la reflexión del domingo. La investigación en neuroplasticidad muestra que las microinterrupciones cercanas al evento son la clave del cambio real. Así que, ¿cómo interrumpes tus propios patrones en el caos del lunes?\n\nCuando trabajamos con equipos o con nuestra propia crianza, entender esto marca la diferencia. No se trata de criticar lo heredado, sino de construir nuevas respuestas conscientes. En Endonautas he encontrado herramientas para ese tracking continuo. Te invito a explorarlo en endonautas.cl y empezar este camino de integración.\n\n¿Qué patrón te gustaría interrumpir hoy? Me encantaría leer tus reflexiones.\n\n#autoconocimiento #saludmental #neuroplasticidad #crianzaconsciente #liderazgo",
+      "youtube_title": "Rompe el ciclo: cómo no repetir patrones con tus hijos",
+      "youtube_description": "¿Reconoces el patrón pero no puedes detenerlo? No es falta de voluntad; es fisiología. Descubre cómo la neuroplasticidad y las microinterrupciones pueden ayudarte a romper ciclos familiares. Endonautas te ofrece herramientas para el seguimiento continuo en endonautas.cl. #autoconocimiento #patronesfamiliares #crianzaconsciente"
+    },
+    "padres_v0": {
+      "instagram": "¿Y si el patrón que ves en tu hijo no es suyo, sino el tuyo? Duele cuando lo reconoces: esa reacción que tanto criticas en tu hijo, la misma que te desarma a ti. No te culpes. No elegiste ese guion. Lo heredaste antes de tener palabras para nombrarlo.\n\nPero aquí está lo que nadie te dice: reconocerlo no basta. El patrón opera antes de que puedas pensarlo. Es un reflejo del sistema nervioso, no una decisión. Por eso, por más que “veas” lo que estás haciendo, sigues repitiéndolo. Y esa frustración no es fracaso, es el síntoma de que el cambio necesita otra herramienta.\n\nEl cambio real ocurre en la pausa. Esa fracción de segundo donde, en lugar de reaccionar, respiras. Y luego eliges otra cosa. No la respuesta perfecta, solo algo diferente. Cada pausa entrena a tu cerebro para salir del automatismo. Cada pausa es un acto de amor hacia tus hijos —y hacia ti.\n\nRomper el ciclo no requiere una revelación épica. Requiere continuidad: un espejo que te acompañe a diario, justo cuando el patrón se activa. En Endonautas diseñamos herramientas para eso: para que tengas algo concreto en los momentos que importan, lunes, martes, miércoles.\n\nEmpieza hoy. Reconoce el reflejo y construye la pausa. 👉 endonautas.cl\n\n#endonautas #autoconocimiento #crianzaConsciente #patronesFamiliares #saludMental #psicologia #chile #crianzaRespetuosa #reflexionDiaria #amorPropio #terapia #crecimientoPersonal #madres #padres #endonautica",
+      "tiktok": "¿Ves tu patrón en tu hijo? Ese espejo no miente. Reconocerlo duele, pero no basta para cambiar. Necesitas algo más: herramientas que te acompañen en el momento exacto. Empieza hoy con endonautas.cl #endonautas #autoconocimiento #crianzaConsciente #patronesFamiliares #chile #fyp #parati #saludMental",
+      "linkedin": "Reconozco el patrón. Lo veo activarse en mis hijos. Y aun así, lo repito.\n\nEsa es la verdad que muchos padres y madres callan: el insight no basta. Saber que estás reproduciendo lo que viviste no detiene la reacción automática. La consciencia llega después, cuando el daño ya está hecho. Y la culpa se acumula.\n\nLa ciencia lo confirma: los patrones operan a nivel del sistema nervioso, antes de que la corteza prefrontal pueda intervenir. No es falta de voluntad. Es el diseño del cerebro.\n\nEl cambio requiere tres condiciones: interrupción cerca del momento (no horas después), una alternativa concreta (aunque sea un suspiro), y repetición (muchas pausas pequeñas, no una revelación grande).\n\nEn Endonautas trabajamos en esto: ofrecerte herramientas que estén ahí cuando el patrón ocurre, no solo en la sesión de terapia. Porque el cambio no es episódico; es cotidiano.\n\n¿Tú qué haces en el momento justo antes de reaccionar?\n\n🔗 endonautas.cl\n\n#autoconocimiento #crianzaConsciente #padres #saludMental #endonautas",
+      "youtube_title": "Patrón repetitivo: cómo romperlo con autoconocimiento",
+      "youtube_description": "Reconocer un patrón no lo detiene. Descubre por qué la consciencia no basta y cómo el cambio real ocurre en la pausa. Aprende herramientas prácticas para interrumpir ciclos familiares y criar con más conciencia. Visita endonautas.cl para un espejo que te acompañe a diario.\n\n#autoconocimiento #patronesFamiliares #crianzaConsciente #endonautas"
+    },
+    "profesional_v2": {
+      "instagram": "Sabes que lo estás haciendo otra vez. Lo ves venir. Y no puedes frenar.\n\nTe pasa en el trabajo: entras a una reunión y ya sientes la ansiedad subir. Empiezas a hablar más rápido, a explicarte demasiado, a tratar de controlar lo incontrolable. Reconoces el patrón en el momento exacto en que se está ejecutando. Pero reconocer no es suficiente.\n\nEl insight llega después del automatismo. Como un rayo que ya cayó. No puedes desactivar algo que ya se activó. Necesitas interrumpirlo cerca del disparador, no después.\n\n¿Y qué haces cuando ves el patrón? Nada. Porque no tienes otra respuesta disponible. La alternativa no existe hasta que la creas.\n\nPor eso el cambio real no viene del insight intelectual. Viene de micro pausas repetidas justo en el momento en que el patrón empieza a ejecutarse. Una respiración diferente. Una pausa que no estaba. Algo mínimo que rompe el automatismo.\n\nLa frecuencia de esas pausas es lo que cambia el sistema. No la profundidad de la próxima sesión de terapia.\n\nSi reconoces este bucle, entra a endonautas.cl. El Espejo de Conflictos está diseñado exactamente para este momento — cuando el patrón ya está identificado pero sigue activo.\n\n#endonautas #endonautica #patronesinconscientes #mecanismosdedefensa #autoconocimiento #psicologia #saludmental #neuroplasticidad #cambiodehábitos #repetición #terapia #chile #psicologiachile #saludmentalchile #inteligenciaemocional",
+      "tiktok": "Te ves venir el patrón. Y no puedes frenar. No es falta de voluntad... es cómo funciona el sistema. 🧠\n\nEse momento en que sabes que estás repitiendo el mismo error, lo ves en tiempo real, pero tu cuerpo ya se movió. El reconocimiento llega después del automatismo. No antes.\n\nAsí que no te culpes por no cambiar solo porque entiendes. El insight intelectual no desactiva nada. Necesitas interrupción cerca del disparador. Una micro pausa. Algo mínimo que sea diferente a lo que siempre haces.\n\nY la frecuencia de esas pausas es lo que hace la diferencia. Diez micro interrupciones en el día producen más cambio que una sesión profunda única.\n\nSi esto te suena familiar, entra a endonautas.cl. Tenemos herramientas para que lleves el insight al momento exacto. #fyp #parati #psicologia #autoconocimiento #patrones #cambiodehábitos #saludmental #neurociencia",
+      "linkedin": "Llevas años en procesos de autoconocimiento. Terapia, lecturas, retiros. Has desarrollado una comprensión muy fina de por qué haces lo que haces. Puedes nombrar el patrón en tiempo real. Y sin embargo, lo repites.\n\nNo es que no hayas trabajado suficiente. Es que el reconocimiento opera en un nivel diferente al del automatismo. El patrón se ejecuta antes de que tu conciencia tenga oportunidad de intervenir. Ves el destello del rayo después de que cayó.\n\nEn mi experiencia trabajando con profesionales —consultores, especialistas, líderes— el patrón que más se repite es la sobreexigencia combinada con procrastinación. Sabes que estás entrando en ese ciclo. Y no puedes frenar. El insight intelectual está ahí, pero no llega al cuerpo, no interrumpe el comportamiento.\n\nLo que la investigación en neuroplasticidad muestra es que el cambio requiere tres condiciones: interrupción cerca del momento del patrón, una alternativa concreta (aunque sea mínima), y repetición suficiente en el tiempo. No una sesión profunda única. Sino micro pausas distribuidas en el día a día.\n\n¿Qué pasa cuando te das cuenta de que el patrón se activa y no tienes nada diferente que hacer? Ahí está el verdadero desafío.\n\nSi esto resuena contigo, te invito a revisar endonautas.cl. El Espejo de Conflictos está diseñado para ese momento exacto —cuando el patrón ya está identificado pero sigue activo.\n\n¿Te ha pasado? ¿Cómo haces para interrumpir el ciclo?\n\n#autoconocimiento #patronesdecomportamiento #neuroplasticidad #desarrolloprofesional #saludlaboral #psicologia",
+      "youtube_title": "Patrones que repites aunque los reconozcas",
+      "youtube_description": "¿Por qué repites los mismos patrones aunque ya los reconoces? En este video exploro por qué el insight intelectual no es suficiente para cambiar y qué condiciones necesita tu sistema nervioso para interrumpir el automatismo. Si estás en procesos de autoconocimiento o terapia y sientes que entiendes pero no cambias, esto es para ti. Descubre cómo las micro pausas cerca del disparador hacen la diferencia. Más en endonautas.cl\n\n#patronesinconscientes #autoconocimiento #neuroplasticidad…"
+    },
+    "padres_v2": {
+      "instagram": "Has sentido esa frustración de saber que estás repitiendo un patrón y no poder parar. Lo ves venir, lo nombras en tu cabeza, y aún así terminas haciendo exactamente lo mismo. Y justo frente a tus hijos, duele más.\n\nPorque cuando eres padre o madre, no solo repites para ti. Repites hacia ellos. Y ellos lo reciben, lo registran, lo aprenden. Aunque no digan nada.\n\nEl problema no es que no sepas. El problema es que el saber llega después de que el patrón ya se ejecutó. Es como ver el rayo cuando ya cayó.\n\nCambiar no es cuestión de voluntad. Es cuestión de tener herramientas que te alcancen en el momento exacto del estallido. Que te den algo diferente que hacer cuando el automatismo se activa.\n\nPorque tus hijos no necesitan que seas perfecto. Necesitan que estés presente. Que te detengas un segundo antes de reaccionar. Y que esa pausa se convierta en una costumbre.\n\nEso no se logra en un retiro de fin de semana. Se practica en el día a día, en cada pequeña interrupción del patrón.\n\nEn Endonautas encontrarás herramientas diseñadas exactamente para esos momentos. El Espejo de Conflictos está pensado para cuando el patrón ya está identificado pero sigue activo. Para que tengas algo concreto que hacer justo cuando más lo necesitas.\n\nEmpieza a romper el ciclo hoy. Entra a endonautas.cl\n\n#endonautas #autoconocimiento #paternidadconsciente #saludmental #patrones #crianzarespetuosa #psicologia #terapia #neuroplasticidad #cambiopersonal #chile #psicologiachile #saludmentalchile #padresconscientes #madresconscientes",
+      "tiktok": "Sabes que repites el patrón. Lo ves venir. Y no puedes parar. Pero tus hijos lo están aprendiendo.\n\nNo es que no hayas trabajado suficiente. Es que el reconocimiento llega después de que el patrón ya se ejecutó — como el rayo después del trueno.\n\nLa clave no está en entenderlo más. Está en tener algo diferente que hacer en el momento exacto en que el automatismo se activa.\n\nEn Endonautas tenemos herramientas hechas para esos segundos. El Espejo de Conflictos te da justo eso: una pausa antes del estallido.\n\nNo necesitas ser perfecto. Necesitas estar presente.\n\nEntra a endonautas.cl y rompe el ciclo.\n\n#fyp #parati #autoconocimiento #paternidad #saludmental #patrones #endonautas",
+      "linkedin": "Hay un momento incómodo que muchos padres y madres conocen bien: te das cuenta de que estás repitiendo exactamente la misma reacción que alguna vez juraste no tener con tus hijos. Lo sabes en tiempo real, puedes nombrarlo, y aún así terminas cayendo en el mismo lugar.\n\nNo es falta de voluntad. Es que el reconocimiento opera en un nivel diferente al del patrón automatizado. El insight llega después de que el sistema nervioso ya reaccionó. Como ver el rayo cuando ya cayó.\n\nLa pregunta entonces no es \"por qué no cambio\" sino \"qué necesito para tener algo diferente que hacer justo en el momento del estallido\".\n\nEn psicología se habla de la diferencia entre insight intelectual —entender el patrón— e insight emocional, que es cuando ese entendimiento se traduce en una diferencia en cómo actúas. Para que eso ocurra hace falta que la interrupción del patrón suceda cerca del momento en que se activa, no en una sesión de terapia una vez por semana.\n\nEl cambio no es dramático. Es acumulación de microinterrupciones: un segundo de pausa aquí, una respiración distinta allá, una palabra diferente hoy. Repetidas suficientes veces.\n\nPor eso el autoconocimiento no puede quedar solo en la reflexión distante. Necesita herramientas que te alcancen en el momento preciso.\n\n¿Has encontrado alguna práctica que te ayude a romper un patrón justo cuando está ocurriendo?\n\nTe comparto lo que funciona en endonautas.cl\n\n#autoconocimiento #paternidadconsciente #saludmental #neuroplasticidad #liderazgopersonal",
+      "youtube_title": "Repites patrones frente a tus hijos? No es tu culpa",
+      "youtube_description": "Sabes que repites patrones con tus hijos. Lo ves venir y no puedes parar. No es falta de voluntad — es cómo funciona el cambio real. El reconocimiento llega después del automatismo. La clave está en tener algo diferente que hacer en el momento exacto del estallido. Descubre en este artículo por qué el insight no basta y qué necesitas para romper el ciclo. Herramientas prácticas para padres conscientes. Más en endonautas.cl\n\n#patrones #autoconocimiento #paternidad #crianza"
+    },
+    "terapeuta_v1": {
+      "instagram": "Tu paciente te dice que ya sabe lo que le pasa. Que lo entiende, que lo nombra, que lo ve venir. Y aún así repite. ¿Te ha pasado? Esa sensación de que el insight no se traduce en cambio, de que la conciencia llega cuando el patrón ya se ejecutó.\n\nComo terapeuta, sabes que el reconocimiento no es suficiente. El patrón opera a velocidad de sistema nervioso, no de reflexión consciente. Y aquí está el punto incómodo: si tú mismo arrastras un patrón no resuelto, tu paciente lo reflejará. Contratransferencia no es fallo, es dato. Pero ese dato te exige trabajo propio.\n\nEl espejo que eres para él también refleja tu patrón. Entre sesiones, el patrón sigue activo. No puedes guiar donde no has entrado. La herramienta psicométrica cierra esa brecha: mide lo que tu mirada no alcanza. Mide conflictos que la repetición esconde.\n\nTrae a tu práctica una evaluación objetiva de los patrones que se repiten. Empieza por ti, para que puedas guiar mejor. Descubre el perfil de conflictos en endonautas.cl. \n\n#endonautas #endonautica #contratransferencia #patronestrepetitivos #autoconocimiento #psicologia #saludmental #terapia #coaching #psicologiachile #saludmentalchile #terapeutas #coaches #psicologos #autocuidado",
+      "tiktok": "Sabes lo que te pasa. #autoconocimiento\nY lo sigues haciendo igual. #patrones\nEso no es falta de voluntad — es falta de herramientas.\nendonautas.cl #fyp #saludmental #psicologiachile",
+      "linkedin": "El autoconocimiento no es un lujo para tiempos de crisis — es la condición base para tomar mejores decisiones.\n\nCuando reconocemos nuestros patrones, no solo nos entendemos mejor: tomamos decisiones con más claridad, construimos relaciones más honestas y lideramos desde un lugar más real.\n\nNo hay herramienta de gestión más subestimada que el conocimiento propio.\n\n¿En qué área de tu vida notas que repites algo que ya conoces?\n\nMás en endonautas.cl\n\n#autoconocimiento #liderazgo #saludmental",
+      "youtube_title": "Autoconocimiento: por qué saber no alcanza",
+      "youtube_description": "El autoconocimiento no es solo introspección — es una práctica medible que afecta tus decisiones, relaciones y rendimiento. En este video exploramos el patrón que más repites sin notarlo.\n\nLee el artículo completo en endonautas.cl"
+    }
+  }
 }
