@@ -1,6 +1,6 @@
 export async function onRequest({ request, next, env }) {
   const { pathname } = new URL(request.url);
-  if (!pathname.startsWith('/review-social') && !pathname.startsWith('/api/')) {
+  if (!pathname.startsWith('/review-social')) {
     return next();
   }
 

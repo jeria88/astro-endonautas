@@ -476,7 +476,7 @@ function updateFooter(slug) {
 // ─── LOAD ────────────────────────────────────────────────────────────────────
 
 async function load() {
-  const res  = await fetch("/api/list-pending");
+  const res  = await fetch("/api/list-pending", { credentials: 'same-origin' });
   const data = await res.json();
   document.getElementById("loading").style.display = "none";
 
@@ -855,6 +855,7 @@ async function approve(slug) {
   try {
     const res  = await fetch("/api/approve-copy", {
       method: "POST",
+      credentials: 'same-origin',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({slug, approved_selections}),
     });
@@ -903,6 +904,7 @@ async function approveVisual(slug, btn) {
 
   const res  = await fetch("/api/approve-visual", {
     method: "POST",
+    credentials: 'same-origin',
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({slug, scheduled_at: schedAt, reel_formats}),
   });
