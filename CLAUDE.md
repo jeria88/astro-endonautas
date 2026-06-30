@@ -60,36 +60,91 @@ Para agregar una lista nueva: agregar al objeto `LIST_UUIDS` en el archivo.
 
 ### `functions/api/list-pending.js`
 
-GET endpoint del flywheel social. Lee el directorio `pending/` del repo vía GitHub Contents API y devuelve los artículos con `status: copy_pending_review`. Usa `GITHUB_TOKEN` (env var en Cloudflare Pages — nunca expuesto al cliente).
+GET endpoint del flywheel social. Lee `pending/` vía GitHub Contents API. Devuelve dos arrays separados por etapa del pipeline. Usa `GITHUB_TOKEN` (env var en Cloudflare Pages — nunca expuesto al cliente).
 
 Respuesta:
 ```json
-{ "pending": [{ "slug": "...", "director_variants": { ... } }] }
+{
+  "copy_pending": [{ "slug": "...", "title": "...", "article_path": "...", "avatar_variants": { ... } }],
+  "ready_review":  [{ "slug": "...", "title": "...", "r2_urls": [...], "approved": [...] }]
+}
 ```
+
+- `copy_pending` → status `copy_pending_review` + campo `avatar_variants` presente
+- `ready_review` → status `ready_for_review` + campo `r2_urls` presente
 
 ### `functions/api/approve-copy.js`
 
-POST endpoint del flywheel social. Recibe selecciones del director Franco y actualiza el pending JSON en GitHub.
+POST endpoint del flywheel social. Recibe selecciones de Franco y actualiza el pending JSON en GitHub.
 
 Acepta:
 ```json
 {
   "slug": "mi-articulo",
   "approved_selections": [
-    { "director": "loop", "variant_index": 0, "carousel": true, "reel": false }
+    { "avatar": "negocio", "variant_index": 0, "director": "loop", "carousel": true, "reel": false }
   ]
 }
 ```
 
+- `avatar`: uno de `negocio | profesional | padres | terapeuta`
+- `director`: uno de los 7 directores cinematográficos (para edición visual, no para copy)
+- `variant_index`: 0, 1 o 2 (tres variantes por avatar)
+
 Flujo interno:
 1. Lee `pending/<slug>.json` via GitHub Contents API (para obtener el SHA actual)
-2. Extrae los textos de `director_variants[director][variant_index]`
-3. Escribe `approved[]` y `status: copy_approved` en el JSON
+2. Extrae copy de `avatar_variants[avatar][variant_index]`
+3. Escribe `approved[]` (incluye `avatar`, `director`, `carousel_copy`, `reel_copy`, `social_copy`) y `status: copy_approved`
 4. PUT a GitHub Contents API con el SHA → commit automático en el repo
 
-La próxima ejecución del cron en Oracle (cada 30 min) detecta `status: copy_approved` y genera las imágenes/videos.
+La próxima ejecución del cron en Oracle detecta `status: copy_approved` y genera las piezas de media.
 
 **Env var requerida en Cloudflare Pages:** `GITHUB_TOKEN` con permisos `contents: write` sobre el repo.
+
+## Blog
+
+### Campo `image` en artículos
+
+El schema de `src/content/config.ts` incluye `image: z.string().optional()` (URL Pexels landscape).
+
+- La página de artículo (`src/pages/blog/[...slug].astro`) muestra hero image si el campo existe
+- El cosmos Three.js (`#cbg`) se reduce a `opacity: 0.12` en las páginas de artículo (`:global(#cbg)`)
+- Layout: `.post-wrap` max-width 960px, `.prose` max-width 780px
+
+### Pipeline de imágenes
+
+- **Nuevos artículos**: `scripts/seo/writer.py` llama a Pexels automáticamente al generar. `scripts/seo/run_ci.py` lo incluye en el frontmatter y en el pending JSON.
+- **Backfill (one-time, ya ejecutado)**: `scripts/seo/backfill_images.py` asignó imagen a los 11 artículos existentes.
+
+## Flywheel social — pipeline de status
+
+```
+pending → copy_pending_review → copy_approved → ready_for_review → approved → published
+```
+
+| Status | Quién lo escribe | Significado |
+|--------|-----------------|-------------|
+| `pending` | `run_ci.py` | Artículo publicado, sin copy generado |
+| `copy_pending_review` | `generate_social.py` Phase 1 | DeepSeek generó `avatar_variants` |
+| `copy_approved` | `approve-copy.js` | Franco aprobó variantes + eligió director |
+| `ready_for_review` | `generate_social.py` Phase 2 | Imágenes/video subidos a R2 |
+| `approved` | (futuro) | Franco aprueba el output visual |
+| `published` | (futuro) | Publicado en redes |
+
+### Avatares de copy (4)
+
+| Key | Público |
+|-----|---------|
+| `negocio` | Dueños de negocio |
+| `profesional` | Profesionales |
+| `padres` | Padres |
+| `terapeuta` | Terapeutas |
+
+Cada avatar genera: `carousel` (slides), `reel` (hook_a/hook_b/cta), `social` (instagram/tiktok/linkedin).
+
+### Directores cinematográficos (7, solo para edición visual)
+
+`loop`, `fincher`, `malick`, `wong`, `kubrick`, `villeneuve`, `noe`. Determinan el estilo visual de la pieza, no el copy.
 
 ## Listmonk — listas y campañas
 

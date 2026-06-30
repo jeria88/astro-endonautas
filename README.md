@@ -76,22 +76,47 @@ Proxy POST hacia Listmonk (evita CORS desde el navegador). Acepta:
 
 ### `functions/api/list-pending.js`
 
-Flywheel social — GET. Lee `pending/` del repo vía GitHub API, devuelve artículos con `status: copy_pending_review` y sus `director_variants`. Requiere env var `GITHUB_TOKEN` en Cloudflare Pages.
+Flywheel social — GET. Lee `pending/` del repo vía GitHub API. Devuelve dos arrays:
+- `copy_pending`: artículos con `status: copy_pending_review` y `avatar_variants` (Franco elige qué generar)
+- `ready_review`: artículos con `status: ready_for_review` y `r2_urls` (Franco aprueba el output visual)
+
+Requiere env var `GITHUB_TOKEN` en Cloudflare Pages.
 
 ### `functions/api/approve-copy.js`
 
-Flywheel social — POST. Recibe selecciones de Franco (`slug`, `approved_selections[]`), actualiza el pending JSON en GitHub con `approved[]` y `status: copy_approved`. El cron en Oracle detecta el cambio de status en la próxima ejecución y genera los archivos de media.
+Flywheel social — POST. Recibe selecciones de Franco (`slug`, `approved_selections[]`), actualiza el pending JSON en GitHub con `approved[]` y `status: copy_approved`. El cron en Oracle detecta el cambio y genera las piezas de media.
 
 ```json
 {
   "slug": "mi-articulo",
   "approved_selections": [
-    { "director": "loop", "variant_index": 0, "carousel": true, "reel": false }
+    { "avatar": "negocio", "variant_index": 0, "director": "loop", "carousel": true, "reel": false }
   ]
 }
 ```
 
+- **`avatar`**: público objetivo del copy (`negocio | profesional | padres | terapeuta`)
+- **`director`**: estilo visual de la pieza (`loop | fincher | malick | wong | kubrick | villeneuve | noe`)
+- Los avatares generan el copy (Instagram/TikTok/LinkedIn + slides + hook). Los directores controlan la edición visual.
+
 **Env var requerida en Cloudflare Pages:** `GITHUB_TOKEN` (con permisos `contents: write` sobre el repo).
+
+## Blog
+
+- Artículos en `src/content/blog/*.md`, generados por `scripts/seo/run_ci.py` (DeepSeek + Pexels)
+- Schema en `src/content/config.ts` — campos relevantes: `image` (URL Pexels landscape, opcional), `ogImage`, `category`, `layer`, `cta`
+- Páginas de artículo (`/blog/[slug]/`): hero image encima del título, cosmos Three.js reducido a opacity 0.12, layout 960px
+- Pipeline de imágenes: `writer.py` llama Pexels al generar; `backfill_images.py` asignó imágenes a artículos existentes (ya ejecutado)
+
+### Flywheel social — pipeline de status
+
+```
+pending → copy_pending_review → copy_approved → ready_for_review → approved → published
+```
+
+Copy generado por DeepSeek en 4 avatares (negocio / profesional / padres / terapeuta).  
+Producción visual por directores cinematográficos (`loop`, `fincher`, `malick`, `wong`, `kubrick`, `villeneuve`, `noe`).  
+Scripts en Oracle: `/home/ubuntu/content-studio/generate_social.py`
 
 ## Servicios relacionados (Oracle Cloud — mismo servidor que la app)
 
