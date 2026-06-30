@@ -4,7 +4,7 @@ import json
 import os
 import sys
 import urllib3
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -116,6 +116,7 @@ def main():
         "article_path": f"src/content/blog/{article.slug}.md",
         "published_date": date.today().isoformat(),
         "status": "pending",
+        "last_updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"[seo] Pending: {pending_path}")
 

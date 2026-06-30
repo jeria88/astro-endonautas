@@ -17,9 +17,14 @@ import os
 import re
 import subprocess
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 DEEPSEEK_URL   = "https://api.deepseek.com/chat/completions"
 DEEPSEEK_MODEL = "deepseek-chat"
@@ -203,11 +208,14 @@ def generate_for_article(slug: str) -> None:
 
     empty = [k for k, v in avatar_variants.items() if not v]
     data["avatar_variants"] = avatar_variants
+    data["last_updated"] = _now_iso()
     if empty:
         print(f"  [!] Avatares vacíos: {empty} — status sigue 'pending' para reintento")
         data["status"] = "pending"
+        data["last_error"] = f"Avatares fallidos: {empty}"
     else:
         data["status"] = "copy_pending_review"
+        data.pop("last_error", None)
 
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     _git_push(slug, f"content(social): avatar copy variants ready — {slug}")
@@ -244,7 +252,13 @@ def retry_empty() -> None:
 
         if changed:
             still_empty = [k for k, v in data["avatar_variants"].items() if not v]
-            data["status"] = "copy_pending_review" if not still_empty else "pending"
+            data["last_updated"] = _now_iso()
+            if still_empty:
+                data["status"] = "pending"
+                data["last_error"] = f"Avatares fallidos: {still_empty}"
+            else:
+                data["status"] = "copy_pending_review"
+                data.pop("last_error", None)
             f.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
             _git_push(slug, f"content(social): fix avatares vacíos — {slug}")
             fixed_any = True

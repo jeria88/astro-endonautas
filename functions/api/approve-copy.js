@@ -48,8 +48,10 @@ export async function onRequestPost({ request, env }) {
     });
   }
 
-  current.approved = approved;
-  current.status   = "copy_approved";
+  current.approved     = approved;
+  current.status       = "copy_approved";
+  current.last_updated = new Date().toISOString();
+  delete current.last_error;
 
   const updated = btoa(unescape(encodeURIComponent(JSON.stringify(current, null, 2))));
   const putRes = await fetch(`${GITHUB_API}/repos/${GITHUB_REPO}/contents/${path}`, {
