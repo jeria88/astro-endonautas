@@ -6,5 +6,423 @@
   "category": "Proceso",
   "article_path": "src/content/blog/autoconocimiento-que-es-y-por-que-no-basta-con-saber.md",
   "published_date": "2026-06-30",
-  "status": "pending"
+  "status": "copy_pending_review",
+  "avatar_variants": {
+    "negocio": [
+      {
+        "carousel": {
+          "slides": [
+            "Saber quién eres no cambia nada si no lo aplicas en tus decisiones.",
+            "El autoconocimiento no es un destino, es un punto de partida.",
+            "Muchos líderes acumulan insights pero siguen tomando las mismas decisiones.",
+            "La brecha entre saber y actuar: eso define tu efectividad como líder.",
+            "Tus patrones inconscientes afectan cómo diriges a tu equipo.",
+            "Conocerte no sirve si no modificas tu forma de gestionar.",
+            "Aplica el autoconocimiento a tu liderazgo y transforma tu negocio."
+          ],
+          "keywords": [
+            "autoconocimiento aplicado",
+            "liderazgo consciente",
+            "toma de decisiones"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que sabotea tu negocio sin que lo veas",
+          "hook_b": "Este comportamiento de líder está frenando a tu equipo",
+          "cta": "Descubre cómo salir del patrón",
+          "keywords": [
+            "patrón inconsciente",
+            "liderazgo",
+            "sabotaje"
+          ]
+        },
+        "social": {
+          "instagram": "Saber quién eres no es suficiente si no aplicas ese conocimiento. Los líderes que transforman su negocio son los que actúan sobre sus patrones. #autoconocimiento #liderazgo #gestióndeéquipos",
+          "tiktok": "Si eres líder y repites el mismo error, probablemente es un patrón inconsciente. Deja de acumular insights, empieza a actuar.",
+          "linkedin": "El autoconocimiento en liderazgo no es un lujo, es una herramienta de gestión. Cuando entiendes cómo tus patrones afectan al equipo, puedes tomar decisiones más conscientes y construir una cultura organizacional sólida. #liderazgo #autoconocimiento #culturaorganizacional"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "El mayor obstáculo de tu negocio podrías ser vos mismo.",
+            "Autoconocimiento no es saberlo todo, es saber qué cambiar.",
+            "Los líderes que no se conocen toman decisiones a ciegas.",
+            "Tu equipo refleja tus patrones inconscientes, para bien o para mal.",
+            "Deja de acumular insights y empezá a aplicarlos en tu gestión.",
+            "Un líder que se conoce lidera con claridad y propósito.",
+            "Transformá tu liderazgo desde adentro hacia afuera."
+          ],
+          "keywords": [
+            "autoconocimiento líder",
+            "gestión de equipos",
+            "liderazgo efectivo"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que repites como líder sin darte cuenta",
+          "hook_b": "Tu mayor error como líder: no aplicar lo que sabes",
+          "cta": "Aprendé a romper el patrón",
+          "keywords": [
+            "patrón líder",
+            "autoconocimiento",
+            "error"
+          ]
+        },
+        "social": {
+          "instagram": "Conocerte no es suficiente si no actuás. Los líderes que marcan la diferencia son los que aplican el autoconocimiento a sus decisiones diarias. #liderazgoconsciente #autoconocimiento #negocios",
+          "tiktok": "Si sos líder y sentís que algo no funciona en tu equipo, mirá hacia adentro. El patrón que sabotea tu negocio sos vos mismo.",
+          "linkedin": "El autoconocimiento no es un ejercicio de introspección pasivo. Es una herramienta activa de liderazgo que impacta directamente en la toma de decisiones y la cultura de tu organización. Aplicarlo es el verdadero desafío."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "El autoconocimiento sin acción es solo información.",
+            "Saber que sos ansioso no te hace menos ansioso.",
+            "Los líderes efectivos aplican lo que saben de sí mismos.",
+            "Tu forma de liderar está moldeada por patrones que no ves.",
+            "La toma de decisiones mejora cuando te conocés de verdad.",
+            "No se trata de saber quién sos, sino de qué hacés con eso.",
+            "Liderá desde la conciencia, no desde el piloto automático."
+          ],
+          "keywords": [
+            "aplicar autoconocimiento",
+            "liderazgo práctico",
+            "decisión consciente"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que todos los líderes repiten sin saber",
+          "hook_b": "¿Por qué sabiendo lo que te pasa, seguís igual?",
+          "cta": "Salí del piloto automático",
+          "keywords": [
+            "piloto automático",
+            "liderazgo",
+            "patrón"
+          ]
+        },
+        "social": {
+          "instagram": "Conocerte no es el destino, es el arranque. El verdadero cambio viene cuando aplicás ese conocimiento a tu liderazgo y a tu negocio. #autoconocimiento #liderazgo #decisiones",
+          "tiktok": "Saber que tenés un patrón no te hace líder. Aplicar lo que sabés sí. Dejá de justificarte y empezá a actuar.",
+          "linkedin": "El autoconocimiento es una competencia directiva infravalorada. Cuando un líder comprende sus sesgos y patrones, mejora su capacidad de decisión y su equipo lo percibe. No es teoría, es práctica de gestión."
+        }
+      }
+    ],
+    "profesional": [
+      {
+        "carousel": {
+          "slides": [
+            "El saber sobre ti no cambia nada si no lo aplicas.",
+            "El autoconocimiento no es un destino espiritual, es una herramienta.",
+            "Saber que eres ansioso no quita la ansiedad del lunes.",
+            "El insight sin acción es solo información almacenada.",
+            "La verdadera ganancia está en identificar tu patrón laboral.",
+            "Usa una semana tus fortalezas distintas cada día y registra resultados.",
+            "Tus relaciones, rendimiento y carrera se transforman cuando actúas."
+          ],
+          "keywords": [
+            "autoconocimiento",
+            "crecimiento profesional",
+            "acción"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que frena a los talentosos.",
+          "hook_b": "Te saboteas sin saberlo: el patrón oculto.",
+          "cta": "Actívate: rompe el patrón ya.",
+          "keywords": [
+            "patrón",
+            "autosabotaje",
+            "profesional"
+          ]
+        },
+        "social": {
+          "instagram": "El autoconocimiento empieza con saber, pero solo cambia tu carrera cuando actúas. Herramienta: identifica tu patrón laboral esta semana. #autoconocimiento #desarrolloprofesional #liderazgo",
+          "tiktok": "¿Éxito pero te frenas? El autoconocimiento sin acción es trampa. Identifica el patrón y muévete. #autosabotaje #carrera",
+          "linkedin": "El autoconocimiento profesional no es un fin, es una palanca. Saber tu patrón es el primer paso; aplicarlo transforma tu rendimiento y relaciones. Deja de acumular insights, empieza a actuar."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "El saber sin acción es ruido mental.",
+            "No basta con saber quién eres: necesitas moverte.",
+            "La información sobre ti no reemplaza el cambio de hábito.",
+            "Tu patrón de trabajo te limita sin que lo notes.",
+            "Aplica un microcambio cada día en tu equipo.",
+            "Observa reacciones, ajusta acciones, mide resultados.",
+            "Ese es el camino hacia una carrera sostenible."
+          ],
+          "keywords": [
+            "acción",
+            "patrón laboral",
+            "carrera"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tu éxito te sabotea sin avisar.",
+          "hook_b": "El patrón invisible que te frena.",
+          "cta": "Descúbrelo y actúa hoy.",
+          "keywords": [
+            "patrón invisible",
+            "éxito",
+            "autosabotaje"
+          ]
+        },
+        "social": {
+          "instagram": "Conocerte es el inicio. El poder está en aplicar lo que sabes a tu día a día laboral. Prueba a cambiar una reacción automática esta semana. #crecimientoprofesional #autoconocimiento #trabajo",
+          "tiktok": "El autoconocimiento es data, no cambio. Si solo sabes pero no actúas, sigues atascado. ¡Acción ya! #carrera #crecimiento",
+          "linkedin": "El profesional que se conoce pero no actúa se estanca. La clave es vincular insight con hábitos concretos en tu rol. Así construyes una carrera sólida y auténtica."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Saber no es suficiente: la acción es el verdadero cambio.",
+            "Tu autoconocimiento debe tener un para qué laboral.",
+            "El insight sin aplicación es paja mental.",
+            "Identifica tu patrón repetitivo en reuniones o decisiones.",
+            "Reemplázalo con una respuesta consciente esta semana.",
+            "Verás cómo mejora tu rendimiento y relaciones.",
+            "Esa es la transición de sabio a profesional efectivo."
+          ],
+          "keywords": [
+            "aplicación",
+            "patrón",
+            "efectividad"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El autoconocimiento no te salva solo.",
+          "hook_b": "El freno invisible de los profesionales top.",
+          "cta": "Actúa y rompe tu patrón.",
+          "keywords": [
+            "autoconocimiento",
+            "patrón",
+            "acción"
+          ]
+        },
+        "social": {
+          "instagram": "Saber que repites un patrón no lo detiene. La clave: un microajuste diario en tu trabajo. Herramienta: elige una conducta y cámbiala. #autoconocimiento #trabajo #desarrolloprofesional",
+          "tiktok": "Los exitosos se sabotean con patrones que no ven. Deja de solo saber, empieza a hacer. #autoconocimiento #carrera #mentalidad",
+          "linkedin": "El autoconocimiento profesional es un medio, no un fin. Vincularlo con acciones concretas es lo que sostiene una carrera. No acumules datos de ti, actívalos."
+        }
+      }
+    ],
+    "padres": [
+      {
+        "carousel": {
+          "slides": [
+            "Saber quién eres no cambia nada. Lo que haces con eso, sí.",
+            "Los patrones que arrastras no son culpa tuya, pero son tu responsabilidad.",
+            "Cuando te conoces, dejas de repetir lo que te hicieron a ti.",
+            "La crianza consciente empieza con preguntarte: ¿qué estoy heredando?",
+            "No se trata de ser perfecto, sino de romper cadenas que ya no te sirven.",
+            "Tus hijos no necesitan un padre ideal, necesitan uno que sepa mirarse.",
+            "El autoconocimiento no es la meta. Es la herramienta para criar distinto."
+          ],
+          "keywords": [
+            "patrones familiares",
+            "crianza consciente",
+            "autoconocimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que heredaste de tus padres.",
+          "hook_b": "Estás criando como te criaron… sin querer.",
+          "cta": "¿Listo para romper el ciclo?",
+          "keywords": [
+            "crianza",
+            "patrones",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "La crianza consciente no es perfección, es mirar los patrones que repetimos sin querer. #crianzaconsciente #patronesfamiliares #autoconocimiento",
+          "tiktok": "Tus hijos aprenden más de lo que haces que de lo que dices. ¿Qué patrón les estás heredando?",
+          "linkedin": "Ser padre o madre implica un trabajo interior profundo: identificar los patrones que heredamos para no transmitirlos. La crianza es también un proceso de autoconocimiento y transformación personal."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Conocerte no es suficiente. Lo que haces con ese saber es clave.",
+            "El autoconocimiento sin acción se queda en dato frío.",
+            "¿Para qué saber que repites un patrón si no lo interrumpes?",
+            "Tus hijos observan tu silencio, tu enojo, tu ausencia. Todo pesa.",
+            "La pregunta no es '¿quién soy?', sino '¿qué estoy transmitiendo?'",
+            "Criar diferente implica atreverte a mirar lo que no te gusta de ti.",
+            "El primer paso para cambiar el legado es dejar de justificarlo."
+          ],
+          "keywords": [
+            "transmisión generacional",
+            "crianza",
+            "autoconocimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El legado que no elegiste.",
+          "hook_b": "Lo que tus hijos heredan sin que te des cuenta.",
+          "cta": "Rompe el patrón hoy.",
+          "keywords": [
+            "herencia",
+            "crianza",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "No se trata de ser perfectos, sino de estar dispuestos a mirar lo que repetimos. Esa es la verdadera crianza consciente. #crianzaconsciente #legadofamiliar #autoconocimiento",
+          "tiktok": "Lo que tus hijos aprenden de ti sin que se lo digas: el patrón que se repite. ¿Estás listo para cambiarlo?",
+          "linkedin": "La crianza es un espejo de lo que somos. Trabajar en uno mismo no es egoísta, es la herramienta más poderosa para no repetir patrones que dañan. Ser padre es también un proceso de autoconocimiento."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Saber que repites un patrón no lo detiene. Actuar, sí.",
+            "El autoconocimiento real te incomoda porque te pide cambio.",
+            "No basta con etiquetarte: soy ansioso, soy impulsivo. ¿Y ahora?",
+            "La crianza te enfrenta con tus sombras: lo que no sanas, lo heredan.",
+            "Cada reacción automática tuya es una lección para tus hijos.",
+            "Dejar de repetir la historia familiar requiere acción, no solo insight.",
+            "El mayor regalo a tus hijos es hacer el trabajo que tus padres no hicieron."
+          ],
+          "keywords": [
+            "sanar patrones",
+            "crianza consciente",
+            "autoconocimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón familiar que no viste venir.",
+          "hook_b": "Lo que repites sin querer con tus hijos.",
+          "cta": "Empieza a cambiar el legado.",
+          "keywords": [
+            "patrones",
+            "crianza",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "Criar consciente es atreverte a mirar lo que heredaste para no pasarlo. El autoconocimiento es la llave, la acción la puerta. #crianzaconsciente #sanarpatrones #autoconocimiento",
+          "tiktok": "Tus hijos aprenden más de lo que callas que de lo que dices. ¿Qué patrón estás repitiendo sin darte cuenta?",
+          "linkedin": "La paternidad y maternidad consciente exigen mirar hacia adentro. No para juzgarnos, sino para transformar lo que recibimos. Ese es el verdadero trabajo: romper ciclos para criar distinto."
+        }
+      }
+    ],
+    "terapeuta": [
+      {
+        "carousel": {
+          "slides": [
+            "Saber que eres ansioso no te cura. El autoconocimiento empieza ahí.",
+            "¿Para qué sirve saber lo que sé, si sigo igual? Pregunta clave en terapia.",
+            "El insight no produce cambio por sí solo. Es el punto de partida.",
+            "Autoconocimiento no es acumular datos sobre ti. Es observarte en acción.",
+            "Como terapeuta, guías al paciente de la información a la integración.",
+            "La psicometría revela patrones que la clínica sola no alcanza a ver.",
+            "El verdadero cambio ocurre cuando el saber se vuelve experiencia."
+          ],
+          "keywords": [
+            "autoconocimiento",
+            "práctica clínica",
+            "psicometría"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Lo que tu paciente no te dice",
+          "hook_b": "La psicometría ve lo invisible",
+          "cta": "Súmate a Endonautas",
+          "keywords": [
+            "psicometría",
+            "clínica",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "El autoconocimiento no es el destino, es el punto de partida. Como terapeuta, integra la psicometría para ver lo que la clínica sola no alcanza. #autoconocimiento #terapia #psicometria",
+          "tiktok": "Saber que sos ansioso no te cura. La psicometría revela lo que callás. Dale like si te incomoda.",
+          "linkedin": "En la práctica clínica, el insight sin integración no produce cambio. La psicometría ofrece un mapa objetivo que enriquece el acompañamiento terapéutico. ¿Estamos preparados para usarla?"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "El autoconocimiento real no es mirarse el ombligo. Es acción.",
+            "¿Autoayuda o narcisismo? Ni uno ni otro. El autoconocimiento es herramienta.",
+            "Tu paciente repite su patrón desde la infancia. ¿Y ahora qué?",
+            "Saber el origen no siempre mueve la aguja. La psicometría te da otra capa.",
+            "Observar el propio funcionamiento con suficiente distancia: esa es la clave.",
+            "Como terapeuta, podés pasar del 'sé que soy así' al 'puedo elegir otro camino'.",
+            "El cambio requiere un paso más allá del insight. Dale estructura con datos."
+          ],
+          "keywords": [
+            "insight",
+            "herramienta clínica",
+            "cambio"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Saber no basta para cambiar",
+          "hook_b": "Tu paciente necesita más que insight",
+          "cta": "Explora Endonautas",
+          "keywords": [
+            "insight",
+            "cambio",
+            "terapia"
+          ]
+        },
+        "social": {
+          "instagram": "El insight no cura. El autoconocimiento como herramienta sí. Sumá la psicometría a tu práctica y llevá a tus pacientes del saber al hacer. #autoconocimiento #psicologia #herramientasclinicas",
+          "tiktok": "Saber que repetís un patrón no lo rompe. La psicometría te dice por dónde empezar. Compartí si te resuena.",
+          "linkedin": "¿Cuántas veces escuchamos 'me conozco pero no cambio'? La psicometría objetiva sesgos y patrones, potenciando la intervención. Una perspectiva clínica que invita a repensar el autoconocimiento."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Dejar de ver el autoconocimiento como meta. Verlo como inicio.",
+            "La incomodidad de saber sin cambiar es real. La psicometría la aborda.",
+            "Tres pasos: observar, medir, integrar. El cambio aparece solo después.",
+            "El paciente dice 'soy ansioso'. Vos podés preguntarle '¿y ahora qué?'",
+            "La información sin acción es ruido. La psicometría organiza el ruido.",
+            "Como terapeuta, el autoconocimiento es tu aliado si lo usás para guiar.",
+            "No es destino espiritual ni ejercicio narcisista. Es práctica clínica."
+          ],
+          "keywords": [
+            "integración",
+            "acción",
+            "guía clínica"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "¿Saber quién sos? No alcanza",
+          "hook_b": "La psicometría revela lo que callás",
+          "cta": "Unite a Endonautas",
+          "keywords": [
+            "autoconocimiento",
+            "psicometría",
+            "acción"
+          ]
+        },
+        "social": {
+          "instagram": "El autoconocimiento no es el final del camino. Es el primer paso. Como terapeuta, usá la psicometría para que tus pacientes pasen del saber al hacer. #autoconocimiento #psicologia #psicometria",
+          "tiktok": "Saber que tenés miedo al abandono no te salva. La psicometría te muestra cómo actuar. Seguime para más.",
+          "linkedin": "En sesión escuchamos 'me conozco pero no avanzo'. La psicometría transforma ese saber en mapa de acción. Una herramienta clínica que merece un lugar en nuestra práctica."
+        }
+      }
+    ]
+  }
 }
