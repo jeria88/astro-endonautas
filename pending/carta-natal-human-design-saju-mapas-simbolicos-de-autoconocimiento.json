@@ -6,5 +6,423 @@
   "category": "Instrumentos",
   "article_path": "src/content/blog/carta-natal-human-design-saju-mapas-simbolicos-de-autoconocimiento.md",
   "published_date": "2026-06-30",
-  "status": "pending"
+  "status": "copy_pending_review",
+  "avatar_variants": {
+    "negocio": [
+      {
+        "carousel": {
+          "slides": [
+            "Tu liderazgo no puede mejorar si no ves tu patrón ciego. Estos mapas lo revelan.",
+            "Carta natal, Human Design y Saju no predicen. Plantean hipótesis sobre tu funcionamiento.",
+            "Cada mapa describe tendencias estructurales, no verdades absolutas.",
+            "No es horóscopo: no te dice qué pasará, sino cómo operas.",
+            "La pregunta clave no es '¿es cierto?' sino '¿resuena esto?'.",
+            "Si resuena, revela disposiciones que afectan tus decisiones y equipo.",
+            "Usa estos mapas para liderar con consciencia, no con suerte."
+          ],
+          "keywords": [
+            "liderazgo",
+            "decisiones",
+            "patrones ciegos"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tu peor enemigo en los negocios no es la competencia.",
+          "hook_b": "El patrón inconsciente que frena tu equipo sin que lo sepas.",
+          "cta": "Descubrí el mapa de tu liderazgo.",
+          "keywords": [
+            "patrón inconsciente",
+            "sabotaje empresarial",
+            "liderazgo ciego"
+          ]
+        },
+        "social": {
+          "instagram": "No es horóscopo: los mapas de nacimiento revelan tu patrón de liderazgo. ¿Resuena? Ahí está tu oportunidad. #autoconocimiento #liderazgo #negocios",
+          "tiktok": "¿Sabías que tu carta natal puede explicar por qué tu equipo no te sigue? No es magia, es un mapa de tu funcionamiento.",
+          "linkedin": "Los mapas simbólicos no predicen el futuro, describen tus tendencias estructurales. Pregúntate: ¿esto resuena con cómo lidero? Esa pregunta transforma la cultura organizacional."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Tomás decisiones sin ver el sesgo de tu diseño. Estos mapas lo exponen.",
+            "Human Design no es horóscopo: es un modelo de autoridad interna.",
+            "Tu carta natal describe cómo procesas presión y riesgo.",
+            "Saju revela tu ciclo energético para gestionar equipos mejor.",
+            "La hipótesis de tu mapa te da claridad sobre tu liderazgo.",
+            "No uses estos mapas para predecir, úsalos para entender.",
+            "Un líder que se conoce, delega con precisión y acierta más."
+          ],
+          "keywords": [
+            "autoridad interna",
+            "ciclo energético",
+            "delegación"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tu peor decisión nace de tu patrón ciego.",
+          "hook_b": "¿Por qué siempre tomas el mismo riesgo equivocado?",
+          "cta": "Descubrí tu patrón en 3 mapas.",
+          "keywords": [
+            "patrón ciego",
+            "decisiones",
+            "riesgo empresarial"
+          ]
+        },
+        "social": {
+          "instagram": "Tu liderazgo tiene un patrón oculto. Estos mapas no predicen, revelan. Preguntate: ¿esto resuena con mi forma de decidir? #mapasdenacimiento #autoconocimiento #CEO",
+          "tiktok": "Dejá de culparte por tus malas decisiones. Tu carta natal explica por qué repites el mismo error. No es destino, es patrón.",
+          "linkedin": "Los mapas de nacimiento ofrecen una hipótesis sobre tu diseño como líder. La utilidad no está en la predicción, sino en la resonancia. ¿Tu estilo de gestión resuena con tu mapa? "
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "¿Tu equipo no te entiende? Tal vez es tu diseño, no el de ellos.",
+            "Human Design revela tu tipo de liderazgo: manifestador, generador, etc.",
+            "Carta natal muestra cómo reaccionás ante conflictos de equipo.",
+            "Saju anticipa tus meses de baja energía para planificar mejor.",
+            "Estos sistemas son herramientas, no dogmas. Ponelos a prueba.",
+            "Si resuena, ajustá tu liderazgo. Si no, descartalo.",
+            "Liderar con autoconocimiento es dejar de improvisar."
+          ],
+          "keywords": [
+            "tipo de liderazgo",
+            "conflictos",
+            "planificación"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tu forma de liderar está escrita en tu carta natal.",
+          "hook_b": "El patrón que sabotea tu equipo está en tu Human Design.",
+          "cta": "Revisá tu mapa de liderazgo.",
+          "keywords": [
+            "Human Design",
+            "carta natal",
+            "sabotaje"
+          ]
+        },
+        "social": {
+          "instagram": "No liderás desde tu voluntad, liderás desde tu diseño. Conocé el patrón que guía tus decisiones y transformá tu equipo. #liderazgoconsciente #humandesign #cartanatal",
+          "tiktok": "Tu estrés al liderar tiene raíz en tu carta natal. No lo ignores, usalo como mapa para mejorar.",
+          "linkedin": "El autoconocimiento aplicado al liderazgo empieza con una hipótesis: ¿mi estilo de gestión es coherente con mi diseño? La respuesta cambia la dinámica del equipo."
+        }
+      }
+    ],
+    "profesional": [
+      {
+        "carousel": {
+          "slides": [
+            "Tu carrera choca siempre con el mismo muro. ¿Y si no es casualidad?",
+            "No es horóscopo de diario. Son mapas de tendencias, no predicciones.",
+            "Carta natal, Human Design y Saju: marcos para entender tus patrones.",
+            "No dicen qué pasará, sino cómo funcionás bajo presión y éxito.",
+            "Aumentan rendimiento: revelan tu forma natural de tomar decisiones.",
+            "Mejoran relaciones laborales: explican por qué chocás con ciertos perfiles.",
+            "¿Resuena? Entonces usalo como hipótesis para crecer sin autosabotaje."
+          ],
+          "keywords": [
+            "carta natal",
+            "human design",
+            "rendimiento profesional"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que frena a los mejores sin avisar.",
+          "hook_b": "¿Por qué los profesionales más capaces se autosabotean?",
+          "cta": "Descubrilo en el link de la bio.",
+          "keywords": [
+            "autosabotaje",
+            "crecimiento profesional",
+            "human design"
+          ]
+        },
+        "social": {
+          "instagram": "No predecimos tu futuro. Te damos un mapa de tus tendencias. Carta natal, Human Design y Saju como herramientas de desarrollo profesional. #autoconocimiento #carrerasostenible #humanDesign",
+          "tiktok": "Los profesionales exitosos se autosabotean sin saberlo. La clave no es trabajar más, sino entender tu mapa. Acá te cuento cómo.",
+          "linkedin": "El autoconocimiento no es moda: es la base de una carrera sostenible. Mapas simbólicos como la carta natal o el Human Design ofrecen hipótesis sobre nuestras disposiciones. No predicen, describen tendencias. Usarlos con sentido crítico puede transformar tu liderazgo y relaciones laborales."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Tu techo profesional no es falta de habilidad. Es un patrón que no ves.",
+            "Astrología predictiva vs cartografía simbólica: una no es lo mismo que la otra.",
+            "Carta natal, Human Design, Saju: hipótesis sobre tu funcionamiento interno.",
+            "La pregunta correcta no es '¿es cierto?' sino '¿esto resuena conmigo?'",
+            "Rendimiento: identificá tu estilo natural de decisión y accioná desde ahí.",
+            "Relaciones laborales: entendé por qué ciertas dinámicas se repiten.",
+            "No te decimos tu destino. Te damos herramientas para elegir mejor."
+          ],
+          "keywords": [
+            "mapas simbólicos",
+            "carrera profesional",
+            "autoconocimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tu mayor logro puede ser entenderte.",
+          "hook_b": "Lo que te frena no es lo que pensás.",
+          "keywords": [
+            "autoconocimiento profesional",
+            "human design",
+            "carta natal"
+          ],
+          "cta": "Link en bio para empezar."
+        },
+        "social": {
+          "instagram": "Tu carta natal no es tu destino. Es una hipótesis sobre tus talentos y zonas ciegas. Aplicada al trabajo, transforma rendimiento y relaciones. #autoconocimiento #desarrolloprofesional #humanDesign",
+          "tiktok": "Si sos profesional y sentís que algo te frena sin entender qué, el problema no sos vos. Es el patrón que no ves. Te lo explico en 60 segundos.",
+          "linkedin": "¿Qué pasaría si viéramos la carta natal, el Human Design o el Saju como hipótesis de trabajo sobre nosotros mismos? Lejos de predicciones, son marcos para identificar tendencias. En un entorno profesional, esa claridad permite decisiones más conscientes y carreras más sostenibles."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "¿Sabías que tu estilo de liderazgo puede estar escrito en tu mapa?",
+            "No es magia: es una hipótesis sobre cómo funcionás en equipo.",
+            "Carta natal, Human Design, Saju: no predicen, describen disposiciones.",
+            "Rendimiento: trabajá con tu naturaleza, no contra ella.",
+            "Conflictos laborales: entendé por qué repetís los mismos roces.",
+            "Crecimiento: usá estas herramientas como brújula, no como receta.",
+            "Soltá el 'debería ser'. Preguntate: ¿esto resuena con cómo soy?"
+          ],
+          "keywords": [
+            "estilo de liderazgo",
+            "herramientas de autoconocimiento",
+            "desarrollo profesional"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El autosabotaje profesional es un patrón, no un defecto.",
+          "hook_b": "Salí de tu propio camino con un mapa.",
+          "keywords": [
+            "autosabotaje",
+            "liderazgo",
+            "human design"
+          ],
+          "cta": "Agendá tu sesión gratuita."
+        },
+        "social": {
+          "instagram": "Dejá de luchar contra tus patrones. Entendelos con mapas simbólicos como la carta natal o Human Design. No predicen tu futuro, revelan tu presente. #autoconocimiento #carrera #mapassimbólicos",
+          "tiktok": "Si te va bien pero sentís que algo frena tu crecimiento, no es que no puedas. Es que no conocés tu mapa. Te muestro cómo usarlo.",
+          "linkedin": "La sostenibilidad profesional no se logra solo con habilidades técnicas. Exige entendernos a nosotros mismos. Mapas como la carta natal o el Human Design no son pronósticos: son hipótesis sobre nuestras disposiciones. Aplicarlos con criterio puede mejorar tu rendimiento y la calidad de tus vínculos laborales."
+        }
+      }
+    ],
+    "padres": [
+      {
+        "carousel": {
+          "slides": [
+            "Tus hijos heredan tus patrones, no tus palabras.",
+            "Carta natal, Human Design y Saju: mapas para entenderte.",
+            "No predicen el futuro; revelan tendencias que puedes transformar.",
+            "La crianza consciente empieza por conocerte a vos mismo.",
+            "¿Qué patrón familiar repetís sin darte cuenta?",
+            "Estos sistemas te ayudan a romper ciclos que dañan.",
+            "Usalos como hipótesis, no como verdades absolutas."
+          ],
+          "keywords": [
+            "crianza consciente",
+            "patrones familiares",
+            "mapas simbólicos"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que repetís sin querer.",
+          "hook_b": "Lo que tus hijos heredan de vos.",
+          "cta": "Descubrí cómo romperlo.",
+          "keywords": [
+            "patrón familiar",
+            "herencia emocional",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "Criar consciente es mirar tus propios patrones. La carta natal o el Human Design te ayudan a ver lo que repetís. #crianzaconsciente #autoconocimiento #patronesfamiliares",
+          "tiktok": "Tus hijos aprenden de lo que hacés, no de lo que decís. Mirá adentro para criar mejor.",
+          "linkedin": "Ser padre o madre exige trabajo interior. Los mapas simbólicos como la carta natal no predicen el futuro, revelan patrones que podemos transformar para no heredar lo que duele."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Tu crianza refleja patrones que no elegiste.",
+            "Carta natal, Human Design y Saju: espejos para verte.",
+            "No te dicen quién sos, sino qué podés cambiar.",
+            "Conocerte es el primer paso para criar distinto.",
+            "El mapa no es el territorio; es una guía.",
+            "Romper ciclos empieza con preguntarte: ¿esto resuena?",
+            "Transformá lo heredado en crianza consciente."
+          ],
+          "keywords": [
+            "crianza consciente",
+            "transformación",
+            "patrones"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Lo que heredan sin que lo sepas.",
+          "hook_b": "El espejo que tus hijos te muestran.",
+          "cta": "Empezá a mirar adentro.",
+          "keywords": [
+            "herencia",
+            "crianza",
+            "espejo"
+          ]
+        },
+        "social": {
+          "instagram": "Criar es mirarte al espejo. Los mapas simbólicos te ayudan a ver qué repetís y qué querés cambiar. #crianza #autoconocimiento #patrones",
+          "tiktok": "Tus hijos heredan lo que no ves de vos. Usá herramientas como el Human Design para romper el ciclo.",
+          "linkedin": "La crianza consciente requiere trabajo interior. Los mapas de nacimiento revelan disposiciones que podemos transformar para no transmitir lo que no elegimos."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "El mayor regalo a tus hijos: conocerte.",
+            "Carta natal, Human Design, Saju: hipótesis sobre vos.",
+            "No predicen; describen tendencias que podes cambiar.",
+            "Si resuena, te da pistas sobre cómo funcionás.",
+            "Criar sin patrones heredados empieza acá.",
+            "Preguntate: ¿esto es mío o lo repito?",
+            "Usá estos mapas para sanar vínculos."
+          ],
+          "keywords": [
+            "autoconocimiento",
+            "crianza",
+            "sanar"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Heredás lo que no ves.",
+          "hook_b": "Criás como te criaron, sin saberlo.",
+          "cta": "Rompe el patrón hoy.",
+          "keywords": [
+            "heredar",
+            "patrón",
+            "crianza"
+          ]
+        },
+        "social": {
+          "instagram": "Tu crianza refleja patrones que no elegiste. Los mapas simbólicos te ayudan a verlos para criar desde la conciencia. #crianzaconsciente #autoconocimiento #sanar",
+          "tiktok": "Lo que tus hijos aprenden de vos sin que lo digas. Usá el autoconocimiento para criar distinto.",
+          "linkedin": "Ser padre o madre es un viaje de autoconocimiento. La carta natal, el Human Design o el Saju son herramientas para identificar patrones y transformar la crianza."
+        }
+      }
+    ],
+    "terapeuta": [
+      {
+        "carousel": {
+          "slides": [
+            "El mapa que no predice tu futuro, sino que describe tu estructura.",
+            "Terapeutas: ¿y si tus pacientes tuvieran un manual de fábrica?",
+            "Carta natal, Human Design y Saju no son horóscopos.",
+            "Son marcos simbólicos para explorar disposiciones estructurales.",
+            "No predicen eventos, hipotetizan tendencias de funcionamiento.",
+            "La pregunta no es '¿es cierto?' sino '¿resuena con tu experiencia?'",
+            "Úsalos como lentes clínicos para ver más capas del paciente."
+          ],
+          "keywords": [
+            "mapas simbólicos",
+            "autoconocimiento clínico",
+            "disposiciones estructurales"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Lo que tu paciente no te dice, los tests lo ven.",
+          "hook_b": "Psicometría: el ojo clínico que falta.",
+          "cta": "Enlace en bio para terapeutas.",
+          "keywords": [
+            "psicometría",
+            "clínica",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "¿Horóscopo o mapa de nacimiento? La diferencia es clave. Los sistemas simbólicos describen estructuras, no predicen destinos. Resuena con vos y tu práctica. #Terapeutas #Autoconocimiento #MapasSimbólicos",
+          "tiktok": "Tu paciente te cuenta una cosa, los tests muestran otra. La psicometría ve lo que la clínica sola no alcanza. Dale play.",
+          "linkedin": "En terapia, los mapas simbólicos como carta natal o Human Design ofrecen hipótesis de funcionamiento para explorar con el paciente. No predicen, invitan a resonar. Un complemento ético y profundo al trabajo clínico."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "La resistencia al autoconocimiento empieza en el consultorio.",
+            "Terapeutas: estos mapas son hipótesis, no verdades absolutas.",
+            "Carta natal: tendencias emocionales desde el nacimiento.",
+            "Human Design: cómo procesás energía y tomás decisiones.",
+            "Saju: ciclos de energía según tu momento de vida.",
+            "No reemplazan la clínica, la amplían con más capas.",
+            "Integralos como herramientas de exploración, no de predicción."
+          ],
+          "keywords": [
+            "resistencia clínica",
+            "hipótesis simbólica",
+            "herramientas terapéuticas"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Terapeutas: el paciente dice 'no sé' y los tests hablan.",
+          "hook_b": "Psicometría: cuando el síntoma tiene nombre.",
+          "cta": "Seguí para más herramientas clínicas.",
+          "keywords": [
+            "test psicológicos",
+            "terapeutas",
+            "diagnóstico"
+          ]
+        },
+        "social": {
+          "instagram": "Mapas simbólicos en terapia: ¿moda o herramienta? Cuando se usan como hipótesis de trabajo y no como verdades, enriquecen la escucha clínica. Probá preguntar: ¿esto resuena? #Terapia #HumanDesign #SajuDeLas4Columnas",
+          "tiktok": "El paciente no te dice 'tengo miedo al éxito', pero tu test de perfil lo muestra. La psicometría no miente.",
+          "linkedin": "La psicometría y los mapas simbólicos pueden integrarse en psicoterapia como marcos exploratorios. Plantean hipótesis sobre disposiciones estructurales que, al ser validadas por el paciente, abren nuevas vías de intervención."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Dejá de lado el horóscopo: estos mapas son otra cosa.",
+            "Son marcos para explorar cómo funcionás, no para saber qué pasará.",
+            "Carta natal: emociones y patrones relacionales base.",
+            "Human Design: estrategia de toma de decisiones y perfil energético.",
+            "Saju: ritmos y ciclos para entender momentos vitales.",
+            "En terapia, son un disparador para conversaciones profundas.",
+            "Usalos con criterio: la pregunta correcta es '¿resuena?'"
+          ],
+          "keywords": [
+            "terapia simbólica",
+            "mapas de nacimiento",
+            "pregunta que resuena"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tu paciente oculta más de lo que dice.",
+          "hook_b": "Los tests revelan lo que la entrevista no ve.",
+          "cta": "Descubrí cómo en el link de bio.",
+          "keywords": [
+            "paciente oculto",
+            "test psicométricos",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "El mapa de nacimiento no es destino, es punto de partida. En terapia, usarlo como hipótesis enriquece el vínculo y la comprensión del paciente. Probá la pregunta que transforma: '¿esto resuena?' #MapasDeAlma #Psicoterapia #AutoconocimientoReal",
+          "tiktok": "Lo que no te cuentan en sesión: los tests psicométricos ven patrones que la charla no capta. Usalos.",
+          "linkedin": "Incorporar mapas simbólicos como la carta natal al setting terapéutico no es esotérico sino epistemológico. Son hipótesis sobre disposiciones que, al ser contrastadas con la experiencia del paciente, potencian la alianza y la intervención."
+        }
+      }
+    ]
+  }
 }
