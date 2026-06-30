@@ -39,19 +39,21 @@ def save_queue(items):
 def render_md(article):
     tags_yaml = "[" + ", ".join(f'"{t}"' for t in article.tags) + "]"
     today = date.today().isoformat()
-    return (
-        f'---\n'
-        f'title: "{article.title}"\n'
-        f'description: "{article.description}"\n'
-        f'pubDate: {today}\n'
-        f'category: "{article.category}"\n'
-        f'layer: "{article.layer}"\n'
-        f'tags: {tags_yaml}\n'
-        f'draft: false\n'
-        f'cta: "{article.cta}"\n'
-        f'---\n\n'
-        f'{article.body}\n'
-    )
+    fm = [
+        "---",
+        f'title: "{article.title}"',
+        f'description: "{article.description}"',
+        f'pubDate: {today}',
+        f'category: "{article.category}"',
+        f'layer: "{article.layer}"',
+        f'tags: {tags_yaml}',
+        "draft: false",
+    ]
+    if article.image:
+        fm.append(f'image: "{article.image}"')
+    fm.append(f'cta: "{article.cta}"')
+    fm.append("---")
+    return "\n".join(fm) + "\n\n" + article.body + "\n"
 
 
 def register_serpbear(keyword):
@@ -110,6 +112,7 @@ def main():
         "keyword": keyword,
         "layer": layer,
         "category": category,
+        "image": article.image,
         "article_path": f"src/content/blog/{article.slug}.md",
         "published_date": date.today().isoformat(),
         "status": "pending",

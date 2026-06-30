@@ -6,6 +6,7 @@ category: "Instrumentos"
 layer: "awareness"
 tags: ["tests psicométricos", "psicología", "evaluación", "PHQ-9", "Big Five"]
 draft: false
+image: "https://images.pexels.com/photos/6684209/pexels-photo-6684209.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 cta: "Endonautas incluye 35 tests psicométricos validados con análisis IA — puedes empezar con el Mapa de Patrones, que combina tres en uno."
 ---
 

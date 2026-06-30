@@ -10,6 +10,7 @@ const blog = defineCollection({
     layer: z.enum(['awareness', 'journey', 'consciousness']).optional(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+    image: z.string().optional(),
     ogImage: z.string().optional(),
     cta: z.string().optional(),
   }),

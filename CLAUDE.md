@@ -27,6 +27,7 @@ npm run build      # genera dist/ para verificar
 | `/ebook` | `src/pages/ebook.astro` | Página del libro Endonautica |
 | `/equipo` | `src/pages/equipo.astro` | Equipo / acerca de |
 | `/blog/*` | `src/pages/blog/` | Blog |
+| `/review-social` | `src/pages/review-social.astro` | Revisión interna de copy variants (excluida del sitemap) |
 
 ## Decisiones de diseño (no romper)
 
@@ -56,6 +57,39 @@ Routing por lista:
 | `practicante` | Practicantes (ID 5) | `574f7450-0663-4848-95e5-8ebe4765a33a` |
 
 Para agregar una lista nueva: agregar al objeto `LIST_UUIDS` en el archivo.
+
+### `functions/api/list-pending.js`
+
+GET endpoint del flywheel social. Lee el directorio `pending/` del repo vía GitHub Contents API y devuelve los artículos con `status: copy_pending_review`. Usa `GITHUB_TOKEN` (env var en Cloudflare Pages — nunca expuesto al cliente).
+
+Respuesta:
+```json
+{ "pending": [{ "slug": "...", "director_variants": { ... } }] }
+```
+
+### `functions/api/approve-copy.js`
+
+POST endpoint del flywheel social. Recibe selecciones del director Franco y actualiza el pending JSON en GitHub.
+
+Acepta:
+```json
+{
+  "slug": "mi-articulo",
+  "approved_selections": [
+    { "director": "loop", "variant_index": 0, "carousel": true, "reel": false }
+  ]
+}
+```
+
+Flujo interno:
+1. Lee `pending/<slug>.json` via GitHub Contents API (para obtener el SHA actual)
+2. Extrae los textos de `director_variants[director][variant_index]`
+3. Escribe `approved[]` y `status: copy_approved` en el JSON
+4. PUT a GitHub Contents API con el SHA → commit automático en el repo
+
+La próxima ejecución del cron en Oracle (cada 30 min) detecta `status: copy_approved` y genera las imágenes/videos.
+
+**Env var requerida en Cloudflare Pages:** `GITHUB_TOKEN` con permisos `contents: write` sobre el repo.
 
 ## Listmonk — listas y campañas
 
@@ -125,6 +159,7 @@ Cuando cambies copy de planes, verificar que sea consistente con:
 Configurado en `astro.config.mjs`. Filtros activos:
 - `/draft/` — excluido
 - `/fractones/` — excluido (página legacy de tokens)
+- `/review-social` — excluido (página interna de revisión de copy)
 
 ## Deploy
 

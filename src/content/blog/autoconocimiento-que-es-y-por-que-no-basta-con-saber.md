@@ -6,6 +6,7 @@ category: "Proceso"
 layer: "awareness"
 tags: ["autoconocimiento", "insight", "patrón", "proceso interior"]
 draft: false
+image: "https://images.pexels.com/photos/17733548/pexels-photo-17733548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 cta: "El Mapa de Patrones es un punto de partida concreto — 3 tests validados, resultado con IA, patrón revelado en 10 minutos."
 ---
 

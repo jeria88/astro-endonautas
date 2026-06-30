@@ -6,6 +6,7 @@ category: "Proceso"
 layer: "awareness"
 tags: ["dependencia emocional", "patrones de conducta", "autoestima", "validación externa", "autoconocimiento"]
 draft: false
+image: "https://images.pexels.com/photos/3824825/pexels-photo-3824825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 cta: "El **Mapa de Patrones** de Endonautas incluye 3 tests psicométricos validados, análisis con IA y un perfil de patrones en 10 minutos. Podés empezar gratis en [endonautas.cl](https://app.endonautas.cl/tests/mapa-patrones/)."
 ---
 

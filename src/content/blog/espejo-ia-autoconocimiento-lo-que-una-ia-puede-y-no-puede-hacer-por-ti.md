@@ -6,6 +6,7 @@ category: "Espejo"
 layer: "consciousness"
 tags: ["espejo IA", "inteligencia artificial", "terapia", "autoconocimiento"]
 draft: false
+image: "https://images.pexels.com/photos/6536873/pexels-photo-6536873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 cta: "El Mapa de Patrones es el primer paso — tres tests validados, análisis IA integrado, gratis. Desde ahí, el Espejo de Conflictos tiene contexto para trabajar contigo."
 ---
 

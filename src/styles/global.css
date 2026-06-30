@@ -132,7 +132,7 @@ footer .logo { justify-content: center; margin-bottom: .9rem; }
 .blog-date { font-size: .72rem; color: var(--dim); }
 
 /* ── PROSE (posts) ── */
-.prose { max-width: 680px; margin: 0 auto; line-height: 1.82; color: var(--mut); font-size: 1rem; }
+.prose { max-width: 780px; margin: 0 auto; line-height: 1.82; color: var(--mut); font-size: 1rem; }
 .prose h2 { font-family: var(--fd); font-size: 1.45rem; font-weight: 600; color: #fff; margin: 2.5rem 0 .9rem; letter-spacing: -.02em; }
 .prose h3 { font-family: var(--fd); font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,.85); margin: 2rem 0 .6rem; }
 .prose p { margin-bottom: 1.4rem; }

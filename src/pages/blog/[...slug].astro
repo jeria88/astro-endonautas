@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const heroImg = post.data.image;
 
 const layerLabel: Record<string, string> = {
   awareness: 'Autoconocimiento',
@@ -29,7 +30,11 @@ const layerLabel: Record<string, string> = {
   <a slot="nav" href="/blog/" class="nav-back">← Blog</a>
 
   <style>
-  .post-wrap { max-width: 760px; margin: 0 auto; padding: 8vh 7% 12vh; }
+  :global(#cbg) { opacity: 0.12; }
+
+  .post-wrap { max-width: 960px; margin: 0 auto; padding: 8vh 7% 12vh; }
+  .post-hero { width: 100%; height: 360px; border-radius: 14px; overflow: hidden; margin-bottom: 2.8rem; }
+  .post-hero-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.72) saturate(.9); }
   .post-meta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2.4rem; }
   .post-cat { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c); }
   .post-date { font-size: .72rem; color: var(--dim); }
@@ -39,7 +44,7 @@ const layerLabel: Record<string, string> = {
     letter-spacing: -.03em; margin-bottom: 1.4rem;
     text-shadow: var(--ts);
   }
-  .post-desc { font-size: 1.05rem; color: var(--mut); line-height: 1.72; margin-bottom: 3rem; max-width: 600px; }
+  .post-desc { font-size: 1.05rem; color: var(--mut); line-height: 1.72; margin-bottom: 3rem; max-width: 700px; }
   .post-divider { height: 1px; background: var(--bdr); margin-bottom: 3rem; }
   .post-cta {
     margin-top: 4rem; padding: 2.4rem 2rem; border: 1px solid rgba(126,204,205,.35);
@@ -48,9 +53,18 @@ const layerLabel: Record<string, string> = {
   .post-cta-label { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c); margin-bottom: .8rem; }
   .post-cta h3 { font-family: var(--fd); font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: .8rem; }
   .post-cta p { font-size: .9rem; color: var(--mut); margin-bottom: 1.4rem; line-height: 1.65; }
+
+  @media (max-width: 768px) {
+    .post-hero { height: 220px; border-radius: 10px; }
+  }
   </style>
 
   <div class="post-wrap">
+    {heroImg && (
+      <div class="post-hero">
+        <img src={heroImg} alt={post.data.title} class="post-hero-img" loading="eager" />
+      </div>
+    )}
     <div class="post-meta">
       {post.data.layer && <span class="post-cat">{layerLabel[post.data.layer] ?? post.data.layer}</span>}
       {post.data.category && <span class="post-cat" style="color:var(--dim)">{post.data.category}</span>}

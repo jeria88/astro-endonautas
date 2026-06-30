@@ -6,6 +6,7 @@ category: "Proceso"
 layer: "awareness"
 tags: ["insight", "patrón", "continuidad", "proceso"]
 draft: false
+image: "https://images.pexels.com/photos/38291728/pexels-photo-38291728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 cta: "Si algo de esto resuena, la app fue construida exactamente para este espacio — el tiempo entre una sesión y la siguiente."
 ---
 

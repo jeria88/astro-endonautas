@@ -39,6 +39,7 @@ npm run build   # verificar build antes de push
 | `/terminos` | Términos de uso |
 | `/contacto` | Formulario de contacto |
 | `/equipo` | Equipo / acerca de |
+| `/review-social` | Revisión interna de copy variants (excluida del sitemap, solo Franco) |
 
 ## CTAs principales
 
@@ -72,6 +73,25 @@ Proxy POST hacia Listmonk (evita CORS desde el navegador). Acepta:
 |-------------|---------------|------|
 | `lanzamiento` (default) | Lanzamiento (ID 8) | `431ebe70-b897-416b-9016-daea6acc030c` |
 | `practicante` | Practicantes (ID 5) | `574f7450-0663-4848-95e5-8ebe4765a33a` |
+
+### `functions/api/list-pending.js`
+
+Flywheel social — GET. Lee `pending/` del repo vía GitHub API, devuelve artículos con `status: copy_pending_review` y sus `director_variants`. Requiere env var `GITHUB_TOKEN` en Cloudflare Pages.
+
+### `functions/api/approve-copy.js`
+
+Flywheel social — POST. Recibe selecciones de Franco (`slug`, `approved_selections[]`), actualiza el pending JSON en GitHub con `approved[]` y `status: copy_approved`. El cron en Oracle detecta el cambio de status en la próxima ejecución y genera los archivos de media.
+
+```json
+{
+  "slug": "mi-articulo",
+  "approved_selections": [
+    { "director": "loop", "variant_index": 0, "carousel": true, "reel": false }
+  ]
+}
+```
+
+**Env var requerida en Cloudflare Pages:** `GITHUB_TOKEN` (con permisos `contents: write` sobre el repo).
 
 ## Servicios relacionados (Oracle Cloud — mismo servidor que la app)
 

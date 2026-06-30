@@ -6,6 +6,7 @@ category: "Terapia"
 layer: "journey"
 tags: ["terapia", "entre sesiones", "proceso terapéutico", "autoconocimiento"]
 draft: false
+image: "https://images.pexels.com/photos/5710989/pexels-photo-5710989.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 cta: "Endonautas nació para ese espacio — los seis días que ningún terapeuta puede cubrir. El Espejo de Conflictos trabaja exactamente ahí."
 ---
 

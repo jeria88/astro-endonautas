@@ -6,6 +6,7 @@ category: "Proceso"
 layer: "consciousness"
 tags: ["psicometría", "trabajo interior", "conciencia", "integración"]
 draft: false
+image: "https://images.pexels.com/photos/9064394/pexels-photo-9064394.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 cta: "Endonautas integra ambos registros — sin que ninguno cancele al otro. El Mapa de Patrones es el punto de entrada."
 ---
 

@@ -6,6 +6,7 @@ category: "Proceso"
 layer: "awareness"
 tags: ["patrón inconsciente", "mecanismos de defensa", "repetición", "cambio"]
 draft: false
+image: "https://images.pexels.com/photos/3573555/pexels-photo-3573555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 cta: "El Espejo de Conflictos está diseñado exactamente para este momento — cuando el patrón ya está identificado pero sigue activo."
 ---
 

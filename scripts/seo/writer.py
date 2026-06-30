@@ -10,6 +10,7 @@ import requests
 
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 DEEPSEEK_MODEL = "deepseek-chat"
+PEXELS_KEY = "bV1hblCTVtLISKHB7G0Kcx1OzmwOSlwBa8WbgiquRKE3iAyu6bJguGEV"
 
 # Muestra real de tono/estilo del blog (evita repetir)
 _EXISTING_SLUGS = [
@@ -85,10 +86,26 @@ class Article:
     cta: str
     body: str
     slug: str = field(default="")
+    image: str = field(default="")
 
     def __post_init__(self):
         if not self.slug:
             self.slug = _slugify(self.title)
+
+
+def _fetch_pexels_image(keyword: str) -> str:
+    try:
+        r = requests.get(
+            "https://api.pexels.com/v1/search",
+            params={"query": keyword, "per_page": 1, "orientation": "landscape"},
+            headers={"Authorization": PEXELS_KEY},
+            timeout=10,
+        )
+        r.raise_for_status()
+        photos = r.json().get("photos", [])
+        return photos[0]["src"]["large2x"] if photos else ""
+    except Exception:
+        return ""
 
 
 def _slugify(text: str) -> str:
@@ -140,6 +157,7 @@ def generate(topic: str, keyword: str, category: str, layer: str) -> Article:
     )
     system = _SYSTEM.replace("{CTA_PLACEHOLDER}", _CTA_TEMPLATE)
 
+    img = _fetch_pexels_image(keyword)
     key = os.environ.get("DEEPSEEK_API_KEY", "")
     if not key:
         print("[seo/writer] Sin DEEPSEEK_API_KEY — usando fallback", file=sys.stderr)
@@ -151,6 +169,7 @@ def generate(topic: str, keyword: str, category: str, layer: str) -> Article:
             tags=[keyword],
             cta=_CTA_TEMPLATE,
             body=_FALLBACK_BODY,
+            image=img,
         )
 
     messages = [
@@ -172,6 +191,7 @@ def generate(topic: str, keyword: str, category: str, layer: str) -> Article:
             tags=fm.get("tags", [keyword]),
             cta=fm.get("cta", _CTA_TEMPLATE),
             body=data["body"],
+            image=img,
         )
     except Exception as e:
         print(f"[seo/writer] Error: {e} — usando fallback", file=sys.stderr)
@@ -183,4 +203,5 @@ def generate(topic: str, keyword: str, category: str, layer: str) -> Article:
             tags=[keyword],
             cta=_CTA_TEMPLATE,
             body=_FALLBACK_BODY,
+            image=img,
         )

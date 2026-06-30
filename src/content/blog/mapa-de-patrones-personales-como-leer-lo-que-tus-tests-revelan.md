@@ -6,6 +6,7 @@ category: "Instrumentos"
 layer: "journey"
 tags: ["mapa de patrones", "tests psicométricos", "interpretación", "Big Five"]
 draft: false
+image: "https://images.pexels.com/photos/5326767/pexels-photo-5326767.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 cta: "El Mapa de Patrones cruza tres tests validados y entrega un análisis IA integrado — disponible gratis en Endonautas."
 ---
 

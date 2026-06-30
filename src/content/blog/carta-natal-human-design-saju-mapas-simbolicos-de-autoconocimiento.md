@@ -6,6 +6,7 @@ category: "Instrumentos"
 layer: "consciousness"
 tags: ["carta natal", "human design", "saju", "mapa de nacimiento", "autoconocimiento"]
 draft: false
+image: "https://images.pexels.com/photos/10780188/pexels-photo-10780188.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 cta: "El punto de entrada es el Mapa de Patrones — gratis. Desde ahí, el plan Navegante incluye carta natal, Human Design y Saju con análisis IA."
 ---
 

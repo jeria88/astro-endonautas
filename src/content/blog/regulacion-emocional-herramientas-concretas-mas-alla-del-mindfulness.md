@@ -6,6 +6,7 @@ category: "Instrumentos"
 layer: "journey"
 tags: ["regulación emocional", "DERS", "herramientas", "psicología"]
 draft: false
+image: "https://images.pexels.com/photos/19693837/pexels-photo-19693837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 cta: "El DERS-16 está disponible en Endonautas con análisis IA. Forma parte del Mapa de Patrones junto con otros 2 tests."
 ---
 
