@@ -320,6 +320,109 @@
         }
       }
     ],
-    "terapeuta": []
+    "terapeuta": [
+      {
+        "carousel": {
+          "slides": [
+            "Más allá del mindfulness: regulación emocional con base en evidencia.",
+            "Controlar no es regular: la supresión emocional tiene costos.",
+            "La regulación influye en qué emociones tenemos y cuándo.",
+            "Herramientas concretas para distintos perfiles de pacientes.",
+            "La psicometría revela qué estrategia necesita cada persona.",
+            "Tu práctica clínica se enriquece con datos objetivos.",
+            "Descargá el artículo completo en el link de la bio."
+          ],
+          "keywords": [
+            "regulación emocional",
+            "psicometría",
+            "práctica clínica"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Lo que los tests ven que la clínica no",
+          "hook_b": "Tu paciente calla, el test habla",
+          "cta": "Probá Endonautas gratis",
+          "keywords": [
+            "psicometría",
+            "autoconocimiento",
+            "terapeutas"
+          ]
+        },
+        "social": {
+          "instagram": "La regulación emocional va mucho más allá del mindfulness. Te comparto un marco basado en evidencia para enriquecer tu práctica. #regulacionemocional #psicometria #terapeutas",
+          "tiktok": "¿Sabés lo que tu paciente no te dice? Los tests de Endonautas lo revelan. Ayudalo a regularse de verdad.",
+          "linkedin": "Como terapeutas, sabemos que regular no es controlar. Integrar la psicometría nos da datos precisos para elegir la estrategia que cada paciente necesita. La evidencia respalda el cambio."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Regulación emocional: lo que la clínica sola no alcanza.",
+            "Suprimir no funciona: aumenta activación y memoria falla.",
+            "Influir en emociones es una habilidad medible.",
+            "Cada paciente necesita una estrategia distinta.",
+            "Los tests identifican perfiles de regulación ocultos.",
+            "Vas más allá del respira profundo con datos objetivos.",
+            "Accedé al artículo completo en el enlace de la bio."
+          ],
+          "keywords": [
+            "regulación emocional",
+            "psicometría",
+            "pacientes"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Lo que el paciente no dice, el test lo muestra",
+          "hook_b": "Mindfulness no siempre alcanza",
+          "cta": "Descubrí Endonautas",
+          "keywords": [
+            "regulación emocional",
+            "tests",
+            "terapeutas"
+          ]
+        },
+        "social": {
+          "instagram": "Dejá de adivinar. La psicometría te da datos concretos sobre regulación emocional de tus pacientes. Probá Endonautas. #psicometria #regulacionemocional #terapia",
+          "tiktok": "Si tu paciente dice 'respiro profundo' pero no mejora, tal vez necesitás otra herramienta. Los tests te la dan.",
+          "linkedin": "La regulación emocional basada en evidencia transforma la práctica. Incorporar psicometría permite personalizar estrategias y medir progresos reales en cada paciente."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Regulación emocional sin control: un marco para terapeutas.",
+            "La supresión no es regulación: la ciencia lo confirma.",
+            "Influir en emociones requiere herramientas específicas.",
+            "Cada paciente se regula distinto según su perfil.",
+            "La psicometría detecta patrones que la clínica omite.",
+            "Enriquecé tu trabajo con datos objetivos.",
+            "Leé más en el artículo del link en bio."
+          ],
+          "keywords": [
+            "regulación emocional",
+            "psicometría",
+            "terapeutas"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El secreto que los tests revelan",
+          "hook_b": "Regulación real más allá de mindfulness",
+          "cta": "Probá Endonautas ya",
+          "keywords": [
+            "psicometría",
+            "regulación emocional",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "No toda regulación emocional es mindfulness. Conocé herramientas concretas para cada paciente. La psicometría te ayuda a elegir. #psicometria #regulacionemocional #terapeutas",
+          "tiktok": "Tu paciente respira hondo pero sigue igual. Los tests de Endonautas te muestran qué necesita realmente.",
+          "linkedin": "Integrar regulación emocional con psicometría optimiza la terapia. Datos objetivos guían intervenciones personalizadas, mejorando resultados clínicos."
+        }
+      }
+    ]
   }
 }
