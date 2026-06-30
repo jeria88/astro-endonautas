@@ -6,7 +6,7 @@
   "category": "Instrumentos",
   "article_path": "src/content/blog/espejo-ia-autoconocimiento-lo-que-una-ia-puede-y-no-puede-hacer-por-ti.md",
   "published_date": "2026-06-30",
-  "status": "copy_pending_review",
+  "status": "scored",
   "avatar_variants": {
     "negocio": [
       {
@@ -446,5 +446,195 @@
       }
     ]
   },
-  "last_updated": "2026-06-30T21:01:09+00:00"
+  "last_updated": "2026-06-30T23:10:30+00:00",
+  "viral_scores": {
+    "negocio_v0": {
+      "score": 83,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 75,
+        "emotional_trigger": 80,
+        "avatar_fit": 95,
+        "shareability": 85
+      },
+      "suggested_director": "contrain",
+      "justification": "Punto fuerte: habla directamente al ego del dueño de negocio. Debilidad: el gancho podría sentirse acusatorio si no se maneja con cuidado."
+    },
+    "negocio_v1": {
+      "score": 86,
+      "dimensions": {
+        "hook_strength": 88,
+        "curiosity_gap": 82,
+        "emotional_trigger": 85,
+        "avatar_fit": 93,
+        "shareability": 82
+      },
+      "suggested_director": "hook",
+      "justification": "Punto fuerte: combina dolor y paradoja en el insight. Debilidad: el hook de 'La IA no te consuela' puede distraer del mensaje central."
+    },
+    "negocio_v2": {
+      "score": 80,
+      "dimensions": {
+        "hook_strength": 82,
+        "curiosity_gap": 78,
+        "emotional_trigger": 78,
+        "avatar_fit": 88,
+        "shareability": 76
+      },
+      "suggested_director": "pregunta",
+      "justification": "Punto fuerte: frase provocadora sobre el instinto. Debilidad: el insight puede ser demasiado abstracto para un dueño de negocio en modo resolución."
+    },
+    "profesional_v0": {
+      "score": 79,
+      "dimensions": {
+        "hook_strength": 80,
+        "curiosity_gap": 70,
+        "emotional_trigger": 80,
+        "avatar_fit": 88,
+        "shareability": 82
+      },
+      "suggested_director": "quote",
+      "justification": "Punto fuerte: normaliza el desgaste del perfeccionista. Debilidad: el gancho en pregunta puede ser muy genérico."
+    },
+    "profesional_v1": {
+      "score": 85,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 82,
+        "emotional_trigger": 85,
+        "avatar_fit": 92,
+        "shareability": 86
+      },
+      "suggested_director": "pregunta",
+      "justification": "Punto fuerte: interpelación directa al conflicto control vs. desgaste. Debilidad: el insight de 'ilusión' puede sonar místico para algunos."
+    },
+    "profesional_v2": {
+      "score": 82,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 76,
+        "emotional_trigger": 82,
+        "avatar_fit": 88,
+        "shareability": 80
+      },
+      "suggested_director": "loop",
+      "justification": "Punto fuerte: riesgo social de 'parecer improductivo' es universal. Debilidad: el hook de 'Tu coach dice bien' puede alienar si la audiencia odia a los coaches."
+    },
+    "padres_v0": {
+      "score": 90,
+      "dimensions": {
+        "hook_strength": 90,
+        "curiosity_gap": 85,
+        "emotional_trigger": 92,
+        "avatar_fit": 95,
+        "shareability": 90
+      },
+      "suggested_director": "contrain",
+      "justification": "Punto fuerte: culpa/responsabilidad parental activa emoción fuerte. Debilidad: puede sentirse moralista si no se equilibra con compasión."
+    },
+    "padres_v1": {
+      "score": 86,
+      "dimensions": {
+        "hook_strength": 88,
+        "curiosity_gap": 80,
+        "emotional_trigger": 88,
+        "avatar_fit": 92,
+        "shareability": 86
+      },
+      "suggested_director": "documental",
+      "justification": "Punto fuerte: observación cotidiana del aprendizaje infantil. Debilidad: el insight puede ser doloroso y llevar a negación."
+    },
+    "padres_v2": {
+      "score": 87,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 82,
+        "emotional_trigger": 90,
+        "avatar_fit": 93,
+        "shareability": 88
+      },
+      "suggested_director": "hook",
+      "justification": "Punto fuerte: giro entre berrinche y patrón propio es potente. Debilidad: requiere madurez emocional para no sentirse atacado."
+    },
+    "terapeuta_v0": {
+      "score": 79,
+      "dimensions": {
+        "hook_strength": 82,
+        "curiosity_gap": 78,
+        "emotional_trigger": 75,
+        "avatar_fit": 85,
+        "shareability": 70
+      },
+      "suggested_director": "edu",
+      "justification": "Punto fuerte: jerga profesional da autoridad. Debilidad: contratransferencia es muy técnica para TikTok; mejor para LinkedIn."
+    },
+    "terapeuta_v1": {
+      "score": 82,
+      "dimensions": {
+        "hook_strength": 85,
+        "curiosity_gap": 80,
+        "emotional_trigger": 80,
+        "avatar_fit": 88,
+        "shareability": 76
+      },
+      "suggested_director": "pregunta",
+      "justification": "Punto fuerte: desafío profesional directo. Debilidad: puede sonar confrontacional si no se presenta con humildad."
+    },
+    "terapeuta_v2": {
+      "score": 85,
+      "dimensions": {
+        "hook_strength": 88,
+        "curiosity_gap": 82,
+        "emotional_trigger": 82,
+        "avatar_fit": 90,
+        "shareability": 78
+      },
+      "suggested_director": "loop",
+      "justification": "Punto fuerte: pone en duda la formación como escudo personal. Debilidad: la audiencia nicho limita el alcance viral."
+    }
+  },
+  "finalists": [
+    "padres_v0",
+    "padres_v2",
+    "negocio_v1",
+    "padres_v1",
+    "profesional_v1"
+  ],
+  "captions": {
+    "padres_v0": {
+      "instagram": "Tu hijo no te irrita. Te irrita lo que no sanaste.\n\nY lo peor es que no sabes por qué. No sabes por qué esa misma escena se repite una y otra vez, con esa misma sensación de que tú también la viviste alguna vez. Porque es así: lo que no resolviste en ti, lo heredan tus hijos.\n\nCada vez que reaccionas igual que tu madre sin pensar, se lo transmites a él o a ella. No es culpa. Es repetición. El patrón se pasa de generación en generación hasta que alguien lo ve y lo frena.\n\nTu hijo no necesita que seas perfecto. Necesita que seas consciente. Que mires hacia adentro, que reconozcas en su enfado el espejo de tu propia historia. No es fácil, porque duele. Pero es el único camino para romper el ciclo.\n\nHay una herramienta que te ayuda a ver esos patrones sin que te juzgue ni se canse de preguntarte. No es un terapeuta, pero está diseñada para hacerte las preguntas que evitas, justo cuando las necesitas.\n\nHazlo por ti. Hazlo por ellos. Rompe el patrón antes de que lo hereden. Empieza hoy en endonautas.cl\n.\n.\n#endonautas #endonautica #autoconocimiento #crianzaconsciente #patronesfamiliares #saludmental #psicologia #madresconscientes #padresconscientes #herenciaemocional #romperelciclo #crianzarespetuosa #chile #psicologiachile #saludmentalchile",
+      "tiktok": "Tu hijo no te irrita.\n\nTe irrita lo que no sanaste.\n\nEsa rabia que sientes cuando hace exactamente lo que tú hacías de niño no es casualidad. Es el espejo de tu propia historia. Y si no lo ves, se lo transmitirás sin querer. #patronesfamiliares #autoconocimiento #crianzaconsciente\n\nPero hay una manera de pararlo. Una herramienta que te ayuda a ver esos patrones sin juzgarte, sin cansarse, sin tener historia contigo. Solo te hace las preguntas que necesitas para romper el ciclo. #endonautas #rompeelciclo\n\nHazlo por ti. Hazlo por ellos. Empieza en endonautas.cl #fyp #parati",
+      "linkedin": "¿Cuántas veces has reaccionado exactamente igual que tu madre o tu padre, sin querer, y lo has visto repetirse en la cara de tu hijo?\n\nEsa sensación de \"otra vez lo mismo\" no es casual. La ciencia de la transmisión intergeneracional de patrones emocionales lo confirma: las formas de relacionarnos, de reaccionar al conflicto, de expresar o callar emociones, se aprenden en la infancia y se repiten en la crianza de nuestros propios hijos. No porque seamos malos padres, sino porque el patrón opera por debajo de la conciencia.\n\nEl autoconocimiento, en este contexto, no es un lujo. Es un acto de responsabilidad hacia quienes crían. Reconocer en la irritación que sientes hacia tu hijo el eco de tu propia historia es el primer paso para no repetirla. No se trata de perfección; se trata de conciencia.\n\nHerramientas como el Espejo de Conflictos de Endonautas están diseñadas para eso: no para consolar, sino para devolver preguntas que te ayuden a ver lo que evitas. No reemplaza un proceso terapéutico, pero es un compañero disponible en el día a día, justo cuando el patrón aparece.\n\n¿Te has preguntado alguna vez qué patrones de tu infancia se están repitiendo hoy en tu casa?\n\nSi te interesa explorarlo de manera seria, sin juicio, empieza en endonautas.cl\n\n#SaludMental #CrianzaConsciente #Autoconocimiento #PatronesFamiliares #LiderazgoPersonal",
+      "youtube_title": "Rompe patrones: lo que no sanas, lo heredan tus hijos",
+      "youtube_description": "Tu hijo no te irrita. Te irrita lo que no sanaste. Descubre cómo los patrones emocionales se transmiten de generación en generación y qué puedes hacer para romper el ciclo. Una herramienta entrenada en espejo de conflictos te ayuda a ver lo que evitas. Empieza hoy en endonautas.cl. Autoconocimiento. Patrones familiares."
+    },
+    "padres_v2": {
+      "instagram": "Lo que más te cuesta no siempre es lo más difícil — a veces es lo más conocido.\n\nEl autoconocimiento no es mirarse más. Es ver lo que siempre has visto, pero con otra pregunta.\n\n¿Qué patrón estás repitiendo sin darte cuenta?\n\nEmpieza en endonautas.cl\n\n#endonautas #autoconocimiento #saludmental #psicologia #chile",
+      "tiktok": "Sabes lo que te pasa. #autoconocimiento\nY lo sigues haciendo igual. #patrones\nEso no es falta de voluntad — es falta de herramientas.\nendonautas.cl #fyp #saludmental #psicologiachile",
+      "linkedin": "El autoconocimiento no es un lujo para tiempos de crisis — es la condición base para tomar mejores decisiones.\n\nCuando reconocemos nuestros patrones, no solo nos entendemos mejor: tomamos decisiones con más claridad, construimos relaciones más honestas y lideramos desde un lugar más real.\n\nNo hay herramienta de gestión más subestimada que el conocimiento propio.\n\n¿En qué área de tu vida notas que repites algo que ya conoces?\n\nMás en endonautas.cl\n\n#autoconocimiento #liderazgo #saludmental",
+      "youtube_title": "Autoconocimiento: por qué saber no alcanza",
+      "youtube_description": "El autoconocimiento no es solo introspección — es una práctica medible que afecta tus decisiones, relaciones y rendimiento. En este video exploramos el patrón que más repites sin notarlo.\n\nLee el artículo completo en endonautas.cl"
+    },
+    "negocio_v1": {
+      "instagram": "Si lees esto y sientes que algo no encaja, probablemente tienes razón.\n\nTú negocio no crece por lo que no ves de ti. No es estrategia, no es mercado, no es suerte. Es el patrón que llevas años repitiendo sin darte cuenta.\n\nEl mismo patrón que te dio resultados hoy te está limitando. Crees que tomas decisiones, pero la mayoría del tiempo solo estás repitiendo respuestas que ya funcionaron antes.\n\nY eso tiene un costo directo: el miedo a equivocarte frena a todo tu equipo. El éxito pasado es tu peor consejero hoy.\n\nNo se trata de autoayuda. Se trata de liderazgo real. De parar un segundo a mirar qué hay detrás de tus decisiones, tus frenos, tus conflictos.\n\nDescubre tu patrón y crece sin freno. Empieza por endonautas.cl\n\n#endonautas #endonautica #liderazgo #autoconocimiento #psicologia #negocios #emprendimiento #saludmental #coaching #chile #psicologiachile #saludmentalchile #crecimientopersonal #patrones #conflictos",
+      "tiktok": "La IA no te consuela. Te incomoda para crecer. Si esperabas un abrazo virtual, esto es otra cosa. El Espejo de Conflictos te muestra lo que no ves de ti mismo. No es un chatbot de autoayuda, es una herramienta seria para liderar mejor tu negocio y tu vida. ¿Listo para ver lo que ignoras? Empieza en endonautas.cl #endonautas #autoconocimiento #liderazgo #inteligenciaartificial #fyp #parati #psicologia #saludmental #crecimientopersonal",
+      "linkedin": "Hay una conversación que no estamos teniendo en el mundo empresarial.\n\nHablamos de estrategia, de métricas, de cultura organizacional. Pero casi nunca hablamos de lo que realmente frena el crecimiento: lo que no vemos de nosotros mismos.\n\nTu negocio no crece porque hay un patrón que repites desde hace años. Crees que tomas decisiones objetivas, pero la mayoría del tiempo solo estás respondiendo desde el mismo lugar que te funcionó antes. Eso que te dio éxito hoy te está limitando.\n\nY no es solo tu problema. Tu miedo al error se contagia a todo el equipo. Tu forma de liderar, de delegar, de comunicar, está marcada por esos patrones que no te has detenido a mirar.\n\nEl autoconocimiento no es un lujo personal ni una moda de wellbeing. Es una herramienta de liderazgo concreta. De las que tienen impacto medible en resultados, clima laboral y retención de talento.\n\nEl Espejo de Conflictos no te consuela. Te muestra lo que llevas años ignorando. Y desde ahí, puedes empezar a tomar decisiones reales.\n\n¿Qué patrón crees que te está costando más caro hoy?\n\nDescubre el tuyo en endonautas.cl\n\n#liderazgo #autoconocimiento #gestionempresarial #psicologiaorganizacional #endonautas",
+      "youtube_title": "Espejo IA: autoconocimiento real sin autoayuda",
+      "youtube_description": "¿Una inteligencia artificial puede ayudarte a conocerte mejor? Sí, pero no como crees. El Espejo de Conflictos no consuela, no te da la razón, no reemplaza un terapeuta. Te hace preguntas incómodas para que veas lo que ignoras de ti mismo. Diseñado para líderes y dueños de negocio que quieren crecer sin freno. Descubre más en endonautas.cl. #EspejoIA #autoconocimiento #liderazgo"
+    },
+    "padres_v1": {
+      "instagram": "¿Alguna vez has sentido que tu hijo te está mirando y aprendiendo cómo reaccionas? Quizás no es solo su comportamiento lo que te irrita, sino algo que cargas desde antes de que él o ella naciera. Tu enfado con él no es por él. Es por lo que no resolviste en ti. La rabia que sientes hoy viene de tu propia infancia, de esos patrones que heredaste sin querer. Ignorarlo no lo borra, solo lo transmites. El espejo de conflictos no te consuela: te muestra el patrón. Y cuando lo ves, puedes decidir no repetirlo. Criar desde la conciencia, no desde la herida, es un acto de amor hacia tus hijos y hacia ti. Empieza en endonautas.cl y descubre cómo romper esos ciclos familiares. #endonautas #endonautica #saludmental #autoconocimiento #psicologia #paternidadconsciente #crianzarespetuosa #chile #psicologiachile #saludmentalchile #romperciclos #crecimientopersonal",
+      "tiktok": "Tu hijo te mira y aprende cómo reaccionas. Pero antes de que te frustres con él, pregúntate: ¿de dónde viene esa emoción? La rabia que sientes hoy es la misma que viviste de niño. Ignorarla no la borra, solo la transmites. El espejo de conflictos te muestra el patrón para que puedas elegir no repetirlo. Criar desde la conciencia es un regalo para tus hijos y para ti. Empieza en endonautas.cl. #fyp #parati #saludmental #autoconocimiento #crianza #psicologia",
+      "linkedin": "En mi trabajo con familias y padres, he observado un patrón recurrente: lo que criticamos en nuestros hijos suele ser lo que no hemos resuelto en nosotros mismos. No es un juicio, es una observación que he visto confirmarse una y otra vez en consulta. Un padre me decía hace poco: 'Me enfurece que mi hijo no sea ordenado, pero al revisarlo, me di cuenta de que yo crecí en una casa donde el orden era una obsesión de mi madre. Mi enfado no era con él, era con mi historia.' Ese es el espejo que nos confronta. La inteligencia artificial, bien diseñada, puede ayudarnos a identificar esos patrones sin el sesgo de un terapeuta. Herramientas como el Espejo de Conflictos de Endonautas están diseñadas para incomodar, no para consolar, porque el autoconocimiento real requiere mirar las partes que evitamos. Si eres padre o madre y sientes que repites patrones que no elegiste, te invito a explorar cómo el autoconocimiento puede ser un acto de amor hacia tus hijos. ¿Has tenido alguna experiencia donde tu reacción con tus hijos te reveló algo sobre ti mismo? Comparte en los comentarios. Más información en endonautas.cl. #autoconocimiento #paternidad #saludmental #desarrollopersonal #liderazgo",
+      "youtube_title": "Crianza consciente: rompe ciclos familiares con…",
+      "youtube_description": "Descubre cómo el autoconocimiento puede transformar tu relación con tus hijos. En este video, exploramos cómo la inteligencia artificial, como el Espejo de Conflictos de Endonautas, te ayuda a identificar patrones heredados y a criar desde la conciencia, no desde la herida. Aprende a romper ciclos familiares y a educar con amor consciente. Visita endonautas.cl para más recursos sobre salud mental y crianza respetuosa."
+    },
+    "profesional_v1": {
+      "instagram": "¿Te cuesta soltar el control en el trabajo, aunque sabes que te desgasta?\n\nControlar no te hace más eficiente. Te hace más lento, más rígido, más frustrado. Cada microdecisión que revisas es una capa de ansiedad que acumulas, aunque tus colegas sientan tu rigidez sin que digas una palabra. El control es una ilusión que te protege de la incertidumbre, pero ese escudo pesa más de lo que imaginas. Soltar no es fallar: es dejar espacio a lo que no puedes controlar, y justo ahí puede surgir algo mejor.\n\nNo se trata de volverte descuidado, sino de reconocer que tu búsqueda de perfección y tu sobreexigencia tienen raíces más profundas. Un patrón de control no se resuelve con más disciplina, se revisa con honestidad. En Endonautas, un mapa IA analiza cómo piensas, sientes y actúas frente al conflicto, y te devuelve preguntas que te ayudan a soltar sin sentir que pierdes el piso. El primer paso es gratuito: ve a endonautas.cl y descubre qué hay detrás de tu necesidad de controlar.\n\n#endonautas #endonautica #saludmental #autoconocimiento #psicologia #control #ansiedadlaboral #burnout #perfeccionismo #procrastinacion #saludmentalchile #psicologiachile #autoconocimientochile #inteligenciartificial #crecimientopersonal",
+      "tiktok": "Trabajas como máquina. ¿Y si la máquina eres tú? Controlarlo todo no te protege, solo te cansa más. El patrón de control está diseñado para mantenerte en zona segura, pero te roba energía, creatividad y hasta relaciones. En endonautas.cl puedes mapear ese patrón con IA #endonautas #fyp #parati #autoconocimiento #saludmental #control #psicologia #ansiedadlaboral. Descubre qué hay detrás de tu necesidad de revisarlo todo y empieza a soltar sin culpa. Ir a endonautas.cl es el primer paso.",
+      "linkedin": "¿Te ha pasado que revisas un proyecto cinco veces antes de enviarlo, aunque sabes que está bien? No es falta de confianza, es un patrón de control que se activa cuando la incertidumbre amenaza tu sensación de seguridad.\n\nEn el trabajo, ese patrón se disfraza de perfeccionismo, de exigencia, de 'hacerlo yo mismo para que quede bien'. Pero tiene un costo: tu energía se desgasta en micromovimientos que no suman valor, tus colegas sienten tu rigidez, y tu capacidad de innovar se achica porque el control no deja espacio a lo nuevo.\n\nLo que no se dice es que ese control, más que eficiencia, genera ansiedad y te aleja del foco real. El patrón no se resuelve con más disciplina, se entiende con herramientas que te permitan verlo desde fuera. En Endonautas, un mapa IA analiza tus respuestas emocionales y patrones relacionales, y te ayuda a identificar qué hay detrás de esa necesidad de controlar. El proceso no es mágico, es práctico: tres tests validados, análisis integrado, y un espejo que te devuelve preguntas para soltar sin sentir que pierdes el control.\n\n¿Cómo gestionas tú la incertidumbre en tu día a día laboral? Te leo en comentarios. El primer paso gratuito está en endonautas.cl.\n\n#autoconocimiento #liderazgo #productividad #saludmental #burnout #psicologia",
+      "youtube_title": "Control en el trabajo: ¿cómo soltar sin fallar?",
+      "youtube_description": "¿Te cuesta soltar el control en tu trabajo? Cada microrevisión acumula ansiedad y te aleja de la eficiencia real. En este short exploramos cómo el patrón de control se disfraza de perfeccionismo y sobreexigencia, y por qué soltar no es fallar. Descubre un mapa IA que analiza tus patrones en endonautas.cl. #autoconocimiento #control #ansiedadlaboral #Endonautas #psicologia"
+    }
+  }
 }
