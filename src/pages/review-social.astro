@@ -18,7 +18,7 @@
   }
 
   /* ── HEADER ── */
-  .page-header { margin-bottom: 3rem; }
+  .page-header { margin-bottom: 2.5rem; }
   .page-title-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.35rem; }
   .page-title { font-size: 1.05rem; color: #7ecccd; letter-spacing: 0.06em; text-transform: uppercase; }
   .page-badge {
@@ -28,6 +28,22 @@
   }
   .page-sub { color: rgba(240,232,220,0.28); font-size: 0.76rem; }
 
+  /* ── ARTICLE INDEX ── */
+  .article-index {
+    display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2.5rem;
+    padding: 1rem 1.25rem; background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06); border-radius: 10px;
+  }
+  .idx-label {
+    font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(240,232,220,0.18); width: 100%; margin-bottom: 0.4rem;
+  }
+  .idx-link {
+    font-size: 0.65rem; color: rgba(240,232,220,0.38); text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; padding: 4px 12px;
+  }
+  .idx-link:hover { color: #7ecccd; border-color: rgba(126,204,205,0.35); }
+
   /* ── SECTION HEADERS ── */
   .section-h {
     font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase;
@@ -36,7 +52,12 @@
   }
 
   /* ── ARTICLE BLOCK ── */
-  .article-block { margin-bottom: 4rem; }
+  .article-block {
+    margin-bottom: 5rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .article-block:last-child { border-bottom: none; }
   .article-title {
     font-size: 1.05rem; font-weight: 600; color: #f0e8dc;
     margin-bottom: 0.2rem; line-height: 1.35;
@@ -127,8 +148,17 @@
   }
   .avatar-name {
     font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: #7ecccd; margin-bottom: 1.1rem;
+    color: #7ecccd; margin-bottom: 0.85rem;
   }
+
+  /* view toggle */
+  .view-toggle { display: flex; gap: 0.25rem; margin-bottom: 1rem; }
+  .vt-btn {
+    padding: 4px 12px; border-radius: 20px; font-size: 0.62rem; cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.1); color: rgba(240,232,220,0.35);
+    background: transparent;
+  }
+  .vt-btn.active { border-color: rgba(126,204,205,0.45); color: #7ecccd; background: rgba(126,204,205,0.06); }
 
   /* variant tabs */
   .variant-tabs { display: flex; gap: 0.3rem; margin-bottom: 1rem; }
@@ -202,7 +232,22 @@
   .fmt-btn.on-carousel { border-color: #7ecccd; color: #7ecccd; background: rgba(126,204,205,0.08); }
   .fmt-btn.on-reel     { border-color: #c0a0f0; color: #c0a0f0; background: rgba(192,160,240,0.08); }
 
-  /* ── PUBLISH ROW ── */
+  /* ── PER-ARTICLE APPROVE ── */
+  .article-approve {
+    margin-top: 2rem; padding-top: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn-article-approve {
+    padding: 10px 28px; border-radius: 40px; border: none; cursor: pointer;
+    font-weight: 700; font-size: 0.74rem; letter-spacing: 0.09em; text-transform: uppercase;
+    background: #7ecccd; color: #030c07;
+  }
+  .btn-article-approve:disabled { opacity: 0.22; cursor: not-allowed; }
+  .btn-article-approve:hover:not(:disabled) { opacity: 0.86; }
+  .article-approve-msg { font-size: 0.68rem; color: rgba(240,232,220,0.32); }
+
+  /* ── PUBLISH ROW (ready_for_review) ── */
   .publish-row { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.85rem; }
   .btn-publish {
     padding: 11px 28px; border-radius: 40px; border: none; cursor: pointer;
@@ -229,17 +274,125 @@
     padding: 0.9rem 1.75rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
     z-index: 100;
   }
-  .btn {
-    padding: 10px 28px; border-radius: 40px; border: none; cursor: pointer;
-    font-weight: 700; font-size: 0.74rem; letter-spacing: 0.09em; text-transform: uppercase;
-    background: #7ecccd; color: #030c07;
+  .footer-count { color: rgba(240,232,220,0.36); font-size: 0.78rem; flex: 1; }
+  .footer-top {
+    font-size: 0.65rem; color: rgba(240,232,220,0.25); cursor: pointer;
+    background: none; border: none; padding: 0; text-decoration: none;
   }
-  .btn:disabled { opacity: 0.25; cursor: not-allowed; }
-  .btn:hover:not(:disabled) { opacity: 0.86; }
-  .count { color: rgba(240,232,220,0.36); font-size: 0.78rem; }
-  #msg   { font-size: 0.76rem; color: #7ecccd; }
+  .footer-top:hover { color: rgba(240,232,220,0.55); }
 
   #loading, #empty { color: rgba(240,232,220,0.28); font-size: 0.88rem; padding: 3rem 0; }
+
+  /* ── INSTAGRAM PREVIEW ── */
+  .preview-row { display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap; margin-bottom: 1rem; }
+
+  /* Post mockup */
+  .ig-post {
+    background: #161616; border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    width: 300px; flex-shrink: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  }
+  .ig-header {
+    display: flex; align-items: center; gap: 0.65rem; padding: 0.65rem 0.85rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .ig-av {
+    width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+    padding: 2px;
+  }
+  .ig-av-inner {
+    width: 100%; height: 100%; border-radius: 50%; background: #161616;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; color: rgba(240,232,220,0.7); font-weight: 600;
+  }
+  .ig-un { font-size: 0.75rem; font-weight: 600; color: #f0e8dc; flex: 1; }
+  .ig-more { font-size: 1rem; color: rgba(240,232,220,0.35); letter-spacing: 0.05em; }
+
+  .ig-slides-wrap {
+    position: relative; min-height: 180px; background: #0d0d0d;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .ig-slide { display: none; padding: 1.75rem 1.25rem; text-align: center; width: 100%; }
+  .ig-slide.active { display: block; }
+  .ig-slide-num {
+    font-size: 0.52rem; color: rgba(240,232,220,0.2); letter-spacing: 0.1em;
+    display: block; margin-bottom: 0.75rem;
+  }
+  .ig-slide-text { font-size: 0.95rem; color: #f0e8dc; line-height: 1.5; font-weight: 500; }
+  .ig-slide-text.hook { font-size: 1.05rem; font-weight: 700; }
+  .ig-slide-text.cta { font-size: 0.8rem; color: #7ecccd; font-weight: 600; }
+
+  .ig-nav-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.55); border: none; color: rgba(240,232,220,0.75);
+    width: 26px; height: 26px; border-radius: 50%; cursor: pointer; font-size: 1rem;
+    display: flex; align-items: center; justify-content: center; line-height: 1;
+  }
+  .ig-nav-btn:hover { background: rgba(0,0,0,0.8); color: #f0e8dc; }
+  .ig-prev { left: 7px; }
+  .ig-next { right: 7px; }
+
+  .ig-dots-row { display: flex; justify-content: center; gap: 4px; padding: 0.55rem 0; }
+  .ig-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.18); }
+  .ig-dot.active { background: #3897f0; }
+
+  .ig-actions-row {
+    display: flex; gap: 0.9rem; padding: 0.5rem 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.05); font-size: 1rem;
+    color: rgba(240,232,220,0.7);
+  }
+  .ig-actions-row span:last-child { margin-left: auto; }
+
+  .ig-caption-block { padding: 0.35rem 0.85rem 0.9rem; }
+  .ig-cap-user { font-weight: 700; font-size: 0.77rem; color: #f0e8dc; margin-right: 0.3rem; }
+  .ig-cap-text {
+    font-size: 0.75rem; color: rgba(240,232,220,0.6); line-height: 1.5;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  /* Reel mockup */
+  .ig-reel-mock {
+    width: 135px; flex-shrink: 0;
+    background: #0d0d0d; border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1); overflow: hidden;
+    aspect-ratio: 9/16;
+    display: flex; flex-direction: column; justify-content: space-between;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  }
+  .ig-reel-top { padding: 0.65rem 0.6rem 0; }
+  .ig-reel-badge {
+    display: inline-block; font-size: 0.48rem; letter-spacing: 0.08em; text-transform: uppercase;
+    background: rgba(255,255,255,0.08); color: rgba(240,232,220,0.4);
+    border-radius: 3px; padding: 2px 6px;
+  }
+  .ig-reel-inner { padding: 0.6rem; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.5rem; }
+  .ig-reel-hook-a { font-size: 0.78rem; font-weight: 700; color: #f0e8dc; line-height: 1.3; }
+  .ig-reel-hook-b { font-size: 0.7rem; color: rgba(240,232,220,0.65); line-height: 1.3; }
+  .ig-reel-cta { font-size: 0.58rem; color: #7ecccd; font-weight: 600; }
+  .ig-reel-un {
+    padding: 0.4rem 0.6rem 0.6rem; font-size: 0.6rem; color: rgba(240,232,220,0.4);
+    font-weight: 600;
+  }
+
+  /* Social caption cards */
+  .ig-social-previews { display: flex; flex-direction: column; gap: 0.6rem; }
+  .ig-social-card {
+    background: #161616; border-radius: 8px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .ig-social-card-header {
+    padding: 0.35rem 0.75rem; background: rgba(255,255,255,0.03);
+    font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(240,232,220,0.22); border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .ig-social-card-body {
+    padding: 0.65rem 0.75rem; font-size: 0.75rem; color: rgba(240,232,220,0.6);
+    line-height: 1.5; white-space: pre-wrap;
+    max-height: 90px; overflow-y: auto;
+    scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent;
+  }
 
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
@@ -251,7 +404,7 @@
     <h1 class="page-title">Review social</h1>
     <span class="page-badge" id="status-badge"></span>
   </div>
-  <p class="page-sub">Verde = carrusel · Violeta = reel · El director define el estilo visual de la pieza.</p>
+  <p class="page-sub">Verde = carrusel · Violeta = reel · Director = estilo visual de edición · Toggle Preview para ver como en Instagram.</p>
 </div>
 
 <div id="loading">Cargando…</div>
@@ -259,9 +412,8 @@
 <div id="content"></div>
 
 <div class="actions">
-  <button class="btn" id="btn-approve" disabled onclick="approve()">Generar seleccionados</button>
-  <span class="count" id="count">Sin selección</span>
-  <span id="msg"></span>
+  <span class="footer-count" id="footer-count">Sin selecciones activas</span>
+  <button class="footer-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Inicio</button>
 </div>
 
 <!-- Lightbox de slides -->
@@ -288,11 +440,38 @@ const DIRECTOR_LABELS = {
   pregunta:"Pregunta — PTA", edu:"Educativo — McKay", documental:"Documental — Herzog",
 };
 
-let currentSlug = null;
-// key: "avatar:variantIdx" → {carousel: bool, reel: bool, director: str}
-const selections = {};
-// lightbox state
+// state
+const selections  = {};   // "${slug}|${avatar}:${vi}" → {carousel, reel, director}
+const igSlideIdx  = {};   // mockupId → currentSlide
 let lbUrls = [], lbIdx = 0;
+
+function selKey(slug, avatar, vi) { return `${slug}|${avatar}:${vi}`; }
+
+function getArticleSelections(slug) {
+  const prefix = `${slug}|`;
+  return Object.entries(selections)
+    .filter(([k]) => k.startsWith(prefix))
+    .map(([k, {carousel, reel, director}]) => {
+      const rest = k.slice(prefix.length);
+      const ci   = rest.indexOf(':');
+      return {
+        avatar:        rest.slice(0, ci),
+        variant_index: Number(rest.slice(ci + 1)),
+        carousel, reel, director,
+      };
+    });
+}
+
+function updateFooter(slug) {
+  const btn = slug ? document.getElementById(`approve-btn-${slug}`) : null;
+  if (btn) btn.disabled = getArticleSelections(slug).length === 0;
+
+  const total = Object.keys(selections).length;
+  const el = document.getElementById("footer-count");
+  if (el) el.textContent = total
+    ? `${total} selección${total !== 1 ? "es" : ""} activa${total !== 1 ? "s" : ""}`
+    : "Sin selecciones activas";
+}
 
 // ─── LOAD ────────────────────────────────────────────────────────────────────
 
@@ -301,8 +480,8 @@ async function load() {
   const data = await res.json();
   document.getElementById("loading").style.display = "none";
 
-  const nr = data.ready_review?.length  || 0;
-  const nc = data.copy_pending?.length  || 0;
+  const nr = data.ready_review?.length || 0;
+  const nc = data.copy_pending?.length || 0;
   const parts = [];
   if (nr) parts.push(`${nr} ${nr === 1 ? "listo" : "listos"}`);
   if (nc) parts.push(`${nc} pendiente${nc > 1 ? "s" : ""}`);
@@ -311,30 +490,38 @@ async function load() {
 
   const c = document.getElementById("content");
 
-  // Section 1: ready_for_review — show carousel/reel output
+  // Section 1: ready_for_review
   if (data.ready_review?.length) {
     const sec = document.createElement("div");
     sec.innerHTML = `<div class="section-h">Output generado — revisar y aprobar publicación</div>`;
-    for (const item of data.ready_review) {
-      sec.appendChild(buildOutputBlock(item));
-    }
+    for (const item of data.ready_review) sec.appendChild(buildOutputBlock(item));
     c.appendChild(sec);
   }
 
-  // Section 2: copy_pending_review — choose avatar copy
+  // Section 2: copy_pending_review — ALL articles
   if (data.copy_pending?.length) {
     const sec2 = document.createElement("div");
     sec2.style.marginTop = "3rem";
-    sec2.innerHTML = `<div class="section-h">Copy pendiente — elige variante y formato</div>`;
-    const item = data.copy_pending[0]; // one at a time
-    currentSlug = item.slug;
-    sec2.appendChild(buildCopyBlock(item));
+
+    let indexHtml = "";
+    if (data.copy_pending.length > 1) {
+      const links = data.copy_pending.map(item => {
+        const t = item.title?.length > 50 ? item.title.slice(0, 48) + "…" : (item.title || item.slug);
+        return `<a class="idx-link" href="#article-${item.slug}">${t}</a>`;
+      }).join("");
+      indexHtml = `<div class="article-index"><span class="idx-label">Saltar a artículo</span>${links}</div>`;
+    }
+
+    sec2.innerHTML = `
+      <div class="section-h">Copy pendiente — elige variante y formato (${data.copy_pending.length} artículos)</div>
+      ${indexHtml}
+    `;
+
+    for (const item of data.copy_pending) sec2.appendChild(buildCopyBlock(item));
     c.appendChild(sec2);
   }
 
-  if (!data.ready_review?.length && !data.copy_pending?.length) {
-    document.getElementById("empty").style.display = "";
-  }
+  if (!nr && !nc) document.getElementById("empty").style.display = "";
 }
 
 // ─── OUTPUT BLOCK (ready_for_review) ─────────────────────────────────────────
@@ -401,30 +588,50 @@ function buildOutputBlock(item) {
 function buildCopyBlock(item) {
   const block = document.createElement("div");
   block.className = "article-block";
-  block.innerHTML = `<div class="article-title">${item.title || item.slug}</div>
-    <div class="article-slug">${item.slug}</div>`;
+  block.id = `article-${item.slug}`;
+
+  block.innerHTML = `
+    <div class="article-title">${item.title || item.slug}</div>
+    <div class="article-slug">${item.slug}</div>
+  `;
 
   const grid = document.createElement("div");
   grid.className = "avatar-grid";
-
   for (const [avatarName, variants] of Object.entries(item.avatar_variants || {})) {
-    grid.appendChild(buildAvatarCard(avatarName, variants));
+    grid.appendChild(buildAvatarCard(item.slug, avatarName, variants));
   }
   block.appendChild(grid);
+
+  const approveRow = document.createElement("div");
+  approveRow.className = "article-approve";
+  approveRow.innerHTML = `
+    <button class="btn-article-approve" id="approve-btn-${item.slug}" disabled
+      onclick="approve('${item.slug}')">
+      Aprobar este artículo
+    </button>
+    <span class="article-approve-msg" id="approve-msg-${item.slug}"></span>
+  `;
+  block.appendChild(approveRow);
+
   return block;
 }
 
-function buildAvatarCard(avatarName, variants) {
+function buildAvatarCard(slug, avatarName, variants) {
   const card = document.createElement("div");
   card.className = "avatar-card";
 
-  // Tabs
-  const tabs = variants.map((_, i) => `<button class="vtab${i===0?' active':''}" onclick="switchTab(this,'${avatarName}',${i})">V${i+1}</button>`).join("");
+  const tabs = variants.map((_, i) =>
+    `<button class="vtab${i===0?' active':''}" onclick="switchTab(this,'${avatarName}',${i})">V${i+1}</button>`
+  ).join("");
 
-  // Panels
   const panels = variants.map((v, i) => {
-    const slides = (v.carousel?.slides || []).map((s, si) => {
-      const total = v.carousel.slides.length;
+    const mockId   = `${slug}-${avatarName}-${i}`;
+    const slidesArr = v.carousel?.slides || [];
+    const social    = v.social || {};
+
+    // ── COPY VIEW ──
+    const slidesHtml = slidesArr.map((s, si) => {
+      const total = slidesArr.length;
       const cls   = si === 0 ? "hook" : si === total - 1 ? "cta" : "";
       return `<div class="slide-copy-row">
         <span class="slide-copy-n">${String(si+1).padStart(2,"0")}</span>
@@ -434,45 +641,127 @@ function buildAvatarCard(avatarName, variants) {
 
     const hookText = v.reel ? `${v.reel.hook_a} / ${v.reel.hook_b}` : "";
     const kwText   = (v.reel?.keywords || []).join(" · ");
-
-    const social = v.social || {};
-    const socialHtml = ["instagram","tiktok","linkedin"].map(net =>
+    const socialCopyHtml = ["instagram","tiktok","linkedin"].map(net =>
       `<div class="social-net">
         <div class="social-net-label">${net}</div>
         <div class="social-net-txt">${social[net] || "—"}</div>
       </div>`
     ).join("");
 
+    // ── INSTAGRAM PREVIEW VIEW ──
+    const igSlideNodes = slidesArr.map((s, si) => {
+      const total = slidesArr.length;
+      const cls   = si === 0 ? "hook" : si === total - 1 ? "cta" : "";
+      return `<div class="ig-slide${si===0?' active':''}">
+        <span class="ig-slide-num">${String(si+1).padStart(2,"0")} / ${total}</span>
+        <p class="ig-slide-text ${cls}">${s}</p>
+      </div>`;
+    }).join("");
+
+    const igDots = slidesArr.map((_, si) =>
+      `<span class="ig-dot${si===0?' active':''}"></span>`
+    ).join("");
+
+    const igNavButtons = slidesArr.length > 1 ? `
+      <button class="ig-nav-btn ig-prev" onclick="igNav('${mockId}',-1)">&#8249;</button>
+      <button class="ig-nav-btn ig-next" onclick="igNav('${mockId}',1)">&#8250;</button>
+    ` : "";
+
+    const igPost = slidesArr.length ? `
+      <div class="ig-post">
+        <div class="ig-header">
+          <div class="ig-av"><div class="ig-av-inner">e</div></div>
+          <span class="ig-un">endonautas</span>
+          <span class="ig-more">···</span>
+        </div>
+        <div class="ig-slides-wrap" id="ig-slides-${mockId}">
+          ${igSlideNodes}
+          ${igNavButtons}
+        </div>
+        ${slidesArr.length > 1 ? `<div class="ig-dots-row">${igDots}</div>` : ""}
+        <div class="ig-actions-row">
+          <span>&#9825;</span><span>&#128172;</span><span>&#10148;</span>
+          <span>&#128278;</span>
+        </div>
+        <div class="ig-caption-block">
+          <span class="ig-cap-user">endonautas</span>
+          <span class="ig-cap-text">${social.instagram ? social.instagram.slice(0, 150) + (social.instagram.length > 150 ? "…" : "") : ""}</span>
+        </div>
+      </div>` : "";
+
+    const igReel = v.reel ? `
+      <div class="ig-reel-mock">
+        <div class="ig-reel-top"><span class="ig-reel-badge">Reel</span></div>
+        <div class="ig-reel-inner">
+          <div class="ig-reel-hook-a">${v.reel.hook_a || ""}</div>
+          <div class="ig-reel-hook-b">${v.reel.hook_b || ""}</div>
+          ${v.reel.cta ? `<div class="ig-reel-cta">${v.reel.cta}</div>` : ""}
+        </div>
+        <div class="ig-reel-un">@endonautas</div>
+      </div>` : "";
+
+    const igOtherNets = ["tiktok","linkedin"].filter(net => social[net]).map(net =>
+      `<div class="ig-social-card">
+        <div class="ig-social-card-header">${net}</div>
+        <div class="ig-social-card-body">${social[net]}</div>
+      </div>`
+    ).join("");
+
+    // ── DIRECTOR & FORMAT ──
     const dirOpts = Object.entries(DIRECTOR_LABELS).map(([k, label]) =>
-      `<button class="dir-btn" data-avatar="${avatarName}" data-vi="${i}" data-dir="${k}" onclick="selectDir(this)">${label}</button>`
+      `<button class="dir-btn" data-avatar="${avatarName}" data-vi="${i}" data-dir="${k}"
+        onclick="selectDir(this,'${slug}')">${label}</button>`
     ).join("");
 
     return `<div class="variant-panel${i===0?' active':''}" id="vp-${avatarName}-${i}">
-      <div class="slides-copy">${slides}</div>
-      ${hookText ? `<div class="reel-copy">
-        <div class="reel-hook">${hookText}</div>
-        ${kwText ? `<div class="reel-kw">${kwText}</div>` : ""}
-      </div>` : ""}
-      <div class="social-copy">${socialHtml}</div>
+      <div class="copy-view">
+        <div class="slides-copy">${slidesHtml}</div>
+        ${hookText ? `<div class="reel-copy">
+          <div class="reel-hook">${hookText}</div>
+          ${kwText ? `<div class="reel-kw">${kwText}</div>` : ""}
+        </div>` : ""}
+        <div class="social-copy">${socialCopyHtml}</div>
+      </div>
+      <div class="preview-view" style="display:none">
+        <div class="preview-row">
+          ${igPost}
+          ${igReel}
+        </div>
+        ${igOtherNets ? `<div class="ig-social-previews">${igOtherNets}</div>` : ""}
+      </div>
       <div class="director-row">
         <div class="director-label">Director de edición</div>
         <div class="director-opts">${dirOpts}</div>
       </div>
       <div class="format-row">
-        <button class="fmt-btn" data-avatar="${avatarName}" data-vi="${i}" data-type="carousel" onclick="onFmt(this)">Carrusel</button>
-        <button class="fmt-btn" data-avatar="${avatarName}" data-vi="${i}" data-type="reel" onclick="onFmt(this)">Reel</button>
+        <button class="fmt-btn" data-avatar="${avatarName}" data-vi="${i}" data-type="carousel"
+          onclick="onFmt(this,'${slug}')">Carrusel</button>
+        <button class="fmt-btn" data-avatar="${avatarName}" data-vi="${i}" data-type="reel"
+          onclick="onFmt(this,'${slug}')">Reel</button>
       </div>
     </div>`;
   }).join("");
 
   card.innerHTML = `
     <div class="avatar-name">${AVATAR_LABELS[avatarName] || avatarName}</div>
+    <div class="view-toggle">
+      <button class="vt-btn active" onclick="setView(this,'copy')">Copy</button>
+      <button class="vt-btn" onclick="setView(this,'preview')">Preview</button>
+    </div>
     <div class="variant-tabs">${tabs}</div>
     ${panels}`;
   return card;
 }
 
 // ─── INTERACTIONS ─────────────────────────────────────────────────────────────
+
+function setView(btn, mode) {
+  const card = btn.closest(".avatar-card");
+  card.querySelectorAll(".vt-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  card.querySelectorAll(".copy-view").forEach(el => el.style.display = mode === "copy" ? "" : "none");
+  card.querySelectorAll(".preview-view").forEach(el => el.style.display = mode === "preview" ? "" : "none");
+}
 
 function switchTab(btn, avatarName, idx) {
   const card = btn.closest(".avatar-card");
@@ -482,49 +771,43 @@ function switchTab(btn, avatarName, idx) {
   card.querySelector(`#vp-${avatarName}-${idx}`).classList.add("active");
 }
 
-function selectDir(btn) {
+function selectDir(btn, slug) {
   const {avatar, vi, dir} = btn.dataset;
-  const key = `${avatar}:${vi}`;
+  const key = selKey(slug, avatar, vi);
   if (!selections[key]) selections[key] = {carousel: false, reel: false, director: ""};
   selections[key].director = dir;
-
-  // Update visual: clear siblings in same panel
-  btn.closest(".director-opts").querySelectorAll(".dir-btn").forEach(b => {
-    b.classList.remove("sel-carousel","sel-reel");
-  });
-  // Mark with carousel or reel color depending on what's selected
-  const hasCar = selections[key].carousel;
+  btn.closest(".director-opts").querySelectorAll(".dir-btn").forEach(b =>
+    b.classList.remove("sel-carousel","sel-reel")
+  );
+  const hasCar  = selections[key].carousel;
   const hasReel = selections[key].reel;
-  if (hasCar) btn.classList.add("sel-carousel");
-  else if (hasReel) btn.classList.add("sel-reel");
-  else btn.classList.add("sel-carousel"); // default highlight
-  updateFooter();
+  btn.classList.add(hasCar ? "sel-carousel" : hasReel ? "sel-reel" : "sel-carousel");
+  updateFooter(slug);
 }
 
-function onFmt(btn) {
+function onFmt(btn, slug) {
   const {avatar, vi, type} = btn.dataset;
-  const key = `${avatar}:${vi}`;
+  const key = selKey(slug, avatar, vi);
   if (!selections[key]) selections[key] = {carousel: false, reel: false, director: ""};
   selections[key][type] = !selections[key][type];
   if (!selections[key].carousel && !selections[key].reel) delete selections[key];
   btn.className = "fmt-btn" + (selections[key]?.[type] ? ` on-${type}` : "");
-  updateFooter();
+  updateFooter(slug);
 }
 
-function updateFooter() {
-  const entries = Object.entries(selections);
-  const n  = entries.length;
-  const nC = entries.filter(([,v]) => v.carousel).length;
-  const nR = entries.filter(([,v]) => v.reel).length;
-  let txt = "Sin selección";
-  if (n) {
-    const parts = [];
-    if (nC) parts.push(`${nC} carrusel${nC>1?"es":""}`);
-    if (nR) parts.push(`${nR} reel${nR>1?"s":""}`);
-    txt = parts.join(" + ");
-  }
-  document.getElementById("count").textContent = txt;
-  document.getElementById("btn-approve").disabled = !n;
+// ─── INSTAGRAM MOCKUP NAVIGATION ──────────────────────────────────────────────
+
+function igNav(mockId, dir) {
+  const wrap = document.getElementById(`ig-slides-${mockId}`);
+  if (!wrap) return;
+  const slides = Array.from(wrap.querySelectorAll(".ig-slide"));
+  if (slides.length < 2) return;
+  if (igSlideIdx[mockId] === undefined) igSlideIdx[mockId] = 0;
+  igSlideIdx[mockId] = (igSlideIdx[mockId] + dir + slides.length) % slides.length;
+  const cur = igSlideIdx[mockId];
+  slides.forEach((s, i) => s.classList.toggle("active", i === cur));
+  const dotsRow = wrap.closest(".ig-post")?.querySelector(".ig-dots-row");
+  if (dotsRow) dotsRow.querySelectorAll(".ig-dot").forEach((d, i) => d.classList.toggle("active", i === cur));
 }
 
 // ─── LIGHTBOX ─────────────────────────────────────────────────────────────────
@@ -536,37 +819,62 @@ function openLightbox(urls, idx) {
   document.getElementById("lightbox").classList.add("open");
 }
 function closeLightbox() { document.getElementById("lightbox").classList.remove("open"); }
-function lbPrev() { lbIdx = (lbIdx - 1 + lbUrls.length) % lbUrls.length; document.getElementById("lb-img").src = lbUrls[lbIdx]; document.getElementById("lb-counter").textContent = `${lbIdx+1} / ${lbUrls.length}`; }
-function lbNext() { lbIdx = (lbIdx + 1) % lbUrls.length; document.getElementById("lb-img").src = lbUrls[lbIdx]; document.getElementById("lb-counter").textContent = `${lbIdx+1} / ${lbUrls.length}`; }
-document.getElementById("lightbox").addEventListener("click", e => { if (e.target === e.currentTarget) closeLightbox(); });
-document.addEventListener("keydown", e => { if (!document.getElementById("lightbox").classList.contains("open")) return; if (e.key==="Escape") closeLightbox(); if (e.key==="ArrowLeft") lbPrev(); if (e.key==="ArrowRight") lbNext(); });
+function lbPrev() {
+  lbIdx = (lbIdx - 1 + lbUrls.length) % lbUrls.length;
+  document.getElementById("lb-img").src = lbUrls[lbIdx];
+  document.getElementById("lb-counter").textContent = `${lbIdx+1} / ${lbUrls.length}`;
+}
+function lbNext() {
+  lbIdx = (lbIdx + 1) % lbUrls.length;
+  document.getElementById("lb-img").src = lbUrls[lbIdx];
+  document.getElementById("lb-counter").textContent = `${lbIdx+1} / ${lbUrls.length}`;
+}
+document.getElementById("lightbox").addEventListener("click", e => {
+  if (e.target === e.currentTarget) closeLightbox();
+});
+document.addEventListener("keydown", e => {
+  if (!document.getElementById("lightbox").classList.contains("open")) return;
+  if (e.key === "Escape") closeLightbox();
+  if (e.key === "ArrowLeft") lbPrev();
+  if (e.key === "ArrowRight") lbNext();
+});
 
-// ─── APPROVE ─────────────────────────────────────────────────────────────────
+// ─── APPROVE PER ARTICLE ─────────────────────────────────────────────────────
 
-async function approve() {
-  if (!currentSlug) return;
-  const btn = document.getElementById("btn-approve");
-  btn.disabled = true; btn.textContent = "Enviando…";
+async function approve(slug) {
+  const btn = document.getElementById(`approve-btn-${slug}`);
+  const msg = document.getElementById(`approve-msg-${slug}`);
+  if (!btn) return;
 
-  const approved_selections = Object.entries(selections).map(([key, {carousel, reel, director}]) => {
-    const [avatar, vi] = key.split(":");
-    return { avatar, variant_index: Number(vi), carousel, reel, director };
-  });
+  const approved_selections = getArticleSelections(slug);
+  if (!approved_selections.length) return;
 
-  const res  = await fetch("/api/approve-copy", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({slug: currentSlug, approved_selections}),
-  });
-  const data = await res.json();
+  btn.disabled = true;
+  btn.textContent = "Enviando…";
 
-  if (data.ok) {
-    btn.textContent = `✓ ${data.approved} en cola`;
-    document.getElementById("msg").textContent = "Se generarán en el próximo ciclo (~30 min).";
-    document.querySelectorAll(".fmt-btn, .dir-btn, .vtab").forEach(b => b.disabled = true);
-  } else {
-    btn.disabled = false; btn.textContent = "Generar seleccionados";
-    document.getElementById("msg").textContent = `Error: ${data.error}`;
+  try {
+    const res  = await fetch("/api/approve-copy", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({slug, approved_selections}),
+    });
+    const data = await res.json();
+
+    if (data.ok) {
+      btn.textContent = `✓ ${data.approved} en cola`;
+      if (msg) msg.textContent = "Se generarán en el próximo ciclo de Oracle (~30 min).";
+      document.getElementById(`article-${slug}`)
+        ?.querySelectorAll(".fmt-btn, .dir-btn, .vtab")
+        .forEach(b => { b.disabled = true; });
+    } else {
+      btn.disabled = false;
+      btn.textContent = "Aprobar este artículo";
+      if (msg) msg.textContent = `Error: ${data.error}`;
+    }
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = "Aprobar este artículo";
+    if (msg) msg.textContent = `Error: ${e.message}`;
   }
 }
 
@@ -574,7 +882,7 @@ async function approve() {
 
 async function approveVisual(slug, btn) {
   const schedInput = document.getElementById(`sched-${slug}`);
-  const schedVal   = schedInput?.value;  // "2026-06-30T15:00" o vacío
+  const schedVal   = schedInput?.value;
   const schedAt    = schedVal ? new Date(schedVal).toISOString() : null;
   const note       = document.getElementById(`pub-note-${slug}`);
 
@@ -583,7 +891,6 @@ async function approveVisual(slug, btn) {
     : "en el próximo ciclo de n8n (~2h)";
   if (!confirm(`¿Aprobar "${slug}" para publicar en Instagram + FB?\n${when}`)) return;
 
-  // Recoger formato por reel (reel vs story)
   const reelFmts = {};
   document.querySelectorAll(`input[name^="rfmt-${slug}-"]:checked`).forEach(el => {
     const idx = el.name.replace(`rfmt-${slug}-`, "");
@@ -616,7 +923,7 @@ async function approveVisual(slug, btn) {
 load().catch(e => {
   document.getElementById("loading").style.display = "none";
   document.getElementById("empty").style.display = "";
-  document.getElementById("empty").textContent = `Error: ${e.message}`;
+  document.getElementById("empty").textContent = `Error cargando: ${e.message}`;
 });
 </script>
 </body>
