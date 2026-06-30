@@ -12,109 +12,106 @@
       {
         "carousel": {
           "slides": [
-            "Diriges, revisas métricas, arreglas crisis, pero ¿quién te escucha a ti?",
-            "Una sesión de coaching o terapia son 50 minutos.",
-            "Los otros 10.030 minutos de la semana los manejas solo.",
-            "El patrón que te cuesta clientes no espera a tu próxima sesión.",
-            "En la reunión del martes, tu ansiedad decide por ti.",
-            "Otra vez dices que sí cuando querías decir que no.",
-            "El trabajo real pasa entre sesiones. Conoce tu patrón → endonautas.cl"
+            "¿Sabes cuántos clientes pierdes por un patrón que no ves venir?",
+            "El 0.2% de tu tiempo es en sesión de terapia.",
+            "El otro 99.8% ocurre sin que nadie te mire.",
+            "Ahí se deciden decisiones de negocio que te cuestan equipo y clientes.",
+            "El problema no es la terapia sino sus 6 días de silencio.",
+            "El autoconocimiento aplicado es la herramienta de liderazgo que te falta.",
+            "Trabaja los 6 días como trabajas la sesión → endonautas.cl"
           ],
           "keywords": [
-            "autoconocimiento líderes",
-            "patrones de negocio",
-            "trabajo entre sesiones",
-            "decisiones directivos",
-            "terapia"
+            "patron",
+            "liderazgo",
+            "autoconocimiento",
+            "decisiones"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Tus patrones no se toman vacaciones.",
-          "hook_b": "Trabajo en sesión no basta.",
+          "hook_a": "Tu terapeuta no te ve.",
+          "hook_b": "Pero tu equipo sí.",
+          "cta": "Conócete en endonautas.cl",
+          "keywords": [
+            "entre sesiones",
+            "líder",
+            "patrón"
+          ]
+        },
+        "social": {
+          "instagram": "Tu terapeuta te ve 50 minutos a la semana. Los otros 10.030 minutos los vives solo. El 99,8% de tu proceso ocurre sin acompañamiento profesional. ¿Qué haces con ese tiempo? El patrón no espera al próximo jueves. Trabaja el momento exacto donde aparece — esa es la jugada que marca la diferencia. CTA: endonautas.cl te da herramientas para los 6 días que tu terapeuta no puede cubrir. #LiderazgoConsciente #DueñosDeNegocio #GestiónEmocional",
+          "tiktok": "¿Sabías que el 99,8% de tu terapia pasa sin tu terapeuta? Sesenta minutos no te salvan de los 10.000 que te juegas solo. El patrón no se toma descanso. Tienes que trabajarlo en el momento exacto. endonautas.cl",
+          "linkedin": "Dueños de negocio: invierten tiempo en estrategia, en procesos, en equipo. Pero la herramienta más crítica — tu modo de reaccionar bajo presión — la trabajan 50 minutos por semana, si es que hacen terapia.\n\nEl problema no es la terapia. El problema es que el 99,8% del tiempo están solos con sus patrones. Y ningún insight de sesión sobrevive al lunes a las 8 AM si no hay herramientas para el momento exacto.\n\nLa diferencia está en lo que haces entre sesiones: anotar en caliente, preguntarte qué necesitabas en lugar de por qué lo hiciste, y llevar contexto armado a tu terapeuta.\n\nTu proceso se multiplica cuando trabajas los 6 días que nadie ve. endonautas.cl te da las herramientas para ese espacio."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Tu equipo repite errores y tú no sabes por qué.",
+            "El verdadero trabajo no pasa en sesión de terapia.",
+            "Pasa en el momento exacto donde todo se desmorona.",
+            "Ahí no está tu terapeuta, solo estás tú y el patrón.",
+            "Sin registro ni pregunta, ese patrón gana la semana.",
+            "El liderazgo real es tener herramientas para esos instantes.",
+            "Convierte cada conflicto en aprendizaje de gestión → endonautas.cl"
+          ],
+          "keywords": [
+            "equipo",
+            "gestion",
+            "conflicto",
+            "patron"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El 99.8% del tiempo.",
+          "hook_b": "Tu liderazgo se juega ahí.",
+          "cta": "Hazlo en endonautas.cl",
+          "keywords": [
+            "terapia",
+            "liderazgo",
+            "coste"
+          ]
+        },
+        "social": {
+          "instagram": "Tu terapeuta te ve 50 minutos a la semana. Los otros 10.030 minutos los vives solo. El 99,8% de tu proceso ocurre sin acompañamiento profesional. ¿Qué haces con ese tiempo? El patrón no espera al próximo jueves. Trabaja el momento exacto donde aparece — esa es la jugada que marca la diferencia. CTA: endonautas.cl te da herramientas para los 6 días que tu terapeuta no puede cubrir. #LiderazgoConsciente #DueñosDeNegocio #GestiónEmocional",
+          "tiktok": "¿Sabías que el 99,8% de tu terapia pasa sin tu terapeuta? Sesenta minutos no te salvan de los 10.000 que te juegas solo. El patrón no se toma descanso. Tienes que trabajarlo en el momento exacto. endonautas.cl",
+          "linkedin": "Dueños de negocio: invierten tiempo en estrategia, en procesos, en equipo. Pero la herramienta más crítica — tu modo de reaccionar bajo presión — la trabajan 50 minutos por semana, si es que hacen terapia.\n\nEl problema no es la terapia. El problema es que el 99,8% del tiempo están solos con sus patrones. Y ningún insight de sesión sobrevive al lunes a las 8 AM si no hay herramientas para el momento exacto.\n\nLa diferencia está en lo que haces entre sesiones: anotar en caliente, preguntarte qué necesitabas en lugar de por qué lo hiciste, y llevar contexto armado a tu terapeuta.\n\nTu proceso se multiplica cuando trabajas los 6 días que nadie ve. endonautas.cl te da las herramientas para ese espacio."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Crees que creces solo en la sesión de 50 minutos.",
+            "El 99.8% del tiempo estás sin terapeuta.",
+            "Ahí se te escapan oportunidades de liderazgo.",
+            "El insight que tuviste el jueves se diluye el lunes.",
+            "Sin anclaje, el aprendizaje no llega a tu negocio.",
+            "El autoconocimiento es la competencia que separa líderes de jefes.",
+            "Lleva tus patrones a la acción sin esperar la próxima sesión → endonautas.cl"
+          ],
+          "keywords": [
+            "crecimiento",
+            "aprendizaje",
+            "competencia",
+            "lider"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Sesión de 50 minutos.",
+          "hook_b": "Y tu peor reacción laboral.",
           "cta": "Descubre cómo en endonautas.cl",
           "keywords": [
-            "patrones",
-            "sesión",
-            "entre sesiones"
+            "patrón",
+            "líder",
+            "reacción"
           ]
         },
         "social": {
-          "instagram": "Para Dueños de negocio: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
-          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
-          "linkedin": "El autoconocimiento para Dueños de negocio no es introspección — es una práctica medible. Más en endonautas.cl"
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "Evalúas desempeño todo el día, menos el tuyo como líder.",
-            "75% de las decisiones de un jefe vienen de sesgos (no de datos).",
-            "Tu terapeuta o mentor no ve eso. Tú tampoco.",
-            "El patrón se activa en 3 segundos; lo analizas 3 días después.",
-            "Ahí pierdes control del equipo, del cliente, del crecimiento.",
-            "No necesitas más sesiones. Necesitas capturar el momento.",
-            "Descubre qué patrón dirige tu liderazgo → endonautas.cl"
-          ],
-          "keywords": [
-            "liderazgo autoconocimiento",
-            "sesgos directivos",
-            "trabajo entre sesiones liderazgo",
-            "patrón emocional CEO",
-            "terapia líderes"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "Tu liderazgo replica tu conflicto interno.",
-          "hook_b": "Equipo lo refleja sin saber.",
-          "cta": "Revisa tu patrón en endonautas.cl",
-          "keywords": [
-            "liderazgo",
-            "conflicto interno",
-            "proyección"
-          ]
-        },
-        "social": {
-          "instagram": "Para Dueños de negocio: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
-          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
-          "linkedin": "El autoconocimiento para Dueños de negocio no es introspección — es una práctica medible. Más en endonautas.cl"
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "Tu negocio crece, pero tú te repites en los mismos conflictos.",
-            "Contratas gente, pero el clima se enrarece y no sabes por qué.",
-            "Tu terapeuta te ayuda a entenderlo... una semana después.",
-            "El problema no es la terapia. Es lo que pasa el resto del tiempo.",
-            "99.8% de tu vida pasa sin tu terapeuta. Y ahí trabajas mal.",
-            "Lleva contexto armado a cada sesión. Multiplica su efecto.",
-            "Cierra la brecha entre sesiones y resultados → endonautas.cl"
-          ],
-          "keywords": [
-            "resultados autoconocimiento",
-            "terapia entre sesiones",
-            "liderazgo patrón negocio",
-            "conflictos equipo CEO",
-            "trabajo post sesión"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "El patrón se activa en la reunión.",
-          "hook_b": "No en la sesión de terapia.",
-          "cta": "Trabaja ese instante en endonautas.cl",
-          "keywords": [
-            "patrón activo",
-            "reunión",
-            "momento"
-          ]
-        },
-        "social": {
-          "instagram": "Para Dueños de negocio: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
-          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
-          "linkedin": "El autoconocimiento para Dueños de negocio no es introspección — es una práctica medible. Más en endonautas.cl"
+          "instagram": "Tu terapeuta te ve 50 minutos a la semana. Los otros 10.030 minutos los vives solo. El 99,8% de tu proceso ocurre sin acompañamiento profesional. ¿Qué haces con ese tiempo? El patrón no espera al próximo jueves. Trabaja el momento exacto donde aparece — esa es la jugada que marca la diferencia. CTA: endonautas.cl te da herramientas para los 6 días que tu terapeuta no puede cubrir. #LiderazgoConsciente #DueñosDeNegocio #GestiónEmocional",
+          "tiktok": "¿Sabías que el 99,8% de tu terapia pasa sin tu terapeuta? Sesenta minutos no te salvan de los 10.000 que te juegas solo. El patrón no se toma descanso. Tienes que trabajarlo en el momento exacto. endonautas.cl",
+          "linkedin": "Dueños de negocio: invierten tiempo en estrategia, en procesos, en equipo. Pero la herramienta más crítica — tu modo de reaccionar bajo presión — la trabajan 50 minutos por semana, si es que hacen terapia.\n\nEl problema no es la terapia. El problema es que el 99,8% del tiempo están solos con sus patrones. Y ningún insight de sesión sobrevive al lunes a las 8 AM si no hay herramientas para el momento exacto.\n\nLa diferencia está en lo que haces entre sesiones: anotar en caliente, preguntarte qué necesitabas en lugar de por qué lo hiciste, y llevar contexto armado a tu terapeuta.\n\nTu proceso se multiplica cuando trabajas los 6 días que nadie ve. endonautas.cl te da las herramientas para ese espacio."
         }
       }
     ],
@@ -122,109 +119,108 @@
       {
         "carousel": {
           "slides": [
-            "Sales de terapia con algo abierto. Y los 6 días que vienen los manejas solo.",
-            "La sesión fue buena, te hiciste cargo de lo importante. Pero el lunes volvió la ansiedad.",
-            "El trabajo de verdad no pasa en los 50 minutos, sino en los 10.030 restantes.",
-            "Tu terapeuta siembra, pero lo que crece tiene que regarse solo.",
-            "El momento del conflicto —cuando el patrón se activa— pasa fuera de la consulta.",
-            "Y en ese instante exacto, necesitas algo más que recordar lo que hablaste el jueves.",
-            "La herramienta que trabaja entre tus sesiones. → endonautas.cl"
+            "Te bajas de la sesión y la vida sigue igual.",
+            "Sales sintiendo que abriste algo importante.",
+            "El metro, el tráfico, la tarde que sigue.",
+            "Y lo que se abrió empieza a cerrarse solo.",
+            "No porque seas malo en esto.",
+            "Es que tu sistema nervioso se equilibra naturalmente.",
+            "Lleva el momento a tu próxima sesión. → endonautas.cl"
           ],
           "keywords": [
             "terapia",
             "entre sesiones",
             "proceso terapéutico",
-            "conflicto",
             "autoconocimiento"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Tus 50 minutos de terapia se acaban.",
-          "hook_b": "Los 10.030 restantes son tuyos.",
+          "hook_a": "Tu vida entera cabe.",
+          "hook_b": "Tu terapeuta ve 50 minutos.",
           "cta": "Trabaja los 6 días en endonautas.cl",
           "keywords": [
-            "terapia entre sesiones",
+            "terapia",
+            "entre sesiones",
             "proceso terapéutico",
             "autoconocimiento"
           ]
         },
         "social": {
-          "instagram": "Pasas 50 minutos en terapia. Los otros 10.030 de la semana, el trabajo es tuyo. No es que no tengas ganas, es que el patrón ocurre justo cuando nadie te ve. ¿Y si tuvieras algo para ese momento? El Espejo de Conflictos trabaja exactamente ahí. 🧠 #desarrolloprofesional #terapia #autoconocimiento Dales una herramienta a tus 6 días: endonautas.cl",
-          "tiktok": "Pasas 50 minutos en terapia, pero el lunes a las 9 AM, cuando el miedo a no ser suficiente aparece en la reunión, tu terapeuta no está. ¿Qué haces con ese momento? El trabajo entre sesiones es el 99.8% de tu semana. El Espejo de Conflictos te da una herramienta para ahí. endonautas.cl",
-          "linkedin": "Una sesión de terapia dura 50 minutos. Una vez por semana. El 99.8% del tiempo, el trabajo es tuyo.\n\nNo es que la terapia no funcione —funciona. Pero su formato tiene un límite: no puede estar presente en el momento exacto donde el patrón ocurre. Ese momento —el conflicto con tu pareja antes del desayuno, el miedo en la reunión de trabajo— es el territorio menos atendido de tu proceso.\n\nEl trabajo entre sesiones no requiere horas ni drama. Requiere dos cosas: regularidad y cercanía al momento. Registrar lo que pasó justo cuando pasó. Preguntarte qué necesitabas en ese instante. Llevar ese material concreto a tu próxima sesión.\n\nAhí es donde herramientas como el Espejo de Conflictos de Endonautas marcan la diferencia. Fue diseñado para esos seis días que ningún terapeuta puede cubrir. Prúebalo gratis en endonautas.cl."
+          "instagram": "Para Profesionales: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Profesionales no es introspección — es una práctica medible. Más en endonautas.cl"
         }
       },
       {
         "carousel": {
           "slides": [
-            "Te pasó algo en el trabajo y no puedes hablarlo hasta la próxima sesión.",
-            "Esa espera no es un descanso, es el momento donde el patrón se refuerza sin que nadie lo vea.",
-            "Porque lo que no se procesa en caliente, se convierte en hábito automático.",
-            "Tu sistema nervioso no sabe esperar al jueves: responde ya, en la reunión, en la discusión.",
-            "Y después te quedas con la sensación de haber reaccionado mal sin entender por qué.",
-            "Necesitas algo que te sostenga justo ahí, en el instante exacto del conflicto.",
-            "El puente entre sesiones que transforma tu semana. → endonautas.cl"
+            "Dijiste que sí cuando querías decir que no.",
+            "Ese momento, tu terapeuta no lo vio.",
+            "No hay protocolo para esos segundos.",
+            "Confías en que la próxima sesión lo procesarás.",
+            "Pero el momento ya pasó.",
+            "La oportunidad de trabajar el patrón activo se perdió.",
+            "Captura el momento antes de que se cierre. → endonautas.cl"
           ],
           "keywords": [
             "terapia",
             "entre sesiones",
-            "reacción",
-            "conflicto laboral",
-            "proceso terapéutico"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "El terapeuta siembra los miércoles.",
-          "hook_b": "Tú cosechas los lunes a las 8.",
-          "cta": "Tu otro terapeuta está en endonautas.cl",
-          "keywords": [
-            "entre sesiones",
-            "trabajo terapéutico",
-            "dolor emocional"
-          ]
-        },
-        "social": {
-          "instagram": "Pasas 50 minutos en terapia. Los otros 10.030 de la semana, el trabajo es tuyo. No es que no tengas ganas, es que el patrón ocurre justo cuando nadie te ve. ¿Y si tuvieras algo para ese momento? El Espejo de Conflictos trabaja exactamente ahí. 🧠 #desarrolloprofesional #terapia #autoconocimiento Dales una herramienta a tus 6 días: endonautas.cl",
-          "tiktok": "Pasas 50 minutos en terapia, pero el lunes a las 9 AM, cuando el miedo a no ser suficiente aparece en la reunión, tu terapeuta no está. ¿Qué haces con ese momento? El trabajo entre sesiones es el 99.8% de tu semana. El Espejo de Conflictos te da una herramienta para ahí. endonautas.cl",
-          "linkedin": "Una sesión de terapia dura 50 minutos. Una vez por semana. El 99.8% del tiempo, el trabajo es tuyo.\n\nNo es que la terapia no funcione —funciona. Pero su formato tiene un límite: no puede estar presente en el momento exacto donde el patrón ocurre. Ese momento —el conflicto con tu pareja antes del desayuno, el miedo en la reunión de trabajo— es el territorio menos atendido de tu proceso.\n\nEl trabajo entre sesiones no requiere horas ni drama. Requiere dos cosas: regularidad y cercanía al momento. Registrar lo que pasó justo cuando pasó. Preguntarte qué necesitabas en ese instante. Llevar ese material concreto a tu próxima sesión.\n\nAhí es donde herramientas como el Espejo de Conflictos de Endonautas marcan la diferencia. Fue diseñado para esos seis días que ningún terapeuta puede cubrir. Prúebalo gratis en endonautas.cl."
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "Tu terapeuta no está en la discusión de pareja del lunes a las 8am.",
-            "Y en ese minuto, el mejor insight de la sesión del jueves se desvanece.",
-            "Porque el contexto de la vida real no es el espacio seguro de la consulta.",
-            "Allí, el miedo a no ser suficiente aparece sin aviso y sin guía.",
-            "Te encuentras diciendo sí cuando querías decir no, y el patrón se repite.",
-            "No se trata de que la terapia sea insuficiente, sino de que el formato tiene un límite.",
-            "El entrenamiento diario para tu proceso interior. → endonautas.cl"
-          ],
-          "keywords": [
-            "terapia",
-            "entre sesiones",
-            "patrón",
-            "límite",
-            "relaciones"
+            "proceso terapéutico",
+            "autoconocimiento"
           ],
           "layout": "L1"
         },
         "reel": {
           "hook_a": "Sales de terapia con algo abierto.",
-          "hook_b": "El metro te lo cierra en 15 minutos.",
-          "cta": "No pierdas el insight en endonautas.cl",
+          "hook_b": "La calle lo cierra en segundos.",
+          "cta": "Haz el trabajo real en endonautas.cl",
           "keywords": [
-            "momento entre sesiones",
-            "proceso interior",
-            "insight"
+            "terapia",
+            "entre sesiones",
+            "autoconocimiento"
           ]
         },
         "social": {
-          "instagram": "Pasas 50 minutos en terapia. Los otros 10.030 de la semana, el trabajo es tuyo. No es que no tengas ganas, es que el patrón ocurre justo cuando nadie te ve. ¿Y si tuvieras algo para ese momento? El Espejo de Conflictos trabaja exactamente ahí. 🧠 #desarrolloprofesional #terapia #autoconocimiento Dales una herramienta a tus 6 días: endonautas.cl",
-          "tiktok": "Pasas 50 minutos en terapia, pero el lunes a las 9 AM, cuando el miedo a no ser suficiente aparece en la reunión, tu terapeuta no está. ¿Qué haces con ese momento? El trabajo entre sesiones es el 99.8% de tu semana. El Espejo de Conflictos te da una herramienta para ahí. endonautas.cl",
-          "linkedin": "Una sesión de terapia dura 50 minutos. Una vez por semana. El 99.8% del tiempo, el trabajo es tuyo.\n\nNo es que la terapia no funcione —funciona. Pero su formato tiene un límite: no puede estar presente en el momento exacto donde el patrón ocurre. Ese momento —el conflicto con tu pareja antes del desayuno, el miedo en la reunión de trabajo— es el territorio menos atendido de tu proceso.\n\nEl trabajo entre sesiones no requiere horas ni drama. Requiere dos cosas: regularidad y cercanía al momento. Registrar lo que pasó justo cuando pasó. Preguntarte qué necesitabas en ese instante. Llevar ese material concreto a tu próxima sesión.\n\nAhí es donde herramientas como el Espejo de Conflictos de Endonautas marcan la diferencia. Fue diseñado para esos seis días que ningún terapeuta puede cubrir. Prúebalo gratis en endonautas.cl."
+          "instagram": "Para Profesionales: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Profesionales no es introspección — es una práctica medible. Más en endonautas.cl"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "El 0.2% de tu tiempo está con tu terapeuta.",
+            "El 99.8% restante pasa sin él.",
+            "No es una crítica a la terapia.",
+            "Es una observación sobre su formato.",
+            "Los modelos más efectivos trabajan entre sesiones.",
+            "Tareas, registros, preguntas justo cuando el patrón ocurre.",
+            "Convierte los seis días en parte del proceso. → endonautas.cl"
+          ],
+          "keywords": [
+            "terapia",
+            "entre sesiones",
+            "proceso terapéutico",
+            "autoconocimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "99.8% de tu semana sin terapeuta.",
+          "hook_b": "Ahí vives los conflictos reales.",
+          "cta": "Acompaña tu semana con endonautas.cl",
+          "keywords": [
+            "terapia",
+            "entre sesiones",
+            "conflicto",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "Para Profesionales: el autoconocimiento no es un lujo, es una herramienta. Descúbrelo en endonautas.cl #autoconocimiento #endonautas",
+          "tiktok": "¿Sabes lo que te pasa y lo sigues haciendo igual? endonautas.cl",
+          "linkedin": "El autoconocimiento para Profesionales no es introspección — es una práctica medible. Más en endonautas.cl"
         }
       }
     ],
@@ -232,91 +228,109 @@
       {
         "carousel": {
           "slides": [
-            "Crias igual que te criaron, aunque juraste no hacerlo",
-            "Tu hijo no es un proyecto, es un espejo",
-            "Lo que te irrita de él, es lo que no perdonas en ti",
-            "El grito que le pegaste no era para él, era para tu pasado",
-            "No le enseñes lo que no practicas",
-            "Romper el ciclo no es teoría, es decisión cada día",
-            "El espejo de conflictos te ayuda a verlo antes de repetirlo → endonautas.cl",
-            "romper ciclos familiares, crianza consciente, autoconocimiento, patrones heredados, educación emocional"
+            "¿Tu peor miedo? Criar como te criaron.",
+            "No eliges qué heredar de tu infancia.",
+            "Repites sin darte cuenta conductas que juraste no repetir.",
+            "Tu sombra se cuela en el tono, el silencio, la mirada.",
+            "50 minutos de terapia no frenan el lunes a las 7am.",
+            "Reconocer lo tuyo es el primer paso para no legarlo.",
+            "Rompe el ciclo con el Espejo de Conflictos → endonautas.cl"
+          ],
+          "keywords": [
+            "padres",
+            "madres",
+            "herencia emocional",
+            "ciclos familiares",
+            "autoconocimiento"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Lo que te molesta de tu hijo",
-          "hook_b": "es tu sombra sin trabajar.",
+          "hook_a": "Lo que criticas en tus hijos",
+          "hook_b": "vive sin resolver en ti.",
           "cta": "Descúbrelo en endonautas.cl",
           "keywords": [
-            "sombra",
-            "infancia",
+            "crianza",
+            "patrón",
             "conflicto"
           ]
         },
         "social": {
-          "instagram": "Tu terapeuta te da herramientas cada semana. Pero el 99.8% del tiempo, el trabajo ocurre sin él. ¿Qué haces cuando el conflicto con tu pareja explota antes del desayuno o el miedo aparece en la reunión? Esos 6 días entre sesiones no son tiempo perdido: son tu campo de entrenamiento real. Lleva contexto armado a tu próximo encuentro — y conviértelo en un multiplicador de tu proceso. Descubre cómo en endonautas.cl #crianzaconsciente #paternidadreal #autoconocimiento",
-          "tiktok": "Si estás en terapia, el 99.8% del trabajo lo haces tú — y tu terapeuta ni lo ve. El momento donde tu hijo te desafía y reaccionas mal, ahí no hay sesión que te salve. ¿Sabes qué hacer en esos 6 días? Entra a endonautas.cl",
-          "linkedin": "Sé que el tiempo entre sesiones de terapia es el verdadero campo de batalla. Como profesional ocupado, también me he enfrentado a ese momento el lunes por la mañana, cuando todo lo hablado se desvanece. \n\nLa sesión de 50 minutos es solo una isla. El resto de la semana —donde lidiamos con la pareja, los hijos, el trabajo— es donde realmente se transforma un patrón.\n\nLo que he aprendido es que el contexto armado (no llego con 'me fue mal', sino con 'el miércoles pasó esto y respondí así') potencia cada sesión siguiente. No se trata de añadir más horas, sino de aprovechar las que ya tienes.\n\nEndonautas nació exactamente para eso: trabajar esos días sin terapeuta. Con herramientas como El Espejo de Conflictos, puedes capturar el momento justo cuando ocurre y llevar ese material potente a tu espacio terapéutico. Descubre cómo en endonautas.cl"
+          "instagram": "Sabes que una sesión de terapia dura 50 minutos. ¿Y los otros 10.030 de la semana? Ahí es donde realmente ocurre el cambio. No se trata de esperar a la próxima hora, sino de trabajar justo cuando el patrón aparece. Porque tú eres el que vive el conflicto, no tu terapeuta. Empieza a capturar esos momentos con herramientas que te acompañan entre sesiones. Descubre El Espejo de Conflictos en endonautas.cl #crianzaconsciente #paternidadreal #terapiaonline",
+          "tiktok": "Tus hijos te están viendo reaccionar. ¿Y si trabajas el patrón justo cuando aparece? El Espejo de Conflictos de endonautas.cl te ayuda a articular lo que pasa entre sesiones. Pruébalo.",
+          "linkedin": "Una sesión de terapia dura 50 minutos. El resto de la semana —más del 99% de tu tiempo— el trabajo es tuyo. Como padre, sabes que las reacciones no esperan a la cita del jueves. Se activan frente a tus hijos, en medio de una discusión, en el silencio de la noche.\n\nEl verdadero cambio no ocurre en el consultorio, sino en esos momentos cuando tu patrón se enciende y tu terapeuta no está cerca.\n\nEndonautas.cl nació precisamente para ese espacio intermedio. Su Espejo de Conflictos te permite articular lo que sientes y llevarlo armado a tu proceso. Conéctate en endonautas.cl."
         }
       },
       {
         "carousel": {
           "slides": [
-            "No puedes darle a tu hijo lo que no te diste a ti mismo",
-            "El miedo que le transmites no es suyo, es tuyo",
-            "Cada vez que reaccionas, repites una historia que no te contaron",
-            "Tu hijo no necesita un padre perfecto, necesita uno que se mire",
-            "Detener un patrón duele menos que heredarlo",
-            "La pausa entre el impulso y la respuesta es tu mayor herramienta",
-            "Descubre qué patrón estás repitiendo y cómo detenerlo hoy → endonautas.cl",
-            "crianza consciente, autoconocimiento padres, espejo de conflictos, romper ciclos, educación con conciencia"
+            "Le exiges a tu hijo lo que no te das a ti.",
+            "Tu frustración no es con él. Es contigo.",
+            "El patrón se repite: crítica, control, miedo.",
+            "En terapia ves el mapa. No estás en el territorio.",
+            "La sesión dura 50 min. El resto lo vives solo.",
+            "¿Y si el trabajo entre sesiones fuera tu mejor herramienta?",
+            "Deja de proyectar. Empieza a mirarte → endonautas.cl"
+          ],
+          "keywords": [
+            "padres",
+            "madres",
+            "proyección",
+            "entre sesiones",
+            "terapia"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "El 99.8% del tiempo sin terapeuta",
-          "hook_b": "lo ocupas con tu hijo.",
-          "cta": "Trabaja esos días en endonautas.cl",
+          "hook_a": "No es su berrinche, es el tuyo.",
+          "hook_b": "El espejo que no quieres ver.",
+          "cta": "Mira tu reflejo en endonautas.cl",
           "keywords": [
-            "terapia",
-            "tiempo",
+            "berrinche",
+            "espejo",
             "crianza"
           ]
         },
         "social": {
-          "instagram": "Tu terapeuta te da herramientas cada semana. Pero el 99.8% del tiempo, el trabajo ocurre sin él. ¿Qué haces cuando el conflicto con tu pareja explota antes del desayuno o el miedo aparece en la reunión? Esos 6 días entre sesiones no son tiempo perdido: son tu campo de entrenamiento real. Lleva contexto armado a tu próximo encuentro — y conviértelo en un multiplicador de tu proceso. Descubre cómo en endonautas.cl #crianzaconsciente #paternidadreal #autoconocimiento",
-          "tiktok": "Si estás en terapia, el 99.8% del trabajo lo haces tú — y tu terapeuta ni lo ve. El momento donde tu hijo te desafía y reaccionas mal, ahí no hay sesión que te salve. ¿Sabes qué hacer en esos 6 días? Entra a endonautas.cl",
-          "linkedin": "Sé que el tiempo entre sesiones de terapia es el verdadero campo de batalla. Como profesional ocupado, también me he enfrentado a ese momento el lunes por la mañana, cuando todo lo hablado se desvanece. \n\nLa sesión de 50 minutos es solo una isla. El resto de la semana —donde lidiamos con la pareja, los hijos, el trabajo— es donde realmente se transforma un patrón.\n\nLo que he aprendido es que el contexto armado (no llego con 'me fue mal', sino con 'el miércoles pasó esto y respondí así') potencia cada sesión siguiente. No se trata de añadir más horas, sino de aprovechar las que ya tienes.\n\nEndonautas nació exactamente para eso: trabajar esos días sin terapeuta. Con herramientas como El Espejo de Conflictos, puedes capturar el momento justo cuando ocurre y llevar ese material potente a tu espacio terapéutico. Descubre cómo en endonautas.cl"
+          "instagram": "Sabes que una sesión de terapia dura 50 minutos. ¿Y los otros 10.030 de la semana? Ahí es donde realmente ocurre el cambio. No se trata de esperar a la próxima hora, sino de trabajar justo cuando el patrón aparece. Porque tú eres el que vive el conflicto, no tu terapeuta. Empieza a capturar esos momentos con herramientas que te acompañan entre sesiones. Descubre El Espejo de Conflictos en endonautas.cl #crianzaconsciente #paternidadreal #terapiaonline",
+          "tiktok": "Tus hijos te están viendo reaccionar. ¿Y si trabajas el patrón justo cuando aparece? El Espejo de Conflictos de endonautas.cl te ayuda a articular lo que pasa entre sesiones. Pruébalo.",
+          "linkedin": "Una sesión de terapia dura 50 minutos. El resto de la semana —más del 99% de tu tiempo— el trabajo es tuyo. Como padre, sabes que las reacciones no esperan a la cita del jueves. Se activan frente a tus hijos, en medio de una discusión, en el silencio de la noche.\n\nEl verdadero cambio no ocurre en el consultorio, sino en esos momentos cuando tu patrón se enciende y tu terapeuta no está cerca.\n\nEndonautas.cl nació precisamente para ese espacio intermedio. Su Espejo de Conflictos te permite articular lo que sientes y llevarlo armado a tu proceso. Conéctate en endonautas.cl."
         }
       },
       {
         "carousel": {
           "slides": [
-            "Esa misma discusión con tu hijo te suena a otra época",
-            "No ves sus berrinches, ves los tuyos de niño sin consuelo",
-            "Tu niño interior sigue pidiendo atención, pero te distrae con el de tu hijo",
-            "Lo que no resolviste en ti, lo transmites sin querer",
-            "No se trata de ser mejor padre, se trata de ser más honesto contigo",
-            "Mirar hacia adentro es el mayor acto de amor hacia tu hijo",
-            "Reconecta con tu infancia para criar desde la libertad → endonautas.cl",
-            "niño interior, autocuidado parental, autoconocimiento, crianza respetuosa, sanar para criar"
+            "¿Sabes por qué reaccionas desmedido con tus hijos?",
+            "No es berrinche. Es historia no resuelta.",
+            "Tu hijo activa heridas que creías cerradas.",
+            "La pausa que no tomas es la que más necesitas.",
+            "El 99.8% del tiempo estás sin terapeuta.",
+            "Ahí, en el momento exacto, decides si transmites o transformas.",
+            "Captura el patrón. No lo heredes más → endonautas.cl"
+          ],
+          "keywords": [
+            "padres",
+            "madres",
+            "reacción",
+            "heridas",
+            "autoconocimiento"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Tu terapeuta no ve el momento exacto",
-          "hook_b": "cuando explotas con tu hijo.",
-          "cta": "Cúbrelo en endonautas.cl",
+          "hook_a": "Tu hijo no te desafía; despierta.",
+          "hook_b": "Lo que callas grita en él.",
+          "cta": "Empieza por ti en endonautas.cl",
           "keywords": [
-            "explosión",
-            "momento",
-            "entre sesiones"
+            "desafío",
+            "crianza",
+            "inconsciente"
           ]
         },
         "social": {
-          "instagram": "Tu terapeuta te da herramientas cada semana. Pero el 99.8% del tiempo, el trabajo ocurre sin él. ¿Qué haces cuando el conflicto con tu pareja explota antes del desayuno o el miedo aparece en la reunión? Esos 6 días entre sesiones no son tiempo perdido: son tu campo de entrenamiento real. Lleva contexto armado a tu próximo encuentro — y conviértelo en un multiplicador de tu proceso. Descubre cómo en endonautas.cl #crianzaconsciente #paternidadreal #autoconocimiento",
-          "tiktok": "Si estás en terapia, el 99.8% del trabajo lo haces tú — y tu terapeuta ni lo ve. El momento donde tu hijo te desafía y reaccionas mal, ahí no hay sesión que te salve. ¿Sabes qué hacer en esos 6 días? Entra a endonautas.cl",
-          "linkedin": "Sé que el tiempo entre sesiones de terapia es el verdadero campo de batalla. Como profesional ocupado, también me he enfrentado a ese momento el lunes por la mañana, cuando todo lo hablado se desvanece. \n\nLa sesión de 50 minutos es solo una isla. El resto de la semana —donde lidiamos con la pareja, los hijos, el trabajo— es donde realmente se transforma un patrón.\n\nLo que he aprendido es que el contexto armado (no llego con 'me fue mal', sino con 'el miércoles pasó esto y respondí así') potencia cada sesión siguiente. No se trata de añadir más horas, sino de aprovechar las que ya tienes.\n\nEndonautas nació exactamente para eso: trabajar esos días sin terapeuta. Con herramientas como El Espejo de Conflictos, puedes capturar el momento justo cuando ocurre y llevar ese material potente a tu espacio terapéutico. Descubre cómo en endonautas.cl"
+          "instagram": "Sabes que una sesión de terapia dura 50 minutos. ¿Y los otros 10.030 de la semana? Ahí es donde realmente ocurre el cambio. No se trata de esperar a la próxima hora, sino de trabajar justo cuando el patrón aparece. Porque tú eres el que vive el conflicto, no tu terapeuta. Empieza a capturar esos momentos con herramientas que te acompañan entre sesiones. Descubre El Espejo de Conflictos en endonautas.cl #crianzaconsciente #paternidadreal #terapiaonline",
+          "tiktok": "Tus hijos te están viendo reaccionar. ¿Y si trabajas el patrón justo cuando aparece? El Espejo de Conflictos de endonautas.cl te ayuda a articular lo que pasa entre sesiones. Pruébalo.",
+          "linkedin": "Una sesión de terapia dura 50 minutos. El resto de la semana —más del 99% de tu tiempo— el trabajo es tuyo. Como padre, sabes que las reacciones no esperan a la cita del jueves. Se activan frente a tus hijos, en medio de una discusión, en el silencio de la noche.\n\nEl verdadero cambio no ocurre en el consultorio, sino en esos momentos cuando tu patrón se enciende y tu terapeuta no está cerca.\n\nEndonautas.cl nació precisamente para ese espacio intermedio. Su Espejo de Conflictos te permite articular lo que sientes y llevarlo armado a tu proceso. Conéctate en endonautas.cl."
         }
       }
     ],
@@ -324,112 +338,115 @@
       {
         "carousel": {
           "slides": [
-            "Te preparaste años para escuchar, pero nadie te preparó para mirarte.",
-            "Tu paciente sale de sesión y tú te quedas con lo que escuchaste.",
-            "La contratransferencia no se gestiona con supervisión una vez al mes.",
-            "Hay un espejo dentro de ti que siempre está funcionando.",
-            "Lo que no ves en ti, tu paciente lo activa sin saberlo.",
-            "El autoconocimiento del terapeuta no es un lujo, es la herramienta.",
-            "Conoce las cargas que traes a cada sesión → endonautas.cl"
+            "Tu paciente no mejora en 50 minutos.",
+            "Mejora en los 10.030 minutos que no te ve.",
+            "Ahí, sin espejo, el patrón gana.",
+            "No es que él no quiera cambiar. Es que no sabe cómo verse en el momento exacto.",
+            "Tú siembras. Lo que crece no lo ves.",
+            "La contratransferencia no es saber. Es no estar ahí cuando ocurre.",
+            "El espejo que no cierra entre sesiones → endonautas.cl"
           ],
           "keywords": [
             "trabajo entre sesiones",
             "terapeuta",
             "contratransferencia",
-            "autoconocimiento",
-            "herramientas psicométricas"
+            "herramientas psicométricas",
+            "autoconocimiento"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Tu paciente no es el único.",
-          "hook_b": "Tú también evitas ciertos temas.",
-          "cta": "Descubre más en endonautas.cl",
+          "hook_a": "¿Sabes lo que hace tu paciente entre sesiones?",
+          "hook_b": "Ahí se juega todo el proceso.",
+          "cta": "Descubre cómo en endonautas.cl",
           "keywords": [
-            "terapia",
-            "evitación",
-            "terapeuta"
+            "terapeuta",
+            "sesión",
+            "paciente",
+            "trabajo entre sesiones"
           ]
         },
         "social": {
-          "instagram": "Una sesión de terapia dura 50 minutos. El otro 99.8% de tu tiempo pasa sin tu terapeuta. Ahí, en el momento exacto del conflicto, es donde el patrón se activa. No necesitas más sesiones: necesitas herramientas que trabajen contigo entre ellas. El Espejo de Conflictos de Endonautas está diseñado para eso. Entra a endonautas.cl y dale a tu paciente un recurso para los 6 días que no ves.\n\n#PsicologíaClínica #Terapia #Autoconocimiento",
-          "tiktok": "¿Crees que tu paciente cambia solo por la sesión semanal? El 99.8% de su vida pasa sin ti. Ahí, en el conflicto del lunes, es donde el patrón se instala. ¿Le estás dando herramientas para ese momento? El Espejo de Conflictos de Endonautas.cl trabaja justo ahí.",
-          "linkedin": "La sesión de terapia ocupa un 0.2% del tiempo del paciente. El resto ocurre sin acompañamiento clínico. Los modelos más efectivos (TCC, DBT, ACT) incluyen trabajo entre sesiones como parte central del tratamiento. Sin embargo, la mayoría de los terapeutas carecen de herramientas para sostener ese espacio. El Espejo de Conflictos, desarrollado por Endonautas, ofrece un recurso psicométrico que funciona en el momento exacto del conflicto: captura el patrón, lo articula y genera material concreto para la próxima sesión. No es un reemplazo de la terapia; es un multiplicador de su efectividad. Conoce cómo integrarlo en tu práctica en endonautas.cl."
+          "instagram": "El 99.8% de tu semana ocurre sin tu terapeuta. La sesión siembra, pero lo que crece, crece en los 6 días que no te ve. ¿Tienes herramientas para trabajar cuando el patrón se activa, no después? El Espejo de Conflictos de endonautas.cl trabaja exactamente ahí. #Terapia #ProcesoTerapéutico #Autoconocimiento",
+          "tiktok": "Tus pacientes tienen 50 minutos contigo y 10.030 sin ti. ¿De verdad crees que en esos 6 días no necesitan apoyo terapéutico? El trabajo real ocurre cuando el patrón se activa, no cuando lo procesan en sesión. endonautas.cl",
+          "linkedin": "El formato semanal deja un vacío: el 99.8% del tiempo del paciente no tiene acompañamiento. Modelos como TCC o ACT lo reconocen al incluir tareas entre sesiones, pero la práctica clínica aún carece de herramientas sistemáticas para ese espacio.\n\nNo se trata de sustituir la terapia, sino de multiplicar su efecto. Un registro de momento a momento —lo que sintió, lo que activó la respuesta, lo que necesitaba— permite al terapeuta trabajar con datos vivos, no con recuerdos difusos.\n\nLa propuesta de Endonautas es clínica: el Espejo de Conflictos opera en el intervalo entre sesiones, capturando el material para que llegue armado a la terapia. No es complemento decorativo: es protocolo para el 99.8% del proceso.\n\nConoce cómo integrarlo en tu práctica en endonautas.cl"
         }
       },
       {
         "carousel": {
           "slides": [
-            "Seis días sin ver a tu paciente es más tiempo del que crees.",
-            "El 99% del trabajo ocurre fuera de tu consulta.",
-            "Y cuando el patrón se activa, no estás ahí para verlo.",
-            "Lo que haces en sesión es solo la mitad del proceso.",
-            "La otra mitad necesita seguir vibrando los seis días.",
-            "Pero tu sistema no está diseñado para sostener esa frecuencia.",
-            "Dale a tu paciente un espejo que funcione entre sesiones → endonautas.cl"
+            "¿Revisaste tu propia contratransferencia esta semana?",
+            "Lo que sientes por tu paciente es información. No estorbo.",
+            "Pero el patrón te agarra desprevenida entre sesión y sesión.",
+            "Y ahí, en la ducha o manejando, no hay supervisión que valga.",
+            "Tu espejo también se empaña. Y no tienes quien te lo limpie.",
+            "La herramienta que usas no es para él. Es para ti primero.",
+            "Limpia tu espejo entre sesiones → endonautas.cl"
           ],
           "keywords": [
-            "trabajo entre sesiones",
-            "proceso terapéutico",
-            "terapia",
+            "contratransferencia",
+            "terapeuta",
             "autoconocimiento",
+            "entre sesiones",
+            "espejo"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El 99.8% del tiempo no te ven.",
+          "hook_b": "Y ahí ocurre la transformación real.",
+          "cta": "Explora herramientas en endonautas.cl",
+          "keywords": [
+            "terapia",
+            "tiempo entre sesiones",
+            "autoconocimiento",
+            "terapeuta"
+          ]
+        },
+        "social": {
+          "instagram": "El 99.8% de tu semana ocurre sin tu terapeuta. La sesión siembra, pero lo que crece, crece en los 6 días que no te ve. ¿Tienes herramientas para trabajar cuando el patrón se activa, no después? El Espejo de Conflictos de endonautas.cl trabaja exactamente ahí. #Terapia #ProcesoTerapéutico #Autoconocimiento",
+          "tiktok": "Tus pacientes tienen 50 minutos contigo y 10.030 sin ti. ¿De verdad crees que en esos 6 días no necesitan apoyo terapéutico? El trabajo real ocurre cuando el patrón se activa, no cuando lo procesan en sesión. endonautas.cl",
+          "linkedin": "El formato semanal deja un vacío: el 99.8% del tiempo del paciente no tiene acompañamiento. Modelos como TCC o ACT lo reconocen al incluir tareas entre sesiones, pero la práctica clínica aún carece de herramientas sistemáticas para ese espacio.\n\nNo se trata de sustituir la terapia, sino de multiplicar su efecto. Un registro de momento a momento —lo que sintió, lo que activó la respuesta, lo que necesitaba— permite al terapeuta trabajar con datos vivos, no con recuerdos difusos.\n\nLa propuesta de Endonautas es clínica: el Espejo de Conflictos opera en el intervalo entre sesiones, capturando el material para que llegue armado a la terapia. No es complemento decorativo: es protocolo para el 99.8% del proceso.\n\nConoce cómo integrarlo en tu práctica en endonautas.cl"
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "50 minutos de insight. 6 días de olvido.",
+            "Lo que abres en consulta se cierra sola en la calle.",
+            "Tu paciente vuelve sin el mapa de lo que vivió.",
+            "No es su culpa. Es el formato.",
+            "El terapeuta no puede estar en cada patrón que estalla.",
+            "Pero el trabajo entre sesiones no es tarea. Es el verdadero campo de batalla.",
+            "Herramientas para los 6 días que tú no ves → endonautas.cl"
+          ],
+          "keywords": [
+            "terapia",
+            "entre sesiones",
+            "insight",
+            "formato",
             "herramientas"
           ],
           "layout": "L1"
         },
         "reel": {
-          "hook_a": "Lo que él calla lo sabes.",
-          "hook_b": "Pero no lo has nombrado contigo.",
-          "cta": "Empieza en endonautas.cl",
-          "keywords": [
-            "terapia",
-            "silencio",
-            "autoconocimiento"
-          ]
-        },
-        "social": {
-          "instagram": "Una sesión de terapia dura 50 minutos. El otro 99.8% de tu tiempo pasa sin tu terapeuta. Ahí, en el momento exacto del conflicto, es donde el patrón se activa. No necesitas más sesiones: necesitas herramientas que trabajen contigo entre ellas. El Espejo de Conflictos de Endonautas está diseñado para eso. Entra a endonautas.cl y dale a tu paciente un recurso para los 6 días que no ves.\n\n#PsicologíaClínica #Terapia #Autoconocimiento",
-          "tiktok": "¿Crees que tu paciente cambia solo por la sesión semanal? El 99.8% de su vida pasa sin ti. Ahí, en el conflicto del lunes, es donde el patrón se instala. ¿Le estás dando herramientas para ese momento? El Espejo de Conflictos de Endonautas.cl trabaja justo ahí.",
-          "linkedin": "La sesión de terapia ocupa un 0.2% del tiempo del paciente. El resto ocurre sin acompañamiento clínico. Los modelos más efectivos (TCC, DBT, ACT) incluyen trabajo entre sesiones como parte central del tratamiento. Sin embargo, la mayoría de los terapeutas carecen de herramientas para sostener ese espacio. El Espejo de Conflictos, desarrollado por Endonautas, ofrece un recurso psicométrico que funciona en el momento exacto del conflicto: captura el patrón, lo articula y genera material concreto para la próxima sesión. No es un reemplazo de la terapia; es un multiplicador de su efectividad. Conoce cómo integrarlo en tu práctica en endonautas.cl."
-        }
-      },
-      {
-        "carousel": {
-          "slides": [
-            "El terapeuta siembra, pero lo que crece crece cuando no está.",
-            "El lunes a las 8am el conflicto explota y tú no estás ahí.",
-            "Ese momento es donde tu paciente necesita herramientas.",
-            "Pero la terapia no puede estar en cada esquina.",
-            "El trabajo entre sesiones es lo que convierte insight en cambio.",
-            "Sin él, el progreso se queda en el consultorio.",
-            "Que el cambio no se detenga cuando sale por la puerta → endonautas.cl"
-          ],
-          "keywords": [
-            "trabajo entre sesiones",
-            "terapia",
-            "proceso terapéutico",
-            "autoconocimiento",
-            "cambio"
-          ],
-          "layout": "L1"
-        },
-        "reel": {
-          "hook_a": "Tu rol no te protege.",
-          "hook_b": "El espejo también te mira.",
-          "cta": "Refléjate en endonautas.cl",
+          "hook_a": "Tu intervención más potente está fuera de sesión.",
+          "hook_b": "Si no la usas, pierdes el momento.",
+          "cta": "Acompaña mejor con endonautas.cl",
           "keywords": [
             "terapeuta",
-            "espejo",
-            "conflicto"
+            "intervención",
+            "sesión",
+            "acompañamiento"
           ]
         },
         "social": {
-          "instagram": "Una sesión de terapia dura 50 minutos. El otro 99.8% de tu tiempo pasa sin tu terapeuta. Ahí, en el momento exacto del conflicto, es donde el patrón se activa. No necesitas más sesiones: necesitas herramientas que trabajen contigo entre ellas. El Espejo de Conflictos de Endonautas está diseñado para eso. Entra a endonautas.cl y dale a tu paciente un recurso para los 6 días que no ves.\n\n#PsicologíaClínica #Terapia #Autoconocimiento",
-          "tiktok": "¿Crees que tu paciente cambia solo por la sesión semanal? El 99.8% de su vida pasa sin ti. Ahí, en el conflicto del lunes, es donde el patrón se instala. ¿Le estás dando herramientas para ese momento? El Espejo de Conflictos de Endonautas.cl trabaja justo ahí.",
-          "linkedin": "La sesión de terapia ocupa un 0.2% del tiempo del paciente. El resto ocurre sin acompañamiento clínico. Los modelos más efectivos (TCC, DBT, ACT) incluyen trabajo entre sesiones como parte central del tratamiento. Sin embargo, la mayoría de los terapeutas carecen de herramientas para sostener ese espacio. El Espejo de Conflictos, desarrollado por Endonautas, ofrece un recurso psicométrico que funciona en el momento exacto del conflicto: captura el patrón, lo articula y genera material concreto para la próxima sesión. No es un reemplazo de la terapia; es un multiplicador de su efectividad. Conoce cómo integrarlo en tu práctica en endonautas.cl."
+          "instagram": "El 99.8% de tu semana ocurre sin tu terapeuta. La sesión siembra, pero lo que crece, crece en los 6 días que no te ve. ¿Tienes herramientas para trabajar cuando el patrón se activa, no después? El Espejo de Conflictos de endonautas.cl trabaja exactamente ahí. #Terapia #ProcesoTerapéutico #Autoconocimiento",
+          "tiktok": "Tus pacientes tienen 50 minutos contigo y 10.030 sin ti. ¿De verdad crees que en esos 6 días no necesitan apoyo terapéutico? El trabajo real ocurre cuando el patrón se activa, no cuando lo procesan en sesión. endonautas.cl",
+          "linkedin": "El formato semanal deja un vacío: el 99.8% del tiempo del paciente no tiene acompañamiento. Modelos como TCC o ACT lo reconocen al incluir tareas entre sesiones, pero la práctica clínica aún carece de herramientas sistemáticas para ese espacio.\n\nNo se trata de sustituir la terapia, sino de multiplicar su efecto. Un registro de momento a momento —lo que sintió, lo que activó la respuesta, lo que necesitaba— permite al terapeuta trabajar con datos vivos, no con recuerdos difusos.\n\nLa propuesta de Endonautas es clínica: el Espejo de Conflictos opera en el intervalo entre sesiones, capturando el material para que llegue armado a la terapia. No es complemento decorativo: es protocolo para el 99.8% del proceso.\n\nConoce cómo integrarlo en tu práctica en endonautas.cl"
         }
       }
     ]
   },
-  "last_updated": "2026-06-30T21:08:00+00:00"
+  "last_updated": "2026-06-30T21:08:50+00:00"
 }
