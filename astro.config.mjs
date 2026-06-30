@@ -6,7 +6,7 @@ export default defineConfig({
   output: 'static',
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/draft/') && !page.includes('/fractones/'),
+      filter: (page) => !page.includes('/draft/') && !page.includes('/fractones/') && !page.includes('/review-social'),
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),

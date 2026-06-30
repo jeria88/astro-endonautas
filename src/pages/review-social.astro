@@ -1,0 +1,252 @@
+---
+// Página interna — revisión de copy variants por director.
+// Excluida del sitemap. Solo Franco.
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revisión de copy — Endonautas</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #030306; color: #f0e8dc;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 15px; line-height: 1.6;
+    padding: 2rem 1rem 7rem; max-width: 960px; margin: 0 auto;
+  }
+  h1 { font-size: 1.1rem; color: #7ecccd; letter-spacing: 0.05em; text-transform: uppercase; }
+  .subtitle { color: rgba(240,232,220,0.35); font-size: 0.8rem; margin: 0.25rem 0 2.5rem; }
+
+  .article-slug {
+    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(240,232,220,0.25); padding-bottom: 0.75rem; margin-bottom: 1.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .director { margin-bottom: 2.5rem; }
+  .director-name {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(126,204,205,0.65); margin-bottom: 0.75rem;
+  }
+  .variants { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.75rem; }
+
+  /* Variant card */
+  .variant {
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
+    padding: 1rem 1.1rem 0.9rem; background: rgba(255,255,255,0.025);
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .variant-num {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(240,232,220,0.25); margin-bottom: 0.65rem;
+  }
+  .field { margin-bottom: 0.45rem; }
+  .field-key {
+    font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(240,232,220,0.28); display: block; margin-bottom: 0.1rem;
+  }
+  .field-val { color: rgba(240,232,220,0.82); font-size: 0.83rem; line-height: 1.42; }
+  .kw { margin-top: 0.4rem; font-size: 0.68rem; color: rgba(240,232,220,0.2); }
+
+  /* Slides preview for carousel section */
+  .slides-section { margin-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.65rem; }
+  .slides-label { font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(240,232,220,0.28); margin-bottom: 0.4rem; }
+  .slide-row { display: flex; gap: 0.5rem; margin-bottom: 0.3rem; align-items: baseline; }
+  .slide-n { font-size: 0.6rem; color: rgba(240,232,220,0.2); min-width: 1.2rem; }
+  .slide-txt { font-size: 0.78rem; color: rgba(240,232,220,0.75); line-height: 1.38; }
+  .slide-txt.hook { color: #f0e8dc; font-weight: 600; }
+  .slide-txt.cta  { color: rgba(126,204,205,0.8); }
+
+  /* Format toggles */
+  .toggles {
+    margin-top: 0.85rem; padding-top: 0.7rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex; gap: 0.4rem;
+  }
+  .toggle {
+    flex: 1; padding: 6px 0; border-radius: 6px; cursor: pointer;
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em;
+    text-align: center; border: 1px solid rgba(255,255,255,0.12);
+    background: transparent; color: rgba(240,232,220,0.35);
+    transition: all 0.13s;
+  }
+  .toggle.on-carousel { border-color: #7ecccd; color: #7ecccd; background: rgba(126,204,205,0.08); }
+  .toggle.on-reel     { border-color: #c0a0f0; color: #c0a0f0; background: rgba(192,160,240,0.08); }
+
+  /* Sticky footer */
+  .actions {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(3,3,6,0.96); backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    z-index: 100;
+  }
+  .btn {
+    padding: 10px 28px; border-radius: 40px; border: none; cursor: pointer;
+    font-weight: 700; font-size: 0.75rem; letter-spacing: 0.09em; text-transform: uppercase;
+    background: #7ecccd; color: #030c07; transition: opacity 0.14s;
+  }
+  .btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .btn:hover:not(:disabled) { opacity: 0.85; }
+  .count { color: rgba(240,232,220,0.4); font-size: 0.8rem; }
+  #msg   { font-size: 0.78rem; color: #7ecccd; }
+
+  #loading, #empty { color: rgba(240,232,220,0.3); font-size: 0.85rem; padding: 2rem 0; }
+</style>
+</head>
+<body>
+<h1>Revisión de copy</h1>
+<p class="subtitle">Activá el formato que querés generar. Verde = carrusel · Violeta = reel.</p>
+
+<div id="loading">Cargando variantes…</div>
+<div id="empty" style="display:none">No hay artículos pendientes de revisión.</div>
+<div id="content"></div>
+<div class="actions">
+  <button class="btn" id="btn-approve" disabled onclick="approve()">Generar seleccionados</button>
+  <span class="count" id="count">Sin selección</span>
+  <span id="msg"></span>
+</div>
+
+<script>
+const DIRECTOR_LABELS = {
+  loop:"Loop — Malick", contrain:"Contraintuición — Fincher",
+  quote:"Cita — Wes Anderson", hook:"Hook narrativo — WKW",
+  pregunta:"Pregunta — PTA", edu:"Educativo — McKay", documental:"Documental — Herzog",
+};
+
+let currentSlug = null;
+// key: "director:idx" → {carousel: bool, reel: bool}
+const selections = {};
+
+async function load() {
+  const res  = await fetch("/api/list-pending");
+  const data = await res.json();
+  document.getElementById("loading").style.display = "none";
+
+  if (!data.pending?.length) { document.getElementById("empty").style.display = ""; return; }
+
+  const item = data.pending[0];
+  currentSlug = item.slug;
+
+  const c = document.getElementById("content");
+  const slug_el = document.createElement("div");
+  slug_el.className = "article-slug";
+  slug_el.textContent = item.slug;
+  c.appendChild(slug_el);
+
+  for (const [dirName, variants] of Object.entries(item.director_variants || {})) {
+    c.appendChild(buildDirector(dirName, variants));
+  }
+}
+
+function buildDirector(dirName, variants) {
+  const block = document.createElement("div");
+  block.className = "director";
+  block.innerHTML = `<div class="director-name">${DIRECTOR_LABELS[dirName] || dirName}</div>
+    <div class="variants" id="vars-${dirName}"></div>`;
+  const grid = block.querySelector(".variants");
+  variants.forEach((v, i) => grid.appendChild(buildCard(dirName, i, v)));
+  return block;
+}
+
+function buildCard(dirName, idx, variant) {
+  const card = document.createElement("div");
+  card.className = "variant";
+
+  // Reel fields
+  const reelFields = Object.entries(variant.reel || {})
+    .filter(([k]) => k !== "keywords")
+    .map(([k, v]) => v ? `<div class="field"><span class="field-key">${k}</span><span class="field-val">${v}</span></div>` : "")
+    .join("");
+
+  // Carousel slides
+  const slides = (variant.carousel?.slides || [])
+    .map((s, i) => {
+      const cls = i === 0 ? "hook" : i === (variant.carousel.slides.length-1) ? "cta" : "";
+      return `<div class="slide-row"><span class="slide-n">${String(i+1).padStart(2,"0")}</span><span class="slide-txt ${cls}">${s}</span></div>`;
+    }).join("");
+
+  const kw = (variant.reel?.keywords || []).join(" · ");
+
+  card.innerHTML = `
+    <div class="variant-num">Versión ${idx+1}</div>
+    ${reelFields}
+    ${kw ? `<div class="kw">${kw}</div>` : ""}
+    ${slides ? `<div class="slides-section"><div class="slides-label">Slides carrusel</div>${slides}</div>` : ""}
+    <div class="toggles">
+      <button class="toggle" data-dir="${dirName}" data-idx="${idx}" data-type="carousel">Carrusel</button>
+      <button class="toggle" data-dir="${dirName}" data-idx="${idx}" data-type="reel">Reel</button>
+    </div>`;
+
+  card.querySelectorAll(".toggle").forEach(btn => btn.addEventListener("click", () => onToggle(btn)));
+  return card;
+}
+
+function onToggle(btn) {
+  const {dir, idx, type} = btn.dataset;
+  const key = `${dir}:${idx}`;
+  if (!selections[key]) selections[key] = {carousel: false, reel: false};
+  selections[key][type] = !selections[key][type];
+
+  // Clean up empty selection
+  if (!selections[key].carousel && !selections[key].reel) delete selections[key];
+
+  // Update button class
+  btn.className = "toggle" + (selections[key]?.[type] ? ` on-${type}` : "");
+  updateFooter();
+}
+
+function updateFooter() {
+  const entries = Object.entries(selections);
+  const n = entries.length;
+  const nC = entries.filter(([,v]) => v.carousel).length;
+  const nR = entries.filter(([,v]) => v.reel).length;
+
+  let txt = "Sin selección";
+  if (n) {
+    const parts = [];
+    if (nC) parts.push(`${nC} carrusel${nC>1?"es":""}`);
+    if (nR) parts.push(`${nR} reel${nR>1?"s":""}`);
+    txt = parts.join(" + ");
+  }
+  document.getElementById("count").textContent = txt;
+  document.getElementById("btn-approve").disabled = !n;
+}
+
+async function approve() {
+  const btn = document.getElementById("btn-approve");
+  btn.disabled = true;
+  btn.textContent = "Enviando…";
+
+  const approved_selections = Object.entries(selections).map(([key, {carousel, reel}]) => {
+    const [director, vi] = key.split(":");
+    return { director, variant_index: Number(vi), carousel, reel };
+  });
+
+  const res  = await fetch("/api/approve-copy", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({slug: currentSlug, approved_selections}),
+  });
+  const data = await res.json();
+
+  if (data.ok) {
+    btn.textContent = `✓ ${data.approved} variante(s) en cola`;
+    document.getElementById("msg").textContent = "Se generarán en el próximo ciclo (~30 min).";
+    document.querySelectorAll(".toggle").forEach(b => b.disabled = true);
+  } else {
+    btn.disabled = false;
+    btn.textContent = "Generar seleccionados";
+    document.getElementById("msg").textContent = `Error: ${data.error}`;
+  }
+}
+
+load().catch(e => {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("empty").style.display = "";
+  document.getElementById("empty").textContent = `Error: ${e.message}`;
+});
+</script>
+</body>
+</html>
