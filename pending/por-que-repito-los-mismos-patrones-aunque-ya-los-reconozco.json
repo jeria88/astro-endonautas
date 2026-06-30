@@ -6,5 +6,426 @@
   "category": "Proceso",
   "article_path": "src/content/blog/por-que-repito-los-mismos-patrones-aunque-ya-los-reconozco.md",
   "published_date": "2026-06-30",
-  "status": "pending"
+  "status": "copy_pending_review",
+  "avatar_variants": {
+    "negocio": [
+      {
+        "carousel": {
+          "slides": [
+            "Reconocés el patrón pero lo repetís. ¿Por qué?",
+            "No es falta de voluntad. Es tu sistema de protección.",
+            "Tu cerebro automatizó esa respuesta para sobrevivir.",
+            "Ahora, en tu negocio, el mismo patrón sabotea tus decisiones.",
+            "Y afecta a tu equipo sin que te des cuenta.",
+            "Dejá de culparte. Empezá a reprogramar con acciones concretas.",
+            "Liderar desde el autoconocimiento es tu próxima ventaja.",
+            "Identificá el patrón, desactivá su poder, decidí libre."
+          ],
+          "keywords": [
+            "patrones",
+            "liderazgo",
+            "autoconocimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que sabotea tu negocio sin que lo veas.",
+          "hook_b": "Repetís lo mismo aunque sabés que está mal.",
+          "cta": "Descubrí cómo romperlo. Seguime.",
+          "keywords": [
+            "liderazgo",
+            "patrones",
+            "decisiones"
+          ]
+        },
+        "social": {
+          "instagram": "Sabés que repetís un patrón, pero no podés parar. No es falta de voluntad: es tu sistema de protección. Cuando lo entendés, liderás mejor. #LiderazgoConsciente #Autoconocimiento #Decisiones",
+          "tiktok": "Reconocés el patrón y lo repetís igual. No te castigues. Es tu pasado protegiéndote. Aprendé a verlo para liderar sin sabotaje.",
+          "linkedin": "El mayor obstáculo en la toma de decisiones no es la falta de información, sino los patrones inconscientes que repetimos. Liderar desde el autoconocimiento no es un lujo, es una competencia estratégica que transforma la cultura organizacional."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Tu mayor enemigo en el negocio: tu patrón inconsciente.",
+            "Lo ves venir, lo nombrás, pero actuás igual.",
+            "Esa respuesta automática se entrenó para protegerte.",
+            "Hoy frena tu liderazgo y la gestión de tu equipo.",
+            "No necesitas más fuerza de voluntad, necesitas otra estrategia.",
+            "Reconocer no basta. Hay que intervenir el origen.",
+            "Aprendé a cambiar la respuesta antes de que ella te controle.",
+            "Liderazgo real es decidir desde la conciencia, no desde el piloto."
+          ],
+          "keywords": [
+            "inconsciente",
+            "liderazgo",
+            "negocio"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El sabotaje silencioso de todo líder exitoso.",
+          "hook_b": "Te sabés el patrón pero no podés frenarlo.",
+          "cta": "Aprendé a desactivarlo. Seguime.",
+          "keywords": [
+            "sabotaje",
+            "líder",
+            "patrón"
+          ]
+        },
+        "social": {
+          "instagram": "Reconocer un patrón no te protege de actuarlo. La próxima vez que lo veas venir, intervení desde otro lugar. Tu liderazgo lo agradece. #Liderazgo #Patrones #EquiposConscientes",
+          "tiktok": "Ves el error, lo nombrás, lo repetís. No sos débil, sos automático. Rompé el ciclo para liderar sin piloto automático.",
+          "linkedin": "En la gestión de equipos, los patrones no resueltos del líder se convierten en cultura repetitiva. Trabajar en uno mismo es la inversión más rentable para cualquier organización."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "No es falta de autoconocimiento. Es que saber no alcanza.",
+            "Tu patrón se originó en una emoción intensa del pasado.",
+            "Hoy opera más rápido que tu conciencia.",
+            "Por eso tu toma de decisiones sigue tropezando con lo mismo.",
+            "Y tu equipo lo percibe como inconsistencia.",
+            "La solución no es más análisis, es reprogramación activa.",
+            "Identificá la señal, frená la respuesta automática, elegí otra.",
+            "Ese es el verdadero liderazgo consciente."
+          ],
+          "keywords": [
+            "reprogramación",
+            "liderazgo",
+            "equipos"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que todos los líderes repiten sin saber.",
+          "hook_b": "Sabés qué pasa, pero no podés cambiar el rumbo.",
+          "cta": "Dejá de culparte y empezá a reprogramar.",
+          "keywords": [
+            "líder",
+            "patrón",
+            "cambio"
+          ]
+        },
+        "social": {
+          "instagram": "El autoconocimiento no sirve de nada si no va acompañado de acción. Reconocé el patrón, desactivá su poder, decidí desde otro lugar. Eso sí es liderazgo. #LiderazgoReal #Autoconocimiento #Equipos",
+          "tiktok": "El patrón te gana de mano siempre. No te castigues por eso. Cambiá la estrategia, no repitas la misma pelea.",
+          "linkedin": "La cultura organizacional es espejo de los patrones no trabajados de sus líderes. Invertir en autoconocimiento no es desarrollo personal; es estrategia de negocio."
+        }
+      }
+    ],
+    "profesional": [
+      {
+        "carousel": {
+          "slides": [
+            "Reconoces el patrón, pero tu cerebro sigue actuando como si nada.",
+            "Sabes que catastrofizas, pero no puedes parar. ¿Por qué?",
+            "Porque tus patrones no se desactivan solo con darte cuenta.",
+            "Son respuestas automáticas que nacieron para protegerte en otro momento.",
+            "Hoy te frenan en tu carrera: echaś culpas, evitas conflictos, te exiges demasiado.",
+            "No es falta de voluntad: tu sistema activo más rápido que tu conciencia.",
+            "El autoconocimiento real empieza cuando intervienes justo después del patrón."
+          ],
+          "keywords": [
+            "patrón",
+            "autoconocimiento",
+            "carrera"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Eres brillante, pero te repites el mismo error.",
+          "hook_b": "¿Por qué sabes tu patrón y lo repites igual?",
+          "cta": "Descubre por qué y cambialo.",
+          "keywords": [
+            "patrón",
+            "autosabotaje",
+            "profesional"
+          ]
+        },
+        "social": {
+          "instagram": "Sabes que te repites… pero tu cerebro no escucha la razón. Lo que frenaba antes hoy te frena en tu carrera. La conciencia no basta: necesitas intervención. #patrones #desarrolloprofesional #autoconocimiento",
+          "tiktok": "Reconoces tu patrón, lo nombramos… y lo repites. No es que no quieras cambiar; es que tu sistema es más rápido. El truco: detenerte justo después.",
+          "linkedin": "El autoconocimiento sin intervención práctica corre el riesgo de quedarse en diagnóstico. Cuando reconoces un patrón y actúas igual, no hay fracaso: hay oportunidad de diseñar una respuesta nueva que sostenga tu carrera."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "El patrón no es flojera: es un piloto automático que te frenó siempre.",
+            "Sabes que evitas conflictos, pero en el trabajo te callas exactamente igual.",
+            "Tu mente repite la estrategia que usaste para sobrevivir antes.",
+            "Hoy esa estrategia te limita en promociones, relaciones y confianza.",
+            "No te falta conciencia: te falta una intervención justo al detectar.",
+            "El cambio no depende de entenderlo todo, sino de actuar distinto en el momento.",
+            "Aprende a cortar el automatismo y empieza a elegir desde el autoconocimiento."
+          ],
+          "keywords": [
+            "automatismo",
+            "intervención",
+            "rendimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Sabes tu patrón y aun así no lo sueltas.",
+          "hook_b": "El verdadero freno profesional no es la falta de capacidad.",
+          "cta": "Salí del piloto automático.",
+          "keywords": [
+            "patrón",
+            "piloto automático",
+            "profesional"
+          ]
+        },
+        "social": {
+          "instagram": "No es que no hayas trabajado suficiente: es que tu patrón corre más rápido que tu conciencia. Dejar de repetirlo requiere intervención, no solo análisis. #autoconocimiento #carrera #crecimientoprofesional",
+          "tiktok": "Sabés exactamente lo que estás haciendo… y lo repetís igual. No es falta de voluntad: tu sistema actuá primero. Ejercicio: reconocé, respirado, y elegí otra cosa.",
+          "linkedin": "Reconocer el patrón no es suficiente cuando el sistema nervioso responde antes que la razón. El verdadero desarrollo profesional sostenible implica diseñar respuestas nuevas justo donde antes solo repetíamos."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Te sabés el patrón de memoria y aún así te gana.",
+            "No es que no quieras cambiar: tu cerebro prioriza lo conocido.",
+            "Ese mecanismo te protegió antes; hoy sabotea tu carrera.",
+            "Te exiges de más, pospones decisiones, o te invisibilizas sin querer.",
+            "Reconocerlo no lo desactiva. Necesitás una intervención justo ahí.",
+            "El poder está en el microsegundo entre el disparo y la respuesta.",
+            "Convertí el autoconocimiento en acción: interrumpí el patrón y elegí."
+          ],
+          "keywords": [
+            "interrumpir",
+            "acción",
+            "carrera"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El profesional más capaz puede ser su propio freno.",
+          "hook_b": "¿Te autosaboteas sin darte cuenta? Así se sale.",
+          "cta": "Interrumpí el patrón ahora.",
+          "keywords": [
+            "autosabotaje",
+            "patrón",
+            "carrera"
+          ]
+        },
+        "social": {
+          "instagram": "No necesitas más conciencia, necesitas intervención. Tu patrón corre más rápido que tu razón. Pero en el segundo después de actuar, podés elegir distinto. #autosabotaje #autoconocimiento #carrera",
+          "tiktok": "El patrón que te frena no se va solo con saberlo. La clave está en intervenir justo después de actuar. Un segundo de pausa cambia todo.",
+          "linkedin": "Uno de los mayores obstáculos para una carrera sostenible no es la falta de talento, sino la repetición de patrones que ya no sirven. La conciencia es el primer paso; la intervención deliberada, el verdadero cambio."
+        }
+      }
+    ],
+    "padres": [
+      {
+        "carousel": {
+          "slides": [
+            "Sabés que repetís patrones, pero no podés parar. No es falta de voluntad.",
+            "Los patrones no son hábitos conscientes. Son respuestas automáticas de supervivencia.",
+            "Se originaron en momentos de alta emoción y operan más rápido que tu conciencia.",
+            "Cuando criás, esos patrones se activan sin que te des cuenta.",
+            "Tu hijo aprende de tus reacciones, no de tus palabras.",
+            "Reconocer el patrón no lo desactiva. Necesitás algo más que conciencia.",
+            "Endonautas te da herramientas para romper el ciclo. Criá desde la libertad."
+          ],
+          "keywords": [
+            "patrones",
+            "crianza consciente",
+            "autoconocimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Lo que repetís sin querer, tus hijos lo heredan.",
+          "hook_b": "El patrón que no frenás hoy, ellos lo vivirán mañana.",
+          "cta": "Rompe el ciclo en Endonautas.",
+          "keywords": [
+            "patrón familiar",
+            "herencia emocional",
+            "crianza"
+          ]
+        },
+        "social": {
+          "instagram": "Reconocer el patrón no es suficiente para cambiarlo. La crianza consciente empieza cuando entendés que tus hijos aprenden de tu ejemplo, no de tus discursos. #crianzaconsciente #patrones #autoconocimiento",
+          "tiktok": "Tus hijos aprenden lo que vos repetís, aunque nunca se los digas. No es culpa, es patrón. Rompelo acá: Endonautas.",
+          "linkedin": "Criar es también un trabajo interior. Los patrones que repetimos no se desactivan solo con reconocerlos; requieren herramientas y acompañamiento. Como padres, romper esos ciclos es el mejor legado. Endonautas ofrece un espacio para hacerlo."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Te frustra repetir lo mismo aunque ya lo ves. No es que no hayas trabajado suficiente.",
+            "Los patrones se automatizaron porque en algún momento te salvaron.",
+            "Hoy te sabotean, pero tu sistema los sigue usando por instinto.",
+            "En la crianza, esos patrones aparecen cuando menos lo esperás.",
+            "Le gritás a tu hijo y después te odias. Sabés que es tu patrón.",
+            "Pero reconocerlo no alcanza; necesitás una estrategia nueva.",
+            "Endonautas te acompaña a reprogramar tu respuesta. Criá diferente."
+          ],
+          "keywords": [
+            "patrones repetitivos",
+            "crianza",
+            "cambio real"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "¿Por qué no podés parar aunque ya lo reconocés?",
+          "hook_b": "El patrón que sabés que tenés y hacés igual.",
+          "cta": "Descubrí cómo salir del ciclo.",
+          "keywords": [
+            "patrón",
+            "crianza consciente",
+            "cambio"
+          ]
+        },
+        "social": {
+          "instagram": "No es falta de voluntad. Los patrones se activan antes de que puedas pensar. Crianza consciente es aprender a frenar eso. #crianzaconciente #patrones #endonautas",
+          "tiktok": "Sabés que estás repitiendo el patrón y no podés parar. No es tu culpa, pero podés cambiarlo.",
+          "linkedin": "La crianza nos enfrenta a nuestros propios patrones no resueltos. Reconocerlos es el primer paso, pero no es suficiente. El verdadero cambio requiere acompañamiento y herramientas. Endonautas propone un camino para padres que quieren romper el ciclo."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "Ver el patrón no es suficiente para dejarlo. La explicación fácil te culpa.",
+            "Un patrón es una respuesta automática que se creó para sobrevivir.",
+            "No es un pensamiento, es un reflejo. Por eso la conciencia sola no alcanza.",
+            "Cuando criás, esos reflejos se activan y afectan a tus hijos.",
+            "Ellos aprenden de lo que hacés, no de lo que decís.",
+            "Romper el ciclo requiere intervenir en el momento exacto.",
+            "Endonautas te enseña a detectar y cambiar tu patrón en acción."
+          ],
+          "keywords": [
+            "romper patrones",
+            "crianza",
+            "autoconocimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El mayor regalo que le podés dar a tus hijos.",
+          "hook_b": "No es lo que les decís, es lo que repetís sin querer.",
+          "cta": "Empezá a cambiar tu historia.",
+          "keywords": [
+            "herencia",
+            "patrones",
+            "crianza consciente"
+          ]
+        },
+        "social": {
+          "instagram": "Tus hijos heredan lo que repetís, no lo que les enseñás. Romper el patrón es el acto más consciente de crianza. #crianzaconsciente #patronesfamiliares #endonautas",
+          "tiktok": "Lo que más impacta a tus hijos no es lo que les decís, sino lo que repetís sin darte cuenta. Cambialo.",
+          "linkedin": "Ser padre o madre implica un trabajo de autoconocimiento continuo. Los patrones que repetimos no se rompen solo con reconocerlos; necesitamos herramientas y comunidad. Endonautas ofrece justo eso: un espacio para transformar la crianza desde adentro."
+        }
+      }
+    ],
+    "terapeuta": [
+      {
+        "carousel": {
+          "slides": [
+            "¿Sabés que tu paciente reconoce su patrón y aún así lo repite?",
+            "No es falta de voluntad: es que el patrón fue útil para sobrevivir.",
+            "Los patrones operan más rápido que la conciencia, no son pensamientos.",
+            "Reconocer no es suficiente: necesitás intervenir en otro nivel.",
+            "La psicometría te muestra qué respuestas automáticas están activas.",
+            "Ayudá a tu paciente a entender el origen emocional del patrón.",
+            "Convertí el reconocimiento en un mapa para la intervención clínica."
+          ],
+          "keywords": [
+            "patrones de repeticion",
+            "intervencion clinica",
+            "psicometria clinica"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tu paciente sabe su patrón… y lo repite.",
+          "hook_b": "La clínica ve el qué, la psicometría el cómo.",
+          "cta": "Descubrí el test Endonautas.",
+          "keywords": [
+            "patrones",
+            "psicometria",
+            "terapeutas"
+          ]
+        },
+        "social": {
+          "instagram": "Saber no es suficiente para cambiar. La psicometría te da el mapa de respuestas automáticas que la clínica sola no alcanza. Usalo en tu consulta. #Terapeutas #Autoconocimiento #Psicometria",
+          "tiktok": "Tu paciente te dice 'sé que es mi patrón', pero no para. La psicometría ve lo que no te cuentan. Dale un test.",
+          "linkedin": "En la práctica clínica, un paciente que reconoce su patrón pero no logra detenerlo no es un caso de 'falta de voluntad'. Es una señal de que la intervención necesita un nivel más profundo. La psicometría ofrece un marco para identificar respuestas automáticas y trabajar desde el origen. Integrarla en la terapia enriquece el proceso de autoconocimiento con datos concretos que el paciente puede abordar."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "¿Por qué repetimos patrones aunque los veamos venir?",
+            "No es falta de conciencia: la respuesta es más rápida que el pensamiento.",
+            "El patrón se automatizó porque en algún momento te protegió.",
+            "Reconocerlo no lo desactiva; necesitás una intervención más exacta.",
+            "La psicometría detecta las respuestas automáticas que operan en silencio.",
+            "Convertí el insight en una herramienta clínica concreta.",
+            "Dale a tu paciente algo más que palabras: datos que guíen el cambio."
+          ],
+          "keywords": [
+            "patrones automaticos",
+            "datos clinicos",
+            "herramientas terapeuticas"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "No es terco: su cerebro va más rápido.",
+          "hook_b": "La clínica escucha, la psicometría mide.",
+          "cta": "Probá Endonautas gratis.",
+          "keywords": [
+            "patrones",
+            "respuestas automaticas",
+            "terapeutas"
+          ]
+        },
+        "social": {
+          "instagram": "El reconocimiento del patrón no basta si opera a nivel automático. La psicometría te da el mapa de esas respuestas para intervenir con precisión. Herramienta para terapeutas. #PsicometriaClinica #TerapiaBasadaEnDatos #Endonautas",
+          "tiktok": "¿Sabés qué ve la psicometría que tu paciente no te dice? Las respuestas automáticas que repiten el patrón. Test rápido, intervención precisa.",
+          "linkedin": "La repetición de patrones a pesar del reconocimiento consciente no es un fracaso terapéutico, sino una señal de que la intervención debe bajar al nivel de la respuesta automática. La psicometría permite objetivar esos procesos y ofrecer al paciente un mapa de trabajo basado en datos. Integrar estas herramientas en la práctica clínica potencia el autoconocimiento y la efectividad del proceso."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "¿Tu paciente identifica su patrón pero no puede dejarlo?",
+            "No es resistencia: el patrón se activa antes de pensar.",
+            "Fue útil para sobrevivir, pero hoy ya no te sirve.",
+            "Reconocer no es cambiar: necesitás llegar al origen emocional.",
+            "La psicometría revela qué respuestas automáticas lo mantienen.",
+            "Transformá el insight en un plan de intervención clínica.",
+            "Ayudá a tu paciente a pasar del 'sé que' al 'cómo salgo'."
+          ],
+          "keywords": [
+            "cambio terapeutico",
+            "intervencion psicometrica",
+            "autoconocimiento profundo"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Saber el patrón no es suficiente.",
+          "hook_b": "Lo que la clínica no ve, la psicometría lo mide.",
+          "cta": "Usá Endonautas en tu consulta.",
+          "keywords": [
+            "psicometria",
+            "cambio",
+            "terapeutas"
+          ]
+        },
+        "social": {
+          "instagram": "Reconocer el patrón no lo desactiva. La psicometría te ayuda a ver las respuestas automáticas detrás de la repetición. Herramienta concreta para tu práctica clínica. #TerapeutasConscientes #PsicometriaEnTerapia #Endonautas",
+          "tiktok": "Tu paciente sabe que repite el patrón, pero no puede parar. La psicometría ve lo que la clínica no alcanza. Probá un test.",
+          "linkedin": "Cuando un paciente reconoce su patrón pero no logra modificarlo, el desafío clínico está en intervenir a nivel de las respuestas automáticas. La psicometría aporta datos objetivos que enriquecen el autoconocimiento y permiten diseñar estrategias de cambio más precisas. Integrar estas herramientas en la terapia no reemplaza el vínculo, sino que lo potencia con un mapa compartido."
+        }
+      }
+    ]
+  }
 }
