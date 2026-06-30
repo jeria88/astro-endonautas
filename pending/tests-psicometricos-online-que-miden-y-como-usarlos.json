@@ -6,5 +6,217 @@
   "category": "Instrumentos",
   "article_path": "src/content/blog/tests-psicometricos-online-que-miden-y-como-usarlos.md",
   "published_date": "2026-06-30",
-  "status": "pending"
+  "status": "copy_pending_review",
+  "avatar_variants": {
+    "negocio": [],
+    "profesional": [
+      {
+        "carousel": {
+          "slides": [
+            "¿Tu personalidad te frena en el trabajo sin que lo sepas?",
+            "Un test psicométrico no es un horóscopo. Mide con rigor.",
+            "Validez: el test mide realmente lo que promete.",
+            "Confiabilidad: da resultados consistentes, no adivinanzas.",
+            "Aplica estos datos para mejorar tu comunicación laboral.",
+            "Identifica estilos que potencian o limitan tu rendimiento.",
+            "Usa el autoconocimiento como palanca de crecimiento real."
+          ],
+          "keywords": [
+            "validez",
+            "confiabilidad",
+            "rendimiento laboral"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón que frena a los más capaces.",
+          "hook_b": "¿Te saboteas sin darte cuenta? Esto te interesa.",
+          "cta": "Descubrí cómo en Endonautas.",
+          "keywords": [
+            "autosabotaje",
+            "profesionales",
+            "patrón invisible"
+          ]
+        },
+        "social": {
+          "instagram": "Conocé qué miden los tests psicométricos y cómo aplicarlos a tu desarrollo profesional. No es magia, es ciencia. #psicometría #autoconocimiento #crecimientoprofesional",
+          "tiktok": "Los profesionales exitosos se autosabotean sin saberlo. Un test válido te muestra el patrón. Salí de ahí.",
+          "linkedin": "El autoconocimiento validado no es lujo, es estrategia. Invertir en tests psicométricos sólidos construye carreras sostenibles y equipos que realmente funcionan."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "¿Sabés lo que realmente medís cuando te evaluás?",
+            "Psicometría: medir lo psicológico con criterio científico.",
+            "Validez: tu test no es un juego, debe correlacionar con la realidad.",
+            "Confiabilidad: dos personas iguales, mismos resultados.",
+            "Mejorá tus relaciones laborales con datos objetivos.",
+            "Identificá fortalezas para crecer sin adivinanzas.",
+            "Convertí el autoconocimiento en ventaja profesional."
+          ],
+          "keywords": [
+            "psicometría",
+            "relaciones laborales",
+            "crecimiento"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "El patrón oculto que te limita como profesional.",
+          "hook_b": "No sabés por qué te estancas. Esto te ayuda.",
+          "cta": "Aprendé más en Endonautas.",
+          "keywords": [
+            "estancamiento",
+            "patrón oculto",
+            "autoconocimiento"
+          ]
+        },
+        "social": {
+          "instagram": "Diferencia entre un test serio y uno de internet. La psicometría te da herramientas reales para tu desarrollo. #testspsicométricos #crecimientolaboral #ciencia",
+          "tiktok": "¿Te sentís frenado sin razón? Puede ser un patrón que no ves. Los tests válidos te lo muestran.",
+          "linkedin": "La carrera sostenible empieza por conocerse con rigor. Datos psicométricos sólidos = decisiones profesionales más inteligentes."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "¿Tu carrera avanza o solo repite patrones?",
+            "Tests psicométricos: miden personalidad, no etiquetan.",
+            "Validez: asegurate de que mida lo que necesitás.",
+            "Confiabilidad: resultados estables para decisiones serias.",
+            "Usalos para liderar mejor y negociar con impacto.",
+            "Detectá sesgos que afectan tu rendimiento diario.",
+            "Autoconocimiento validado = crecimiento profesional real."
+          ],
+          "keywords": [
+            "liderazgo",
+            "sesgos",
+            "carrera sostenible"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Por qué los talentosos se autosabotean.",
+          "hook_b": "El freno invisible de los profesionales capaces.",
+          "cta": "Descubrí el patrón en Endonautas.",
+          "keywords": [
+            "autosabotaje",
+            "talento",
+            "freno invisible"
+          ]
+        },
+        "social": {
+          "instagram": "Los tests psicométricos bien hechos son tu brújula profesional. No te conformes con etiquetas, exigí ciencia. #desarrolloprofesional #psicometría #autoconocimiento",
+          "tiktok": "Profesionales exitosos se sabotean sin saber. Un test válido te muestra cómo salir de ese ciclo.",
+          "linkedin": "El verdadero crecimiento profesional no es acumular logros, es entender qué patrones internos te sostienen o te frenan. Invertí en conocerte."
+        }
+      }
+    ],
+    "padres": [],
+    "terapeuta": [
+      {
+        "carousel": {
+          "slides": [
+            "Tu paciente llega con resultados de test online. ¿Confías en ellos?",
+            "Muchos tests miden lo que prometen y otros solo entretienen.",
+            "La validez: mide realmente lo que dice medir.",
+            "La confiabilidad: da resultados consistentes en el tiempo.",
+            "Un test válido correlaciona con diagnósticos clínicos reales.",
+            "No todos los tests son iguales, ni sirven para la clínica.",
+            "Usa psicometría válida para enriquecer tu práctica terapéutica."
+          ],
+          "keywords": [
+            "validez",
+            "confiabilidad",
+            "psicometría clínica"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Lo que tu paciente oculta en sesión.",
+          "hook_b": "El test que ve más allá de la terapia.",
+          "cta": "Conocé Endonautas. Probálo gratis.",
+          "keywords": [
+            "psicometría",
+            "autoconocimiento",
+            "paciente"
+          ]
+        },
+        "social": {
+          "instagram": "La psicometría revela lo que la clínica a veces no capta. Tests válidos vs. cuestionarios de internet. Herramientas para terapeutas que buscan profundizar. #Psicometría #Terapia #Autoconocimiento",
+          "tiktok": "¿Sabés lo que tu paciente no te dice? Los tests psicométricos válidos lo detectan. Usalos bien.",
+          "linkedin": "La diferencia entre un test psicométrico válido y uno informal es crucial para la práctica clínica. Mide lo que dice medir y da resultados consistentes. Herramienta para terapeutas comprometidos con el rigor."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "La clínica sola tiene límites. La psicometría los expande.",
+            "Un test confiable no adivina, mide con precisión.",
+            "Validación clínica: el test se contrasta con diagnósticos.",
+            "Consistencia: repetí el test y obtené resultados similares.",
+            "No todo lo que parece test lo es realmente.",
+            "Elegí instrumentos que respalden tu trabajo terapéutico.",
+            "Integrá psicometría a tu práctica. Mejora resultados."
+          ],
+          "keywords": [
+            "herramienta clínica",
+            "evaluación",
+            "precisión"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Tu intuición clínica no siempre alcanza.",
+          "hook_b": "Hay datos que solo un test revela.",
+          "cta": "Endonautas, psicometría para terapeutas.",
+          "keywords": [
+            "datos",
+            "terapeutas",
+            "psicometría"
+          ]
+        },
+        "social": {
+          "instagram": "La psicometría complementa tu ojo clínico. Tests válidos y confiables para entender mejor a tus pacientes. #PsicometríaClínica #Terapeutas #Autoconocimiento",
+          "tiktok": "¿Tu paciente dice una cosa pero el test muestra otra? Ahí hay trabajo. Usá psicometría válida.",
+          "linkedin": "Integrar psicometría válida en la práctica clínica permite detectar dimensiones que la entrevista sola no captura. Herramienta de precisión para profesionales del autoconocimiento."
+        }
+      },
+      {
+        "carousel": {
+          "slides": [
+            "INFJ, tiempo de calidad, ansiedad moderada. ¿Y ahora qué?",
+            "La diferencia está en si el test mide o solo describe.",
+            "Validez: el test se alinea con criterios clínicos.",
+            "Confiabilidad: resultados estables, no azar.",
+            "Usá tests que sepas que funcionan en terapia.",
+            "El autoconocimiento empieza con datos sólidos.",
+            "Endonautas: psicometría seria para terapeutas reales."
+          ],
+          "keywords": [
+            "autoconocimiento",
+            "datos sólidos",
+            "terapia"
+          ],
+          "layout": "L1"
+        },
+        "reel": {
+          "hook_a": "Resultados bonitos no son resultado reales.",
+          "hook_b": "Tu paciente merece un test que sirva.",
+          "cta": "Descubrí Endonautas para tu práctica.",
+          "keywords": [
+            "resultados",
+            "confiabilidad",
+            "terapeutas"
+          ],
+          "social": {
+            "instagram": "No todos los tests son iguales: validez y confiabilidad marcan la diferencia. Usá psicometría que potencie tu trabajo clínico. #Psicometría #Terapeutas #Autoconocimiento",
+            "tiktok": "Un test vacío no ayuda. Elegí psicometría que mida de verdad. Tu paciente lo nota.",
+            "linkedin": "En la era del autoconocimiento digital, distinguir tests válidos de meros cuestionarios es ética profesional. Herramientas como Endonautas ofrecen rigor al servicio de la terapia."
+          }
+        }
+      }
+    ]
+  }
 }
