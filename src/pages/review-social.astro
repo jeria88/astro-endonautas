@@ -165,6 +165,17 @@
   .fmt-btn.on-carousel { border-color: #7ecccd; color: #7ecccd; background: rgba(126,204,205,0.08); }
   .fmt-btn.on-reel     { border-color: #c0a0f0; color: #c0a0f0; background: rgba(192,160,240,0.08); }
 
+  /* ── PUBLISH BUTTON ── */
+  .publish-row { margin-top: 1.25rem; display: flex; align-items: center; gap: 1rem; }
+  .btn-publish {
+    padding: 9px 22px; border-radius: 40px; border: none; cursor: pointer;
+    font-weight: 700; font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase;
+    background: #e8636a; color: #fff; transition: opacity 0.14s;
+  }
+  .btn-publish:disabled { opacity: 0.3; cursor: not-allowed; }
+  .btn-publish:hover:not(:disabled) { opacity: 0.82; }
+  .publish-note { font-size: 0.68rem; color: rgba(240,232,220,0.28); }
+
   /* ── FOOTER STICKY ── */
   .actions {
     position: fixed; bottom: 0; left: 0; right: 0;
@@ -301,6 +312,13 @@ function buildOutputBlock(item) {
     });
     html += `</div>`;
   }
+
+  html += `<div class="publish-row">
+    <button class="btn-publish" id="pub-${item.slug}" onclick="approveVisual('${item.slug}', this)">
+      Publicar en Instagram
+    </button>
+    <span class="publish-note" id="pub-note-${item.slug}">n8n lo publica en los próximos 2h</span>
+  </div>`;
 
   block.innerHTML = html;
   return block;
@@ -477,6 +495,29 @@ async function approve() {
   } else {
     btn.disabled = false; btn.textContent = "Generar seleccionados";
     document.getElementById("msg").textContent = `Error: ${data.error}`;
+  }
+}
+
+// ─── APPROVE VISUAL → Instagram ──────────────────────────────────────────────
+
+async function approveVisual(slug, btn) {
+  if (!confirm(`¿Publicar "${slug}" en Instagram?\nn8n lo sube en los próximos 2 horas.`)) return;
+  btn.disabled = true; btn.textContent = "Enviando…";
+  const note = document.getElementById(`pub-note-${slug}`);
+
+  const res  = await fetch("/api/approve-visual", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({slug}),
+  });
+  const data = await res.json();
+
+  if (data.ok) {
+    btn.textContent = "✓ En cola de publicación";
+    if (note) note.textContent = "n8n lo publica en los próximos 2h · status: approved";
+  } else {
+    btn.disabled = false; btn.textContent = "Publicar en Instagram";
+    if (note) note.textContent = `Error: ${data.error}`;
   }
 }
 
