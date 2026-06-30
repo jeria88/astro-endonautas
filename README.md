@@ -96,10 +96,29 @@ Flywheel social — POST. Recibe selecciones de Franco (`slug`, `approved_select
 ```
 
 - **`avatar`**: público objetivo del copy (`negocio | profesional | padres | terapeuta`)
-- **`director`**: estilo visual de la pieza (`loop | fincher | malick | wong | kubrick | villeneuve | noe`)
+- **`director`**: estilo visual de la pieza (`loop | contrain | quote | hook | pregunta | edu | documental`)
 - Los avatares generan el copy (Instagram/TikTok/LinkedIn + slides + hook). Los directores controlan la edición visual.
 
-**Env var requerida en Cloudflare Pages:** `GITHUB_TOKEN` (con permisos `contents: write` sobre el repo).
+### `functions/api/approve-visual.js`
+
+Flywheel social — POST. Franco aprueba el output visual generado (status `ready_for_review → approved`).
+
+```json
+{
+  "slug": "mi-articulo",
+  "scheduled_at": "2026-07-01T15:00:00.000Z",
+  "reel_formats": { "0": "reel", "1": "story" }
+}
+```
+
+- `scheduled_at` (opcional): ISO datetime para programar la publicación. Omitir = próximo ciclo n8n (~2h).
+- `reel_formats` (opcional): formato por índice de reel. Valores: `"reel"` (Reel IG) o `"story"` (Story IG). Default: `"reel"`.
+
+### `functions/api/health.js`
+
+Flywheel social — GET. Monitoreo del estado del pipeline. Lee todos los `pending/*.json`, detecta artículos atascados por umbral de tiempo por status, y retorna `{ healthy, total, by_status, stuck, errors }`.
+
+**Env var requerida en Cloudflare Pages:** `GITHUB_TOKEN` (con permisos `contents: read` sobre el repo).
 
 ## Blog
 
@@ -114,9 +133,33 @@ Flywheel social — POST. Recibe selecciones de Franco (`slug`, `approved_select
 pending → copy_pending_review → copy_approved → ready_for_review → approved → published
 ```
 
+| Status | Responsable |
+|--------|------------|
+| `pending` | `run_ci.py` al publicar artículo |
+| `copy_pending_review` | `generate_social.py` Phase 1 (Oracle cron) o `batch_phase1.py` (local) |
+| `copy_approved` | `approve-copy.js` — Franco elige avatar + director en `/review-social` |
+| `ready_for_review` | `generate_social.py` Phase 2 (Oracle) — imágenes/video en R2 |
+| `approved` | `approve-visual.js` — Franco aprueba output + scheduling + reel/story |
+| `published` | n8n workflow — publica en Instagram + Facebook |
+| `generation_error` | `generate_social.py` en fallo — reintentable automáticamente |
+
 Copy generado por DeepSeek en 4 avatares (negocio / profesional / padres / terapeuta).  
-Producción visual por directores cinematográficos (`loop`, `fincher`, `malick`, `wong`, `kubrick`, `villeneuve`, `noe`).  
+Producción visual con directores cinematográficos (`loop`, `contrain`, `quote`, `hook`, `pregunta`, `edu`, `documental`).  
 Scripts en Oracle: `/home/ubuntu/content-studio/generate_social.py`
+
+Scripts locales: `scripts/social/batch_phase1.py` (generar copy en lote), `scripts/social/health_check.py` (monitoreo).
+
+Campos de resiliencia en cada pending JSON: `last_updated` (ISO), `last_error` (string).
+
+### n8n — publicación automática (Instagram + Facebook)
+
+Workflow `e6381324-1127-4713-b755-17f30b30cb9d` · activo · cada 2h.
+
+- Busca JSON con `status: approved`
+- Si `scheduled_at` está en el futuro → salta (no publica todavía)
+- Publica carousel en IG + foto de portada en FB Page
+- Publica reels o stories según `reel_formats` (`REELS` vs `STORIES` en Graph API v21.0)
+- Actualiza JSON a `status: published`
 
 ## Servicios relacionados (Oracle Cloud — mismo servidor que la app)
 

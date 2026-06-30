@@ -101,6 +101,43 @@ La próxima ejecución del cron en Oracle detecta `status: copy_approved` y gene
 
 **Env var requerida en Cloudflare Pages:** `GITHUB_TOKEN` con permisos `contents: write` sobre el repo.
 
+### `functions/api/approve-visual.js`
+
+POST endpoint del flywheel social. Franco aprueba el output visual generado y lo manda a publicar.
+
+Acepta:
+```json
+{
+  "slug": "mi-articulo",
+  "scheduled_at": "2026-07-01T15:00:00.000Z",
+  "reel_formats": { "0": "reel", "1": "story" }
+}
+```
+
+- `scheduled_at`: ISO timestamp opcional. Si se omite, n8n publica en el próximo ciclo (~2h).
+- `reel_formats`: mapa `{índice → "reel"|"story"}` por cada video en `r2_urls`. Default: `"reel"`.
+
+Flujo interno:
+1. Valida que `status === "ready_for_review"`
+2. Escribe `status: "approved"`, `last_updated`, `scheduled_at` (si viene), `reel_formats` (si viene)
+3. n8n detecta `status: approved` en el próximo ciclo y publica
+
+### `functions/api/health.js`
+
+GET endpoint de monitoreo. Lee todos los `pending/*.json` y reporta el estado del pipeline.
+
+```json
+{
+  "healthy": true,
+  "total": 10,
+  "by_status": { "copy_pending_review": [...], "approved": [...] },
+  "stuck": [],
+  "errors": []
+}
+```
+
+Umbrales de "stuck": `pending > 2h`, `copy_approved > 3h`, `copy_pending_review > 48h`, `ready_for_review > 72h`, errores > 1h.
+
 ## Blog
 
 ### Campo `image` en artículos
@@ -125,11 +162,16 @@ pending → copy_pending_review → copy_approved → ready_for_review → appro
 | Status | Quién lo escribe | Significado |
 |--------|-----------------|-------------|
 | `pending` | `run_ci.py` | Artículo publicado, sin copy generado |
-| `copy_pending_review` | `generate_social.py` Phase 1 | DeepSeek generó `avatar_variants` |
+| `copy_pending_review` | `generate_social.py` Phase 1 / `batch_phase1.py` | DeepSeek generó `avatar_variants` |
 | `copy_approved` | `approve-copy.js` | Franco aprobó variantes + eligió director |
 | `ready_for_review` | `generate_social.py` Phase 2 | Imágenes/video subidos a R2 |
-| `approved` | (futuro) | Franco aprueba el output visual |
-| `published` | (futuro) | Publicado en redes |
+| `approved` | `approve-visual.js` | Franco aprueba output visual + scheduling + formato reel/story |
+| `published` | n8n workflow `e6381324` | Publicado en Instagram + Facebook |
+| `generation_error` | `generate_social.py` | Falló Phase 2 — reintentable |
+
+Campos de resiliencia en cada JSON: `last_updated` (ISO), `last_error` (string, si falló).
+
+Campos opcionales post-aprobación visual: `scheduled_at` (ISO, si se programó), `reel_formats` (`{"0":"reel","1":"story"}`).
 
 ### Avatares de copy (4)
 
@@ -144,7 +186,41 @@ Cada avatar genera: `carousel` (slides), `reel` (hook_a/hook_b/cta), `social` (i
 
 ### Directores cinematográficos (7, solo para edición visual)
 
-`loop`, `fincher`, `malick`, `wong`, `kubrick`, `villeneuve`, `noe`. Determinan el estilo visual de la pieza, no el copy.
+| Key | Estilo |
+|-----|--------|
+| `loop` | Loop — Malick |
+| `contrain` | Contraintuición — Fincher |
+| `quote` | Cita — Anderson |
+| `hook` | Hook — WKW |
+| `pregunta` | Pregunta — PTA |
+| `edu` | Educativo — McKay |
+| `documental` | Documental — Herzog |
+
+Determinan el estilo visual de la pieza, no el copy.
+
+### Scripts de soporte (local)
+
+- `scripts/social/batch_phase1.py` — genera `avatar_variants` para artículos en `pending`/`copy_pending_review` sin copy. Llama DeepSeek directamente. Flags: `--slug X`, `--retry-empty`. Retry × 3 por avatar, guard: si algún avatar queda vacío mantiene `status: pending`.
+- `scripts/social/health_check.py` — reporta estado de todos los pending JSONs con edad y stuck detection. Flags: `--json`, `--auto-retry`. Exit code 1 si hay stuck/errores.
+
+### Oracle — scripts de producción
+
+Path: `/home/ubuntu/content-studio/generate_social.py`
+
+- **Phase 1** (`status: pending → copy_pending_review`): cron detecta artículos `pending`, llama DeepSeek para generar `avatar_variants`, escribe pending JSON.
+- **Phase 2** (`status: copy_approved → ready_for_review`): cron detecta `copy_approved`, genera imágenes/video, sube a R2, escribe `r2_urls` y avanza status.
+- En fallo escribe `status: generation_error` + `last_error`.
+
+### n8n — publicación automática
+
+Workflow ID: `e6381324-1127-4713-b755-17f30b30cb9d` · Activo · corre cada 2h.
+
+Lógica: busca primer JSON con `status: approved`, chequea `scheduled_at` (si futuro, lo salta), publica carousel en IG + primera imagen en FB, publica reels/stories según `reel_formats`, actualiza a `status: published`.
+
+Credenciales Meta:
+- `IG_USER_ID`: `17841408150037364`
+- `FB_PAGE_ID`: `112522961877445`
+- `PAGE_TOKEN`: never-expiring Page token (en el código del workflow — no mover)
 
 ## Listmonk — listas y campañas
 
