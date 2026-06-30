@@ -1,0 +1,183 @@
+# Cola de artículos SEO para Endonautas
+# El script toma el primero con published: false
+# Después de publicar: published: true + published_date: YYYY-MM-DD
+
+- topic: "Dependencia emocional: cuando necesitar validación se convierte en patrón"
+  keyword: "dependencia emocional"
+  category: "Proceso"
+  layer: "awareness"
+  published: false
+
+- topic: "Big Five: qué mide el test de los cinco grandes y cómo usarlo"
+  keyword: "test big five"
+  category: "Instrumentos"
+  layer: "journey"
+  published: false
+
+- topic: "Evitación experiencial: por qué huir del malestar lo perpetúa"
+  keyword: "evitación experiencial"
+  category: "Proceso"
+  layer: "awareness"
+  published: false
+
+- topic: "Cómo prepararse para una sesión de terapia y sacarle más"
+  keyword: "prepararse para terapia"
+  category: "Proceso"
+  layer: "journey"
+  published: false
+
+- topic: "El Eneagrama en la práctica: más allá del tipo de personalidad"
+  keyword: "eneagrama personalidad"
+  category: "Instrumentos"
+  layer: "journey"
+  published: false
+
+- topic: "Hipervigilancia: qué es y cómo reconocerla en tu cotidiano"
+  keyword: "hipervigilancia síntomas"
+  category: "Proceso"
+  layer: "awareness"
+  published: false
+
+- topic: "Diario emocional: cómo escribir un registro que realmente sirva"
+  keyword: "diario emocional"
+  category: "Instrumentos"
+  layer: "journey"
+  published: false
+
+- topic: "Terapia online vs presencial: diferencias reales más allá del formato"
+  keyword: "terapia online vs presencial"
+  category: "Fundamentos"
+  layer: "awareness"
+  published: false
+
+- topic: "PVQ y valores personales: qué revelan sobre cómo tomás decisiones"
+  keyword: "test de valores personales"
+  category: "Instrumentos"
+  layer: "journey"
+  published: false
+
+- topic: "Sabotaje inconsciente: cuando te detenés justo antes de lo que querés"
+  keyword: "sabotaje inconsciente"
+  category: "Proceso"
+  layer: "awareness"
+  published: false
+
+- topic: "Inteligencia emocional: qué mide realmente y qué no"
+  keyword: "inteligencia emocional"
+  category: "Fundamentos"
+  layer: "awareness"
+  published: false
+
+- topic: "Cómo hablar con tu terapeuta cuando no sabés qué decir"
+  keyword: "cómo hablar en terapia"
+  category: "Proceso"
+  layer: "journey"
+  published: false
+
+- topic: "Patrones relacionales: cómo los vínculos tempranos moldean los actuales"
+  keyword: "patrones relacionales"
+  category: "Proceso"
+  layer: "awareness"
+  published: false
+
+- topic: "El cuerpo como registro emocional: señales que el pensamiento no ve"
+  keyword: "emociones en el cuerpo"
+  category: "Fundamentos"
+  layer: "journey"
+  published: false
+
+- topic: "Qué es el apego ansioso y cómo funciona en relaciones adultas"
+  keyword: "apego ansioso adultos"
+  category: "Proceso"
+  layer: "awareness"
+  published: false
+
+- topic: "IA en salud mental: lo que puede hacer, lo que no puede, y el límite"
+  keyword: "inteligencia artificial salud mental"
+  category: "Fundamentos"
+  layer: "consciousness"
+  published: false
+
+- topic: "Test de personalidad MBTI: qué mide, qué predice y sus limitaciones"
+  keyword: "test MBTI personalidad"
+  category: "Instrumentos"
+  layer: "journey"
+  published: false
+
+- topic: "Minimalismo emocional: por qué tener menos reacciones no es madurez"
+  keyword: "madurez emocional"
+  category: "Proceso"
+  layer: "consciousness"
+  published: false
+
+- topic: "Qué es el trabajo de sombra y cuándo tiene sentido hacerlo"
+  keyword: "trabajo de sombra Jung"
+  category: "Proceso"
+  layer: "consciousness"
+  published: false
+
+- topic: "Autocrítica vs autoobservación: la diferencia que cambia el proceso"
+  keyword: "autocrítica excesiva"
+  category: "Proceso"
+  layer: "awareness"
+  published: false
+
+- topic: "Cómo registrar tus patrones sin convertirlo en rumiación"
+  keyword: "registrar patrones emocionales"
+  category: "Instrumentos"
+  layer: "journey"
+  published: false
+
+- topic: "Qué pasa cuando terminás un proceso terapéutico: el después"
+  keyword: "terminar terapia"
+  category: "Proceso"
+  layer: "journey"
+  published: false
+
+- topic: "Sesgo de confirmación en el autoconocimiento: cómo nos engañamos"
+  keyword: "sesgo cognitivo autoconocimiento"
+  category: "Fundamentos"
+  layer: "consciousness"
+  published: false
+
+- topic: "Gratitud forzada: por qué el pensamiento positivo a veces no ayuda"
+  keyword: "pensamiento positivo tóxico"
+  category: "Fundamentos"
+  layer: "awareness"
+  published: false
+
+- topic: "Qué mide el test Big Five en el contexto laboral y de pareja"
+  keyword: "big five personalidad laboral"
+  category: "Instrumentos"
+  layer: "journey"
+  published: false
+
+- topic: "Meditación y cambio de patrones: lo que la práctica puede y no puede hacer"
+  keyword: "meditación cambio de hábitos"
+  category: "Proceso"
+  layer: "journey"
+  published: false
+
+- topic: "Apego evitativo: cómo distanciarse se convierte en protección"
+  keyword: "apego evitativo"
+  category: "Proceso"
+  layer: "awareness"
+  published: false
+
+- topic: "Escritura terapéutica: qué es el journaling expresivo y cómo practicarlo"
+  keyword: "journaling terapéutico"
+  category: "Instrumentos"
+  layer: "journey"
+  published: false
+
+- topic: "Qué es la psicología positiva y en qué se diferencia del autoayuda"
+  keyword: "psicología positiva"
+  category: "Fundamentos"
+  layer: "awareness"
+  published: false
+
+- topic: "Cuando el problema no es el problema: segundo orden en patrones repetitivos"
+  keyword: "patrones repetitivos en terapia"
+  category: "Proceso"
+  layer: "consciousness"
+  published: false

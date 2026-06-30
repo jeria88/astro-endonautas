@@ -1,0 +1,37 @@
+name: SEO Blog Automation
+
+on:
+  schedule:
+    # martes y viernes 9am Chile (UTC-4 en verano → 13:00 UTC)
+    - cron: '0 13 * * 2,5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install requests pyyaml
+
+      - name: Generar artículo SEO
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          SERPBEAR_API_KEY: ${{ secrets.SERPBEAR_API_KEY }}
+        run: python3 scripts/seo/run_ci.py
+
+      - name: Commit y push
+        run: |
+          git config user.email "bot@endonautas.cl"
+          git config user.name "Endonautas SEO Bot"
+          git add src/content/blog/ scripts/seo/queue.yaml
+          git diff --staged --quiet || git commit -m "content(blog): SEO article auto-published"
+          git push
