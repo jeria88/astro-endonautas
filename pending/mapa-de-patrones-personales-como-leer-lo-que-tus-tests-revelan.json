@@ -6,7 +6,7 @@
   "category": "Instrumentos",
   "article_path": "src/content/blog/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan.md",
   "published_date": "2026-06-30",
-  "status": "copy_approved",
+  "status": "generation_error",
   "avatar_variants": {
     "negocio": [
       {
@@ -442,7 +442,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T01:46:33.783Z",
+  "last_updated": "2026-07-01T07:09:27+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 86,
@@ -805,5 +805,6 @@
         "youtube_description": "Tu equipo no rinde, los clientes se van y el crecimiento se frena. No es estrategia: es tu perfil emocional en acción. El Big Five no basta, el apego y la regulación importan más. Descubre el mapa completo de patrones en endonautas.cl #liderazgo #saludmental #autoconocimiento"
       }
     }
-  ]
+  ],
+  "last_error": "'R2_ACCESS_KEY_ID'"
 }
