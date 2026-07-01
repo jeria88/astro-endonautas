@@ -1,9 +1,8 @@
-const GITHUB_REPO = "jeria88/astro-endonautas";
-const GITHUB_API  = "https://api.github.com";
+const API_URL = "https://api.endonautas.cl";
 
 export async function onRequestPost({ request, env }) {
-  const token = env.GITHUB_TOKEN;
-  if (!token) return Response.json({ error: "GITHUB_TOKEN no configurado" }, { status: 500 });
+  const apiKey = env.CONTENT_STUDIO_API_KEY;
+  if (!apiKey) return Response.json({ error: "CONTENT_STUDIO_API_KEY no configurado" }, { status: 500 });
 
   let slug;
   try {
@@ -14,41 +13,11 @@ export async function onRequestPost({ request, env }) {
     return Response.json({ error: "Body inválido — se espera { slug }" }, { status: 400 });
   }
 
-  const path = `pending/${slug}.json`;
-  const headers = {
-    Authorization: `Bearer ${token}`,
-    "User-Agent": "endonautas-review",
-    "Content-Type": "application/json",
-  };
-
-  const getRes = await fetch(`${GITHUB_API}/repos/${GITHUB_REPO}/contents/${path}`, { headers });
-  if (!getRes.ok) return Response.json({ error: `No se encontró pending/${slug}.json` }, { status: 404 });
-  const fileData = await getRes.json();
-
-  const current = JSON.parse(atob(fileData.content.replace(/\n/g, "")));
-  if (current.status !== "generation_error") {
-    return Response.json({ error: `Status actual es '${current.status}', se espera 'generation_error'` }, { status: 409 });
-  }
-
-  current.status       = "copy_approved";
-  current.last_updated = new Date().toISOString();
-  delete current.last_error;
-
-  const updated = btoa(unescape(encodeURIComponent(JSON.stringify(current, null, 2))));
-  const putRes = await fetch(`${GITHUB_API}/repos/${GITHUB_REPO}/contents/${path}`, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify({
-      message: `content(social): retry generation — ${slug}`,
-      content: updated,
-      sha: fileData.sha,
-    }),
+  const res = await fetch(`${API_URL}/api/articles/${encodeURIComponent(slug)}/retry`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+    body: "{}",
   });
-
-  if (!putRes.ok) {
-    const err = await putRes.text();
-    return Response.json({ error: `GitHub PUT falló: ${err}` }, { status: 502 });
-  }
-
-  return Response.json({ ok: true, slug, status: "copy_approved" });
+  if (!res.ok) return Response.json({ error: await res.text() }, { status: res.status });
+  return Response.json(await res.json());
 }
