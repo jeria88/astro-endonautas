@@ -6,7 +6,7 @@
   "category": "Proceso",
   "article_path": "src/content/blog/por-que-repito-los-mismos-patrones-aunque-ya-los-reconozco.md",
   "published_date": "2026-06-30",
-  "status": "copy_approved",
+  "status": "generation_error",
   "avatar_variants": {
     "negocio": [
       {
@@ -449,7 +449,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T01:47:06.222Z",
+  "last_updated": "2026-07-01T07:09:16+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 76,
@@ -815,5 +815,6 @@
         "youtube_description": "El autoconocimiento no es solo introspección — es una práctica medible que afecta tus decisiones, relaciones y rendimiento. En este video exploramos el patrón que más repites sin notarlo.\n\nLee el artículo completo en endonautas.cl"
       }
     }
-  ]
+  ],
+  "last_error": "'R2_ACCESS_KEY_ID'"
 }
