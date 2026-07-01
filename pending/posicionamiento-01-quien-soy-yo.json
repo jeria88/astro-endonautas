@@ -6,7 +6,7 @@
   "category": "Posicionamiento",
   "article_path": "src/content/blog/posicionamiento-01-quien-soy-yo.md",
   "published_date": "2026-07-01",
-  "status": "copy_approved",
+  "status": "generation_error",
   "approved": [
     {
       "finalist_id": "franco_v0",
@@ -44,5 +44,6 @@
       }
     }
   ],
-  "last_updated": "2026-07-01T00:00:00Z"
+  "last_updated": "2026-07-01T02:57:57+00:00",
+  "last_error": "'R2_ACCESS_KEY_ID'"
 }
