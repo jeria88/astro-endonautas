@@ -31,7 +31,8 @@ export async function onRequestPost({ request, env }) {
   if (!getRes.ok) return Response.json({ error: `No se encontró pending/${slug}.json` }, { status: 404 });
   const fileData = await getRes.json();
 
-  const current = JSON.parse(atob(fileData.content.replace(/\n/g, "")));
+  const raw = atob(fileData.content.replace(/\n/g, ""));
+  const current = JSON.parse(new TextDecoder().decode(Uint8Array.from(raw, c => c.charCodeAt(0))));
   const avatarVariants = current.avatar_variants || {};
   const storedCaptions = current.captions || {};
 

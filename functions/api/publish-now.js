@@ -28,7 +28,8 @@ export async function onRequestPost({ request, env }) {
   const getRes = await fetch(`${GITHUB_API}/repos/${GITHUB_REPO}/contents/${path}`, { headers });
   if (!getRes.ok) return Response.json({ error: `pending/${slug}.json no encontrado` }, { status: 404 });
   const fileData = await getRes.json();
-  const data = JSON.parse(atob(fileData.content.replace(/\n/g, "")));
+  const raw = atob(fileData.content.replace(/\n/g, ""));
+  const data = JSON.parse(new TextDecoder().decode(Uint8Array.from(raw, c => c.charCodeAt(0))));
 
   const approved  = data.approved?.[0] || {};
   const caps      = approved.captions || data.captions || {};

@@ -888,8 +888,21 @@ function buildOutputBlock(item) {
   const block = document.createElement('div');
   block.className = 'article-block';
 
-  const carUrls  = item.r2_urls.filter(u => u.includes('/carrusel/'));
-  const reelUrls = item.r2_urls.filter(u => u.includes('/reels/'));
+  // Agrupar URLs por versión (director-vN) extraída del path
+  const groups = {};
+  for (const url of item.r2_urls) {
+    let version, type;
+    if (url.includes('/carrusel/')) {
+      version = url.split('/carrusel/')[1].split('/')[1];
+      type = 'carousel';
+    } else if (url.includes('/reels/')) {
+      version = url.split('/reels/')[1].split('/')[1];
+      type = 'reel';
+    } else continue;
+    if (!groups[version]) groups[version] = { carousel: [], reel: null };
+    if (type === 'carousel') groups[version].carousel.push(url);
+    else groups[version].reel = url;
+  }
 
   const pubDate  = nextPublishDate(0);
   const tooltip  = `Próxima publicación disponible: ${pubDate} a las 11:11 (Chile)`;
@@ -898,32 +911,33 @@ function buildOutputBlock(item) {
     <div class="article-title">${esc(item.title || item.slug)}</div>
     <div class="article-slug">${esc(item.slug)}</div>`;
 
-  if (carUrls.length) {
+  for (const [version, group] of Object.entries(groups)) {
+    const dirLabel = version.replace(/-v(\d+)$/, ' · v$1');
     h += `<div class="media-subsection">
-      <div class="media-subsection-h">Carrusel — ${carUrls.length} slides · click para zoom · ← →</div>
-      <div class="carousel-strip">`;
-    const carJson = JSON.stringify(carUrls).replace(/"/g, '&quot;');
-    carUrls.forEach((url, i) => {
-      h += `<div class="slide-thumb" onclick="openLb(JSON.parse(this.dataset.urls),${i})" data-urls="${carJson}">
-        <span class="slide-num">${String(i+1).padStart(2,'0')}</span>
-        <img src="${url}" loading="lazy" alt="slide ${i+1}" />
-      </div>`;
-    });
-    h += `</div></div>`;
-  }
+      <div class="media-subsection-h">${esc(dirLabel)}</div>`;
 
-  if (reelUrls.length) {
-    h += `<div class="media-subsection">
-      <div class="media-subsection-h">Reels — ${reelUrls.length} · click para ver</div>
-      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem">`;
-    reelUrls.forEach(url => {
-      h += `<div class="reel-thumb" onclick="openReel('${url}')">
-        <video src="${url}" loop muted playsinline
-          onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
-        <div class="reel-zoom">▶</div>
-      </div>`;
-    });
-    h += `</div></div>`;
+    if (group.carousel.length) {
+      h += `<div class="carousel-strip" style="margin-bottom:0.5rem">`;
+      const carJson = JSON.stringify(group.carousel).replace(/"/g, '&quot;');
+      group.carousel.forEach((url, i) => {
+        h += `<div class="slide-thumb" onclick="openLb(JSON.parse(this.dataset.urls),${i})" data-urls="${carJson}">
+          <span class="slide-num">${String(i+1).padStart(2,'0')}</span>
+          <img src="${url}" loading="lazy" alt="slide ${i+1}" />
+        </div>`;
+      });
+      h += `</div>`;
+    }
+
+    if (group.reel) {
+      h += `<div style="display:flex;gap:0.75rem;align-items:flex-start">
+        <div class="reel-thumb" onclick="openReel('${group.reel}')">
+          <video src="${group.reel}" loop muted playsinline
+            onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
+          <div class="reel-zoom">▶</div>
+        </div></div>`;
+    }
+
+    h += `</div>`;
   }
 
   // Captions por finalista aprobado
