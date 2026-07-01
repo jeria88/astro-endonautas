@@ -488,11 +488,12 @@ function esc(s) {
 
 function scoreClass(n) { return n >= 75 ? 'sc-high' : n >= 55 ? 'sc-mid' : 'sc-low'; }
 
-function getFinalistCaptions(fid) {
+function getFinalistCaptions(slug, fid) {
   const nets = ['instagram','tiktok','linkedin','youtube_title','youtube_description'];
   const out = {};
+  const prefix = `ta-${slug}-${fid}`;
   for (const n of nets) {
-    const ta = document.getElementById(`ta-${fid}-${n}`);
+    const ta = document.getElementById(`${prefix}-${n}`);
     if (ta && ta.value.trim()) out[n] = ta.value;
   }
   return Object.keys(out).length ? out : null;
@@ -537,12 +538,12 @@ function buildScoredBlock(item) {
   const footer = document.createElement('div');
   footer.className = 'article-ft';
   footer.innerHTML = `
-    <button class="btn-submit" id="submit-btn-${esc(item.slug)}" disabled
-      onclick="submitApproved('${esc(item.slug)}',${JSON.stringify(item.finalists)})">
+    <button class="btn-submit" id="submit-btn-${esc(item.slug)}" disabled>
       Enviar aprobados
     </button>
     <span class="submit-msg" id="submit-msg-${esc(item.slug)}"></span>
   `;
+  footer.querySelector('.btn-submit').addEventListener('click', () => submitApproved(item.slug, item.finalists));
   block.appendChild(footer);
   return block;
 }
@@ -604,26 +605,27 @@ function buildFinalistCard(slug, fid, avatar, vIdx, scoreData, variant, captions
     `<button class="cap-tab${i===0?' active':''}" data-net="${net}">${net === 'youtube' ? 'YT' : net.charAt(0).toUpperCase() + net.slice(1)}</button>`
   ).join('');
 
+  const sfid = `${slug}-${fid}`;
   const capPanelsHtml = ['instagram','tiktok','linkedin'].map((net, i) => {
     const lim = CAP_LIMITS[net];
-    return `<div class="cap-panel${i===0?' active':''}" id="cap-${fid}-${net}">
-      <textarea class="cap-textarea" id="ta-${fid}-${net}" rows="5"
-        oninput="updateCharCount('${fid}','${net}',${lim})"></textarea>
-      <div class="cap-char" id="cc-${fid}-${net}">0/${lim}</div>
+    return `<div class="cap-panel${i===0?' active':''}" id="cap-${sfid}-${net}">
+      <textarea class="cap-textarea" id="ta-${sfid}-${net}" rows="5"
+        oninput="updateCharCount('${sfid}','${net}',${lim})"></textarea>
+      <div class="cap-char" id="cc-${sfid}-${net}">0/${lim}</div>
     </div>`;
-  }).join('') + `<div class="cap-panel" id="cap-${fid}-youtube">
+  }).join('') + `<div class="cap-panel" id="cap-${sfid}-youtube">
     <div class="cap-yt-fields">
       <div>
         <div class="cap-yt-lbl">Título</div>
-        <textarea class="cap-textarea" id="ta-${fid}-youtube_title" rows="2"
-          oninput="updateCharCount('${fid}','youtube_title',${CAP_LIMITS.youtube_title})"></textarea>
-        <div class="cap-char" id="cc-${fid}-youtube_title">0/${CAP_LIMITS.youtube_title}</div>
+        <textarea class="cap-textarea" id="ta-${sfid}-youtube_title" rows="2"
+          oninput="updateCharCount('${sfid}','youtube_title',${CAP_LIMITS.youtube_title})"></textarea>
+        <div class="cap-char" id="cc-${sfid}-youtube_title">0/${CAP_LIMITS.youtube_title}</div>
       </div>
       <div>
         <div class="cap-yt-lbl">Descripción</div>
-        <textarea class="cap-textarea" id="ta-${fid}-youtube_description" rows="3"
-          oninput="updateCharCount('${fid}','youtube_description',${CAP_LIMITS.youtube_description})"></textarea>
-        <div class="cap-char" id="cc-${fid}-youtube_description">0/${CAP_LIMITS.youtube_description}</div>
+        <textarea class="cap-textarea" id="ta-${sfid}-youtube_description" rows="3"
+          oninput="updateCharCount('${sfid}','youtube_description',${CAP_LIMITS.youtube_description})"></textarea>
+        <div class="cap-char" id="cc-${sfid}-youtube_description">0/${CAP_LIMITS.youtube_description}</div>
       </div>
     </div>
   </div>`;
@@ -644,10 +646,10 @@ function buildFinalistCard(slug, fid, avatar, vIdx, scoreData, variant, captions
     <div class="cap-panels">${capPanelsHtml}</div>
     <div class="card-ft">
       <label class="fmt-toggle">
-        <input type="checkbox" id="fmt-car-${fid}" checked> Carrusel
+        <input type="checkbox" id="fmt-car-${sfid}" checked> Carrusel
       </label>
       <label class="fmt-toggle">
-        <input type="checkbox" id="fmt-reel-${fid}"> Reel
+        <input type="checkbox" id="fmt-reel-${sfid}"> Reel
       </label>
       <span class="ft-divider"></span>
       <button class="btn-skip">Skip</button>
@@ -664,10 +666,9 @@ function buildFinalistCard(slug, fid, avatar, vIdx, scoreData, variant, captions
     youtube_description: captions.youtube_description || '',
   };
   for (const [field, val] of Object.entries(captionMap)) {
-    const ta = card.querySelector(`#ta-${fid}-${field}`);
-    const cc = card.querySelector(`#cc-${fid}-${field}`);
-    const net = field.startsWith('youtube') ? field : field;
-    const lim = CAP_LIMITS[net];
+    const ta = card.querySelector(`#ta-${sfid}-${field}`);
+    const cc = card.querySelector(`#cc-${sfid}-${field}`);
+    const lim = CAP_LIMITS[field];
     if (ta) ta.value = val;
     if (cc && lim) cc.textContent = `${val.length}/${lim}`;
   }
@@ -681,7 +682,7 @@ function buildFinalistCard(slug, fid, avatar, vIdx, scoreData, variant, captions
     tabRow.querySelectorAll('.cap-tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     card.querySelectorAll('.cap-panel').forEach(p => p.classList.remove('active'));
-    const panel = card.querySelector(`#cap-${fid}-${net}`);
+    const panel = card.querySelector(`#cap-${sfid}-${net}`);
     if (panel) panel.classList.add('active');
   });
 
@@ -690,8 +691,8 @@ function buildFinalistCard(slug, fid, avatar, vIdx, scoreData, variant, captions
   dirSelect.addEventListener('change', () => { getState(slug, fid).director = dirSelect.value; });
 
   // Format checkboxes
-  card.querySelector(`#fmt-car-${fid}`).addEventListener('change', e => { getState(slug, fid).carousel = e.target.checked; });
-  card.querySelector(`#fmt-reel-${fid}`).addEventListener('change', e => { getState(slug, fid).reel = e.target.checked; });
+  card.querySelector(`#fmt-car-${sfid}`).addEventListener('change', e => { getState(slug, fid).carousel = e.target.checked; });
+  card.querySelector(`#fmt-reel-${sfid}`).addEventListener('change', e => { getState(slug, fid).reel = e.target.checked; });
 
   // Approve / Skip
   card.querySelector('.btn-approve').addEventListener('click', () => approveCard(card));
@@ -719,7 +720,7 @@ async function submitApproved(slug, finalists) {
         director:        state.director || 'loop',
         carousel:        state.carousel !== false,
         reel:            !!state.reel,
-        edited_captions: getFinalistCaptions(fid),
+        edited_captions: getFinalistCaptions(slug, fid),
       };
     });
 
