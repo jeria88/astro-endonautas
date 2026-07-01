@@ -6,7 +6,7 @@
   "category": "Posicionamiento",
   "article_path": "src/content/blog/posicionamiento-02-que-es-endonautas.md",
   "published_date": "2026-07-01",
-  "status": "copy_approved",
+  "status": "ready_to_publish",
   "approved": [
     {
       "finalist_id": "franco_v0",
@@ -25,7 +25,12 @@
           "Cartografía personal. No GPS ajeno.",
           "Empieza con el contenido gratuito. El primer paso es siempre el más honesto. → endonautas.cl"
         ],
-        "keywords": ["autoconocimiento", "patrones", "mapa de patrones", "endonautas"],
+        "keywords": [
+          "autoconocimiento",
+          "patrones",
+          "mapa de patrones",
+          "endonautas"
+        ],
         "layout": "L1",
         "bg_cluster": "franco",
         "portada_cluster": "franco"
@@ -39,5 +44,14 @@
       }
     }
   ],
-  "last_updated": "2026-07-01T00:00:00Z"
+  "last_updated": "2026-07-01T03:16:10+00:00",
+  "r2_urls": [
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-02-que-es-endonautas/documental-v1/slide-01-portada.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-02-que-es-endonautas/documental-v1/slide-02-slide2.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-02-que-es-endonautas/documental-v1/slide-03-slide3.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-02-que-es-endonautas/documental-v1/slide-04-slide4.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-02-que-es-endonautas/documental-v1/slide-05-slide5.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-02-que-es-endonautas/documental-v1/slide-06-slide6.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-02-que-es-endonautas/documental-v1/slide-07-cta.jpg"
+  ]
 }
