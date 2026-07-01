@@ -1,0 +1,48 @@
+{
+  "slug": "posicionamiento-06-conexion-historia-personal",
+  "title": "El día que dejé de culpar al sistema — historia personal de Franco",
+  "keyword": "autoconocimiento",
+  "layer": "awareness",
+  "category": "Posicionamiento",
+  "article_path": "src/content/blog/posicionamiento-06-conexion-historia-personal.md",
+  "published_date": "2026-07-01",
+  "status": "copy_approved",
+  "approved": [
+    {
+      "finalist_id": "franco_v0",
+      "avatar": "franco",
+      "variant_index": 0,
+      "director": "documental",
+      "carousel": true,
+      "reel": false,
+      "carousel_copy": {
+        "slides": [
+          "Durante años culpé al sistema. Hasta que vi que también lo estaba perpetuando.",
+          "Tenía deudas. El trabajo no salía. Cada vez que lo analizaba llegaba al mismo lugar: el gobierno, el sistema, el mercado. Cualquier cosa menos yo.",
+          "El problema con culpar afuera no es moral — es práctico. Si el problema está afuera, la solución también. Y esperar afuera es la forma más eficiente de no moverse.",
+          "El cambio no fue descubrir el método. Fue notar que yo depositaba el poder de mi propio cuidado en manos de otro. Eso tampoco fue un momento — fue, y sigue siendo, una práctica.",
+          "No estoy diciendo que el sistema no tenga problemas reales. Los tiene. Pero mi parte — cómo me relaciono conmigo mismo — es la única que puedo mover. Y eso lo sigo aprendiendo.",
+          "No llegué a ningún lado. Pero empecé a navegar distinto.",
+          "Si algo de esto te suena familiar, este perfil es para ti. → endonautas.cl"
+        ],
+        "keywords": [
+          "autoconocimiento",
+          "patrones",
+          "historia personal",
+          "responsabilidad"
+        ],
+        "layout": "L1",
+        "bg_cluster": "franco",
+        "portada_cluster": "franco"
+      },
+      "captions": {
+        "instagram": "Durante años culpé al sistema. Deudas, trabajo que no salía, la matrix. Hasta que noté que yo también era parte del problema — que depositaba mi poder de cuidado en manos de otro. No lo resolví. Empecé a navegarlo distinto. ¿Te suena? → endonautas.cl #autoconocimiento #crecimientopersonal #endonautas",
+        "tiktok": "Culpé al sistema durante años. Hasta que me vi en el espejo. No lo resolví — empecé a navegarlo distinto. → endonautas.cl",
+        "linkedin": "Durante años atribuí mis dificultades económicas y profesionales a factores externos. El sistema, el mercado, la suerte. El cambio real no fue encontrar el método correcto — fue notar el patrón de externalización y recuperar agencia sobre lo único que puedo mover: cómo me relaciono conmigo mismo. → endonautas.cl",
+        "youtube_title": "Cómo dejé de culpar al sistema — historia personal",
+        "youtube_description": "Historia personal: cómo reconocí el patrón de culpar afuera y empecé a recuperar agencia. No una solución — una práctica. → endonautas.cl"
+      }
+    }
+  ],
+  "last_updated": "2026-07-01T00:00:00Z"
+}

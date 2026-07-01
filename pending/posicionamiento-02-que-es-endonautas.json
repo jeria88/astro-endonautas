@@ -1,0 +1,48 @@
+{
+  "slug": "posicionamiento-02-que-es-endonautas",
+  "title": "Qué es Endonautas — para los que ya saben pero siguen repitiendo los mismos patrones",
+  "keyword": "autoconocimiento",
+  "layer": "awareness",
+  "category": "Posicionamiento",
+  "article_path": "src/content/blog/posicionamiento-02-que-es-endonautas.md",
+  "published_date": "2026-07-01",
+  "status": "copy_approved",
+  "approved": [
+    {
+      "finalist_id": "franco_v0",
+      "avatar": "franco",
+      "variant_index": 0,
+      "director": "documental",
+      "carousel": true,
+      "reel": false,
+      "carousel_copy": {
+        "slides": [
+          "Para los que el autoconocimiento ya no les basta con saber.",
+          "Leíste los libros. Fuiste a terapia. Hiciste los test de personalidad. Y aun así... el mismo patrón volvió.",
+          "El problema no es que no sepas. El problema es que saber no es suficiente para cambiar. Se necesita integrar.",
+          "Endonautas nació para eso: una plataforma con el Mapa de Patrones Personales, recursos y contenido para que pases del conocimiento a la transformación real.",
+          "Aquí no hay teoría genérica. Te ayudamos a leer TU mapa específico y navegar TU mundo interior.",
+          "Cartografía personal. No GPS ajeno.",
+          "Empieza con el contenido gratuito. El primer paso es siempre el más honesto. → endonautas.cl"
+        ],
+        "keywords": [
+          "autoconocimiento",
+          "patrones",
+          "mapa de patrones",
+          "endonautas"
+        ],
+        "layout": "L1",
+        "bg_cluster": "franco",
+        "portada_cluster": "franco"
+      },
+      "captions": {
+        "instagram": "¿Ya sabes qué patrón tienes pero sigues repitiéndolo? Endonautas nació para ese espacio — donde el conocimiento no alcanza y necesitas algo que integre. Mapa de Patrones Personales + contenido práctico. Empieza gratis. → endonautas.cl #autoconocimiento #patrones #transformacion",
+        "tiktok": "Leíste los libros. Fuiste a terapia. El mismo patrón volvió. Endonautas es para ese momento. → endonautas.cl",
+        "linkedin": "Endonautas es una plataforma de autoconocimiento aplicado. Para profesionales que ya tienen los recursos cognitivos pero buscan una herramienta para integrar y transformar sus patrones. El Mapa de Patrones Personales es el punto de partida. → endonautas.cl",
+        "youtube_title": "Qué es Endonautas — más allá de saber",
+        "youtube_description": "Endonautas: plataforma de autoconocimiento para quienes ya leyeron los libros pero siguen repitiendo los mismos patrones. Mapa de Patrones Personales y contenido práctico. → endonautas.cl"
+      }
+    }
+  ],
+  "last_updated": "2026-07-01T00:00:00Z"
+}
