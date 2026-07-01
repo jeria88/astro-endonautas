@@ -6,7 +6,7 @@
   "category": "Instrumentos",
   "article_path": "src/content/blog/espejo-ia-autoconocimiento-lo-que-una-ia-puede-y-no-puede-hacer-por-ti.md",
   "published_date": "2026-06-30",
-  "status": "copy_approved",
+  "status": "generation_error",
   "avatar_variants": {
     "negocio": [
       {
@@ -446,7 +446,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T01:45:59.832Z",
+  "last_updated": "2026-07-01T07:09:38+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 83,
@@ -858,5 +858,6 @@
         "youtube_description": "¿Te cuesta soltar el control en tu trabajo? Cada microrevisión acumula ansiedad y te aleja de la eficiencia real. En este short exploramos cómo el patrón de control se disfraza de perfeccionismo y sobreexigencia, y por qué soltar no es fallar. Descubre un mapa IA que analiza tus patrones en endonautas.cl. #autoconocimiento #control #ansiedadlaboral #Endonautas #psicologia"
       }
     }
-  ]
+  ],
+  "last_error": "'R2_ACCESS_KEY_ID'"
 }
