@@ -444,7 +444,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T07:09:50+00:00",
+  "last_updated": "2026-07-01T07:13:58+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 76,
@@ -855,5 +855,5 @@
       }
     }
   ],
-  "last_error": "'R2_ACCESS_KEY_ID'"
+  "last_error": "No brolls found for cluster 'autoconocimiento'"
 }
