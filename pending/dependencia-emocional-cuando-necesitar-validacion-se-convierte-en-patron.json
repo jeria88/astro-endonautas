@@ -6,7 +6,7 @@
   "category": "Proceso",
   "article_path": "src/content/blog/dependencia-emocional-cuando-necesitar-validacion-se-convierte-en-patron.md",
   "published_date": "2026-06-30",
-  "status": "copy_approved",
+  "status": "generation_error",
   "avatar_variants": {
     "negocio": [
       {
@@ -444,7 +444,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T01:44:13.343Z",
+  "last_updated": "2026-07-01T07:10:01+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 79,
@@ -853,5 +853,6 @@
         "youtube_description": "La dependencia emocional no es solo un problema de pareja: se transmite a tus hijos a través de gestos, renuncias y silencios. En este video rompemos el ciclo: reconocer el patrón para elegir diferente. Si quieres ir más allá, haz el Mapa de Patrones en endonautas.cl #dependenciaemocional #crianzaconsciente #autoconocimiento"
       }
     }
-  ]
+  ],
+  "last_error": "'R2_ACCESS_KEY_ID'"
 }
