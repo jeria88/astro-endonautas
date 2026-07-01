@@ -1,12 +1,12 @@
 {
   "slug": "posicionamiento-03-el-metodo-endonautica",
-  "title": "El método Endonáutica — navegar el mundo interior",
-  "keyword": "endonáutica",
+  "title": "El mÃ©todo EndonÃ¡utica â navegar el mundo interior",
+  "keyword": "endonÃ¡utica",
   "layer": "awareness",
   "category": "Posicionamiento",
   "article_path": "src/content/blog/posicionamiento-03-el-metodo-endonautica.md",
   "published_date": "2026-07-01",
-  "status": "generation_error",
+  "status": "copy_approved",
   "approved": [
     {
       "finalist_id": "franco_v0",
@@ -17,33 +17,32 @@
       "reel": false,
       "carousel_copy": {
         "slides": [
-          "Endonáutica: aprender a navegar el único territorio que siempre te acompañará.",
-          "Endo (griego: hacia adentro) + náutica (navegación) = el arte de navegar el mundo interior. No es meditación, no es terapia tradicional. Es un método de autoconocimiento aplicado.",
-          "Tu mundo interior incluye tu conciencia, tu cuerpo, tu memoria, tus emociones, tus patrones, tus heridas y tus sueños. Lo que pasa afuera refleja lo que pasa adentro.",
-          "Los 5 pilares del endonauta: autoconciencia · autoestima · autorregulación · autoconocimiento · interdependencia. Cada pilar es una habilidad que se desarrolla — no un estado fijo.",
-          "Un endonauta no es alguien \"iluminado\". Es una conciencia capaz de percibirse, sentirse, conocerse y quererse — en proceso, siempre.",
+          "EndonÃ¡utica: aprender a navegar el Ãºnico territorio que siempre te acompaÃ±arÃ¡.",
+          "Endo (griego: hacia adentro) + nÃ¡utica (navegaciÃ³n) = el arte de navegar el mundo interior. No es meditaciÃ³n, no es terapia tradicional. Es un mÃ©todo de autoconocimiento aplicado.",
+          "Tu mundo interior incluye tu conciencia, tu cuerpo, tu memoria, tus emociones, tus patrones, tus heridas y tus sueÃ±os. Lo que pasa afuera refleja lo que pasa adentro.",
+          "Los 5 pilares del endonauta: autoconciencia Â· autoestima Â· autorregulaciÃ³n Â· autoconocimiento Â· interdependencia. Cada pilar es una habilidad que se desarrolla â no un estado fijo.",
+          "Un endonauta no es alguien \"iluminado\". Es una conciencia capaz de percibirse, sentirse, conocerse y quererse â en proceso, siempre.",
           "El mapa no es el territorio. Pero sin mapa, navegas a ciegas.",
-          "¿Qué parte de tu mundo interior estás listo para explorar? → endonautas.cl"
+          "Â¿QuÃ© parte de tu mundo interior estÃ¡s listo para explorar? â endonautas.cl"
         ],
         "keywords": [
-          "endonáutica",
+          "endonÃ¡utica",
           "autoconocimiento",
           "mundo interior",
-          "método"
+          "mÃ©todo"
         ],
         "layout": "L1",
         "bg_cluster": "franco",
         "portada_cluster": "franco"
       },
       "captions": {
-        "instagram": "Endo (adentro) + náutica (navegación) = endonáutica. El arte de navegar tu mundo interior. No como metáfora — como práctica. 5 pilares, un mapa, una conciencia en proceso. → endonautas.cl #endonautica #autoconocimiento #mundointerior",
-        "tiktok": "El método Endonáutica en 30 segundos: endo + náutica = navegar adentro. 5 pilares. En proceso, siempre. → endonautas.cl",
-        "linkedin": "La endonáutica es un método de autoconocimiento aplicado basado en 5 pilares: autoconciencia, autoestima, autorregulación, autoconocimiento e interdependencia. No un estado de llegada — una práctica continua. → endonautas.cl",
-        "youtube_title": "El método Endonáutica explicado — qué es y cómo funciona",
-        "youtube_description": "Qué es la endonáutica: método de autoconocimiento basado en navegación interior. Los 5 pilares del endonauta explicados. → endonautas.cl"
+        "instagram": "Endo (adentro) + nÃ¡utica (navegaciÃ³n) = endonÃ¡utica. El arte de navegar tu mundo interior. No como metÃ¡fora â como prÃ¡ctica. 5 pilares, un mapa, una conciencia en proceso. â endonautas.cl #endonautica #autoconocimiento #mundointerior",
+        "tiktok": "El mÃ©todo EndonÃ¡utica en 30 segundos: endo + nÃ¡utica = navegar adentro. 5 pilares. En proceso, siempre. â endonautas.cl",
+        "linkedin": "La endonÃ¡utica es un mÃ©todo de autoconocimiento aplicado basado en 5 pilares: autoconciencia, autoestima, autorregulaciÃ³n, autoconocimiento e interdependencia. No un estado de llegada â una prÃ¡ctica continua. â endonautas.cl",
+        "youtube_title": "El mÃ©todo EndonÃ¡utica explicado â quÃ© es y cÃ³mo funciona",
+        "youtube_description": "QuÃ© es la endonÃ¡utica: mÃ©todo de autoconocimiento basado en navegaciÃ³n interior. Los 5 pilares del endonauta explicados. â endonautas.cl"
       }
     }
   ],
-  "last_updated": "2026-07-01T02:58:23+00:00",
-  "last_error": "'R2_ACCESS_KEY_ID'"
+  "last_updated": "2026-07-01T02:58:53.921Z"
 }
