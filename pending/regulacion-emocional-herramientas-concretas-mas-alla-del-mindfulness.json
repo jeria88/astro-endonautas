@@ -444,7 +444,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T07:29:49+00:00",
+  "last_updated": "2026-07-01T07:39:03+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 76,
@@ -855,5 +855,5 @@
       }
     }
   ],
-  "last_error": "No brolls found for cluster 'autoconocimiento'"
+  "last_error": "[Errno 2] No such file or directory: 'ffmpeg'"
 }
