@@ -6,7 +6,7 @@
   "category": "Posicionamiento",
   "article_path": "src/content/blog/posicionamiento-02-que-es-endonautas.md",
   "published_date": "2026-07-01",
-  "status": "generation_error",
+  "status": "ready_to_publish",
   "approved": [
     {
       "finalist_id": "franco_v0",
@@ -53,6 +53,5 @@
     "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-02-que-es-endonautas/documental-v1/slide-05-slide5.jpg",
     "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-02-que-es-endonautas/documental-v1/slide-06-slide6.jpg",
     "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-02-que-es-endonautas/documental-v1/slide-07-cta.jpg"
-  ],
-  "last_error": "git error: git pull --rebase origin main"
+  ]
 }
