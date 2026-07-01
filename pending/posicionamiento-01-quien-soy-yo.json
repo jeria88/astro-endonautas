@@ -1,12 +1,12 @@
 {
   "slug": "posicionamiento-01-quien-soy-yo",
-  "title": "QuiÃ©n soy yo â Franco Jeria, terapeuta y creador de Endonautas",
+  "title": "Quién soy yo — Franco Jeria, terapeuta y creador de Endonautas",
   "keyword": "autoconocimiento",
   "layer": "awareness",
   "category": "Posicionamiento",
   "article_path": "src/content/blog/posicionamiento-01-quien-soy-yo.md",
   "published_date": "2026-07-01",
-  "status": "ready_to_publish",
+  "status": "copy_approved",
   "approved": [
     {
       "finalist_id": "franco_v0",
@@ -17,41 +17,27 @@
       "reel": false,
       "carousel_copy": {
         "slides": [
-          "Hola, soy Franco. Terapeuta, autor, desarrollador. Y todavÃ­a aprendiendo lo mismo que enseÃ±o.",
-          "De niÃ±o aprendÃ­ a buscar validaciÃ³n afuera. Me comparaban con mi hermano mayor. Me fui hacia el anime y los videojuegos â mundos donde los incomprendidos encontraban su camino. Eso no desapareciÃ³. Solo lo reconocÃ­.",
-          "Me titulÃ© como Terapeuta en Salud Integrativa. Lo que mÃ¡s me marcÃ³ no fue la teorÃ­a â fue ver que los conflictos de mis clientes venÃ­an de cÃ³mo se relacionaban consigo mismos. ReconocÃ­ el patrÃ³n porque lo vivÃ­a.",
-          "En 2019 llegÃ³ la palabra \"endonÃ¡utica\". En 2022 empecÃ© a escribir el libro. No porque tuviera todo claro â sino porque querÃ­a poner en palabras algo que seguÃ­a descubriendo.",
-          "Hoy soy terapeuta, autor de \"Endonautica\" y desarrollador fullstack Python autodidacta. ConstruÃ­ Endonautas. Y sigo navegando exactamente lo mismo que propongo navegar.",
-          "Un endonauta no es el que llegÃ³. Es el que sigue.",
-          "SÃ­gueme para explorar juntos. â endonautas.cl"
+          "Hola, soy Franco. Terapeuta, autor, desarrollador. Y todavía aprendiendo lo mismo que enseño.",
+          "De niño aprendí a buscar validación afuera. Me comparaban con mi hermano mayor. Me fui hacia el anime y los videojuegos — mundos donde los incomprendidos encontraban su camino. Eso no desapareció. Solo lo reconocí.",
+          "Me titulé como Terapeuta en Salud Integrativa. Lo que más me marcó no fue la teoría — fue ver que los conflictos de mis clientes venían de cómo se relacionaban consigo mismos. Reconocí el patrón porque lo vivía.",
+          "En 2019 llegó la palabra \"endonáutica\". En 2022 empecé a escribir el libro. No porque tuviera todo claro — sino porque quería poner en palabras algo que seguía descubriendo.",
+          "Hoy soy terapeuta, autor de \"Endonautica\" y desarrollador fullstack Python autodidacta. Construí Endonautas. Y sigo navegando exactamente lo mismo que propongo navegar.",
+          "Un endonauta no es el que llegó. Es el que sigue.",
+          "Sígueme para explorar juntos. → endonautas.cl"
         ],
-        "keywords": [
-          "autoconocimiento",
-          "terapeuta",
-          "endonautas",
-          "posicionamiento"
-        ],
+        "keywords": ["autoconocimiento", "terapeuta", "endonautas", "posicionamiento"],
         "layout": "L1",
         "bg_cluster": "franco",
         "portada_cluster": "franco"
       },
       "captions": {
-        "instagram": "Soy Franco â terapeuta, autor de \"Endonautica\" y desarrollador Python. ConstruÃ­ Endonautas para explorar el autoconocimiento de otra manera. No desde el que llegÃ³, sino desde el que sigue. Si algo de esto resuena, estÃ¡s en el lugar correcto. â endonautas.cl #autoconocimiento #endonautas #terapia",
-        "tiktok": "Soy Franco. Terapeuta, autor, dev. TodavÃ­a aprendiendo lo mismo que enseÃ±o. SÃ­gueme si quieres explorar adentro. â endonautas.cl",
-        "linkedin": "Terapeuta en Salud Integrativa, autor de \"Endonautica\" y desarrollador fullstack Python autodidacta. FundÃ© Endonautas para llevar el autoconocimiento mÃ¡s allÃ¡ de los libros y los tests. Si te interesa el mundo interior como prÃ¡ctica real, te invito a seguir este espacio. â endonautas.cl",
-        "youtube_title": "QuiÃ©n soy yo â Franco Jeria, Endonautas",
-        "youtube_description": "Mi presentaciÃ³n: terapeuta, autor de Endonautica y desarrollador Python. ConstruÃ­ Endonautas para explorar el autoconocimiento de forma prÃ¡ctica. TodavÃ­a aprendiendo lo mismo que enseÃ±o. â endonautas.cl"
+        "instagram": "Soy Franco — terapeuta, autor de \"Endonautica\" y desarrollador Python. Construí Endonautas para explorar el autoconocimiento de otra manera. No desde el que llegó, sino desde el que sigue. Si algo de esto resuena, estás en el lugar correcto. → endonautas.cl #autoconocimiento #endonautas #terapia",
+        "tiktok": "Soy Franco. Terapeuta, autor, dev. Todavía aprendiendo lo mismo que enseño. Sígueme si quieres explorar adentro. → endonautas.cl",
+        "linkedin": "Terapeuta en Salud Integrativa, autor de \"Endonautica\" y desarrollador fullstack Python autodidacta. Fundé Endonautas para llevar el autoconocimiento más allá de los libros y los tests. Si te interesa el mundo interior como práctica real, te invito a seguir este espacio. → endonautas.cl",
+        "youtube_title": "Quién soy yo — Franco Jeria, Endonautas",
+        "youtube_description": "Mi presentación: terapeuta, autor de Endonautica y desarrollador Python. Construí Endonautas para explorar el autoconocimiento de forma práctica. Todavía aprendiendo lo mismo que enseño. → endonautas.cl"
       }
     }
   ],
-  "last_updated": "2026-07-01T03:02:13+00:00",
-  "r2_urls": [
-    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-01-portada.jpg",
-    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-02-slide2.jpg",
-    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-03-slide3.jpg",
-    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-04-slide4.jpg",
-    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-05-slide5.jpg",
-    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-06-slide6.jpg",
-    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-07-cta.jpg"
-  ]
+  "last_updated": "2026-07-01T00:00:00Z"
 }

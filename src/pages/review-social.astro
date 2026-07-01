@@ -792,11 +792,22 @@ async function submitApproved(slug, finalists) {
 
 // ── OUTPUT BLOCK (ready_to_publish) ───────────────────────────────────────────
 
-function nextPublishDate(queuePos) {
+let _nextQueueSlot = 0; // advances with each "añadir a la cola" click this session
+
+function nextPublishDate(offset = 0) {
   const d = new Date();
-  // Si hay 0 artículos antes, publica mañana (el N8N de hoy ya corrió o corre a las 11:11)
-  d.setDate(d.getDate() + queuePos + 1);
+  d.setDate(d.getDate() + _nextQueueSlot + offset + 1);
   return d.toLocaleDateString('es-CL', { weekday: 'long', day: 'numeric', month: 'long' });
+}
+
+function _refreshQueueDates() {
+  let i = 0;
+  document.querySelectorAll('.btn-queue:not(:disabled)').forEach(btn => {
+    const date = nextPublishDate(i++);
+    btn.title = `Próxima publicación disponible: ${date} a las 11:11 (Chile)`;
+    const span = btn.parentElement?.querySelector('.queue-date');
+    if (span) span.textContent = `${date}, 11:11 Chile`;
+  });
 }
 
 function buildCaptionTabs(captions, slug, fid) {
@@ -831,14 +842,14 @@ function switchCapTab(btn, uid) {
   if (panel) panel.classList.add('active');
 }
 
-function buildOutputBlock(item, queuePos) {
+function buildOutputBlock(item) {
   const block = document.createElement('div');
   block.className = 'article-block';
 
   const carUrls  = item.r2_urls.filter(u => u.includes('/carrusel/'));
   const reelUrls = item.r2_urls.filter(u => u.includes('/reels/'));
 
-  const pubDate  = nextPublishDate(queuePos);
+  const pubDate  = nextPublishDate(0);
   const tooltip  = `Próxima publicación disponible: ${pubDate} a las 11:11 (Chile)`;
 
   let h = `
@@ -1061,6 +1072,8 @@ async function approveVisual(slug, btn) {
     const data = await res.json();
     if (data.ok) {
       btn.textContent = '✓ En cola';
+      _nextQueueSlot++;
+      _refreshQueueDates();
     } else {
       btn.disabled = false;
       btn.textContent = 'Añadir a la cola';
@@ -1149,7 +1162,7 @@ async function load() {
   if (data.ready_review?.length) {
     const sec = document.createElement('div');
     sec.innerHTML = `<div class="section-h">Cola de publicación — ${nr} artículo${nr>1?'s':''}</div>`;
-    data.ready_review.forEach((item, idx) => sec.appendChild(buildOutputBlock(item, idx)));
+    data.ready_review.forEach(item => sec.appendChild(buildOutputBlock(item)));
     c.appendChild(sec);
   }
 
