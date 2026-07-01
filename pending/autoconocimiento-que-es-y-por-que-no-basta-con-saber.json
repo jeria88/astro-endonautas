@@ -6,7 +6,7 @@
   "category": "Proceso",
   "article_path": "src/content/blog/autoconocimiento-que-es-y-por-que-no-basta-con-saber.md",
   "published_date": "2026-06-30",
-  "status": "copy_approved",
+  "status": "ready_to_publish",
   "avatar_variants": {
     "negocio": [
       {
@@ -439,7 +439,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T08:20:55+00:00",
+  "last_updated": "2026-07-01T15:23:03+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 80,
@@ -762,5 +762,31 @@
         "youtube_description": "Si ya sabes tu patrón pero sigues cayendo en lo mismo, no estás haciendo nada mal. El autoconocimiento no es un archivo de datos sobre ti —es una práctica que ocurre en el momento justo, no en la reflexión posterior. Descubre la brecha entre insight y cambio, y cómo cerrarla con continuidad, contexto y retroalimentación. Empieza con herramientas que revelan tu patrón en 10 minutos en endonautas.cl"
       }
     }
+  ],
+  "r2_urls": [
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-01-portada.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-02-slide2.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-03-slide3.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-04-slide4.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-05-slide5.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-06-slide6.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-07-cta.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/reels/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/reel.mp4",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/pregunta-v2/slide-01-portada.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/pregunta-v2/slide-02-slide2.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/pregunta-v2/slide-03-slide3.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/pregunta-v2/slide-04-slide4.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/pregunta-v2/slide-05-slide5.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/pregunta-v2/slide-06-slide6.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/pregunta-v2/slide-07-cta.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/reels/autoconocimiento-que-es-y-por-que-no-basta-con-saber/pregunta-v2/reel.mp4",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-01-portada.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-02-slide2.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-03-slide3.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-04-slide4.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-05-slide5.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-06-slide6.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/slide-07-cta.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/reels/autoconocimiento-que-es-y-por-que-no-basta-con-saber/contrain-v1/reel.mp4"
   ]
 }
