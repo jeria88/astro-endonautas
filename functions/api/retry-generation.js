@@ -5,12 +5,10 @@ export async function onRequestPost({ request, env }) {
   const token = env.GITHUB_TOKEN;
   if (!token) return Response.json({ error: "GITHUB_TOKEN no configurado" }, { status: 500 });
 
-  let slug, scheduled_at, reel_formats;
+  let slug;
   try {
     const body = await request.json();
     slug = body.slug;
-    scheduled_at = body.scheduled_at || null;
-    reel_formats = body.reel_formats || null; // {"0":"reel","1":"story"}
     if (!slug) throw new Error("falta slug");
   } catch {
     return Response.json({ error: "Body inválido — se espera { slug }" }, { status: 400 });
@@ -28,16 +26,12 @@ export async function onRequestPost({ request, env }) {
   const fileData = await getRes.json();
 
   const current = JSON.parse(atob(fileData.content.replace(/\n/g, "")));
-  if (current.status !== "ready_to_publish") {
-    return Response.json({ error: `Status actual es '${current.status}', se espera 'ready_to_publish'` }, { status: 409 });
+  if (current.status !== "generation_error") {
+    return Response.json({ error: `Status actual es '${current.status}', se espera 'generation_error'` }, { status: 409 });
   }
 
-  // No cambiamos el status — el artículo ya está en cola para N8N (ready_to_publish)
-  // Solo registramos metadata de scheduling
-  current.queued_at    = new Date().toISOString();
+  current.status       = "copy_approved";
   current.last_updated = new Date().toISOString();
-  if (scheduled_at) current.scheduled_at = scheduled_at;
-  if (reel_formats) current.reel_formats = reel_formats;
   delete current.last_error;
 
   const updated = btoa(unescape(encodeURIComponent(JSON.stringify(current, null, 2))));
@@ -45,7 +39,7 @@ export async function onRequestPost({ request, env }) {
     method: "PUT",
     headers,
     body: JSON.stringify({
-      message: `content(social): visual approved — ${slug}`,
+      message: `content(social): retry generation — ${slug}`,
       content: updated,
       sha: fileData.sha,
     }),
@@ -56,5 +50,5 @@ export async function onRequestPost({ request, env }) {
     return Response.json({ error: `GitHub PUT falló: ${err}` }, { status: 502 });
   }
 
-  return Response.json({ ok: true, slug, status: "ready_to_publish", scheduled_at, reel_formats });
+  return Response.json({ ok: true, slug, status: "copy_approved" });
 }

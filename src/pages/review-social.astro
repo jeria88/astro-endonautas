@@ -275,6 +275,47 @@ option { background: #111116; }
   border-radius: 7px; color: rgba(240,232,220,0.7); font-size: 0.68rem;
   padding: 5px 9px; outline: none; color-scheme: dark;
 }
+.btn-queue {
+  padding: 8px 20px; border-radius: 30px; border: none; cursor: pointer;
+  font-weight: 700; font-size: 0.68rem; letter-spacing: 0.07em; text-transform: uppercase;
+  background: var(--teal); color: #030306;
+  position: relative;
+}
+.btn-queue:disabled { opacity: 0.25; cursor: not-allowed; }
+.btn-queue:hover:not(:disabled) { opacity: 0.88; }
+.btn-retry {
+  padding: 6px 16px; border-radius: 30px; border: 1px solid var(--amber); cursor: pointer;
+  font-weight: 700; font-size: 0.65rem; letter-spacing: 0.07em; text-transform: uppercase;
+  background: transparent; color: var(--amber);
+}
+.btn-retry:disabled { opacity: 0.3; cursor: not-allowed; }
+.output-captions { margin-top: 1rem; }
+.output-captions-title {
+  font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--purple); margin-bottom: 0.5rem;
+}
+.cap-net-tabs { display: flex; gap: 0.25rem; margin-bottom: 0.5rem; }
+.cap-net-tab {
+  padding: 3px 10px; border-radius: 20px; cursor: pointer;
+  font-size: 0.58rem; border: 1px solid var(--border); color: var(--dim); background: transparent;
+}
+.cap-net-tab.active { border-color: var(--purple); color: var(--purple); }
+.cap-net-panel { display: none; }
+.cap-net-panel.active { display: block; }
+.cap-net-text {
+  font-size: 0.78rem; line-height: 1.55; color: var(--text);
+  background: rgba(255,255,255,0.025); border-radius: 7px;
+  padding: 0.6rem 0.75rem; white-space: pre-wrap;
+}
+.error-block {
+  border: 1px solid rgba(232,99,106,0.3); border-radius: 11px;
+  padding: 1rem 1.1rem; background: rgba(232,99,106,0.04);
+  margin-bottom: 0.875rem;
+}
+.error-slug { font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 0.25rem; }
+.error-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; }
+.error-msg { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.75rem; white-space: pre-wrap; font-family: monospace; }
+.queue-date { font-size: 0.68rem; color: var(--muted); }
 
 /* ── COPY PENDING (legacy) ── */
 .avatar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
@@ -751,12 +792,54 @@ async function submitApproved(slug, finalists) {
 
 // ── OUTPUT BLOCK (ready_to_publish) ───────────────────────────────────────────
 
-function buildOutputBlock(item) {
+function nextPublishDate(queuePos) {
+  const d = new Date();
+  // Si hay 0 artículos antes, publica mañana (el N8N de hoy ya corrió o corre a las 11:11)
+  d.setDate(d.getDate() + queuePos + 1);
+  return d.toLocaleDateString('es-CL', { weekday: 'long', day: 'numeric', month: 'long' });
+}
+
+function buildCaptionTabs(captions, slug, fid) {
+  const networks = [
+    { k: 'instagram',          label: 'IG' },
+    { k: 'tiktok',             label: 'TT' },
+    { k: 'linkedin',           label: 'LI' },
+    { k: 'youtube_title',      label: 'YT título' },
+    { k: 'youtube_description',label: 'YT desc' },
+  ];
+  const available = networks.filter(n => captions[n.k]);
+  if (!available.length) return '';
+  const uid = `${slug}-${fid}`;
+  const tabs = available.map((n, i) =>
+    `<button class="cap-net-tab${i===0?' active':''}" onclick="switchCapTab(this,'${uid}')"
+      data-net="${n.k}">${n.label}</button>`
+  ).join('');
+  const panels = available.map((n, i) =>
+    `<div class="cap-net-panel${i===0?' active':''}" id="cnp-${uid}-${n.k}">
+      <div class="cap-net-text">${esc(captions[n.k])}</div>
+    </div>`
+  ).join('');
+  return `<div class="cap-net-tabs">${tabs}</div>${panels}`;
+}
+
+function switchCapTab(btn, uid) {
+  const parent = btn.closest('.output-captions');
+  parent.querySelectorAll('.cap-net-tab').forEach(t => t.classList.remove('active'));
+  parent.querySelectorAll('.cap-net-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const panel = parent.querySelector(`#cnp-${uid}-${btn.dataset.net}`);
+  if (panel) panel.classList.add('active');
+}
+
+function buildOutputBlock(item, queuePos) {
   const block = document.createElement('div');
   block.className = 'article-block';
 
   const carUrls  = item.r2_urls.filter(u => u.includes('/carrusel/'));
   const reelUrls = item.r2_urls.filter(u => u.includes('/reels/'));
+
+  const pubDate  = nextPublishDate(queuePos);
+  const tooltip  = `Próxima publicación disponible: ${pubDate} a las 11:11 (Chile)`;
 
   let h = `
     <div class="article-title">${esc(item.title || item.slug)}</div>
@@ -786,12 +869,42 @@ function buildOutputBlock(item) {
     h += `</div>`;
   }
 
+  // Captions por finalista aprobado
+  if (item.approved?.length && Object.keys(item.captions || {}).length) {
+    item.approved.forEach((appr, ai) => {
+      const fid      = appr.finalist_id || `${appr.avatar}_v${appr.variant_index ?? 0}`;
+      const caps     = item.captions[fid] || {};
+      const hasCaps  = Object.values(caps).some(Boolean);
+      if (!hasCaps) return;
+      h += `<div class="output-captions">
+        <div class="output-captions-title">${esc(fid)} — copy aprobado</div>
+        ${buildCaptionTabs(caps, esc(item.slug), esc(fid))}
+      </div>`;
+    });
+  }
+
   h += `<div class="publish-row">
-    <button class="btn-publish" onclick="approveVisual('${esc(item.slug)}',this)">Publicar IG</button>
-    <input type="datetime-local" class="schedule-input" id="sched-${esc(item.slug)}" title="Vacío = próximo ciclo N8N" />
+    <button class="btn-queue" title="${esc(tooltip)}"
+      onclick="approveVisual('${esc(item.slug)}',this)">Añadir a la cola</button>
+    <span class="queue-date">${esc(pubDate)}, 11:11 Chile</span>
   </div>`;
 
   block.innerHTML = h;
+  return block;
+}
+
+// ── ERROR BLOCK (generation_error) ─────────────────────────────────────────────
+
+function buildErrorBlock(item) {
+  const block = document.createElement('div');
+  block.className = 'error-block';
+  block.innerHTML = `
+    <div class="error-slug">${esc(item.slug)}</div>
+    <div class="error-title">${esc(item.title || item.slug)}</div>
+    <div class="error-msg">${esc((item.last_error || '').slice(0, 400))}</div>
+    <button class="btn-retry" id="retry-${esc(item.slug)}"
+      onclick="retryGeneration('${esc(item.slug)}',this)">Reintentar generación</button>
+  `;
   return block;
 }
 
@@ -938,20 +1051,51 @@ async function approveLegacy(slug) {
 // ── VISUAL APPROVE ─────────────────────────────────────────────────────────────
 
 async function approveVisual(slug, btn) {
-  const schedInput = document.getElementById(`sched-${slug}`);
-  const schedAt = schedInput?.value ? new Date(schedInput.value).toISOString() : null;
-  if (!confirm(`¿Publicar "${slug}"?`)) return;
-  btn.disabled = true; btn.textContent = 'Enviando…';
-  const res  = await fetch('/api/approve-visual', {
-    method: 'POST', credentials: 'same-origin',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ slug, scheduled_at: schedAt }),
-  });
-  const data = await res.json();
-  if (data.ok) {
-    btn.textContent = schedAt ? '✓ Programado' : '✓ En cola';
-  } else {
-    btn.disabled = false; btn.textContent = 'Publicar IG';
+  btn.disabled = true; btn.textContent = 'Añadiendo…';
+  try {
+    const res  = await fetch('/api/approve-visual', {
+      method: 'POST', credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug }),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      btn.textContent = '✓ En cola';
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Añadir a la cola';
+      console.error('approve-visual error:', data.error);
+    }
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = 'Añadir a la cola';
+    console.error(e);
+  }
+}
+
+// ── RETRY GENERATION ───────────────────────────────────────────────────────────
+
+async function retryGeneration(slug, btn) {
+  btn.disabled = true; btn.textContent = 'Reintentando…';
+  try {
+    const res  = await fetch('/api/retry-generation', {
+      method: 'POST', credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug }),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      btn.textContent = '✓ Enviado al cron';
+      btn.closest('.error-block').style.opacity = '0.4';
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Reintentar generación';
+      console.error('retry error:', data.error);
+    }
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = 'Reintentar generación';
+    console.error(e);
   }
 }
 
@@ -991,14 +1135,23 @@ async function load() {
   const ns = data.scored?.length       || 0;
   const nr = data.ready_review?.length || 0;
   const nc = data.copy_pending?.length || 0;
+  const ne = data.errors?.length       || 0;
   const parts = [];
+  if (nr) parts.push(`${nr} en cola`);
   if (ns) parts.push(`${ns} con finalistas`);
-  if (nr) parts.push(`${nr} listo${nr>1?'s':''}`);
   if (nc) parts.push(`${nc} pendiente${nc>1?'s':''}`);
+  if (ne) parts.push(`${ne} con error`);
   const badge = document.getElementById('status-badge');
   if (badge) badge.textContent = parts.join(' · ') || 'sin pendientes';
 
   const c = document.getElementById('content');
+
+  if (data.ready_review?.length) {
+    const sec = document.createElement('div');
+    sec.innerHTML = `<div class="section-h">Cola de publicación — ${nr} artículo${nr>1?'s':''}</div>`;
+    data.ready_review.forEach((item, idx) => sec.appendChild(buildOutputBlock(item, idx)));
+    c.appendChild(sec);
+  }
 
   if (data.scored?.length) {
     const sec = document.createElement('div');
@@ -1007,10 +1160,10 @@ async function load() {
     c.appendChild(sec);
   }
 
-  if (data.ready_review?.length) {
+  if (data.errors?.length) {
     const sec = document.createElement('div');
-    sec.innerHTML = `<div class="section-h">Output generado — revisar y publicar</div>`;
-    for (const item of data.ready_review) sec.appendChild(buildOutputBlock(item));
+    sec.innerHTML = `<div class="section-h">Errores de generación — reintentar</div>`;
+    for (const item of data.errors) sec.appendChild(buildErrorBlock(item));
     c.appendChild(sec);
   }
 
@@ -1021,7 +1174,7 @@ async function load() {
     c.appendChild(sec);
   }
 
-  if (!ns && !nr && !nc) document.getElementById('empty').style.display = '';
+  if (!ns && !nr && !nc && !ne) document.getElementById('empty').style.display = '';
 }
 
 load().catch(e => {
