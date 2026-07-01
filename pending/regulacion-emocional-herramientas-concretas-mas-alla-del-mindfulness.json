@@ -6,7 +6,7 @@
   "category": "Instrumentos",
   "article_path": "src/content/blog/regulacion-emocional-herramientas-concretas-mas-alla-del-mindfulness.md",
   "published_date": "2026-06-30",
-  "status": "copy_approved",
+  "status": "generation_error",
   "avatar_variants": {
     "negocio": [
       {
@@ -444,7 +444,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T01:48:30.173Z",
+  "last_updated": "2026-07-01T07:09:50+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 76,
@@ -854,5 +854,6 @@
         "youtube_description": "Respirar no siempre alcanza. Descubre qué dice la ciencia sobre la regulación emocional y cómo el DERS-16 mide tu capacidad para reconocer, aceptar y manejar tus emociones. Explora las seis dimensiones clave y las estrategias con evidencia: reevaluación cognitiva, exposición y aceptación. Encuentra tu perfil real en endonautas.cl.\n\n#regulacionemocional #ders16 #autoconocimiento #psicologia"
       }
     }
-  ]
+  ],
+  "last_error": "'R2_ACCESS_KEY_ID'"
 }
