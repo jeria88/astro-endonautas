@@ -6,7 +6,7 @@
   "category": "Proceso",
   "article_path": "src/content/blog/dependencia-emocional-cuando-necesitar-validacion-se-convierte-en-patron.md",
   "published_date": "2026-06-30",
-  "status": "generation_error",
+  "status": "ready_to_publish",
   "avatar_variants": {
     "negocio": [
       {
@@ -444,7 +444,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T07:50:07+00:00",
+  "last_updated": "2026-07-01T07:54:52+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 79,
@@ -891,6 +891,5 @@
     "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/dependencia-emocional-cuando-necesitar-validacion-se-convierte-en-patron/hook-v3/slide-05-slide5.jpg",
     "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/dependencia-emocional-cuando-necesitar-validacion-se-convierte-en-patron/hook-v3/slide-06-slide6.jpg",
     "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/dependencia-emocional-cuando-necesitar-validacion-se-convierte-en-patron/hook-v3/slide-07-cta.jpg"
-  ],
-  "last_error": "git error: git stash pop"
+  ]
 }
