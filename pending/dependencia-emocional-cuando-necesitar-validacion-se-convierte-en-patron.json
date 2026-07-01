@@ -444,7 +444,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T07:10:01+00:00",
+  "last_updated": "2026-07-01T07:14:18+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 79,
@@ -854,5 +854,5 @@
       }
     }
   ],
-  "last_error": "'R2_ACCESS_KEY_ID'"
+  "last_error": "No brolls found for cluster 'fractales'"
 }
