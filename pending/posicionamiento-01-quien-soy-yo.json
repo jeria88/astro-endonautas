@@ -6,7 +6,7 @@
   "category": "Posicionamiento",
   "article_path": "src/content/blog/posicionamiento-01-quien-soy-yo.md",
   "published_date": "2026-07-01",
-  "status": "copy_approved",
+  "status": "ready_to_publish",
   "approved": [
     {
       "finalist_id": "franco_v0",
@@ -44,5 +44,14 @@
       }
     }
   ],
-  "last_updated": "2026-07-01T02:58:55.903Z"
+  "last_updated": "2026-07-01T03:02:13+00:00",
+  "r2_urls": [
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-01-portada.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-02-slide2.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-03-slide3.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-04-slide4.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-05-slide5.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-06-slide6.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/posicionamiento-01-quien-soy-yo/documental-v1/slide-07-cta.jpg"
+  ]
 }
