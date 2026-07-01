@@ -890,8 +890,9 @@ function buildOutputBlock(item) {
     h += `<div class="media-subsection">
       <div class="media-subsection-h">Carrusel — ${carUrls.length} slides · click para zoom · ← →</div>
       <div class="carousel-strip">`;
+    const carJson = JSON.stringify(carUrls).replace(/"/g, '&quot;');
     carUrls.forEach((url, i) => {
-      h += `<div class="slide-thumb" onclick="openLb(${JSON.stringify(carUrls)},${i})">
+      h += `<div class="slide-thumb" onclick="openLb(JSON.parse(this.dataset.urls),${i})" data-urls="${carJson}">
         <span class="slide-num">${String(i+1).padStart(2,'0')}</span>
         <img src="${url}" loading="lazy" alt="slide ${i+1}" />
       </div>`;
