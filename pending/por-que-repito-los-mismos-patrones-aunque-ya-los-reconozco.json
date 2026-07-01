@@ -449,7 +449,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T07:28:47+00:00",
+  "last_updated": "2026-07-01T07:31:51+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 76,
@@ -816,5 +816,5 @@
       }
     }
   ],
-  "last_error": "No brolls found for cluster 'terapia'"
+  "last_error": "'contrain'"
 }
