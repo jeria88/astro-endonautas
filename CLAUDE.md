@@ -224,6 +224,17 @@ Cada avatar genera: `carousel` (slides), `reel` (hook_a/hook_b/cta). Captions la
 
 Determinan el estilo visual de la pieza, no el copy.
 
+**Claves de `reel_copy` por director (formato actual):**  
+El copy generado tiene siempre `{ hook_a, hook_b, cta, keywords }`. Cada director mapea estas claves a sus propias variables internas:
+- `loop` → `hook_a`, `hook_b` (match directo)
+- `contrain` → `hook_a` = contrain, `hook_b` = reencuadre
+- `quote` → `hook_a` = cita, `hook_b` = atribucion
+- `pregunta` → `hook_a` = pregunta
+- `hook` → `hook_a` = fase_0, `hook_b` = fase_1, fallback para fase_2/fase_final
+- `documental` → `hook_a` = reflexion_1, `hook_b` = reflexion_2
+
+Todos los directores tienen fallback integrado si la clave no existe. No regenerar copy para cambiar director.
+
 ### Scripts de soporte (local)
 
 - `scripts/social/batch_phase1.py` — genera `avatar_variants` para artículos `copy_pending_review`. Flags: `--slug X`, `--retry-empty`.
@@ -233,9 +244,16 @@ Determinan el estilo visual de la pieza, no el copy.
 
 Path: `/home/ubuntu/content-studio/generate_social.py`  
 SSH key local: `/home/nikka/DevTools/oracle-free/ssh/ssh-key-2026-06-14.key`  
-Env obligatorio: `/home/ubuntu/.env_endonautas` (contiene `DEEPSEEK_API_KEY`, `R2_*`, `N8N_WEBHOOK_URL`)
+Env obligatorio: `/home/ubuntu/.env_endonautas` (contiene `DEEPSEEK_API_KEY`, `R2_*`, `N8N_WEBHOOK_URL`, `BROLLS_BASE_PATH`)
 
 **CRÍTICO:** Siempre sourcer el env antes de correr manualmente. Sin él, DeepSeek devuelve vacío y scoring falla.
+
+**Dependencias del sistema (Oracle):** `ffmpeg` requerido para renderizar reels. Verificar con `which ffmpeg` antes de correr batch. Instalado 2026-07-01.
+
+**B-rolls:** `/home/ubuntu/content-studio/brolls/endonautas/biblioteca/{cluster}/*.mp4`  
+Clusters disponibles: `terapia`, `fractales`, `colibri`, `emociones`, `patrones`, `autoconocimiento`, `espejo-ia`.  
+Agregado via: `rsync -avz --progress -e "ssh -i KEY" local/brolls/ ubuntu@146.181.39.4:/home/ubuntu/content-studio/brolls/`  
+`BROLLS_BASE_PATH=/home/ubuntu/content-studio/brolls/endonautas` en `.env_endonautas`.
 
 ```bash
 # Procesar siguiente artículo pendiente (detecta fase por status)
@@ -255,7 +273,11 @@ ssh -i /home/nikka/DevTools/oracle-free/ssh/ssh-key-2026-06-14.key ubuntu@146.18
 
 Cron: `/home/ubuntu/scripts/run_social.sh` · cada 30 min (`*/30 * * * *`) · ya sourcea el env.
 
-**Bug histórico (corregido):** `_git_push()` solía hacer `pull --rebase` ANTES del commit → error "unstaged changes". Ahora: `git add` → `git commit` → `git pull --rebase` → `git push`. No revertir este orden.
+**Bugs históricos corregidos en `_git_push()`:**
+1. Orden incorrecto: `pull --rebase` ANTES de commit → "unstaged changes". Fix: `git add` → `git commit` → `git stash` → `git pull --rebase` → `git stash pop` → `git push`.
+2. (2026-07-01) `git stash pop` fallaba si no había nada que stashear (batch secuencial = 0 cambios extra). Fix: solo hace `stash pop` si `stash` realmente guardó algo (`"No local changes to save" not in stdout`). No revertir este patrón.
+
+**Resiliencia de reels (2026-07-01):** Si un reel falla, el artículo igualmente llega a `ready_to_publish` con los carruseles. El error del reel se loguea como WARN pero no propaga la excepción. Antes, cualquier error en Phase 2 bloqueaba el artículo entero.
 
 Fases detectadas por status:
 - **Phase 1** (`pending → copy_pending_review`): 12 variantes de copy vía DeepSeek.

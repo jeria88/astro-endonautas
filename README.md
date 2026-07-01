@@ -158,6 +158,8 @@ Scripts Oracle: `/home/ubuntu/content-studio/generate_social.py`
 
 Campos de resiliencia en cada pending JSON: `last_updated` (ISO), `last_error` (string).
 
+**Resiliencia de reels (2026-07-01):** Si el reel falla, el carrusel igual llega a `ready_to_publish`. Los errores de reel se registran como WARN en el log pero no propagan la excepción ni bloquean el artículo.
+
 ### n8n — publicación automática
 
 URL: `https://n8n.146.181.39.4.sslip.io` · Login: `fjeriacastro@gmail.com`
@@ -168,6 +170,8 @@ URL: `https://n8n.146.181.39.4.sslip.io` · Login: `fjeriacastro@gmail.com`
 | `noYRxzrL7NpLCORv` | Daily Stories | 13:00 / 16:00 / 19:00 Chile | Historia aleatoria → IG |
 
 **Test manual:** En N8N UI → abrir workflow → "Execute Workflow". Requiere al menos un JSON en `ready_to_publish` (stories requiere al menos uno en `published`).
+
+**Fix aplicado (2026-07-01):** Ambos workflows usaban `fetch` global en el nodo Code (typeVersion 2), que no está disponible en el sandbox VM de N8N aunque Node.js 18+ lo tenga globalmente. Fix: polyfill de `fetch` usando `require('https')`/`require('http')` prepended al jsCode de ambos workflows vía N8N REST API. No reemplazar el nodo Code con versión typeVersion 1 — cambiaría el sandbox.
 
 **OAuth pendiente** (LinkedIn / TikTok):  
 Callback URI: `https://n8n.146.181.39.4.sslip.io/rest/oauth2-credential/callback`
