@@ -6,7 +6,7 @@
   "category": "Proceso",
   "article_path": "src/content/blog/autoconocimiento-que-es-y-por-que-no-basta-con-saber.md",
   "published_date": "2026-06-30",
-  "status": "copy_approved",
+  "status": "generation_error",
   "avatar_variants": {
     "negocio": [
       {
@@ -439,7 +439,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T01:41:01.130Z",
+  "last_updated": "2026-07-01T02:00:20+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 80,
@@ -762,5 +762,6 @@
         "youtube_description": "Si ya sabes tu patrón pero sigues cayendo en lo mismo, no estás haciendo nada mal. El autoconocimiento no es un archivo de datos sobre ti —es una práctica que ocurre en el momento justo, no en la reflexión posterior. Descubre la brecha entre insight y cambio, y cómo cerrarla con continuidad, contexto y retroalimentación. Empieza con herramientas que revelan tu patrón en 10 minutos en endonautas.cl"
       }
     }
-  ]
+  ],
+  "last_error": "No brolls found for cluster 'autoconocimiento'"
 }
