@@ -231,15 +231,31 @@ Determinan el estilo visual de la pieza, no el copy.
 
 ### Oracle — scripts de producción
 
-Path: `/home/ubuntu/content-studio/generate_social.py`
+Path: `/home/ubuntu/content-studio/generate_social.py`  
+SSH key local: `/home/nikka/DevTools/oracle-free/ssh/ssh-key-2026-06-14.key`  
+Env obligatorio: `/home/ubuntu/.env_endonautas` (contiene `DEEPSEEK_API_KEY`, `R2_*`, `N8N_WEBHOOK_URL`)
+
+**CRÍTICO:** Siempre sourcer el env antes de correr manualmente. Sin él, DeepSeek devuelve vacío y scoring falla.
 
 ```bash
 # Procesar siguiente artículo pendiente (detecta fase por status)
-ssh -i ~/.ssh/oracle.key ubuntu@146.181.39.4 "cd /home/ubuntu/content-studio && python generate_social.py --auto"
+ssh -i /home/nikka/DevTools/oracle-free/ssh/ssh-key-2026-06-14.key ubuntu@146.181.39.4 \
+  "source /home/ubuntu/.env_endonautas && cd /home/ubuntu/content-studio && python3 generate_social.py --auto"
 
 # Slug específico
-ssh -i ~/.ssh/oracle.key ubuntu@146.181.39.4 "cd /home/ubuntu/content-studio && python generate_social.py el-problema-no-es-el-insight"
+ssh -i /home/nikka/DevTools/oracle-free/ssh/ssh-key-2026-06-14.key ubuntu@146.181.39.4 \
+  "source /home/ubuntu/.env_endonautas && cd /home/ubuntu/content-studio && python3 generate_social.py el-problema-no-es-el-insight"
+
+# Batch: procesar N artículos seguidos (útil cuando hay muchos copy_approved)
+ssh -i /home/nikka/DevTools/oracle-free/ssh/ssh-key-2026-06-14.key ubuntu@146.181.39.4 \
+  "source /home/ubuntu/.env_endonautas && cd /home/ubuntu/content-studio && \
+   nohup bash -c 'for i in \$(seq 1 11); do python3 generate_social.py --auto; sleep 5; done' \
+   >> /home/ubuntu/logs/social_batch.log 2>&1 &"
 ```
+
+Cron: `/home/ubuntu/scripts/run_social.sh` · cada 30 min (`*/30 * * * *`) · ya sourcea el env.
+
+**Bug histórico (corregido):** `_git_push()` solía hacer `pull --rebase` ANTES del commit → error "unstaged changes". Ahora: `git add` → `git commit` → `git pull --rebase` → `git push`. No revertir este orden.
 
 Fases detectadas por status:
 - **Phase 1** (`pending → copy_pending_review`): 12 variantes de copy vía DeepSeek.
@@ -267,16 +283,17 @@ Credenciales Meta (no mover del nodo Code):
 - `IG_USER_ID`: `17841408150037364` · `FB_PAGE_ID`: `112522961877445`
 - `PAGE_TOKEN`: never-expiring token en el código del workflow
 
-### n8n — YouTube (credencial creada, pendiente connect)
+### n8n — YouTube (credencial creada, redirect URI agregado — pendiente connect final)
 
 Credencial N8N ID: `7tyyXesjuDtwHDid` — "YouTube Endonautas"  
-Google project: `oout-endonautas` | Channel: `UC9hqN2eNx1X-U-2ev9GUsCg`
+Google project: `oout-endonautas` | Channel: `UC9hqN2eNx1X-U-2ev9GUsCg`  
+Client ID: `763071214392-rlvc5qblai35te7u1n7e6bof2hbs0mf4.apps.googleusercontent.com`
 
-**Para activar YouTube en la publicación diaria:**
-1. Ir a: https://console.cloud.google.com/apis/credentials/oauthclient/763071214392-rlvc5qblai35te7u1n7e6bof2hbs0mf4.apps.googleusercontent.com?project=oout-endonautas
-2. Agregar en "Authorized redirect URIs": `https://n8n.146.181.39.4.sslip.io/rest/oauth2-credential/callback`
-3. En N8N UI → Credentials → "YouTube Endonautas" → Connect → autorizar con cuenta Google
-4. Listo — el workflow `Daily Publish 11:11` ya tiene el nodo YouTube integrado
+**Estado (2026-06-30):** Redirect URI `https://n8n.146.181.39.4.sslip.io/rest/oauth2-credential/callback` ya agregado en Google Console. Falta conectar el token OAuth.
+
+**Para completar la conexión:**
+1. En N8N UI → Credentials → "YouTube Endonautas" → Connect → autorizar con cuenta Google (`fjeriacastro@gmail.com`)
+2. Listo — el workflow `Daily Publish 11:11` ya tiene el nodo YouTube integrado
 
 El nodo de YouTube en el workflow Code es **no bloqueante**: si el token no está disponible, publica igual en IG y loguea `[YT] credencial pendiente`.
 
@@ -354,6 +371,23 @@ Cuando cambies copy de planes, verificar que sea consistente con:
 2. `src/pages/profesionales.astro` → sección plan Practicante
 3. `templates/payments/planes.html` en la app Django
 4. `templates/legal/terminos.html` en la app Django
+
+## review-social — página interna de aprobación
+
+`src/pages/review-social.astro` — solo acceso Franco, excluida del sitemap.
+
+**Layout:** filmstrip horizontal — `display:flex` con `overflow-x:auto`. Cada `.finalist-card` tiene `flex: 0 0 260px` (ancho fijo), todos en una sola fila. No wrappea.
+
+**IDs de elementos:** todos los textareas y charcount llevan prefijo `{slug}-{fid}` para evitar colisión cuando dos artículos distintos tienen el mismo `finalist_id` (ej. `padres_v0`). Formato: `ta-{slug}-{fid}-{network}`.
+
+**Bug histórico (corregido):** El botón "Enviar aprobados" usaba `onclick="submitApproved(..., ${JSON.stringify(finalists)})"` — las comillas dobles del JSON rompían el atributo HTML y el botón no disparaba nada. Ahora usa `addEventListener('click', ...)`.
+
+**Flujo de uso:**
+1. Carga `GET /api/list-pending` → muestra artículos `scored` en filmstrip
+2. Franco revisa slides, captions por red (tabs Instagram/TikTok/LinkedIn/YT), edita si necesita
+3. Marca Aprobar/Skip por tarjeta; selecciona director y formatos (carrusel/reel)
+4. "Enviar aprobados" → `POST /api/approve-copy` → artículo pasa a `copy_approved`
+5. Cron Oracle detecta y genera assets en ~30 min por artículo
 
 ## Sitemap
 

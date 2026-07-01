@@ -169,11 +169,12 @@ URL: `https://n8n.146.181.39.4.sslip.io` · Login: `fjeriacastro@gmail.com`
 
 **Test manual:** En N8N UI → abrir workflow → "Execute Workflow". Requiere al menos un JSON en `ready_to_publish` (stories requiere al menos uno en `published`).
 
-**OAuth pendiente** (LinkedIn / TikTok / YouTube):  
+**OAuth pendiente** (LinkedIn / TikTok):  
 Callback URI: `https://n8n.146.181.39.4.sslip.io/rest/oauth2-credential/callback`
 - LinkedIn: https://www.linkedin.com/developers/apps/new — scopes: `w_member_social`
 - TikTok: https://developers.tiktok.com/apps/ — scopes: `video.upload`, `video.publish`
-- YouTube: https://console.cloud.google.com/apis/credentials (habilitar YouTube Data API v3)
+
+**YouTube:** Redirect URI ya agregado en Google Console · Credencial N8N `7tyyXesjuDtwHDid` creada. Pendiente solo: ir a N8N UI → Credentials → "YouTube Endonautas" → Connect.
 
 ## Servicios relacionados (Oracle Cloud — mismo servidor que la app)
 
