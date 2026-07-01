@@ -6,7 +6,7 @@
   "category": "Instrumentos",
   "article_path": "src/content/blog/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan.md",
   "published_date": "2026-06-30",
-  "status": "copy_approved",
+  "status": "ready_to_publish",
   "avatar_variants": {
     "negocio": [
       {
@@ -442,7 +442,7 @@
       }
     ]
   },
-  "last_updated": "2026-07-01T07:32:14+00:00",
+  "last_updated": "2026-07-01T08:39:25+00:00",
   "viral_scores": {
     "negocio_v0": {
       "score": 86,
@@ -805,5 +805,38 @@
         "youtube_description": "Tu equipo no rinde, los clientes se van y el crecimiento se frena. No es estrategia: es tu perfil emocional en acción. El Big Five no basta, el apego y la regulación importan más. Descubre el mapa completo de patrones en endonautas.cl #liderazgo #saludmental #autoconocimiento"
       }
     }
+  ],
+  "r2_urls": [
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/quote-v2/slide-01-portada.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/quote-v2/slide-02-slide2.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/quote-v2/slide-03-slide3.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/quote-v2/slide-04-slide4.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/quote-v2/slide-05-slide5.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/quote-v2/slide-06-slide6.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/quote-v2/slide-07-cta.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/reels/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/quote-v2/reel.mp4",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/pregunta-v1/slide-01-portada.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/pregunta-v1/slide-02-slide2.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/pregunta-v1/slide-03-slide3.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/pregunta-v1/slide-04-slide4.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/pregunta-v1/slide-05-slide5.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/pregunta-v1/slide-06-slide6.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/pregunta-v1/slide-07-cta.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v3/slide-01-portada.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v3/slide-02-slide2.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v3/slide-03-slide3.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v3/slide-04-slide4.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v3/slide-05-slide5.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v3/slide-06-slide6.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v3/slide-07-cta.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/reels/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v3/reel.mp4",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v1/slide-01-portada.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v1/slide-02-slide2.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v1/slide-03-slide3.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v1/slide-04-slide4.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v1/slide-05-slide5.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v1/slide-06-slide6.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/carrusel/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v1/slide-07-cta.jpg",
+    "https://pub-1e863b9986fd407792415a2de7fc23ba.r2.dev/reels/mapa-de-patrones-personales-como-leer-lo-que-tus-tests-revelan/contrain-v1/reel.mp4"
   ]
 }
