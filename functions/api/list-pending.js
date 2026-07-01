@@ -42,12 +42,19 @@ export async function onRequestGet({ env }) {
         avatar_variants: data.avatar_variants,
       });
     } else if (data.status === "ready_to_publish" && data.r2_urls?.length) {
+      // captions pueden estar en raíz o dentro de cada approved item
+      const topCaptions = (data.captions && Object.keys(data.captions).length)
+        ? data.captions
+        : Object.fromEntries((data.approved || []).map(a => [
+            a.finalist_id || `${a.avatar}_v${a.variant_index ?? 0}`,
+            a.captions || {}
+          ]));
       ready_review.push({
         slug:     data.slug,
         title:    data.title,
         r2_urls:  data.r2_urls,
         approved: data.approved || [],
-        captions: data.captions || {},
+        captions: topCaptions,
       });
     } else if (data.status === "generation_error") {
       errors.push({

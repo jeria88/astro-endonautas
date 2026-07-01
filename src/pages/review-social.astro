@@ -311,6 +311,18 @@ option { background: #111116; }
 }
 .btn-queue:disabled { opacity: 0.25; cursor: not-allowed; }
 .btn-queue:hover:not(:disabled) { opacity: 0.88; }
+.btn-pub-ig {
+  padding: 8px 18px; border-radius: 30px; border: none; cursor: pointer;
+  font-weight: 700; font-size: 0.66rem; letter-spacing: 0.07em; text-transform: uppercase;
+  background: linear-gradient(135deg,#f56040,#c13584,#5851db); color: #fff;
+}
+.btn-pub-fb {
+  padding: 8px 18px; border-radius: 30px; border: none; cursor: pointer;
+  font-weight: 700; font-size: 0.66rem; letter-spacing: 0.07em; text-transform: uppercase;
+  background: #1877f2; color: #fff;
+}
+.btn-pub-ig:disabled, .btn-pub-fb:disabled { opacity: 0.25; cursor: not-allowed; }
+.btn-pub-ig:hover:not(:disabled), .btn-pub-fb:hover:not(:disabled) { opacity: 0.82; }
 .btn-retry {
   padding: 6px 16px; border-radius: 30px; border: 1px solid var(--amber); cursor: pointer;
   font-weight: 700; font-size: 0.65rem; letter-spacing: 0.07em; text-transform: uppercase;
@@ -928,10 +940,20 @@ function buildOutputBlock(item) {
     });
   }
 
+  // Caption de IG para tooltip de botones de publicar
+  const allCaps = item.approved?.[0]?.captions || Object.values(item.captions || {})[0] || {};
+  const igCap   = allCaps.instagram || allCaps.facebook || '';
+  const igTip   = igCap ? `Caption: ${igCap.slice(0, 120)}…` : 'Publica en Instagram ahora vía N8N';
+  const fbTip   = igCap ? `Caption: ${igCap.slice(0, 120)}…` : 'Publica en Facebook ahora vía N8N';
+
   h += `<div class="publish-row">
     <button class="btn-queue" title="${esc(tooltip)}"
       onclick="approveVisual('${esc(item.slug)}',this)">Añadir a la cola</button>
     <span class="queue-date">${esc(pubDate)}, 11:11 Chile</span>
+    <button class="btn-pub-ig" title="${esc(igTip)}"
+      onclick="publishNow('${esc(item.slug)}','instagram',this)">▶ Instagram</button>
+    <button class="btn-pub-fb" title="${esc(fbTip)}"
+      onclick="publishNow('${esc(item.slug)}','facebook',this)">▶ Facebook</button>
   </div>`;
 
   block.innerHTML = h;
@@ -1117,6 +1139,30 @@ async function approveVisual(slug, btn) {
     btn.disabled = false;
     btn.textContent = 'Añadir a la cola';
     console.error(e);
+  }
+}
+
+// ── PUBLISH NOW (Instagram / Facebook via N8N) ─────────────────────────────────
+
+async function publishNow(slug, network, btn) {
+  const label = btn.textContent;
+  btn.disabled = true; btn.textContent = 'Publicando…';
+  try {
+    const res  = await fetch('/api/publish-now', {
+      method: 'POST', credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, network }),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      btn.textContent = '✓ Enviado a N8N';
+    } else {
+      btn.disabled = false; btn.textContent = label;
+      alert(`Error: ${data.error}`);
+    }
+  } catch (e) {
+    btn.disabled = false; btn.textContent = label;
+    alert(`Error: ${e.message}`);
   }
 }
 
