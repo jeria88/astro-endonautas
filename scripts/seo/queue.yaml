@@ -24,7 +24,8 @@
   keyword: prepararse para terapia
   category: Proceso
   layer: journey
-  published: false
+  published: true
+  published_date: '2026-07-07'
 - topic: 'El Eneagrama en la práctica: más allá del tipo de personalidad'
   keyword: eneagrama personalidad
   category: Instrumentos
