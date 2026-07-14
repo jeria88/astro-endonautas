@@ -36,7 +36,8 @@
   keyword: hipervigilancia síntomas
   category: Proceso
   layer: awareness
-  published: false
+  published: true
+  published_date: '2026-07-14'
 - topic: 'Diario emocional: cómo escribir un registro que realmente sirva'
   keyword: diario emocional
   category: Instrumentos
