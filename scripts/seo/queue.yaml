@@ -42,7 +42,8 @@
   keyword: diario emocional
   category: Instrumentos
   layer: journey
-  published: false
+  published: true
+  published_date: '2026-07-17'
 - topic: 'Terapia online vs presencial: diferencias reales más allá del formato'
   keyword: terapia online vs presencial
   category: Fundamentos
