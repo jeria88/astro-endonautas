@@ -87,6 +87,27 @@ import Layout from '../layouts/Layout.astro';
     .taller-nl-btn { width: 100%; }
   }
 
+  .agenda-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+  .agenda-item { display: grid; grid-template-columns: 90px 1fr; gap: 1.4rem; padding: 1.6rem 0; border-bottom: 1px solid var(--bdr); align-items: start; }
+  .agenda-item:last-child { border-bottom: none; }
+  .agenda-time { font-family: var(--fd); font-size: .82rem; color: var(--c); font-weight: 600; }
+  .agenda-title { font-family: var(--fd); font-weight: 600; color: #fff; margin-bottom: .4rem; }
+  .agenda-desc { font-size: .88rem; color: var(--mut); line-height: 1.65; }
+
+  .benef-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; max-width: 900px; margin: 0 auto; }
+  .benef-card { border: 1px solid var(--bdr); border-radius: 14px; padding: 1.6rem 1.8rem; background: rgba(10,8,20,.4); }
+  .benef-title { font-family: var(--fd); font-weight: 600; color: #fff; margin-bottom: .5rem; font-size: .98rem; }
+  .benef-desc { font-size: .88rem; color: var(--mut); line-height: 1.65; }
+  @media (max-width: 700px) { .benef-grid { grid-template-columns: 1fr; } }
+
+  .faq-wrap { max-width: 720px; margin: 0 auto; }
+  .faq-q { font-family: var(--fd); font-weight: 600; color: #fff; margin-bottom: .5rem; font-size: .95rem; }
+  .faq-a { font-size: .88rem; color: var(--mut); line-height: 1.65; margin-bottom: 1.6rem; }
+
+  .price-line { text-align: center; margin-bottom: 2rem; }
+  .price-sena { font-family: var(--fd); font-size: 2rem; font-weight: 700; color: #fff; }
+  .price-sena span { font-size: .8rem; color: var(--c); font-weight: 400; display: block; margin-top: .2rem; }
+
   .cierre-quote {
     border: 1px solid rgba(155,142,196,.25); background: rgba(155,142,196,.04);
     border-radius: 16px; padding: 2.2rem 2.6rem; position: relative; max-width: 640px; margin: 0 auto;
@@ -140,6 +161,66 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- BENEFICIOS: qué cambia en tu práctica -->
+  <section class="s s-darker">
+    <div class="container">
+      <p class="lbl from-b" style="text-align:center;color:var(--c);margin-bottom:.8rem">Qué cambia en tu práctica</p>
+      <h2 class="from-b" style="font-family:var(--fd);text-align:center;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:700;color:#fff;margin-bottom:2.4rem;max-width:640px;margin-left:auto;margin-right:auto">No es una charla teórica más — salís con algo que usás desde la próxima sesión</h2>
+      <div class="benef-grid from-b">
+        <div class="benef-card">
+          <p class="benef-title">Sesiones más productivas</p>
+          <p class="benef-desc">Tu paciente llega con material concreto de la semana, no con "estuve más o menos". Dejás de reconstruir el contexto desde cero cada vez.</p>
+        </div>
+        <div class="benef-card">
+          <p class="benef-title">Menos abandono</p>
+          <p class="benef-desc">El paciente que ve avance entre sesiones es el que sigue viniendo. Le das una herramienta para sostener el proceso cuando vos no estás.</p>
+        </div>
+        <div class="benef-card">
+          <p class="benef-title">Tu propio material, contenido</p>
+          <p class="benef-desc">La contratransferencia no se resuelve solo en la hora de consulta. Salís con un espacio propio para tu autoconocimiento, no solo herramientas para dar.</p>
+        </div>
+        <div class="benef-card">
+          <p class="benef-title">Algo que usás YA</p>
+          <p class="benef-desc">No es un diplomado de meses. El sábado sales con acceso a la app, tests y módulo terapeuta activos — lo aplicás con tu primer paciente esa misma semana.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="s s-dark">
+    <div class="container">
+      <p class="lbl from-b" style="text-align:center;color:var(--c);margin-bottom:.8rem">Agenda · 100 minutos</p>
+      <h2 class="from-b" style="font-family:var(--fd);text-align:center;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:700;color:#fff;margin-bottom:2.4rem">Qué vas a vivir el sábado</h2>
+      <div class="agenda-list from-b">
+        <div class="agenda-item">
+          <p class="agenda-time">10 min</p>
+          <div><p class="agenda-title">Apertura</p><p class="agenda-desc">Marco: herramienta complementaria a tu trabajo clínico, no un reemplazo.</p></div>
+        </div>
+        <div class="agenda-item">
+          <p class="agenda-time">15 min</p>
+          <div><p class="agenda-title">Autoconcepto</p><p class="agenda-desc">Ejercicio en primera persona — lo hacés vos, como profesional, no solo como demo para tus pacientes.</p></div>
+        </div>
+        <div class="agenda-item">
+          <p class="agenda-time">25 min</p>
+          <div><p class="agenda-title">Teoría del autoconocimiento</p><p class="agenda-desc">Modelo de Endonáutica en tu lenguaje técnico: mundo interior, autoconcepto, pilares del autoconocimiento.</p></div>
+        </div>
+        <div class="agenda-item">
+          <p class="agenda-time">20 min</p>
+          <div><p class="agenda-title">Espejo IA en uso</p><p class="agenda-desc">Así es como tus pacientes lo van a usar entre sesiones — lo probás vos primero.</p></div>
+        </div>
+        <div class="agenda-item">
+          <p class="agenda-time">25 min</p>
+          <div><p class="agenda-title">Foro entre colegas</p><p class="agenda-desc">Qué le devolverías a un paciente en un momento bajo — trabajado en grupo, con otros terapeutas.</p></div>
+        </div>
+        <div class="agenda-item">
+          <p class="agenda-time">5 min</p>
+          <div><p class="agenda-title">Módulo Terapeuta + Plan Practicante</p><p class="agenda-desc">Demo en vivo de tu acceso: directorio, invitación de clientes, scoring clínico.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- STACK DE VALOR + GARANTÍA -->
   <section class="s s-darker">
     <div class="container">
@@ -148,71 +229,50 @@ import Layout from '../layouts/Layout.astro';
         <ul class="stack-feats">
           <li>Taller presencial de 100 min — el modelo completo, en vivo.</li>
           <li>Acceso al Plan Practicante: 35 tests psicométricos, Espejo IA, módulo terapeuta con scoring.</li>
-          <li><strong style="color:var(--c)">Bono:</strong> 1er mes de Plan Practicante gratis (~$39 de valor) — solo por asistir.</li>
+          <li><strong style="color:var(--c)">Bono:</strong> 1er mes de Plan Practicante gratis ($39.990 de valor) — se activa al final del taller.</li>
         </ul>
-        <p class="guarantee"><strong>Sin riesgo:</strong> el mes gratis es tuyo pase lo que pase. Si el taller no te convence, igual te lo llevas.</p>
+        <p class="guarantee"><strong>Sin riesgo:</strong> el mes gratis es tuyo pase lo que pase. Después se renueva solo a $39.990/mes — cancelás cuando quieras, sin letra chica.</p>
       </div>
     </div>
   </section>
 
-  <!-- CAPTURA -->
-  <section class="s s-dark" id="anotarme">
+  <!-- FAQ -->
+  <section class="s s-dark">
+    <div class="container">
+      <p class="lbl from-b" style="text-align:center;color:var(--c);margin-bottom:.8rem">Preguntas frecuentes</p>
+      <div class="faq-wrap from-b" style="margin-top:2rem">
+        <p class="faq-q">¿Sirve si no soy psicólogo titulado?</p>
+        <p class="faq-a">Sí. El taller es para terapeutas, coaches y profesionales de salud mental en general — lo que importa es que sostengas procesos de otras personas.</p>
+        <p class="faq-q">¿Qué pasa si no puedo ir presencial?</p>
+        <p class="faq-a">El taller es presencial únicamente — el valor está en el foro entre colegas y la práctica en vivo. Si no podés esta fecha, quedás en la lista para el próximo ciclo.</p>
+        <p class="faq-q">¿Por qué pagar una seña si todavía no sé el lugar exacto?</p>
+        <p class="faq-a">La seña reserva tu cupo — el lugar se confirma según cuántos se anoten (probablemente un coworking), pero tu lugar ya queda asegurado. El taller en sí no tiene costo aparte de la seña.</p>
+        <p class="faq-q">¿Qué pasa con el mes gratis de Plan Practicante?</p>
+        <p class="faq-a">Al final del taller activás tu cuenta con el mismo email de la seña — el mes gratis arranca ahí. Después se renueva automático a $39.990/mes; cancelás cuando quieras desde tu cuenta, sin compromiso.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKOUT: seña -->
+  <section class="s s-darker" id="anotarme">
     <div class="container">
       <div class="taller-nl-wrap from-b">
-        <p class="taller-nl-lbl">Lista de espera</p>
-        <h2 class="taller-nl-h">El lugar se confirma según cuántos se anoten</h2>
-        <p class="taller-nl-sub">Cupo real y limitado por el tamaño del lugar (probablemente un coworking) — no por truco de marketing. Anótate y te confirmamos dirección, precio y cupo apenas cierre.</p>
-        <form class="taller-nl-form" id="tallerNlForm" novalidate>
+        <p class="taller-nl-lbl">Reserva tu cupo</p>
+        <div class="price-line">
+          <p class="price-sena">$5.000<span>Seña para reservar tu cupo — sin costo adicional del taller</span></p>
+        </div>
+        <h2 class="taller-nl-h">Cupo real y limitado por el tamaño del lugar</h2>
+        <p class="taller-nl-sub">Probablemente un coworking — no por truco de marketing. Pagá la seña y te confirmamos dirección apenas cierre el cupo.</p>
+        <form class="taller-nl-form" method="POST" action="https://app.endonautas.cl/pago/mp/taller/taller1-terapeutas/">
           <div class="taller-nl-input-wrap">
-            <input type="email" id="tallerNlEmail" class="taller-nl-input" placeholder="tu@email.com" autocomplete="email" required />
-            <button type="submit" class="btn btn-p taller-nl-btn" id="tallerNlBtn">Anotarme en la lista de espera</button>
+            <input type="email" name="email" class="taller-nl-input" placeholder="tu@email.com" autocomplete="email" required />
+            <button type="submit" class="btn btn-p taller-nl-btn">Reservar con $5.000</button>
           </div>
-          <p class="taller-nl-msg" id="tallerNlMsg" aria-live="polite"></p>
-          <p class="taller-nl-note">Sábado 1 de agosto · Terapeutas y coaches</p>
+          <p class="taller-nl-note">Pago vía MercadoPago · Sábado 1 de agosto · Terapeutas y coaches</p>
         </form>
       </div>
     </div>
   </section>
-
-  <script is:inline>
-  (function(){
-    const form = document.getElementById('tallerNlForm');
-    const emailEl = document.getElementById('tallerNlEmail');
-    const btn = document.getElementById('tallerNlBtn');
-    const msg = document.getElementById('tallerNlMsg');
-    if (!form) return;
-    form.addEventListener('submit', async function(e){
-      e.preventDefault();
-      const email = emailEl.value.trim();
-      if (!email) return;
-      btn.disabled = true;
-      btn.textContent = 'Enviando…';
-      msg.textContent = '';
-      msg.className = 'taller-nl-msg';
-      try {
-        const res = await fetch('/api/subscribe', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, list: 'taller1-terapeutas' })
-        });
-        const data = await res.json();
-        if (data.ok) {
-          msg.textContent = 'Listo — te confirmamos lugar y fecha por email.';
-          msg.className = 'taller-nl-msg ok';
-          emailEl.value = '';
-          btn.textContent = '¡Anotado!';
-        } else {
-          throw new Error(data.error || 'Error');
-        }
-      } catch(err) {
-        msg.textContent = 'Algo salió mal. Intenta de nuevo.';
-        msg.className = 'taller-nl-msg err';
-        btn.disabled = false;
-        btn.textContent = 'Anotarme en la lista de espera';
-      }
-    });
-  })();
-  </script>
 
   <!-- CIERRE -->
   <section class="s s-darker">
