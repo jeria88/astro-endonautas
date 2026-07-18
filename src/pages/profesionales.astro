@@ -296,6 +296,65 @@ import Layout from '../layouts/Layout.astro';
   })();
   </script>
 
+  <!-- TALLER 1 TERAPEUTAS -->
+  <section class="s s-darker" id="taller-1">
+    <div class="container">
+      <div class="pro-nl-wrap from-b">
+        <p class="pro-nl-lbl">Taller presencial · 1 de agosto</p>
+        <h2 class="pro-nl-h">Tu paciente vuelve al mismo patrón el miércoles</h2>
+        <p class="pro-nl-sub">Cada paciente que no ve avances entre sesiones está un paso más cerca de dejar la terapia. Taller presencial de 100 min para terapeutas y coaches: cómo dar a tus pacientes una herramienta real para el trabajo entre sesiones. Incluye acceso al Plan Practicante + 1er mes gratis de regalo — es tuyo aunque el taller no te convenza, sin riesgo.</p>
+        <form class="pro-nl-form" id="tallerNlForm" novalidate>
+          <div class="pro-nl-input-wrap">
+            <input type="email" id="tallerNlEmail" class="pro-nl-input" placeholder="tu@email.com" autocomplete="email" required />
+            <button type="submit" class="btn btn-p pro-nl-btn" id="tallerNlBtn">Anotarme en la lista de espera</button>
+          </div>
+          <p class="pro-nl-msg" id="tallerNlMsg" aria-live="polite"></p>
+          <p class="pro-nl-note">El lugar se confirma según cuántos se anoten — cupo real y limitado.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+  (function(){
+    const form = document.getElementById('tallerNlForm');
+    const emailEl = document.getElementById('tallerNlEmail');
+    const btn = document.getElementById('tallerNlBtn');
+    const msg = document.getElementById('tallerNlMsg');
+    if (!form) return;
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const email = emailEl.value.trim();
+      if (!email) return;
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+      msg.textContent = '';
+      msg.className = 'pro-nl-msg';
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, list: 'taller1-terapeutas' })
+        });
+        const data = await res.json();
+        if (data.ok) {
+          msg.textContent = 'Listo — te confirmamos lugar y fecha por email.';
+          msg.className = 'pro-nl-msg ok';
+          emailEl.value = '';
+          btn.textContent = '¡Anotado!';
+        } else {
+          throw new Error(data.error || 'Error');
+        }
+      } catch(err) {
+        msg.textContent = 'Algo salió mal. Intenta de nuevo.';
+        msg.className = 'pro-nl-msg err';
+        btn.disabled = false;
+        btn.textContent = 'Anotarme en la lista de espera';
+      }
+    });
+  })();
+  </script>
+
   <!-- CIERRE -->
   <section class="s s-dark">
     <div class="container">
