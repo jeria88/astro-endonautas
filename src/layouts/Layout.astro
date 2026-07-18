@@ -12,6 +12,8 @@ interface Props {
   cosmosScroll?: boolean;
   /** badge en el logo del nav (ej: "Para profesionales") */
   navBadge?: string;
+  /** true en landings de una sola oferta — oculta links de nav y CTAs genéricos */
+  minimalNav?: boolean;
 }
 
 const {
@@ -21,6 +23,7 @@ const {
   ogType = 'website',
   cosmosScroll = false,
   navBadge,
+  minimalNav = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -95,7 +98,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
 <div id="cbg"></div>
 <div id="lp-wrap">
-  <Nav badge={navBadge}>
+  <Nav badge={navBadge} minimal={minimalNav}>
     <slot name="nav" />
   </Nav>
   <slot />
