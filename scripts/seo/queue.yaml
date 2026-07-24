@@ -54,7 +54,8 @@
   keyword: test de valores personales
   category: Instrumentos
   layer: journey
-  published: false
+  published: true
+  published_date: '2026-07-24'
 - topic: 'Sabotaje inconsciente: cuando te detenés justo antes de lo que querés'
   keyword: sabotaje inconsciente
   category: Proceso
