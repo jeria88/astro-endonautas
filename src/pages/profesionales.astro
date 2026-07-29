@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="Para profesionales · Endonautas"
-  description="Módulo profesional de Endonautas. Fichas de clientes, agenda de sesiones, tests asignables y Terapeuta IA para terapeutas y coaches. Plan Practicante."
-  navBadge="Para profesionales"
+  title="Portal profesional · Agenda, fichas clínicas y tests · Endonautas"
+  description="El portal para terapeutas y coaches: agenda con tu disponibilidad, fichas clínicas con notas de sesión, 35 tests validados que asignas y llegan corregidos, y tus clientes trabajando entre sesiones. $39.990 al mes, sin cobro por cliente."
+  navBadge="Para terapeutas"
 >
   <a slot="nav" href="/" class="nav-back">← Inicio</a>
 
@@ -132,13 +132,13 @@ import Layout from '../layouts/Layout.astro';
   <!-- HERO -->
   <section id="hero" class="s-dark">
     <div class="hero-inner">
-      <p class="lbl hero-sup">Módulo profesionales</p>
-      <h1 class="hero-h">Las herramientas que usas tú,<br>ahora disponibles para <em>tus pacientes</em></h1>
-      <p class="hero-p">La app que usas para tu propio autoconocimiento tiene un modo profesional. Acompaña a tus clientes desde adentro — con las mismas herramientas, pero desde tu rol.</p>
-      <p style="font-size:0.88rem;color:rgba(255,255,255,0.38);line-height:1.65;margin-bottom:2.4rem;max-width:480px">Si atiendes 20 pacientes por semana, rehaces contexto clínico en promedio 8 minutos por sesión. Eso es <strong style="color:rgba(255,255,255,0.6)">más de 2 horas por semana</strong> que Endonautas devuelve a la sesión — y al paciente.</p>
+      <p class="lbl hero-sup">Portal profesional</p>
+      <h1 class="hero-h">Tu consulta completa:<br>agenda, fichas y <em>tests que se corrigen solos</em></h1>
+      <p class="hero-p">Dejas de repartir tu práctica entre un cuaderno, WhatsApp y una carpeta de PDFs. Cada cliente con su ficha, su agenda y sus instrumentos — y trabajando entre una sesión y la siguiente.</p>
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.38);line-height:1.65;margin-bottom:2.4rem;max-width:480px">Cuenta los minutos que gastas al empezar cada sesión reconstruyendo qué pasó la semana pasada, y multiplícalos por tus sesiones de la semana. <strong style="color:rgba(255,255,255,0.6)">Eso es lo que recuperas</strong> cuando abres la ficha y ya sabes con qué llega.</p>
       <div class="hero-cta">
-        <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p">Activar plan Practicante</a>
-        <a href="https://app.endonautas.cl/registro/" class="btn btn-o">Primero prueba gratis</a>
+        <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p">Abrir mi consulta</a>
+        <a href="#como-funciona" class="btn btn-o">Ver cómo funciona</a>
       </div>
     </div>
   </section>
@@ -174,10 +174,10 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- FLUJO -->
-  <section class="s s-dark">
+  <section class="s s-dark" id="como-funciona">
     <div class="container">
       <h2 class="s-h from-b">Cómo funciona</h2>
-      <p class="s-sub from-b" data-d="1">Tres pasos para integrar Endonautas a tu práctica.</p>
+      <p class="s-sub from-b" data-d="1">Tres pasos, y el primero te toma menos que agendar una hora por WhatsApp.</p>
       <div class="flujo-steps">
         <div class="flujo-step from-b" data-d="1">
           <div class="flujo-n">1</div>
@@ -213,11 +213,11 @@ import Layout from '../layouts/Layout.astro';
         <div class="plan-pro-grid">
           <div>
             <p class="plan-name">Practicante</p>
-            <div class="plan-tokens">$39 <span>USD / mes</span></div>
+            <div class="plan-tokens">$39.990 <span>CLP / mes</span></div>
             <div class="plan-ctas">
-              <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm">Activar Practicante</a>
-              <a href="https://app.endonautas.cl/registro/" class="btn btn-o btn-sm">Probar gratis primero</a>
+              <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm">Abrir mi consulta</a>
             </div>
+            <p style="font-size:.78rem;color:var(--dim);margin-top:.9rem;line-height:1.6">$39,99 USD fuera de Chile · Sin contrato · Cancelas cuando quieras</p>
           </div>
           <div>
             <ul class="plan-feats">
@@ -242,12 +242,12 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="pro-nl-wrap from-b">
         <p class="pro-nl-lbl">Antes de activar el plan</p>
-        <h2 class="pro-nl-h">¿Querés conocer el módulo primero?</h2>
-        <p class="pro-nl-sub">Déjanos tu email y te mostramos cómo funciona la ficha de paciente, los tests asignables y el Terapeuta IA — sin tarjeta, sin presión.</p>
+        <h2 class="pro-nl-h">¿Quieres ver el portal primero?</h2>
+        <p class="pro-nl-sub">Déjanos tu email y te mostramos cómo funciona la ficha del cliente, la agenda y un test asignado de principio a fin — sin tarjeta y sin llamada de ventas.</p>
         <form class="pro-nl-form" id="proNlForm" novalidate>
           <div class="pro-nl-input-wrap">
             <input type="email" id="proNlEmail" class="pro-nl-input" placeholder="tu@email.com" autocomplete="email" required />
-            <button type="submit" class="btn btn-p pro-nl-btn" id="proNlBtn">Mostrarme el módulo</button>
+            <button type="submit" class="btn btn-p pro-nl-btn" id="proNlBtn">Mostrarme el portal</button>
           </div>
           <p class="pro-nl-msg" id="proNlMsg" aria-live="polite"></p>
           <p class="pro-nl-note">Solo 1 email con la demo · Sin compromiso</p>
@@ -279,7 +279,7 @@ import Layout from '../layouts/Layout.astro';
         });
         const data = await res.json();
         if (data.ok) {
-          msg.textContent = 'Listo — revisá tu email pronto.';
+          msg.textContent = 'Listo — revisa tu email pronto.';
           msg.className = 'pro-nl-msg ok';
           emailEl.value = '';
           btn.textContent = '¡Enviado!';
@@ -287,10 +287,10 @@ import Layout from '../layouts/Layout.astro';
           throw new Error(data.error || 'Error');
         }
       } catch(err) {
-        msg.textContent = 'Algo salió mal. Intentá de nuevo.';
+        msg.textContent = 'Algo salió mal. Intenta de nuevo.';
         msg.className = 'pro-nl-msg err';
         btn.disabled = false;
-        btn.textContent = 'Mostrarme el módulo';
+        btn.textContent = 'Mostrarme el portal';
       }
     });
   })();

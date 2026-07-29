@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="Endonautas — Autoconocimiento aplicado · Espejo IA y Tests psicométricos"
-  description="Plataforma de autoconocimiento aplicado. Espejo de conflictos, tests psicométricos, mapa de nacimiento y oráculo terapéutico. Trabaja lo que pasa entre sesiones."
+  title="Endonautas — Agenda, fichas clínicas y tests para tu consulta"
+  description="Software para terapeutas, coaches y acompañantes: agenda con disponibilidad, fichas clínicas, notas de sesión y 35 tests validados que asignas y llegan corregidos. Tus clientes trabajan entre sesiones. $39.990 al mes, sin cobro por cliente."
   cosmosScroll={true}
 >
 <script slot="head" type="application/ld+json" is:inline>{JSON.stringify({
@@ -13,28 +13,28 @@ import Layout from '../layouts/Layout.astro';
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Esto reemplaza la terapia?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Trabaja en los seis días que quedan entre sesiones. Tu terapeuta trabaja en sesión — Endonautas trabaja en el tiempo que ningún terapeuta puede cubrir. No compiten: se complementan." }
+      "name": "¿Mis clientes tienen que pagar algo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. El terapeuta paga su plan e invita a sus clientes con un código: ellos se registran gratis y acceden al Espejo IA diario, su bitácora y los tests asignados. No hay cobro por cliente ni límite de cuántos se invitan." }
     },
     {
       "@type": "Question",
-      "name": "¿Tiene base clínica o es espiritual?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los tests psicométricos son instrumentos validados en español: PHQ-9, GAD-7, Big Five, ECR, DERS, y otros. El Oráculo y el Mapa de Nacimiento operan desde otro registro — no son diagnóstico clínico. El sistema integra ambos porque el proceso interior no cabe en una sola lógica." }
+      "name": "¿Tengo que migrar mis fichas actuales?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Se empieza con el próximo cliente que se agende y se sigue igual con el resto. No hay migración obligatoria ni importación que configurar." }
     },
     {
       "@type": "Question",
-      "name": "¿Qué diferencia hay entre el plan gratuito y el Navegante?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El plan gratuito da acceso al Espejo IA (1 sesión diaria, 45 min), comunidad, bitácora, carta astral, 3 tests y el I Ching + Tarot de 1 carta. El Navegante desbloquea el Espejo sin restricciones, todos los tests con análisis IA, los tres mapas de nacimiento, el Tarot completo, el Oráculo Fractal y el módulo Terapeuta." }
+      "name": "¿Qué ve el terapeuta del proceso de su cliente y qué queda privado?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El terapeuta ve los resultados de los tests que asignó, la ficha clínica, sus notas de sesión y la agenda. Las conversaciones del cliente con el Espejo IA y su bitácora personal son privadas y no las lee el terapeuta." }
     },
     {
       "@type": "Question",
-      "name": "¿Cuándo empieza a ser útil de verdad?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A las 2-3 semanas de uso continuo. Cuando el Espejo ya tiene contexto acumulado, cuando los tests muestran relaciones entre dimensiones, cuando la Bitácora tiene algo real que leer." }
+      "name": "¿Los tests tienen respaldo real?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Son 35 instrumentos validados en español: PHQ-9, GAD-7, Big Five, ECR, DERS, entre otros. Se asignan desde la ficha del cliente y el resultado llega puntuado. El Oráculo y los mapas de nacimiento no son instrumentos clínicos ni diagnóstico." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo cancelar cuando quiera?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Sin contrato, sin permanencia, sin penalización. El plan gratuito tampoco expira — si en algún momento no quieres pagar, sigues con acceso a tus datos y a todos los instrumentos del plan gratuito." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Sin contrato, sin permanencia y sin formularios de baja. La cuenta no se borra al cancelar: vuelve al plan gratuito y las fichas, notas y clientes quedan donde estaban." }
     }
   ]
 })}</script>
@@ -207,7 +207,7 @@ import Layout from '../layouts/Layout.astro';
 .v-new { font-family: var(--fd); font-weight: 300; font-size: 1.05rem; color: rgba(255,255,255,.88); line-height: 1.7; }
 .v-acc { color: var(--c); }
 /* ── INSTRUMENTOS ── */
-#inst { flex-direction: column; align-items: flex-start; }
+#incluye { flex-direction: column; align-items: flex-start; }
 .inst-h { font-family: var(--fd); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 300; color: #fff; margin-bottom: .7rem; text-shadow: var(--ts); }
 .inst-sub { color: var(--dim); font-size: .88rem; margin-bottom: 4.5rem; }
 .inst-body {
@@ -520,49 +520,49 @@ import Layout from '../layouts/Layout.astro';
 <!-- HERO -->
 <section class="s s-full" id="inicio">
   <div class="hero-wrap">
-    <p class="lbl hero-sup">Para quienes ya saben lo que les pasa — y siguen igual.</p>
+    <p class="lbl hero-sup">Para terapeutas, coaches y acompañantes</p>
     <h1 class="hero-h">
       <span style="display:block">
-        <span class="word" style="--i:0">Sé</span><span class="word" style="--i:1">&nbsp;lo&nbsp;que&nbsp;me&nbsp;pasa.</span>
+        <span class="word" style="--i:0">Tu</span><span class="word" style="--i:1">&nbsp;cliente&nbsp;trabaja</span>
       </span>
       <span style="display:block">
-        <span class="word hero-pero" style="--i:2">Y&nbsp;aun&nbsp;así</span>
+        <span class="word hero-pero" style="--i:2">los&nbsp;otros&nbsp;seis&nbsp;días.</span>
       </span>
       <span style="display:block">
-        <span class="word" style="--i:3">lo&nbsp;sigo&nbsp;haciendo.</span>
+        <span class="word" style="--i:3">Y&nbsp;tú&nbsp;lo&nbsp;ves.</span>
       </span>
     </h1>
     <p class="hero-sub">
-      Saber lo que te pasa no es suficiente.<br>
-      <strong>Lo que cambia es la práctica en los días entre sesiones, libros y epifanías.</strong>
+      Agenda, fichas clínicas y 35 tests validados que asignas y corriges solo.<br>
+      <strong>Todo en un lugar, por menos de lo que cobras por una sesión.</strong>
     </p>
     <div class="hero-cta">
-      <a href="https://app.endonautas.cl/tests/mapa-patrones/" class="btn btn-p btn-lg">Ver mi Mapa de Patrones</a>
-      <a href="#precios" class="btn btn-o btn-lg">Ver planes</a>
+      <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-lg">Abrir mi consulta</a>
+      <a href="#incluye" class="btn btn-o btn-lg">Ver qué incluye</a>
     </div>
-    <p class="hero-note">Gratis &nbsp;·&nbsp; 3 tests · Sin tarjeta</p>
+    <p class="hero-note">$39.990 al mes &nbsp;·&nbsp; Sin contrato &nbsp;·&nbsp; Cancelas cuando quieras</p>
   </div>
 </section>
 
 <!-- RECONOCIMIENTO -->
 <section class="s s-dark" id="reconoc">
-  <p class="lbl reconoc-intro from-b">¿Te suena alguno de estos?</p>
+  <p class="lbl reconoc-intro from-b">Si tienes consulta, esto ya te pasó:</p>
   <div class="reconoc-items">
     <div class="q-item ql from-l" data-d="1">
-      <p class="q-text">"Llevo tres años trabajando en esto. Me siento mejor. Y el martes hice exactamente lo mismo de siempre."</p>
-      <span class="q-attr">— Claudia, 34</span>
+      <p class="q-text">"Los primeros veinte minutos se me van en reconstruir qué pasó la semana pasada. Cada sesión, con cada cliente."</p>
+      <span class="q-attr">— El costo del recap</span>
     </div>
     <div class="q-item qr from-r" data-d="2">
-      <p class="q-text">"Sé lo que es el apego ansioso. Lo estudio. Lo reconozco en tiempo real. No puedo parar."</p>
-      <span class="q-attr">— Marcos, 41</span>
+      <p class="q-text">"Las fichas están en un cuaderno, la agenda en WhatsApp y los tests en PDFs que corrijo a mano el domingo."</p>
+      <span class="q-attr">— El costo del papeleo</span>
     </div>
     <div class="q-item ql from-l" data-d="3">
-      <p class="q-text">"Hago el test, me reconozco, me parece fascinante. A la semana ya no lo recuerdo para nada."</p>
-      <span class="q-attr">— Valentina, 29</span>
+      <p class="q-text">"A los tres meses dejan de venir. No porque no funcione: porque entre una sesión y otra no pasa nada."</p>
+      <span class="q-attr">— El costo real</span>
     </div>
     <p class="reconoc-res from-b" data-d="4">
-      Para personas que ya están en proceso<br>
-      — pero aun <em>no disfrutan</em> el proceso
+      No te falta técnica.<br>
+      Te falta <em>lo que ocurre</em> entre sesión y sesión
     </p>
   </div>
 </section>
@@ -570,35 +570,35 @@ import Layout from '../layouts/Layout.astro';
 <!-- DIFERENCIA -->
 <section class="s s-dark" id="dif">
   <div class="container">
-    <h2 class="dif-h from-l">No reemplaza tu terapia.<br>Pero sostiene cuando no hay un terapeuta cerca.</h2>
+    <h2 class="dif-h from-l">Lo que hoy pagas por separado.<br>Y lo que ninguna de esas herramientas hace.</h2>
     <div class="versus">
       <div class="v-col">
         <div class="from-l" data-d="1">
-          <div class="v-lbl">La terapia</div>
-          <p class="v-old">Termina cuando termina la sesión. Lo que emergió, lo procesas solo.</p>
+          <div class="v-lbl">Tu software de agenda</div>
+          <p class="v-old">Ordena las horas. No sabe nada de lo que pasa dentro de ellas.</p>
         </div>
         <div class="from-l" data-d="2">
-          <div class="v-lbl">Los tests de personalidad</div>
-          <p class="v-old">Te clasifican bien. No muestran el patrón moviéndose en el tiempo.</p>
+          <div class="v-lbl">Tu carpeta de fichas</div>
+          <p class="v-old">Guarda lo que ya escribiste. No te dice cómo llegó tu cliente hoy.</p>
         </div>
         <div class="from-l" data-d="3">
-          <div class="v-lbl">La autoayuda</div>
-          <p class="v-old">Nombra el problema. Rara vez llega al origen.</p>
+          <div class="v-lbl">Los tests en PDF</div>
+          <p class="v-old">Los imprimes, los corriges a mano, los archivas. Y ahí quedan.</p>
         </div>
       </div>
       <div class="v-sep from-b" data-d="1" aria-hidden="true"></div>
       <div class="v-col">
         <div class="from-r" data-d="1">
           <div class="v-lbl v-lbl-c">Endonautas</div>
-          <p class="v-new">Trabaja en <span class="v-acc">los seis días que quedan</span> entre sesiones.</p>
+          <p class="v-new">Agenda, disponibilidad y sesiones <span class="v-acc">con la ficha al lado.</span></p>
         </div>
         <div class="from-r" data-d="2">
           <div class="v-lbl v-lbl-c">Endonautas</div>
-          <p class="v-new">Muestra el patrón <span class="v-acc">moviéndose en el tiempo.</span></p>
+          <p class="v-new">Tu cliente entra entre sesiones — <span class="v-acc">y llega con el trabajo hecho.</span></p>
         </div>
         <div class="from-r" data-d="3">
           <div class="v-lbl v-lbl-c">Endonautas</div>
-          <p class="v-new"><span class="v-acc">Incomoda con precisión.</span> No consuela con facilidad.</p>
+          <p class="v-new">Asignas el test y <span class="v-acc">el resultado te llega corregido.</span></p>
         </div>
       </div>
     </div>
@@ -606,56 +606,56 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- INSTRUMENTOS -->
-<section class="s s-darker" id="inst">
+<section class="s s-darker" id="incluye">
   <div class="container">
-    <h2 class="inst-h from-b">Seis instrumentos. Un sistema.</h2>
-    <p class="inst-sub from-b" data-d="1">Diseñados para trabajar donde nadie más trabaja.</p>
+    <h2 class="inst-h from-b">Todo lo que sostiene tu consulta. En un solo lugar.</h2>
+    <p class="inst-sub from-b" data-d="1">Incluido en el plan Practicante. Sin módulos aparte, sin cobros por cliente.</p>
     <div class="inst-body">
       <div class="inst-list">
         <div class="inst-item from-l" data-d="1">
           <span class="inst-n">01</span>
           <div>
-            <h3 class="inst-name">Espejo IA</h3>
-            <p class="inst-desc">Una conversación que devuelve, no resuelve. Refleja lo que no te preguntaste todavía — y trabaja con tu contexto acumulado, no desde cero cada vez.</p>
+            <h3 class="inst-name">Agenda con tu disponibilidad</h3>
+            <p class="inst-desc">Defines tus horarios por día y agendas sesiones online o presenciales, con duración, estado y enlace de videollamada. Dejas de coordinar horas por WhatsApp.</p>
           </div>
         </div>
         <div class="inst-item from-l" data-d="2">
           <span class="inst-n">02</span>
           <div>
-            <h3 class="inst-name">Tests psicométricos</h3>
-            <p class="inst-desc">35 instrumentos con respaldo clínico. Apego, regulación emocional, sueño, trauma. Lo que tu terapeuta no tiene tiempo de cubrir entre sesión y sesión.</p>
+            <h3 class="inst-name">Fichas clínicas y notas de sesión</h3>
+            <p class="inst-desc">Cada cliente con su ficha, su resumen clínico y sus notas fechadas. Abres la ficha antes de que entre y sabes exactamente dónde quedaron.</p>
           </div>
         </div>
         <div class="inst-item from-l" data-d="3">
           <span class="inst-n">03</span>
           <div>
-            <h3 class="inst-name">Oráculo terapéutico</h3>
-            <p class="inst-desc">Tarot Jodorowsky, I Ching, Oráculo Fractal. No predicción — otra forma de hacerse la misma pregunta desde un ángulo distinto.</p>
+            <h3 class="inst-name">35 tests validados, corregidos solos</h3>
+            <p class="inst-desc">PHQ-9, GAD-7, Big Five, ECR, DERS y 30 más. Le asignas el test a tu cliente, lo responde desde su casa y el resultado te llega listo. Se acabó el domingo corrigiendo a mano.</p>
           </div>
         </div>
         <div class="inst-item from-l" data-d="4">
           <span class="inst-n">04</span>
           <div>
-            <h3 class="inst-name">Mapa de nacimiento</h3>
-            <p class="inst-desc">Carta natal, Human Design, Saju. Marcos para leer disposiciones estructurales. No astrología de revista — cartografía de lo que traes.</p>
+            <h3 class="inst-name">Tu cliente, adentro entre sesiones</h3>
+            <p class="inst-desc">Lo invitas con un código y entra a su propio espacio: el Espejo IA, su bitácora y sus tests. Su proceso es privado — lo que llega a ti es lo que él decide traer, ya masticado.</p>
           </div>
         </div>
         <div class="inst-item from-l" data-d="5">
           <span class="inst-n">05</span>
           <div>
-            <h3 class="inst-name">Módulo terapeuta</h3>
-            <p class="inst-desc">El puente entre la app y tu próxima sesión. Lo que encontraste aquí, ya armado en contexto, listo para llevar a quien te acompaña.</p>
+            <h3 class="inst-name">Sin cobro por cliente</h3>
+            <p class="inst-desc">Un precio fijo, los clientes que atiendas. Si mañana pasas de 8 a 20, pagas lo mismo. Tu costo no crece cuando crece tu consulta.</p>
           </div>
         </div>
         <div class="inst-item from-l" data-d="6">
           <span class="inst-n">06</span>
           <div>
-            <h3 class="inst-name">Bitácora</h3>
-            <p class="inst-desc">El único lugar donde puedes ver si algo se movió. Sueños, regulación, historial de patrones. El proceso tiene que poder leerse.</p>
+            <h3 class="inst-name">Y para ti, el sistema completo</h3>
+            <p class="inst-desc">Todo lo que reciben tus clientes lo tienes tú primero: Espejo sin límite, los 35 tests con análisis, mapas de nacimiento, oráculo terapéutico y el libro <em>Endonautica</em>.</p>
           </div>
         </div>
         <div class="inst-cta from-b">
-          <a href="https://app.endonautas.cl/registro/" class="btn btn-p">Comenzar gratis</a>
+          <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p">Abrir mi consulta</a>
         </div>
       </div>
       <div class="inst-visual from-r" data-d="2">
@@ -678,8 +678,8 @@ import Layout from '../layouts/Layout.astro';
 <!-- GALERÍA 3D CARRUSEL -->
 <section class="s s-dark" id="preview">
   <div class="container">
-    <h2 class="s-h from-b">La app, en uso real</h2>
-    <p class="s-sub from-b" data-d="1">Sin mockups. Sin datos inventados. Esto es lo que ves al entrar.</p>
+    <h2 class="s-h from-b">Lo que tus clientes usan entre sesiones</h2>
+    <p class="s-sub from-b" data-d="1">Sin mockups ni datos inventados: esto es lo que ellos ven al entrar, y lo que tú tienes completo en tu plan.</p>
   </div>
   <div class="gallery-scene" id="galleryScene">
     <p class="gallery-hint">Mueve el cursor para explorar · Click para ampliar</p>
@@ -724,21 +724,21 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="franco-texto from-r" data-d="1">
         <blockquote class="franco-q">
-          Diseñé este sistema después de años viendo personas que sabían perfectamente cuál era su patrón — y no podían parar. El problema no era falta de insight. Era falta de continuidad.
+          Diseñé este sistema después de años viendo personas que sabían perfectamente cuál era su patrón — y no podían parar. El problema no era falta de insight. Era falta de continuidad. Y esa continuidad no cabe dentro de la hora de sesión.
         </blockquote>
         <div class="franco-id">
           <p class="franco-name">Franco Jeria Castro</p>
           <p class="franco-role">Terapeuta en Salud Integrativa &nbsp;·&nbsp; Autor</p>
         </div>
-        <p class="franco-bio">Más de una década acompañando procesos de cambio real. Desarrolló el sistema Endonautas desde la práctica clínica — no desde una teoría. Lo que está en la app es lo que vio funcionar, y lo que vio fallar, entre sesiones reales con personas reales.</p>
+        <p class="franco-bio">Más de una década acompañando procesos de cambio real. Desarrolló el sistema Endonautas desde la práctica clínica — no desde una teoría. Lo que está en la plataforma es lo que vio funcionar, y lo que vio fallar, entre sesiones reales con personas reales. Está construida por alguien que atiende, para gente que atiende.</p>
         <div class="libro-inc">
           <span>Endonautica</span>
           <span style="color:var(--dim)">—</span>
-          207 páginas · el marco conceptual detrás del sistema · incluido en plan Navegante
+          207 páginas · el marco conceptual detrás del sistema · incluido en tu plan
         </div>
         <div class="franco-ctas">
-          <a href="https://app.endonautas.cl/registro/" class="btn btn-p">Comenzar gratis</a>
-          <a href="#precios" class="btn btn-o">Ver planes</a>
+          <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p">Abrir mi consulta</a>
+          <a href="#incluye" class="btn btn-o">Ver qué incluye</a>
         </div>
       </div>
     </div>
@@ -749,8 +749,8 @@ import Layout from '../layouts/Layout.astro';
 <section class="s s-darker" id="precios">
   <div class="container">
     <div class="from-b">
-      <h2 class="precios-h">Sin contrato. Sin permanencia.</h2>
-      <p class="precios-sub">Cancelas cuando quieres. El plan gratuito no expira.</p>
+      <h2 class="precios-h">Un precio. Los clientes que atiendas.</h2>
+      <p class="precios-sub">Sin contrato, sin permanencia, sin cobro por cliente. Cancelas cuando quieras.</p>
     </div>
     <div class="planes-grid">
       <div class="plan from-b" data-d="1">
@@ -768,49 +768,50 @@ import Layout from '../layouts/Layout.astro';
           <li>I Ching + Tarot (1 carta)</li>
         </ul>
         <div class="plan-cta">
-          <a href="https://app.endonautas.cl/registro/" class="btn btn-o btn-sm">Empezar gratis</a>
+          <a href="https://app.endonautas.cl/registro/" class="btn btn-o btn-sm">Conocer la app</a>
         </div>
       </div>
 
       <div class="plan featured from-b" data-d="2">
-        <div class="plan-badge">Más elegido</div>
-        <p class="plan-name">Navegante</p>
+        <div class="plan-badge">Para tu consulta</div>
+        <p class="plan-name">Practicante</p>
         <div class="plan-price">
-          <span class="plan-amount">$10</span>
-          <span class="plan-period">USD / mes</span>
+          <span class="plan-amount">$39.990</span>
+          <span class="plan-period">CLP / mes</span>
         </div>
         <div class="plan-divider"></div>
         <ul class="plan-feats">
-          <li class="hi">Todo lo anterior +</li>
-          <li class="hi">35 tests con insight IA</li>
-          <li class="hi">Diseño Humano + Saju/BaZi</li>
-          <li class="hi">Tarot completo + Oráculo Fractal</li>
-          <li class="hi">Módulo Terapeuta</li>
-          <li>Libro <em>Endonautica</em> incluido</li>
+          <li class="hi">Agenda + disponibilidad</li>
+          <li class="hi">Fichas clínicas y notas de sesión</li>
+          <li class="hi">Asignas los 35 tests · llegan corregidos</li>
+          <li class="hi">Tus clientes, adentro entre sesiones</li>
+          <li class="hi">Clientes ilimitados — sin cobro por cabeza</li>
+          <li>Todo el plan Navegante, para ti</li>
         </ul>
         <div class="plan-cta">
-          <a href="https://app.endonautas.cl/registro/?plan=navegante" class="btn btn-p btn-sm">Activar Navegante</a>
-          <p class="plan-note">Sin tarjeta hasta confirmar</p>
+          <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm">Abrir mi consulta</a>
+          <p class="plan-note">$39,99 USD fuera de Chile · Sin tarjeta hasta confirmar</p>
         </div>
       </div>
 
       <div class="plan from-b" data-d="3">
-        <p class="plan-name">Practicante</p>
+        <p class="plan-name">Navegante</p>
         <div class="plan-price">
-          <span class="plan-amount">$39</span>
-          <span class="plan-period">USD / mes</span>
+          <span class="plan-amount">$9.990</span>
+          <span class="plan-period">CLP / mes</span>
         </div>
         <div class="plan-divider"></div>
         <ul class="plan-feats">
-          <li class="hi">Todo Navegante +</li>
-          <li class="hi">Portal profesional completo</li>
-          <li class="hi">Fichas clínicas + agenda</li>
-          <li class="hi">Asigna tests a tus clientes</li>
-          <li>Tus clientes trabajan entre sesiones. Tú ves el progreso.</li>
+          <li class="hi">Para quien no tiene consulta</li>
+          <li class="hi">Espejo IA sin límite</li>
+          <li class="hi">35 tests con análisis IA</li>
+          <li class="hi">Diseño Humano + Saju/BaZi</li>
+          <li class="hi">Tarot completo + Oráculo Fractal</li>
+          <li>Libro <em>Endonautica</em> incluido</li>
         </ul>
         <div class="plan-cta">
-          <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-o btn-sm">Activar Practicante</a>
-          <p class="plan-note" style="margin-top:.75rem"><a href="/profesionales/" style="color:var(--c);text-decoration:none">Para terapeutas, coaches y acompañantes →</a></p>
+          <a href="https://app.endonautas.cl/registro/?plan=navegante" class="btn btn-o btn-sm">Activar Navegante</a>
+          <p class="plan-note">$9,99 USD fuera de Chile</p>
         </div>
       </div>
     </div>
@@ -820,47 +821,47 @@ import Layout from '../layouts/Layout.astro';
 <!-- FAQ -->
 <section class="s s-dark" id="faq">
   <div class="container">
-    <h2 class="faq-h from-b">Lo que la mayoría pregunta antes de entrar.</h2>
+    <h2 class="faq-h from-b">Lo que preguntan antes de abrir su consulta acá.</h2>
     <div class="faq-list from-b" data-d="1">
 
       <div class="faq-item">
         <div class="faq-q">
-          ¿Esto reemplaza la terapia?
+          ¿Mis clientes tienen que pagar algo?
           <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
         </div>
-        <p class="faq-a">No. Trabaja en los seis días que quedan entre sesiones. Tu terapeuta trabaja en sesión — Endonautas trabaja en el tiempo que ningún terapeuta puede cubrir. No compiten: se complementan. El Módulo Terapeuta fue diseñado para llevar lo que encuentras en la app a tu próxima sesión con contexto ya armado.</p>
+        <p class="faq-a">No. Tú pagas tu plan y los invitas con un código: ellos se registran gratis y entran a su propio espacio, con el Espejo IA diario, su bitácora y los tests que les asignes. No hay cobro por cliente ni límite de cuántos invitas — si pasas de 8 a 20 clientes, tu precio no cambia.</p>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">
-          ¿Tiene base clínica o es espiritual?
+          ¿Tengo que migrar mis fichas actuales?
           <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
         </div>
-        <p class="faq-a">Los tests psicométricos son instrumentos validados en español: PHQ-9, GAD-7, Big Five, ECR, DERS, y otros. El Oráculo y el Mapa de Nacimiento operan desde otro registro — no son diagnóstico clínico y no se presentan como tal. El sistema integra ambos porque el proceso interior no cabe en una sola lógica.</p>
+        <p class="faq-a">No. Empiezas con el próximo cliente que agendes y sigues como estabas con el resto. La mayoría parte con dos o tres, ve cómo llegan a la sesión siguiente, y recién ahí mueve el resto. No hay migración obligatoria ni importación que configurar.</p>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">
-          ¿Qué diferencia hay entre el plan gratuito y el Navegante?
+          ¿Qué veo yo del proceso de mi cliente y qué queda privado?
           <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
         </div>
-        <p class="faq-a">El plan gratuito da acceso a los instrumentos esenciales: el Espejo IA (1 sesión diaria, 45 min), la comunidad, la bitácora, la carta astral, los tres tests más solicitados y el I Ching + Tarot de 1 carta. Es suficiente para empezar. El Navegante desbloquea el Espejo sin restricciones de tiempo, todos los tests con análisis IA, los tres mapas de nacimiento, todas las tiradas del Tarot, el Oráculo Fractal y el módulo Terapeuta.</p>
+        <p class="faq-a">Ves lo que le asignaste: los resultados de sus tests, su ficha, tus notas de sesión y su agenda contigo. Sus conversaciones con el Espejo y su bitácora personal son suyas — no las lees tú. Es a propósito: el cliente usa el Espejo con libertad justamente porque nadie lo está mirando, y lo que quiera traer, lo trae a la sesión.</p>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">
-          ¿Cuándo empieza a ser útil de verdad?
+          ¿Los tests tienen respaldo real?
           <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
         </div>
-        <p class="faq-a">A las 2-3 semanas de uso continuo. Cuando el Espejo ya tiene contexto acumulado, cuando los tests muestran relaciones entre dimensiones, cuando la Bitácora tiene algo real que leer. La primera sesión devuelve algo — el valor real es el historial.</p>
+        <p class="faq-a">Son 35 instrumentos validados en español: PHQ-9, GAD-7, Big Five, ECR, DERS, entre otros. Los asignas desde la ficha del cliente, él los responde desde su casa y el resultado te llega puntuado. El Oráculo y los mapas de nacimiento operan desde otro registro y no son instrumentos clínicos — están ahí como material de trabajo, no como diagnóstico.</p>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">
-          ¿Puedo cancelar cuando quiera?
+          ¿Y si no funciona para mi forma de trabajar?
           <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
         </div>
-        <p class="faq-a">Sí. Sin contrato, sin permanencia, sin penalización. El plan gratuito tampoco expira — si en algún momento no quieres pagar, sigues con acceso a tus datos y a todos los instrumentos incluidos en el plan gratuito.</p>
+        <p class="faq-a">Cancelas cuando quieras, desde tu perfil, sin llamadas ni formularios de baja. No hay contrato ni permanencia. Tu cuenta no se borra al cancelar: vuelve al plan gratuito y tus fichas, notas y clientes quedan donde estaban, esperando por si retomas.</p>
       </div>
 
     </div>
@@ -871,9 +872,9 @@ import Layout from '../layouts/Layout.astro';
 <section class="s s-darker" id="newsletter">
   <div class="container">
     <div class="nl-wrap from-b">
-      <p class="lbl nl-lbl">¿No estás listo para registrarte todavía?</p>
-      <h2 class="nl-h">Tu Mapa de Patrones te espera.</h2>
-      <p class="nl-sub">Déjanos tu email y te explicamos cómo obtenerlo — gratis, en 10 minutos, sin tarjeta. Cuando estés listo.</p>
+      <p class="lbl nl-lbl">¿Todavía no quieres abrir cuenta?</p>
+      <h2 class="nl-h">Te mostramos el portal por dentro.</h2>
+      <p class="nl-sub">Déjanos tu email y te enviamos cómo se ve la consulta funcionando: la ficha, la agenda y un test asignado de principio a fin. Sin tarjeta y sin llamada de ventas.</p>
       <form class="nl-form" id="nlForm" novalidate>
         <div class="nl-input-wrap">
           <input
@@ -885,11 +886,11 @@ import Layout from '../layouts/Layout.astro';
             required
           />
           <button type="submit" class="btn btn-p nl-btn" id="nlBtn">
-            Quiero saber mis patrones
+            Mostrarme el portal
           </button>
         </div>
         <p class="nl-msg" id="nlMsg" aria-live="polite"></p>
-        <p class="nl-note">Sin spam · Sin compromiso · 1 email con las instrucciones</p>
+        <p class="nl-note">Sin spam · Sin llamadas · 1 email con el recorrido completo</p>
       </form>
     </div>
   </div>
@@ -927,7 +928,7 @@ import Layout from '../layouts/Layout.astro';
       }
     } catch {
       btn.disabled = false;
-      btn.textContent = 'Quiero saber mis patrones';
+      btn.textContent = 'Mostrarme el portal';
       msg.textContent = 'Hubo un error. Intenta de nuevo.';
       msg.className = 'nl-msg err';
     }
