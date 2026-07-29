@@ -2,3 +2,7 @@ https://www.endonautas.cl/*  https://endonautas.cl/:splat  301
 /login    https://app.endonautas.cl/login/    301
 /registro https://app.endonautas.cl/registro/ 301
 /app/*    https://app.endonautas.cl/:splat    301
+# La economía de Fractones murió en ddba5b8 (2026-06-22): el modelo es feature-based
+# por plan. La página vieja seguía viva con precios de packs inexistentes.
+/fractones      https://app.endonautas.cl/planes/  301
+/fractones/*    https://app.endonautas.cl/planes/  301
