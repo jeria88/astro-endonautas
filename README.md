@@ -182,13 +182,13 @@ Callback URI: `https://n8n.146.181.39.4.sslip.io/rest/oauth2-credential/callback
 
 ## Servicios relacionados (Oracle Cloud — mismo servidor que la app)
 
-| Servicio | URL | Función |
+| Servicio | URL real (verificada 2026-07-30, 200) | Función |
 |---------|-----|---------|
-| Umami | `https://analytics.endonautas.cl` | Analytics (open source) |
-| Uptime Kuma | `https://status.endonautas.cl` | Monitoreo de uptime |
-| Listmonk | `https://mail.endonautas.cl` | Email marketing |
-| SerpBear | `https://seo.endonautas.cl` | Tracking keywords SEO |
-| n8n | (interno) | Automatización de marketing |
+| Umami | `https://analytics.146.181.39.4.sslip.io` | Analytics (open source). El dominio `.cl` está muerto (503) — el script de tracking apuntaba ahí hasta 2026-07-30, sin recolectar ninguna visita real; corregido. |
+| Uptime Kuma | `https://status.146.181.39.4.sslip.io` | Monitoreo de uptime. El dominio `.cl` está muerto (503). |
+| Listmonk | `https://mail.146.181.39.4.sslip.io` | Email marketing. El dominio `.cl` está muerto (503), migrado 2026-07-11. |
+| SerpBear | `https://seo.146.181.39.4.sslip.io` | Tracking keywords SEO. El dominio `.cl` está muerto (503) y el código apuntaba a un tercer host sin ruta en Traefik — corregido 2026-07-30. Falta `SERPBEAR_API_KEY` en el servidor. |
+| n8n | `https://n8n.146.181.39.4.sslip.io` | Fallback de publicación (decisión de Franco) — cada vez menos usado desde que Meta se conectó directo (2026-07-29). |
 
 ### Listmonk — listas activas
 
@@ -203,10 +203,10 @@ SMTP configurado: `smtp-relay.brevo.com:587` · login `aaccf1001@smtp-brevo.com`
 
 ## Analytics (Umami)
 
-Script integrado en `src/layouts/Layout.astro`:
+Script integrado en `src/layouts/Layout.astro` (corregido 2026-07-30 — apuntaba al dominio `.cl` muerto):
 ```html
 <script defer data-website-id="e03fa69e-9931-411c-9838-7f6ffea90426"
-        src="https://analytics.endonautas.cl/script.js"></script>
+        src="https://analytics.146.181.39.4.sslip.io/script.js"></script>
 ```
 
 ## Deploy
