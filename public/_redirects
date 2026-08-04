@@ -9,3 +9,4 @@ https://www.endonautas.cl/*  https://endonautas.cl/:splat  301
 
 # /heridas/ no tiene índice propio: el hub de las 5 es la página del test.
 /heridas        /test-heridas-de-infancia/  301
+/heridas/       /test-heridas-de-infancia/  301
