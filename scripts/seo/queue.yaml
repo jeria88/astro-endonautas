@@ -72,7 +72,8 @@
   keyword: cómo hablar en terapia
   category: Proceso
   layer: journey
-  published: false
+  published: true
+  published_date: '2026-08-04'
 - topic: 'Patrones relacionales: cómo los vínculos tempranos moldean los actuales'
   keyword: patrones relacionales
   category: Proceso
