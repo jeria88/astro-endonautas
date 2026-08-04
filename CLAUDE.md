@@ -29,6 +29,7 @@ npm run build      # genera dist/ para verificar
 | `/blog/*` | `src/pages/blog/` | Blog |
 | `/taller-terapeutas` | `src/pages/taller-terapeutas.astro` | Landing dedicada Taller 1 Terapeutas (1-ago) — oferta única sin dilución (agenda, beneficios, FAQ, checkout de seña $5.000 vía MP). Usa `minimalNav` en Layout/Nav para ocultar links de precios/CTAs alternativos |
 | `/test-heridas-de-infancia` | `src/pages/test-heridas-de-infancia.astro` | **Lead magnet de adquisición SEO** (`757c046`, 2026-08-04) — ver abajo |
+| `/heridas/<slug>` | `src/pages/heridas/[slug].astro` | **5 páginas de long tail** (`cdfee56`, 2026-08-04) — una por herida, generadas con `getStaticPaths` desde `src/data/heridas.ts`. `/heridas` sin slug → 301 al hub |
 
 ## Test de heridas de infancia — el lead magnet de adquisición (2026-08-04, `757c046`)
 
@@ -50,9 +51,36 @@ Página de captación por búsqueda, no por scroll. Google Autocomplete (geo CL)
 - **El contenido sale del marco propio** (`~/.claude/skills/endonautica.md`, tabla herida→máscara) y
   es el mismo del bot: una marca, un contenido. El desempate usa el orden del marco en los dos
   canales, así que la misma persona recibe el mismo espejo en la web y en Telegram.
-- Schema.org `FAQPage` para rich snippets. Pendiente: páginas propias por herida
-  (`/heridas/abandono/` etc.) para el long tail — hoy las 5 viven como secciones de esta página.
+- Schema.org `FAQPage` para rich snippets.
 - Estrategia completa: `/home/nikka/plans/seo-plataformas-v1.md`.
+
+### Las 5 páginas de herida — long tail (2026-08-04, `cdfee56`)
+
+`/heridas/{abandono,rechazo,humillacion,traicion,injusticia}/`. El hub compite por la cabeza
+de la keyword (`test heridas de infancia`); estas cinco por la cola (`herida de abandono en la
+adultez`, `…en la pareja`, `cómo sanar la herida de…`), que es donde está la mayor parte del
+volumen de búsqueda.
+
+- **Un solo archivo** `src/pages/heridas/[slug].astro` con `getStaticPaths` — 5 rutas, no 5
+  archivos. Secciones con `id` (`#adultez`, `#pareja`, `#mascara`, `#sanar`, `#faq`, `#otras`)
+  para anclas y para poder verificar cada bloque por separado en headless.
+- **`src/data/heridas.ts` es la fuente única del contenido**, compartida con el hub y alineada
+  con el bot de Telegram. Si el hub y las páginas divergieran, la marca diría dos cosas
+  distintas sobre la misma persona. Tocar el contenido de una herida = tocar ese archivo.
+- **Al script del cliente del hub van solo 4 campos** (`HERIDAS_MIN`), no el objeto completo:
+  el texto largo es de las páginas y no tiene por qué viajar al navegador en cada visita.
+- Schema `FAQPage` + `BreadcrumbList` por página, e interlinking cruzado entre las cinco
+  (quien lee una suele leer dos) más el link desde cada tarjeta del hub y desde el resultado
+  del test, que apunta a la página de la herida que salió.
+- `/heridas` sin slug redirige 301 al hub (`public/_redirects`) — no hay índice propio porque
+  el hub ya cumple esa función.
+
+**Verificación headless — trampa conocida:** capturar con `--window-size=1280,3600` para ver la
+página completa **miente**: las unidades `vh` se calculan contra esa altura y las secciones se
+inflan, así que aparecen huecos gigantes que no existen en un navegador real. Capturar con
+viewport realista (1280×900) y navegar por anclas. Y para el screenshot de una página con el
+cosmos Three.js corriendo, `--virtual-time-budget` **se cuelga** (el `rAF` renueva el tiempo
+virtual sin fin): ocultar `#cbg` en la copia de QA, o usar `--dump-dom`, que sí termina.
 
 ## Decisiones de diseño (no romper)
 
