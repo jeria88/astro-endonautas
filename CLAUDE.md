@@ -28,6 +28,31 @@ npm run build      # genera dist/ para verificar
 | `/equipo` | `src/pages/equipo.astro` | Equipo / acerca de |
 | `/blog/*` | `src/pages/blog/` | Blog |
 | `/taller-terapeutas` | `src/pages/taller-terapeutas.astro` | Landing dedicada Taller 1 Terapeutas (1-ago) — oferta única sin dilución (agenda, beneficios, FAQ, checkout de seña $5.000 vía MP). Usa `minimalNav` en Layout/Nav para ocultar links de precios/CTAs alternativos |
+| `/test-heridas-de-infancia` | `src/pages/test-heridas-de-infancia.astro` | **Lead magnet de adquisición SEO** (`757c046`, 2026-08-04) — ver abajo |
+
+## Test de heridas de infancia — el lead magnet de adquisición (2026-08-04, `757c046`)
+
+Página de captación por búsqueda, no por scroll. Google Autocomplete (geo CL) devuelve
+`test heridas de la infancia online gratis`, `test 5 heridas de la infancia`,
+`que herida de la infancia tengo test`, `heridas de infancia y sus mascaras` — que es
+**exactamente** lo que el bot de Telegram ya hacía, escondido donde Google no lo ve.
+
+- **El test se juega en la web, sin registro.** El bot pasa a ser retención, no puerta: Google no
+  indexa Telegram y en Chile Telegram es minoritario frente a WhatsApp, así que mandar tráfico frío
+  a `t.me` perdía a la mayoría en el clic más caro. Los dos CTAs del resultado cubren los dos
+  casos: app (`utm_source=test-heridas`) y bot (`?start=test_web_<herida>`).
+- **Contenido de las 5 heridas estático en el HTML**, además del test interactivo: es lo que Google
+  indexa. El H1 lleva la keyword por la que compite; lo emocional bajó al subtítulo.
+- **Los 5 botones de opción se renderizan en el template**, no con `createElement`. Astro scopea el
+  CSS por elemento del template (`data-astro-cid-*`), así que un botón creado en runtime **sale sin
+  estilo** — pasó y se vio en la verificación visual. Todas las preguntas tienen 5 opciones, así que
+  se reusan los mismos 5 botones cambiándoles el texto.
+- **El contenido sale del marco propio** (`~/.claude/skills/endonautica.md`, tabla herida→máscara) y
+  es el mismo del bot: una marca, un contenido. El desempate usa el orden del marco en los dos
+  canales, así que la misma persona recibe el mismo espejo en la web y en Telegram.
+- Schema.org `FAQPage` para rich snippets. Pendiente: páginas propias por herida
+  (`/heridas/abandono/` etc.) para el long tail — hoy las 5 viven como secciones de esta página.
+- Estrategia completa: `/home/nikka/plans/seo-plataformas-v1.md`.
 
 ## Decisiones de diseño (no romper)
 
