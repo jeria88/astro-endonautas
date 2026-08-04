@@ -6,3 +6,6 @@ https://www.endonautas.cl/*  https://endonautas.cl/:splat  301
 # por plan. La página vieja seguía viva con precios de packs inexistentes.
 /fractones      https://app.endonautas.cl/planes/  301
 /fractones/*    https://app.endonautas.cl/planes/  301
+
+# /heridas/ no tiene índice propio: el hub de las 5 es la página del test.
+/heridas        /test-heridas-de-infancia/  301

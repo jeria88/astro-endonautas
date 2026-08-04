@@ -1,50 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { HERIDAS } from '../data/heridas';
 
-// Marco propio de Endonautica — tabla herida → máscara. Mismo contenido que el bot
-// de Telegram: una marca, un contenido. No inventar heridas ni máscaras nuevas.
-const HERIDAS = [
-  {
-    id: 'abandono',
-    herida: 'Abandono',
-    mascara: 'La Máscara de la Dependencia',
-    frase: 'Toleras dinámicas que te hacen daño con tal de no quedarte solo. Tu miedo no es al conflicto: es al silencio después.',
-    vida: 'Aceptas migajas antes que nada. Escribes primero, siempre. Cuando alguien tarda en responder, tu cuerpo ya está preparando el abandono. Prefieres una relación que duele a una ausencia que no controlas.',
-    cuerpo: 'El pecho o la garganta que se cierran.',
-  },
-  {
-    id: 'rechazo',
-    herida: 'Rechazo',
-    mascara: 'La Máscara Huidiza',
-    frase: 'Te retiras antes de que te retiren. No es orgullo: es una certeza vieja de que no mereces el afecto que igual estás pidiendo.',
-    vida: 'Te haces pequeño en los grupos. Cancelas antes de que te cancelen. Cuando alguien te elige, sospechas del criterio de esa persona en vez de revisar el tuyo.',
-    cuerpo: 'Los hombros encogidos hacia adentro.',
-  },
-  {
-    id: 'humillacion',
-    herida: 'Humillación',
-    mascara: 'La Máscara Masoquista',
-    frase: 'Cargas lo de todos y llamas a eso ser buena persona. El olvido de ti mismo se disfrazó de generosidad.',
-    vida: 'Dices que sí antes de saber si puedes. Te avergüenza pedir. Te sientes útil solo cuando estás cansado, y descansar te resulta más difícil que trabajar.',
-    cuerpo: 'La espalda cargada, un peso encima.',
-  },
-  {
-    id: 'traicion',
-    herida: 'Traición',
-    mascara: 'La Máscara Controladora',
-    frase: 'Necesitas tenerlo todo atado porque una vez lo soltaste y se cayó. A tu desconfianza le dices carácter fuerte.',
-    vida: 'Delegas y revisas. Anticipas la mentira antes de que exista. Te cuesta creer que alguien haga algo por ti sin que haya un costo escondido más adelante.',
-    cuerpo: 'La mandíbula apretada.',
-  },
-  {
-    id: 'injusticia',
-    herida: 'Injusticia',
-    mascara: 'La Máscara Rígida',
-    frase: 'El perfeccionismo te mantiene de pie y a la vez te impide decidir. Ordenas por fuera lo que no sabes cómo ordenar por dentro.',
-    vida: 'Mides todo con una vara que no le aplicas a nadie más. Postergas por miedo a que salga mal. Sientes que relajarte es bajar la guardia, y bajar la guardia es peligroso.',
-    cuerpo: 'Todo el cuerpo recto, rígido.',
-  },
-];
+// El contenido de las 5 heridas vive en src/data/heridas.ts, compartido con las páginas
+// /heridas/<slug>/ y alineado con el bot de Telegram: una marca, un contenido. Al script
+// del cliente van solo los 4 campos que usa el resultado — el resto del objeto es texto
+// largo de las páginas propias y no tiene por qué viajar al navegador.
+const HERIDAS_MIN = HERIDAS.map(({ id, herida, mascara, frase }) => ({ id, herida, mascara, frase }));
 
 const PREGUNTAS = [
   { t: 'Cuando algo se rompe en un vínculo, ¿qué aparece primero en ti?', o: [
@@ -163,6 +125,9 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
             <a class="btn btn-p" id="r-app" href="https://app.endonautas.cl/registro/?utm_source=test-heridas&utm_medium=web&utm_campaign=resultado">Trabajar esto en la app</a>
             <a class="btn btn-o" id="r-bot" href="https://t.me/Endonautas_bot1_bot?start=test_web" target="_blank" rel="noopener">Seguimiento diario en Telegram</a>
           </div>
+          <p class="r-mas">
+            <a id="r-mas" href="/heridas/abandono/">Leer sobre esta herida en profundidad →</a>
+          </p>
           <div class="r-mini">
             <button type="button" id="r-share">Compartir mi resultado</button>
             <span>·</span>
@@ -197,6 +162,9 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
             <p class="h-frase">{h.frase}</p>
             <p class="h-vida">{h.vida}</p>
             <p class="h-cuerpo"><span>En el cuerpo:</span> {h.cuerpo}</p>
+            <a class="h-go" href={`/heridas/${h.id}/`}>
+              Cómo se ve en la adultez y por dónde empezar →
+            </a>
           </article>
         ))}
       </div>
@@ -223,7 +191,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
     </div>
   </section>
 
-  <script define:vars={{ PREGUNTAS, HERIDAS }}>
+  <script define:vars={{ PREGUNTAS, HERIDAS: HERIDAS_MIN }}>
     const $ = (id) => document.getElementById(id);
     const orden = HERIDAS.map((h) => h.id);
     let paso = 0;
@@ -271,6 +239,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       $('r-herida').textContent = 'Herida de ' + h.herida.toLowerCase();
       $('r-frase').textContent = h.frase;
       $('r-bot').href = 'https://t.me/Endonautas_bot1_bot?start=test_web_' + h.id;
+      $('r-mas').href = '/heridas/' + h.id + '/';
       $('q-play').hidden = true;
       $('q-res').hidden = false;
       $('q-res').classList.add('fade');
@@ -380,6 +349,9 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       margin-top: 1.1rem; padding-top: 1.1rem; border-top: 1px solid var(--bdr);
     }
     .r-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+    .r-mas { margin-top: 1.4rem; font-size: .88rem; }
+    .r-mas a { color: var(--c); text-decoration: none; border-bottom: 1px solid var(--cg); }
+    .r-mas a:hover { color: #fff; }
     .r-mini { display: flex; gap: .7rem; align-items: center; margin-top: 1.3rem; color: var(--bdr); font-size: .82rem; }
     .r-mini button {
       background: none; border: none; padding: 0; cursor: pointer;
@@ -398,7 +370,9 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       display: grid; gap: 1.1rem;
       grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     }
-    .h-card { padding: 1.9rem 1.7rem; transition: border-color .3s, background .3s; }
+    /* columna + margin-top:auto en el link = todos los "→" alineados al pie
+       aunque las tarjetas tengan textos de distinto largo */
+    .h-card { padding: 1.9rem 1.7rem; transition: border-color .3s, background .3s; display: flex; flex-direction: column; }
     .h-card.h-hit { border-color: rgba(126,204,205,.45); background: rgba(126,204,205,.05); }
     .h-num { color: var(--am); margin-bottom: .8rem; }
     .h-mask {
@@ -407,8 +381,14 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
     }
     .h-frase { color: var(--txt); font-size: .92rem; line-height: 1.6; margin-bottom: .9rem; }
     .h-vida { color: var(--mut); font-size: .88rem; line-height: 1.65; }
-    .h-cuerpo { color: var(--dim); font-size: .82rem; margin-top: .9rem; }
+    .h-cuerpo { color: var(--dim); font-size: .82rem; margin-top: .9rem; margin-bottom: 1.2rem; }
     .h-cuerpo span { color: var(--c); }
+    .h-go {
+      display: inline-block; margin-top: auto; padding-top: 1rem;
+      border-top: 1px solid var(--bdr); width: 100%;
+      color: var(--c); font-size: .83rem; text-decoration: none; transition: color .18s;
+    }
+    .h-go:hover { color: #fff; }
     .h-foot { text-align: center; color: var(--dim); font-size: .9rem; margin-top: 3rem; }
     .h-foot a { color: var(--c); text-decoration: none; border-bottom: 1px solid var(--cg); }
 
