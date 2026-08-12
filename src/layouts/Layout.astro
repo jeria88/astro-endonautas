@@ -275,5 +275,41 @@ const lerp=(a:number,b:number,t:number)=>a+(b-a)*t;
 })();
 </script>
 
+<!--
+  ponytail: puente temporal mientras endonautas.cl esta caido (expiro 2026-08-09,
+  ventana de restauracion hasta ~2026-09-08). Todos los CTA apuntan a
+  app.endonautas.cl y el contacto a hola@endonautas.cl: los dos dominios no
+  resuelven, asi que hoy el sitio no tiene NINGUNA via de conversion.
+
+  En vez de reescribir ~25 archivos (incluidos todos los posts del blog), se
+  interceptan los enlaces muertos en el layout global, que envuelve las 13 paginas.
+
+  REVERTIR: al restaurar el dominio, borrar este bloque <script> entero. Nada mas.
+-->
+<script is:inline>
+(function(){
+  var WA = '56938713033';
+  function aWhatsapp(motivo){
+    var t = 'Hola Franco, vengo de Endonautas';
+    if (motivo) t += ' — ' + motivo;
+    return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t);
+  }
+  var n = 0;
+  document.querySelectorAll('a[href]').forEach(function(a){
+    var h = a.getAttribute('href') || '';
+    var muerto = h.indexOf('app.endonautas.cl') !== -1 ||
+                 h.indexOf('mailto:hola@endonautas.cl') !== -1;
+    if (!muerto) return;
+    // el texto del propio boton viaja en el mensaje: califica el lead sin trabajo extra
+    var motivo = (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+    a.setAttribute('href', aWhatsapp(motivo));
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
+    n++;
+  });
+  if (window.umami && n) window.umami.track('cta-puente-whatsapp', { enlaces: n });
+})();
+</script>
+
 </body>
 </html>
