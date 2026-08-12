@@ -294,12 +294,15 @@ const lerp=(a:number,b:number,t:number)=>a+(b-a)*t;
     if (motivo) t += ' — ' + motivo;
     return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t);
   }
+  function muerto(u){
+    u = u || '';
+    return u.indexOf('app.endonautas.cl') !== -1 ||
+           u.indexOf('mailto:hola@endonautas.cl') !== -1;
+  }
+
   var n = 0;
   document.querySelectorAll('a[href]').forEach(function(a){
-    var h = a.getAttribute('href') || '';
-    var muerto = h.indexOf('app.endonautas.cl') !== -1 ||
-                 h.indexOf('mailto:hola@endonautas.cl') !== -1;
-    if (!muerto) return;
+    if (!muerto(a.getAttribute('href'))) return;
     // el texto del propio boton viaja en el mensaje: califica el lead sin trabajo extra
     var motivo = (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
     a.setAttribute('href', aWhatsapp(motivo));
@@ -307,7 +310,27 @@ const lerp=(a:number,b:number,t:number)=>a+(b-a)*t;
     a.setAttribute('rel', 'noopener');
     n++;
   });
-  if (window.umami && n) window.umami.track('cta-puente-whatsapp', { enlaces: n });
+
+  // Los formularios que postean al dominio muerto (checkout de la sena del taller,
+  // action="https://app.endonautas.cl/pago/mp/...") tragarian el lead en silencio:
+  // el navegador POSTea a un host que no resuelve y no pasa nada.
+  var f = 0;
+  document.querySelectorAll('form[action]').forEach(function(form){
+    if (!muerto(form.getAttribute('action'))) return;
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var btn = form.querySelector('[type=submit]');
+      var motivo = btn ? (btn.textContent || '').replace(/\s+/g,' ').trim().slice(0,60) : '';
+      var mail = form.querySelector('input[type=email]');
+      if (mail && mail.value) motivo += ' (' + mail.value.trim() + ')';
+      window.open(aWhatsapp(motivo), '_blank', 'noopener');
+    });
+    f++;
+  });
+
+  if (window.umami && (n || f)) {
+    window.umami.track('cta-puente-whatsapp', { enlaces: n, formularios: f });
+  }
 })();
 </script>
 
