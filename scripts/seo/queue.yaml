@@ -90,7 +90,8 @@
   keyword: apego ansioso adultos
   category: Proceso
   layer: awareness
-  published: false
+  published: true
+  published_date: '2026-08-14'
 - topic: 'IA en salud mental: lo que puede hacer, lo que no puede, y el límite'
   keyword: inteligencia artificial salud mental
   category: Fundamentos
