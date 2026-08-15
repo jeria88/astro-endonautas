@@ -317,13 +317,32 @@ const lerp=(a:number,b:number,t:number)=>a+(b-a)*t;
   var f = 0;
   document.querySelectorAll('form[action]').forEach(function(form){
     if (!muerto(form.getAttribute('action'))) return;
+
+    // La etiqueta tiene que decir la verdad de lo que va a pasar. Sin esto el
+    // boton promete "Reservar con $5.000 / Pago via MercadoPago" y abre
+    // WhatsApp: mentir justo donde se pide dinero cuesta mas que la caida.
+    var rotulo = form.querySelector('[type=submit]');
+    // El rotulo original ("Reservar con $5.000") es lo que califica el lead, asi
+    // que se guarda ANTES de reescribirlo y es eso lo que viaja en el mensaje.
+    var motivoOriginal = rotulo
+      ? (rotulo.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60) : '';
+    if (rotulo) rotulo.textContent = 'Reservar por WhatsApp';
+    form.querySelectorAll('p, span, small').forEach(function(el){
+      if (el.children.length === 0 && /mercadopago/i.test(el.textContent)) {
+        el.textContent = el.textContent.replace(
+          /pago\s+v[ií]a\s+mercadopago/i, 'Te envío el link de pago por WhatsApp');
+      }
+    });
+
     form.addEventListener('submit', function(ev){
       ev.preventDefault();
-      var btn = form.querySelector('[type=submit]');
-      var motivo = btn ? (btn.textContent || '').replace(/\s+/g,' ').trim().slice(0,60) : '';
+      var motivo = motivoOriginal;
       var mail = form.querySelector('input[type=email]');
       if (mail && mail.value) motivo += ' (' + mail.value.trim() + ')';
-      window.open(aWhatsapp(motivo), '_blank', 'noopener');
+      var w = window.open(aWhatsapp(motivo), '_blank', 'noopener');
+      // Si el bloqueador de popups mata la ventana, no puede no pasar nada:
+      // el correo ya escrito se perderia sin que la persona se entere.
+      if (!w) window.location.href = aWhatsapp(motivo);
     });
     f++;
   });

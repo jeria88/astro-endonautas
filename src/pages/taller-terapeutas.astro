@@ -9,7 +9,21 @@ import Layout from '../layouts/Layout.astro';
 >
   <style>
   #hero { min-height: 50vh; display: flex; align-items: center; padding-top: 8vh; }
-  .hero-inner { max-width: 820px; margin: 0 auto; width: 100%; padding: 0 7%; text-align: center; }
+  .hero-inner { max-width: 820px; margin: 0 auto; width: 100%; padding: 0 7%; text-align: center; position: relative; }
+  /* El nucleo brillante del cosmos WebGL cae justo detras de este bloque, y
+     text-shadow no alcanza contra un fondo de alta frecuencia: el parrafo que
+     explica el taller queda ilegible (verificado en captura, 2026-08-14).
+     Scrim radial que apaga la galaxia solo bajo el texto y la deja intacta en
+     los bordes, para no perder la identidad. Va entre #cbg (z-index 0) y el
+     contenido de #lp-wrap (z-index 1). */
+  .hero-inner::before {
+    content: ''; position: absolute; inset: -14% -8%; z-index: -1; pointer-events: none;
+    background: radial-gradient(ellipse 68% 58% at 50% 46%,
+      rgba(3,3,6,.93) 0%,
+      rgba(3,3,6,.88) 38%,
+      rgba(3,3,6,.58) 64%,
+      rgba(3,3,6,0)   84%);
+  }
   .hero-sup { color: var(--c); font-size: .78rem; margin-bottom: 1.4rem; opacity: 0; animation: fadeUp .7s .1s forwards; }
   .hero-h {
     font-family: var(--fd); font-size: clamp(2rem, 4.4vw, 3.2rem);
@@ -18,7 +32,7 @@ import Layout from '../layouts/Layout.astro';
     opacity: 0; animation: fadeUp .8s .3s forwards;
   }
   .hero-p {
-    font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--mut); max-width: 620px;
+    font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--txt); max-width: 620px;
     line-height: 1.75; margin: 0 auto 2.2rem; text-shadow: var(--ts);
     opacity: 0; animation: fadeUp .8s .55s forwards;
   }
