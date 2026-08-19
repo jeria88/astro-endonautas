@@ -121,8 +121,22 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
             La máscara no es el enemigo: te protegió cuando no tenías otra herramienta.
             El trabajo no es arrancarla, es dejar de confundirla contigo.
           </p>
+
+          <form class="l-form" id="lead-form" method="POST" action="https://endonautas-app.146.181.39.4.sslip.io/pago/ebook/lead/">
+            <input type="hidden" name="canal_origen" value="test-heridas">
+            <input type="hidden" name="herida" id="lead-herida" value="">
+            <p class="l-lead">
+              Esto es la punta del hilo. <em>Endonautica</em> tiene el mapa completo detrás de
+              esta máscara — te mando gratis el PDF con tu herida en profundidad.
+            </p>
+            <div class="l-row">
+              <input type="email" name="email" class="l-input" placeholder="tu@correo.com" required autocomplete="email">
+              <button type="submit" class="btn btn-p">Enviarme el mapa completo</button>
+            </div>
+          </form>
+
           <div class="r-ctas">
-            <a class="btn btn-p" id="r-app" href="https://app.endonautas.cl/registro/?utm_source=test-heridas&utm_medium=web&utm_campaign=resultado">Trabajar esto en la app</a>
+            <a class="btn btn-o" id="r-app" href="https://app.endonautas.cl/registro/?utm_source=test-heridas&utm_medium=web&utm_campaign=resultado">Trabajar esto en la app</a>
             <a class="btn btn-o" id="r-bot" href="https://t.me/Endonautas_bot1_bot?start=test_web" target="_blank" rel="noopener">Seguimiento diario en Telegram</a>
           </div>
           <p class="r-mas">
@@ -240,6 +254,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       $('r-frase').textContent = h.frase;
       $('r-bot').href = 'https://t.me/Endonautas_bot1_bot?start=test_web_' + h.id;
       $('r-mas').href = '/heridas/' + h.id + '/';
+      $('lead-herida').value = h.id;
       $('q-play').hidden = true;
       $('q-res').hidden = false;
       $('q-res').classList.add('fade');
@@ -348,6 +363,25 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       color: var(--mut); font-size: .92rem; line-height: 1.6; max-width: 52ch;
       margin-top: 1.1rem; padding-top: 1.1rem; border-top: 1px solid var(--bdr);
     }
+    /* ── lead magnet: PDF de la herida ── */
+    .l-form {
+      margin-top: 1.8rem; padding: 1.6rem 1.7rem;
+      background: rgba(126,204,205,.05); border: 1px solid rgba(126,204,205,.22);
+      border-radius: 12px;
+    }
+    .l-lead { color: var(--txt); font-size: .92rem; line-height: 1.6; max-width: 54ch; margin-bottom: 1.1rem; }
+    .l-lead em { color: var(--c); font-style: normal; }
+    .l-row { display: flex; gap: .7rem; flex-wrap: wrap; }
+    .l-input {
+      flex: 1 1 220px;
+      background: rgba(10,8,20,.55); border: 1px solid var(--bdr);
+      border-radius: 10px; color: #fff; font-family: var(--fi);
+      font-size: .95rem; padding: .85rem 1.1rem; outline: none;
+      transition: border-color .18s;
+    }
+    .l-input::placeholder { color: var(--dim); }
+    .l-input:focus { border-color: rgba(126,204,205,.5); }
+
     .r-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
     .r-mas { margin-top: 1.4rem; font-size: .88rem; }
     .r-mas a { color: var(--c); text-decoration: none; border-bottom: 1px solid var(--cg); }
