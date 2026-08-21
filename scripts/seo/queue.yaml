@@ -102,7 +102,8 @@
   keyword: test MBTI personalidad
   category: Instrumentos
   layer: journey
-  published: false
+  published: true
+  published_date: '2026-08-21'
 - topic: 'Minimalismo emocional: por qué tener menos reacciones no es madurez'
   keyword: madurez emocional
   category: Proceso
