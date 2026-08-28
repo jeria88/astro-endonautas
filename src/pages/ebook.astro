@@ -26,7 +26,7 @@ const TESTIMONIOS: { texto: string; autor: string }[] = [];
 const title = 'Endonautica — el libro | Endonautas';
 // Descripción para tráfico frío, igual que el hero estático: quien la ve en Google
 // o al compartirse el link todavía no hizo el test de heridas.
-const description = 'El mapa que nadie te dio para navegar tu mundo interior. Endonautica, de Franco Jeria Castro: viaje interior, herida de infancia, sombra y niveles de conciencia. 207 páginas, $17 USD, entrega inmediata.';
+const description = 'El mapa que nadie te dio para navegar tu mundo interior. Endonautica, de Franco Jeria Castro: viaje interior, herida de infancia, sombra y niveles de conciencia. 205 páginas en PDF y EPUB, $17 USD, entrega inmediata.';
 const canonical = 'https://endonautas.cl/ebook/';
 ---
 <!doctype html>
@@ -58,7 +58,7 @@ const canonical = 'https://endonautas.cl/ebook/';
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="price-badge">$17 USD · ≈ $16.990 CLP · EPUB · entrega inmediata</p>
+        <p class="price-badge">$17 USD · ≈ $16.990 CLP · PDF y EPUB · entrega inmediata</p>
         {/* El copy ESTÁTICO es el de tráfico frío: quien llega de un reel no hizo
             ningún test. El script de abajo lo reescribe cuando viene `?herida=`,
             así que la versión personalizada sigue intacta — y Google indexa esta. */}
@@ -131,7 +131,7 @@ const canonical = 'https://endonautas.cl/ebook/';
     <div class="wrap wrap-narrow">
       <h2 class="sec-h">Qué es exactamente</h2>
       <p class="body">
-        No te escribí un PDF de 40 páginas ni un manual clínico. Son 207 páginas:
+        No es un cuadernillo de 40 páginas ni un manual clínico. Son 205 páginas:
         mi marco completo de la endonáutica — viaje interior, arquetipos, la
         sombra, niveles de conciencia — con la herida de infancia como una de sus
         piezas centrales, no la única.
@@ -150,7 +150,7 @@ const canonical = 'https://endonautas.cl/ebook/';
   <section class="sec sec-alt">
     <div class="wrap wrap-narrow">
       <p class="eyebrow">El contenido</p>
-      <h2 class="sec-h">207 páginas de cartografía interior</h2>
+      <h2 class="sec-h">205 páginas de cartografía interior</h2>
       <ol class="toc">
         <li>
           <span class="toc-n">01</span>
@@ -283,7 +283,7 @@ const canonical = 'https://endonautas.cl/ebook/';
         {/* El cobro real en Chile es CLP: `PRODUCTS['endonautica-ebook'].price_clp`
             en el repo de la app (payments/constants.py). Si cambia allá, cambia acá. */}
         <p class="buy-clp">Desde Chile se cobran <strong>$16.990 CLP</strong></p>
-        <p class="buy-sub">EPUB · 207 páginas · llega a tu email apenas se confirma el pago</p>
+        <p class="buy-sub">PDF y EPUB · 205 páginas · lo descargas al instante y te llega al email</p>
 
         <div class="buy-forms">
           <form method="POST" action="https://app.endonautas.cl/pago/ebook/comprar/mp/" class="buy-form">
@@ -325,7 +325,7 @@ const canonical = 'https://endonautas.cl/ebook/';
       <h2 class="sec-h">Preguntas frecuentes</h2>
       <div class="faq-item">
         <button type="button" class="faq-q">¿En qué formato llega?</button>
-        <div class="faq-a"><p>EPUB — se lee en Apple Books, Google Play Books, la app de Kindle, o cualquier lector de ebooks. No es un PDF escaneado.</p></div>
+        <div class="faq-a"><p>En los dos formatos, y eliges cuál usar: <strong>PDF</strong>, que se abre en cualquier teléfono o computador sin instalar nada, y <strong>EPUB</strong>, para Apple Books, Google Play Books, Kindle o el lector que prefieras. Ninguno es un PDF escaneado: el texto se busca, se copia y se ajusta al tamaño de tu pantalla.</p></div>
       </div>
       <div class="faq-item">
         <button type="button" class="faq-q">¿Cuándo lo recibo?</button>
