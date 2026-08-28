@@ -19,7 +19,8 @@ npm run build      # genera dist/ para verificar
 
 | Ruta | Archivo | Descripción |
 |------|---------|-------------|
-| `/` | `src/pages/index.astro` | Landing principal — hero, reconoc, dif, incluye, navegante, comunidad, preview, franco, precios, FAQ, newsletter. Reescrita `4858764` (2026-07-29, ver "Posicionamiento" abajo) |
+| `/` | `src/pages/index.astro` | **Página-elección** (2026-08-27, `61940f7`) — dos puertas: el libro (`/ebook`) y la plataforma (`/software`). Standalone: sin `<Layout>`, sin cosmos Three.js, sin Nav. Ver "Raíz-elección" abajo |
+| `/software` | `src/pages/software.astro` | La landing del SaaS — **era `index.astro` hasta el 2026-08-27**; el contenido no se tocó al mover. Hero, reconoc, dif, incluye, navegante, comunidad, preview, franco, precios, FAQ, newsletter |
 | `/profesionales` | `src/pages/profesionales.astro` | Landing B2B para terapeutas y coaches — Plan Practicante + captura de leads. Alineada al mismo reposicionamiento que `/` (`4858764`, `8bebd73`, `4aa34e5`, `69ea2a2`) |
 | `/privacidad` | `src/pages/privacidad.astro` | Política de privacidad |
 | `/terminos` | `src/pages/terminos.astro` | Términos de uso |
@@ -298,3 +299,47 @@ git add .
 git commit -m "fix: ..."
 git push origin main
 ```
+
+
+## Raíz-elección y funnel del ebook (2026-08-27/28)
+
+Decisión de Franco: `endonautas.cl` dejó de ser la home del SaaS y pasa a bifurcar los dos productos.
+La home del SaaS se movió a `/software` **sin tocar su contenido** (`git mv`), y `Nav.astro` reapunta
+`#incluye`/`#precios` a `/software/#…` — si no, esas anclas dejaban de existir en la raíz.
+
+- **`index.astro` es standalone a propósito**: el cosmos Three.js costaba ~medio megabyte antes del
+  primer clic en una página cuya única función es elegir puerta. Dos auras CSS con frecuencias
+  distintas por eje reemplazan al cosmos.
+- **Costo asumido**: el SaaS pierde la raíz como URL que rankea. Mitigación: el `<meta description>`
+  de la raíz mantiene keywords de ambos y `/profesionales` ya rankea B2B.
+
+### `/ebook` — la landing de venta
+
+- **El hero estático es el de tráfico frío** ("El mapa que nadie te dio…"). El script de la página
+  lo reescribe cuando llega `?herida=<slug>` desde el test. Antes era al revés y el copy por defecto
+  hablaba del "test que acabas de hacer" a gente que llegaba de un reel sin haberlo hecho.
+  **Al tocar el hero, cambiar el HTML, no el script.**
+- Secciones en orden: hero · el problema · qué es la endonáutica · qué es exactamente · índice del
+  libro · fragmento real · [testimonios, apagados] · para quién es/no · autor · checkout + garantía
+  de 7 días · FAQ. Los fondos alternan `sec` / `sec-alt`: **al insertar una sección hay que
+  recalcular toda la cadena**, o quedan dos fondos iguales seguidos.
+- **`TESTIMONIOS` está vacío a propósito** (frontmatter). Son personas reales de la mentoría cuyas
+  frases se perdieron; la sección se renderiza sola con 3 o más. **No se inventan citas.**
+- El precio se muestra en USD y CLP. El número CLP real vive en `payments/constants.py` del repo de
+  la app (`price_clp`): si cambia allá, cambia acá.
+- **205 páginas** es el conteo real del PDF maquetado y está en 6 páginas del sitio. Antes decía 207,
+  que era una estimación del EPUB.
+
+### Medición del embudo (Umami)
+
+Seis eventos, todos envueltos en `window.umami && …` porque el script carga con `defer`:
+
+| Evento | Dónde | Props |
+|---|---|---|
+| `raiz-puerta` | `index.astro` | `destino: libro\|plataforma` |
+| `test-completado` / `test-lead-submit` / `test-cta-libro` | test de heridas | `herida` |
+| `ebook-cta-comprar` | hero de `/ebook` | `origen` (slug o `frio`) |
+| `ebook-checkout-submit` | forms de pago | `gateway`, `origen` |
+
+Para que el **reporte KPI** los lea falta `UMAMI_API_KEY` en Coolify — sin esa key el reporte informa
+"0 visitas", que no es un dato sino la ausencia de él.
