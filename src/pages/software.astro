@@ -1,0 +1,1139 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Endonautas — Agenda, fichas clínicas y tests para tu consulta"
+  description="Software para terapeutas, coaches y acompañantes: agenda con disponibilidad, fichas clínicas, notas de sesión y 35 tests validados que asignas y llegan corregidos. Tus clientes trabajan entre sesiones. $39.990 al mes, sin cobro por cliente."
+  cosmosScroll={true}
+>
+<script slot="head" type="application/ld+json" is:inline>{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Mis clientes tienen que pagar algo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. El terapeuta paga su plan e invita a sus clientes con un código: ellos se registran gratis y acceden al Espejo IA diario, su bitácora y los tests asignados. No hay cobro por cliente ni límite de cuántos se invitan." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tengo que migrar mis fichas actuales?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Se empieza con el próximo cliente que se agende y se sigue igual con el resto. No hay migración obligatoria ni importación que configurar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué ve el terapeuta del proceso de su cliente y qué queda privado?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El terapeuta ve los resultados de los tests que asignó, la ficha clínica, sus notas de sesión y la agenda. Las conversaciones del cliente con el Espejo IA y su bitácora personal son privadas y no las lee el terapeuta." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Los tests tienen respaldo real?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Son 35 instrumentos validados en español: PHQ-9, GAD-7, Big Five, ECR, DERS, entre otros. Se asignan desde la ficha del cliente y el resultado llega puntuado. El Oráculo y los mapas de nacimiento no son instrumentos clínicos ni diagnóstico." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si no funciona para mi forma de trabajar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hay 30 días de garantía: si en ese plazo decides que no es para ti, escribes a hola@endonautas.cl desde el correo de tu cuenta y se devuelve el 100% de lo pagado, sin preguntas ni formularios. Pasados los 30 días puedes cancelar cuando quieras y no se vuelve a cobrar; la cuenta no se borra, vuelve al plan gratuito y las fichas, notas y clientes quedan donde estaban." }
+    }
+  ]
+})}</script>
+<style>
+/* ── LANDING: .s override ── */
+.s {
+  display: flex;
+  align-items: center;
+  padding: 17vh 0;
+  overflow: hidden;
+}
+/* ── HERO ── */
+#inicio {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+}
+.hero-wrap {
+  padding: 0 7%;
+  width: 100%;
+  text-align: right;
+  position: relative;
+  z-index: 1;
+}
+.hero-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -12vh -8vw;
+  background: radial-gradient(ellipse at 80% 46%, rgba(3,3,6,.80) 0%, rgba(3,3,6,.45) 45%, transparent 72%);
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-sup {
+  color: var(--c);
+  margin-bottom: 2rem;
+  text-shadow: var(--ts);
+  opacity: 0;
+  animation: fadeUp .7s .1s forwards;
+}
+.hero-h {
+  font-family: var(--fd);
+  font-size: clamp(2.6rem, 5.8vw, 5.2rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  color: #fff;
+  text-shadow: var(--ts);
+  margin-bottom: 2rem;
+}
+.hero-pero { color: rgba(255,255,255,.28); font-weight: 300; }
+.word {
+  display: inline-block;
+  opacity: 0;
+  animation: wordIn .65s cubic-bezier(.16,1,.3,1) forwards;
+  animation-delay: calc(.3s + var(--i) * .09s);
+}
+.hero-sub {
+  font-size: clamp(1.05rem, 1.9vw, 1.28rem);
+  color: var(--mut);
+  max-width: 500px;
+  margin: 0 0 2.2rem auto;
+  line-height: 1.78;
+  text-shadow: var(--ts);
+  opacity: 0;
+  animation: fadeUp .8s 1.1s forwards;
+  font-weight: 400;
+  text-align: right;
+}
+.hero-sub strong { color: rgba(255,255,255,.9); font-weight: 500; }
+.hero-cta {
+  opacity: 0;
+  animation: fadeUp .8s 1.4s forwards;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+.hero-note {
+  font-size: .8rem;
+  color: var(--dim);
+  margin-top: 1.6rem;
+  letter-spacing: .03em;
+  opacity: 0;
+  animation: fadeUp .8s 1.7s forwards;
+  text-align: right;
+}
+/* ── RECONOCIMIENTO ── */
+#reconoc { flex-direction: column; }
+.reconoc-intro {
+  font-family: var(--fd);
+  font-weight: 300;
+  font-size: clamp(.85rem, 1.2vw, 1rem);
+  color: var(--dim);
+  margin-bottom: 6rem;
+  padding: 0 7%;
+  text-shadow: var(--ts);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.reconoc-items { display: flex; flex-direction: column; gap: 8vh; width: 100%; }
+.q-item { max-width: min(640px, 55vw); position: relative; z-index: 1; }
+.q-item::before {
+  content: '';
+  position: absolute;
+  inset: -2.5rem -5vw;
+  background: radial-gradient(ellipse at 30% 50%, rgba(3,3,6,.64) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+.q-item.qr::before {
+  background: radial-gradient(ellipse at 70% 50%, rgba(3,3,6,.64) 0%, transparent 70%);
+}
+.q-item.ql { align-self: flex-start; padding-left: 8vw; }
+.q-item.qr { align-self: flex-end; padding-right: 8vw; }
+.q-text {
+  font-family: var(--fd);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 2.9vw, 2.2rem);
+  color: rgba(255,255,255,.82);
+  line-height: 1.38;
+  text-shadow: var(--ts);
+}
+.q-attr {
+  display: block;
+  margin-top: .8rem;
+  font-size: .8rem;
+  color: var(--dim);
+  letter-spacing: .04em;
+  font-style: italic;
+}
+.q-item.qr .q-text, .q-item.qr .q-attr { text-align: right; }
+.reconoc-res {
+  align-self: center;
+  text-align: center;
+  margin-top: 6vh;
+  padding: 0 7%;
+  font-family: var(--fd);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 400;
+  color: rgba(255,255,255,.80);
+  line-height: 1.68;
+  letter-spacing: -.01em;
+  text-shadow: var(--ts);
+}
+.reconoc-res em { color: var(--c); font-style: normal; }
+/* ── DIFERENCIA ── */
+#dif { flex-direction: column; align-items: flex-start; }
+.dif-h {
+  font-family: var(--fd);
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 300;
+  color: #fff;
+  max-width: 480px;
+  line-height: 1.3;
+  margin-bottom: 4.5rem;
+  text-shadow: var(--ts);
+}
+.versus { display: grid; grid-template-columns: 1fr 1px 1fr; width: 100%; }
+.v-col { display: flex; flex-direction: column; gap: 3.5rem; padding: 0 4rem; }
+.v-col:first-child { padding-left: 0; }
+.v-col:last-child { padding-right: 0; }
+.v-sep {
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,.05) 15%, var(--c) 50%, rgba(255,255,255,.05) 85%, transparent);
+}
+.v-lbl { color: var(--dim); margin-bottom: .5rem; font-size: .75rem; letter-spacing: .1em; font-weight: 600; text-transform: uppercase; }
+.v-lbl-c { color: var(--c); }
+.v-old { font-size: .97rem; color: var(--mut); line-height: 1.75; font-style: italic; }
+.v-new { font-family: var(--fd); font-weight: 300; font-size: 1.05rem; color: rgba(255,255,255,.88); line-height: 1.7; }
+.v-acc { color: var(--c); }
+/* ── INSTRUMENTOS ── */
+#incluye { flex-direction: column; align-items: flex-start; }
+.inst-h { font-family: var(--fd); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 300; color: #fff; margin-bottom: .7rem; text-shadow: var(--ts); }
+.inst-sub { color: var(--dim); font-size: .88rem; margin-bottom: 4.5rem; }
+.inst-body {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 6rem;
+  width: 100%;
+  align-items: start;
+}
+.inst-list { display: flex; flex-direction: column; }
+.inst-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 1.8rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--bdr);
+  align-items: start;
+}
+.inst-item:last-child { border-bottom: 1px solid var(--bdr); }
+.inst-n {
+  font-family: var(--fd);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--dim);
+  line-height: 1;
+  text-align: right;
+  padding-top: .15rem;
+}
+.inst-name { font-family: var(--fd); font-weight: 600; color: #fff; margin-bottom: .35rem; font-size: 1rem; }
+.inst-desc { font-size: .92rem; color: var(--mut); line-height: 1.68; }
+.inst-visual { position: sticky; top: 5rem; }
+.img-stack { display: flex; flex-direction: column; gap: 1.6rem; }
+.img-stack-a, .img-stack-b, .img-stack-c {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.72), 0 0 0 1px rgba(255,255,255,.07);
+  width: 120%;
+  margin-left: -10%;
+  aspect-ratio: 3/2;
+}
+.img-stack-a { transform: rotate(-1.8deg); }
+.img-stack-b { transform: rotate(1.4deg) translateX(4%); }
+.img-stack-c { transform: rotate(-0.8deg); }
+.img-stack-a img, .img-stack-b img, .img-stack-c img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+  filter: brightness(.84) saturate(.72);
+}
+.inst-cta { margin-top: 3.2rem; }
+/* ── FRANCO ── */
+#franco { flex-direction: column; }
+.franco-grid {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 7rem;
+  width: 100%;
+  align-items: start;
+}
+.franco-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .6rem;
+  height: 540px;
+}
+.fi-foto, .fi-libro { overflow: hidden; border-radius: 6px; }
+.fi-foto img {
+  width: 100%; height: 100%; display: block;
+  object-fit: cover; object-position: left top;
+  filter: grayscale(100%) contrast(1.08);
+  transition: filter .6s cubic-bezier(.25,.8,.25,1);
+}
+.fi-foto:hover img { filter: grayscale(0%) contrast(1); }
+.fi-libro img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top; }
+.franco-texto {
+  display: flex; flex-direction: column; gap: 2.4rem; padding-top: .5rem;
+  position: relative; z-index: 1;
+}
+.franco-texto::before {
+  content: '';
+  position: absolute;
+  inset: -3rem -4rem;
+  background: radial-gradient(ellipse at 40% 30%, rgba(3,3,6,.55) 0%, transparent 68%);
+  z-index: -1;
+  pointer-events: none;
+}
+.franco-q {
+  font-family: var(--fd); font-weight: 300;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  color: rgba(255,255,255,.84); line-height: 1.48;
+  text-shadow: var(--ts);
+  border-left: 2px solid var(--c); padding-left: 1.6rem;
+}
+.franco-id { display: flex; flex-direction: column; gap: .3rem; }
+.franco-name { font-family: var(--fd); font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: -.02em; }
+.franco-role { font-size: .75rem; color: var(--c); letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
+.franco-bio { font-size: .96rem; color: var(--mut); line-height: 1.82; max-width: 460px; }
+.libro-inc {
+  display: flex; align-items: center; gap: .8rem;
+  font-size: .8rem; color: var(--dim); padding: .9rem 1.1rem;
+  border: 1px solid var(--bdr); border-radius: 8px;
+  width: fit-content; background: rgba(10,8,20,.45);
+}
+.libro-inc span { color: var(--c); font-weight: 600; }
+.franco-ctas { display: flex; gap: .8rem; flex-wrap: wrap; }
+/* ── GALERÍA 3D CARRUSEL ── */
+#preview { flex-direction: column; align-items: stretch; gap: 0; padding-bottom: 10vh; }
+.gallery-scene {
+  width: 100%;
+  padding: 3rem 0 4rem;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+}
+.gallery-hint {
+  text-align: center;
+  font-size: .7rem;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.25);
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+.gallery-track {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  will-change: transform;
+  /* JS posiciona con translateX */
+}
+.gc {
+  flex-shrink: 0;
+  width: clamp(260px, 26vw, 360px);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 18px 60px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.07);
+  position: relative;
+  will-change: transform, opacity;
+  cursor: zoom-in;
+}
+.gc img {
+  width: 100%; height: auto;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  object-position: top left;
+  display: block;
+  pointer-events: none;
+}
+.gc-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: .5rem .75rem;
+  background: linear-gradient(transparent, rgba(0,0,0,.88));
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(126,204,205,.85);
+  transition: opacity .25s;
+}
+/* Mobile: grid estático */
+@media (max-width: 768px) {
+  .gallery-scene { cursor: default; padding: 1.5rem 5%; overflow: visible; }
+  .gallery-hint { display: none; }
+  .gallery-track { flex-wrap: wrap; gap: .9rem; transform: none !important; }
+  .gc { width: calc(50% - .45rem); transform: none !important; opacity: 1 !important; cursor: zoom-in; }
+  .gc:nth-child(5) { width: 100%; }
+}
+/* ── LIGHTBOX ── */
+#lb {
+  position: fixed; inset: 0; z-index: 9000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0); backdrop-filter: blur(0px);
+  transition: background .25s, backdrop-filter .25s, opacity .25s;
+  pointer-events: none; opacity: 0;
+}
+#lb.open {
+  background: rgba(0,0,0,.93); backdrop-filter: blur(10px);
+  pointer-events: auto; opacity: 1;
+}
+#lb-img {
+  max-width: 88vw; max-height: 86vh;
+  border-radius: 10px;
+  box-shadow: 0 40px 120px rgba(0,0,0,.9);
+  transform: scale(.93);
+  transition: transform .3s cubic-bezier(.22,1,.36,1), opacity .2s;
+  display: block;
+  pointer-events: none;
+}
+#lb.open #lb-img { transform: scale(1); }
+#lb-close {
+  position: absolute; top: 1.1rem; right: 1.4rem;
+  color: rgba(255,255,255,.5); font-size: 1.8rem; line-height: 1;
+  cursor: pointer; user-select: none; transition: color .18s;
+}
+#lb-close:hover { color: #fff; }
+.lb-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.7); font-size: 1.6rem; line-height: 1;
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .18s, color .18s;
+  user-select: none;
+}
+.lb-nav:hover { background: rgba(255,255,255,.18); color: #fff; }
+#lb-prev { left: 1.2rem; }
+#lb-next { right: 1.2rem; }
+#lb-dots {
+  position: absolute; bottom: 1.1rem; left: 50%; transform: translateX(-50%);
+  display: flex; gap: .45rem;
+}
+.lb-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,.25); transition: background .2s;
+}
+.lb-dot.active { background: #7ecccd; }
+/* ── PRECIOS ── */
+#precios { flex-direction: column; align-items: flex-start; }
+.precios-h { font-family: var(--fd); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 300; color: #fff; margin-bottom: .6rem; text-shadow: var(--ts); }
+.precios-sub { color: var(--dim); font-size: .9rem; margin-bottom: 4rem; }
+.planes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; width: 100%; }
+.plan {
+  border: 1px solid var(--bdr); border-radius: 16px;
+  padding: 2.4rem 2rem; display: flex; flex-direction: column; gap: 1.8rem;
+  background: rgba(10,8,20,.55); backdrop-filter: blur(12px);
+  transition: border-color .22s; position: relative;
+}
+.plan:hover { border-color: rgba(255,255,255,.15); }
+.plan.featured { border-color: rgba(126,204,205,.35); background: rgba(126,204,205,.05); }
+.plan-badge {
+  position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+  background: var(--c); color: #020909;
+  font-family: var(--fd); font-size: .62rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: .3rem .9rem; border-radius: 0 0 8px 8px;
+}
+.plan-name { font-family: var(--fd); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.plan-price { display: flex; align-items: baseline; gap: .3rem; }
+.plan-amount { font-family: var(--fd); font-size: 2.8rem; font-weight: 700; color: #fff; letter-spacing: -.04em; line-height: 1; }
+.plan-period { font-size: .82rem; color: var(--dim); }
+.plan-divider { height: 1px; background: var(--bdr); }
+.plan-feats { display: flex; flex-direction: column; gap: .85rem; list-style: none; flex: 1; }
+.plan-feats li { font-size: .9rem; color: var(--mut); line-height: 1.5; display: flex; gap: .55rem; align-items: baseline; }
+.plan-feats li::before { content: '·'; color: var(--c); flex-shrink: 0; }
+.plan-feats li.hi { color: rgba(255,255,255,.88); }
+.plan-cta { margin-top: auto; }
+.plan-cta .btn { width: 100%; }
+.plan-note { font-size: .74rem; color: var(--dim); text-align: center; margin-top: .6rem; }
+/* ── FAQ ── */
+#faq { flex-direction: column; align-items: flex-start; }
+.faq-h { font-family: var(--fd); font-size: clamp(1.3rem, 2.4vw, 1.75rem); font-weight: 300; color: #fff; text-shadow: var(--ts); margin-bottom: 3.5rem; }
+.faq-list { display: flex; flex-direction: column; width: 100%; max-width: 760px; }
+.faq-item { border-top: 1px solid var(--bdr); padding: 1.8rem 0; cursor: pointer; }
+.faq-item:last-child { border-bottom: 1px solid var(--bdr); }
+.faq-q {
+  display: flex; justify-content: space-between; align-items: center; gap: 1.5rem;
+  font-family: var(--fd); font-size: 1rem; font-weight: 500;
+  color: rgba(255,255,255,.85); line-height: 1.4; user-select: none;
+}
+.faq-icon { flex-shrink: 0; width: 16px; height: 16px; color: var(--c); transition: transform .25s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  font-size: .92rem; color: var(--mut); line-height: 1.8;
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+}
+.faq-item.open .faq-a { max-height: 260px; padding-top: 1rem; }
+/* ── NEWSLETTER / EMAIL CAPTURE ── */
+#newsletter { flex-direction: column; align-items: center; }
+.nl-wrap { max-width: 560px; width: 100%; text-align: center; }
+.nl-lbl { color: var(--c); margin-bottom: 1rem; }
+.nl-h { font-family: var(--fd); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 300; color: #fff; margin-bottom: 1rem; text-shadow: var(--ts); }
+.nl-sub { font-size: .9rem; color: var(--dim); line-height: 1.75; margin-bottom: 2rem; }
+.nl-form { display: flex; flex-direction: column; align-items: center; gap: .75rem; width: 100%; }
+.nl-input-wrap { display: flex; width: 100%; gap: .5rem; }
+.nl-input {
+  flex: 1; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px; padding: .75rem 1rem; color: #fff; font-size: .92rem;
+  outline: none; transition: border-color .2s;
+}
+.nl-input::placeholder { color: rgba(255,255,255,.3); }
+.nl-input:focus { border-color: var(--c); }
+.nl-btn { white-space: nowrap; flex-shrink: 0; }
+.nl-note { font-size: .72rem; color: rgba(255,255,255,.25); }
+.nl-msg { font-size: .82rem; min-height: 1.2em; }
+.nl-msg.err { color: #e05050; }
+.nl-success { font-size: 1rem; color: var(--c); font-family: var(--fd); padding: 1.5rem 0; }
+@media (max-width: 600px) {
+  .nl-input-wrap { flex-direction: column; }
+  .nl-btn { width: 100%; }
+}
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .s { padding: 12vh 0; }
+  .inst-body { grid-template-columns: 1fr; }
+  .inst-visual { display: none; }
+  .franco-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .franco-images { height: 300px; }
+  .planes-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+  .versus { grid-template-columns: 1fr; gap: 3rem; }
+  .v-sep { display: none; }
+  .v-col { padding: 0; }
+  .q-item { max-width: 90vw; }
+  .q-item.qr { text-align: left; }
+  .q-item.qr .q-text, .q-item.qr .q-attr { text-align: left; }
+  .hero-cta { flex-direction: column; }
+}
+</style>
+
+<!-- HERO -->
+<section class="s s-full" id="inicio">
+  <div class="hero-wrap">
+    <p class="lbl hero-sup">
+      <a href="#incluye" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Soy terapeuta</a>
+      <span style="opacity:.4"> · </span>
+      <a href="#navegante" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Voy a terapia</a>
+    </p>
+    <h1 class="hero-h">
+      <span style="display:block">
+        <span class="word" style="--i:0">Mira</span><span class="word" style="--i:1">&nbsp;lo&nbsp;que&nbsp;tu&nbsp;cliente</span>
+      </span>
+      <span style="display:block">
+        <span class="word" style="--i:2">hizo&nbsp;entre&nbsp;sesiones,</span>
+      </span>
+      <span style="display:block">
+        <span class="word hero-pero" style="--i:3">antes&nbsp;de&nbsp;que&nbsp;entre.</span>
+      </span>
+    </h1>
+    <p class="hero-sub">
+      Agenda, fichas clínicas y 35 tests que asignas y llegan corregidos a la ficha. Todo en un lugar.<br>
+      <strong>Por menos de lo que cobras por una sesión.</strong>
+    </p>
+    <div class="hero-cta">
+      <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-lg">Evolucionar mi consulta</a>
+      <a href="#incluye" class="btn btn-o btn-lg">Ver qué incluye</a>
+    </div>
+    <p class="hero-note">$39.990 al mes &nbsp;·&nbsp; 30 días de garantía, sin preguntas &nbsp;·&nbsp; Sin contrato</p>
+  </div>
+</section>
+
+<!-- RECONOCIMIENTO -->
+<section class="s s-dark" id="reconoc">
+  <p class="lbl reconoc-intro from-b">Si tienes consulta, esto ya te pasó:</p>
+  <div class="reconoc-items">
+    <div class="q-item ql from-l" data-d="1">
+      <p class="q-text">"Los primeros veinte minutos se me van en reconstruir qué pasó la semana pasada. Cada sesión, con cada cliente."</p>
+      <span class="q-attr">— El costo del recap</span>
+    </div>
+    <div class="q-item qr from-r" data-d="2">
+      <p class="q-text">"Las fichas están en un cuaderno, la agenda en WhatsApp y los tests en PDFs que corrijo a mano el domingo."</p>
+      <span class="q-attr">— El costo del papeleo</span>
+    </div>
+    <div class="q-item ql from-l" data-d="3">
+      <p class="q-text">"A los tres meses dejan de venir. No porque no funcione: porque entre una sesión y otra no pasa nada."</p>
+      <span class="q-attr">— El costo real</span>
+    </div>
+    <p class="reconoc-res from-b" data-d="4">
+      No te falta técnica.<br>
+      Te falta <em>lo que ocurre</em> entre sesión y sesión
+    </p>
+  </div>
+</section>
+
+<!-- DIFERENCIA -->
+<section class="s s-dark" id="dif">
+  <div class="container">
+    <h2 class="dif-h from-l">Lo que hoy pagas por separado.<br>Y lo que ninguna de esas herramientas hace.</h2>
+    <div class="versus">
+      <div class="v-col">
+        <div class="from-l" data-d="1">
+          <div class="v-lbl">Tu software de agenda</div>
+          <p class="v-old">Ordena las horas. No sabe nada de lo que pasa dentro de ellas.</p>
+        </div>
+        <div class="from-l" data-d="2">
+          <div class="v-lbl">Tu carpeta de fichas</div>
+          <p class="v-old">Guarda lo que ya escribiste. No te dice cómo llegó tu cliente hoy.</p>
+        </div>
+        <div class="from-l" data-d="3">
+          <div class="v-lbl">Los tests en PDF</div>
+          <p class="v-old">Los imprimes, los corriges a mano, los archivas. Y ahí quedan.</p>
+        </div>
+      </div>
+      <div class="v-sep from-b" data-d="1" aria-hidden="true"></div>
+      <div class="v-col">
+        <div class="from-r" data-d="1">
+          <div class="v-lbl v-lbl-c">Endonautas</div>
+          <p class="v-new">Agenda, disponibilidad y sesiones <span class="v-acc">con la ficha al lado.</span></p>
+        </div>
+        <div class="from-r" data-d="2">
+          <div class="v-lbl v-lbl-c">Endonautas</div>
+          <p class="v-new">Tu cliente entra entre sesiones — <span class="v-acc">y llega con el trabajo hecho.</span></p>
+        </div>
+        <div class="from-r" data-d="3">
+          <div class="v-lbl v-lbl-c">Endonautas</div>
+          <p class="v-new">Asignas el test y <span class="v-acc">el resultado te llega corregido.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUMENTOS -->
+<section class="s s-darker" id="incluye">
+  <div class="container">
+    <h2 class="inst-h from-b">Todo lo que sostiene tu consulta. En un solo lugar.</h2>
+    <p class="inst-sub from-b" data-d="1">Incluido en el plan Practicante. Sin módulos aparte, sin cobros por cliente.</p>
+    <div class="inst-body">
+      <div class="inst-list">
+        <div class="inst-item from-l" data-d="1">
+          <span class="inst-n">01</span>
+          <div>
+            <h3 class="inst-name">Agenda con tu disponibilidad</h3>
+            <p class="inst-desc">Defines tus horarios por día y agendas sesiones online o presenciales, con duración, estado y enlace de videollamada. Dejas de coordinar horas por WhatsApp.</p>
+          </div>
+        </div>
+        <div class="inst-item from-l" data-d="2">
+          <span class="inst-n">02</span>
+          <div>
+            <h3 class="inst-name">Fichas clínicas y notas de sesión</h3>
+            <p class="inst-desc">Cada cliente con su ficha, su resumen clínico y sus notas fechadas. Abres la ficha antes de que entre y sabes exactamente dónde quedaron.</p>
+          </div>
+        </div>
+        <div class="inst-item from-l" data-d="3">
+          <span class="inst-n">03</span>
+          <div>
+            <h3 class="inst-name">35 tests validados, corregidos solos</h3>
+            <p class="inst-desc">PHQ-9, GAD-7, Big Five, ECR, DERS y 30 más. Le asignas el test a tu cliente, lo responde desde su casa y el resultado te llega listo. Se acabó el domingo corrigiendo a mano.</p>
+          </div>
+        </div>
+        <div class="inst-item from-l" data-d="4">
+          <span class="inst-n">04</span>
+          <div>
+            <h3 class="inst-name">Tu cliente, adentro entre sesiones</h3>
+            <p class="inst-desc">Lo invitas con un código y entra a su propio espacio: el Espejo IA, su bitácora y sus tests. Su proceso es privado — lo que llega a ti es lo que él decide traer, ya masticado.</p>
+          </div>
+        </div>
+        <div class="inst-item from-l" data-d="5">
+          <span class="inst-n">05</span>
+          <div>
+            <h3 class="inst-name">Sin cobro por cliente</h3>
+            <p class="inst-desc">Un precio fijo, los clientes que atiendas. Si mañana pasas de 8 a 20, pagas lo mismo. Tu costo no crece cuando crece tu consulta.</p>
+          </div>
+        </div>
+        <div class="inst-item from-l" data-d="6">
+          <span class="inst-n">06</span>
+          <div>
+            <h3 class="inst-name">Y para ti, el sistema completo</h3>
+            <p class="inst-desc">Todo lo que reciben tus clientes lo tienes tú primero: Espejo sin límite, los 35 tests con análisis, mapas de nacimiento, oráculo terapéutico y el libro <em>Endonautica</em>.</p>
+          </div>
+        </div>
+        <div class="inst-cta from-b">
+          <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p">Evolucionar mi consulta</a>
+        </div>
+      </div>
+      <div class="inst-visual from-r" data-d="2">
+        <div class="img-stack">
+          <div class="img-stack-a">
+            <img src="/img/oraculo-fractal.jpg" alt="Interfaz del Oráculo terapéutico de Endonautas" loading="lazy">
+          </div>
+          <div class="img-stack-b">
+            <img src="/img/birth.png" alt="Mapa de nacimiento — carta natal y Human Design" loading="lazy">
+          </div>
+          <div class="img-stack-c">
+            <img src="/img/dashboard.png" alt="Panel de resultados personalizados de Endonautas" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAVEGANTE -->
+<section class="s s-dark" id="navegante">
+  <div class="container">
+    <p class="lbl reconoc-intro from-b">Si no tienes consulta — o todavía no la buscaste:</p>
+    <h2 class="dif-h from-b" data-d="1">No necesitas un diagnóstico.<br>Necesitas un espacio que no cierra a las 6.</h2>
+    <p class="inst-sub from-b" data-d="2" style="max-width:560px;margin-left:auto;margin-right:auto;text-align:center">
+      El patrón no aparece en la sesión semanal. Aparece el martes a las 23:00, cuando no hay nadie a quien llamar.
+      El Espejo IA está ahí — no reemplaza a un terapeuta, sostiene lo que pasa entre uno y el siguiente.
+    </p>
+    <div class="inst-cta from-b" data-d="3" style="justify-content:center;display:flex">
+      <a href="https://app.endonautas.cl/registro/?plan=navegante" class="btn btn-p">Activar Navegante — $9.990/mes</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMUNIDAD -->
+<section class="s s-darker" id="comunidad">
+  <div class="container">
+    <h2 class="inst-h from-b">No lo procesas solo.</h2>
+    <p class="inst-sub from-b" data-d="1">Comunidad incluida desde el plan gratis — sin cobro aparte, sin letra chica.</p>
+    <div class="inst-list" style="max-width:640px;margin:0 auto">
+      <div class="inst-item from-l" data-d="1">
+        <span class="inst-n">🌙</span>
+        <div><h3 class="inst-name">Soñadores Lúcidos</h3><p class="inst-desc">Técnicas de inducción, símbolos oníricos, patrones del inconsciente.</p></div>
+      </div>
+      <div class="inst-item from-l" data-d="2">
+        <span class="inst-n">🌱</span>
+        <div><h3 class="inst-name">Emprendedores</h3><p class="inst-desc">Propósito, bloqueos creativos, camino profesional con perspectiva interior.</p></div>
+      </div>
+      <div class="inst-item from-l" data-d="3">
+        <span class="inst-n">🫶</span>
+        <div><h3 class="inst-name">Padres</h3><p class="inst-desc">Crianza consciente, patrones familiares, el viaje de acompañar a otro.</p></div>
+      </div>
+      <div class="inst-item from-l" data-d="4">
+        <span class="inst-n">🛠</span>
+        <div><h3 class="inst-name">Errores &amp; Soporte</h3><p class="inst-desc">Reportas, el equipo responde. Nadie te deja con un error sin ver.</p></div>
+      </div>
+    </div>
+    <p class="inst-sub from-b" data-d="5" style="text-align:center;margin-top:2rem">Cada publicación se etiqueta por lo que toca — cuerpo, mente, emociones, vínculos, propósito, sombra — y responde quien resuena, no quien juzga.</p>
+  </div>
+</section>
+
+<!-- GALERÍA 3D CARRUSEL -->
+<section class="s s-dark" id="preview">
+  <div class="container">
+    <h2 class="s-h from-b">Lo que tus clientes usan entre sesiones</h2>
+    <p class="s-sub from-b" data-d="1">Sin mockups ni datos inventados: esto es lo que ellos ven al entrar, y lo que tú tienes completo en tu plan.</p>
+  </div>
+  <div class="gallery-scene" id="galleryScene">
+    <p class="gallery-hint">Mueve el cursor para explorar · Click para ampliar</p>
+    <div class="gallery-track" id="galleryTrack">
+      <div class="gc">
+        <img src="/screenshots/oraculo.webp" alt="Oráculo terapéutico — Tarot, I Ching, Fractal" loading="lazy" width="1280" height="800">
+        <div class="gc-label">Oráculo terapéutico</div>
+      </div>
+      <div class="gc">
+        <img src="/screenshots/tests.webp" alt="Tests psicométricos — 35 instrumentos validados" loading="lazy" width="1280" height="800">
+        <div class="gc-label">Tests psicométricos</div>
+      </div>
+      <div class="gc">
+        <img src="/screenshots/espejo_chat.webp" alt="Espejo de Conflictos — conversación con IA" loading="lazy" width="1280" height="800">
+        <div class="gc-label">Espejo de Conflictos</div>
+      </div>
+      <div class="gc">
+        <img src="/screenshots/terapeuta_frameworks.webp" alt="Módulo Terapeuta — marcos y técnicas" loading="lazy" width="1280" height="800">
+        <div class="gc-label">Terapeuta — marcos</div>
+      </div>
+      <div class="gc">
+        <img src="/screenshots/terapeuta_propuesta.webp" alt="Módulo Terapeuta — propuesta terapéutica" loading="lazy" width="1280" height="800">
+        <div class="gc-label">Terapeuta — propuesta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRANCO -->
+<section class="s s-dark" id="franco">
+  <div class="container">
+    <div class="franco-grid">
+      <div class="from-l">
+        <div class="franco-images">
+          <div class="fi-foto">
+            <img src="/assets/img/franco-jeria.jpeg" alt="Franco Jeria Castro — Terapeuta en Salud Integrativa" loading="lazy">
+          </div>
+          <div class="fi-libro">
+            <img src="/assets/img/epic-ebook.png" alt="Libro Endonautica" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="franco-texto from-r" data-d="1">
+        <blockquote class="franco-q">
+          Diseñé este sistema después de años viendo personas que sabían perfectamente cuál era su patrón — y no podían parar. El problema no era falta de insight. Era falta de continuidad. Y esa continuidad no cabe dentro de la hora de sesión.
+        </blockquote>
+        <div class="franco-id">
+          <p class="franco-name">Franco Jeria Castro</p>
+          <p class="franco-role">Terapeuta en Salud Integrativa &nbsp;·&nbsp; Autor</p>
+        </div>
+        <p class="franco-bio">Más de una década acompañando procesos de cambio real. Desarrolló el sistema Endonautas desde la práctica clínica — no desde una teoría. Lo que está en la plataforma es lo que vio funcionar, y lo que vio fallar, entre sesiones reales con personas reales. Está construida por alguien que atiende, para gente que atiende.</p>
+        <div class="libro-inc">
+          <span>Endonautica</span>
+          <span style="color:var(--dim)">—</span>
+          207 páginas · el marco conceptual detrás del sistema · incluido en tu plan
+        </div>
+        <div class="franco-ctas">
+          <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p">Evolucionar mi consulta</a>
+          <a href="#incluye" class="btn btn-o">Ver qué incluye</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section class="s s-darker" id="precios">
+  <div class="container">
+    <div class="from-b">
+      <h2 class="precios-h">Un lugar para empezar. Un camino para avanzar.</h2>
+      <p class="precios-sub">Sin contrato, sin permanencia, sin cobro por cliente. Y si en 30 días no es para ti, te devolvemos todo.</p>
+    </div>
+    <div class="planes-grid">
+      <div class="plan from-b" data-d="1">
+        <div class="plan-badge">Empieza sin arriesgar nada</div>
+        <p class="plan-name">Gratuito</p>
+        <div class="plan-price">
+          <span class="plan-amount">$0</span>
+          <span class="plan-period">/ mes</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-feats">
+          <li class="hi">Espejo IA — 1 sesión diaria · 45 min</li>
+          <li class="hi">Comunidad completa — 4 espacios temáticos</li>
+          <li class="hi">Carta Astral</li>
+          <li>3 tests psicométricos</li>
+          <li>I Ching + Tarot (1 carta)</li>
+        </ul>
+        <div class="plan-cta">
+          <a href="https://app.endonautas.cl/registro/" class="btn btn-o btn-sm">Conocer la app</a>
+          <p class="plan-note">Sin tarjeta</p>
+        </div>
+      </div>
+
+      <div class="plan featured from-b" data-d="2">
+        <div class="plan-badge">Para tu consulta</div>
+        <p class="plan-name">Practicante</p>
+        <div class="plan-price">
+          <span class="plan-amount">$39.990</span>
+          <span class="plan-period">CLP / mes</span>
+        </div>
+        <div class="plan-divider"></div>
+        <p style="font-size:.82rem;color:var(--mut);margin-bottom:1rem;line-height:1.5">Tu consulta completa + tu propio Navegante incluido + tus clientes con lo mismo. Un precio.</p>
+        <ul class="plan-feats">
+          <li class="hi">Agenda + disponibilidad</li>
+          <li class="hi">Fichas clínicas y notas de sesión</li>
+          <li class="hi">Asignas los 35 tests · llegan corregidos</li>
+          <li class="hi">Tus clientes, adentro entre sesiones</li>
+          <li class="hi">Clientes ilimitados — sin cobro por cabeza</li>
+          <li>Todo el plan Navegante, para ti</li>
+        </ul>
+        <div class="plan-cta">
+          <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm">Elevar mi consulta</a>
+          <p class="plan-note">30 días de garantía · $39,99 USD fuera de Chile</p>
+        </div>
+      </div>
+
+      <div class="plan from-b" data-d="3">
+        <div class="plan-badge">Sin terapeuta, sin esperar</div>
+        <p class="plan-name">Navegante</p>
+        <div class="plan-price">
+          <span class="plan-amount">$9.990</span>
+          <span class="plan-period">CLP / mes</span>
+        </div>
+        <div class="plan-divider"></div>
+        <p style="font-size:.82rem;color:var(--mut);margin-bottom:1rem;line-height:1.5">Todo lo que necesitas para no soltar el hilo entre semana.</p>
+        <ul class="plan-feats">
+          <li class="hi">Para quien no tiene consulta</li>
+          <li class="hi">Espejo IA sin límite</li>
+          <li class="hi">35 tests con análisis IA</li>
+          <li class="hi">Diseño Humano + Saju/BaZi</li>
+          <li class="hi">Tarot completo + Oráculo Fractal</li>
+          <li>Libro <em>Endonautica</em> incluido</li>
+        </ul>
+        <div class="plan-cta">
+          <a href="https://app.endonautas.cl/registro/?plan=navegante" class="btn btn-o btn-sm">Activar Navegante</a>
+          <p class="plan-note">30 días de garantía · $9,99 USD fuera de Chile</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s s-dark" id="faq">
+  <div class="container">
+    <h2 class="faq-h from-b">Lo que preguntan antes de abrir su consulta acá.</h2>
+    <div class="faq-list from-b" data-d="1">
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Mis clientes tienen que pagar algo?
+          <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
+        </div>
+        <p class="faq-a">No. Tú pagas tu plan y los invitas con un código: ellos se registran gratis y entran a su propio espacio, con el Espejo IA diario, su bitácora y los tests que les asignes. No hay cobro por cliente ni límite de cuántos invitas — si pasas de 8 a 20 clientes, tu precio no cambia.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Tengo que migrar mis fichas actuales?
+          <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
+        </div>
+        <p class="faq-a">No. Empiezas con el próximo cliente que agendes y sigues como estabas con el resto. La mayoría parte con dos o tres, ve cómo llegan a la sesión siguiente, y recién ahí mueve el resto. No hay migración obligatoria ni importación que configurar.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Qué veo yo del proceso de mi cliente y qué queda privado?
+          <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
+        </div>
+        <p class="faq-a">Ves lo que le asignaste: los resultados de sus tests, su ficha, tus notas de sesión y su agenda contigo. Sus conversaciones con el Espejo y su bitácora personal son suyas — no las lees tú. Es a propósito: el cliente usa el Espejo con libertad justamente porque nadie lo está mirando, y lo que quiera traer, lo trae a la sesión.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Los tests tienen respaldo real?
+          <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
+        </div>
+        <p class="faq-a">Son 35 instrumentos validados en español: PHQ-9, GAD-7, Big Five, ECR, DERS, entre otros. Los asignas desde la ficha del cliente, él los responde desde su casa y el resultado te llega puntuado. El Oráculo y los mapas de nacimiento operan desde otro registro y no son instrumentos clínicos — están ahí como material de trabajo, no como diagnóstico.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Y si no funciona para mi forma de trabajar?
+          <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
+        </div>
+        <p class="faq-a">Tienes 30 días para probarlo con clientes reales. Si en ese plazo decides que no es para ti, escribes a hola@endonautas.cl desde el correo de tu cuenta y te devolvemos el 100% de lo que pagaste — sin preguntas, sin formulario de baja y sin que tengas que explicar nada. Después de esos 30 días cancelas cuando quieras y no se te vuelve a cobrar; tu cuenta no se borra, vuelve al plan gratuito y tus fichas, notas y clientes quedan donde estaban.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAPTURA EMAIL -->
+<section class="s s-darker" id="newsletter">
+  <div class="container">
+    <div class="nl-wrap from-b">
+      <p class="lbl nl-lbl">¿Todavía no quieres abrir cuenta?</p>
+      <h2 class="nl-h">Te mostramos el portal por dentro.</h2>
+      <p class="nl-sub">Déjanos tu email y te enviamos cómo se ve la consulta funcionando: la ficha, la agenda y un test asignado de principio a fin. Sin tarjeta y sin llamada de ventas.</p>
+      <form class="nl-form" id="nlForm" novalidate>
+        <div class="nl-input-wrap">
+          <input
+            type="email"
+            id="nlEmail"
+            class="nl-input"
+            placeholder="tu@email.com"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" class="btn btn-p nl-btn" id="nlBtn">
+            Mostrarme el portal
+          </button>
+        </div>
+        <p class="nl-msg" id="nlMsg" aria-live="polite"></p>
+        <p class="nl-note">Sin spam · Sin llamadas · 1 email con el recorrido completo</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function(){
+  var form = document.getElementById('nlForm');
+  var btn  = document.getElementById('nlBtn');
+  var msg  = document.getElementById('nlMsg');
+  if (!form) return;
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var email = document.getElementById('nlEmail').value.trim();
+    if (!email || !email.includes('@')) {
+      msg.textContent = 'Ingresa un email válido.';
+      msg.className = 'nl-msg err';
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+    msg.textContent = '';
+    msg.className = 'nl-msg';
+    try {
+      var res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      });
+      if (res.ok) {
+        form.innerHTML = '<p class="nl-success">✦ Listo. Revisa tu email — te contamos cómo empezar.</p>';
+      } else {
+        throw new Error('error');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Mostrarme el portal';
+      msg.textContent = 'Hubo un error. Intenta de nuevo.';
+      msg.className = 'nl-msg err';
+    }
+  });
+})();
+</script>
+
+<div id="lb">
+  <span id="lb-close">✕</span>
+  <button class="lb-nav" id="lb-prev">‹</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-nav" id="lb-next">›</button>
+  <div id="lb-dots"></div>
+</div>
+
+<script>
+(function () {
+  // Variables compartidas entre carrusel y lightbox
+  let paused = false;
+  let raf = 0;
+  let targetFrac = 0;
+  let currentFrac = 0;
+  let N = 0;
+
+  const scene  = document.getElementById('galleryScene');
+  const track  = document.getElementById('galleryTrack');
+  const lb     = document.getElementById('lb');
+  const lbImg  = document.getElementById('lb-img');
+  const lbClose = document.getElementById('lb-close');
+  const lbPrev = document.getElementById('lb-prev');
+  const lbNext = document.getElementById('lb-next');
+  const lbDots = document.getElementById('lb-dots');
+
+  const allCards = [...document.querySelectorAll('.gc')];
+  N = allCards.length;
+
+  // ── CARRUSEL DESKTOP ──
+  const isDesktop = scene && track && !window.matchMedia('(max-width: 768px)').matches;
+
+  if (isDesktop) {
+    const GAP = 18;
+    targetFrac  = (N - 1) / 2;
+    currentFrac = targetFrac;
+
+    const cw   = () => allCards[0]?.offsetWidth || 320;
+    const step = () => cw() + GAP;
+    const offsetForFrac = f => scene.offsetWidth / 2 - f * step() - cw() / 2;
+
+    function applyFrame(offset) {
+      track.style.transform = `translateX(${offset}px)`;
+      const sc2 = scene.offsetWidth / 2;
+      allCards.forEach((card, i) => {
+        const center = offset + i * step() + cw() / 2;
+        const d  = (center - sc2) / (scene.offsetWidth * 0.5);
+        const ry = -d * 30;
+        const tz = -Math.abs(d) * 110;
+        const sc = Math.max(0.78, 1 - Math.abs(d) * 0.13);
+        const op = Math.max(0.28, 1 - Math.abs(d) * 0.58);
+        card.style.transform = `perspective(1400px) rotateY(${ry}deg) translateZ(${tz}px) scale(${sc})`;
+        card.style.opacity   = op;
+        card.style.zIndex    = Math.round(20 - Math.abs(d) * 10);
+        const lbl = card.querySelector('.gc-label');
+        if (lbl) lbl.style.opacity = Math.max(0, 1 - Math.abs(d) * 4);
+      });
+    }
+
+    function tick() {
+      currentFrac += (targetFrac - currentFrac) * 0.085;
+      applyFrame(offsetForFrac(currentFrac));
+      raf = Math.abs(targetFrac - currentFrac) > 0.0008 ? requestAnimationFrame(tick) : 0;
+    }
+
+    applyFrame(offsetForFrac(currentFrac));
+
+    scene.addEventListener('mousemove', (e) => {
+      if (paused) return;
+      const r = scene.getBoundingClientRect();
+      const x = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+      targetFrac = x * (N - 1);
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+
+    allCards.forEach((card, i) => {
+      card.addEventListener('click', () => {
+        paused = true;
+        targetFrac = i;
+        if (!raf) raf = requestAnimationFrame(tick);
+        lbOpen(i);
+      });
+    });
+  }
+
+  // ── LIGHTBOX (desktop + mobile) ──
+  if (!lb || !lbImg) return;
+
+  const allImgs = allCards.map(c => c.querySelector('img'));
+  let lbIdx = 0;
+
+  // Dots indicadores
+  allImgs.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'lb-dot' + (i === 0 ? ' active' : '');
+    lbDots?.appendChild(d);
+  });
+
+  function updateDots(i) {
+    lbDots?.querySelectorAll('.lb-dot').forEach((d, j) => d.classList.toggle('active', j === i));
+  }
+
+  function lbOpen(i) {
+    lbIdx = ((i % N) + N) % N;
+    lbImg.style.opacity = '1';
+    lbImg.src = allImgs[lbIdx].src;
+    lbImg.alt = allImgs[lbIdx].alt;
+    lb.classList.add('open');
+    updateDots(lbIdx);
+  }
+
+  function lbNav(dir) {
+    lbIdx = (lbIdx + dir + N) % N;
+    lbImg.style.opacity = '0';
+    setTimeout(() => {
+      lbImg.src = allImgs[lbIdx].src;
+      lbImg.alt = allImgs[lbIdx].alt;
+      lbImg.style.opacity = '1';
+      updateDots(lbIdx);
+    }, 160);
+  }
+
+  function lbClose2() {
+    lb.classList.remove('open');
+    paused = false;
+    if (!raf) raf = requestAnimationFrame(function tick2() {
+      // retomar carrusel solo si hay cambio pendiente
+      raf = 0;
+    });
+  }
+
+  lb.addEventListener('click', (e) => { if (e.target === lb) lbClose2(); });
+  lbClose?.addEventListener('click', lbClose2);
+  lbPrev?.addEventListener('click', (e) => { e.stopPropagation(); lbNav(-1); });
+  lbNext?.addEventListener('click', (e) => { e.stopPropagation(); lbNav(1); });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape')     lbClose2();
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); lbNav(-1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); lbNav(1); }
+  });
+
+  // Mobile: click directo
+  if (!isDesktop) {
+    allCards.forEach((card, i) => card.addEventListener('click', () => lbOpen(i)));
+  }
+})();
+</script>
+</Layout>

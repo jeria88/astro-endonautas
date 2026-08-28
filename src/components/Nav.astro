@@ -10,8 +10,8 @@ const { badge, minimal } = Astro.props;
   {!minimal && (
     <div class="nav-links">
       <a href="/profesionales/">Para terapeutas</a>
-      <a href="/#incluye">Qué incluye</a>
-      <a href="/#precios">Precios</a>
+      <a href="/software/#incluye">Qué incluye</a>
+      <a href="/software/#precios">Precios</a>
       <a href="/blog/">Blog</a>
       <a href="/contacto/">Contacto</a>
     </div>
@@ -21,7 +21,7 @@ const { badge, minimal } = Astro.props;
     {!minimal && (
       <>
         <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm nav-cta">Ingresar</a>
-        <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm nav-cta">Abrir mi consulta</a>
+        <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm nav-cta">Evolucionar mi consulta</a>
         <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -33,13 +33,13 @@ const { badge, minimal } = Astro.props;
 {!minimal && (
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <a href="/profesionales/">Para terapeutas</a>
-    <a href="/#incluye">Qué incluye</a>
-    <a href="/#precios">Precios</a>
+    <a href="/software/#incluye">Qué incluye</a>
+    <a href="/software/#precios">Precios</a>
     <a href="/blog/">Blog</a>
     <a href="/contacto/">Contacto</a>
     <div class="mobile-menu-ctas">
       <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm">Ingresar</a>
-      <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm">Abrir mi consulta</a>
+      <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm">Evolucionar mi consulta</a>
     </div>
   </div>
 )}
