@@ -13,8 +13,20 @@ const HERIDAS_MIN = HERIDAS.map(({ id, herida, mascara, frase, intro }) => ({
   id, herida, mascara, frase, intro: intro[0],
 }));
 
+// ponytail: testimonios de personas REALES que pasaron por la mentoría (Marcos —
+// estrés laboral, Lilian — pareja y maternidad, Annette — pareja, Francisca —
+// pareja, Ramón — duelo, Ani, Alejandra). Las frases textuales se perdieron con el
+// celular anterior y hay que volver a pedírselas.
+//
+// NO se publica nada inventado en su nombre: mientras el array esté vacío la
+// sección entera no se renderiza. Para encenderla, pegar aquí las frases tal como
+// las escriban (con su permiso para usarlas) — con 3 ya aparece.
+const TESTIMONIOS: { texto: string; autor: string }[] = [];
+
 const title = 'Endonautica — el libro | Endonautas';
-const description = 'El mapa completo detrás de tu máscara. Endonautica, de Franco Jeria Castro: viaje interior, herida de infancia, sombra y niveles de conciencia. $17 USD, entrega inmediata en EPUB.';
+// Descripción para tráfico frío, igual que el hero estático: quien la ve en Google
+// o al compartirse el link todavía no hizo el test de heridas.
+const description = 'El mapa que nadie te dio para navegar tu mundo interior. Endonautica, de Franco Jeria Castro: viaje interior, herida de infancia, sombra y niveles de conciencia. 207 páginas, $17 USD, entrega inmediata.';
 const canonical = 'https://endonautas.cl/ebook/';
 ---
 <!doctype html>
@@ -46,18 +58,20 @@ const canonical = 'https://endonautas.cl/ebook/';
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="price-badge">$17 USD · EPUB · entrega inmediata</p>
-        <p class="kicker" id="hk">El mapa completo</p>
-        <h1 id="h1">Ya viste tu máscara.<br/><em>Esto es lo que sigue.</em></h1>
+        <p class="price-badge">$17 USD · ≈ $16.990 CLP · EPUB · entrega inmediata</p>
+        {/* El copy ESTÁTICO es el de tráfico frío: quien llega de un reel no hizo
+            ningún test. El script de abajo lo reescribe cuando viene `?herida=`,
+            así que la versión personalizada sigue intacta — y Google indexa esta. */}
+        <p class="kicker" id="hk">El libro</p>
+        <h1 id="h1">El mapa que nadie te dio<br/><em>para navegar tu mundo interior.</em></h1>
         <p class="lead" id="hero-sub">
-          Soy Franco, terapeuta en salud integrativa. Escribí <em>Endonautica</em>
-          después de años viendo el mismo patrón una y otra vez: sabemos qué nos
-          pasa y seguimos sin movernos. Este libro es el mapa completo detrás del
-          test que acabas de hacer — no para que sepas más sobre ti, sino para
-          que dejes de repetir lo que ya reconociste.
+          No es otro libro de autoayuda. Soy Franco, terapeuta en salud integrativa,
+          y escribí <em>Endonautica</em> como un sistema de navegación para quien ya
+          sabe que hay algo más profundo y está listo para encontrarlo — no para
+          saber más sobre ti, sino para dejar de repetir lo que ya reconociste.
         </p>
         <div class="hero-ctas">
-          <a class="btn btn-p" href="#comprar">Comprarlo ahora — $17</a>
+          <a class="btn btn-p" href="#comprar" id="cta-hero">Comprarlo ahora — $17</a>
           <a class="btn btn-o" href="#muestra">Leer un fragmento primero</a>
         </div>
       </div>
@@ -132,8 +146,57 @@ const canonical = 'https://endonautas.cl/ebook/';
     </div>
   </section>
 
+  <!-- ── QUÉ ENCONTRARÁS DENTRO (índice) ── -->
+  <section class="sec sec-alt">
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow">El contenido</p>
+      <h2 class="sec-h">207 páginas de cartografía interior</h2>
+      <ol class="toc">
+        <li>
+          <span class="toc-n">01</span>
+          <div>
+            <p class="toc-h">La Endonáutica</p>
+            <p class="toc-t">Qué es el mundo interior, el viaje del héroe, los arquetipos, la sombra, la ley del espejo, el propósito.</p>
+          </div>
+        </li>
+        <li>
+          <span class="toc-n">02</span>
+          <div>
+            <p class="toc-h">El Endonauta</p>
+            <p class="toc-t">Qué es la conciencia y sus niveles, la energía, el observador, el Espejo Humeante, tu función.</p>
+          </div>
+        </li>
+        <li>
+          <span class="toc-n">03</span>
+          <div>
+            <p class="toc-h">Pilares</p>
+            <p class="toc-t">Autoconciencia, autoestima, autorregulación, locus de control, autocuidado, autosabotaje, autoconocimiento, interdependencia.</p>
+          </div>
+        </li>
+        <li>
+          <span class="toc-n">04</span>
+          <div>
+            <p class="toc-h">Psicología</p>
+            <p class="toc-t">El yo, la personalidad, el inconsciente, los sueños, la herida de infancia, la dualidad.</p>
+          </div>
+        </li>
+        <li>
+          <span class="toc-n">05</span>
+          <div>
+            <p class="toc-h">Filosofía</p>
+            <p class="toc-t">Unidad, dualidad, fractales, filosofía del implícito, leyes espirituales del endonauta.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="m-foot">
+        No es información nueva para decorar tu cabeza. Es un sistema para que veas
+        distinto lo que ya vives.
+      </p>
+    </div>
+  </section>
+
   <!-- ── MUESTRA DEL FRAMEWORK ── -->
-  <section class="sec sec-alt" id="muestra">
+  <section class="sec" id="muestra">
     <div class="wrap wrap-narrow">
       <p class="eyebrow">Un fragmento real</p>
       <h2 class="sec-h" id="m-title">La herida de abandono, en el libro</h2>
@@ -147,8 +210,26 @@ const canonical = 'https://endonautas.cl/ebook/';
     </div>
   </section>
 
+  {/* Se renderiza sola cuando haya al menos 3 frases reales en TESTIMONIOS. */}
+  {TESTIMONIOS.length >= 3 && (
+    <section class="sec">
+      <div class="wrap wrap-narrow">
+        <p class="eyebrow">Quienes ya lo caminaron</p>
+        <h2 class="sec-h">Lo que pasó cuando pusieron nombre al patrón</h2>
+        <div class="tst-grid">
+          {TESTIMONIOS.map((t) => (
+            <figure class="tst">
+              <p class="tst-q">“{t.texto}”</p>
+              <figcaption class="tst-a">{t.autor}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- ── PARA QUIÉN ES / PARA QUIÉN NO ── -->
-  <section class="sec">
+  <section class="sec sec-alt">
     <div class="wrap wrap-narrow">
       <p class="eyebrow">Antes de comprarlo</p>
       <h2 class="sec-h">Para quién es — y para quién no</h2>
@@ -177,7 +258,7 @@ const canonical = 'https://endonautas.cl/ebook/';
   </section>
 
   <!-- ── AUTOR ── -->
-  <section class="sec sec-alt">
+  <section class="sec">
     <div class="wrap autor-grid">
       <img class="autor-foto" src="/assets/img/franco-jeria.jpeg" alt="Franco Jeria Castro">
       <div>
@@ -194,11 +275,14 @@ const canonical = 'https://endonautas.cl/ebook/';
   </section>
 
   <!-- ── PRECIO + CHECKOUT ── -->
-  <section class="sec" id="comprar">
+  <section class="sec sec-alt" id="comprar">
     <div class="wrap wrap-narrow">
       <div class="buy-card">
         <p class="eyebrow" style="text-align:center">Endonautica — ebook completo</p>
         <p class="buy-price">$17 <span>USD</span></p>
+        {/* El cobro real en Chile es CLP: `PRODUCTS['endonautica-ebook'].price_clp`
+            en el repo de la app (payments/constants.py). Si cambia allá, cambia acá. */}
+        <p class="buy-clp">Desde Chile se cobran <strong>$16.990 CLP</strong></p>
         <p class="buy-sub">EPUB · 207 páginas · llega a tu email apenas se confirma el pago</p>
 
         <div class="buy-forms">
@@ -236,7 +320,7 @@ const canonical = 'https://endonautas.cl/ebook/';
   </section>
 
   <!-- ── FAQ ── -->
-  <section class="sec sec-alt" id="faq">
+  <section class="sec" id="faq">
     <div class="wrap wrap-narrow">
       <h2 class="sec-h">Preguntas frecuentes</h2>
       <div class="faq-item">
@@ -309,6 +393,26 @@ const canonical = 'https://endonautas.cl/ebook/';
           const open = item.classList.contains('open');
           document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('open'));
           if (!open) item.classList.add('open');
+        });
+      });
+
+      // medición — el script de Umami es defer, así que puede no estar todavía
+      const track = (evento, props) => {
+        if (window.umami) window.umami.track(evento, props);
+      };
+      const origen = slug || 'frio';
+
+      document.getElementById('cta-hero')?.addEventListener('click', () => {
+        track('ebook-cta-comprar', { origen });
+      });
+      // Último punto medible antes de irse a la pasarela: la diferencia entre este
+      // número y las ventas reales es lo que se cae dentro de MercadoPago/PayPal.
+      document.querySelectorAll('.buy-form').forEach((form) => {
+        form.addEventListener('submit', () => {
+          track('ebook-checkout-submit', {
+            gateway: form.action.includes('paypal') ? 'paypal' : 'mp',
+            origen,
+          });
         });
       });
     })();
@@ -399,6 +503,30 @@ const canonical = 'https://endonautas.cl/ebook/';
     .body { font-size: 1.02rem; line-height: 1.78; color: var(--mut); max-width: 66ch; margin-bottom: 1.2rem; text-wrap: pretty; }
     .body em { font-style: normal; color: var(--ink); font-weight: 600; }
 
+    /* ── índice del libro ── */
+    .toc { list-style: none; display: grid; gap: 1.6rem; margin: 2.2rem 0 1.8rem; }
+    .toc li { display: grid; grid-template-columns: auto 1fr; gap: 1.2rem; align-items: start; }
+    .toc-n {
+      font-family: var(--fd); font-size: 1.05rem; color: var(--acc);
+      line-height: 1.3; padding-top: .1rem;
+    }
+    .toc-h { font-family: var(--fd); font-size: 1.15rem; color: var(--ink); margin-bottom: .3rem; }
+    .toc-t { font-size: .94rem; line-height: 1.62; color: var(--mut); max-width: 58ch; text-wrap: pretty; }
+    @media (max-width: 560px) { .toc li { gap: .9rem; } }
+
+    /* ── testimonios ── */
+    .tst-grid { display: grid; gap: 1.2rem; margin: 2.2rem 0 0; }
+    @media (min-width: 760px) { .tst-grid { grid-template-columns: 1fr 1fr; } }
+    .tst {
+      padding: 1.6rem 1.7rem; background: var(--surf);
+      border: 1px solid var(--bdr); border-left: 3px solid var(--acc); border-radius: 4px;
+    }
+    .tst-q {
+      font-family: var(--fd); font-size: 1.02rem; line-height: 1.6;
+      color: var(--ink); font-style: italic; margin-bottom: .9rem; text-wrap: pretty;
+    }
+    .tst-a { font-size: .84rem; color: var(--mut); }
+
     /* ── para quién es / para quién no ── */
     .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0 1.8rem; }
     .fit-h {
@@ -421,7 +549,7 @@ const canonical = 'https://endonautas.cl/ebook/';
     .warranty {
       margin-top: 2rem; padding: 1.6rem 1.8rem;
       border: 1px solid var(--bdr); border-left: 3px solid var(--acc);
-      border-radius: 4px; background: var(--surf);
+      border-radius: 4px; background: var(--bg);
     }
     .warranty-h { font-family: var(--fd); font-size: 1.1rem; color: var(--ink); margin-bottom: .5rem; }
     .warranty-t { font-size: .97rem; line-height: 1.7; color: var(--mut); text-wrap: pretty; }
@@ -446,6 +574,8 @@ const canonical = 'https://endonautas.cl/ebook/';
     }
     .buy-price { font-family: var(--fd); font-weight: 400; font-size: clamp(2.8rem, 6vw, 4rem); color: var(--ink); margin: 1rem 0 .3rem; }
     .buy-price span { font-size: 1.1rem; color: var(--mut); }
+    .buy-clp { text-align: center; font-size: .85rem; color: var(--mut); margin-bottom: .5rem; }
+    .buy-clp strong { color: var(--ink); font-weight: 600; }
     .buy-sub { color: var(--mut); font-size: .88rem; margin-bottom: 2.2rem; }
     .buy-forms { display: grid; gap: 1.4rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); text-align: left; }
     .buy-form { display: flex; flex-direction: column; gap: .55rem; }

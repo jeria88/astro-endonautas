@@ -101,6 +101,20 @@ const canonical = 'https://endonautas.cl/';
     </footer>
   </main>
 
+  <script is:inline>
+    // Qué puerta elige la gente: decide dónde apuntar el contenido y el bio-link.
+    // Umami carga con defer, así que puede no estar cuando se hace el clic.
+    document.querySelectorAll('.door').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (window.umami) {
+          window.umami.track('raiz-puerta', {
+            destino: a.classList.contains('door-book') ? 'libro' : 'plataforma',
+          });
+        }
+      });
+    });
+  </script>
+
   <style>
     :root {
       --bg:   #030306;

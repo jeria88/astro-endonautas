@@ -270,6 +270,16 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       $('q-res').hidden = false;
       $('q-res').classList.add('fade');
       history.replaceState(null, '', '#resultado');
+
+      // medición del embudo (Umami carga con defer: puede no estar todavía)
+      const track = (ev, props) => { if (window.umami) window.umami.track(ev, props); };
+      track('test-completado', { herida: h.id });
+      $('lead-form').addEventListener('submit', () => {
+        track('test-lead-submit', { herida: h.id });
+      });
+      $('r-libro').addEventListener('click', () => {
+        track('test-cta-libro', { herida: h.id });
+      });
       // el ancla del detalle largo de SU herida queda a un clic
       const ancla = document.getElementById(h.id);
       if (ancla) ancla.classList.add('h-hit');
