@@ -10,3 +10,14 @@ https://www.endonautas.cl/*  https://endonautas.cl/:splat  301
 # /heridas/ no tiene índice propio: el hub de las 5 es la página del test.
 /heridas        /test-heridas-de-infancia/  301
 /heridas/       /test-heridas-de-infancia/  301
+
+# Rework 2026-08-30: raíz = landing del libro (era /ebook); SaaS = /para-terapeutas/
+# (fusión de /software + /profesionales). El querystring se preserva en el 301.
+/ebook          /                   301
+/ebook/*        /:splat             301
+/software       /para-terapeutas/   301
+/software/*     /para-terapeutas/   301
+/profesionales  /para-terapeutas/   301
+/profesionales/* /para-terapeutas/  301
+/taller-terapeutas   /para-terapeutas/  301
+/taller-terapeutas/* /para-terapeutas/  301

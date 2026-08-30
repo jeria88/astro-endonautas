@@ -8,11 +8,9 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^4.15.0",
-    "three": "^0.160.0"
+    "astro": "^4.15.0"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.1.6",
-    "@types/three": "^0.160.0"
+    "@astrojs/sitemap": "^3.1.6"
   }
 }

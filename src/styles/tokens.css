@@ -1,0 +1,108 @@
+/* ============================================================
+   Endonautas — sistema de tokens (glass / "Vidrio ámbar")
+   Dark = default. [data-theme="light"] = variante clara cálida.
+   Fuente de verdad compartida con app/templates/base.html (Django).
+   ============================================================ */
+
+:root {
+  /* superficie */
+  --bg:          #14100c;
+  --surface:     #20190f;
+  --surface-2:   #2c2213;
+  --border:      #453720;
+
+  /* texto */
+  --text:        #f4efe6;
+  --text-muted:  #c3b39a;
+  --text-dim:    #8a7a60;
+
+  /* acento */
+  --accent:      #e0a24a;
+  --accent-ink:  #1a1206;
+  --accent-soft: rgba(224,162,74,.14);
+
+  /* estados */
+  --ok:          #7cc98a;
+  --warn:        #e6b955;
+  --danger:      #df7a6a;
+
+  /* glass — SOLO cromo elevado (nav, menú móvil, modales, tooltips) */
+  --glass:       color-mix(in srgb, var(--surface) 72%, transparent);
+  --glass-blur:  16px;
+
+  /* forma */
+  --radius:      14px;
+  --radius-sm:   9px;
+  --shadow:      0 12px 34px -14px rgba(0,0,0,.55);
+  --shadow-sm:   0 4px 14px -6px rgba(0,0,0,.5);
+
+  /* tipografía */
+  --font-display: 'Bricolage Grotesque', 'Hanken Grotesk', system-ui, sans-serif;
+  --font-body:    'Hanken Grotesk', system-ui, sans-serif;
+
+  /* espaciado */
+  --sp-1: .25rem; --sp-2: .5rem; --sp-3: .75rem; --sp-4: 1rem;
+  --sp-6: 1.5rem; --sp-8: 2rem; --sp-12: 3rem; --sp-16: 4rem; --sp-24: 6rem;
+
+  /* contenedor */
+  --cw: 1240px;
+
+  /* motion */
+  --ease: cubic-bezier(.16,1,.3,1);
+
+  /* ---- alias de compatibilidad (nombres viejos usados por los <style> scoped
+     de software/profesionales/equipo/contacto/test-heridas/heridas/blog/legales).
+     Se van eliminando a medida que cada página migra a los nombres nuevos. ---- */
+  --c:   var(--accent);
+  --cg:  var(--accent-soft);
+  --am:  var(--accent);
+  --vi:  var(--accent);
+  --txt: var(--text);
+  --dim: var(--text-dim);
+  --mut: var(--text-muted);
+  --bdr: var(--border);
+  --fd:  var(--font-display);
+  --fi:  var(--font-body);
+  --ts:  none;
+}
+
+:root[data-theme="light"] {
+  --bg:          #f5efe3;
+  --surface:     #fdf9f0;
+  --surface-2:   #ece2cd;
+  --border:      #d9c9a8;
+
+  --text:        #241c12;
+  --text-muted:  #6a5c45;
+  --text-dim:    #8a7757;
+
+  --accent:      #a4641a;
+  --accent-ink:  #fdf9f0;
+  --accent-soft: rgba(164,100,26,.12);
+
+  --ok:          #3f7a4d;
+  --warn:        #8a5f17;
+  --danger:      #a8443a;
+
+  --glass:       color-mix(in srgb, var(--surface) 78%, transparent);
+  --shadow:      0 12px 30px -16px rgba(60,40,15,.28);
+  --shadow-sm:   0 4px 14px -8px rgba(60,40,15,.22);
+}
+
+/* ── Toggle de tema (usado en Astro standalone y con Layout) ── */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0; padding: 0;
+  background: transparent; border: 1px solid var(--border); color: var(--text-muted);
+  cursor: pointer; transition: color .18s, border-color .18s, background .18s;
+}
+.theme-toggle:hover { color: var(--text); border-color: var(--text-dim); }
+.theme-toggle svg { width: 17px; height: 17px; display: block; }
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

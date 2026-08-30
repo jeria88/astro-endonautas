@@ -1,48 +1,38 @@
 ---
-const { badge, minimal } = Astro.props;
+import ThemeToggle from './ThemeToggle.astro';
 ---
 <nav>
   <a href="/" class="logo">
     <img src="/assets/endonautas-logo.png" alt="Endonautas" width="30" height="30" style="object-fit:contain">
     <span class="logo-n">Endonautas</span>
-    {badge && <span class="nav-badge">{badge}</span>}
   </a>
-  {!minimal && (
-    <div class="nav-links">
-      <a href="/profesionales/">Para terapeutas</a>
-      <a href="/software/#incluye">Qué incluye</a>
-      <a href="/software/#precios">Precios</a>
-      <a href="/blog/">Blog</a>
-      <a href="/contacto/">Contacto</a>
-    </div>
-  )}
+  <div class="nav-links">
+    <a href="/">El libro</a>
+    <a href="/para-terapeutas/">Para terapeutas</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contacto/">Contacto</a>
+  </div>
   <div class="nav-r">
     <slot />
-    {!minimal && (
-      <>
-        <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm nav-cta">Ingresar</a>
-        <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm nav-cta">Evolucionar mi consulta</a>
-        <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </>
-    )}
+    <ThemeToggle />
+    <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm nav-cta">Ingresar</a>
+    <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm nav-cta">Empezar con Practicante</a>
+    <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-{!minimal && (
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <a href="/profesionales/">Para terapeutas</a>
-    <a href="/software/#incluye">Qué incluye</a>
-    <a href="/software/#precios">Precios</a>
-    <a href="/blog/">Blog</a>
-    <a href="/contacto/">Contacto</a>
-    <div class="mobile-menu-ctas">
-      <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm">Ingresar</a>
-      <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm">Evolucionar mi consulta</a>
-    </div>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="/">El libro</a>
+  <a href="/para-terapeutas/">Para terapeutas</a>
+  <a href="/blog/">Blog</a>
+  <a href="/contacto/">Contacto</a>
+  <div class="mobile-menu-ctas">
+    <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm">Ingresar</a>
+    <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm">Empezar con Practicante</a>
   </div>
-)}
+</div>
 
 <script is:inline>
 (function(){
