@@ -22,7 +22,7 @@ const TESTIMONIOS: { texto: string; autor: string }[] = [];
 const title = 'Endonautica — el libro | Endonautas';
 const description = 'El mapa que nadie te dio para navegar tu mundo interior. Endonautica, de Franco Jeria Castro: viaje interior, herida de infancia, sombra y niveles de conciencia. 205 páginas en PDF y EPUB, $17 USD, entrega inmediata.';
 ---
-<Layout title={title} description={description} ogType="book" ogImage="/assets/img/epic-ebook.png">
+<Layout title={title} description={description} ogType="book" ogImage="/assets/img/epic-ebook.png" navHideCta={true}>
   <script slot="head" type="application/ld+json" is:inline>{JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Book",

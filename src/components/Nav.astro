@@ -1,9 +1,12 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+// hideCta: oculta "Ingresar" + "Empezar con Practicante" (la landing del libro no
+// los quiere — su único CTA es comprar). El resto de las páginas los conserva.
+const { hideCta = false } = Astro.props;
 ---
 <nav>
   <a href="/" class="logo">
-    <img src="/assets/endonautas-logo.png" alt="Endonautas" width="30" height="30" style="object-fit:contain">
+    <img src="/assets/endonautas-logo.png" alt="Endonautas" width="28" height="28" style="object-fit:contain">
     <span class="logo-n">Endonautas</span>
   </a>
   <div class="nav-links">
@@ -15,8 +18,12 @@ import ThemeToggle from './ThemeToggle.astro';
   <div class="nav-r">
     <slot />
     <ThemeToggle />
-    <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm nav-cta">Ingresar</a>
-    <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm nav-cta">Empezar con Practicante</a>
+    {!hideCta && (
+      <>
+        <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm nav-cta">Ingresar</a>
+        <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm nav-cta">Empezar con Practicante</a>
+      </>
+    )}
     <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -28,10 +35,12 @@ import ThemeToggle from './ThemeToggle.astro';
   <a href="/para-terapeutas/">Para terapeutas</a>
   <a href="/blog/">Blog</a>
   <a href="/contacto/">Contacto</a>
-  <div class="mobile-menu-ctas">
-    <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm">Ingresar</a>
-    <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm">Empezar con Practicante</a>
-  </div>
+  {!hideCta && (
+    <div class="mobile-menu-ctas">
+      <a href="https://app.endonautas.cl/login/" class="btn btn-o btn-sm">Ingresar</a>
+      <a href="https://app.endonautas.cl/registro/?plan=practicante" class="btn btn-p btn-sm">Empezar con Practicante</a>
+    </div>
+  )}
 </div>
 
 <script is:inline>

@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   ogType?: string;
+  navHideCta?: boolean;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = 'Endonautas — plataforma para terapeutas y coaches: agenda, fichas clínicas, tests validados que se corrigen solos y clientes que trabajan entre sesiones.',
   ogImage = '/og/default.jpg',
   ogType = 'website',
+  navHideCta = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -84,7 +86,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 <body>
 
 <div id="lp-wrap">
-  <Nav>
+  <Nav hideCta={navHideCta}>
     <slot name="nav" />
   </Nav>
   <slot />
