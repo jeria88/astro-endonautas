@@ -13,13 +13,13 @@ import Layout from '../layouts/Layout.astro';
   }
   .contacto-h {
     font-family: var(--fd); font-size: clamp(2.2rem, 4vw, 3.4rem);
-    font-weight: 300; color: #fff; letter-spacing: -.03em;
+    font-weight: 300; color: var(--text); letter-spacing: -.03em;
     line-height: 1.1; margin-bottom: 1.2rem; text-shadow: var(--ts);
   }
   .contacto-sub { color: var(--dim); font-size: .95rem; line-height: 1.75; margin-bottom: 0; max-width: 400px; }
   .c-sep { height: 1px; background: var(--bdr); margin: 2.4rem 0; }
   .c-nota { font-size: .85rem; color: var(--dim); line-height: 1.75; }
-  .c-nota strong { color: rgba(255,255,255,.6); }
+  .c-nota strong { color: var(--text-muted); }
 
   /* form */
   .c-form { display: flex; flex-direction: column; gap: 1.4rem; }
@@ -30,8 +30,8 @@ import Layout from '../layouts/Layout.astro';
   }
   .c-label span { color: var(--mut); font-weight: 400; letter-spacing: 0; text-transform: none; font-size: .8rem; }
   .c-input, .c-textarea {
-    background: rgba(10,8,20,.55); border: 1px solid var(--bdr);
-    border-radius: 10px; color: #fff; font-family: var(--fi);
+    background: var(--surface); border: 1px solid var(--bdr);
+    border-radius: 10px; color: var(--text); font-family: var(--fi);
     font-size: .95rem; padding: .9rem 1.1rem;
     outline: none; transition: border-color .18s;
     width: 100%;

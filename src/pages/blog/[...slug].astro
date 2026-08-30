@@ -30,17 +30,16 @@ const layerLabel: Record<string, string> = {
   <a slot="nav" href="/blog/" class="nav-back">← Blog</a>
 
   <style>
-  :global(#cbg) { opacity: 0.12; }
 
   .post-wrap { max-width: 960px; margin: 0 auto; padding: 8vh 7% 12vh; }
   .post-hero { width: 100%; height: 360px; border-radius: 14px; overflow: hidden; margin-bottom: 2.8rem; }
-  .post-hero-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.72) saturate(.9); }
+  .post-hero-img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.95); }
   .post-meta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2.4rem; }
   .post-cat { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c); }
   .post-date { font-size: .72rem; color: var(--dim); }
   .post-title {
     font-family: var(--fd); font-size: clamp(1.8rem, 4vw, 3rem);
-    font-weight: 700; color: #fff; line-height: 1.15;
+    font-weight: 700; color: var(--text); line-height: 1.15;
     letter-spacing: -.03em; margin-bottom: 1.4rem;
     text-shadow: var(--ts);
   }
@@ -51,7 +50,7 @@ const layerLabel: Record<string, string> = {
     border-radius: 14px; background: rgba(126,204,205,.07);
   }
   .post-cta-label { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c); margin-bottom: .8rem; }
-  .post-cta h3 { font-family: var(--fd); font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: .8rem; }
+  .post-cta h3 { font-family: var(--fd); font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: .8rem; }
   .post-cta p { font-size: .9rem; color: var(--mut); margin-bottom: 1.4rem; line-height: 1.65; }
 
   @media (max-width: 768px) {
@@ -81,7 +80,7 @@ const layerLabel: Record<string, string> = {
         <p class="post-cta-label">Siguiente paso</p>
         <h3>Tu Mapa de Patrones Personales — gratis</h3>
         <p>{post.data.cta}</p>
-        <a href="https://app.endonautas.cl/tests/mapa-patrones/" class="btn btn-p btn-sm">Ver mi Mapa de Patrones →</a>
+        <a href="/" class="btn btn-p btn-sm">Ver el libro — $17 →</a>
       </div>
     )}
   </div>

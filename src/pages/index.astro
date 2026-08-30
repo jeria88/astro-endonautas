@@ -11,6 +11,10 @@ const HERIDAS_MIN = HERIDAS.map(({ id, herida, mascara, frase, intro }) => ({
   id, herida, mascara, frase, intro: intro[0],
 }));
 
+// Fallback estático del fragmento de muestra: si el JS no corre (bloqueador, red),
+// la sección "muestra" no queda en blanco. El script la reescribe según `?herida=`.
+const MUESTRA_DEFAULT = HERIDAS_MIN.find((x) => x.id === 'abandono');
+
 // ponytail: testimonios de personas REALES de la mentoría (Marcos, Lilian, Annette,
 // Francisca, Ramón, Ani, Alejandra). Las frases se perdieron con el celular anterior.
 // Nada inventado: con el array vacío la sección no se renderiza. Con 3+ aparece sola.
@@ -214,7 +218,7 @@ const canonical = 'https://endonautas.cl/';
       <p class="eyebrow">Un fragmento real</p>
       <h2 class="sec-h" id="m-title">La herida de abandono, en el libro</h2>
       <div class="quote-card">
-        <p class="m-text" id="m-text"></p>
+        <p class="m-text" id="m-text">{MUESTRA_DEFAULT?.intro}</p>
       </div>
       <p class="m-foot">
         Esto es un fragmento de una sola herida. El libro completo tiene esta y
@@ -358,7 +362,7 @@ const canonical = 'https://endonautas.cl/';
       </div>
       <div class="faq-item">
         <button type="button" class="faq-q">¿Hay algo más después del ebook?</button>
-        <div class="faq-a"><p>Sí. Al final del libro está la puerta al siguiente nivel: el Círculo Endonauta, un grupo pequeño de trabajo con acompañamiento. Se abre cuando hay cupo.</p></div>
+        <div class="faq-a"><p>Sí. Al final del libro está la puerta al siguiente nivel: <a href="/circulo/">el Círculo Endonauta</a>, un grupo pequeño de trabajo con acompañamiento. Se abre por cupo — la lista de espera está abierta.</p></div>
       </div>
     </div>
   </section>
@@ -593,6 +597,7 @@ const canonical = 'https://endonautas.cl/';
     .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s var(--ease); }
     .faq-item.open .faq-a { max-height: 320px; }
     .faq-a p { color: var(--text-muted); font-size: .95rem; line-height: 1.65; padding-bottom: 1.3rem; max-width: 62ch; }
+    .faq-a a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
     footer { padding: 3rem 0; border-top: 1px solid var(--border); }
     .foot-grid { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem; }

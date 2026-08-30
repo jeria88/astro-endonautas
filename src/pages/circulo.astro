@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'El Círculo Endonauta | Endonautas';
+const description = 'El paso después de Endonautica: un grupo pequeño de trabajo con acompañamiento para llevar el mapa al terreno. Se abre por cupo. Lista de espera abierta.';
+const WA = 'https://wa.me/56938713033?text=' + encodeURIComponent(
+  'Hola Franco, quiero entrar a la lista de espera del Círculo Endonauta.'
+);
+---
+<Layout title={title} description={description}>
+  <a slot="nav" href="/" class="nav-back">← El libro</a>
+
+  <section class="s s-full">
+    <div class="container circ-hero">
+      <p class="kicker">El siguiente nivel</p>
+      <h1 class="circ-h1">El Círculo Endonauta</h1>
+      <p class="circ-lead">
+        <em>Endonautica</em> es el mapa. El Círculo es donde se camina —
+        acompañado, en grupo pequeño, con un ritmo que sostiene el proceso
+        cuando la vida vuelve a su inercia.
+      </p>
+      <a class="btn btn-p btn-lg" href={WA} target="_blank" rel="noopener">Anotarme en la lista de espera</a>
+      <p class="circ-note">Se abre por cupo, unas pocas veces al año. La lista de espera no compromete a nada.</p>
+    </div>
+  </section>
+
+  <section class="s">
+    <div class="container circ-grid">
+      <div class="circ-card">
+        <p class="circ-n">01</p>
+        <h2 class="circ-ch">Qué es</h2>
+        <p class="circ-p">
+          Un grupo reducido que trabaja el material del libro en profundidad,
+          durante varias semanas. No es un curso ni una comunidad abierta: es un
+          espacio cerrado, con las mismas personas de principio a fin, y con
+          Franco acompañando el proceso.
+        </p>
+      </div>
+      <div class="circ-card">
+        <p class="circ-n">02</p>
+        <h2 class="circ-ch">Para quién</h2>
+        <p class="circ-p">
+          Para quien ya leyó <em>Endonautica</em> y reconoció el patrón, pero
+          sabe que leerlo no alcanza. Para quien quiere pasar del concepto a la
+          observación sostenida, sin hacerlo en soledad.
+        </p>
+      </div>
+      <div class="circ-card">
+        <p class="circ-n">03</p>
+        <h2 class="circ-ch">Cómo funciona</h2>
+        <p class="circ-p">
+          Encuentros en vivo, trabajo entre sesiones, y un canal directo para lo
+          que aparece en el camino. Los detalles de fecha, formato y precio se
+          comparten con la lista de espera antes de cada apertura.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="s">
+    <div class="container circ-cta">
+      <h2 class="s-h">¿Todavía no leíste el libro?</h2>
+      <p class="circ-p">
+        El Círculo empieza donde termina <em>Endonautica</em>. Si aún no lo
+        tienes, ese es el primer paso.
+      </p>
+      <a class="btn btn-o" href="/">Ver el libro — $17</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .circ-hero { max-width: 60ch; }
+  .kicker { font-size: .9rem; color: var(--accent); font-weight: 550; margin-bottom: .6rem; }
+  .circ-h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 3.2rem); line-height: 1.1;
+    letter-spacing: -.03em; margin-bottom: 1.2rem; text-wrap: balance;
+  }
+  .circ-lead { font-size: 1.08rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 2rem; text-wrap: pretty; }
+  .circ-lead em, .circ-p em { color: var(--text); font-style: italic; }
+  .circ-note { font-size: .82rem; color: var(--text-dim); margin-top: 1rem; }
+
+  .circ-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .circ-card { background: var(--surface); border: 1px solid var(--border); border-top: 2px solid var(--accent); border-radius: var(--radius); padding: 1.8rem; }
+  .circ-n { font-family: var(--font-mono, var(--font-body)); font-size: .82rem; color: var(--text-dim); margin-bottom: .5rem; }
+  .circ-ch { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--text); margin-bottom: .7rem; letter-spacing: -.02em; }
+  .circ-p { font-size: .96rem; line-height: 1.7; color: var(--text-muted); text-wrap: pretty; }
+
+  .circ-cta { max-width: 52ch; }
+  .circ-cta .btn { margin-top: 1.2rem; }
+</style>

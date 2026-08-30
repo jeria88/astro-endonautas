@@ -142,7 +142,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
               Y si quieres el mapa entero: <em>Endonautica</em> son 205 páginas —
               esta herida y las otras cuatro, el marco completo del viaje interior.
             </p>
-            <a class="btn btn-p rl-btn" id="r-libro" href="/ebook/">Ver el libro completo — $17</a>
+            <a class="btn btn-p rl-btn" id="r-libro" href="/">Ver el libro completo — $17</a>
           </div>
 
           <div class="r-ctas">
@@ -264,7 +264,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       $('r-frase').textContent = h.frase;
       $('r-bot').href = 'https://t.me/Endonautas_bot1_bot?start=test_web_' + h.id;
       $('r-mas').href = '/heridas/' + h.id + '/';
-      $('r-libro').href = '/ebook/?herida=' + h.id;
+      $('r-libro').href = '/?herida=' + h.id;
       $('lead-herida').value = h.id;
       $('q-play').hidden = true;
       $('q-res').hidden = false;
@@ -327,7 +327,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
     h1 {
       font-family: var(--fd); font-weight: 300;
       font-size: clamp(1.9rem, 4.4vw, 3.2rem); line-height: 1.14;
-      letter-spacing: -.03em; color: #fff; text-shadow: var(--ts);
+      letter-spacing: -.03em; color: var(--text); text-shadow: var(--ts);
       margin-bottom: 1.3rem;
     }
     .hero-sub {
@@ -346,7 +346,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
     }
     .q-count { font-size: .7rem; color: var(--dim); letter-spacing: .12em; text-transform: uppercase; margin: 1.1rem 0 .5rem; }
     .q-title {
-      font-family: var(--fd); font-weight: 300; color: #fff;
+      font-family: var(--fd); font-weight: 300; color: var(--text);
       font-size: clamp(1.25rem, 2.4vw, 1.7rem); line-height: 1.3;
       letter-spacing: -.02em; margin-bottom: 1.8rem;
     }
@@ -366,7 +366,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       color: var(--dim); font-family: var(--fi); font-size: .82rem; padding: 0;
       transition: color .18s;
     }
-    .q-back:hover { color: #fff; }
+    .q-back:hover { color: var(--text); }
 
     /* entrada rápida, salida lenta */
     .fade { animation: qin .42s cubic-bezier(.22,1,.36,1) both; }
@@ -374,7 +374,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
 
     /* ── resultado ── */
     .r-mask {
-      font-family: var(--fd); font-weight: 300; color: #fff;
+      font-family: var(--fd); font-weight: 300; color: var(--text);
       font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.15;
       letter-spacing: -.03em; margin: .7rem 0 .4rem;
     }
@@ -395,8 +395,8 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
     .l-row { display: flex; gap: .7rem; flex-wrap: wrap; }
     .l-input {
       flex: 1 1 220px;
-      background: rgba(10,8,20,.55); border: 1px solid var(--bdr);
-      border-radius: 10px; color: #fff; font-family: var(--fi);
+      background: var(--surface); border: 1px solid var(--bdr);
+      border-radius: 10px; color: var(--text); font-family: var(--fi);
       font-size: .95rem; padding: .85rem 1.1rem; outline: none;
       transition: border-color .18s;
     }
@@ -406,7 +406,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
     .r-libro {
       margin-top: 1.6rem; padding: 1.5rem 1.7rem;
       border: 1px solid var(--bdr); border-left: 2px solid var(--c);
-      border-radius: 12px; background: rgba(10,8,20,.35);
+      border-radius: 12px; background: var(--surface);
     }
     .rl-t { color: var(--mut); font-size: .92rem; line-height: 1.62; max-width: 54ch; margin-bottom: 1.1rem; }
     .rl-t em { color: var(--c); font-style: normal; }
@@ -415,7 +415,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
     .r-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
     .r-mas { margin-top: 1.4rem; font-size: .88rem; }
     .r-mas a { color: var(--c); text-decoration: none; border-bottom: 1px solid var(--cg); }
-    .r-mas a:hover { color: #fff; }
+    .r-mas a:hover { color: var(--text); }
     .r-mini { display: flex; gap: .7rem; align-items: center; margin-top: 1.3rem; color: var(--bdr); font-size: .82rem; }
     .r-mini button {
       background: none; border: none; padding: 0; cursor: pointer;
@@ -427,7 +427,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       color: var(--dim); font-size: .85rem; line-height: 1.6;
     }
     .r-pro a { color: var(--vi); text-decoration: none; border-bottom: 1px solid rgba(155,142,196,.35); }
-    .r-pro a:hover { color: #fff; }
+    .r-pro a:hover { color: var(--text); }
 
     /* ── grid de heridas ── */
     .h-grid {
@@ -440,7 +440,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
     .h-card.h-hit { border-color: rgba(126,204,205,.45); background: rgba(126,204,205,.05); }
     .h-num { color: var(--am); margin-bottom: .8rem; }
     .h-mask {
-      font-family: var(--fd); font-weight: 400; color: #fff;
+      font-family: var(--fd); font-weight: 400; color: var(--text);
       font-size: 1.18rem; letter-spacing: -.02em; margin-bottom: .8rem;
     }
     .h-frase { color: var(--txt); font-size: .92rem; line-height: 1.6; margin-bottom: .9rem; }
@@ -452,7 +452,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       border-top: 1px solid var(--bdr); width: 100%;
       color: var(--c); font-size: .83rem; text-decoration: none; transition: color .18s;
     }
-    .h-go:hover { color: #fff; }
+    .h-go:hover { color: var(--text); }
     .h-foot { text-align: center; color: var(--dim); font-size: .9rem; margin-top: 3rem; }
     .h-foot a { color: var(--c); text-decoration: none; border-bottom: 1px solid var(--cg); }
 
@@ -465,7 +465,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
     }
     .faq-q::after { content: '+'; color: var(--c); font-size: 1.2rem; line-height: 1; transition: transform .25s; }
     .faq-item.open .faq-q::after { transform: rotate(45deg); }
-    .faq-q:hover { color: #fff; }
+    .faq-q:hover { color: var(--text); }
     .faq-a { max-height: 0; overflow: hidden; transition: max-height .32s cubic-bezier(.22,1,.36,1); }
     .faq-item.open .faq-a { max-height: 340px; }
     .faq-a p { color: var(--mut); font-size: .92rem; line-height: 1.65; padding-bottom: 1.35rem; max-width: 62ch; }
