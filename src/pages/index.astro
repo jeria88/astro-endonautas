@@ -1,14 +1,27 @@
 ---
-// Página-elección — decisión de Franco (2026-08-27). La raíz dejó de ser la home del
-// SaaS (que pasó a /software) y ahora bifurca los dos productos: el libro ($17, tráfico
-// frío de contenido y test de heridas) y la plataforma ($39.990/mes, terapeutas).
-// Standalone a propósito: sin <Layout>, sin cosmos Three.js, sin Nav — una elección con
-// dos salidas no necesita menú, y el cosmos costaba ~medio megabyte antes del primer clic.
-const title = 'Endonautas — el libro Endonautica y la plataforma para terapeutas';
-const description =
-  'Dos puertas al mismo mapa: Endonautica, el libro del viaje interior ($17 USD, PDF y EPUB), ' +
-  'y Endonautas, el software para terapeutas y coaches con agenda, fichas clínicas y 35 tests. ' +
-  'Franco Jeria Castro, terapeuta en salud integrativa.';
+// Landing del libro Endonautica — la raíz de endonautas.cl (2026-08-30).
+// Antes vivía en /ebook (standalone, tema crema). Con el rework glass/vidrio-ámbar
+// pasa a ser la portada y adopta el sistema de tokens del sitio (dark default +
+// toggle claro/oscuro). Mantiene TODO el funnel: ids, forms de checkout, script
+// ?herida= y los 3 eventos Umami. /ebook y /ebook/?herida= → 301 acá.
+import { HERIDAS } from '../data/heridas';
+import ThemeToggle from '../components/ThemeToggle.astro';
+
+const HERIDAS_MIN = HERIDAS.map(({ id, herida, mascara, frase, intro }) => ({
+  id, herida, mascara, frase, intro: intro[0],
+}));
+
+// Fallback estático del fragmento de muestra: si el JS no corre (bloqueador, red),
+// la sección "muestra" no queda en blanco. El script la reescribe según `?herida=`.
+const MUESTRA_DEFAULT = HERIDAS_MIN.find((x) => x.id === 'abandono');
+
+// ponytail: testimonios de personas REALES de la mentoría (Marcos, Lilian, Annette,
+// Francisca, Ramón, Ani, Alejandra). Las frases se perdieron con el celular anterior.
+// Nada inventado: con el array vacío la sección no se renderiza. Con 3+ aparece sola.
+const TESTIMONIOS: { texto: string; autor: string }[] = [];
+
+const title = 'Endonautica — el libro | Endonautas';
+const description = 'El mapa que nadie te dio para navegar tu mundo interior. Endonautica, de Franco Jeria Castro: viaje interior, herida de infancia, sombra y niveles de conciencia. 205 páginas en PDF y EPUB, $17 USD, entrega inmediata.';
 const canonical = 'https://endonautas.cl/';
 ---
 <!doctype html>
@@ -19,236 +32,590 @@ const canonical = 'https://endonautas.cl/';
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
+  <script is:inline>
+    try {
+      var t = localStorage.getItem('endo-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+  </script>
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content="https://endonautas.cl/assets/img/epic-ebook.png" />
   <meta property="og:url" content={canonical} />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Endonautas" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:type" content="book" />
   <link rel="icon" type="image/png" href="/assets/endonautas-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json" is:inline>{JSON.stringify({
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://endonautas.cl/#org",
-        "name": "Endonautas",
-        "url": "https://endonautas.cl",
-        "logo": "https://endonautas.cl/assets/endonautas-logo.png",
-        "founder": { "@type": "Person", "name": "Franco Jeria Castro" }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://endonautas.cl/#website",
-        "url": "https://endonautas.cl",
-        "name": "Endonautas",
-        "publisher": { "@id": "https://endonautas.cl/#org" }
-      }
-    ]
+    "@type": "Book",
+    "name": "Endonautica",
+    "author": { "@type": "Person", "name": "Franco Jeria Castro" },
+    "bookFormat": "https://schema.org/EBook",
+    "numberOfPages": 205,
+    "inLanguage": "es",
+    "url": "https://endonautas.cl/",
+    "offers": { "@type": "Offer", "price": "17.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
   })}</script>
   <script defer data-website-id="e03fa69e-9931-411c-9838-7f6ffea90426" src="https://analytics.146.181.39.4.sslip.io/script.js" is:inline></script>
 </head>
 <body>
-  <div class="aura aura-a"></div>
-  <div class="aura aura-b"></div>
 
-  <main>
-    <header class="top">
-      <img src="/assets/endonautas-logo.png" alt="" width="34" height="34">
-      <span class="brand">Endonautas</span>
-    </header>
-
-    <p class="intro">
-      El mismo mapa, dos formas de entrar.
-    </p>
-
-    <div class="doors">
-      <a class="door door-book" href="/ebook/">
-        <span class="d-kick">El libro</span>
-        <h2 class="d-title">Endonautica</h2>
-        <p class="d-sub">
-          El mapa del viaje interior: la herida de infancia, la sombra, los
-          arquetipos y los niveles de conciencia. 205 páginas, tuyas para siempre.
-        </p>
-        <span class="d-price">$17 USD <em>· PDF y EPUB, entrega inmediata</em></span>
-        <span class="d-cta">Ver el libro <span class="arw">→</span></span>
-      </a>
-
-      <a class="door door-app" href="/software/">
-        <span class="d-kick">La plataforma</span>
-        <h2 class="d-title">Para tu consulta</h2>
-        <p class="d-sub">
-          Agenda, fichas clínicas, notas de sesión y 35 tests validados que
-          asignas y llegan corregidos. Tus clientes trabajan entre sesiones.
-        </p>
-        <span class="d-price">$39.990 al mes <em>· sin cobro por cliente</em></span>
-        <span class="d-cta">Ver la plataforma <span class="arw">→</span></span>
-      </a>
+  <nav>
+    <a href="/" class="nv-logo">Endonautas</a>
+    <div class="nv-r">
+      <a href="/para-terapeutas/" class="nv-link">Para terapeutas</a>
+      <a href="https://app.endonautas.cl/login/" class="nv-link">Ingresar</a>
+      <ThemeToggle />
     </div>
+  </nav>
 
-    <footer class="bot">
-      <p class="who">Franco Jeria Castro · terapeuta en salud integrativa</p>
-      <nav class="links">
-        <a href="/test-heridas-de-infancia/">Test de heridas de infancia</a>
-        <a href="/profesionales/">Para terapeutas</a>
-        <a href="/blog/">Blog</a>
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="price-badge">$17 USD · ≈ $16.990 CLP · PDF y EPUB · entrega inmediata</p>
+        {/* El copy ESTÁTICO es el de tráfico frío: quien llega de un reel no hizo
+            ningún test. El script de abajo lo reescribe cuando viene `?herida=`,
+            así que la versión personalizada sigue intacta — y Google indexa esta. */}
+        <p class="kicker" id="hk">El libro</p>
+        <h1 id="h1">El mapa que nadie te dio<br/><em>para navegar tu mundo interior.</em></h1>
+        <p class="lead" id="hero-sub">
+          No es otro libro de autoayuda. Soy Franco, terapeuta en salud integrativa,
+          y escribí <em>Endonautica</em> como un sistema de navegación para quien ya
+          sabe que hay algo más profundo y está listo para encontrarlo — no para
+          saber más sobre ti, sino para dejar de repetir lo que ya reconociste.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-p" href="#comprar" id="cta-hero">Comprarlo ahora — $17</a>
+          <a class="btn btn-o" href="#muestra">Leer un fragmento primero</a>
+        </div>
+      </div>
+      <div class="hero-cover">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <img src="/assets/img/epic-ebook.png" alt="Portada de Endonautica" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EL PROBLEMA ── -->
+  <section class="sec">
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow">El problema</p>
+      <h2 class="sec-h">Sabes que hay un patrón. Pero no puedes verlo desde adentro.</h2>
+      <p class="body">
+        La mayoría de las personas lleva décadas repitiendo los mismos ciclos: las
+        mismas relaciones, los mismos bloqueos, los mismos resultados distintos.
+      </p>
+      <p class="body">
+        No porque sean incapaces de cambiar. Sino porque nunca tuvieron el lenguaje
+        para nombrar lo que está pasando en su interior.
+      </p>
+      <p class="body">
+        Sin lenguaje no hay observación. Sin observación no hay conciencia.
+        <em>Sin conciencia, el patrón manda.</em>
+      </p>
+      <p class="body">La endonáutica es ese lenguaje.</p>
+    </div>
+  </section>
+
+  <!-- ── QUÉ ES LA ENDONÁUTICA ── -->
+  <section class="sec sec-alt">
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow">Qué es la endonáutica</p>
+      <h2 class="sec-h">Una ciencia del viaje interior. No una promesa de bienestar.</h2>
+      <p class="body">
+        <em>Endo</em> — del griego: dentro. <em>Náutica</em> — del griego: lo relativo
+        a las naves y los viajes. <em>Endonáutica: el arte de navegar el mundo interior.</em>
+      </p>
+      <p class="body">
+        No es meditación. No es coaching. No es terapia. Es un sistema de comprensión
+        que integra psicología, filosofía, espiritualidad y lógica fractal para que
+        puedas observar tu mundo interior con la misma precisión con que un navegante
+        lee el mar.
+      </p>
+      <p class="body">
+        Cuando tu perspectiva de la realidad cambia, tu realidad cambia.
+        La endonáutica te da la perspectiva.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── QUÉ ES EXACTAMENTE ── -->
+  <section class="sec">
+    <div class="wrap wrap-narrow">
+      <h2 class="sec-h">Qué es exactamente</h2>
+      <p class="body">
+        No es un cuadernillo de 40 páginas ni un manual clínico. Son 205 páginas:
+        mi marco completo de la endonáutica — viaje interior, arquetipos, la
+        sombra, niveles de conciencia — con la herida de infancia como una de sus
+        piezas centrales, no la única.
+      </p>
+      <p class="body">
+        Si llegaste desde el test, la sección de heridas te va a hablar directo:
+        es el mismo marco, desarrollado en profundidad. El resto del libro es el
+        terreno donde esa herida vive — identidad, inconsciente, cuerpo,
+        propósito. No te prometo resolverte en una lectura. Es un mapa, no un
+        atajo.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── QUÉ ENCONTRARÁS DENTRO (índice) ── -->
+  <section class="sec sec-alt">
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow">El contenido</p>
+      <h2 class="sec-h">205 páginas de cartografía interior</h2>
+      <ol class="toc">
+        <li>
+          <span class="toc-n">01</span>
+          <div>
+            <p class="toc-h">La Endonáutica</p>
+            <p class="toc-t">Qué es el mundo interior, el viaje del héroe, los arquetipos, la sombra, la ley del espejo, el propósito.</p>
+          </div>
+        </li>
+        <li>
+          <span class="toc-n">02</span>
+          <div>
+            <p class="toc-h">El Endonauta</p>
+            <p class="toc-t">Qué es la conciencia y sus niveles, la energía, el observador, el Espejo Humeante, tu función.</p>
+          </div>
+        </li>
+        <li>
+          <span class="toc-n">03</span>
+          <div>
+            <p class="toc-h">Pilares</p>
+            <p class="toc-t">Autoconciencia, autoestima, autorregulación, locus de control, autocuidado, autosabotaje, autoconocimiento, interdependencia.</p>
+          </div>
+        </li>
+        <li>
+          <span class="toc-n">04</span>
+          <div>
+            <p class="toc-h">Psicología</p>
+            <p class="toc-t">El yo, la personalidad, el inconsciente, los sueños, la herida de infancia, la dualidad.</p>
+          </div>
+        </li>
+        <li>
+          <span class="toc-n">05</span>
+          <div>
+            <p class="toc-h">Filosofía</p>
+            <p class="toc-t">Unidad, dualidad, fractales, filosofía del implícito, leyes espirituales del endonauta.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="m-foot">
+        No es información nueva para decorar tu cabeza. Es un sistema para que veas
+        distinto lo que ya vives.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── MUESTRA DEL FRAMEWORK ── -->
+  <section class="sec" id="muestra">
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow">Un fragmento real</p>
+      <h2 class="sec-h" id="m-title">La herida de abandono, en el libro</h2>
+      <div class="quote-card">
+        <p class="m-text" id="m-text">{MUESTRA_DEFAULT?.intro}</p>
+      </div>
+      <p class="m-foot">
+        Esto es un fragmento de una sola herida. El libro completo tiene esta y
+        las otras cuatro, desarrolladas igual de a fondo — más todo lo demás.
+      </p>
+    </div>
+  </section>
+
+  {/* Se renderiza sola cuando haya al menos 3 frases reales en TESTIMONIOS. */}
+  {TESTIMONIOS.length >= 3 && (
+    <section class="sec">
+      <div class="wrap wrap-narrow">
+        <p class="eyebrow">Quienes ya lo caminaron</p>
+        <h2 class="sec-h">Lo que pasó cuando pusieron nombre al patrón</h2>
+        <div class="tst-grid">
+          {TESTIMONIOS.map((t) => (
+            <figure class="tst">
+              <p class="tst-q">“{t.texto}”</p>
+              <figcaption class="tst-a">{t.autor}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ── PARA QUIÉN ES / PARA QUIÉN NO ── -->
+  <section class="sec sec-alt">
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow">Antes de comprarlo</p>
+      <h2 class="sec-h">Para quién es — y para quién no</h2>
+      <div class="fit-grid">
+        <div class="fit-col">
+          <p class="fit-h fit-yes">Para quién es</p>
+          <ul class="fit-list">
+            <li>Para quien siente que hay un patrón detrás de sus errores y quiere nombrarlo.</li>
+            <li>Para quien ya intentó otras cosas y siente que le falta el mapa, no la herramienta.</li>
+            <li>Para quien está dispuesto a mirarse sin filtros.</li>
+            <li>Para quien entiende que el cambio real es lento, profundo y no es lineal.</li>
+          </ul>
+        </div>
+        <div class="fit-col">
+          <p class="fit-h fit-no">Para quién no</p>
+          <ul class="fit-list fit-list-no">
+            <li>Para quien busca motivación rápida y frases bonitas.</li>
+            <li>Para quien quiere que alguien más haga el trabajo interior por él.</li>
+            <li>Para quien espera resultados en 7 días.</li>
+            <li>Para quien prefiere esperar a que algo externo cambie.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="m-foot">Si llegaste hasta aquí, probablemente eres de los primeros.</p>
+    </div>
+  </section>
+
+  <!-- ── AUTOR ── -->
+  <section class="sec">
+    <div class="wrap autor-grid">
+      <img class="autor-foto" src="/assets/img/franco-jeria.jpeg" alt="Franco Jeria Castro">
+      <div>
+        <p class="eyebrow">Quién te escribe esto</p>
+        <h2 class="sec-h">Franco Jeria Castro</h2>
+        <p class="body">
+          Terapeuta en salud integrativa. Escribí <em>Endonautica</em> después de
+          años acompañando procesos de autoconocimiento — es el mapa que yo
+          hubiera querido tener antes, ordenado para que no tengas que empezar
+          de cero.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRECIO + CHECKOUT ── -->
+  <section class="sec sec-alt" id="comprar">
+    <div class="wrap wrap-narrow">
+      <div class="buy-card">
+        <p class="eyebrow" style="text-align:center">Endonautica — ebook completo</p>
+        <p class="buy-price">$17 <span>USD</span></p>
+        {/* El cobro real en Chile es CLP: `PRODUCTS['endonautica-ebook'].price_clp`
+            en el repo de la app (payments/constants.py). Si cambia allá, cambia acá. */}
+        <p class="buy-clp">Desde Chile se cobran <strong>$16.990 CLP</strong></p>
+        <p class="buy-sub">PDF y EPUB · 205 páginas · lo descargas al instante y te llega al email</p>
+
+        <div class="buy-forms">
+          <form method="POST" action="https://app.endonautas.cl/pago/ebook/comprar/mp/" class="buy-form">
+            <input type="hidden" name="canal_origen" value="ebook-landing">
+            <p class="buy-gw">Desde Chile</p>
+            <label class="buy-label" for="mp-email">Tu email</label>
+            <input id="mp-email" type="email" name="email" class="buy-input" placeholder="tu@correo.com" required autocomplete="email">
+            <button type="submit" class="btn btn-p buy-btn">Pagar con MercadoPago</button>
+          </form>
+
+          <form method="POST" action="https://app.endonautas.cl/pago/ebook/comprar/paypal/" class="buy-form">
+            <input type="hidden" name="canal_origen" value="ebook-landing">
+            <p class="buy-gw">Desde otro país</p>
+            <label class="buy-label" for="pp-email">Tu email</label>
+            <input id="pp-email" type="email" name="email" class="buy-input" placeholder="tu@correo.com" required autocomplete="email">
+            <button type="submit" class="btn btn-o buy-btn">Pagar con PayPal</button>
+          </form>
+        </div>
+
+        <p class="buy-wa">
+          ¿Prefieres transferencia o tienes una duda antes de pagar?
+          <a href="https://wa.me/56938713033?text=Hola%20Franco%2C%20tengo%20una%20duda%20sobre%20el%20ebook%20Endonautica" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>.
+        </p>
+      </div>
+
+      <div class="warranty">
+        <p class="warranty-h">Garantía de 7 días</p>
+        <p class="warranty-t">
+          Si en 7 días sientes que no te aportó nada, te devuelvo el dinero.
+          <em>Sin preguntas.</em> Confío en el mapa porque lo caminé yo primero.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="sec" id="faq">
+    <div class="wrap wrap-narrow">
+      <h2 class="sec-h">Preguntas frecuentes</h2>
+      <div class="faq-item">
+        <button type="button" class="faq-q">¿En qué formato llega?</button>
+        <div class="faq-a"><p>En los dos formatos, y eliges cuál usar: <strong>PDF</strong>, que se abre en cualquier teléfono o computador sin instalar nada, y <strong>EPUB</strong>, para Apple Books, Google Play Books, Kindle o el lector que prefieras. Ninguno es un PDF escaneado: el texto se busca, se copia y se ajusta al tamaño de tu pantalla.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q">¿Cuándo lo recibo?</button>
+        <div class="faq-a"><p>Apenas se confirma el pago, a tu email, con el link de descarga. Si no te llega en unos minutos, revisa spam o escríbeme por WhatsApp.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q">¿Esto reemplaza terapia o un proceso guiado?</button>
+        <div class="faq-a"><p>No. Es un mapa para leer y trabajar por tu cuenta. Si algo de lo que aparece te remueve más de lo esperado, eso es material para trabajar acompañado, no en soledad.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q">¿Hay garantía?</button>
+        <div class="faq-a"><p>Sí: 7 días sin preguntas. Si sientes que el libro no te aportó nada, escríbeme dentro de los 7 días de la compra y te devuelvo los $17 completos. No tienes que justificar nada.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q">¿Es para principiantes?</button>
+        <div class="faq-a"><p>Sí y no. Si nunca exploraste el mundo interior, este libro es tu primer mapa. Si ya tienes camino recorrido, vas a encontrar capas nuevas. No necesitas saber de psicología ni de filosofía: el sistema está explicado desde cero, con lenguaje propio.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q">¿Hay algo más después del ebook?</button>
+        <div class="faq-a"><p>Sí. Al final del libro está la puerta al siguiente nivel: <a href="/circulo/">el Círculo Endonauta</a>, un grupo pequeño de trabajo con acompañamiento. Se abre por cupo — la lista de espera está abierta.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-grid">
+      <a href="/" class="nv-logo">Endonautas</a>
+      <div class="foot-links">
+        <a href="/para-terapeutas/">Para terapeutas</a>
+        <a href="/test-heridas-de-infancia/">Hacer el test</a>
         <a href="/contacto/">Contacto</a>
-      </nav>
-    </footer>
-  </main>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/terminos/">Términos</a>
+      </div>
+      <p class="foot-copy">© {new Date().getFullYear()} Endonautas</p>
+    </div>
+  </footer>
 
   <script is:inline>
-    // Qué puerta elige la gente: decide dónde apuntar el contenido y el bio-link.
-    // Umami carga con defer, así que puede no estar cuando se hace el clic.
-    document.querySelectorAll('.door').forEach(function (a) {
-      a.addEventListener('click', function () {
-        if (window.umami) {
-          window.umami.track('raiz-puerta', {
-            destino: a.classList.contains('door-book') ? 'libro' : 'plataforma',
-          });
-        }
+    (function () {
+      var btn = document.querySelector('[data-theme-toggle]');
+      if (btn) btn.addEventListener('click', function () {
+        var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('endo-theme', next); } catch (e) {}
       });
-    });
+    })();
+  </script>
+
+  <script define:vars={{ HERIDAS: HERIDAS_MIN }}>
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const slug = params.get('herida');
+      const h = HERIDAS.find((x) => x.id === slug) || HERIDAS.find((x) => x.id === 'abandono');
+      if (h) {
+        if (slug) {
+          document.getElementById('hk').textContent = 'Tu resultado: ' + h.mascara;
+          document.getElementById('h1').innerHTML =
+            'Herida de ' + h.herida.toLowerCase() + '.<br/><em>Esto es lo que sigue.</em>';
+          document.getElementById('hero-sub').innerHTML =
+            'Tu test dio <strong>' + h.mascara.toLowerCase() + '</strong>. Soy Franco, terapeuta ' +
+            'en salud integrativa, y escribí <em>Endonautica</em> como el mapa completo detrás de ' +
+            'ese resultado — de dónde viene, cómo se sostiene, y cómo empezar a moverla.';
+        }
+        document.getElementById('m-title').textContent = 'La herida de ' + h.herida.toLowerCase() + ', en el libro';
+        document.getElementById('m-text').textContent = h.intro;
+      }
+
+      // hero reveal (arriba del fold, siempre visible por defecto — la clase solo anima)
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+      }, { threshold: .12 });
+      document.querySelectorAll('.hero-copy, .hero-cover').forEach((el) => obs.observe(el));
+
+      // faq
+      document.querySelectorAll('.faq-item').forEach((item) => {
+        item.querySelector('.faq-q').addEventListener('click', () => {
+          const open = item.classList.contains('open');
+          document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('open'));
+          if (!open) item.classList.add('open');
+        });
+      });
+
+      // medición — el script de Umami es defer, así que puede no estar todavía
+      const track = (evento, props) => { if (window.umami) window.umami.track(evento, props); };
+      const origen = slug || 'frio';
+
+      document.getElementById('cta-hero')?.addEventListener('click', () => {
+        track('ebook-cta-comprar', { origen });
+      });
+      document.querySelectorAll('.buy-form').forEach((form) => {
+        form.addEventListener('submit', () => {
+          track('ebook-checkout-submit', {
+            gateway: form.action.includes('paypal') ? 'paypal' : 'mp',
+            origen,
+          });
+        });
+      });
+    })();
   </script>
 
   <style>
-    :root {
-      --bg:   #030306;
-      --txt:  #F2F0F4;
-      --mut:  rgba(242,240,244,.62);
-      --dim:  rgba(242,240,244,.34);
-      --c:    #7ECCCD;
-      --gold: #C79A4E;
-      --fd:   'Space Grotesk', sans-serif;
-      --fi:   'Inter', sans-serif;
-    }
+    @import '../styles/tokens.css';
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      background: var(--bg); color: var(--txt); font-family: var(--fi);
-      min-height: 100dvh; overflow-x: hidden; -webkit-font-smoothing: antialiased;
+      background: var(--bg); color: var(--text); font-family: var(--font-body);
+      line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+      transition: background .3s var(--ease), color .3s var(--ease);
     }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 6vw; }
+    .wrap-narrow { max-width: 780px; }
+    em { font-style: italic; color: var(--accent); }
 
-    /* Dos auras que respiran con frecuencias distintas por eje: el fondo nunca
-       repite la misma posición, y no depende del scroll (esta página no scrollea). */
-    .aura { position: fixed; border-radius: 50%; filter: blur(110px); pointer-events: none; z-index: 0; }
-    .aura-a {
-      width: 46vmax; height: 46vmax; background: rgba(126,204,205,.10);
-      top: -12vmax; right: -8vmax; animation: driftA 31s ease-in-out infinite;
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 6vw; position: sticky; top: 0; z-index: 30;
+      background: var(--glass); backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur)); border-bottom: 1px solid var(--border);
     }
-    .aura-b {
-      width: 40vmax; height: 40vmax; background: rgba(199,154,78,.09);
-      bottom: -14vmax; left: -10vmax; animation: driftB 37s ease-in-out infinite;
-    }
-    @keyframes driftA {
-      0%,100% { transform: translate(0,0) scale(1); }
-      33%     { transform: translate(-3.5vmax, 2.4vmax) scale(1.06); }
-      66%     { transform: translate(2.2vmax, -3.1vmax) scale(.97); }
-    }
-    @keyframes driftB {
-      0%,100% { transform: translate(0,0) scale(1); }
-      40%     { transform: translate(3.1vmax, -2.6vmax) scale(1.05); }
-      75%     { transform: translate(-2.4vmax, 1.8vmax) scale(.98); }
-    }
-    @media (prefers-reduced-motion: reduce) { .aura { animation: none; } }
+    .nv-logo { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; color: var(--text); text-decoration: none; letter-spacing: -.01em; }
+    .nv-r { display: flex; align-items: center; gap: 1.3rem; }
+    .nv-link { font-size: .85rem; color: var(--text-muted); text-decoration: none; transition: color .18s; }
+    .nv-link:hover { color: var(--text); }
 
-    main {
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 600; font-size: .96rem;
+      padding: .95rem 2.1rem; border-radius: 10px; text-decoration: none;
+      border: 1px solid transparent; cursor: pointer; transition: .18s;
+    }
+    .btn-p { background: var(--accent); color: var(--accent-ink); box-shadow: var(--shadow-sm); }
+    .btn-p:hover { filter: brightness(1.07); box-shadow: var(--shadow); }
+    .btn-o { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-o:hover { border-color: var(--text-dim); background: var(--accent-soft); }
+
+    /* ── hero ── */
+    .hero { padding: 4.5rem 0 6rem; overflow: hidden; position: relative; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 5rem; align-items: center; }
+    .hero-copy { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+    .hero-copy.on { opacity: 1; transform: none; }
+    .price-badge {
+      display: inline-block; font-size: .78rem; font-weight: 600; letter-spacing: .03em;
+      color: var(--accent); border: 1px solid var(--border); background: var(--accent-soft);
+      padding: .4rem .9rem; border-radius: 20px; margin-bottom: 1.3rem;
+    }
+    .kicker { font-family: var(--font-body); font-weight: 600; font-size: .82rem; letter-spacing: .04em; color: var(--accent); margin-bottom: .6rem; }
+    h1 {
+      font-family: var(--font-display); font-weight: 600; color: var(--text);
+      font-size: clamp(2.1rem, 4.4vw, 3.3rem); line-height: 1.12;
+      letter-spacing: -.03em; margin-bottom: 1.4rem; text-wrap: balance;
+    }
+    h1 em { color: var(--text-muted); }
+    .lead { font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); max-width: 50ch; text-wrap: pretty; }
+    .lead em, .lead strong { color: var(--text); font-style: normal; font-weight: 600; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.3rem; }
+
+    .hero-cover { position: relative; opacity: 0; transform: translateY(14px) scale(.98); transition: opacity .7s var(--ease) .1s, transform .7s var(--ease) .1s; }
+    .hero-cover.on { opacity: 1; transform: none; }
+    .hero-cover img {
+      width: 100%; max-width: 340px; margin: 0 auto; display: block;
+      border-radius: 8px; box-shadow: var(--shadow);
       position: relative; z-index: 1;
-      min-height: 100dvh; display: flex; flex-direction: column;
-      justify-content: center; gap: 3rem;
-      max-width: 1120px; margin: 0 auto; padding: 4rem 6vw;
     }
+    .blob { position: absolute; border-radius: 50%; filter: blur(60px); z-index: 0; }
+    .blob-1 { width: 320px; height: 320px; background: var(--accent-soft); top: -60px; right: 10%; }
+    .blob-2 { width: 260px; height: 260px; background: var(--accent-soft); bottom: -40px; left: 5%; }
 
-    .top { display: flex; align-items: center; gap: .7rem; }
-    .top img { object-fit: contain; opacity: .9; }
-    .brand {
-      font-family: var(--fd); font-weight: 500; font-size: 1.05rem;
-      letter-spacing: .01em;
+    /* ── secciones (visibles por defecto — sin gating de reveal) ── */
+    .sec { padding: 5.5rem 0; }
+    .sec-alt { background: var(--surface); }
+    .eyebrow { font-size: .8rem; font-weight: 600; color: var(--accent); letter-spacing: .03em; margin-bottom: .8rem; }
+    .sec-h {
+      font-family: var(--font-display); font-weight: 600; color: var(--text);
+      font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.22; letter-spacing: -.025em;
+      margin-bottom: 1.3rem; text-wrap: balance;
     }
+    .body { font-size: 1.02rem; line-height: 1.78; color: var(--text-muted); max-width: 66ch; margin-bottom: 1.2rem; text-wrap: pretty; }
+    .body em { font-style: normal; color: var(--text); font-weight: 600; }
 
-    .intro {
-      font-family: var(--fd); font-weight: 300;
-      font-size: clamp(1.5rem, 3.4vw, 2.4rem); line-height: 1.2;
-      letter-spacing: -.02em; color: var(--txt); max-width: 18ch;
-      animation: rise .7s cubic-bezier(.2,.7,.3,1) both;
+    /* ── índice del libro ── */
+    .toc { list-style: none; display: grid; gap: 1.6rem; margin: 2.2rem 0 1.8rem; }
+    .toc li { display: grid; grid-template-columns: auto 1fr; gap: 1.2rem; align-items: start; }
+    .toc-n { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--accent); line-height: 1.3; padding-top: .1rem; }
+    .toc-h { font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; color: var(--text); margin-bottom: .3rem; }
+    .toc-t { font-size: .94rem; line-height: 1.62; color: var(--text-muted); max-width: 58ch; text-wrap: pretty; }
+    @media (max-width: 560px) { .toc li { gap: .9rem; } }
+
+    /* ── testimonios ── */
+    .tst-grid { display: grid; gap: 1.2rem; margin: 2.2rem 0 0; }
+    @media (min-width: 760px) { .tst-grid { grid-template-columns: 1fr 1fr; } }
+    .tst { padding: 1.6rem 1.7rem; background: var(--surface); border: 1px solid var(--border); border-top: 2px solid var(--accent); border-radius: var(--radius-sm); }
+    .tst-q { font-family: var(--font-display); font-size: 1.02rem; line-height: 1.55; color: var(--text); margin-bottom: .9rem; text-wrap: pretty; }
+    .tst-a { font-size: .84rem; color: var(--text-muted); }
+
+    /* ── para quién es / para quién no ── */
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0 1.8rem; }
+    .fit-h { font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; color: var(--text); padding-bottom: .7rem; margin-bottom: 1.1rem; border-bottom: 1px solid var(--border); }
+    .fit-list { list-style: none; display: grid; gap: .9rem; }
+    .fit-list li { position: relative; padding-left: 1.6rem; font-size: .98rem; line-height: 1.6; color: var(--text-muted); text-wrap: pretty; }
+    .fit-list li::before { content: '✓'; position: absolute; left: 0; top: -.05rem; color: var(--accent); font-weight: 700; }
+    .fit-list-no li::before { content: '✕'; color: var(--danger); font-weight: 600; }
+    @media (max-width: 720px) { .fit-grid { grid-template-columns: 1fr; gap: 2.2rem; } }
+
+    /* ── garantía ── */
+    .warranty { margin-top: 2rem; padding: 1.6rem 1.8rem; border: 1px solid var(--border); border-top: 2px solid var(--accent); border-radius: var(--radius-sm); background: var(--surface); }
+    .warranty-h { font-family: var(--font-display); font-weight: 600; font-size: 1.08rem; color: var(--text); margin-bottom: .5rem; }
+    .warranty-t { font-size: .97rem; line-height: 1.7; color: var(--text-muted); text-wrap: pretty; }
+    .warranty-t em { font-style: normal; font-weight: 600; color: var(--text); }
+
+    /* ── muestra ── */
+    .quote-card { background: var(--surface); border: 1px solid var(--border); border-top: 2px solid var(--accent); border-radius: var(--radius); padding: 2.2rem 2rem; margin: 1.6rem 0 1.4rem; }
+    .m-text { font-family: var(--font-display); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.28rem); line-height: 1.55; color: var(--text); }
+    .m-foot { color: var(--text-muted); font-size: .9rem; line-height: 1.6; max-width: 56ch; }
+
+    /* ── autor ── */
+    .autor-grid { display: grid; grid-template-columns: 220px 1fr; gap: 3.5rem; align-items: center; }
+    .autor-foto { width: 100%; border-radius: var(--radius); object-fit: cover; aspect-ratio: 1/1; box-shadow: var(--shadow); }
+
+    /* ── compra ── */
+    .buy-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 3rem 2.6rem; text-align: center; }
+    .buy-price { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.6rem, 6vw, 3.6rem); color: var(--text); margin: 1rem 0 .3rem; letter-spacing: -.03em; }
+    .buy-price span { font-size: 1.1rem; color: var(--text-muted); }
+    .buy-clp { text-align: center; font-size: .85rem; color: var(--text-muted); margin-bottom: .5rem; }
+    .buy-clp strong { color: var(--text); font-weight: 600; }
+    .buy-sub { color: var(--text-dim); font-size: .88rem; margin-bottom: 2.2rem; }
+    .buy-forms { display: grid; gap: 1.4rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); text-align: left; }
+    .buy-form { display: flex; flex-direction: column; gap: .55rem; }
+    .buy-gw { font-size: .74rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); }
+    .buy-label { font-size: .78rem; color: var(--text-muted); }
+    .buy-input {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 9px;
+      color: var(--text); font-family: var(--font-body); font-size: .95rem; padding: .8rem 1rem;
+      outline: none; transition: border-color .18s;
     }
+    .buy-input::placeholder { color: var(--text-dim); }
+    .buy-input:focus { border-color: var(--accent); }
+    .buy-btn { width: 100%; }
+    .buy-wa { margin-top: 2.2rem; color: var(--text-muted); font-size: .87rem; }
+    .buy-wa a { color: var(--accent); text-decoration: underline; }
 
-    .doors { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
-
-    .door {
-      position: relative; display: flex; flex-direction: column;
-      padding: 2.6rem 2.3rem 2.2rem;
-      border: 1px solid rgba(255,255,255,.09); border-radius: 18px;
-      background: rgba(255,255,255,.022);
-      text-decoration: none; color: inherit; overflow: hidden;
-      transition: border-color .35s ease, background .35s ease, transform .35s cubic-bezier(.2,.7,.3,1);
-      animation: rise .8s cubic-bezier(.2,.7,.3,1) both;
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+      padding: 1.3rem 0; font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--text);
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
     }
-    .door-book { animation-delay: .09s; }
-    .door-app  { animation-delay: .17s; }
+    .faq-q::after { content: '+'; color: var(--accent); font-size: 1.3rem; font-weight: 400; flex-shrink: 0; }
+    .faq-item.open .faq-q::after { content: '−'; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s var(--ease); }
+    .faq-item.open .faq-a { max-height: 320px; }
+    .faq-a p { color: var(--text-muted); font-size: .95rem; line-height: 1.65; padding-bottom: 1.3rem; max-width: 62ch; }
+    .faq-a a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
-    /* El halo de cada puerta la tiñe con su propio mundo: oro el libro, calipso
-       la plataforma — la misma señal de color que usa cada landing de destino. */
-    .door::before {
-      content: ''; position: absolute; inset: -1px; border-radius: 18px;
-      opacity: 0; transition: opacity .35s ease; pointer-events: none;
+    footer { padding: 3rem 0; border-top: 1px solid var(--border); }
+    .foot-grid { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem; }
+    .foot-links { display: flex; flex-wrap: wrap; gap: 1.4rem; }
+    .foot-links a { font-size: .85rem; color: var(--text-muted); text-decoration: none; }
+    .foot-links a:hover { color: var(--text); }
+    .foot-copy { font-size: .78rem; color: var(--text-dim); width: 100%; text-align: center; margin-top: .5rem; }
+
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-cover { order: -1; max-width: 260px; margin: 0 auto; }
+      .autor-grid { grid-template-columns: 1fr; text-align: center; }
+      .autor-foto { max-width: 180px; margin: 0 auto; }
+      .buy-card { padding: 2.2rem 1.5rem; }
+      .nv-link { display: none; }
     }
-    .door-book::before { background: radial-gradient(120% 80% at 50% 0%, rgba(199,154,78,.13), transparent 62%); }
-    .door-app::before  { background: radial-gradient(120% 80% at 50% 0%, rgba(126,204,205,.13), transparent 62%); }
-    .door:hover, .door:focus-visible { transform: translateY(-4px); background: rgba(255,255,255,.04); outline: none; }
-    .door:hover::before, .door:focus-visible::before { opacity: 1; }
-    .door-book:hover, .door-book:focus-visible { border-color: rgba(199,154,78,.42); }
-    .door-app:hover,  .door-app:focus-visible  { border-color: rgba(126,204,205,.42); }
-
-    .d-kick { font-size: .74rem; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 1.4rem; }
-    .door-book .d-kick { color: var(--gold); }
-    .door-app  .d-kick { color: var(--c); }
-
-    .d-title {
-      font-family: var(--fd); font-weight: 400;
-      font-size: clamp(1.6rem, 2.8vw, 2.1rem); line-height: 1.15;
-      letter-spacing: -.025em; margin-bottom: 1rem;
-    }
-    .d-sub {
-      color: var(--mut); font-size: .96rem; line-height: 1.66;
-      max-width: 34ch; margin-bottom: 1.9rem; text-wrap: pretty;
-    }
-    .d-price {
-      font-family: var(--fd); font-size: 1rem; margin-top: auto;
-      padding-top: 1.4rem; border-top: 1px solid rgba(255,255,255,.07);
-    }
-    .d-price em { font-family: var(--fi); font-style: normal; font-size: .82rem; color: var(--dim); }
-
-    .d-cta { margin-top: 1.1rem; font-size: .92rem; font-weight: 500; display: inline-flex; gap: .5rem; }
-    .door-book .d-cta { color: var(--gold); }
-    .door-app  .d-cta { color: var(--c); }
-    .arw { transition: transform .3s cubic-bezier(.2,.7,.3,1); }
-    .door:hover .arw { transform: translateX(5px); }
-
-    .bot {
-      display: flex; flex-wrap: wrap; align-items: center;
-      justify-content: space-between; gap: 1rem 2rem;
-      animation: rise .8s cubic-bezier(.2,.7,.3,1) .26s both;
-    }
-    .who { color: var(--dim); font-size: .82rem; }
-    .links { display: flex; flex-wrap: wrap; gap: 1.4rem; }
-    .links a {
-      color: var(--dim); font-size: .82rem; text-decoration: none;
-      transition: color .2s;
-    }
-    .links a:hover { color: var(--txt); }
-
-    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-
-    @media (max-width: 820px) {
-      main { justify-content: flex-start; gap: 2.4rem; padding: 3rem 7vw 4rem; }
-      .doors { grid-template-columns: 1fr; gap: 1.1rem; }
-      .door { padding: 2.1rem 1.8rem 1.9rem; }
-      .d-sub { margin-bottom: 1.5rem; }
-      .bot { flex-direction: column; align-items: flex-start; }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-copy, .hero-cover { transition: none; opacity: 1; transform: none; }
     }
   </style>
 </body>

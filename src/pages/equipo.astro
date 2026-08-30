@@ -26,13 +26,13 @@ import Layout from '../layouts/Layout.astro';
   .eq-foto:hover img { filter: grayscale(0%) contrast(1); }
   .eq-nombre {
     font-family: var(--fd); font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-    font-weight: 700; color: #fff; letter-spacing: -.04em;
+    font-weight: 700; color: var(--text); letter-spacing: -.04em;
     line-height: 1.1; margin-bottom: .5rem; text-shadow: var(--ts);
   }
   .eq-rol { font-size: .75rem; color: var(--c); letter-spacing: .1em; text-transform: uppercase; font-weight: 600; margin-bottom: 2.4rem; }
   .eq-bio { font-size: .96rem; color: var(--mut); line-height: 1.88; }
   .eq-bio p + p { margin-top: 1.3rem; }
-  .eq-bio strong { color: rgba(255,255,255,.85); font-weight: 600; }
+  .eq-bio strong { color: var(--text); font-weight: 600; }
   .eq-divider { height: 1px; background: var(--bdr); margin: 2.4rem 0; }
   .eq-creds { display: flex; flex-direction: column; gap: .7rem; }
   .eq-cred {
