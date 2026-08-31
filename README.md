@@ -1,218 +1,101 @@
 # Landing Endonautas
 
-Sitio estático de marketing para [endonautas.cl](https://endonautas.cl) construido con Astro 4.
+Sitio estático de marketing para [endonautas.cl](https://endonautas.cl), construido con Astro 4.
+Contexto técnico detallado para trabajar el código: **`CLAUDE.md`**.
 
 ## Stack
 
 | Capa | Tecnología |
 |------|-----------|
-| Framework | Astro 4.x (SSG) |
-| Tipografía | Space Grotesk (headings) + Inter (body) vía Google Fonts |
-| Deploy | Cloudflare Pages (auto-deploy al hacer push a `main`) |
-| Analytics | Umami — `analytics.endonautas.cl` |
-| Functions | Cloudflare Pages Functions (`functions/api/`) |
+| Framework | Astro 4.x (SSG puro) |
+| Visual | Sistema "Vidrio ámbar" (glass) — tokens en `src/styles/tokens.css`, dark default + toggle claro/oscuro. Bricolage Grotesque + Hanken Grotesk. Rework 2026-08-30 (cosmos Three.js apagado). |
+| Deploy | Cloudflare Pages — auto-deploy al hacer push a `main` (~1-2 min) |
+| Analytics | Umami — `https://analytics.146.181.39.4.sslip.io` |
+| Functions | Cloudflare Pages Functions (`functions/`) — subscribe, contact, admin/mensajes |
 
-## Infraestructura de producción
-
-**Deploy:** Cloudflare Pages · proyecto `astro-endonautas`  
-**Dominio:** `https://endonautas.cl` (DNS en Cloudflare)  
-**Repo:** `github.com/jeria88/astro-endonautas`  
-**Branch:** `main` → auto-deploy en Cloudflare Pages al hacer push
-
-## Desarrollo local
+## Desarrollo
 
 ```bash
 npm install
 npm run dev     # http://localhost:4321
-npm run build   # verificar build antes de push
+npm run build   # verificar antes de push
 ```
 
 ## Páginas
 
-| URL | Descripción |
-|-----|-------------|
-| `/` | Landing principal con hero, comparativa, instrumentos, precios, FAQ, newsletter |
-| `/profesionales` | Landing B2B — Plan Practicante para terapeutas y coaches |
-| `/blog/` | Índice del blog |
-| `/ebook` | Página del libro *Endonautica* |
-| `/privacidad` | Política de privacidad |
-| `/terminos` | Términos de uso |
-| `/contacto` | Formulario de contacto |
-| `/equipo` | Equipo / acerca de |
-| `/review-social` | Revisión interna de copy variants (excluida del sitemap, solo Franco) |
+| URL | Qué es |
+|-----|--------|
+| `/` | **Landing del libro *Endonautica*** ($17). Era `/ebook`; se movió el 2026-08-30. Mantiene el funnel completo (checkout MP/PayPal, personalización `?herida=`, eventos Umami). |
+| `/para-terapeutas/` | Landing del SaaS — fusión de las viejas `/software` + `/profesionales` |
+| `/circulo/` | El Círculo Endonauta — lista de espera por WhatsApp |
+| `/test-heridas-de-infancia/` + `/heridas/<slug>/` | Lead magnet SEO + 5 páginas long-tail (una por herida) |
+| `/blog/` + `/blog/<slug>/` | Blog (generado por `scripts/seo/`) |
+| `/equipo` `/contacto` `/privacidad` `/terminos` `/404` | Legales / contacto / equipo |
 
-## CTAs principales
+**Redirects 301** (`public/_redirects`): `/ebook*` → `/` (preserva `?herida=`), `/software` ·
+`/profesionales` · `/taller-terapeutas` → `/para-terapeutas/`, más www→apex, `/login` `/registro`
+`/app/*` → `app.endonautas.cl`, `/fractones` → `/planes/`.
 
-| CTA | Destino |
-|-----|---------|
-| "Ver mi Mapa de Patrones" (hero) | `https://app.endonautas.cl/tests/mapa-patrones/` |
-| "Empezar gratis" | `https://app.endonautas.cl/registro/` |
-| "Activar Navegante" | `https://app.endonautas.cl/registro/?plan=navegante` |
-| "Activar Practicante" | `https://app.endonautas.cl/registro/?plan=practicante` |
+## CTAs
 
-## Redes sociales
+| Acción | Etiqueta | Destino |
+|---|---|---|
+| Comprar el libro | "Comprarlo ahora — $17" | `#comprar` (en `/`) |
+| Hacer el test | "Hacer el test — 5 preguntas" | `/test-heridas-de-infancia/` |
+| Registro terapeuta | "Empezar con Practicante" | `app…/registro/?plan=practicante` |
+| Registro usuario final | "Empezar con Navegante" | `app…/registro/?plan=navegante` |
+| Cuenta existente | "Ingresar" | `app…/login/` |
 
-| Red | URL |
-|-----|-----|
-| Instagram | `https://www.instagram.com/endonautas/` |
-| TikTok | `https://www.tiktok.com/@endonautas` |
-| YouTube | `https://m.youtube.com/channel/UC9hqN2eNx1X-U-2ev9GUsCg` |
-| LinkedIn | `https://www.linkedin.com/company/endonautas` |
+La landing del libro (`/`) NO muestra "Ingresar" ni "Empezar con Practicante" en el nav
+(`<Layout navHideCta>`) — su único CTA es comprar. El resto de las páginas sí.
 
 ## Cloudflare Pages Functions
 
-### `functions/api/subscribe.js`
+| Ruta | Archivo | Qué hace |
+|---|---|---|
+| `POST /api/subscribe` | `functions/api/subscribe.js` | Proxy a Listmonk (evita CORS). `{ email, list }`. Listas: `lanzamiento` (default), `practicante`, `taller1-terapeutas`. `LISTMONK_URL` = `https://mail.146.181.39.4.sslip.io/api/public/subscription`. |
+| `POST /api/contact` | `functions/api/contact.js` | Inserta en D1 (`mensajes`). Llamado desde `/contacto/`. |
+| `GET /admin/mensajes` | `functions/admin/mensajes.js` | Panel gated por `?key=` vs `env.ADMIN_KEY`. |
 
-Proxy POST hacia Listmonk (evita CORS desde el navegador). Acepta:
-
-```json
-{ "email": "user@example.com", "list": "lanzamiento" }
-```
-
-| Campo `list` | Lista Listmonk | UUID |
-|-------------|---------------|------|
-| `lanzamiento` (default) | Lanzamiento (ID 8) | `431ebe70-b897-416b-9016-daea6acc030c` |
-| `practicante` | Practicantes (ID 5) | `574f7450-0663-4848-95e5-8ebe4765a33a` |
-
-### `functions/api/list-pending.js`
-
-Flywheel social — GET. Lee `pending/` del repo vía GitHub API. Devuelve tres arrays:
-- `scored`: artículos con `status: scored` — IA ya filtró finalistas con score + captions por red
-- `copy_pending`: artículos con `status: copy_pending_review` y `avatar_variants` (legacy / sin scoring aún)
-- `ready_review`: artículos con `status: ready_to_publish` y `r2_urls` (Franco aprueba el output visual)
-
-Requiere env var `GITHUB_TOKEN` en Cloudflare Pages.
-
-### `functions/api/approve-copy.js`
-
-Flywheel social — POST. Recibe selecciones de Franco, actualiza el pending JSON en GitHub con `approved[]` y `status: copy_approved`. Soporta dos esquemas:
-
-**Nuevo (finalistas IA):**
-```json
-{
-  "slug": "mi-articulo",
-  "approved_selections": [
-    {
-      "finalist_id": "negocio_v0",
-      "director": "contrain",
-      "carousel": true,
-      "reel": true,
-      "edited_captions": { "instagram": "...", "tiktok": "...", "linkedin": "...", "youtube_title": "...", "youtube_description": "..." }
-    }
-  ]
-}
-```
-
-**Legacy:**
-```json
-{
-  "slug": "mi-articulo",
-  "approved_selections": [
-    { "avatar": "negocio", "variant_index": 0, "director": "loop", "carousel": true, "reel": false }
-  ]
-}
-```
-
-- `finalist_id`: `"{avatar}_v{variant_index}"` — ej. `"negocio_v0"`
-- `edited_captions`: captions que Franco editó en la UI (opcional — fallback a los generados por caption_gen)
-- `director`: estilo visual (`loop | contrain | quote | hook | pregunta | edu | documental`)
-- Los avatares generan el copy (slides + hooks). Los directores controlan la edición visual.
-
-### `functions/api/health.js`
-
-Flywheel social — GET. Monitoreo del estado del pipeline. Lee todos los `pending/*.json`, detecta artículos atascados por umbral de tiempo por status, y retorna `{ healthy, total, by_status, stuck, errors }`.
-
-**Env var requerida en Cloudflare Pages:** `GITHUB_TOKEN` (con permisos `contents: read` sobre el repo).
+> El **flywheel social** (Functions `list-pending` / `approve-copy` / `health`, `review-social.astro`,
+> `scripts/social/`) fue **archivado** el 2026-07-03 (`4affd5f`) — reemplazado por ACME Agents
+> (MCP `acmeagents-endonautas`). Código viejo en `_archivo_ecosistema/endonautas-web/`.
 
 ## Blog
 
-- Artículos en `src/content/blog/*.md`, generados por `scripts/seo/run_ci.py` (DeepSeek + Pexels)
-- Schema en `src/content/config.ts` — campos relevantes: `image` (URL Pexels landscape, opcional), `ogImage`, `category`, `layer`, `cta`
-- Páginas de artículo (`/blog/[slug]/`): hero image encima del título, cosmos Three.js reducido a opacity 0.12, layout 960px
-- Pipeline de imágenes: `writer.py` llama Pexels al generar; `backfill_images.py` asignó imágenes a artículos existentes (ya ejecutado)
+- Artículos en `src/content/blog/*.md`. Schema: `src/content/config.ts` (`image` Pexels, `category`, `cta`).
+- Pipeline: `scripts/seo/run_ci.py` (DeepSeek + Pexels), cron GitHub Actions (`.github/workflows/seo.yml`).
+- El CTA de cada post apunta a `/`. **Voseo → español neutro pendiente** en los 33 posts.
 
-### Flywheel social — pipeline de status
+## Listmonk — listas
 
-```
-pending → copy_pending_review → scored → copy_approved → ready_to_publish → published
-```
+| Lista | ID | UUID |
+|-------|----|------|
+| Usuarios App | 4 | — |
+| Practicantes | 5 | `574f7450-0663-4848-95e5-8ebe4765a33a` |
+| Leads App | 7 | — |
+| Lanzamiento | 8 | `431ebe70-b897-416b-9016-daea6acc030c` |
+| Taller 1 (espera) | — | `af786bb5-cada-49a8-92fb-cb4ca441f689` |
 
-Estados de error (reintentables): `scoring_error`, `generation_error`.
+Admin: `https://mail.146.181.39.4.sslip.io` · `admin` · pass en el README del repo `app`.
+SMTP: Brevo `smtp-relay.brevo.com:587`. **El dominio `endonautas.cl` no está autenticado en Brevo
+(SPF sin Brevo, DKIM ausente)** — bloqueante para el lanzamiento del ebook.
+Los 4 emails del funnel (carrito abandonado + día 3/7) están escritos en
+`../endonautas-rework/emails-funnel.md`, sin cargar.
 
-| Status | Responsable |
-|--------|------------|
-| `pending` | `run_ci.py` al publicar artículo |
-| `copy_pending_review` | `generate_social.py` — DeepSeek generó 12 variantes de copy |
-| `scoring_error` | `generate_social.py` — falló scoring, cron reintenta |
-| `scored` | `generate_social.py` — `viral_scores` + `finalists` + `captions` listos |
-| `copy_approved` | `approve-copy.js` — Franco aprobó finalistas (+ captions editados) |
-| `ready_to_publish` | `generate_social.py` — assets en R2, webhook N8N disparado |
-| `generation_error` | `generate_social.py` — falló Phase 2, reintentable |
-| `published` | n8n `social_publish` — publicado en Instagram + TikTok + LinkedIn + YouTube |
+## Servicios (Oracle Cloud — mismo servidor que la app)
 
-Copy: DeepSeek, 4 avatares (negocio / profesional / padres / terapeuta).  
-Scoring: rubric IA 5 dimensiones → filtra top N finalistas. Pesos calibrables en `scorer_config.json`.  
-Captions: generados solo para finalistas, long-form × 4 redes.  
-Producción visual: directores cinematográficos (`loop`, `contrain`, `quote`, `hook`, `pregunta`, `edu`, `documental`).  
-Scripts Oracle: `/home/ubuntu/content-studio/generate_social.py`
+Todo migró de `*.endonautas.cl` (503) a IP-sslip en jun-2026:
+Umami `analytics.146.181.39.4.sslip.io` · Listmonk `mail.146.181.39.4.sslip.io` ·
+Uptime Kuma `status.146.181.39.4.sslip.io` · SerpBear `seo.146.181.39.4.sslip.io`.
 
-Campos de resiliencia en cada pending JSON: `last_updated` (ISO), `last_error` (string).
+## Redes (Footer.astro)
 
-**Resiliencia de reels (2026-07-01):** Si el reel falla, el carrusel igual llega a `ready_to_publish`. Los errores de reel se registran como WARN en el log pero no propagan la excepción ni bloquean el artículo.
-
-### n8n — publicación automática
-
-URL: `https://n8n.146.181.39.4.sslip.io` · Login: `fjeriacastro@gmail.com`
-
-| ID | Nombre | Horario | Acción |
-|----|--------|---------|--------|
-| `LCSET9g5cyLG5qHZ` | Daily Publish 11:11 | 11:11 Chile (14:11 UTC) | Carousel + reel → IG |
-| `noYRxzrL7NpLCORv` | Daily Stories | 13:00 / 16:00 / 19:00 Chile | Historia aleatoria → IG |
-
-**Test manual:** En N8N UI → abrir workflow → "Execute Workflow". Requiere al menos un JSON en `ready_to_publish` (stories requiere al menos uno en `published`).
-
-**Fix aplicado (2026-07-01):** Ambos workflows usaban `fetch` global en el nodo Code (typeVersion 2), que no está disponible en el sandbox VM de N8N aunque Node.js 18+ lo tenga globalmente. Fix: polyfill de `fetch` usando `require('https')`/`require('http')` prepended al jsCode de ambos workflows vía N8N REST API. No reemplazar el nodo Code con versión typeVersion 1 — cambiaría el sandbox.
-
-**OAuth pendiente** (LinkedIn / TikTok):  
-Callback URI: `https://n8n.146.181.39.4.sslip.io/rest/oauth2-credential/callback`
-- LinkedIn: https://www.linkedin.com/developers/apps/new — scopes: `w_member_social`
-- TikTok: https://developers.tiktok.com/apps/ — scopes: `video.upload`, `video.publish`
-
-**YouTube:** Redirect URI ya agregado en Google Console · Credencial N8N `7tyyXesjuDtwHDid` creada. Pendiente solo: ir a N8N UI → Credentials → "YouTube Endonautas" → Connect.
-
-## Servicios relacionados (Oracle Cloud — mismo servidor que la app)
-
-| Servicio | URL real (verificada 2026-07-30, 200) | Función |
-|---------|-----|---------|
-| Umami | `https://analytics.146.181.39.4.sslip.io` | Analytics (open source). El dominio `.cl` está muerto (503) — el script de tracking apuntaba ahí hasta 2026-07-30, sin recolectar ninguna visita real; corregido. |
-| Uptime Kuma | `https://status.146.181.39.4.sslip.io` | Monitoreo de uptime. El dominio `.cl` está muerto (503). |
-| Listmonk | `https://mail.146.181.39.4.sslip.io` | Email marketing. El dominio `.cl` está muerto (503), migrado 2026-07-11. |
-| SerpBear | `https://seo.146.181.39.4.sslip.io` | Tracking keywords SEO. El dominio `.cl` está muerto (503) y el código apuntaba a un tercer host sin ruta en Traefik — corregido 2026-07-30. Falta `SERPBEAR_API_KEY` en el servidor. |
-| n8n | `https://n8n.146.181.39.4.sslip.io` | Fallback de publicación (decisión de Franco) — cada vez menos usado desde que Meta se conectó directo (2026-07-29). |
-
-### Listmonk — listas activas
-
-| Lista | ID | UUID | Descripción |
-|-------|----|------|-------------|
-| Usuarios App | 4 | — | Registrados en app.endonautas.cl |
-| Practicantes | 5 | `574f7450-0663-4848-95e5-8ebe4765a33a` | Leads de /profesionales/ |
-| Leads App | 7 | — | Usuarios free → upgrade |
-| Lanzamiento | 8 | `431ebe70-b897-416b-9016-daea6acc030c` | Leads de la landing |
-
-SMTP configurado: `smtp-relay.brevo.com:587` · login `aaccf1001@smtp-brevo.com` · from `hola@endonautas.cl`
-
-## Analytics (Umami)
-
-Script integrado en `src/layouts/Layout.astro` (corregido 2026-07-30 — apuntaba al dominio `.cl` muerto):
-```html
-<script defer data-website-id="e03fa69e-9931-411c-9838-7f6ffea90426"
-        src="https://analytics.146.181.39.4.sslip.io/script.js"></script>
-```
+Instagram `/endonautas/` · TikTok `@endonautas` · YouTube `channel/UC9hqN2eNx1X-U-2ev9GUsCg` ·
+LinkedIn `company/endonautas`.
 
 ## Deploy
 
 ```bash
-git add .
-git commit -m "fix: ..."
-git push origin main    # activa auto-deploy en Cloudflare Pages
+git push origin main    # → Cloudflare Pages webhook → build → deploy estático
 ```
