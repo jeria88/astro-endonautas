@@ -1,0 +1,112 @@
+---
+import '../styles/tokens.css';
+
+const title = 'Endonautas — enlaces';
+const description = 'Empieza por el Test de Heridas gratis, o descarga el manual La Endonáutica.';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" type="image/png" href="/assets/endonautas-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script is:inline>
+    try {
+      var t = localStorage.getItem('endo-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+  </script>
+  <script defer data-website-id="e03fa69e-9931-411c-9838-7f6ffea90426" src="https://analytics.146.181.39.4.sslip.io/script.js" is:inline></script>
+</head>
+<body>
+  <button class="theme-toggle lk-toggle" data-theme-toggle aria-label="Cambiar tema">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+
+  <main class="lk">
+    <img class="lk-photo" src="/assets/img/franco-jeria.jpeg" alt="Franco Jeria" width="112" height="112" />
+    <h1 class="lk-name">Franco Jeria</h1>
+    <p class="lk-tag">Terapeuta en salud integrativa.<br />Autor de <em>La Endonáutica</em>.</p>
+
+    <a class="lk-btn lk-btn--primary" href="/test-heridas-de-infancia"
+       data-umami-event="links-click" data-umami-event-destino="test">
+      Haz el Test de Heridas <span>(gratis)</span>
+    </a>
+    <a class="lk-btn lk-btn--ghost" href="/"
+       data-umami-event="links-click" data-umami-event-destino="libro">
+      Descarga el manual — <em>La Endonáutica</em>
+    </a>
+
+    <p class="lk-foot">endonautas.cl</p>
+  </main>
+</body>
+</html>
+
+<script is:inline>
+  document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('endo-theme', next); } catch (e) {}
+    });
+  });
+</script>
+
+<style>
+  body {
+    margin: 0; min-height: 100dvh; background: var(--bg); color: var(--text);
+    font-family: var(--font-body); line-height: 1.6;
+    display: flex; align-items: center; justify-content: center; padding: 2rem 1.25rem;
+  }
+  .lk-toggle { position: fixed; top: 1rem; right: 1rem; }
+
+  .lk {
+    width: 100%; max-width: 400px; text-align: center;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .lk-photo {
+    width: 112px; height: 112px; border-radius: 50%; object-fit: cover;
+    border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+  }
+  .lk-name {
+    font-family: var(--font-display); font-weight: 600; letter-spacing: -.02em;
+    font-size: 1.5rem; margin: 1.1rem 0 .35rem;
+  }
+  .lk-tag {
+    font-size: .92rem; color: var(--text-muted); margin: 0 0 2.2rem;
+    text-wrap: balance; max-width: 34ch;
+  }
+
+  .lk-btn {
+    display: block; width: 100%; box-sizing: border-box;
+    padding: 1.05rem 1.25rem; margin-bottom: .9rem; border-radius: var(--radius);
+    font-family: var(--font-display); font-weight: 600; font-size: 1.02rem;
+    text-decoration: none; border: 1px solid transparent;
+    transition: transform .15s var(--ease), background .18s, border-color .18s, color .18s;
+  }
+  .lk-btn:hover { transform: translateY(-2px); }
+  .lk-btn span, .lk-btn em { font-weight: 500; font-style: normal; opacity: .9; }
+
+  .lk-btn--primary { background: var(--accent); color: var(--accent-ink); box-shadow: var(--shadow-sm); }
+  .lk-btn--primary:hover { background: color-mix(in srgb, var(--accent) 88%, #fff); }
+
+  .lk-btn--ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
+  .lk-btn--ghost:hover { border-color: var(--text-dim); }
+  .lk-btn--ghost em { color: var(--text-muted); }
+
+  .lk-foot {
+    margin-top: 1.4rem; font-size: .82rem; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--text-dim);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lk-btn:hover { transform: none; }
+  }
+</style>
