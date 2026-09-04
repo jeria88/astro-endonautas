@@ -126,7 +126,8 @@
   keyword: registrar patrones emocionales
   category: Instrumentos
   layer: journey
-  published: false
+  published: true
+  published_date: '2026-09-04'
 - topic: 'Qué pasa cuando terminás un proceso terapéutico: el después'
   keyword: terminar terapia
   category: Proceso
