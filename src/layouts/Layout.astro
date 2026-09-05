@@ -81,6 +81,23 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
   <!-- Umami analytics -->
   <script defer data-website-id="e03fa69e-9931-411c-9838-7f6ffea90426" src="https://analytics.146.181.39.4.sslip.io/script.js" is:inline></script>
 
+  <!-- Meta Pixel (pixel endonautas.com, dataset 860717205439662) — solo PageView acá;
+       InitiateCheckout/Purchase se disparan donde ocurre la acción real. -->
+  <script is:inline>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '860717205439662');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=860717205439662&ev=PageView&noscript=1" /></noscript>
+
   <slot name="head" />
 </head>
 <body>

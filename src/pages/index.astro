@@ -361,6 +361,15 @@ const description = 'El mapa que nadie te dio para navegar tu mundo interior. En
       const track = (evento, props) => { if (window.umami) window.umami.track(evento, props); };
       const origen = slug || 'frio';
 
+      // canal_origen viaja al backend (Django) para saber de dónde vino la venta.
+      // Default 'ebook-landing' si no hay utm_source (tráfico directo/orgánico).
+      const utmSource = params.get('utm_source');
+      if (utmSource) {
+        document.querySelectorAll('input[name="canal_origen"]').forEach((el) => {
+          el.value = utmSource;
+        });
+      }
+
       document.getElementById('cta-hero')?.addEventListener('click', () => {
         track('ebook-cta-comprar', { origen });
       });
@@ -370,6 +379,9 @@ const description = 'El mapa que nadie te dio para navegar tu mundo interior. En
             gateway: form.action.includes('paypal') ? 'paypal' : 'mp',
             origen,
           });
+          if (window.fbq) {
+            window.fbq('track', 'InitiateCheckout', { value: 16990, currency: 'CLP' });
+          }
         });
       });
     })();
