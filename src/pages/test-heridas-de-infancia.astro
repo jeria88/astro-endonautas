@@ -276,6 +276,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       track('test-completado', { herida: h.id });
       $('lead-form').addEventListener('submit', () => {
         track('test-lead-submit', { herida: h.id });
+        if (window.fbq) window.fbq('track', 'Lead', { content_name: 'test-heridas', herida: h.id });
       });
       $('r-libro').addEventListener('click', () => {
         track('test-cta-libro', { herida: h.id });
