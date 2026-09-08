@@ -132,7 +132,8 @@
   keyword: terminar terapia
   category: Proceso
   layer: journey
-  published: false
+  published: true
+  published_date: '2026-09-08'
 - topic: 'Sesgo de confirmación en el autoconocimiento: cómo nos engañamos'
   keyword: sesgo cognitivo autoconocimiento
   category: Fundamentos
