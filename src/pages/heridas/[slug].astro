@@ -16,7 +16,6 @@ const otras = HERIDAS.filter((x) => x.id !== h.id);
 const nombre = h.herida.toLowerCase();
 const title = `Herida de ${nombre}: señales en la adultez y cómo trabajarla | Endonautas`;
 const description = `Herida de ${nombre} y ${h.mascara.toLowerCase()}: cómo se ve en la vida adulta y en la pareja, dónde se aloja en el cuerpo y por dónde empezar. Con test gratis de las 5 heridas de la infancia.`;
-const botUrl = `https://t.me/Endonautas_bot1_bot?start=herida_${h.id}`;
 const appUrl = `https://app.endonautas.cl/registro/?utm_source=heridas&utm_medium=web&utm_campaign=${h.id}`;
 ---
 
@@ -179,10 +178,6 @@ const appUrl = `https://app.endonautas.cl/registro/?utm_source=heridas&utm_mediu
           <a class="btn btn-p btn-lg" href="/test-heridas-de-infancia/#test">Hacer el test</a>
           <a class="btn btn-o" href={appUrl}>Trabajar esto en la app</a>
         </div>
-        <p class="cta-mini">
-          También existe <a href={botUrl} target="_blank" rel="noopener">un acompañamiento diario
-          por Telegram</a> para quien quiere volver a esto todos los días.
-        </p>
       </div>
     </div>
   </section>

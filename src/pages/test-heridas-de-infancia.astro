@@ -147,7 +147,6 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
 
           <div class="r-ctas">
             <a class="btn btn-o" id="r-app" href="https://app.endonautas.cl/registro/?utm_source=test-heridas&utm_medium=web&utm_campaign=resultado">Trabajar esto en la app</a>
-            <a class="btn btn-o" id="r-bot" href="https://t.me/Endonautas_bot1_bot?start=test_web" target="_blank" rel="noopener">Seguimiento diario en Telegram</a>
           </div>
           <p class="r-mas">
             <a id="r-mas" href="/heridas/abandono/">Leer sobre esta herida en profundidad →</a>
@@ -262,7 +261,6 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       $('r-mask').textContent = h.mascara;
       $('r-herida').textContent = 'Herida de ' + h.herida.toLowerCase();
       $('r-frase').textContent = h.frase;
-      $('r-bot').href = 'https://t.me/Endonautas_bot1_bot?start=test_web_' + h.id;
       $('r-mas').href = '/heridas/' + h.id + '/';
       $('r-libro').href = '/?herida=' + h.id;
       $('lead-herida').value = h.id;
