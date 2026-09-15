@@ -69,11 +69,46 @@ import Layout from '../layouts/Layout.astro';
   pointer-events: none;
 }
 .hero-sup {
-  color: var(--c);
   margin-bottom: 2rem;
-  text-shadow: var(--ts);
   opacity: 0;
   animation: fadeUp .7s .1s forwards;
+}
+/* Segundo consejo (2026-09-14), acción 6: el selector de audiencia pasa de dos
+   links de texto sutiles a una elección visible — quien no es terapeuta debe
+   verla sin tener que buscarla. */
+.audience-switch {
+  display: inline-flex;
+  gap: .5rem;
+  padding: .3rem;
+  border: 1px solid var(--bdr);
+  border-radius: 999px;
+  background: rgba(255,255,255,.03);
+}
+.audience-pill {
+  padding: .5rem 1.1rem;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .18s, color .18s;
+}
+.audience-pill.is-active {
+  background: var(--c);
+  color: #020909;
+}
+.audience-pill:not(.is-active) {
+  color: var(--text);
+  border: 1px solid var(--bdr);
+}
+.audience-pill:not(.is-active):hover {
+  border-color: var(--c);
+  color: var(--c);
+}
+@media (max-width: 768px) {
+  .audience-switch { display: flex; width: 100%; }
+  .audience-pill { flex: 1; text-align: center; }
 }
 .hero-h {
   font-family: var(--fd);
@@ -520,10 +555,11 @@ import Layout from '../layouts/Layout.astro';
 <!-- HERO -->
 <section class="s s-full" id="inicio">
   <div class="hero-wrap">
-    <p class="lbl hero-sup">
-      <a href="#incluye" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Soy terapeuta</a>
-      <span style="opacity:.4"> · </span>
-      <a href="#navegante" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Voy a terapia</a>
+    <p class="hero-sup">
+      <span class="audience-switch">
+        <a href="#incluye" class="audience-pill is-active">Tengo consulta propia</a>
+        <a href="#navegante" class="audience-pill">No tengo consulta propia</a>
+      </span>
     </p>
     <h1 class="hero-h">
       <span style="display:block">
@@ -688,8 +724,10 @@ import Layout from '../layouts/Layout.astro';
       El patrón no aparece en la sesión semanal. Aparece el martes a las 23:00, cuando no hay nadie a quien llamar.
       El Espejo IA está ahí — no reemplaza a un terapeuta, sostiene lo que pasa entre uno y el siguiente.
     </p>
-    <div class="inst-cta from-b" data-d="3" style="justify-content:center;display:flex">
+    <div class="inst-cta from-b" data-d="3" style="justify-content:center;display:flex;flex-direction:column;align-items:center;gap:1rem">
       <a href="https://app.endonautas.cl/registro/?plan=navegante" class="btn btn-p">Empezar con Navegante — $9.990/mes</a>
+      <p class="hero-note" style="text-align:center">30 días de garantía, sin preguntas &nbsp;·&nbsp; Sin contrato</p>
+      <a href="#inicio" style="color:var(--dim);font-size:.8rem;text-decoration:underline;text-underline-offset:3px">¿Tenés consulta propia? Ver el plan Practicante ↑</a>
     </div>
   </div>
 </section>
