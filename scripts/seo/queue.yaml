@@ -150,7 +150,8 @@
   keyword: big five personalidad laboral
   category: Instrumentos
   layer: journey
-  published: false
+  published: true
+  published_date: '2026-09-18'
 - topic: 'Meditación y cambio de patrones: lo que la práctica puede y no puede hacer'
   keyword: meditación cambio de hábitos
   category: Proceso
