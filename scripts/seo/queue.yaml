@@ -162,7 +162,8 @@
   keyword: apego evitativo
   category: Proceso
   layer: awareness
-  published: false
+  published: true
+  published_date: '2026-09-25'
 - topic: 'Escritura terapéutica: qué es el journaling expresivo y cómo practicarlo'
   keyword: journaling terapéutico
   category: Instrumentos
