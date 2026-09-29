@@ -87,6 +87,8 @@ cosmos (eso era antes).
   `<script define:vars>` lo reescribe si llega `?herida=<slug>` (reescribe `#hk`, `#h1`,
   `#hero-sub`, `#m-title`, `#m-text` — por `id`, así que esos ids no se tocan).
   **Al tocar el hero, cambiar el HTML, no el script.**
+- **Solo un slug válido personaliza** (2026-09-29, `5f7acac`): `?herida=xyz` / `ABANDONO` muestran el
+  hero frío y `origen='frio'`. Antes caían en abandono con "Tu resultado: …" (asignaba un resultado falso).
 - **`#m-text` tiene fallback estático** (frontmatter `MUESTRA_DEFAULT` = fragmento de abandono):
   si el JS no corre, la sección no queda vacía. El JS lo reescribe para otras heridas.
 - **Checkout:** 2 `<form method="POST">` a `https://app.endonautas.cl/pago/ebook/comprar/{mp,paypal}/`,
@@ -127,6 +129,12 @@ Para que el reporte KPI los lea falta `UMAMI_API_KEY` en Coolify (bloqueante de 
   Equipo · Contacto · Privacidad · Términos · Ingresar. Redes al tope.
 - **`.btn`** (global.css): base `11px 24px`. `.btn-sm` (CTAs de nav) `8px 15px`. `.btn-lg` `15px 34px`.
   Se redujeron el 08-30 — los de nav estaban demasiado grandes.
+  **`max-width: 100%` y, en `≤540px`, `white-space: normal`** (2026-09-29, `39b3ed7`): con `nowrap`
+  un label largo en una tarjeta angosta se salía de la caja. No volver a `nowrap` global; si un
+  botón puntual debe ir en una línea, acortar el label.
+- **Hover en touch:** un `:hover` con `transform` queda pegado tras el tap y "pre-marca" el elemento
+  siguiente en la misma posición. Todo hover con desplazamiento va dentro de `@media (hover: hover)`
+  (ej. `.q-opt` del test).
 
 ---
 
@@ -147,7 +155,11 @@ Captación por búsqueda. Google Autocomplete (geo CL): `test heridas de la infa
 
 **Trampa de verificación headless:** capturar con `--window-size` muy alto MIENTE — las unidades
 `vh` se inflan y aparecen huecos que no existen. Capturar con viewport realista y navegar por
-anclas.
+anclas. Lo mismo con `full_page=True` de Playwright: las secciones con reveal (`from-l/-r/-b`)
+salen en negro. Recorrer pantalla por pantalla.
+**Detector de desbordes:** un elemento "fuera" por **exactamente 60px** es la animación `from-l/from-r`
+aún no disparada, no un bug — medirlo con el elemento ya en pantalla antes de concluir.
+Anchos de referencia mobile: **360 px** (Android chico, el más exigente) y **390 px** (iPhone).
 
 ---
 
