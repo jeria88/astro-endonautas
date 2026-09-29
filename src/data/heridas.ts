@@ -110,7 +110,7 @@ export const HERIDAS: Herida[] = [
       { t: 'Quédate cuando quieras irte', d: 'El impulso de retirarte aparece justo cuando el vínculo se vuelve real. Quedarte diez minutos más, sin actuar el impulso, es donde se juega el cambio.' },
     ],
     faq: [
-      ['¿Cuál es la diferencia entre herida de rechazo y de abandono?', 'El abandono teme que el otro se vaya; el rechazo teme no haber tenido derecho a estar. En el abandono la pregunta es "¿te vas a quedar?"; en el rechazo es "¿tengo lugar acá?". Pueden convivir, y de hecho suelen hacerlo.'],
+      ['¿Cuál es la diferencia entre herida de rechazo y de abandono?', 'El abandono teme que el otro se vaya; el rechazo teme no haber tenido derecho a estar. En el abandono la pregunta es "¿te vas a quedar?"; en el rechazo es "¿tengo lugar aquí?". Pueden convivir, y de hecho suelen hacerlo.'],
       ['¿Por qué me alejo justo cuando algo va bien?', 'Porque la cercanía es donde el rechazo podría confirmarse. Mientras hay distancia, la posibilidad de no ser querido sigue siendo teórica. La máscara huidiza prefiere la teoría.'],
       ['¿Ser introvertido es tener herida de rechazo?', 'No. La introversión es una forma legítima de administrar la energía y no duele. La herida duele: se reconoce porque después del retiro queda malestar, no descanso.'],
     ],

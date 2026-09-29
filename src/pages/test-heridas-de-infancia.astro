@@ -39,7 +39,7 @@ const PREGUNTAS = [
   ]},
   { t: 'Lo que más deseas que alguien te diga:', o: [
     ['«No me voy a ir»', 'abandono'],
-    ['«Tu lugar acá existe»', 'rechazo'],
+    ['«Tu lugar aquí existe»', 'rechazo'],
     ['«No tienes que cargar esto solo»', 'humillacion'],
     ['«Puedes soltar, yo sostengo»', 'traicion'],
     ['«Está bien así, no hace falta más»', 'injusticia'],
@@ -288,6 +288,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       $('q-intro').hidden = true;
       $('q-play').hidden = false;
       pintar();
+      $('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     $('q-back').addEventListener('click', () => {
@@ -335,7 +336,7 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
     }
 
     /* ── panel del test ── */
-    .quiz { margin-top: 3.2rem; max-width: 760px; padding: 2.6rem 2.4rem; }
+    .quiz { margin-top: 3.2rem; max-width: 760px; padding: 2.6rem 2.4rem; scroll-margin-top: 80px; }
     .q-lead { color: var(--mut); font-size: .95rem; line-height: 1.6; margin-bottom: 1.8rem; max-width: 52ch; }
 
     .q-bar { height: 2px; background: rgba(255,255,255,.07); border-radius: 2px; overflow: hidden; }
@@ -356,10 +357,15 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
       background: rgba(255,255,255,.03); border: 1px solid var(--bdr);
       border-radius: 12px; transition: border-color .18s, background .18s, transform .18s;
     }
-    .q-opt:hover {
-      border-color: rgba(126,204,205,.45); background: rgba(126,204,205,.06);
-      transform: translateX(4px);
+    /* solo con mouse: en touch el :hover queda pegado tras el tap y pre-marca
+       la opción de la pregunta siguiente */
+    @media (hover: hover) {
+      .q-opt:hover {
+        border-color: rgba(126,204,205,.45); background: rgba(126,204,205,.06);
+        transform: translateX(4px);
+      }
     }
+    .q-opt:active { border-color: rgba(126,204,205,.45); background: rgba(126,204,205,.06); }
     .q-back {
       background: none; border: none; cursor: pointer; margin-top: 1.4rem;
       color: var(--dim); font-family: var(--fi); font-size: .82rem; padding: 0;
@@ -472,6 +478,9 @@ const description = 'Test gratis de las 5 heridas de la infancia: abandono, rech
     @media (max-width: 640px) {
       .quiz { padding: 1.9rem 1.4rem; margin-top: 2.4rem; }
       .r-ctas .btn { width: 100%; }
+      .l-form, .r-libro { padding: 1.3rem 1.1rem; }
+      .l-input { flex-basis: 100%; }
+      .l-row .btn, .rl-btn { display: flex; width: 100%; }
     }
   </style>
 </Layout>

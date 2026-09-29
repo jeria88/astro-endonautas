@@ -49,6 +49,7 @@ nav {
   text-decoration: none; transition: .18s; white-space: nowrap;
   border-radius: 9px; letter-spacing: -.01em;
   padding: 11px 24px; font-size: .92rem;
+  max-width: 100%;
 }
 .btn-sm  { font-size: .82rem; padding: 8px 15px; border-radius: 8px; }
 .btn-lg  { font-size: 1rem; padding: 15px 34px; }
@@ -186,5 +187,5 @@ footer .logo { justify-content: center; margin-bottom: .9rem; }
   nav { padding: 0 5%; }
   footer { padding: 2.5rem 5%; }
   .btn-lg { font-size: .92rem; padding: 13px 24px; }
-  .btn { padding: 10px 20px; }
+  .btn { padding: 10px 20px; white-space: normal; text-align: center; line-height: 1.3; }
 }

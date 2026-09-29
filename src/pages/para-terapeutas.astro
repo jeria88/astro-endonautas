@@ -108,7 +108,9 @@ import Layout from '../layouts/Layout.astro';
 }
 @media (max-width: 768px) {
   .audience-switch { display: flex; width: 100%; }
-  .audience-pill { flex: 1; text-align: center; }
+  /* min-width:0 + wrap: con nowrap las pastillas no encogían y "No tengo
+     consulta propia" se salía de la pantalla en 360-390px */
+  .audience-pill { flex: 1 1 0; min-width: 0; text-align: center; white-space: normal; padding: .5rem .7rem; font-size: .76rem; line-height: 1.25; }
 }
 .hero-h {
   font-family: var(--fd);
@@ -548,7 +550,12 @@ import Layout from '../layouts/Layout.astro';
   .q-item { max-width: 90vw; }
   .q-item.qr { text-align: left; }
   .q-item.qr .q-text, .q-item.qr .q-attr { text-align: left; }
-  .hero-cta { flex-direction: column; }
+  .hero-cta { flex-direction: column; align-items: flex-start; justify-content: flex-start; }
+  .hero-h { font-size: clamp(2.1rem, 9vw, 2.6rem); }
+  .hero-wrap, .hero-sub, .hero-note { text-align: left; }
+  .hero-sub { margin-left: 0; }
+  .plan { padding-top: 3.2rem; }
+  .plan-badge { white-space: nowrap; max-width: calc(100% - 2rem); font-size: .58rem; }
 }
 </style>
 
@@ -727,7 +734,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="inst-cta from-b" data-d="3" style="justify-content:center;display:flex;flex-direction:column;align-items:center;gap:1rem">
       <a href="https://app.endonautas.cl/registro/?plan=navegante" class="btn btn-p">Empezar con Navegante — $9.990/mes</a>
       <p class="hero-note" style="text-align:center">30 días de garantía, sin preguntas &nbsp;·&nbsp; Sin contrato</p>
-      <a href="#inicio" style="color:var(--dim);font-size:.8rem;text-decoration:underline;text-underline-offset:3px">¿Tenés consulta propia? Ver el plan Practicante ↑</a>
+      <a href="#inicio" style="color:var(--dim);font-size:.8rem;text-decoration:underline;text-underline-offset:3px">¿Tienes consulta propia? Ver el plan Practicante ↑</a>
     </div>
   </div>
 </section>
@@ -910,7 +917,7 @@ import Layout from '../layouts/Layout.astro';
 <!-- FAQ -->
 <section class="s s-dark" id="faq">
   <div class="container">
-    <h2 class="faq-h from-b">Lo que preguntan antes de abrir su consulta acá.</h2>
+    <h2 class="faq-h from-b">Lo que preguntan antes de abrir su consulta aquí.</h2>
     <div class="faq-list from-b" data-d="1">
 
       <div class="faq-item">
