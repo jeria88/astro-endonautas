@@ -334,8 +334,11 @@ const description = 'El mapa que nadie te dio para navegar tu mundo interior. En
   <script define:vars={{ HERIDAS: HERIDAS_MIN }}>
     (function () {
       const params = new URLSearchParams(location.search);
-      const slug = params.get('herida');
-      const h = HERIDAS.find((x) => x.id === slug) || HERIDAS.find((x) => x.id === 'abandono');
+      // Solo un slug válido activa el modo "tu resultado": con uno inválido (link con
+      // error de tipeo) se muestra el hero frío en vez de asignar abandono como resultado.
+      const match = HERIDAS.find((x) => x.id === params.get('herida'));
+      const slug = match ? match.id : null;
+      const h = match || HERIDAS.find((x) => x.id === 'abandono');
       if (h) {
         if (slug) {
           document.getElementById('hk').textContent = 'Tu resultado: ' + h.mascara;
