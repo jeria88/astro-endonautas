@@ -174,7 +174,8 @@
   keyword: psicología positiva
   category: Fundamentos
   layer: awareness
-  published: false
+  published: true
+  published_date: '2026-10-02'
 - topic: 'Cuando el problema no es el problema: segundo orden en patrones repetitivos'
   keyword: patrones repetitivos en terapia
   category: Proceso
